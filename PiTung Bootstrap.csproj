@@ -64,7 +64,6 @@
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
     <Compile Include="ModUtilities.cs" />
-    <Compile Include="MethodPatch.cs" />
     <Compile Include="PatchAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

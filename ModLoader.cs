@@ -9,6 +9,10 @@ namespace PiTung_Bootstrap
     {
         public const string ModsDirectory = "./mods";
 
+        /// <summary>
+        /// Search for mods on <see cref="ModsDirectory"/>.
+        /// </summary>
+        /// <returns>Mods.</returns>
         public static IEnumerable<Mod> GetMods()
         {
             if (!Directory.Exists(ModsDirectory))
@@ -20,6 +24,11 @@ namespace PiTung_Bootstrap
             }
         }
         
+        /// <summary>
+        /// Loads a mod contained in the DLL pointed by <paramref name="modPath"/>.
+        /// </summary>
+        /// <param name="modPath">The mod's DLL file path.</param>
+        /// <returns>A mod.</returns>
         private static Mod GetMod(string modPath)
         {
             var ass = Assembly.LoadFrom(modPath);
