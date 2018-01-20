@@ -76,6 +76,7 @@ namespace PiTung_Bootstrap
     {
         void Draw();
     }
+
     internal struct UiLabel : IUiElement
     {
         private static Dictionary<Color, GUIStyle> ColorStyles = new Dictionary<Color, GUIStyle>();
@@ -110,6 +111,30 @@ namespace PiTung_Bootstrap
             var size = style.CalcSize(new GUIContent(this.Text));
 
             GUI.Label(new Rect(this.Position, size), this.Text, style);
+        }
+    }
+
+    internal struct UiRect : IUiElement
+    {
+        public Rect Area { get; private set; }
+
+        private GUIStyle style;
+
+        public UiRect(Rect area, Color color)
+        {
+            this.Area = area;
+
+            Texture2D bg = new Texture2D(1, 1);
+            bg.SetPixel(0, 0, color);
+            bg.Apply();
+
+            this.style = new GUIStyle();
+            this.style.normal.background = bg;
+        }
+
+        public void Draw()
+        {
+            GUI.Box(this.Area, "", this.style);
         }
     }
 }

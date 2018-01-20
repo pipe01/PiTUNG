@@ -1,0 +1,343 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8290F93-588E-468A-9735-4C07B0D1B2A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ClassLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>PiTUNG</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticlesLegacyModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.ParticlesLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StyleSheetsModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.StyleSheetsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Timeline">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WebModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.WebModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>..\..\..\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="lib\Harmony\Harmony.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Config menu\ConfigMenu.cs" />
+    <Compile Include="Config menu\MenuEntry.cs" />
+    <Compile Include="GraphicUtilities.cs" />
+    <Compile Include="InputUtilities.cs" />
+    <Compile Include="InternalPatches.cs" />
+    <Compile Include="lib\Harmony\Attributes.cs" />
+    <Compile Include="lib\Harmony\CodeInstruction.cs" />
+    <Compile Include="lib\Harmony\CodeTranspiler.cs" />
+    <Compile Include="lib\Harmony\Extras\DelegateTypeFactory.cs" />
+    <Compile Include="lib\Harmony\Extras\FastAccess.cs" />
+    <Compile Include="lib\Harmony\Extras\MethodInvoker.cs" />
+    <Compile Include="lib\Harmony\HarmonyInstance.cs" />
+    <Compile Include="lib\Harmony\HarmonyMethod.cs" />
+    <Compile Include="lib\Harmony\HarmonySharedState.cs" />
+    <Compile Include="lib\Harmony\ILCopying\ByteBuffer.cs" />
+    <Compile Include="lib\Harmony\ILCopying\Emitter.cs" />
+    <Compile Include="lib\Harmony\ILCopying\ILInstruction.cs" />
+    <Compile Include="lib\Harmony\ILCopying\Memory.cs" />
+    <Compile Include="lib\Harmony\ILCopying\MethodCopier.cs" />
+    <Compile Include="lib\Harmony\MethodPatcher.cs" />
+    <Compile Include="lib\Harmony\Patch.cs" />
+    <Compile Include="lib\Harmony\PatchFunctions.cs" />
+    <Compile Include="lib\Harmony\PatchProcessor.cs" />
+    <Compile Include="lib\Harmony\Priority.cs" />
+    <Compile Include="lib\Harmony\Properties\AssemblyInfo.cs" />
+    <Compile Include="lib\Harmony\Tools\AccessCache.cs" />
+    <Compile Include="lib\Harmony\Tools\AccessTools.cs" />
+    <Compile Include="lib\Harmony\Tools\DynamicTools.cs" />
+    <Compile Include="lib\Harmony\Tools\Extensions.cs" />
+    <Compile Include="lib\Harmony\Tools\FileLog.cs" />
+    <Compile Include="lib\Harmony\Tools\PatchTools.cs" />
+    <Compile Include="lib\Harmony\Tools\Traverse.cs" />
+    <Compile Include="lib\Harmony\Transpilers.cs" />
+    <Compile Include="MDebug.cs" />
+    <Compile Include="MethodPatch.cs" />
+    <Compile Include="Mod.cs" />
+    <Compile Include="ModLoader.cs" />
+    <Compile Include="ModUtilities.cs" />
+    <Compile Include="PatchAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\remotes\origin\HEAD" />
+    <None Include=".git\objects\01\0564c33970896c64a6b3a08897a1edf5f4b38d" />
+    <None Include=".git\objects\01\64c3b763345dd54a2afa7a85baa113bdc4cc6c" />
+    <None Include=".git\objects\03\541b7382fc04cda3d25641b57c35ea20800f84" />
+    <None Include=".git\objects\0a\1d29e0df906465fc6bbc84f4dc5b8a4b47d884" />
+    <None Include=".git\objects\0d\7a4820c9b06a85adf103bf8f0a68929ac7390e" />
+    <None Include=".git\objects\0f\4079bd0629e716ae0e77772ee697f04e60274d" />
+    <None Include=".git\objects\12\6d3a85a8d876ae22a92a21ff2fb7c1ab6b2d34" />
+    <None Include=".git\objects\16\f0ed4043bac48126c2ffe2af53c410f74883e7" />
+    <None Include=".git\objects\23\a4de284c1b335a3849ba0c6ff554a9fd1988e8" />
+    <None Include=".git\objects\29\18d86de1960e07fe4a17c0d35095924f609f3a" />
+    <None Include=".git\objects\2c\583ddaf48ba310728ae570da246a1963b04267" />
+    <None Include=".git\objects\2f\dc08a04c18127b560ad456af98a3f652f4e5ea" />
+    <None Include=".git\objects\34\506ff231dc2e2b430d6c40885b59abed04a5b4" />
+    <None Include=".git\objects\36\8411fc6a6b854366b0d0ddfc1b73ad0ea6d60c" />
+    <None Include=".git\objects\3c\4efe206bd0e7230ad0ae8396a3c883c8207906" />
+    <None Include=".git\objects\47\0c57daa83182e1c74992af77192d39e4878bd2" />
+    <None Include=".git\objects\48\e7085f7acda1a9868576872cc414f1afe344f7" />
+    <None Include=".git\objects\4b\967fd9c6ec9c1792c6d004da17bc481ca19dc9" />
+    <None Include=".git\objects\4b\dd0ffa923647a55936df598fe88b691b0d7fba" />
+    <None Include=".git\objects\4c\6c6985a738d492c877dfe1f9d756f1831494e3" />
+    <None Include=".git\objects\53\a2d862db9bd45ef180a2e91783a13de93aac28" />
+    <None Include=".git\objects\55\f98c3b2cd5dd92d470c8128e9cab0757465bda" />
+    <None Include=".git\objects\5a\66566913234eed59898f9cceab144707c1debb" />
+    <None Include=".git\objects\5b\52b1cb0e32edd7326370112eee819efca88ca7" />
+    <None Include=".git\objects\63\ae3c022464e72213bc6f2d79adfa70c3f4de18" />
+    <None Include=".git\objects\77\e2cbacccd0b8f1b6209659e74d55641d53b738" />
+    <None Include=".git\objects\7e\26305625b2d6c4c202e652dcec16587ff410c2" />
+    <None Include=".git\objects\82\ef1f44159aa55bec4979a5020fa323de1f259c" />
+    <None Include=".git\objects\85\a12f4709e6f47d417f0f70d3b2d8a42621b30f" />
+    <None Include=".git\objects\87\3e1fcc874678fd82b1f76229ae05464836594c" />
+    <None Include=".git\objects\87\75683c270ab454ada1c233584dc9dbac1dbd6a" />
+    <None Include=".git\objects\8c\a182b5cd217a9fc72eb8025426070eed3e61c7" />
+    <None Include=".git\objects\90\e7b03257dda76291d77b8935f31e1f1c0a83bf" />
+    <None Include=".git\objects\92\3c8f5a86ebd95782012d3e34103d9870fa7cab" />
+    <None Include=".git\objects\9e\8dc9f7e68bf192b201f19139dde54bd21ad0c8" />
+    <None Include=".git\objects\a1\fc2035648dfe92f3fdd35af5ce9d1b08a200a3" />
+    <None Include=".git\objects\a5\a9c380f92bd0a530f93ae6f06017fdae6b6a6f" />
+    <None Include=".git\objects\a9\5b6df8aa6f4472d514a983bf1b9178a7283bd6" />
+    <None Include=".git\objects\a9\f504b553637fb2a248d469bf0159f0de35113c" />
+    <None Include=".git\objects\af\63729cd65665c8d4cb635376831cf186f71464" />
+    <None Include=".git\objects\af\87af544d91150fed604d005f7002ed43080829" />
+    <None Include=".git\objects\b8\851c2fd23e19f1c2cafde782c4b0014875b4f5" />
+    <None Include=".git\objects\b8\ae794f6151e581d37c8f36da9b51e06306eca8" />
+    <None Include=".git\objects\bd\37742dc5871fa1b87828a698a69fcaed3478c9" />
+    <None Include=".git\objects\bd\d4dbdcc478cedbcd068e7c6cdeebac552e01f9" />
+    <None Include=".git\objects\bf\51add3e359a4392986c22f0f6c05686961ce29" />
+    <None Include=".git\objects\c0\315b661a7ef13361f2cdd73e1f665c24724e5a" />
+    <None Include=".git\objects\c0\ada92e1dc925300eeb9800d6e42a6ae413b070" />
+    <None Include=".git\objects\c1\3b111cc584f9803e023813bcc8e4b7898cfe17" />
+    <None Include=".git\objects\c2\7fe13d5e631bd03640d7ae716b822103925e99" />
+    <None Include=".git\objects\c2\c011bccacf85ec0139d4165e4d5bdd990e22a7" />
+    <None Include=".git\objects\cf\e15c94abec925d97f9ef09a107a6c2c1ac3ea0" />
+    <None Include=".git\objects\db\f29d2f617a0388a3320740b01dad690af49737" />
+    <None Include=".git\objects\e0\238c3470a05799dd4bde110bfbe59c2aeeecd3" />
+    <None Include=".git\objects\e1\ec04e9d3a2c088bdb62a2d454c0d763d9fc6cd" />
+    <None Include=".git\objects\e2\ea871abe0596131df2c0405f8529023b8f8b7a" />
+    <None Include=".git\objects\e8\7779e1fbee155df896e8d18fe64af4ecc9385b" />
+    <None Include=".git\objects\ed\eb25806f8a8b8006740e07f295ab937586b6ec" />
+    <None Include=".git\objects\f0\22ba49ac71f38b029e9742f46a5eb3ed37e6ed" />
+    <None Include=".git\objects\f3\742925d6eec15cb77b90be14f7d00211feb87b" />
+    <None Include=".git\objects\f6\a5d49c7d5e7aed1d969699184977eda4d55a99" />
+    <None Include=".git\objects\fc\d2e07ffbbce2f36d8ae17e1bc1400bc5ffdf3b" />
+    <None Include=".git\packed-refs" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\remotes\origin\HEAD" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\tags\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
