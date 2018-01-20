@@ -39,17 +39,17 @@
       <HintPath>lib\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp.original">
-      <HintPath>..\lib\Assembly-CSharp.original.dll</HintPath>
+      <HintPath>lib\Assembly-CSharp.original.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>lib\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
