@@ -20,5 +20,10 @@ namespace PiTung_Bootstrap
         {
             GuiPatch.ElementsToBeDrawn.Add(new UiLabel(str, position, color));
         }
+
+        public void DrawRect(Rect area, Color color)
+        {
+            GuiPatch.ElementsToBeDrawn.Add(new UiRect(area, color));
+        }
     }
 }
