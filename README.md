@@ -1,4 +1,6 @@
 # PiTung
+[![Build status](https://ci.appveyor.com/api/projects/status/j9uyb1akh099xush?svg=true)](https://ci.appveyor.com/project/pipe01/pitung)
+
 Mod framework for The Ultimate Nerd Game
 
 # How to create a mod
