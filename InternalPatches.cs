@@ -128,8 +128,10 @@ namespace PiTung_Bootstrap
             bg.SetPixel(0, 0, color);
             bg.Apply();
 
-            this.style = new GUIStyle();
-            this.style.normal.background = bg;
+            this.style = new GUIStyle()
+            {
+                normal = new GUIStyleState { background = bg }
+            };
         }
 
         public void Draw()
