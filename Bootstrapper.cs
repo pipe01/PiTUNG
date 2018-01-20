@@ -11,7 +11,6 @@ namespace PiTung_Bootstrap
 {
     public class Bootstrapper
     {
-        private static Dictionary<string, Assembly> AssemblyLibs;
         private static bool Patched = false;
 
         public static int ModCount = 0;
