@@ -44,7 +44,7 @@ namespace PiTung_Bootstrap
     public sealed class PostfixAttribute : PatchAttribute
     {
         /// <summary>
-        /// Makrs this method as a postfix patch. Postfix patches get executed after the original method.
+        /// Marks this method as a postfix patch. Postfix patches get executed after the original method.
         /// <para/>
         /// If the postfix method contains a __instance parameter of the same type as <paramref name="containerType"/>,
         /// its value will be equivalent to the keyword 'this'.
