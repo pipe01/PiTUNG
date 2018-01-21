@@ -2,7 +2,7 @@ version: 1.0.{build}
 image: Visual Studio 2017
 clone_folder: c:\projects\pitung
 environment:
-  refresh_cache: yes
+  refresh_cache: no
 cache: c:\projects\cache
 artifacts:
   - path: bin/Debug/PiTung Bootstrap.dll
