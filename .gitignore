@@ -265,3 +265,4 @@ __pycache__/
 Assembly-CSharp.dll
 UnityEngine.dll
 UnityEngine.*.dll
+/copy.bat
