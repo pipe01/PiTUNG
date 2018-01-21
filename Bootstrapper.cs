@@ -15,6 +15,9 @@ namespace PiTung_Bootstrap
 
         public static int ModCount = 0;
 
+        /// <summary>
+        /// Main bootstrap method. Loads and patches all mods.
+        /// </summary>
         public void Patch()
         {
             if (Patched)
@@ -65,6 +68,11 @@ namespace PiTung_Bootstrap
             MDebug.WriteLine("Patched successfully!");
         }
 
+        /// <summary>
+        /// Gets called when the active scene is changed.
+        /// </summary>
+        /// <param name="arg0">I have no idea.</param>
+        /// <param name="arg1">The new scene.</param>
         private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
         {
             ModUtilities.IsOnMainMenu = arg1.name == "main menu";
@@ -76,6 +84,8 @@ namespace PiTung_Bootstrap
 
             var objs = arg1.GetRootGameObjects();
             
+            //Search for a camera. If we find one, check if it has already got a DummyComponent.
+            //If it doesn't, add one.
             foreach (var obj in objs)
             {
                 var camera = obj.GetComponent<Camera>();
