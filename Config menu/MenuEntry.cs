@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using UnityEngine;
@@ -8,27 +10,29 @@ namespace PiTung_Bootstrap.Config_menu
 {
     public class MenuEntry
     {
-        public MenuEntry Parent { get; private set; } = null;
-        public List<MenuEntry> Children { get; set; } = new List<MenuEntry>();
+        public MenuEntry Parent { get; internal set; } = null;
+        public ObservableList<MenuEntry> Children { get; set; } = new ObservableList<MenuEntry>();
 
-        public MenuEntry(MenuEntry parent)
+        public MenuEntry()
         {
-            this.Parent = parent;
+            //this.Children.CollectionChanged += Children_CollectionChanged;
+            this.Children.ItemAdded += Children_ItemAdded;
+        }
+
+        private void Children_ItemAdded(MenuEntry item)
+        {
+            item.Parent = this;
         }
     }
 
     public class TextMenuEntry : MenuEntry
     {
-        public TextMenuEntry(MenuEntry parent) : base(parent)
-        {
-        }
-
         public string Text { get; set; }
     }
 
     internal sealed class GoUpMenuEntry : TextMenuEntry
     {
-        public GoUpMenuEntry(MenuEntry parent) : base(parent)
+        public GoUpMenuEntry()
         {
             this.Text = "Go back...";
         }
@@ -36,10 +40,6 @@ namespace PiTung_Bootstrap.Config_menu
 
     public sealed class CheckboxMenuEntry : TextMenuEntry
     {
-        public CheckboxMenuEntry(MenuEntry parent) : base(parent)
-        {
-        }
-
         public bool Value { get; set; }
 
         public void Toggle() => Value = !Value;
@@ -88,8 +88,7 @@ namespace PiTung_Bootstrap.Config_menu
                 this.Value -= step;
         }
 
-        public SimpleNumberEntry(MenuEntry parent, float step, float min, float max, float value = 0)
-            : base(parent)
+        public SimpleNumberEntry(float step, float min, float max, float value = 0)
         {
             this.Value = value;
             this.Step = step;
@@ -99,8 +98,8 @@ namespace PiTung_Bootstrap.Config_menu
             this.Maximum = max;
         }
 
-        public SimpleNumberEntry(MenuEntry parent, float step, float bigStep, float smallStep, float min, float max, float value = 0)
-            : this(parent, step, min, max, value)
+        public SimpleNumberEntry(float step, float bigStep, float smallStep, float min, float max, float value = 0)
+            : this(step, min, max, value)
         {
             this.BigStep = bigStep;
             this.SmallStep = smallStep;
@@ -119,14 +118,12 @@ namespace PiTung_Bootstrap.Config_menu
 
         public void Decrement() => this.DecrementMethod(ref _Value);
 
-        public CustomNumericEntry(MenuEntry parent, ChangeOneStepDelegate increment, ChangeOneStepDelegate decrement)
-            : base(parent)
+        public CustomNumericEntry(ChangeOneStepDelegate increment, ChangeOneStepDelegate decrement)
         {
             this.IncrementMethod = increment;
             this.DecrementMethod = decrement;
         }
-        public CustomNumericEntry(MenuEntry parent, float step, float min, float max)
-            : base(parent)
+        public CustomNumericEntry(float step, float min, float max)
         {
             this.IncrementMethod = (ref float o) => o += o < max ? step : 0;
             this.DecrementMethod = (ref float o) => o -= o > min ? step : 0;

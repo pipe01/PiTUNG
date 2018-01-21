@@ -31,7 +31,7 @@ namespace PiTung_Bootstrap.Config_menu
                 var copy = new List<MenuEntry>(original);
                 
                 if (CurrentParent != null)
-                    copy.Insert(0, new GoUpMenuEntry(CurrentParent.Parent));
+                    copy.Insert(0, new GoUpMenuEntry());
 
                 return copy.ToArray();
             }
@@ -45,12 +45,22 @@ namespace PiTung_Bootstrap.Config_menu
             DefaultStyle.normal.textColor = new Color(.75f, .75f, .75f);
             DefaultStyle.richText = true;
 
-            Entries.Add(new TextMenuEntry(null) { Text = "hola" });
-            Entries.Add(new CheckboxMenuEntry(null) { Text = "que" });
-            Entries.Add(new SimpleNumberEntry(null, 1, 0, 10, 5) { Text = "pasa" });
-
-            Entries[0].Children.Add(new TextMenuEntry(Entries[0]) { Text = "child" });
-
+            Entries = new List<MenuEntry>()
+            {
+                new TextMenuEntry
+                {
+                    Text = "hola",
+                    Children = new ObservableList<MenuEntry>()
+                    {
+                        new TextMenuEntry { Text = "child" }
+                    }
+                },
+                new CheckboxMenuEntry
+                { Text = "que" },
+                new SimpleNumberEntry(1, 0, 10, 5)
+                { Text = "pasa" }
+            };
+            
             KeyCode[] keys = new[]
             {
                 KeyCode.UpArrow,
