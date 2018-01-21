@@ -1,0 +1,56 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+clone_folder: c:\projects\pitung
+environment:
+  refresh_cache: no
+cache: c:\projects\cache
+artifacts:
+  - path: bin/Debug/PiTung Bootstrap.dll
+    name: PiTung Bootstrap
+before_build:
+- ps: >-
+    cd ..
+
+
+    $url = "http://www.pipe0481.heliohost.org/tung.zip"
+
+    $installer_url = "http://www.pipe0481.heliohost.org/pitung/Installer.exe"
+
+
+    $files = "Assembly-CSharp.dll","UnityEngine.CoreModule.dll","UnityEngine.IMGUIModule.dll","UnityEngine.TextRenderingModule.dll"
+
+
+    if ($env:refresh_cache -eq "yes")
+
+    {
+      echo "Cleaning cache..."
+      Remove-Item -Recurse -Force cache
+    }
+
+
+    if (!(Test-Path cache))
+
+    {
+      echo "Building cache..."
+
+      mkdir cache > $null
+      cd cache
+
+      echo "Downloading game..."
+      Invoke-WebRequest -Uri $url -OutFile "game.zip"
+
+      echo "Extracting game..."
+      Expand-Archive game.zip -DestinationPath game
+
+      cd ..
+    }
+
+
+    echo "Copying game assemblies..."
+
+
+    foreach ($item in $files) {
+      copy ('cache\game\The Ultimate Nerd Game_Data\Managed\' + $item) pitung/lib/$item
+    }
+build:
+  verbosity: minimal
