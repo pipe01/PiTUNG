@@ -72,6 +72,18 @@ namespace PiTung_Bootstrap
         }
     }
 
+    [HarmonyPatch(typeof(DummyComponent), "Awake")]
+    internal class AwakePatch
+    {
+        static void Prefix(DummyComponent __instance)
+        {
+            if (UnityEngine.Object.FindObjectsOfType(__instance.GetType()).Length > 1)
+            {
+                UnityEngine.Object.Destroy(__instance);
+            }
+        }
+    }
+
     internal interface IUiElement
     {
         void Draw();
