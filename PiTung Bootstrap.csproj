@@ -73,9 +73,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>rem if $(ConfigurationName)==Release copy "$(ProjectDir)bin\Release\$(TargetFileName)" "C:\Users\Pipe\Downloads\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\$(TargetFileName)"
-
-rem copy "$(TargetPath)" "C:\Users\Pipe\Downloads\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\$(TargetFileName)"
-rem copy "$(TargetPath)" "$(SolutionDir)output\$(ConfigurationName)\$(TargetFileName)"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
