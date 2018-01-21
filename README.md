@@ -3,9 +3,13 @@
 
 Mod framework for The Ultimate Nerd Game
 
-# How to create a mod
+# For users: How to install the framework
 
-This is a barebones mod class:
+Installing the framework is extremely easy, just download [the installer](http://www.pipe0481.heliohost.org/pitung/Installer.exe) to the same folder as "The Ultimate Nerd Game.exe", and double-click it!
+
+# For developers: How to create a mod
+
+This is a simple example mod class:
 ```C#
 using PiTung_Bootstrap;
 using System;
