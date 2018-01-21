@@ -67,6 +67,13 @@ namespace PiTung_Bootstrap
 
         private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
         {
+            ModUtilities.IsOnMainMenu = arg1.name == "main menu";
+
+            // If there already are DummyComponents, skip placing one
+            var dummies = GameObject.FindObjectsOfType(typeof(DummyComponent));
+            if (dummies.Length > 0)
+                return;
+
             var objs = arg1.GetRootGameObjects();
             
             foreach (var obj in objs)
@@ -83,8 +90,6 @@ namespace PiTung_Bootstrap
                     break;
                 }
             }
-
-            ModUtilities.IsOnMainMenu = arg1.name == "main menu";
         }
     }
 }
