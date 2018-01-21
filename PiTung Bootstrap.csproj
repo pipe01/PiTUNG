@@ -38,8 +38,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp.original">
-      <HintPath>lib\Assembly-CSharp.original.dll</HintPath>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>lib\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
