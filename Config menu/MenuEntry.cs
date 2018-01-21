@@ -8,19 +8,44 @@ namespace PiTung_Bootstrap.Config_menu
 {
     public class MenuEntry
     {
-        public string Text { get; set; }
-
+        public MenuEntry Parent { get; private set; } = null;
         public List<MenuEntry> Children { get; set; } = new List<MenuEntry>();
+
+        public MenuEntry(MenuEntry parent)
+        {
+            this.Parent = parent;
+        }
     }
 
-    public class CheckboxMenuEntry : MenuEntry
+    public class TextMenuEntry : MenuEntry
     {
+        public TextMenuEntry(MenuEntry parent) : base(parent)
+        {
+        }
+
+        public string Text { get; set; }
+    }
+
+    internal sealed class GoUpMenuEntry : TextMenuEntry
+    {
+        public GoUpMenuEntry(MenuEntry parent) : base(parent)
+        {
+            this.Text = "Go back...";
+        }
+    }
+
+    public sealed class CheckboxMenuEntry : TextMenuEntry
+    {
+        public CheckboxMenuEntry(MenuEntry parent) : base(parent)
+        {
+        }
+
         public bool Value { get; set; }
 
         public void Toggle() => Value = !Value;
     }
 
-    public class SimpleNumberEntry : MenuEntry
+    public sealed class SimpleNumberEntry : TextMenuEntry
     {
         public float Value { get; set; }
         public float Step { get; set; }
@@ -63,7 +88,8 @@ namespace PiTung_Bootstrap.Config_menu
                 this.Value -= step;
         }
 
-        public SimpleNumberEntry(float step, float min, float max, float value = 0)
+        public SimpleNumberEntry(MenuEntry parent, float step, float min, float max, float value = 0)
+            : base(parent)
         {
             this.Value = value;
             this.Step = step;
@@ -73,15 +99,15 @@ namespace PiTung_Bootstrap.Config_menu
             this.Maximum = max;
         }
 
-        public SimpleNumberEntry(float step, float bigStep, float smallStep, float min, float max, float value = 0)
-            : this(step, min, max, value)
+        public SimpleNumberEntry(MenuEntry parent, float step, float bigStep, float smallStep, float min, float max, float value = 0)
+            : this(parent, step, min, max, value)
         {
             this.BigStep = bigStep;
             this.SmallStep = smallStep;
         }
     }
 
-    public class NumericRangeEntry : MenuEntry
+    public sealed class CustomNumericEntry : TextMenuEntry
     {
         public delegate void ChangeOneStepDelegate(ref float value);
         private ChangeOneStepDelegate IncrementMethod, DecrementMethod;
@@ -93,15 +119,17 @@ namespace PiTung_Bootstrap.Config_menu
 
         public void Decrement() => this.DecrementMethod(ref _Value);
 
-        public NumericRangeEntry(float step, float min, float max)
-        {
-            this.IncrementMethod = (ref float o) => o += o < max ? step : 0;
-            this.DecrementMethod = (ref float o) => o -= o > min ? step : 0;
-        }
-        public NumericRangeEntry(ChangeOneStepDelegate increment, ChangeOneStepDelegate decrement)
+        public CustomNumericEntry(MenuEntry parent, ChangeOneStepDelegate increment, ChangeOneStepDelegate decrement)
+            : base(parent)
         {
             this.IncrementMethod = increment;
             this.DecrementMethod = decrement;
+        }
+        public CustomNumericEntry(MenuEntry parent, float step, float min, float max)
+            : base(parent)
+        {
+            this.IncrementMethod = (ref float o) => o += o < max ? step : 0;
+            this.DecrementMethod = (ref float o) => o -= o > min ? step : 0;
         }
     }
 }

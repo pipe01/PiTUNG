@@ -65,6 +65,8 @@ namespace PiTung_Bootstrap
             {
                 item.OnGUI();
             }
+
+            Config_menu.ConfigMenu.Instance.Render();
         }
     }
 

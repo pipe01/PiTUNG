@@ -73,7 +73,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetPath)" "C:\Users\Pipe\Downloads\The Ultimate Nerd Game\The Ultimate Nerd Game_Data\Managed\$(TargetFileName)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
