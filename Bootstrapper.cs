@@ -75,13 +75,6 @@ namespace PiTung_Bootstrap
         /// <param name="arg1">The new scene.</param>
         private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
         {
-            ModUtilities.IsOnMainMenu = arg1.name == "main menu";
-
-            // If there already are DummyComponents, skip placing one
-            var dummies = GameObject.FindObjectsOfType(typeof(DummyComponent));
-            if (dummies.Length > 0)
-                return;
-
             var objs = arg1.GetRootGameObjects();
             
             //Search for a camera. If we find one, check if it has already got a DummyComponent.
@@ -100,6 +93,9 @@ namespace PiTung_Bootstrap
                     break;
                 }
             }
+
+            //If the scene's name is "main menu", we may might possibly probably be in the main menu.
+            ModUtilities.IsOnMainMenu = arg1.name == "main menu";
         }
     }
 }
