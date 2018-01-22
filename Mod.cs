@@ -45,26 +45,26 @@ namespace PiTung_Bootstrap
         public abstract Version ModVersion { get; }
 
         /// <summary>
-        /// The version of PiTUNG this mod is using.
+        /// The version of PiTUNG this mod is using. Must include up to the revision number.
         /// </summary>
         public abstract Version FrameworkVersion { get; }
-
-
+        
         /// <summary>
         /// If false, the mod will be loaded even when being loaded in a different framework version.
         /// </summary>
-        public bool RequireFrameworkVersion { get; } = true;
-        
-        /// <summary>
-        /// The mod's full name. Format: {Author}'s {Name} v{ModVersion}
-        /// </summary>
-        public string FullName => $"{Author}'s {Name} v{ModVersion}";
-
+        public virtual bool RequireFrameworkVersion { get; } = true;
 
         /// <summary>
         /// The keys the mod will be notified about. You can alternatively use the <see cref="Mod.SubscribeToKey(KeyCode)"/> and <see cref="Mod.SubscribeToKeys(KeyCode[])"/> methods.
         /// </summary>
         protected virtual KeyCode[] ModKeys { get; } = null;
+
+
+        /// <summary>
+        /// The mod's full name. Format: {Author}'s {Name} (v{ModVersion})
+        /// </summary>
+        public string FullName => $"{Author}'s {Name} (v{ModVersion})";
+
 
         /// <summary>
         /// Executed before the mod's patches are applied. Use this to initialize any variables you need.

@@ -30,7 +30,7 @@ namespace PiTung_Bootstrap
 
             foreach (var mod in ModLoader.GetMods())
             {
-                string modStr = $"Mod \"{mod.FullName}\"";
+                string modStr = $"{mod.FullName}";
 
                 if (mod.ModAssembly == null)
                 {
@@ -38,7 +38,8 @@ namespace PiTung_Bootstrap
                     continue;
                 }
 
-                if (mod.FrameworkVersion != PiTung.FrameworkVersion)
+                
+                if (mod.FrameworkVersion.CompareTo(PiTung.FrameworkVersion) != 0)
                 {
                     if (mod.RequireFrameworkVersion)
                     {
