@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+#pragma warning disable RCS1102 // Make class static.
+#pragma warning disable RCS1213 // Remove unused member declaration.
+#pragma warning disable RCS1018 // Add default access modifier.
+#pragma warning disable RCS1037 // Add default access modifier.
+
 namespace PiTung_Bootstrap
 {
     [HarmonyPatch(typeof(DummyComponent), "Update")]

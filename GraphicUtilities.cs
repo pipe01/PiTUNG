@@ -17,6 +17,11 @@ namespace PiTung_Bootstrap
             GuiPatch.ElementsToBeDrawn.Add(new UiLabel(str, position, color));
         }
 
+        /// <summary>
+        /// Fills an <paramref name="area"/> on screen with color.
+        /// </summary>
+        /// <param name="area"></param>
+        /// <param name="color"></param>
         public void DrawRect(Rect area, Color color)
         {
             GuiPatch.ElementsToBeDrawn.Add(new UiRect(area, color));

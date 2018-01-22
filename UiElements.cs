@@ -10,11 +10,11 @@ namespace PiTung_Bootstrap
 
     internal struct UiLabel : IUiElement
     {
-        private static Dictionary<Color, GUIStyle> ColorStyles = new Dictionary<Color, GUIStyle>();
+        private static readonly Dictionary<Color, GUIStyle> ColorStyles = new Dictionary<Color, GUIStyle>();
 
-        public string Text { get; private set; }
-        public Vector2 Position { get; private set; }
-        public Color Color { get; private set; }
+        public string Text { get; }
+        public Vector2 Position { get; }
+        public Color Color { get; }
 
         public UiLabel(string text, Vector2 position, Color color)
         {
@@ -47,27 +47,34 @@ namespace PiTung_Bootstrap
 
     internal struct UiRect : IUiElement
     {
-        public Rect Area { get; private set; }
+        private static readonly IDictionary<Color, GUIStyle> ColorStyles = new Dictionary<Color, GUIStyle>();
 
-        private GUIStyle style;
+        public Rect Area { get; }
+
+        private readonly GUIStyle Style;
 
         public UiRect(Rect area, Color color)
         {
             this.Area = area;
 
-            Texture2D bg = new Texture2D(1, 1);
-            bg.SetPixel(0, 0, color);
-            bg.Apply();
-
-            this.style = new GUIStyle()
+            if (!ColorStyles.ContainsKey(color))
             {
-                normal = new GUIStyleState { background = bg }
-            };
+                Texture2D bg = new Texture2D(1, 1);
+                bg.SetPixel(0, 0, color);
+                bg.Apply();
+
+                ColorStyles[color] = new GUIStyle()
+                {
+                    normal = new GUIStyleState { background = bg }
+                };
+            }
+
+            this.Style = ColorStyles[color];
         }
 
         public void Draw()
         {
-            GUI.Box(this.Area, "", this.style);
+            GUI.Box(this.Area, "", this.Style);
         }
     }
 }
