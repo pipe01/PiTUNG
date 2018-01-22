@@ -8,8 +8,7 @@ namespace PiTung_Bootstrap.Config_menu
 {
     public class ConfigMenu
     {
-        private static ConfigMenu _Instance = new ConfigMenu();
-        public static ConfigMenu Instance => _Instance;
+        public static ConfigMenu Instance { get; } = new ConfigMenu();
 
         private static Texture2D BackTexture;
 
@@ -17,8 +16,7 @@ namespace PiTung_Bootstrap.Config_menu
         public Vector2 Position = new Vector2(5, 50);
         public Vector2 Size = new Vector2(200, 200);
 
-        private GUIStyle DefaultStyle;
-        private Dictionary<Color, Texture2D> ColorTextures = new Dictionary<Color, Texture2D>();
+        private readonly GUIStyle DefaultStyle;
 
         private MenuEntry CurrentParent = null;
         private int HoverIndex = 0;
@@ -36,7 +34,7 @@ namespace PiTung_Bootstrap.Config_menu
                 return copy.ToArray();
             }
         }
-
+        
         private ConfigMenu()
         {
             BackTexture = RoundedRectangle((int)Size.x, (int)Size.y, 7, new Color(0, 0, 0, .7f));
@@ -109,7 +107,7 @@ namespace PiTung_Bootstrap.Config_menu
 
             var num = hover as SimpleNumberEntry;
 
-            if (key == KeyCode.LeftArrow)
+            if (key == KeyCode.LeftArrow && hover is SimpleNumberEntry test)
             {
                 if (num != null)
                 {
@@ -141,7 +139,8 @@ namespace PiTung_Bootstrap.Config_menu
                 margin = new RectOffset(5, 0, 0, 0)
             };
 
-            float width = 200, height = 200;
+            float width = Size.x, height = Size.y;
+
             GUILayout.BeginArea(new Rect(Position, new Vector2(width, height)), BackTexture);
             
             GUILayout.Label("<size=15>PiTung Configuration</size>", new GUIStyle(DefaultStyle) { alignment = TextAnchor.MiddleCenter });
@@ -167,7 +166,7 @@ namespace PiTung_Bootstrap.Config_menu
                         if (num.Value > num.Minimum)
                             valueString = "< " + valueString;
                         if (num.Value < num.Maximum)
-                            valueString = valueString + " >";
+                            valueString += " >";
                     }
 
                     DrawKeyValue((hover ? "> " : "") + num.Text, valueString, width, hover, entryStyle);
