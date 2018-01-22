@@ -20,7 +20,7 @@ namespace PiTung_Bootstrap_Tests
         {
             var cls = new TestClass();
 
-            ModUtilities.SetFieldValue(cls, "PublicField", "goodbye", false);
+            ModUtilities.SetFieldValue(cls, "PublicField", "goodbye");
 
             Assert.AreEqual("goodbye", cls.PublicField);
         }
@@ -30,7 +30,7 @@ namespace PiTung_Bootstrap_Tests
         {
             var cls = new TestClass();
 
-            ModUtilities.SetFieldValue(cls, "PrivateField", 21, true);
+            ModUtilities.SetFieldValue(cls, "PrivateField", 21);
 
             Assert.AreEqual(21, cls.GetPrivateField());
         }
@@ -40,7 +40,7 @@ namespace PiTung_Bootstrap_Tests
         {
             var cls = new TestClass();
 
-            Assert.AreEqual(cls.PublicField, ModUtilities.GetFieldValue<string>(cls, "PublicField", false));
+            Assert.AreEqual(cls.PublicField, ModUtilities.GetFieldValue<string>(cls, "PublicField"));
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace PiTung_Bootstrap_Tests
         {
             var cls = new TestClass();
 
-            Assert.AreEqual(cls.GetPrivateField(), ModUtilities.GetFieldValue<int>(cls, "PrivateField", true));
+            Assert.AreEqual(cls.GetPrivateField(), ModUtilities.GetFieldValue<int>(cls, "PrivateField"));
         }
     }
 }
