@@ -79,8 +79,7 @@ namespace PiTung_Bootstrap.Config_menu
         private void KeyDown(KeyCode key)
         {
             MenuEntry hover = CurrentEntries[HoverIndex];
-            SimpleNumberEntry num = hover as SimpleNumberEntry;
-            CheckboxMenuEntry chk = hover as CheckboxMenuEntry;
+            var chk = hover as CheckboxMenuEntry;
 
             if (key == KeyCode.UpArrow || key == KeyCode.DownArrow)
             {
@@ -108,6 +107,8 @@ namespace PiTung_Bootstrap.Config_menu
                 }
             }
 
+            var num = hover as SimpleNumberEntry;
+
             if (key == KeyCode.LeftArrow)
             {
                 if (num != null)
@@ -130,20 +131,6 @@ namespace PiTung_Bootstrap.Config_menu
                     chk.Toggle();
                 }
             }
-        }
-        
-        private Texture2D ColorTexture(Color color)
-        {
-            if (!ColorTextures.ContainsKey(color))
-            {
-                Texture2D tex = new Texture2D(1, 1, TextureFormat.ARGB32, false);
-                tex.SetPixels(new[] { color });
-                tex.Apply();
-
-                ColorTextures[color] = tex;
-            }
-
-            return ColorTextures[color];
         }
 
         public void Render()
