@@ -1,8 +1,4 @@
 ﻿using Harmony;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,13 +22,11 @@ namespace PiTung_Bootstrap
             ModCount = 0;
 
             MDebug.WriteLine("Booting up...");
-            
+
             var harmony = HarmonyInstance.Create("me.pipe01.pitung");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
-            
-            var mods = ModLoader.GetMods();
 
-            foreach (var mod in mods)
+            foreach (var mod in ModLoader.GetMods())
             {
                 if (mod.ModAssembly == null)
                 {
@@ -56,13 +50,12 @@ namespace PiTung_Bootstrap
                     }
                 }
 
-
                 mod.AfterPatch();
-                
+
                 ModCount++;
                 MDebug.WriteLine($"'{mod.ModName}' loaded successfully.");
             }
-            
+
             SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
 
             MDebug.WriteLine("Patched successfully!");
@@ -76,7 +69,7 @@ namespace PiTung_Bootstrap
         private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
         {
             var objs = arg1.GetRootGameObjects();
-            
+
             //Search for a camera. If we find one, check if it has already got a DummyComponent.
             //If it doesn't, add one.
             foreach (var obj in objs)
@@ -89,7 +82,7 @@ namespace PiTung_Bootstrap
 
                     if (obj.GetComponent<DummyComponent>() == null)
                         camera.gameObject.AddComponent<DummyComponent>();
-                    
+
                     break;
                 }
             }

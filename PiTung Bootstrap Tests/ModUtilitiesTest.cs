@@ -12,7 +12,9 @@ namespace PiTung_Bootstrap_Tests
         private class TestClass
         {
             public string PublicField = "hello";
+#pragma warning disable RCS1169 // Mark field as read-only.
             private int PrivateField = 42;
+#pragma warning restore RCS1169 // Mark field as read-only.
 
             public int GetPrivateField() => PrivateField;
         }

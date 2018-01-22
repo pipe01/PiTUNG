@@ -23,7 +23,7 @@ namespace PiTung_Bootstrap
                 yield return GetMod(item);
             }
         }
-        
+
         /// <summary>
         /// Loads a mod contained in the DLL pointed by <paramref name="modPath"/>.
         /// </summary>

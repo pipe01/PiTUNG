@@ -1,24 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace PiTung_Bootstrap
 {
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
     public class PatchAttribute : Attribute
     {
-        readonly Type containerType;
-        readonly string methodName;
-        
         internal PatchAttribute(Type containerType, string methodName)
         {
-            this.containerType = containerType;
-            this.methodName = methodName;
+            this.ContainerType = containerType;
+            this.MethodName = methodName;
         }
 
-        public Type ContainerType => containerType;
-        public string MethodName => methodName;
+        public Type ContainerType { get; }
+        public string MethodName { get; }
     }
 
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]

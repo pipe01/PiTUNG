@@ -35,7 +35,7 @@ namespace PiTung_Bootstrap
         /// </summary>
         /// <param name="line">The line to be written.</param>
         public static void Log(string line) => MDebug.WriteLine(line, 0, new object());
-        
+
         private static FieldInfo GetField(Type type, string fieldName)
         {
             var key = new KeyValuePair<Type, string>(type, fieldName);
@@ -43,7 +43,7 @@ namespace PiTung_Bootstrap
             if (!FieldCache.ContainsKey(key))
             {
                 var field = type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
-                
+
                 if (field == null)
                     throw new ArgumentException($"Field {fieldName} not found in object of type {type.Name}.");
 

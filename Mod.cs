@@ -1,5 +1,4 @@
-﻿using Harmony;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
@@ -29,7 +28,7 @@ namespace PiTung_Bootstrap
         /// The absolute path to the mod's DLL file.
         /// </summary>
         public string FullPath { get; internal set; }
-        
+
         public abstract string ModName { get; }
         public abstract string ModAuthor { get; }
         public abstract Version ModVersion { get; }
@@ -107,7 +106,7 @@ namespace PiTung_Bootstrap
                     bool prefix = a is PrefixAttribute;
                     bool postfix = a is PostfixAttribute;
                     PatchAttribute patch = a as PatchAttribute;
-                    
+
                     if (!prefix && !postfix)
                         continue;
 

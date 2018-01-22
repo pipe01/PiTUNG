@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace PiTung_Bootstrap.Config_menu
@@ -88,7 +85,7 @@ namespace PiTung_Bootstrap.Config_menu
 
         private float _Value = 0;
         public float Value => _Value;
-        
+
         public void Increment() => this.IncrementMethod(ref _Value);
 
         public void Decrement() => this.DecrementMethod(ref _Value);
