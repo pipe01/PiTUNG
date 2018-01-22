@@ -6,6 +6,8 @@ namespace PiTung_Bootstrap
     {
         internal GraphicUtilities() { }
 
+        private static ObjImporter _ObjImporter = new ObjImporter();
+
         /// <summary>
         /// Draws <paramref name="str"/> on screen at <paramref name="position"/> with color <paramref name="color"/>
         /// </summary>
@@ -25,6 +27,16 @@ namespace PiTung_Bootstrap
         public void DrawRect(Rect area, Color color)
         {
             GuiPatch.ElementsToBeDrawn.Add(new UiRect(area, color));
+        }
+
+        /// <summary>
+        /// Imports a mesh from a .obj file.
+        /// </summary>
+        /// <param name="filePath">The obj file's absolute path.</param>
+        /// <returns>The obj file transformed into a mesh.</returns>
+        public Mesh ImportMeshFromFile(string filePath)
+        {
+            return _ObjImporter.ImportFile(filePath);
         }
     }
 }
