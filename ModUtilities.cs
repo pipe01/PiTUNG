@@ -16,7 +16,7 @@ namespace PiTung_Bootstrap
         /// </summary>
         public static InputUtilities Input { get; } = new InputUtilities();
 
-        private static IDictionary<KeyValuePair<Type, string>, FieldInfo> FieldCache = new Dictionary<KeyValuePair<Type, string>, FieldInfo>();
+        private static readonly IDictionary<KeyValuePair<Type, string>, FieldInfo> FieldCache = new Dictionary<KeyValuePair<Type, string>, FieldInfo>();
 
         /// <summary>
         /// True if we are one the main menu.
@@ -44,10 +44,8 @@ namespace PiTung_Bootstrap
             {
                 var field = type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
 
-                if (field == null)
+                FieldCache[key] = field ??
                     throw new ArgumentException($"Field {fieldName} not found in object of type {type.Name}.");
-
-                FieldCache[key] = field;
             }
 
             return FieldCache[key];
