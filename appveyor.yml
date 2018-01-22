@@ -7,6 +7,10 @@ cache: c:\projects\cache
 artifacts:
   - path: bin/Debug/PiTung Bootstrap.dll
     name: PiTung Bootstrap
+test:
+  assemblies:
+    only:
+      - PiTung Bootstrap Tests.dll
 before_build:
 - ps: >-
     cd ..
