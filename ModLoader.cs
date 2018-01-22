@@ -20,6 +20,9 @@ namespace PiTung_Bootstrap
 
             foreach (var item in Directory.GetFiles(ModsDirectory, "*.dll"))
             {
+                if (Path.GetFileNameWithoutExtension(item).EndsWith("-disabled"))
+                    continue;
+
                 yield return GetMod(item);
             }
         }
