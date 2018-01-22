@@ -67,7 +67,9 @@
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
     <Compile Include="ModUtilities.cs" />
+    <Compile Include="ObjImporter.cs" />
     <Compile Include="PatchAttribute.cs" />
+    <Compile Include="PiTung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UiElements.cs" />
   </ItemGroup>

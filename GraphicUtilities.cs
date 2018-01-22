@@ -6,7 +6,7 @@ namespace PiTung_Bootstrap
     {
         internal GraphicUtilities() { }
 
-        private static ObjImporter _ObjImporter = new ObjImporter();
+        private static readonly ObjImporter _ObjImporter = new ObjImporter();
 
         /// <summary>
         /// Draws <paramref name="str"/> on screen at <paramref name="position"/> with color <paramref name="color"/>
