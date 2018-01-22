@@ -145,7 +145,7 @@ namespace PiTung_Bootstrap
                         throw new ArgumentException($"Can't find method {patch.MethodName} in {patch.ContainerType.Name}");
                     }
 
-                    yield return new MethodPatch(baseMethod, item, prefix, postfix);
+                    yield return new MethodPatch(baseMethod, item, prefix);
                     break;
                 }
             }

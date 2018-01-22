@@ -47,7 +47,7 @@ namespace PiTung_Bootstrap
                     throw new Exception($"Method '{originalMethodName}' not found in type '{typeof(TClass).Name}'");
                 }
 
-                yield return new MethodPatch(originalMethod, item, prefix, postfix);
+                yield return new MethodPatch(originalMethod, item, prefix);
             }
         }
     }
