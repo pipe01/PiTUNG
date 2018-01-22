@@ -9,7 +9,7 @@ namespace PiTung_Bootstrap
     {
         internal static List<Mod> AliveMods = new List<Mod>();
 
-        public Mod()
+        protected Mod()
         {
             AliveMods.Add(this);
 
@@ -32,6 +32,7 @@ namespace PiTung_Bootstrap
         public abstract string ModName { get; }
         public abstract string ModAuthor { get; }
         public abstract Version ModVersion { get; }
+        public abstract Version FrameworkVersion { get; }
 
         /// <summary>
         /// The keys the mod will be notified about. You can alternatively use the <see cref="Mod.SubscribeToKey(KeyCode)"/> and <see cref="Mod.SubscribeToKeys(KeyCode[])"/> methods.

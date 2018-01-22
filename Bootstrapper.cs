@@ -21,6 +21,7 @@ namespace PiTung_Bootstrap
             Patched = true;
             ModCount = 0;
 
+            MDebug.WriteLine("PiTUNG Framework version {0}", 0, PiTung.FrameworkVersion);
             MDebug.WriteLine("Booting up...");
 
             var harmony = HarmonyInstance.Create("me.pipe01.pitung");
