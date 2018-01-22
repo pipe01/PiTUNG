@@ -1,27 +1,23 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+using System;
 using System.Reflection;
-using System.Text;
-using UnityEngine;
 
 namespace PiTung_Bootstrap
 {
     public static class ModUtilities
     {
-        private static GraphicUtilities _Graphics = new GraphicUtilities();
         /// <summary>
         /// Graphical utilities.
         /// </summary>
-        public static GraphicUtilities Graphics => _Graphics;
+        public static GraphicUtilities Graphics { get; } = new GraphicUtilities();
 
-        private static InputUtilities _Input = new InputUtilities();
         /// <summary>
         /// Input-related utilities.
         /// </summary>
-        public static InputUtilities Input => _Input;
+        public static InputUtilities Input { get; } = new InputUtilities();
 
+        private static IDictionary<KeyValuePair<Type, string>, FieldInfo> FieldCache = new Dictionary<KeyValuePair<Type, string>, FieldInfo>();
 
         /// <summary>
         /// True if we are one the main menu.
@@ -43,10 +39,17 @@ namespace PiTung_Bootstrap
         
         private static FieldInfo GetField(Type type, string fieldName, bool isPrivate)
         {
-            if (isPrivate)
-                return type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
-            else
-                return type.GetField(fieldName);
+            var key = new KeyValuePair<Type, string>(type, fieldName);
+
+            if (!FieldCache.ContainsKey(key))
+            {
+                if (isPrivate)
+                    FieldCache[key] = type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+                else
+                    FieldCache[key] = type.GetField(fieldName);
+            }
+
+            return FieldCache[key];
         }
 
         /// <summary>
