@@ -1,4 +1,6 @@
-﻿using PiTung_Bootstrap;
+﻿using System.IO;
+using System.Diagnostics;
+using PiTung_Bootstrap;
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
