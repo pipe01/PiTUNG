@@ -51,12 +51,4 @@ namespace PiTung_Bootstrap
             }
         }
     }
-
-    public class Test : PatchClass<DummyComponent>
-    {
-        static void AwakeasdPrefix()
-        {
-
-        }
-    }
 }
