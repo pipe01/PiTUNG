@@ -29,10 +29,37 @@ namespace PiTung_Bootstrap
         /// </summary>
         public string FullPath { get; internal set; }
 
-        public abstract string ModName { get; }
-        public abstract string ModAuthor { get; }
+        /// <summary>
+        /// The mod's name.
+        /// </summary>
+        public abstract string Name { get; }
+
+        /// <summary>
+        /// Your name.
+        /// </summary>
+        public abstract string Author { get; }
+
+        /// <summary>
+        /// The mod's version.
+        /// </summary>
         public abstract Version ModVersion { get; }
+
+        /// <summary>
+        /// The version of PiTUNG this mod is using.
+        /// </summary>
         public abstract Version FrameworkVersion { get; }
+
+
+        /// <summary>
+        /// If false, the mod will be loaded even when being loaded in a different framework version.
+        /// </summary>
+        public bool RequireFrameworkVersion { get; } = true;
+        
+        /// <summary>
+        /// The mod's full name. Format: {Author}'s {Name} v{ModVersion}
+        /// </summary>
+        public string FullName => $"{Author}'s {Name} v{ModVersion}";
+
 
         /// <summary>
         /// The keys the mod will be notified about. You can alternatively use the <see cref="Mod.SubscribeToKey(KeyCode)"/> and <see cref="Mod.SubscribeToKeys(KeyCode[])"/> methods.

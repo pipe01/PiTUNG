@@ -23,7 +23,20 @@ namespace PiTung_Bootstrap
                 if (Path.GetFileNameWithoutExtension(item).EndsWith("-disabled"))
                     continue;
 
-                yield return GetMod(item);
+                Mod mod = null;
+
+                try
+                {
+                    mod = GetMod(item);
+                }
+                catch (ReflectionTypeLoadException ex)
+                {
+                    MDebug.WriteLine($"[ERROR] Mod {Path.GetFileName(item)} failed to load.");
+                    MDebug.WriteLine("More details: " + ex.Message, 2);
+                }
+
+                if (mod != null)
+                    yield return mod;
             }
         }
 
@@ -34,8 +47,17 @@ namespace PiTung_Bootstrap
         /// <returns>A mod.</returns>
         private static Mod GetMod(string modPath)
         {
-            var ass = Assembly.LoadFrom(modPath);
+            Assembly ass;
 
+            try
+            {
+                ass = Assembly.LoadFrom(modPath);
+            }
+            catch (ReflectionTypeLoadException)
+            {
+                throw;
+            }
+            
             Mod mod = null;
 
             foreach (var item in ass.GetExportedTypes())

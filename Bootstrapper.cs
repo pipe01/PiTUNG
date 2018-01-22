@@ -1,4 +1,5 @@
 ﻿using Harmony;
+using System;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,44 +23,88 @@ namespace PiTung_Bootstrap
             ModCount = 0;
 
             MDebug.WriteLine("PiTUNG Framework version {0}", 0, PiTung.FrameworkVersion);
-            MDebug.WriteLine("Booting up...");
+            MDebug.WriteLine("-------------Patching-------------");
 
             var harmony = HarmonyInstance.Create("me.pipe01.pitung");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
             foreach (var mod in ModLoader.GetMods())
             {
+                string modStr = $"Mod \"{mod.FullName}\"";
+
                 if (mod.ModAssembly == null)
                 {
-                    MDebug.WriteLine($"[ERROR] Mod '{mod.ModName}' failed to load: couldn't load assembly.");
+                    MDebug.WriteLine($"[ERROR] {modStr} failed to load: couldn't load assembly.");
                     continue;
                 }
 
-                mod.BeforePatch();
-
-                harmony.PatchAll(mod.ModAssembly);
-
-                foreach (var patch in mod.GetMethodPatches())
+                if (mod.FrameworkVersion != PiTung.FrameworkVersion)
                 {
-                    if (patch.Prefix)
+                    if (mod.RequireFrameworkVersion)
                     {
-                        harmony.Patch(patch.BaseMethod, new HarmonyMethod(patch.PatchMethod), null);
+                        MDebug.WriteLine($"[ERROR] {modStr} failed to load: wrong PiTUNG version.");
+                        continue;
                     }
-                    else if (patch.Postfix)
+                    else
                     {
-                        harmony.Patch(patch.BaseMethod, null, new HarmonyMethod(patch.PatchMethod));
+                        MDebug.WriteLine($"[WARNING] {modStr} may not work properly: wrong PiTUNG version");
                     }
                 }
 
-                mod.AfterPatch();
+                try
+                {
+                    mod.BeforePatch();
+                }
+                catch (Exception ex)
+                {
+                    MDebug.WriteLine($"[ERROR] {modStr} failed to load: error while executing before-patch method.");
+                    MDebug.WriteLine("More details: " + ex.Message, 1);
+
+                    continue;
+                }
+
+                try
+                {
+                    harmony.PatchAll(mod.ModAssembly);
+
+                    foreach (var patch in mod.GetMethodPatches())
+                    {
+                        if (patch.Prefix)
+                        {
+                            harmony.Patch(patch.BaseMethod, new HarmonyMethod(patch.PatchMethod), null);
+                        }
+                        else if (patch.Postfix)
+                        {
+                            harmony.Patch(patch.BaseMethod, null, new HarmonyMethod(patch.PatchMethod));
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MDebug.WriteLine($"[ERROR] {modStr} failed to load: error while patching methods.");
+                    MDebug.WriteLine("More details: " + ex.Message, 1);
+                    continue;
+                }
+
+                try
+                {
+                    mod.AfterPatch();
+                }
+                catch (Exception ex)
+                {
+                    MDebug.WriteLine($"[ERROR] {modStr} failed to load: error while executing after-patch method.");
+                    MDebug.WriteLine("More details: " + ex.Message, 1);
+
+                    continue;
+                }
 
                 ModCount++;
-                MDebug.WriteLine($"'{mod.ModName}' loaded successfully.");
+                MDebug.WriteLine($"'{mod.FullName}' loaded successfully.");
             }
 
             SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
 
-            MDebug.WriteLine("Patched successfully!");
+            MDebug.WriteLine("----------Done patching!----------");
         }
 
         /// <summary>

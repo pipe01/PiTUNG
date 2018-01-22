@@ -20,8 +20,8 @@ namespace PiTung_Bootstrap_Tests
                 var mod = mods.First();
 
                 Assert.IsNotNull(mod.ModAssembly);
-                Assert.IsNotNull(mod.ModName);
-                Assert.IsNotNull(mod.ModAuthor);
+                Assert.IsNotNull(mod.Name);
+                Assert.IsNotNull(mod.Author);
                 Assert.IsNotNull(mod.ModVersion);
             }
         }
