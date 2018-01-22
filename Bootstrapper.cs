@@ -22,6 +22,11 @@ namespace PiTung_Bootstrap
             Patched = true;
             ModCount = 0;
 
+            foreach (var item in new Test().GetMethodPatches())
+            {
+                MDebug.WriteLine(item.BaseMethod.Name);
+            }
+
             MDebug.WriteLine("PiTUNG Framework version {0}", 0, PiTung.FrameworkVersion);
             MDebug.WriteLine("-------------Patching-------------");
 
