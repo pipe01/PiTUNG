@@ -8,14 +8,13 @@ using UnityEngine;
 
 namespace PiTung_Bootstrap.Config_menu
 {
-    public class MenuEntry
+    public abstract class MenuEntry
     {
         public MenuEntry Parent { get; internal set; } = null;
-        public ObservableList<MenuEntry> Children { get; set; } = new ObservableList<MenuEntry>();
+        protected internal ObservableList<MenuEntry> Children { get; set; } = new ObservableList<MenuEntry>();
 
         public MenuEntry()
         {
-            //this.Children.CollectionChanged += Children_CollectionChanged;
             this.Children.ItemAdded += Children_ItemAdded;
         }
 
