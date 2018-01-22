@@ -22,6 +22,27 @@ namespace PiTung_Bootstrap.Config_menu
         {
             item.Parent = this;
         }
+
+        public MenuEntry AddChild(MenuEntry child)
+        {
+            this.Children.Add(child);
+            return child;
+        }
+
+        public MenuEntry AddChild<T>() where T : MenuEntry
+        {
+            var inst = Activator.CreateInstance<T>();
+            AddChild(inst);
+            return inst;
+        }
+
+        public void AddChildren(params MenuEntry[] children)
+        {
+            foreach (var item in children)
+            {
+                AddChild(item);
+            }
+        }
     }
 
     public class TextMenuEntry : MenuEntry

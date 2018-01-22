@@ -45,21 +45,21 @@ namespace PiTung_Bootstrap.Config_menu
             DefaultStyle.normal.textColor = new Color(.75f, .75f, .75f);
             DefaultStyle.richText = true;
 
-            Entries = new List<MenuEntry>()
-            {
-                new TextMenuEntry
-                {
-                    Text = "hola",
-                    Children = new ObservableList<MenuEntry>()
-                    {
-                        new TextMenuEntry { Text = "child" }
-                    }
-                },
-                new CheckboxMenuEntry
-                { Text = "que" },
-                new SimpleNumberEntry(1, 0, 10, 5)
-                { Text = "pasa" }
-            };
+            //Entries = new List<MenuEntry>()
+            //{
+            //    new TextMenuEntry
+            //    {
+            //        Text = "hola",
+            //        Children = new ObservableList<MenuEntry>()
+            //        {
+            //            new TextMenuEntry { Text = "child" }
+            //        }
+            //    },
+            //    new CheckboxMenuEntry
+            //    { Text = "que" },
+            //    new SimpleNumberEntry(1, 0, 10, 5)
+            //    { Text = "pasa" }
+            //};
             
             KeyCode[] keys = new[]
             {
