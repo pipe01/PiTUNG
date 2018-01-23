@@ -161,6 +161,8 @@ namespace PiTung_Bootstrap.Console
         /// </summary>
         internal static float ShowAnimationTime = .3f;
 
+
+
         /// <summary>
         /// Call this function before doing anything with the console
         /// </summary>
@@ -172,7 +174,7 @@ namespace PiTung_Bootstrap.Console
             VarRegistry = new Dictionary<string, string>();
             Style = new GUIStyle
             {
-                font = Font.CreateDynamicFontFromOSFont("Lucida Console", 16),
+                font = Font.CreateDynamicFontFromOSFont("Consolas", 16),
                 richText = true
             };
 
