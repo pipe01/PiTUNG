@@ -14,6 +14,7 @@ namespace PiTung_Bootstrap
     {
         static void Prefix()
         {
+            Console.Update();
             foreach (var item in Mod.AliveMods)
             {
                 item.Update();
@@ -70,6 +71,7 @@ namespace PiTung_Bootstrap
             {
                 item.OnGUI();
             }
+            Console.Draw(); // Drawn last so that it stays on top
         }
     }
 

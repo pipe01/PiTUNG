@@ -1,11 +1,10 @@
-﻿using PiTung_Bootstrap;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Polyglot
+namespace PiTung_Bootstrap
 {
     /// <summary>
     /// Type of a log (should be self-explanatory)

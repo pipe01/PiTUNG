@@ -106,6 +106,8 @@ namespace PiTung_Bootstrap
             SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
 
             MDebug.WriteLine("----------Done patching!----------");
+
+            Console.Init();
         }
 
         /// <summary>
