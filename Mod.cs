@@ -47,7 +47,7 @@ namespace PiTung_Bootstrap
         /// <summary>
         /// The version of PiTUNG this mod is using. Must include up to the revision number.
         /// </summary>
-        public abstract Version FrameworkVersion { get; }
+        public virtual Version FrameworkVersion { get; } = PiTung.FrameworkVersion;
         
         /// <summary>
         /// If false, the mod will be loaded even when being loaded in a different framework version.

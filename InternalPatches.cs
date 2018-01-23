@@ -82,9 +82,9 @@ namespace PiTung_Bootstrap
     {
         static void Prefix(DummyComponent __instance)
         {
-            if (UnityEngine.Object.FindObjectsOfType(__instance.GetType()).Length > 1)
+            if (Object.FindObjectsOfType(__instance.GetType()).Length > 1)
             {
-                UnityEngine.Object.Destroy(__instance);
+                Object.Destroy(__instance);
             }
         }
     }
