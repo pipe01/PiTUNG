@@ -117,7 +117,7 @@ namespace PiTung_Bootstrap
         private static DropOutStack<LogEntry> cmdLog;
 
         /// <summary>
-        /// Command history for retreival with up and down arrows
+        /// Command history for retrieval with up and down arrows
         /// </summary>
         private static DropOutStack<String> history;
 
@@ -146,10 +146,14 @@ namespace PiTung_Bootstrap
         /// </summary>
         private static Dictionary<string, string> varRegistry;
 
+        private static float ShownAtTime = 0;
+
         /// <summary>
         /// Is the console currently shown?
         /// </summary>
         public static bool show = false;
+
+        public static float ShowAnimationTime = .3f;
 
         /// <summary>
         /// Call this function before doing anything with the console
@@ -162,7 +166,8 @@ namespace PiTung_Bootstrap
             varRegistry = new Dictionary<string, string>();
             style = new GUIStyle
             {
-                font = Font.CreateDynamicFontFromOSFont("Lucida Console", 16)
+                font = Font.CreateDynamicFontFromOSFont("Lucida Console", 16),
+                richText = true
             };
 
             RegisterCommand(new Command_help());
@@ -181,6 +186,16 @@ namespace PiTung_Bootstrap
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 show = !show;
+
+                float off = 0;
+
+                if (Time.time - ShownAtTime < ShowAnimationTime)
+                {
+                    off -= ShowAnimationTime - (Time.time - ShownAtTime);
+                }
+
+                ShownAtTime = Time.time + off;
+
                 if(SceneManager.GetActiveScene().name == "gameplay")
                 {
                     if (show)
@@ -223,29 +238,47 @@ namespace PiTung_Bootstrap
         /// </summary>
         public static void Draw()
         {
-            if (!show)
+            if (!show && Time.time - ShownAtTime > ShowAnimationTime)
+            {
                 return;
+            }
 
             Color background = Color.black;
             background.a = 0.5f;
+
             int height = Screen.height / 2;
             int width = Screen.width;
             int linecount = height / lineHeight;
+
+            float yOffset = 0;
+
+            if (Time.time - ShownAtTime < ShowAnimationTime)
+            {
+                int a = show ? height : 0;
+                int b = show ? 0 : height;
+
+                yOffset = -EaseOutQuad(a, b, (Time.time - ShownAtTime) / ShowAnimationTime);
+            }
+
             // Background rectangle
-            ModUtilities.Graphics.DrawRect(new Rect(0, 0, width, linecount * lineHeight + 5), background);
+            ModUtilities.Graphics.DrawRect(new Rect(0, yOffset, width, height + 5), background);
+
             for(int line = 0; line < Math.Min(linecount - 1, cmdLog.Count); line++)
             {
                 LogEntry entry = cmdLog.Get(line);
                 int y = (linecount - 2 - line) * lineHeight;
-                DrawText(entry.Message, new Vector2(5, y), entry.GetColor());
+                DrawText(entry.Message, new Vector2(5, y + yOffset), entry.GetColor());
             }
-            int consoleY = (linecount - 1) * lineHeight;
+
+            float consoleY = (linecount - 1) * lineHeight + yOffset;
+
             try
             {
                 DrawText(prompt + currentCmd, new Vector2(5, consoleY), Color.green);
                 float x = Width(prompt) + Width(currentCmd.Substring(0, editLocation));
                 DrawText(cursor, new Vector2(5 + x, consoleY), Color.green);
-            } catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Error($"currentCmd: \"{currentCmd}\"\neditLocation: {editLocation}");
                 Error(e.ToString());
@@ -255,7 +288,7 @@ namespace PiTung_Bootstrap
         }
 
         /// <summary>
-        /// Log a message to the console (can be multiline)
+        /// Log a message to the console (can be multi-line)
         /// </summary>
         /// <param name="type">Type of log <see cref="LogType"/></param>
         /// <param name="msg">Message to log</param>
@@ -414,6 +447,12 @@ namespace PiTung_Bootstrap
             }
         }
 
+        private static float EaseOutQuad(float start, float end, float value)
+        {
+            end -= start;
+            return -end * value * (value - 2) + start;
+        }
+
         private static float Width(string text)
         {
             return style.CalcSize(new GUIContent(text)).x;
@@ -477,7 +516,7 @@ namespace PiTung_Bootstrap
 
             public override void Execute(IEnumerable<string> arguments)
             {
-                throw new NotImplementedException();
+                IGConsole.Log(String.Join(", ", Mod.AliveMods.Select(o => o.Name).ToArray()));
             }
         }
 
