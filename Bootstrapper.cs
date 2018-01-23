@@ -87,6 +87,8 @@ namespace PiTung_Bootstrap
                     continue;
                 }
 
+                IGConsole.Init(); // Making the console available in AfterPatch
+
                 try
                 {
                     mod.AfterPatch();
@@ -106,8 +108,6 @@ namespace PiTung_Bootstrap
             SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
 
             MDebug.WriteLine("----------Done patching!----------");
-
-            IGConsole.Init();
         }
 
         /// <summary>
