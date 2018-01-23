@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Runtime.InteropServices.ComTypes;
+using PiTung_Bootstrap.Console;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -16,8 +19,11 @@ namespace PiTung_Bootstrap.Config_menu
 
         private readonly GUIStyle DefaultStyle;
 
+        private int VisibleEntries => (int)Math.Floor(Size.y / DefaultStyle.CalcSize(new GUIContent("Test")).y) - 1;
+
         private MenuEntry CurrentParent = null;
         private int HoverIndex = 0;
+        private int ItemsOffset = 0;
 
         private MenuEntry[] CurrentEntries
         {
@@ -56,6 +62,30 @@ namespace PiTung_Bootstrap.Config_menu
             //    new SimpleNumberEntry(1, 0, 10, 5)
             //    { Text = "pasa" }
             //};
+
+            int i = 0;
+            Entries = new List<MenuEntry>
+            {
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+                new TextMenuEntry{ Text = "test" + i++ },
+            };
             
             KeyCode[] keys = new[]
             {
@@ -74,6 +104,8 @@ namespace PiTung_Bootstrap.Config_menu
 
         private void KeyDown(KeyCode key)
         {
+            IGConsole.Log(VisibleEntries.ToString());
+
             MenuEntry hover = CurrentEntries[HoverIndex];
             var chk = hover as CheckboxMenuEntry;
 
@@ -127,6 +159,15 @@ namespace PiTung_Bootstrap.Config_menu
                     chk.Toggle();
                 }
             }
+
+            if (HoverIndex - ItemsOffset + 1 > VisibleEntries)
+            {
+                ItemsOffset++;
+            }
+            else if (HoverIndex - ItemsOffset + 1 < VisibleEntries)
+            {
+                ItemsOffset--;
+            }
         }
         
         public void Render()
@@ -144,7 +185,7 @@ namespace PiTung_Bootstrap.Config_menu
             GUILayout.Label("<size=15>PiTung Configuration</size>", new GUIStyle(DefaultStyle) { alignment = TextAnchor.MiddleCenter });
             
             int i = 0;
-            foreach (var item in CurrentEntries)
+            foreach (var item in CurrentEntries.Skip(ItemsOffset))
             {
                 bool drawLabel = true;
                 bool hover = HoverIndex == i;
