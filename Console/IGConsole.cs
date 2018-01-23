@@ -74,7 +74,6 @@ namespace PiTung_Bootstrap.Console
 
     //FIXME: Changing scene to gameplay locks mouse
     //TODO: Add verbosity levels
-    //TODO: Parse string literals as one argument
 
     /// <summary>
     /// In game console
@@ -399,6 +398,7 @@ namespace PiTung_Bootstrap.Console
             if (!CmdParser.TryParseCmdLine(cmd, out verb, out args, out error))
             {
                 Log(LogType.ERROR, "Invalid command: " + error);
+                return;
             }
             
             Command command;
@@ -452,9 +452,13 @@ namespace PiTung_Bootstrap.Console
                 }
                 else if ((c == '\n') || (c == '\r')) // enter/return
                 {
-                    Log(LogType.USERINPUT, "> " + CurrentCmd);
-                    History.Push(CurrentCmd);
-                    ExecuteCommand(CurrentCmd);
+                    if (!string.IsNullOrEmpty(CurrentCmd.Trim()))
+                    {
+                        Log(LogType.USERINPUT, "> " + CurrentCmd);
+                        History.Push(CurrentCmd);
+                        ExecuteCommand(CurrentCmd);
+                    }
+
                     CurrentCmd = "";
                     EditLocation = 0;
                 }
