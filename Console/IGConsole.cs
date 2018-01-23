@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PiTung_Bootstrap
+namespace PiTung_Bootstrap.Console
 {
     /// <summary>
     /// Type of a log (should be self-explanatory)
@@ -83,88 +83,94 @@ namespace PiTung_Bootstrap
     /// global variables that can be read and written to from the console
     /// using the "set" command</para>
     /// </summary>
-    public class IGConsole
+    public static class IGConsole
     {
         /// <summary>
         /// Max number of log entries kept in memory
         /// </summary>
-        private const int maxHistory = 100;
+        private const int MaxHistory = 100;
 
         /// <summary>
         /// Height of lines in pixels
         /// </summary>
-        private const int lineHeight = 16;
+        private const int LineHeight = 16;
 
         /// <summary>
         /// Input prompt, displayed in front of the user input
         /// </summary>
-        private const string prompt = "> ";
+        private const string Prompt = "> ";
 
         /// <summary>
         /// Cursor displayed at edit location
         /// </summary>
-        private const string cursor = "_";
+        private const string Cursor = "_";
 
 
         /// <summary>
         /// Console text style (font mostly)
         /// </summary>
-        private static GUIStyle style;
+        private static GUIStyle Style;
 
         /// <summary>
         /// Log of user input and command output
         /// </summary>
-        private static DropOutStack<LogEntry> cmdLog;
+        private static DropOutStack<LogEntry> CmdLog;
 
         /// <summary>
         /// Command history for retrieval with up and down arrows
         /// </summary>
-        private static DropOutStack<String> history;
+        private static DropOutStack<String> History;
 
         /// <summary>
         /// Where the cursor is within the line
         /// </summary>
-        private static int editLocation = 0;
+        private static int EditLocation = 0;
 
         /// <summary>
         /// Where we are in the command history
         /// </summary>
-        private static int historySelector = -1;
+        private static int HistorySelector = -1;
 
         /// <summary>
         /// What is currently in the input line
         /// </summary>
-        private static string currentCmd = "";
+        private static string CurrentCmd = "";
 
         /// <summary>
         /// Command registry (name -> Command)
         /// </summary>
-        private static Dictionary<string, Command> registry;
+        internal static Dictionary<string, Command> Registry;
 
         /// <summary>
         /// Variable registry (name -> value)
         /// </summary>
-        private static Dictionary<string, string> varRegistry;
+        private static Dictionary<string, string> VarRegistry;
 
+        /// <summary>
+        /// Time at which the show-hide animation started.
+        /// </summary>
         private static float ShownAtTime = 0;
 
         /// <summary>
         /// Is the console currently shown?
         /// </summary>
-        public static bool show = false;
+        internal static bool Shown = false;
 
-        public static float ShowAnimationTime = .3f;
+        /// <summary>
+        /// Show-hide animation duration.
+        /// </summary>
+        internal static float ShowAnimationTime = .3f;
 
         /// <summary>
         /// Call this function before doing anything with the console
         /// </summary>
-        public static void Init()
+        internal static void Init()
         {
-            cmdLog = new DropOutStack<LogEntry>(maxHistory);
-            history = new DropOutStack<string>(maxHistory);
-            registry = new Dictionary<string, Command>();
-            varRegistry = new Dictionary<string, string>();
-            style = new GUIStyle
+            CmdLog = new DropOutStack<LogEntry>(MaxHistory);
+            History = new DropOutStack<string>(MaxHistory);
+            Registry = new Dictionary<string, Command>();
+            VarRegistry = new Dictionary<string, string>();
+            Style = new GUIStyle
             {
                 font = Font.CreateDynamicFontFromOSFont("Lucida Console", 16),
                 richText = true
@@ -180,15 +186,16 @@ namespace PiTung_Bootstrap
         /// <summary>
         /// Call this function on Update calls
         /// </summary>
-        public static void Update()
+        internal static void Update()
         {
             // Toggle console with TAB
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                show = !show;
+                Shown = !Shown;
 
                 float off = 0;
 
+                //The user is toggling the console but the animation hasn't yet ended, resume it later
                 if (Time.time - ShownAtTime < ShowAnimationTime)
                 {
                     off -= ShowAnimationTime - (Time.time - ShownAtTime);
@@ -198,36 +205,36 @@ namespace PiTung_Bootstrap
 
                 if(SceneManager.GetActiveScene().name == "gameplay")
                 {
-                    if (show)
+                    if (Shown)
                         UIManager.UnlockMouseAndDisableFirstPersonLooking();
                     else if(!UIManager.SomeOtherMenuIsOpen)
                         UIManager.LockMouseAndEnableFirstPersonLooking();
                 }
             }
 
-            if (show)
+            if (Shown)
             {
                 // Handling history
-                if (Input.GetKeyDown(KeyCode.UpArrow) && historySelector < history.Count - 1)
+                if (Input.GetKeyDown(KeyCode.UpArrow) && HistorySelector < History.Count - 1)
                 {
-                    historySelector += 1;
-                    currentCmd = history.Get(historySelector);
-                    editLocation = currentCmd.Length;
+                    HistorySelector += 1;
+                    CurrentCmd = History.Get(HistorySelector);
+                    EditLocation = CurrentCmd.Length;
                 }
-                if (Input.GetKeyDown(KeyCode.DownArrow) && historySelector > -1)
+                if (Input.GetKeyDown(KeyCode.DownArrow) && HistorySelector > -1)
                 {
-                    historySelector -= 1;
-                    if (historySelector == -1)
-                        currentCmd = "";
+                    HistorySelector -= 1;
+                    if (HistorySelector == -1)
+                        CurrentCmd = "";
                     else
-                        currentCmd = history.Get(historySelector);
-                    editLocation = currentCmd.Length;
+                        CurrentCmd = History.Get(HistorySelector);
+                    EditLocation = CurrentCmd.Length;
                 }
                 // Handle editing
-                if (Input.GetKeyDown(KeyCode.LeftArrow) && editLocation > 0)
-                    editLocation--;
-                if (Input.GetKeyDown(KeyCode.RightArrow) && editLocation < currentCmd.Length)
-                    editLocation++;
+                if (Input.GetKeyDown(KeyCode.LeftArrow) && EditLocation > 0)
+                    EditLocation--;
+                if (Input.GetKeyDown(KeyCode.RightArrow) && EditLocation < CurrentCmd.Length)
+                    EditLocation++;
 
                 ReadInput(); // Read text input
             }
@@ -236,26 +243,26 @@ namespace PiTung_Bootstrap
         /// <summary>
         /// Call this function on OnGUI calls
         /// </summary>
-        public static void Draw()
+        internal static void Draw()
         {
-            if (!show && Time.time - ShownAtTime > ShowAnimationTime)
+            if (!Shown && Time.time - ShownAtTime > ShowAnimationTime)
             {
                 return;
             }
 
             Color background = Color.black;
-            background.a = 0.5f;
+            background.a = 0.6f;
 
             int height = Screen.height / 2;
             int width = Screen.width;
-            int linecount = height / lineHeight;
+            int linecount = height / LineHeight;
 
             float yOffset = 0;
 
             if (Time.time - ShownAtTime < ShowAnimationTime)
             {
-                int a = show ? height : 0;
-                int b = show ? 0 : height;
+                int a = Shown ? height : 0;
+                int b = Shown ? 0 : height;
 
                 yOffset = -EaseOutQuad(a, b, (Time.time - ShownAtTime) / ShowAnimationTime);
             }
@@ -263,28 +270,30 @@ namespace PiTung_Bootstrap
             // Background rectangle
             ModUtilities.Graphics.DrawRect(new Rect(0, yOffset, width, height + 5), background);
 
-            for(int line = 0; line < Math.Min(linecount - 1, cmdLog.Count); line++)
+            for(int line = 0; line < Math.Min(linecount - 1, CmdLog.Count); line++)
             {
-                LogEntry entry = cmdLog.Get(line);
-                int y = (linecount - 2 - line) * lineHeight;
+                LogEntry entry = CmdLog.Get(line);
+                int y = (linecount - 2 - line) * LineHeight;
                 DrawText(entry.Message, new Vector2(5, y + yOffset), entry.GetColor());
             }
 
-            float consoleY = (linecount - 1) * lineHeight + yOffset;
+            float consoleY = (linecount - 1) * LineHeight + yOffset;
 
             try
             {
-                DrawText(prompt + currentCmd, new Vector2(5, consoleY), Color.green);
-                float x = Width(prompt) + Width(currentCmd.Substring(0, editLocation));
-                DrawText(cursor, new Vector2(5 + x, consoleY), Color.green);
+                DrawText(Prompt + CurrentCmd, new Vector2(5, consoleY), Color.green);
+                float x = Width(Prompt) + Width(CurrentCmd.Substring(0, EditLocation));
+                DrawText(Cursor, new Vector2(5 + x, consoleY), Color.green);
             }
             catch (Exception e)
             {
-                Error($"currentCmd: \"{currentCmd}\"\neditLocation: {editLocation}");
+                Error($"currentCmd: \"{CurrentCmd}\"\neditLocation: {EditLocation}");
                 Error(e.ToString());
-                currentCmd = "";
-                editLocation = 0;
+                CurrentCmd = "";
+                EditLocation = 0;
             }
+
+            float Width(string text) => Style.CalcSize(new GUIContent(text)).x;
         }
 
         /// <summary>
@@ -297,7 +306,7 @@ namespace PiTung_Bootstrap
             string[] lines = msg.Split('\n');
             foreach(string line in lines)
             {
-                cmdLog.Push(new LogEntry(type, line));
+                CmdLog.Push(new LogEntry(type, line));
             }
         }
 
@@ -315,9 +324,9 @@ namespace PiTung_Bootstrap
         /// </summary>
         /// <param name="variable">The variable to set</param>
         /// <param name="value">The value to give</param>
-        public static void SetVariable(string variable, string value)
+        internal static void SetVariable(string variable, string value)
         {
-            varRegistry.Add(variable, value);
+            VarRegistry.Add(variable, value);
         }
 
         /// <summary>
@@ -328,7 +337,7 @@ namespace PiTung_Bootstrap
         public static string GetVariable(string variable)
         {
             string value;
-            if(varRegistry.TryGetValue(variable, out value))
+            if(VarRegistry.TryGetValue(variable, out value))
                 return value;
             return null;
         }
@@ -352,9 +361,9 @@ namespace PiTung_Bootstrap
         /// <returns>True of succeeded, false otherwise</returns>
         public static bool RegisterCommand(Command command)
         {
-            if (registry.ContainsKey(command.Name))
+            if (Registry.ContainsKey(command.Name))
                 return false;
-            registry.Add(command.Name, command);
+            Registry.Add(command.Name, command);
             return true;
         }
 
@@ -365,9 +374,9 @@ namespace PiTung_Bootstrap
         /// <returns>True if a command was removed, false otherwise</returns>
         public static bool UnregisterCommand(string name)
         {
-            if(registry.ContainsKey(name))
+            if(Registry.ContainsKey(name))
             {
-                registry.Remove(name);
+                Registry.Remove(name);
                 return true;
             }
             return false;
@@ -384,7 +393,7 @@ namespace PiTung_Bootstrap
             string[] words = cmd.Split(' ');
             string verb = words[0];
             Command command;
-            if(registry.TryGetValue(verb, out command))
+            if(Registry.TryGetValue(verb, out command))
             {
                 try
                 {
@@ -407,42 +416,42 @@ namespace PiTung_Bootstrap
             {
                 if (c == '\b') // has backspace/delete been pressed?
                 {
-                    if (currentCmd.Length != 0)
+                    if (CurrentCmd.Length != 0)
                     {
-                        string firstHalf = currentCmd.Substring(0, editLocation - 1);
-                        string secondHalf = currentCmd.Substring(editLocation, currentCmd.Length - editLocation);
-                        currentCmd = firstHalf + secondHalf;
-                        editLocation--;
+                        string firstHalf = CurrentCmd.Substring(0, EditLocation - 1);
+                        string secondHalf = CurrentCmd.Substring(EditLocation, CurrentCmd.Length - EditLocation);
+                        CurrentCmd = firstHalf + secondHalf;
+                        EditLocation--;
                     }
                 }
                 else if (c == 0x7F) // Ctrl + Backspace (erase word)
                 {
-                    if (currentCmd.Length != 0)
+                    if (CurrentCmd.Length != 0)
                     {
-                        int index = editLocation;
-                        while(index > 0 && Char.IsLetterOrDigit(currentCmd.ElementAt(index - 1)))
+                        int index = EditLocation;
+                        while(index > 0 && Char.IsLetterOrDigit(CurrentCmd.ElementAt(index - 1)))
                             index--;
-                        if (index == editLocation && editLocation > 0) // Delete at least 1 character
+                        if (index == EditLocation && EditLocation > 0) // Delete at least 1 character
                             index--;
-                        int length = editLocation - index;
-                        string firstHalf = currentCmd.Substring(0, index);
-                        string secondHalf = currentCmd.Substring(editLocation, currentCmd.Length - editLocation);
-                        currentCmd = firstHalf + secondHalf;
-                        editLocation -= length;
+                        int length = EditLocation - index;
+                        string firstHalf = CurrentCmd.Substring(0, index);
+                        string secondHalf = CurrentCmd.Substring(EditLocation, CurrentCmd.Length - EditLocation);
+                        CurrentCmd = firstHalf + secondHalf;
+                        EditLocation -= length;
                     }
                 }
                 else if ((c == '\n') || (c == '\r')) // enter/return
                 {
-                    Log(LogType.USERINPUT, "> " + currentCmd);
-                    history.Push(currentCmd);
-                    ExecuteCommand(currentCmd);
-                    currentCmd = "";
-                    editLocation = 0;
+                    Log(LogType.USERINPUT, "> " + CurrentCmd);
+                    History.Push(CurrentCmd);
+                    ExecuteCommand(CurrentCmd);
+                    CurrentCmd = "";
+                    EditLocation = 0;
                 }
                 else
                 {
-                    currentCmd = currentCmd.Insert(editLocation, c.ToString());
-                    editLocation++;
+                    CurrentCmd = CurrentCmd.Insert(EditLocation, c.ToString());
+                    EditLocation++;
                 }
             }
         }
@@ -452,102 +461,15 @@ namespace PiTung_Bootstrap
             end -= start;
             return -end * value * (value - 2) + start;
         }
-
-        private static float Width(string text)
-        {
-            return style.CalcSize(new GUIContent(text)).x;
-        }
-
+        
         private static void DrawText(string text, Vector2 pos, Color color)
         {
-            GUIStyle newStyle = new GUIStyle(style);
+            GUIStyle newStyle = new GUIStyle(Style);
             newStyle.normal.textColor = color;
-            Vector2 size = style.CalcSize(new GUIContent(text));
+            Vector2 size = Style.CalcSize(new GUIContent(text));
             Rect rect = new Rect(pos, size);
 
             GUI.Label(rect, text, newStyle);
-        }
-
-        private class Command_help : Command
-        {
-            public override string Name => "help";
-            public override string Usage => $"{Name} [command]";
-            public override string Description => "Lists command and shows their usage (help command)";
-
-            public override void Execute(IEnumerable<string> arguments)
-            {
-                if(arguments.Count() == 0)
-                {
-                    foreach(Command command in registry.Values)
-                    {
-                        string log = command.Name;
-                        if (command.Description != null)
-                            log += ": " + command.Description;
-                        Log(log);
-                    }
-                }
-                else if(arguments.Count() == 1)
-                {
-                    string name = arguments.ElementAt(0);
-                    Command command;
-                    if(registry.TryGetValue(name, out command))
-                    {
-                        Log(command.Description);
-                        Log(command.Usage);
-                    }
-                    else
-                    {
-                        Error($"No such command \"{name}\"");
-                    }
-                }
-                else
-                {
-                    Error(Usage);
-                    return;
-                }
-            }
-        }
-
-        private class Command_lsmod : Command
-        {
-            public override string Name => "lsmod";
-            public override string Usage => $"{Name}";
-            public override string Description => "Lists loaded mods (not implemented)";
-
-            public override void Execute(IEnumerable<string> arguments)
-            {
-                IGConsole.Log(String.Join(", ", Mod.AliveMods.Select(o => o.Name).ToArray()));
-            }
-        }
-
-        private class Command_set : Command
-        {
-            public override string Name => "set";
-            public override string Usage => $"{Name} variable [value]";
-            public override string Description => "Gets and sets global variables";
-
-            public override void Execute(IEnumerable<string> arguments)
-            {
-                if(arguments.Count() == 1)
-                {
-                    string variable = arguments.ElementAt(0);
-                    string value = IGConsole.GetVariable(variable);
-                    if (value != null)
-                        IGConsole.Log(value);
-                    else
-                        IGConsole.Error($"Variable {variable} no set");
-                }
-                else if(arguments.Count() == 2)
-                {
-                    string variable = arguments.ElementAt(0);
-                    string value = arguments.ElementAt(1);
-                    IGConsole.SetVariable(variable, value);
-                }
-                else
-                {
-                    IGConsole.Error(Usage);
-                }
-            }
         }
     }
 }
