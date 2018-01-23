@@ -18,9 +18,7 @@ namespace PiTung_Bootstrap
             foreach (var item in methods)
             {
                 PatchMethodAttribute attribute = item.GetAttribute<PatchMethodAttribute>();
-
-                MDebug.WriteLine(item.Name);
-
+                
                 if (attribute == null)
                     continue;
                 
