@@ -392,14 +392,22 @@ namespace PiTung_Bootstrap.Console
         {
             if (cmd.Length == 0)
                 return;
-            string[] words = cmd.Split(' ');
-            string verb = words[0];
+
+            string verb, error;
+            string[] args;
+
+            if (!CmdParser.TryParseCmdLine(cmd, out verb, out args, out error))
+            {
+                Log(LogType.ERROR, "Invalid command: " + error);
+            }
+            
             Command command;
+
             if(Registry.TryGetValue(verb, out command))
             {
                 try
                 {
-                    command.Execute(words.Skip(1));
+                    command.Execute(args);
                 }
                 catch (Exception e)
                 {
