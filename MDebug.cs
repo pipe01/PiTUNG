@@ -9,7 +9,7 @@ namespace PiTung_Bootstrap
         public static void WriteLine(string line, int level = 0, params object[] args)
         {
             if (level <= DebugLevel)
-                System.Console.WriteLine("[PiTung] " + string.Format(line, args: args));
+                Console.WriteLine("[PiTung] " + string.Format(line, args: args));
         }
     }
 }
