@@ -47,34 +47,34 @@ namespace PiTung_Bootstrap
 
     internal struct UiRect : IUiElement
     {
-        private static readonly IDictionary<Color, GUIStyle> ColorStyles = new Dictionary<Color, GUIStyle>();
+        /// <summary>
+        /// This will store textures that correspond to a specific color.
+        /// </summary>
+        private static readonly IDictionary<Color, Texture2D> TextureCache = new Dictionary<Color, Texture2D>();
 
         public Rect Area { get; }
-
-        private readonly GUIStyle Style;
+        
+        private Texture2D Texture { get; }
 
         public UiRect(Rect area, Color color)
         {
             this.Area = area;
-
-            if (!ColorStyles.ContainsKey(color))
+            
+            if (!TextureCache.ContainsKey(color))
             {
-                Texture2D bg = new Texture2D(1, 1);
-                bg.SetPixel(0, 0, color);
-                bg.Apply();
+                var tex = new Texture2D(1, 1, TextureFormat.ARGB32, false);
+                tex.SetPixel(0, 0, color);
+                tex.Apply();
 
-                ColorStyles[color] = new GUIStyle()
-                {
-                    normal = new GUIStyleState { background = bg }
-                };
+                TextureCache[color] = tex;
             }
 
-            this.Style = ColorStyles[color];
+            this.Texture = TextureCache[color];
         }
-
+        
         public void Draw()
         {
-            GUI.Box(this.Area, "", this.Style);
+            GUI.DrawTexture(this.Area, this.Texture);
         }
     }
 }
