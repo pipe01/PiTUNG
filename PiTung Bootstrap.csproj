@@ -59,6 +59,8 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Config menu\ConfigMenu.cs" />
     <Compile Include="Config menu\MenuEntry.cs" />
+    <Compile Include="IGConsole.cs" />
+    <Compile Include="DropOutStack.cs" />
     <Compile Include="GraphicUtilities.cs" />
     <Compile Include="InputUtilities.cs" />
     <Compile Include="InternalPatches.cs" />
