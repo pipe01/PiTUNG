@@ -69,7 +69,7 @@ namespace PiTung_Bootstrap.Console
         /// Called when the command is invoked
         /// </summary>
         /// <param name="arguments">The arguments given to the command</param>
-        public abstract void Execute(IEnumerable<string> arguments);
+        public abstract bool Execute(IEnumerable<string> arguments);
     }
 
     //FIXME: Changing scene to gameplay locks mouse
@@ -177,9 +177,11 @@ namespace PiTung_Bootstrap.Console
                 richText = true
             };
 
-            RegisterCommand(new Command_help());
-            RegisterCommand(new Command_lsmod());
-            RegisterCommand(new Command_set());
+            RegisterCommand<Command_help>();
+            RegisterCommand<Command_lsmod>();
+            RegisterCommand<Command_set>();
+            RegisterCommand<Command_get>();
+
             Log("Console initialized");
             Log("Type \"help\" to get a list of commands");
         }
@@ -252,7 +254,7 @@ namespace PiTung_Bootstrap.Console
             }
 
             Color background = Color.black;
-            background.a = 0.6f;
+            background.a = 0.75f;
 
             int height = Screen.height / 2;
             int width = Screen.width;
@@ -327,7 +329,7 @@ namespace PiTung_Bootstrap.Console
         /// <param name="value">The value to give</param>
         internal static void SetVariable(string variable, string value)
         {
-            VarRegistry.Add(variable, value);
+            VarRegistry[variable] = value;
         }
 
         /// <summary>
@@ -353,19 +355,25 @@ namespace PiTung_Bootstrap.Console
         }
 
         /// <summary>
-        /// Register a command with a callback
+        /// Register a command.
         /// </summary>
-        /// <param name="name">Name of the command. This is what is typed in the
-        /// console to invoke the command</param>
-        /// <param name="callback">The callback which is called when the command
-        /// is invoked. Its arguments are the arguments of the command</param>
-        /// <returns>True of succeeded, false otherwise</returns>
+        /// <param name="command">The command class.</param>
         public static bool RegisterCommand(Command command)
         {
             if (Registry.ContainsKey(command.Name))
                 return false;
             Registry.Add(command.Name, command);
             return true;
+        }
+
+        /// <summary>
+        /// Register a command.
+        /// </summary>
+        /// <typeparam name="T">The type of the command.</typeparam>
+        /// <returns></returns>
+        public static bool RegisterCommand<T>() where T : Command
+        {
+            return RegisterCommand(Activator.CreateInstance<T>());
         }
 
         /// <summary>

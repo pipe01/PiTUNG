@@ -12,7 +12,7 @@ namespace PiTung_Bootstrap.Console
         public override string Usage => $"{Name} [command]";
         public override string Description => "Lists command and shows their usage (help command)";
 
-        public override void Execute(IEnumerable<string> arguments)
+        public override bool Execute(IEnumerable<string> arguments)
         {
             if (!arguments.Any())
             {
@@ -40,8 +40,10 @@ namespace PiTung_Bootstrap.Console
             }
             else
             {
-                Error(Usage);
+                return false;
             }
+
+            return true;
         }
     }
 
@@ -51,9 +53,11 @@ namespace PiTung_Bootstrap.Console
         public override string Usage => $"{Name}";
         public override string Description => "Lists loaded mods (not implemented)";
 
-        public override void Execute(IEnumerable<string> arguments)
+        public override bool Execute(IEnumerable<string> arguments)
         {
             Log("<b>Loaded mods:</b> " + String.Join(", ", Mod.AliveMods.Select(o => $"'{o.Name}'").ToArray()));
+
+            return true;
         }
     }
 
@@ -61,29 +65,58 @@ namespace PiTung_Bootstrap.Console
     {
         public override string Name => "set";
         public override string Usage => $"{Name} variable [value]";
-        public override string Description => "Gets and sets global variables";
+        public override string Description => "Sets global variables";
 
-        public override void Execute(IEnumerable<string> arguments)
+        public override bool Execute(IEnumerable<string> arguments)
         {
+            string value = null;
+            string variable = arguments.FirstOrDefault();
+
             if (arguments.Count() == 1)
             {
-                string variable = arguments.ElementAt(0);
-                string value = GetVariable(variable);
-                if (value != null)
-                    Log(value);
-                else
-                    Error($"Variable {variable} not set");
+                //Clear variable
+                value = "";
             }
             else if (arguments.Count() == 2)
             {
-                string variable = arguments.ElementAt(0);
-                string value = arguments.ElementAt(1);
-                SetVariable(variable, value);
+                value = arguments.ElementAt(1);
             }
             else
             {
-                Error(Usage);
+                return false;
             }
+
+            SetVariable(variable, value);
+            return true;
+        }
+    }
+
+    internal class Command_get : Command
+    {
+        public override string Name => "get";
+        public override string Usage => $"{Name} variable";
+        public override string Description => "Gets global variables";
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            if (arguments.Count() == 1)
+            {
+                string variable = arguments.First();
+                string value = GetVariable(variable);
+
+                if (value != null)
+                {
+                    Log($"\"{variable}\" = \"{value}\"");
+                }
+                else
+                {
+                    Log(LogType.ERROR, $"Variable \"{variable}\" not found.");
+                }
+
+                return true;
+            }
+
+            return false;
         }
     }
 }
