@@ -261,7 +261,7 @@ __pycache__/
 *.pyc
 
 # Visual Studio Solutions
-*.sln
+#*.sln
 Assembly-CSharp.dll
 UnityEngine.dll
 UnityEngine.*.dll

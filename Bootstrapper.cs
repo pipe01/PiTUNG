@@ -1,11 +1,10 @@
-﻿using Harmony;
+﻿using System.IO;
+using Harmony;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using PiTung_Bootstrap.Console;
 
 namespace PiTung_Bootstrap
 {
@@ -24,48 +23,98 @@ namespace PiTung_Bootstrap
                 return;
             Patched = true;
             ModCount = 0;
-
-            MDebug.WriteLine("Booting up...");
             
+            MDebug.WriteLine("PiTUNG Framework version {0}", 0, PiTung.FrameworkVersion);
+            MDebug.WriteLine("-------------Patching-------------");
+
             var harmony = HarmonyInstance.Create("me.pipe01.pitung");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
-            
-            var mods = ModLoader.GetMods();
 
-            foreach (var mod in mods)
+            IGConsole.Init(); // Making the console available in AfterPatch
+
+            foreach (var mod in ModLoader.GetMods())
             {
                 if (mod.ModAssembly == null)
                 {
-                    MDebug.WriteLine($"[ERROR] Mod '{mod.ModName}' failed to load: couldn't load assembly.");
+                    MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: couldn't load assembly.");
                     continue;
                 }
 
-                mod.BeforePatch();
-
-                harmony.PatchAll(mod.ModAssembly);
-
-                foreach (var patch in mod.GetMethodPatches())
+                if (mod.FrameworkVersion.CompareTo(PiTung.FrameworkVersion) != 0)
                 {
-                    if (patch.Prefix)
+                    if (mod.RequireFrameworkVersion)
                     {
-                        harmony.Patch(patch.BaseMethod, new HarmonyMethod(patch.PatchMethod), null);
+                        MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: wrong PiTUNG version.");
+                        continue;
                     }
-                    else if (patch.Postfix)
+                    else
                     {
-                        harmony.Patch(patch.BaseMethod, null, new HarmonyMethod(patch.PatchMethod));
+                        MDebug.WriteLine($"[WARNING] {mod.Name} may not work properly: wrong PiTUNG version");
                     }
                 }
 
+                try
+                {
+                    mod.BeforePatch();
+                }
+                catch (Exception ex)
+                {
+                    MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while executing before-patch method.");
+                    MDebug.WriteLine("More details: " + ex, 1);
 
-                mod.AfterPatch();
-                
+                    continue;
+                }
+
+                MDebug.WriteLine($"Loading {mod.FullName}...");
+
+                try
+                {
+                    harmony.PatchAll(mod.ModAssembly);
+
+                    foreach (Type cls in mod.ModAssembly.GetTypes())
+                    {
+                        var attrs = (TargetAttribute[])cls.GetCustomAttributes(typeof(TargetAttribute), false);
+
+                        if (attrs.Length == 0)
+                            continue;
+
+                        foreach (var patch in PatchUtilities.GetMethodPatches(cls, attrs[0].ContainerType))
+                        {
+                            var method = new HarmonyMethod(patch.PatchMethod);
+                            
+                            harmony.Patch(
+                                patch.BaseMethod,
+                                patch.Prefix ? method : null,
+                                patch.Postfix ? method : null);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while patching methods.");
+                    MDebug.WriteLine("More details: " + ex, 1);
+                    continue;
+                }
+
+                try
+                {
+                    mod.AfterPatch();
+                }
+                catch (Exception ex)
+                {
+                    MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while executing after-patch method.");
+                    MDebug.WriteLine("More details: " + ex, 1);
+
+                    continue;
+                }
+
                 ModCount++;
-                MDebug.WriteLine($"'{mod.ModName}' loaded successfully.");
+                MDebug.WriteLine($"{mod.Name} loaded successfully.");
             }
-            
+
             SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
 
-            MDebug.WriteLine("Patched successfully!");
+            MDebug.WriteLine("----------Done patching!----------");
         }
 
         /// <summary>
@@ -76,7 +125,7 @@ namespace PiTung_Bootstrap
         private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
         {
             var objs = arg1.GetRootGameObjects();
-            
+
             //Search for a camera. If we find one, check if it has already got a DummyComponent.
             //If it doesn't, add one.
             foreach (var obj in objs)
@@ -89,7 +138,7 @@ namespace PiTung_Bootstrap
 
                     if (obj.GetComponent<DummyComponent>() == null)
                         camera.gameObject.AddComponent<DummyComponent>();
-                    
+
                     break;
                 }
             }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace PiTung_Bootstrap
@@ -13,11 +10,11 @@ namespace PiTung_Bootstrap
 
     internal struct UiLabel : IUiElement
     {
-        private static Dictionary<Color, GUIStyle> ColorStyles = new Dictionary<Color, GUIStyle>();
+        private static readonly Dictionary<Color, GUIStyle> ColorStyles = new Dictionary<Color, GUIStyle>();
 
-        public string Text { get; private set; }
-        public Vector2 Position { get; private set; }
-        public Color Color { get; private set; }
+        public string Text { get; }
+        public Vector2 Position { get; }
+        public Color Color { get; }
 
         public UiLabel(string text, Vector2 position, Color color)
         {
@@ -50,27 +47,34 @@ namespace PiTung_Bootstrap
 
     internal struct UiRect : IUiElement
     {
-        public Rect Area { get; private set; }
+        /// <summary>
+        /// This will store textures that correspond to a specific color.
+        /// </summary>
+        private static readonly IDictionary<Color, Texture2D> TextureCache = new Dictionary<Color, Texture2D>();
 
-        private GUIStyle style;
+        public Rect Area { get; }
+        
+        private Texture2D Texture { get; }
 
         public UiRect(Rect area, Color color)
         {
             this.Area = area;
-
-            Texture2D bg = new Texture2D(1, 1);
-            bg.SetPixel(0, 0, color);
-            bg.Apply();
-
-            this.style = new GUIStyle()
+            
+            if (!TextureCache.ContainsKey(color))
             {
-                normal = new GUIStyleState { background = bg }
-            };
-        }
+                var tex = new Texture2D(1, 1, TextureFormat.ARGB32, false);
+                tex.SetPixel(0, 0, color);
+                tex.Apply();
 
+                TextureCache[color] = tex;
+            }
+
+            this.Texture = TextureCache[color];
+        }
+        
         public void Draw()
         {
-            GUI.Box(this.Area, "", this.style);
+            GUI.DrawTexture(this.Area, this.Texture);
         }
     }
 }

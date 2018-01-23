@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using UnityEngine;
 
 namespace PiTung_Bootstrap.Config_menu
@@ -131,8 +129,35 @@ namespace PiTung_Bootstrap.Config_menu
             }
         }
 
+        private Texture2D ColorTexture(Color color)
+        {
+            if (!ColorTextures.ContainsKey(color))
+            {
+                Texture2D tex = new Texture2D(1, 1, TextureFormat.ARGB32, false);
+                tex.SetPixels(new[] { color });
+                tex.Apply();
+
+                ColorTextures[color] = tex;
+            }
+
+            return ColorTextures[color];
+        }
+
         public void Render()
         {
+            if (CurrentEntries == null)
+            {
+                if (SelectedEntry == null)
+                {
+                    CurrentEntries = Entries.ToArray();
+                    HoverIndex = 0;
+                }
+                else
+                {
+                    CurrentEntries = SelectedEntry.Children.ToArray();
+                }
+            }
+            
             var areaStyle = new GUIStyle(DefaultStyle);
             var entryStyle = new GUIStyle(DefaultStyle)
             {
@@ -142,7 +167,7 @@ namespace PiTung_Bootstrap.Config_menu
             float width = Size.x, height = Size.y;
 
             GUILayout.BeginArea(new Rect(Position, new Vector2(width, height)), BackTexture);
-            
+
             GUILayout.Label("<size=15>PiTung Configuration</size>", new GUIStyle(DefaultStyle) { alignment = TextAnchor.MiddleCenter });
             
             int i = 0;
@@ -158,7 +183,7 @@ namespace PiTung_Bootstrap.Config_menu
                 else if (item is SimpleNumberEntry num)
                 {
                     drawLabel = false;
-                    
+
                     string valueString = num.Value.ToString("0.0");
 
                     if (hover)
@@ -191,7 +216,7 @@ namespace PiTung_Bootstrap.Config_menu
         private void DrawKeyValue(string key, string value, float width, bool hover, GUIStyle style)
         {
             GUILayout.BeginHorizontal();
-            
+
             float totalWidth = width - 10;
             float valueWidth = style.CalcSize(new GUIContent(value)).x;
 

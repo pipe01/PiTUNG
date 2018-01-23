@@ -17,13 +17,29 @@ namespace PiTung_Bootstrap
         {
             if (!Directory.Exists(ModsDirectory))
                 Directory.CreateDirectory(ModsDirectory);
-
+            
             foreach (var item in Directory.GetFiles(ModsDirectory, "*.dll"))
             {
-                yield return GetMod(item);
+                if (Path.GetFileNameWithoutExtension(item).EndsWith("-disabled"))
+                    continue;
+
+                Mod mod = null;
+
+                try
+                {
+                    mod = GetMod(item);
+                }
+                catch (ReflectionTypeLoadException ex)
+                {
+                    MDebug.WriteLine($"[ERROR] Mod {Path.GetFileName(item)} failed to load.");
+                    MDebug.WriteLine("More details: " + ex.Message, 2);
+                }
+
+                if (mod != null)
+                    yield return mod;
             }
         }
-        
+
         /// <summary>
         /// Loads a mod contained in the DLL pointed by <paramref name="modPath"/>.
         /// </summary>
@@ -31,8 +47,17 @@ namespace PiTung_Bootstrap
         /// <returns>A mod.</returns>
         private static Mod GetMod(string modPath)
         {
-            var ass = Assembly.LoadFrom(modPath);
+            Assembly ass;
 
+            try
+            {
+                ass = Assembly.LoadFrom(modPath);
+            }
+            catch (ReflectionTypeLoadException)
+            {
+                throw;
+            }
+            
             Mod mod = null;
 
             foreach (var item in ass.GetExportedTypes())

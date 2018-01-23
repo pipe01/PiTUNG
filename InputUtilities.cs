@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PiTung_Bootstrap
 {
     public class InputUtilities
     {
         internal InputUtilities() { }
-        
+
         internal delegate void KeyDownDelegate(KeyCode keyCode);
 
         /// <summary>

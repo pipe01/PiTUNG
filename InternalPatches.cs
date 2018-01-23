@@ -1,6 +1,12 @@
 ﻿using Harmony;
+using PiTung_Bootstrap.Console;
 using System.Collections.Generic;
 using UnityEngine;
+
+#pragma warning disable RCS1102 // Make class static.
+#pragma warning disable RCS1213 // Remove unused member declaration.
+#pragma warning disable RCS1018 // Add default access modifier.
+#pragma warning disable RCS1037 // Add default access modifier.
 
 namespace PiTung_Bootstrap
 {
@@ -9,6 +15,7 @@ namespace PiTung_Bootstrap
     {
         static void Prefix()
         {
+            IGConsole.Update();
             foreach (var item in Mod.AliveMods)
             {
                 item.Update();
@@ -67,6 +74,7 @@ namespace PiTung_Bootstrap
             }
 
             Config_menu.ConfigMenu.Instance.Render();
+            IGConsole.Draw(); // Drawn last so that it stays on top
         }
     }
 
@@ -75,9 +83,9 @@ namespace PiTung_Bootstrap
     {
         static void Prefix(DummyComponent __instance)
         {
-            if (UnityEngine.Object.FindObjectsOfType(__instance.GetType()).Length > 1)
+            if (Object.FindObjectsOfType(__instance.GetType()).Length > 1)
             {
-                UnityEngine.Object.Destroy(__instance);
+                Object.Destroy(__instance);
             }
         }
     }

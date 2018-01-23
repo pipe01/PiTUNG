@@ -17,8 +17,8 @@ using UnityEngine;
 
 public class MyMod : Mod
 {
-    public override string ModName => "Your mod name goes here";
-    public override string ModAuthor => "your name";
+    public override string Name => "Your mod name goes here";
+    public override string Author => "your name";
     public override Version ModVersion => new Version(1, 0, 0);
 
     protected override KeyCode[] ModKeys => new[] { KeyCode.O };

@@ -1,27 +1,22 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System;
 using System.Reflection;
-using System.Text;
-using UnityEngine;
 
 namespace PiTung_Bootstrap
 {
     public static class ModUtilities
     {
-        private static GraphicUtilities _Graphics = new GraphicUtilities();
         /// <summary>
         /// Graphical utilities.
         /// </summary>
-        public static GraphicUtilities Graphics => _Graphics;
+        public static GraphicUtilities Graphics { get; } = new GraphicUtilities();
 
-        private static InputUtilities _Input = new InputUtilities();
         /// <summary>
         /// Input-related utilities.
         /// </summary>
-        public static InputUtilities Input => _Input;
+        public static InputUtilities Input { get; } = new InputUtilities();
 
+        private static readonly IDictionary<KeyValuePair<Type, string>, FieldInfo> FieldCache = new Dictionary<KeyValuePair<Type, string>, FieldInfo>();
 
         /// <summary>
         /// True if we are one the main menu.
@@ -40,13 +35,20 @@ namespace PiTung_Bootstrap
         /// </summary>
         /// <param name="line">The line to be written.</param>
         public static void Log(string line) => MDebug.WriteLine(line, 0, new object());
-        
-        private static FieldInfo GetField(Type type, string fieldName, bool isPrivate)
+
+        private static FieldInfo GetField(Type type, string fieldName)
         {
-            if (isPrivate)
-                return type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
-            else
-                return type.GetField(fieldName);
+            var key = new KeyValuePair<Type, string>(type, fieldName);
+
+            if (!FieldCache.ContainsKey(key))
+            {
+                var field = type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+
+                FieldCache[key] = field ??
+                    throw new ArgumentException($"Field {fieldName} not found in object of type {type.Name}.");
+            }
+
+            return FieldCache[key];
         }
 
         /// <summary>
@@ -57,9 +59,9 @@ namespace PiTung_Bootstrap
         /// <param name="fieldName">The name of the field.</param>
         /// <param name="value">The new value for the field.</param>
         /// <param name="isPrivate">True if the field is private.</param>
-        public static void SetFieldValue<T>(object obj, string fieldName, T value, bool isPrivate)
+        public static void SetFieldValue<T>(object obj, string fieldName, T value)
         {
-            var field = GetField(obj.GetType(), fieldName, isPrivate);
+            var field = GetField(obj.GetType(), fieldName);
 
             if (field != null)
             {
@@ -79,9 +81,9 @@ namespace PiTung_Bootstrap
         /// <param name="fieldName">The field's name.</param>
         /// <param name="isPrivate">True if the field's private.</param>
         /// <returns>The value of the field.</returns>
-        public static T GetFieldValue<T>(object obj, string fieldName, bool isPrivate)
+        public static T GetFieldValue<T>(object obj, string fieldName)
         {
-            FieldInfo field = GetField(obj.GetType(), fieldName, isPrivate);
+            FieldInfo field = GetField(obj.GetType(), fieldName);
 
             return (T)field.GetValue(obj);
         }
@@ -91,22 +93,17 @@ namespace PiTung_Bootstrap
         /// </summary>
         /// <param name="onObject">The object that contains the method.</param>
         /// <param name="methodName">The method's name.</param>
-        /// <param name="isPrivate">True if the method's private.</param>
         /// <param name="parameters">The method's parameters.</param>
-        public static void ExecuteMethod(object onObject, string methodName, bool isPrivate, params object[] parameters)
+        public static void ExecuteMethod(object onObject, string methodName, params object[] parameters)
         {
             if (onObject == null) throw new ArgumentNullException(nameof(onObject));
             if (methodName == null) throw new ArgumentNullException(nameof(methodName));
 
             Type type = onObject.GetType();
-            MethodInfo method;
 
-            if (isPrivate)
-                method = type.GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
-            else
-                method = type.GetMethod(methodName);
+            MethodInfo method = type.GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
 
-            if (method == null) throw new ArgumentException(nameof(methodName));
+            if (method == null) throw new ArgumentException($"Method '{methodName}' not found in object of type '{type.Name}'.", nameof(methodName));
 
             method.Invoke(onObject, parameters);
         }

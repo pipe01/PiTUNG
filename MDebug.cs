@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-
-namespace PiTung_Bootstrap
+﻿namespace PiTung_Bootstrap
 {
     internal static class MDebug
     {
@@ -10,7 +7,7 @@ namespace PiTung_Bootstrap
         public static void WriteLine(string line, int level = 0, params object[] args)
         {
             if (level <= DebugLevel)
-                Console.WriteLine("[PiTung] " + string.Format(line, args: args));
+                System.Console.WriteLine("[PiTung] " + string.Format(line, args: args));
         }
     }
 }
