@@ -118,37 +118,18 @@ namespace PiTung_Bootstrap
                 SubscribeToKey(item);
             }
         }
+    }
 
-        /// <summary>
-        /// Goes through all the mod's methods and returns <see cref="MethodPatch"/>es defining the mod's patches.
-        /// </summary>
-        /// <returns></returns>
-        internal IEnumerable<MethodPatch> GetMethodPatches()
+    internal static class ModExtensions
+    {
+        public static IEnumerable<MethodPatch> GetAssemblyPatches(this Mod @this)
         {
-            foreach (var item in this.GetType().GetMethods(BindingFlags.Static | BindingFlags.Public))
+            foreach (var item in @this.ModAssembly.GetTypes())
             {
-                var attrs = Attribute.GetCustomAttributes(item);
-
-                foreach (var a in attrs)
-                {
-                    bool prefix = a is PrefixAttribute;
-                    bool postfix = a is PostfixAttribute;
-                    PatchAttribute patch = a as PatchAttribute;
-
-                    if (!prefix && !postfix)
-                        continue;
-
-                    var baseMethod = patch.ContainerType.GetMethod(patch.MethodName, BindingFlags.NonPublic | BindingFlags.Instance);
-
-                    if (baseMethod == null)
-                    {
-                        throw new ArgumentException($"Can't find method {patch.MethodName} in {patch.ContainerType.Name}");
-                    }
-
-                    yield return new MethodPatch(baseMethod, item, prefix);
-                    break;
-                }
+                //if (item.BaseType == typeof(PatchClass))
             }
+
+            yield break;
         }
     }
 }

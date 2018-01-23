@@ -3,20 +3,28 @@ using System.Reflection;
 
 namespace PiTung_Bootstrap
 {
+    public enum PatchType
+    {
+        Prefix,
+        Postfix,
+        //NewMethod
+    }
+
     internal struct MethodPatch
     {
         public MethodInfo BaseMethod { get; }
         public MethodInfo PatchMethod { get; }
-        public bool Prefix { get; }
-        public bool Postfix { get; }
+        public PatchType Type { get; }
         public Type[] ParameterTypes { get; }
 
-        public MethodPatch(MethodInfo baseMethod, MethodInfo patchMethod, bool prefix, Type[] paramTypes = default(Type[]))
+        public bool Prefix => Type == PatchType.Prefix;
+        public bool Postfix => Type == PatchType.Postfix;
+
+        public MethodPatch(MethodInfo baseMethod, MethodInfo patchMethod, PatchType type, Type[] paramTypes = default(Type[]))
         {
             this.BaseMethod = baseMethod;
             this.PatchMethod = patchMethod;
-            this.Prefix = prefix;
-            this.Postfix = !prefix;
+            this.Type = type;
             this.ParameterTypes = paramTypes;
         }
     }

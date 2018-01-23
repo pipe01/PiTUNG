@@ -1,4 +1,5 @@
-﻿using Harmony;
+﻿using System.IO;
+using Harmony;
 using System;
 using System.Reflection;
 using UnityEngine;
@@ -38,7 +39,6 @@ namespace PiTung_Bootstrap
                     continue;
                 }
 
-                
                 if (mod.FrameworkVersion.CompareTo(PiTung.FrameworkVersion) != 0)
                 {
                     if (mod.RequireFrameworkVersion)
@@ -59,31 +59,41 @@ namespace PiTung_Bootstrap
                 catch (Exception ex)
                 {
                     MDebug.WriteLine($"[ERROR] {modStr} failed to load: error while executing before-patch method.");
-                    MDebug.WriteLine("More details: " + ex.Message, 1);
+                    MDebug.WriteLine("More details: " + ex, 1);
 
                     continue;
                 }
+
+                MDebug.WriteLine($"Loading {modStr}...");
 
                 try
                 {
                     harmony.PatchAll(mod.ModAssembly);
 
-                    foreach (var patch in mod.GetMethodPatches())
+                    foreach (Type cls in mod.ModAssembly.GetTypes())
                     {
-                        if (patch.Prefix)
+                        var attrs = (TargetAttribute[])cls.GetCustomAttributes(typeof(TargetAttribute), false);
+
+                        if (attrs.Length == 0)
+                            continue;
+
+                        foreach (var patch in PatchUtilities.GetMethodPatches(cls, attrs[0].ContainerType))
                         {
-                            harmony.Patch(patch.BaseMethod, new HarmonyMethod(patch.PatchMethod), null);
-                        }
-                        else if (patch.Postfix)
-                        {
-                            harmony.Patch(patch.BaseMethod, null, new HarmonyMethod(patch.PatchMethod));
+                            var method = new HarmonyMethod(patch.PatchMethod);
+
+                            MDebug.WriteLine(patch.PatchMethod.Name);
+
+                            harmony.Patch(
+                                patch.BaseMethod,
+                                patch.Prefix ? method : null,
+                                patch.Postfix ? method : null);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
                     MDebug.WriteLine($"[ERROR] {modStr} failed to load: error while patching methods.");
-                    MDebug.WriteLine("More details: " + ex.Message, 1);
+                    MDebug.WriteLine("More details: " + ex, 1);
                     continue;
                 }
 
@@ -94,7 +104,7 @@ namespace PiTung_Bootstrap
                 catch (Exception ex)
                 {
                     MDebug.WriteLine($"[ERROR] {modStr} failed to load: error while executing after-patch method.");
-                    MDebug.WriteLine("More details: " + ex.Message, 1);
+                    MDebug.WriteLine("More details: " + ex, 1);
 
                     continue;
                 }
