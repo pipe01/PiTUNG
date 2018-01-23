@@ -4,6 +4,7 @@ using System;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using PiTung_Bootstrap.Console;
 
 namespace PiTung_Bootstrap
 {

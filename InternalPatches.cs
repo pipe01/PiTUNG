@@ -1,4 +1,5 @@
 ﻿using Harmony;
+using PiTung_Bootstrap.Console;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -71,6 +72,7 @@ namespace PiTung_Bootstrap
             {
                 item.OnGUI();
             }
+
             IGConsole.Draw(); // Drawn last so that it stays on top
         }
     }
