@@ -30,6 +30,8 @@ namespace PiTung_Bootstrap
             var harmony = HarmonyInstance.Create("me.pipe01.pitung");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
+            IGConsole.Init(); // Making the console available in AfterPatch
+
             foreach (var mod in ModLoader.GetMods())
             {
                 if (mod.ModAssembly == null)
@@ -112,8 +114,6 @@ namespace PiTung_Bootstrap
 
             SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
 
-            IGConsole.Init(); // Making the console available in AfterPatch
-            
             MDebug.WriteLine("----------Done patching!----------");
         }
 

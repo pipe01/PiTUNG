@@ -328,7 +328,7 @@ namespace PiTung_Bootstrap.Console
         /// </summary>
         /// <param name="variable">The variable to set</param>
         /// <param name="value">The value to give</param>
-        internal static void SetVariable(string variable, string value)
+        public static void SetVariable(string variable, string value)
         {
             VarRegistry[variable] = value;
         }
