@@ -18,7 +18,7 @@ namespace PiTung_Bootstrap.Console
             {
                 foreach (Command command in Registry.Values)
                 {
-                    string log = command.Name;
+                    string log = $"<b>{command.Name}</b>";
                     if (command.Description != null)
                         log += ": " + command.Description;
                     Log(log);
@@ -53,7 +53,7 @@ namespace PiTung_Bootstrap.Console
 
         public override void Execute(IEnumerable<string> arguments)
         {
-            IGConsole.Log(String.Join(", ", Mod.AliveMods.Select(o => o.Name).ToArray()));
+            Log("<b>Loaded mods:</b> " + String.Join(", ", Mod.AliveMods.Select(o => $"'{o.Name}'").ToArray()));
         }
     }
 
@@ -68,21 +68,21 @@ namespace PiTung_Bootstrap.Console
             if (arguments.Count() == 1)
             {
                 string variable = arguments.ElementAt(0);
-                string value = IGConsole.GetVariable(variable);
+                string value = GetVariable(variable);
                 if (value != null)
-                    IGConsole.Log(value);
+                    Log(value);
                 else
-                    IGConsole.Error($"Variable {variable} no set");
+                    Error($"Variable {variable} not set");
             }
             else if (arguments.Count() == 2)
             {
                 string variable = arguments.ElementAt(0);
                 string value = arguments.ElementAt(1);
-                IGConsole.SetVariable(variable, value);
+                SetVariable(variable, value);
             }
             else
             {
-                IGConsole.Error(Usage);
+                Error(Usage);
             }
         }
     }
