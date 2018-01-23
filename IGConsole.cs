@@ -83,7 +83,7 @@ namespace PiTung_Bootstrap
     /// global variables that can be read and written to from the console
     /// using the "set" command</para>
     /// </summary>
-    public class Console
+    public class IGConsole
     {
         /// <summary>
         /// Max number of log entries kept in memory
@@ -492,21 +492,21 @@ namespace PiTung_Bootstrap
                 if(arguments.Count() == 1)
                 {
                     string variable = arguments.ElementAt(0);
-                    string value = Console.GetVariable(variable);
+                    string value = IGConsole.GetVariable(variable);
                     if (value != null)
-                        Console.Log(value);
+                        IGConsole.Log(value);
                     else
-                        Console.Error($"Variable {variable} no set");
+                        IGConsole.Error($"Variable {variable} no set");
                 }
                 else if(arguments.Count() == 2)
                 {
                     string variable = arguments.ElementAt(0);
                     string value = arguments.ElementAt(1);
-                    Console.SetVariable(variable, value);
+                    IGConsole.SetVariable(variable, value);
                 }
                 else
                 {
-                    Console.Error(Usage);
+                    IGConsole.Error(Usage);
                 }
             }
         }

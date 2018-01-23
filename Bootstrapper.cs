@@ -107,7 +107,7 @@ namespace PiTung_Bootstrap
 
             MDebug.WriteLine("----------Done patching!----------");
 
-            Console.Init();
+            IGConsole.Init();
         }
 
         /// <summary>
