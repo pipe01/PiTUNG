@@ -210,9 +210,15 @@ namespace PiTung_Bootstrap.Console
                 if(SceneManager.GetActiveScene().name == "gameplay")
                 {
                     if (Shown)
+                    {
                         UIManager.UnlockMouseAndDisableFirstPersonLooking();
-                    else if(!UIManager.SomeOtherMenuIsOpen)
+                        UIManager.SomeOtherMenuIsOpen = true;
+                    }
+                    else if (!UIManager.SomeOtherMenuIsOpen)
+                    {
                         UIManager.LockMouseAndEnableFirstPersonLooking();
+                        UIManager.SomeOtherMenuIsOpen = false;
+                    }
                 }
             }
 
