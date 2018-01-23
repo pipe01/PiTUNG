@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -422,10 +423,53 @@ namespace PiTung_Bootstrap.Console
                     Log(LogType.ERROR, e.ToString());
                 }
             }
-            else
+            else if (!TryParseVariables(cmd.Trim()))
             {
                 Log(LogType.ERROR, $"Unrecognized command: {verb}");
             }
+        }
+
+        private static bool TryParseVariables(string line)
+        {
+            if (line.StartsWith("$"))
+            {
+                if (line.Contains('='))
+                {
+                    int equalsIndex = line.IndexOf('=');
+                    string name = line.Substring(1, equalsIndex - 1).Trim();
+                    string val = line.Substring(equalsIndex + 1).Trim();
+
+                    if (val.StartsWith("\"") && val.EndsWith("\""))
+                    {
+                        val = val.Substring(1, val.Length - 2).Trim();
+                    }
+                    
+                    SetVariable(name, val);
+                    Log($"\"{val}\"");
+
+                    return true;
+                }
+
+                string variable = line.Substring(1);
+
+                if (variable.Contains(' '))
+                    return false;
+
+                string value = GetVariable(variable);
+
+                if (value != null)
+                {
+                    Log($"\"{value}\"");
+                }
+                else
+                {
+                    Log(LogType.ERROR, $"Variable \"{variable}\" not found.");
+                }
+
+                return true;
+            }
+
+            return false;
         }
 
         private static void ReadInput()
