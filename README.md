@@ -5,7 +5,8 @@ Mod framework for The Ultimate Nerd Game
 
 # For users: How to install the framework
 
-Installing the framework is extremely easy, just download [the installer](http://www.pipe0481.heliohost.org/pitung/Installer.exe) to the same folder as "The Ultimate Nerd Game.exe", and double-click it!
+<!--Installing the framework is extremely easy, just download [the installer](http://www.pipe0481.heliohost.org/pitung/Installer.exe) to the same folder as "The Ultimate Nerd Game.exe", and double-click it!-->
+Not yet!
 
 # For developers: How to create a mod
 
