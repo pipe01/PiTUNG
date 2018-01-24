@@ -137,7 +137,7 @@ namespace PiTung_Bootstrap
                     MDebug.WriteLine("Found camera!", 1);
 
                     if (obj.GetComponent<DummyComponent>() == null)
-                        camera.gameObject.AddComponent<DummyComponent>();
+                        ModUtilities.DummyComponent = camera.gameObject.AddComponent<DummyComponent>();
 
                     break;
                 }

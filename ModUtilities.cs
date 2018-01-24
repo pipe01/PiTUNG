@@ -31,6 +31,12 @@ namespace PiTung_Bootstrap
         public static void Log(string line, params object[] args) => MDebug.WriteLine(line, 0, args: args);
 
         /// <summary>
+        /// The dummy component, use this to perform tasks that are normally run inside a MonoBehavior,
+        /// like coroutines.
+        /// </summary>
+        public static DummyComponent DummyComponent { get; internal set; }
+
+        /// <summary>
         /// Writes a line to the "output_log.txt" file.
         /// </summary>
         /// <param name="line">The line to be written.</param>
