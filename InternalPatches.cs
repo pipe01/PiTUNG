@@ -1,4 +1,5 @@
-﻿using Harmony;
+﻿using System.Windows.Input;
+using Harmony;
 using PiTung_Bootstrap.Console;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,18 +39,36 @@ namespace PiTung_Bootstrap
     [HarmonyPatch(typeof(DummyComponent), "Update")]
     internal class InputPatch
     {
-        public static List<KeyCode> KeyCodesToListenTo = new List<KeyCode>();
+        public struct KeyStruct
+        {
+            public KeyCode Key { get; }
+            public bool Repeat { get; }
+            public float RepeatInterval { get; }
+
+            public KeyStruct(KeyCode key, bool repeat, float repeatInterval)
+            {
+                this.Key = key;
+                this.Repeat = repeat;
+                this.RepeatInterval = repeatInterval;
+            }
+        }
+
+        public static List<KeyStruct> KeyCodesToListenTo = new List<KeyStruct>();
+
+        private static Dictionary<KeyStruct, float> PressedTimes = new Dictionary<KeyStruct, float>();
 
         public delegate void KeyDownDelegate(KeyCode keyCode);
         public static event KeyDownDelegate KeyDown;
-
+        
         static void Prefix()
         {
             foreach (var key in KeyCodesToListenTo)
             {
-                if (Input.GetKeyDown(key))
+                if ((Input.GetKeyDown(key.Key))
+                    || (key.Repeat && Input.GetKey(key.Key) && Time.time - PressedTimes[key] >= key.RepeatInterval))
                 {
-                    KeyDown?.Invoke(key);
+                    PressedTimes[key] = Time.time;
+                    KeyDown?.Invoke(key.Key);
                 }
             }
         }

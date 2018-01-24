@@ -24,7 +24,7 @@ namespace PiTung_Bootstrap.Config_menu
         private MenuEntry CurrentParent = null;
         private int HoverIndex = 0;
         private int ItemsOffset = 0;
-        private Stack<int> HoverStack = new Stack<int>();
+        private Stack<KeyValuePair<int, int>> HoverStack = new Stack<KeyValuePair<int, int>>();
 
         private MenuEntry[] CurrentEntries
         {
@@ -67,7 +67,7 @@ namespace PiTung_Bootstrap.Config_menu
 
             foreach (var item in keys)
             {
-                ModUtilities.Input.SubscribeToKey(item, KeyDown);
+                ModUtilities.Input.SubscribeToKey(item, KeyDown, true, 0.15f);
             }
         }
 
@@ -95,13 +95,18 @@ namespace PiTung_Bootstrap.Config_menu
                 else if (hover is GoUpMenuEntry goUp)
                 {
                     this.CurrentParent = goUp.Parent;
-                    HoverIndex = HoverStack.Pop();
+
+                    var popped = HoverStack.Pop();
+
+                    HoverIndex = popped.Key;
+                    ItemsOffset = popped.Value;
                 }
                 else if (hover.Children?.Count > 0)
                 {
                     this.CurrentParent = hover;
-                    HoverStack.Push(HoverIndex);
+                    HoverStack.Push(new KeyValuePair<int, int>(HoverIndex, ItemsOffset));
                     HoverIndex = 0;
+                    ItemsOffset = 0;
                 }
             }
 
