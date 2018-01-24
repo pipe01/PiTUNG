@@ -24,6 +24,7 @@ namespace PiTung_Bootstrap.Config_menu
         private MenuEntry CurrentParent = null;
         private int HoverIndex = 0;
         private int ItemsOffset = 0;
+        private Stack<int> HoverStack = new Stack<int>();
 
         private MenuEntry[] CurrentEntries
         {
@@ -46,46 +47,14 @@ namespace PiTung_Bootstrap.Config_menu
             DefaultStyle = new GUIStyle();
             DefaultStyle.normal.textColor = new Color(.75f, .75f, .75f);
             DefaultStyle.richText = true;
+            
+            Entries = new List<MenuEntry>();
 
-            //Entries = new List<MenuEntry>()
-            //{
-            //    new TextMenuEntry
-            //    {
-            //        Text = "hola",
-            //        Children = new ObservableList<MenuEntry>()
-            //        {
-            //            new TextMenuEntry { Text = "child" }
-            //        }
-            //    },
-            //    new CheckboxMenuEntry
-            //    { Text = "que" },
-            //    new SimpleNumberEntry(1, 0, 10, 5)
-            //    { Text = "pasa" }
-            //};
-
-            int i = 0;
-            Entries = new List<MenuEntry>
+            for (int i = 0; i < 15; i++)
             {
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-                new TextMenuEntry{ Text = "test" + i++ },
-            };
+                Entries.Add(new TextMenuEntry { Text = "test" + i });
+                Entries.Last().AddChild<CheckboxMenuEntry>().Text = "test" + i + " child";
+            }
             
             KeyCode[] keys = new[]
             {
@@ -104,8 +73,6 @@ namespace PiTung_Bootstrap.Config_menu
 
         private void KeyDown(KeyCode key)
         {
-            IGConsole.Log(VisibleEntries.ToString());
-
             MenuEntry hover = CurrentEntries[HoverIndex];
             var chk = hover as CheckboxMenuEntry;
 
@@ -128,10 +95,13 @@ namespace PiTung_Bootstrap.Config_menu
                 else if (hover is GoUpMenuEntry goUp)
                 {
                     this.CurrentParent = goUp.Parent;
+                    HoverIndex = HoverStack.Pop();
                 }
                 else if (hover.Children?.Count > 0)
                 {
                     this.CurrentParent = hover;
+                    HoverStack.Push(HoverIndex);
+                    HoverIndex = 0;
                 }
             }
 
@@ -160,16 +130,22 @@ namespace PiTung_Bootstrap.Config_menu
                 }
             }
 
-            if (HoverIndex - ItemsOffset + 1 > VisibleEntries)
+            UpdateScroll();
+        }
+        
+        private void UpdateScroll()
+        {
+            IGConsole.Log(HoverIndex.ToString());
+            if (HoverIndex - ItemsOffset + 2 > VisibleEntries)
             {
                 ItemsOffset++;
             }
-            else if (HoverIndex - ItemsOffset + 1 < VisibleEntries)
+            else if (ItemsOffset > 0 && HoverIndex - ItemsOffset + 2 < VisibleEntries)
             {
                 ItemsOffset--;
             }
         }
-        
+
         public void Render()
         {
             var areaStyle = new GUIStyle(DefaultStyle);
@@ -185,10 +161,10 @@ namespace PiTung_Bootstrap.Config_menu
             GUILayout.Label("<size=15>PiTung Configuration</size>", new GUIStyle(DefaultStyle) { alignment = TextAnchor.MiddleCenter });
             
             int i = 0;
-            foreach (var item in CurrentEntries.Skip(ItemsOffset))
+            foreach (var item in CurrentEntries.Skip(ItemsOffset).Take(VisibleEntries))
             {
                 bool drawLabel = true;
-                bool hover = HoverIndex == i;
+                bool hover = HoverIndex - ItemsOffset == i;
 
                 if (item is CheckboxMenuEntry chk)
                 {

@@ -29,7 +29,7 @@ namespace PiTung_Bootstrap.Config_menu
             return child;
         }
 
-        public MenuEntry AddChild<T>() where T : MenuEntry
+        public T AddChild<T>() where T : MenuEntry
         {
             var inst = Activator.CreateInstance<T>();
             AddChild(inst);
