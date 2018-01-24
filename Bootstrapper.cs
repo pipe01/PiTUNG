@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿using System.Linq;
+using PiTung_Bootstrap.Config_menu;
+using System.Runtime.InteropServices.ComTypes;
+using System.IO;
 using Harmony;
 using System;
 using System.Reflection;
@@ -93,6 +96,7 @@ namespace PiTung_Bootstrap
                 {
                     MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while patching methods.");
                     MDebug.WriteLine("More details: " + ex, 1);
+
                     continue;
                 }
 
@@ -108,6 +112,27 @@ namespace PiTung_Bootstrap
                     continue;
                 }
 
+                MenuEntry[] entries;
+
+                try
+                {
+                    entries = mod.GetMenuEntries().ToArray();
+                }
+                catch (Exception)
+                {
+                    MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while creating menu entries.");
+
+                    continue;
+                }
+
+                if (entries.Length > 0)
+                {
+                    var entry = new TextMenuEntry { Text = mod.Name };
+                    entry.AddChildren(entries);
+
+                    ConfigMenu.Instance.Entries.Add(entry);
+                }
+                
                 ModCount++;
                 MDebug.WriteLine($"{mod.Name} loaded successfully.");
             }

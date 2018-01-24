@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiTung_Bootstrap.Config_menu;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
@@ -65,6 +66,13 @@ namespace PiTung_Bootstrap
         /// </summary>
         public string FullName => $"{Author}'s {Name} (v{ModVersion})";
 
+        /// <summary>
+        /// Get the mod's menu entries.
+        /// </summary>
+        public virtual IEnumerable<MenuEntry> GetMenuEntries()
+        {
+            yield break;
+        }
 
         /// <summary>
         /// Executed before the mod's patches are applied. Use this to initialize any variables you need.

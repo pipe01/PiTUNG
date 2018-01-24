@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Data.Odbc;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -45,6 +46,13 @@ namespace PiTung_Bootstrap.Config_menu
         }
     }
 
+    public delegate void ValueChangedDelegate<T>(T value);
+
+    public interface IValueMenuEntry<TValue>
+    {
+        event ValueChangedDelegate<TValue> ValueChanged;
+    }
+
     public class TextMenuEntry : MenuEntry
     {
         public string Text { get; set; }
@@ -73,7 +81,7 @@ namespace PiTung_Bootstrap.Config_menu
         public float SmallStep { get; set; }
         public float Minimum { get; set; }
         public float Maximum { get; set; }
-
+        
         public KeyCode BigStepKey { get; set; } = KeyCode.LeftShift;
         public KeyCode SmallStepKey { get; set; } = KeyCode.LeftControl;
 
