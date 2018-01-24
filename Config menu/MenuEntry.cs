@@ -54,7 +54,7 @@ namespace PiTung_Bootstrap.Config_menu
     {
         public GoUpMenuEntry()
         {
-            this.Text = "Go back...";
+            this.Text = "<i>Go back...</i>";
         }
     }
 

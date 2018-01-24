@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using PiTung_Bootstrap.Config_menu;
+using System.Windows.Input;
 using Harmony;
 using PiTung_Bootstrap.Console;
 using System.Collections.Generic;
@@ -62,6 +63,22 @@ namespace PiTung_Bootstrap
         
         static void Prefix()
         {
+            if (Input.GetKeyDown(KeyCode.F5))
+            {
+                ConfigMenu.Instance.Show = !ConfigMenu.Instance.Show;
+
+                UIManager.SomeOtherMenuIsOpen = ConfigMenu.Instance.Show;
+
+                if (ConfigMenu.Instance.Show)
+                {
+                    UIManager.UnlockMouseAndDisableFirstPersonLooking();
+                }
+                else
+                {
+                    UIManager.LockMouseAndEnableFirstPersonLooking();
+                }
+            }
+
             foreach (var key in KeyCodesToListenTo)
             {
                 if ((Input.GetKeyDown(key.Key))

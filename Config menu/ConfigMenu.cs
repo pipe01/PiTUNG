@@ -7,9 +7,11 @@ using UnityEngine;
 
 namespace PiTung_Bootstrap.Config_menu
 {
-    public class ConfigMenu
+    internal class ConfigMenu
     {
         public static ConfigMenu Instance { get; } = new ConfigMenu();
+
+        public bool Show { get; set; }
 
         private static Texture2D BackTexture;
 
@@ -48,14 +50,6 @@ namespace PiTung_Bootstrap.Config_menu
             DefaultStyle.normal.textColor = new Color(.75f, .75f, .75f);
             DefaultStyle.richText = true;
             
-            Entries = new List<MenuEntry>();
-
-            for (int i = 0; i < 15; i++)
-            {
-                Entries.Add(new TextMenuEntry { Text = "test" + i });
-                Entries.Last().AddChild<CheckboxMenuEntry>().Text = "test" + i + " child";
-            }
-            
             KeyCode[] keys = new[]
             {
                 KeyCode.UpArrow,
@@ -78,7 +72,14 @@ namespace PiTung_Bootstrap.Config_menu
 
             if (key == KeyCode.UpArrow || key == KeyCode.DownArrow)
             {
-                HoverIndex += key == KeyCode.UpArrow ? -1 : 1;
+                if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    HoverIndex = key == KeyCode.UpArrow ? 0 : CurrentEntries.Length - 1;
+                }
+                else
+                {
+                    HoverIndex += key == KeyCode.UpArrow ? -1 : 1;
+                }
 
                 if (HoverIndex < 0)
                     HoverIndex = 0;
@@ -135,24 +136,31 @@ namespace PiTung_Bootstrap.Config_menu
                 }
             }
 
-            UpdateScroll();
+            while (UpdateScroll()) ;
         }
         
-        private void UpdateScroll()
+        private bool UpdateScroll()
         {
-            IGConsole.Log(HoverIndex.ToString());
-            if (HoverIndex - ItemsOffset + 2 > VisibleEntries)
+            bool goDown = HoverIndex - ItemsOffset + 2 > VisibleEntries,
+                 goUp = ItemsOffset > 0 && HoverIndex - ItemsOffset + 2 < VisibleEntries;
+
+            if (goDown)
             {
                 ItemsOffset++;
             }
-            else if (ItemsOffset > 0 && HoverIndex - ItemsOffset + 2 < VisibleEntries)
+            else if (goUp)
             {
                 ItemsOffset--;
             }
+
+            return goDown || goUp;
         }
 
         public void Render()
         {
+            if (!Show)
+                return;
+
             var areaStyle = new GUIStyle(DefaultStyle);
             var entryStyle = new GUIStyle(DefaultStyle)
             {
