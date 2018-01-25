@@ -32,7 +32,7 @@ namespace PiTung_Bootstrap
             var harmony = HarmonyInstance.Create("me.pipe01.pitung");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
-            IGConsole.Init(); // Making the console available in AfterPatch
+            IGConsole.Init();
 
             foreach (var mod in ModLoader.GetMods())
             {

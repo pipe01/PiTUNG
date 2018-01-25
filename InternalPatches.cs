@@ -32,7 +32,7 @@ namespace PiTung_Bootstrap
         {
             foreach (var item in Mod.AliveMods)
             {
-                item.LodingWorld(SaveManager.SaveName);
+                item.WorldLoaded(SaveManager.SaveName);
             }
         }
     }
