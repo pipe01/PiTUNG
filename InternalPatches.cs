@@ -98,7 +98,7 @@ namespace PiTung_Bootstrap
 
         static void Prefix()
         {
-            if (ModUtilities.IsOnMainMenu)
+            if (ModUtilities.IsOnMainMenu && !IGConsole.Shown)
             {
                 string str = "PiTUNG enabled! Loaded mods: " + Bootstrapper.ModCount;
                 ModUtilities.Graphics.DrawText(str, new Vector2(5, 5), Color.white, true);
