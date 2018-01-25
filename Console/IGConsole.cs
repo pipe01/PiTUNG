@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using System.Text;
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -183,6 +184,8 @@ namespace PiTung_Bootstrap.Console
             RegisterCommand<Command_set>();
             RegisterCommand<Command_get>();
             RegisterCommand<Command_reload>();
+            RegisterCommand<Command_echo>();
+            RegisterCommand<Command_quit>();
 
             Log("Console initialized");
             Log("Type \"help\" to get a list of commands");
@@ -416,7 +419,9 @@ namespace PiTung_Bootstrap.Console
                 Log(LogType.ERROR, "Invalid command: " + error);
                 return;
             }
-            
+
+            args = ReplaceVariables(args).ToArray();
+
             Command command;
 
             if(Registry.TryGetValue(verb, out command))
@@ -526,6 +531,56 @@ namespace PiTung_Bootstrap.Console
                     CurrentCmd = CurrentCmd.Insert(EditLocation, c.ToString());
                     EditLocation++;
                 }
+            }
+        }
+
+        private static IEnumerable<string> ReplaceVariables(string[] arguments)
+        {
+            foreach (var item in arguments.Select(o => o.Trim()))
+            {
+                string ret = "";
+                
+                for (int i = 0; i < item.Length; i++)
+                {
+                    char c = item[i];
+
+                    if (c == '$' && (i == 0 || item[i - 1] != '\\'))
+                    {
+                        string varName = ReadVarName(item.Substring(i + 1));
+                        string varValue = GetVariable(varName);
+
+                        if (varValue != null)
+                        {
+                            ret += varValue;
+                        }
+                    }
+                }
+
+                if (ret?.Length == 0)
+                    ret = item;
+
+                yield return ret;
+            }
+
+            string ReadVarName(string arg)
+            {
+                string str = "";
+
+                for (int i = 0; i < arg.Length; i++)
+                {
+                    char c = arg[i];
+
+                    if (c == '$' && (i == 0 || arg[i - 1] != '\\'))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        str += c;
+                    }
+                }
+
+                return str;
             }
         }
 

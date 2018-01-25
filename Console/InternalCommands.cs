@@ -1,4 +1,5 @@
-﻿using System;
+﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using static PiTung_Bootstrap.Console.IGConsole;
@@ -15,7 +16,7 @@ namespace PiTung_Bootstrap.Console
         {
             if (!arguments.Any())
             {
-                foreach (Command command in Registry.Values)
+                foreach (Command command in Registry.Values.OrderBy(o => o.Name))
                 {
                     string log = $"<b>{command.Name}</b>";
                     if (command.Description != null)
@@ -135,6 +136,35 @@ namespace PiTung_Bootstrap.Console
 
             Log($"Done. {newMods} new mods loaded.");
 
+            return true;
+        }
+    }
+
+    internal class Command_echo : Command
+    {
+        public override string Name => "echo";
+        public override string Usage => $"{Name} text";
+        public override string Description => "Prints text to the console.";
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            string str = string.Join(" ", arguments.ToArray());
+
+            Log(str);
+
+            return true;
+        }
+    }
+
+    internal class Command_quit : Command
+    {
+        public override string Name => "quit";
+        public override string Usage => Name;
+        public override string Description => "Quits the game.";
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            Application.Quit();
             return true;
         }
     }

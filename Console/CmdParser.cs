@@ -34,7 +34,7 @@ namespace PiTung_Bootstrap.Console
                     args.Add(currentString.Trim());
                     currentString = "";
                 }
-                else if (c == '"')
+                else if (c == '"' && (i == 0 || line[i - 1] != '\\'))
                 {
                     if (inQuotes)
                     {
@@ -44,7 +44,7 @@ namespace PiTung_Bootstrap.Console
 
                     inQuotes = !inQuotes;
                 }
-                else
+                else if (c != '\\')
                 {
                     currentString += c;
                 }
@@ -55,11 +55,11 @@ namespace PiTung_Bootstrap.Console
                 args.Add(currentString.Trim());
             }
 
-            if (inQuotes)
-            {
-                error = "missing closing quote";
-                return false;
-            }
+            //if (inQuotes)
+            //{
+            //    error = "missing closing quote";
+            //    return false;
+            //}
 
             args.RemoveAll(String.IsNullOrEmpty);
 
