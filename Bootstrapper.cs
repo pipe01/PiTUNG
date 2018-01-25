@@ -1,16 +1,19 @@
-﻿using System.IO;
+﻿using System.Linq;
+using PiTung_Bootstrap.Config_menu;
 using Harmony;
 using System;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using PiTung_Bootstrap.Console;
+using Object = UnityEngine.Object;
 
 namespace PiTung_Bootstrap
 {
     public class Bootstrapper
     {
         private static bool Patched = false;
+        private static DummyComponent Dummy = null;
 
         public static int ModCount = 0;
 
@@ -93,6 +96,7 @@ namespace PiTung_Bootstrap
                 {
                     MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while patching methods.");
                     MDebug.WriteLine("More details: " + ex, 1);
+
                     continue;
                 }
 
@@ -108,6 +112,27 @@ namespace PiTung_Bootstrap
                     continue;
                 }
 
+                MenuEntry[] entries;
+
+                try
+                {
+                    entries = mod.GetMenuEntries().ToArray();
+                }
+                catch (Exception)
+                {
+                    MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while creating menu entries.");
+
+                    continue;
+                }
+
+                if (entries.Length > 0)
+                {
+                    var entry = new TextMenuEntry { Text = mod.Name };
+                    entry.AddChildren(entries);
+
+                    ConfigMenu.Instance.Entries.Add(entry);
+                }
+                
                 ModCount++;
                 MDebug.WriteLine($"{mod.Name} loaded successfully.");
             }
@@ -124,25 +149,27 @@ namespace PiTung_Bootstrap
         /// <param name="arg1">The new scene.</param>
         private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
         {
+            Dummy = Object.FindObjectOfType<DummyComponent>();
+            
             var objs = arg1.GetRootGameObjects();
 
-            //Search for a camera. If we find one, check if it has already got a DummyComponent.
-            //If it doesn't, add one.
-            foreach (var obj in objs)
+            if (Dummy == null)
             {
-                var camera = obj.GetComponent<Camera>();
-
-                if (camera != null)
+                //Search for a camera. If we find one, check if it has already got a DummyComponent.
+                //If it doesn't, add one.
+                foreach (var obj in objs)
                 {
-                    MDebug.WriteLine("Found camera!", 1);
+                    var camera = obj.GetComponent<Camera>();
 
-                    if (obj.GetComponent<DummyComponent>() == null)
-                        ModUtilities.DummyComponent = camera.gameObject.AddComponent<DummyComponent>();
+                    if (camera != null)
+                    {
+                        Dummy = obj.AddComponent<DummyComponent>();
 
-                    break;
+                        break;
+                    }
                 }
             }
-
+            
             //If the scene's name is "main menu", we may might possibly probably be in the main menu.
             ModUtilities.IsOnMainMenu = arg1.name == "main menu";
         }

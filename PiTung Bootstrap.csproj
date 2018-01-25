@@ -54,6 +54,7 @@
     <Reference Include="UnityEngine.TextRenderingModule">
       <HintPath>lib\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
     <Compile Include="ModUtilities.cs" />
+    <Compile Include="ObservableList.cs" />
     <Compile Include="ObjImporter.cs" />
     <Compile Include="Patch.cs" />
     <Compile Include="PatchMethodAttribute.cs" />
@@ -83,7 +85,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
 </Project>

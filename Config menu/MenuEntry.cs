@@ -1,23 +1,78 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 namespace PiTung_Bootstrap.Config_menu
 {
-    public class MenuEntry
+    public abstract class MenuEntry
     {
-        public string Text { get; set; }
+        public MenuEntry Parent { get; internal set; } = null;
+        protected internal ObservableList<MenuEntry> Children { get; set; } = new ObservableList<MenuEntry>();
 
-        public List<MenuEntry> Children { get; set; } = new List<MenuEntry>();
+        public MenuEntry()
+        {
+            this.Children.ItemAdded += Children_ItemAdded;
+        }
+
+        private void Children_ItemAdded(MenuEntry item)
+        {
+            item.Parent = this;
+        }
+
+        public MenuEntry AddChild(MenuEntry child)
+        {
+            this.Children.Add(child);
+            return child;
+        }
+
+        public T AddChild<T>() where T : MenuEntry
+        {
+            var inst = Activator.CreateInstance<T>();
+            AddChild(inst);
+            return inst;
+        }
+
+        public void AddChildren(params MenuEntry[] children)
+        {
+            foreach (var item in children)
+            {
+                AddChild(item);
+            }
+        }
     }
 
-    public class CheckboxMenuEntry : MenuEntry
+    public delegate void ValueChangedDelegate<T>(T value);
+    public interface IValueMenuEntry<TValue>
+    {
+        event ValueChangedDelegate<TValue> ValueChanged;
+    }
+
+    public class TextMenuEntry : MenuEntry
+    {
+        public string Text { get; set; }
+    }
+
+    internal sealed class GoUpMenuEntry : TextMenuEntry
+    {
+        public GoUpMenuEntry()
+        {
+            this.Text = "<i>Go back...</i>";
+        }
+    }
+
+    public sealed class CheckboxMenuEntry : TextMenuEntry, IValueMenuEntry<bool>
     {
         public bool Value { get; set; }
 
-        public void Toggle() => Value = !Value;
+        public event ValueChangedDelegate<bool> ValueChanged;
+
+        public void Toggle()
+        {
+            Value = !Value;
+            ValueChanged?.Invoke(Value);
+        }
     }
 
-    public class SimpleNumberEntry : MenuEntry
+    public sealed class SimpleNumberEntry : TextMenuEntry, IValueMenuEntry<float>
     {
         public float Value { get; set; }
         public float Step { get; set; }
@@ -25,9 +80,11 @@ namespace PiTung_Bootstrap.Config_menu
         public float SmallStep { get; set; }
         public float Minimum { get; set; }
         public float Maximum { get; set; }
-
+        
         public KeyCode BigStepKey { get; set; } = KeyCode.LeftShift;
         public KeyCode SmallStepKey { get; set; } = KeyCode.LeftControl;
+
+        public event ValueChangedDelegate<float> ValueChanged;
 
         private float GetStep()
         {
@@ -42,22 +99,32 @@ namespace PiTung_Bootstrap.Config_menu
         {
             float step = GetStep();
 
+            if (this.Value == this.Maximum)
+                return;
+
             if ((this.Value + step > this.Maximum) && (this.Value < this.Maximum))
                 this.Value = this.Maximum;
 
             else if (this.Value < this.Maximum)
                 this.Value += step;
+
+            ValueChanged?.Invoke(this.Value);
         }
 
         public void Decrement()
         {
             float step = GetStep();
 
+            if (this.Value == this.Minimum)
+                return;
+
             if ((this.Value - step < this.Minimum) && (this.Value > this.Minimum))
                 this.Value = this.Minimum;
 
             else if (this.Value > this.Minimum)
                 this.Value -= step;
+
+            ValueChanged?.Invoke(this.Value);
         }
 
         public SimpleNumberEntry(float step, float min, float max, float value = 0)
@@ -78,7 +145,7 @@ namespace PiTung_Bootstrap.Config_menu
         }
     }
 
-    public class NumericRangeEntry : MenuEntry
+    public sealed class CustomNumericEntry : TextMenuEntry
     {
         public delegate void ChangeOneStepDelegate(ref float value);
         private ChangeOneStepDelegate IncrementMethod, DecrementMethod;
@@ -90,15 +157,15 @@ namespace PiTung_Bootstrap.Config_menu
 
         public void Decrement() => this.DecrementMethod(ref _Value);
 
-        public NumericRangeEntry(float step, float min, float max)
-        {
-            this.IncrementMethod = (ref float o) => o += o < max ? step : 0;
-            this.DecrementMethod = (ref float o) => o -= o > min ? step : 0;
-        }
-        public NumericRangeEntry(ChangeOneStepDelegate increment, ChangeOneStepDelegate decrement)
+        public CustomNumericEntry(ChangeOneStepDelegate increment, ChangeOneStepDelegate decrement)
         {
             this.IncrementMethod = increment;
             this.DecrementMethod = decrement;
+        }
+        public CustomNumericEntry(float step, float min, float max)
+        {
+            this.IncrementMethod = (ref float o) => o += o < max ? step : 0;
+            this.DecrementMethod = (ref float o) => o -= o > min ? step : 0;
         }
     }
 }

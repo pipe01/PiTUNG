@@ -1,13 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System.Runtime.InteropServices.ComTypes;
+using PiTung_Bootstrap.Console;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 namespace PiTung_Bootstrap.Config_menu
 {
-    public class ConfigMenu
+    internal class ConfigMenu
     {
-        private static ConfigMenu _Instance = new ConfigMenu();
-        public static ConfigMenu Instance => _Instance;
+        public static ConfigMenu Instance { get; } = new ConfigMenu();
+
+        public bool Show { get; set; }
 
         private static Texture2D BackTexture;
 
@@ -15,13 +19,29 @@ namespace PiTung_Bootstrap.Config_menu
         public Vector2 Position = new Vector2(5, 50);
         public Vector2 Size = new Vector2(200, 200);
 
-        private GUIStyle DefaultStyle;
-        private Dictionary<Color, Texture2D> ColorTextures = new Dictionary<Color, Texture2D>();
+        private readonly GUIStyle DefaultStyle;
 
-        private MenuEntry SelectedEntry = null;
-        private MenuEntry[] CurrentEntries = null;
+        private int VisibleEntries => (int)Math.Floor(Size.y / DefaultStyle.CalcSize(new GUIContent("Test")).y) - 1;
+
+        private MenuEntry CurrentParent = null;
         private int HoverIndex = 0;
+        private int ItemsOffset = 0;
+        private Stack<KeyValuePair<int, int>> HoverStack = new Stack<KeyValuePair<int, int>>();
 
+        private MenuEntry[] CurrentEntries
+        {
+            get
+            {
+                var original = CurrentParent?.Children ?? Entries;
+                var copy = new List<MenuEntry>(original);
+                
+                if (CurrentParent != null)
+                    copy.Insert(0, new GoUpMenuEntry());
+
+                return copy.ToArray();
+            }
+        }
+        
         private ConfigMenu()
         {
             BackTexture = RoundedRectangle((int)Size.x, (int)Size.y, 7, new Color(0, 0, 0, .7f));
@@ -29,11 +49,7 @@ namespace PiTung_Bootstrap.Config_menu
             DefaultStyle = new GUIStyle();
             DefaultStyle.normal.textColor = new Color(.75f, .75f, .75f);
             DefaultStyle.richText = true;
-
-            //Entries.Add(new MenuEntry { Text = "hola" });
-            //Entries.Add(new CheckboxMenuEntry { Text = "que" });
-            //Entries.Add(new SimpleNumberEntry(1, 0, 10, 5) { Text = "pasa" });
-
+            
             KeyCode[] keys = new[]
             {
                 KeyCode.UpArrow,
@@ -45,18 +61,25 @@ namespace PiTung_Bootstrap.Config_menu
 
             foreach (var item in keys)
             {
-                ModUtilities.Input.SubscribeToKey(item, KeyDown);
+                ModUtilities.Input.SubscribeToKey(item, KeyDown, true, 0.15f);
             }
         }
 
         private void KeyDown(KeyCode key)
         {
-            SimpleNumberEntry num = CurrentEntries[HoverIndex] as SimpleNumberEntry;
-            CheckboxMenuEntry chk = CurrentEntries[HoverIndex] as CheckboxMenuEntry;
+            MenuEntry hover = CurrentEntries[HoverIndex];
+            var chk = hover as CheckboxMenuEntry;
 
             if (key == KeyCode.UpArrow || key == KeyCode.DownArrow)
             {
-                HoverIndex += key == KeyCode.UpArrow ? -1 : 1;
+                if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    HoverIndex = key == KeyCode.UpArrow ? 0 : CurrentEntries.Length - 1;
+                }
+                else
+                {
+                    HoverIndex += key == KeyCode.UpArrow ? -1 : 1;
+                }
 
                 if (HoverIndex < 0)
                     HoverIndex = 0;
@@ -64,12 +87,33 @@ namespace PiTung_Bootstrap.Config_menu
                 if (HoverIndex == CurrentEntries.Length)
                     HoverIndex = CurrentEntries.Length - 1;
             }
-            else if (key == KeyCode.Return &&chk != null)
+            else if (key == KeyCode.Return)
             {
-                chk.Toggle();
+                if (chk != null)
+                {
+                    chk.Toggle();
+                }
+                else if (hover is GoUpMenuEntry goUp)
+                {
+                    this.CurrentParent = goUp.Parent;
+
+                    var popped = HoverStack.Pop();
+
+                    HoverIndex = popped.Key;
+                    ItemsOffset = popped.Value;
+                }
+                else if (hover.Children?.Count > 0)
+                {
+                    this.CurrentParent = hover;
+                    HoverStack.Push(new KeyValuePair<int, int>(HoverIndex, ItemsOffset));
+                    HoverIndex = 0;
+                    ItemsOffset = 0;
+                }
             }
 
-            if (key == KeyCode.LeftArrow)
+            var num = hover as SimpleNumberEntry;
+
+            if (key == KeyCode.LeftArrow && hover is SimpleNumberEntry test)
             {
                 if (num != null)
                 {
@@ -91,36 +135,31 @@ namespace PiTung_Bootstrap.Config_menu
                     chk.Toggle();
                 }
             }
+
+            while (UpdateScroll()) ;
         }
-
-        private Texture2D ColorTexture(Color color)
+        
+        private bool UpdateScroll()
         {
-            if (!ColorTextures.ContainsKey(color))
-            {
-                Texture2D tex = new Texture2D(1, 1, TextureFormat.ARGB32, false);
-                tex.SetPixels(new[] { color });
-                tex.Apply();
+            bool goDown = HoverIndex - ItemsOffset + 2 > VisibleEntries,
+                 goUp = ItemsOffset > 0 && HoverIndex - ItemsOffset + 2 < VisibleEntries;
 
-                ColorTextures[color] = tex;
+            if (goDown)
+            {
+                ItemsOffset++;
+            }
+            else if (goUp)
+            {
+                ItemsOffset--;
             }
 
-            return ColorTextures[color];
+            return goDown || goUp;
         }
 
         public void Render()
         {
-            if (CurrentEntries == null)
-            {
-                if (SelectedEntry == null)
-                {
-                    CurrentEntries = Entries.ToArray();
-                    HoverIndex = 0;
-                }
-                else
-                {
-                    CurrentEntries = SelectedEntry.Children.ToArray();
-                }
-            }
+            if (!Show)
+                return;
 
             var areaStyle = new GUIStyle(DefaultStyle);
             var entryStyle = new GUIStyle(DefaultStyle)
@@ -128,20 +167,21 @@ namespace PiTung_Bootstrap.Config_menu
                 margin = new RectOffset(5, 0, 0, 0)
             };
 
-            float width = 200, height = 200;
+            float width = Size.x, height = Size.y;
+
             GUILayout.BeginArea(new Rect(Position, new Vector2(width, height)), BackTexture);
 
             GUILayout.Label("<size=15>PiTung Configuration</size>", new GUIStyle(DefaultStyle) { alignment = TextAnchor.MiddleCenter });
-
+            
             int i = 0;
-            foreach (var item in CurrentEntries)
+            foreach (var item in CurrentEntries.Skip(ItemsOffset).Take(VisibleEntries))
             {
                 bool drawLabel = true;
-                bool hover = HoverIndex == i;
+                bool hover = HoverIndex - ItemsOffset == i;
 
                 if (item is CheckboxMenuEntry chk)
                 {
-                    DrawKeyValue((hover ? "> " : "") + item.Text, chk.Value ? "Yes" : "No", width, hover, entryStyle);
+                    DrawKeyValue((hover ? "> " : "") + chk.Text, chk.Value ? "Yes" : "No", width, hover, entryStyle);
                 }
                 else if (item is SimpleNumberEntry num)
                 {
@@ -154,14 +194,14 @@ namespace PiTung_Bootstrap.Config_menu
                         if (num.Value > num.Minimum)
                             valueString = "< " + valueString;
                         if (num.Value < num.Maximum)
-                            valueString = valueString + " >";
+                            valueString += " >";
                     }
 
                     DrawKeyValue((hover ? "> " : "") + num.Text, valueString, width, hover, entryStyle);
                 }
-                else
+                else if (item is TextMenuEntry text)
                 {
-                    string str = item.Text;
+                    string str = text.Text;
 
                     if (hover)
                         str = $"> <b>{str}</b>";
