@@ -214,7 +214,7 @@ namespace PiTung_Bootstrap.Console
                         UIManager.UnlockMouseAndDisableFirstPersonLooking();
                         UIManager.SomeOtherMenuIsOpen = true;
                     }
-                    else if (!UIManager.SomeOtherMenuIsOpen)
+                    else
                     {
                         UIManager.LockMouseAndEnableFirstPersonLooking();
                         UIManager.SomeOtherMenuIsOpen = false;
