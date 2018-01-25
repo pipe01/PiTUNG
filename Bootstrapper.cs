@@ -13,7 +13,6 @@ namespace PiTung_Bootstrap
     public class Bootstrapper
     {
         private static bool Patched = false;
-        private static DummyComponent Dummy = null;
 
         public static int ModCount = 0;
 
@@ -149,11 +148,11 @@ namespace PiTung_Bootstrap
         /// <param name="arg1">The new scene.</param>
         private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
         {
-            Dummy = Object.FindObjectOfType<DummyComponent>();
+            ModUtilities.DummyComponent = Object.FindObjectOfType<DummyComponent>();
             
             var objs = arg1.GetRootGameObjects();
 
-            if (Dummy == null)
+            if (ModUtilities.DummyComponent == null)
             {
                 //Search for a camera. If we find one, check if it has already got a DummyComponent.
                 //If it doesn't, add one.
@@ -163,7 +162,7 @@ namespace PiTung_Bootstrap
 
                     if (camera != null)
                     {
-                        Dummy = obj.AddComponent<DummyComponent>();
+                        ModUtilities.DummyComponent = obj.AddComponent<DummyComponent>();
 
                         break;
                     }
