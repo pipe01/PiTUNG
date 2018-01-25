@@ -1,5 +1,6 @@
 # PiTung
 [![Build status](https://ci.appveyor.com/api/projects/status/9v5a2adge9t2ysxa?svg=true)](https://ci.appveyor.com/project/pipe01/pitung)
+![PiTUNG installs](http://pipe0481.heliohost.org/pitung)
 
 Mod framework for The Ultimate Nerd Game
 
