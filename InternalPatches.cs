@@ -98,6 +98,12 @@ namespace PiTung_Bootstrap
 
         static void Prefix()
         {
+            if (ModUtilities.IsOnMainMenu)
+            {
+                string str = "PiTUNG enabled! Loaded mods: " + Bootstrapper.ModCount;
+                ModUtilities.Graphics.DrawText(str, new Vector2(5, 5), Color.white, true);
+            }
+
             foreach (var item in ElementsToBeDrawn)
             {
                 item.Draw();
@@ -109,7 +115,7 @@ namespace PiTung_Bootstrap
                 item.OnGUI();
             }
 
-            Config_menu.ConfigMenu.Instance.Render();
+            ConfigMenu.Instance.Render();
             IGConsole.Draw(); // Drawn last so that it stays on top
         }
     }

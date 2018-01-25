@@ -14,8 +14,13 @@ namespace PiTung_Bootstrap
         /// <param name="str">The string to draw.</param>
         /// <param name="position">The position to draw the string at.</param>
         /// <param name="color">The string's color.</param>
-        public void DrawText(string str, Vector2 position, Color color)
+        public void DrawText(string str, Vector2 position, Color color, bool shadow = false, int shadowOffset = 1)
         {
+            if (shadow)
+            {
+                GuiPatch.ElementsToBeDrawn.Add(new UiLabel(str, new Vector2(position.x + shadowOffset, position.y + shadowOffset), Color.black));
+            }
+
             GuiPatch.ElementsToBeDrawn.Add(new UiLabel(str, position, color));
         }
 
