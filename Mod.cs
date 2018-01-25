@@ -88,7 +88,7 @@ namespace PiTung_Bootstrap
         /// Called when a world has been loaded.
         /// </summary>
         /// <param name="worldName">The loaded world's name.</param>
-        public virtual void LodingWorld(string worldName) { }
+        public virtual void WorldLoaded(string worldName) { }
 
         /// <summary>
         /// Equivalent to <see cref="MonoBehaviour.Update"/>
@@ -125,19 +125,6 @@ namespace PiTung_Bootstrap
             {
                 SubscribeToKey(item);
             }
-        }
-    }
-
-    internal static class ModExtensions
-    {
-        public static IEnumerable<MethodPatch> GetAssemblyPatches(this Mod @this)
-        {
-            foreach (var item in @this.ModAssembly.GetTypes())
-            {
-                //if (item.BaseType == typeof(PatchClass))
-            }
-
-            yield break;
         }
     }
 }
