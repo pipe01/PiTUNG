@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using PiTung_Bootstrap.Config_menu;
 using Harmony;
 using System;
@@ -13,29 +14,55 @@ namespace PiTung_Bootstrap
     public class Bootstrapper
     {
         private static bool Patched = false;
+        private static List<string> LoadedMods = new List<string>();
+        private static HarmonyInstance _Harmony;
 
-        public static int ModCount = 0;
+        public static Bootstrapper Instance { get; } = new Bootstrapper();
+
+        private Bootstrapper()
+        {
+        }
+        
+        public static int ModCount => LoadedMods.Count;
 
         /// <summary>
         /// Main bootstrap method. Loads and patches all mods.
         /// </summary>
-        public void Patch()
+        public void Patch(bool hotload = false)
         {
-            if (Patched)
+            if (Patched && !hotload)
                 return;
             Patched = true;
-            ModCount = 0;
-            
+
             MDebug.WriteLine("PiTUNG Framework version {0}", 0, PiTung.FrameworkVersion);
-            MDebug.WriteLine("-------------Patching-------------");
+            MDebug.WriteLine("-------------Patching-------------" + (hotload ? " (reloading)" : ""));
 
-            var harmony = HarmonyInstance.Create("me.pipe01.pitung");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
+            if (!hotload)
+            {
+                LoadedMods.Clear();
 
-            IGConsole.Init();
+                _Harmony = HarmonyInstance.Create("me.pipe01.pitung");
+                _Harmony.PatchAll(Assembly.GetExecutingAssembly());
+
+                IGConsole.Init();
+
+                SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
+            }
 
             foreach (var mod in ModLoader.GetMods())
             {
+                if (LoadedMods.Contains(mod.FullPath))
+                {
+                    MDebug.WriteLine($"Skipping already loaded mod {mod.Name}.");
+                    continue;
+                }
+
+                if (!mod.Hotloadable && hotload)
+                {
+                    MDebug.WriteLine($"[WARNING] {mod.Name} can't be hotloaded.");
+                    continue;
+                }
+
                 if (mod.ModAssembly == null)
                 {
                     MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: couldn't load assembly.");
@@ -71,7 +98,7 @@ namespace PiTung_Bootstrap
 
                 try
                 {
-                    harmony.PatchAll(mod.ModAssembly);
+                    _Harmony.PatchAll(mod.ModAssembly);
 
                     foreach (Type cls in mod.ModAssembly.GetTypes())
                     {
@@ -84,7 +111,7 @@ namespace PiTung_Bootstrap
                         {
                             var method = new HarmonyMethod(patch.PatchMethod);
                             
-                            harmony.Patch(
+                            _Harmony.Patch(
                                 patch.BaseMethod,
                                 patch.Prefix ? method : null,
                                 patch.Postfix ? method : null);
@@ -131,12 +158,10 @@ namespace PiTung_Bootstrap
 
                     ConfigMenu.Instance.Entries.Add(entry);
                 }
-                
-                ModCount++;
+
+                LoadedMods.Add(mod.FullPath);
                 MDebug.WriteLine($"{mod.Name} loaded successfully.");
             }
-
-            SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
 
             MDebug.WriteLine("----------Done patching!----------");
         }

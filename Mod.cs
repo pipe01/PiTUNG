@@ -56,6 +56,11 @@ namespace PiTung_Bootstrap
         public virtual bool RequireFrameworkVersion { get; } = true;
 
         /// <summary>
+        /// If true, the mod will be able to be loaded without needing to restart the game.
+        /// </summary>
+        public virtual bool Hotloadable { get; } = false;
+
+        /// <summary>
         /// The keys the mod will be notified about. You can alternatively use the <see cref="Mod.SubscribeToKey(KeyCode)"/> and <see cref="Mod.SubscribeToKeys(KeyCode[])"/> methods.
         /// </summary>
         protected virtual KeyCode[] ModKeys { get; } = null;

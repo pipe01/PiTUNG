@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using static PiTung_Bootstrap.Console.IGConsole;
 
 namespace PiTung_Bootstrap.Console
@@ -31,7 +30,7 @@ namespace PiTung_Bootstrap.Console
                 if (Registry.TryGetValue(name, out command))
                 {
                     Log(command.Description);
-                    Log(command.Usage);
+                    Log("<b>Usage:</b> " + command.Usage);
                 }
                 else
                 {
@@ -50,8 +49,8 @@ namespace PiTung_Bootstrap.Console
     internal class Command_lsmod : Command
     {
         public override string Name => "lsmod";
-        public override string Usage => $"{Name}";
-        public override string Description => "Lists loaded mods (not implemented)";
+        public override string Usage => Name;
+        public override string Description => "Lists loaded mods";
 
         public override bool Execute(IEnumerable<string> arguments)
         {
@@ -117,6 +116,26 @@ namespace PiTung_Bootstrap.Console
             }
 
             return false;
+        }
+    }
+
+    internal class Command_reload : Command
+    {
+        public override string Name => "reload";
+        public override string Usage => Name;
+        public override string Description => "Tries to load new mods";
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            int oldCount = Bootstrapper.ModCount;
+
+            Bootstrapper.Instance.Patch(true);
+
+            int newMods = Bootstrapper.ModCount - oldCount;
+
+            Log($"Done. {newMods} new mods loaded.");
+
+            return true;
         }
     }
 }

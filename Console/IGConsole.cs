@@ -182,6 +182,7 @@ namespace PiTung_Bootstrap.Console
             RegisterCommand<Command_lsmod>();
             RegisterCommand<Command_set>();
             RegisterCommand<Command_get>();
+            RegisterCommand<Command_reload>();
 
             Log("Console initialized");
             Log("Type \"help\" to get a list of commands");

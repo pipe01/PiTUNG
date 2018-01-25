@@ -67,6 +67,9 @@ namespace PiTung_Bootstrap.Config_menu
 
         private void KeyDown(KeyCode key)
         {
+            if (!Show)
+                return;
+
             MenuEntry hover = CurrentEntries[HoverIndex];
             var chk = hover as CheckboxMenuEntry;
 
