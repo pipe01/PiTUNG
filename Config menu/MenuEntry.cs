@@ -1,10 +1,4 @@
-﻿using System.Data.Odbc;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
+﻿using System;
 using UnityEngine;
 
 namespace PiTung_Bootstrap.Config_menu
@@ -47,7 +41,6 @@ namespace PiTung_Bootstrap.Config_menu
     }
 
     public delegate void ValueChangedDelegate<T>(T value);
-
     public interface IValueMenuEntry<TValue>
     {
         event ValueChangedDelegate<TValue> ValueChanged;
@@ -66,14 +59,20 @@ namespace PiTung_Bootstrap.Config_menu
         }
     }
 
-    public sealed class CheckboxMenuEntry : TextMenuEntry
+    public sealed class CheckboxMenuEntry : TextMenuEntry, IValueMenuEntry<bool>
     {
         public bool Value { get; set; }
 
-        public void Toggle() => Value = !Value;
+        public event ValueChangedDelegate<bool> ValueChanged;
+
+        public void Toggle()
+        {
+            Value = !Value;
+            ValueChanged?.Invoke(Value);
+        }
     }
 
-    public sealed class SimpleNumberEntry : TextMenuEntry
+    public sealed class SimpleNumberEntry : TextMenuEntry, IValueMenuEntry<float>
     {
         public float Value { get; set; }
         public float Step { get; set; }
@@ -84,6 +83,8 @@ namespace PiTung_Bootstrap.Config_menu
         
         public KeyCode BigStepKey { get; set; } = KeyCode.LeftShift;
         public KeyCode SmallStepKey { get; set; } = KeyCode.LeftControl;
+
+        public event ValueChangedDelegate<float> ValueChanged;
 
         private float GetStep()
         {
@@ -98,22 +99,32 @@ namespace PiTung_Bootstrap.Config_menu
         {
             float step = GetStep();
 
+            if (this.Value == this.Maximum)
+                return;
+
             if ((this.Value + step > this.Maximum) && (this.Value < this.Maximum))
                 this.Value = this.Maximum;
 
             else if (this.Value < this.Maximum)
                 this.Value += step;
+
+            ValueChanged?.Invoke(this.Value);
         }
 
         public void Decrement()
         {
             float step = GetStep();
 
+            if (this.Value == this.Minimum)
+                return;
+
             if ((this.Value - step < this.Minimum) && (this.Value > this.Minimum))
                 this.Value = this.Minimum;
 
             else if (this.Value > this.Minimum)
                 this.Value -= step;
+
+            ValueChanged?.Invoke(this.Value);
         }
 
         public SimpleNumberEntry(float step, float min, float max, float value = 0)
