@@ -22,8 +22,8 @@ namespace PiTung_Bootstrap.Console
     /// </summary>
     internal class LogEntry
     {
-        public LogType Type { get; private set; }
-        public string Message { get; private set; }
+        public LogType Type { get; }
+        public string Message { get; }
 
         public LogEntry(LogType type, string message)
         {
