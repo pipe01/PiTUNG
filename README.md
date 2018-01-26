@@ -4,12 +4,12 @@
 
 Mod framework for The Ultimate Nerd Game
 
-# For users: How to install the framework
+## For users: How to install the framework
 
 Installing the framework is extremely easy, just download [the installer](http://www.pipe0481.heliohost.org/pitung/Installer.exe) to the same folder as "The Ultimate Nerd Game.exe", and double-click it!
 
-# For developers: How to create a mod
+## For developers: How to create a mod
 
-See [the wiki](https://github.com/pipe01/PiTUNG/wiki/Quickstart)
+See [the wiki](../../wiki/Quickstart).
 
 This framework uses [Harmony](https://github.com/pardeike/Harmony) under the hood, so you may want to take a look at its documentation if you need more flexibility.
