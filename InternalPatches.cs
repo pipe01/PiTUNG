@@ -100,7 +100,14 @@ namespace PiTung_Bootstrap
         {
             if (ModUtilities.IsOnMainMenu && !IGConsole.Shown)
             {
-                string str = $"<b>PiTUNG v{PiTung.FrameworkVersion} enabled!</b> Loaded mods: " + Bootstrapper.ModCount;
+                string str = $"<b>PiTUNG v{PiTung.FrameworkVersion} enabled!</b>\nLoaded mods: " + Bootstrapper.ModCount;
+
+                if (UpdateChecker.IsUpdateAvailable)
+                {
+                    ModUtilities.Graphics.DrawText("<b>Update available</b>", new Vector2(6, 36), Color.black);
+                    ModUtilities.Graphics.DrawText("<b><color=#00ff00>Update available</color></b>", new Vector2(5, 35), Color.white);
+                }
+
                 ModUtilities.Graphics.DrawText(str, new Vector2(5, 5), Color.white, true);
             }
 
