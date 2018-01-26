@@ -55,6 +55,8 @@ namespace PiTung_Bootstrap
                 SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
             }
 
+            AddDummyComponent(SceneManager.GetActiveScene());
+
             foreach (var mod in ModLoader.GetMods())
             {
                 if (LoadedMods.Contains(mod.FullPath))
@@ -179,9 +181,17 @@ namespace PiTung_Bootstrap
         /// <param name="arg1">The new scene.</param>
         private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
         {
-            ModUtilities.DummyComponent = Object.FindObjectOfType<DummyComponent>();
+            AddDummyComponent(arg1);
             
-            var objs = arg1.GetRootGameObjects();
+            //If the scene's name is "main menu", we may might possibly probably be in the main menu.
+            ModUtilities.IsOnMainMenu = arg1.name == "main menu";
+        }
+
+        private void AddDummyComponent(Scene scene)
+        {
+            ModUtilities.DummyComponent = Object.FindObjectOfType<DummyComponent>();
+
+            var objs = scene.GetRootGameObjects();
 
             if (ModUtilities.DummyComponent == null)
             {
@@ -199,9 +209,6 @@ namespace PiTung_Bootstrap
                     }
                 }
             }
-            
-            //If the scene's name is "main menu", we may might possibly probably be in the main menu.
-            ModUtilities.IsOnMainMenu = arg1.name == "main menu";
         }
     }
 }
