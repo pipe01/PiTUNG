@@ -81,12 +81,12 @@ namespace PiTung_Bootstrap
                 {
                     if (mod.RequireFrameworkVersion)
                     {
-                        MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: wrong PiTUNG version.");
+                        MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: wrong PiTUNG version. Required version: {mod.FrameworkVersion}.");
                         continue;
                     }
                     else
                     {
-                        MDebug.WriteLine($"[WARNING] {mod.Name} may not work properly: wrong PiTUNG version");
+                        MDebug.WriteLine($"[WARNING] {mod.Name} may not work properly: wrong PiTUNG version. Optimal version: {mod.FrameworkVersion}.");
                     }
                 }
 
