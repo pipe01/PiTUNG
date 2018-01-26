@@ -441,6 +441,11 @@ namespace PiTung_Bootstrap.Console
             }
         }
 
+        /// <summary>
+        /// Tries to parse variable setting and getting.
+        /// </summary>
+        /// <param name="line">The command line.</param>
+        /// <returns>True if a variable was parsed.</returns>
         private static bool TryParseVariables(string line)
         {
             if (line.StartsWith("$"))
@@ -534,6 +539,10 @@ namespace PiTung_Bootstrap.Console
             }
         }
 
+        /// <summary>
+        /// Replaces all $variables with their corresponding values.
+        /// </summary>
+        /// <param name="arguments">The current command arguments.</param>
         private static IEnumerable<string> ReplaceVariables(string[] arguments)
         {
             foreach (var item in arguments.Select(o => o.Trim()))

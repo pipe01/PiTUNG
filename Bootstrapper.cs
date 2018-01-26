@@ -17,12 +17,18 @@ namespace PiTung_Bootstrap
         private static List<string> LoadedMods = new List<string>();
         private static HarmonyInstance _Harmony;
 
+        /// <summary>
+        /// The <see cref="Bootstrapper"/> singleton instance.
+        /// </summary>
         public static Bootstrapper Instance { get; } = new Bootstrapper();
 
         private Bootstrapper()
         {
         }
         
+        /// <summary>
+        /// How many mods are currently loaded.
+        /// </summary>
         public static int ModCount => LoadedMods.Count;
 
         /// <summary>
