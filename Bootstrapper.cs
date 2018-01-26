@@ -77,7 +77,7 @@ namespace PiTung_Bootstrap
                     continue;
                 }
 
-                if (mod.FrameworkVersion.CompareTo(PiTung.FrameworkVersion) != 0)
+                if (mod.FrameworkVersion.EqualsVersion(PiTung.FrameworkVersion))
                 {
                     if (mod.RequireFrameworkVersion)
                     {

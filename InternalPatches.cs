@@ -100,7 +100,7 @@ namespace PiTung_Bootstrap
         {
             if (ModUtilities.IsOnMainMenu && !IGConsole.Shown)
             {
-                string str = "PiTUNG enabled! Loaded mods: " + Bootstrapper.ModCount;
+                string str = $"<b>PiTUNG v{PiTung.FrameworkVersion} enabled!</b> Loaded mods: " + Bootstrapper.ModCount;
                 ModUtilities.Graphics.DrawText(str, new Vector2(5, 5), Color.white, true);
             }
 
