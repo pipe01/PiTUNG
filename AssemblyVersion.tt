@@ -1,0 +1,11 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".cs" #>
+
+using System.Reflection;
+
+[assembly: AssemblyVersion("<#= this.version #>")]
+[assembly: AssemblyFileVersion("<#= this.version #>")]
+
+<#+
+	string version = "1.2.0";
+#>
