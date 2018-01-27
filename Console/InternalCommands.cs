@@ -205,4 +205,28 @@ namespace PiTung_Bootstrap.Console
             }
         }
     }
+
+    internal class Command_praise : Command
+    {
+        public override string Name => "praise";
+        public override string Usage => "you know what to do";
+        internal override bool ShowOnHelp => false;
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            var args = arguments.ToArray();
+
+            if (args.Length >= 2 && args[0] == "the" && args[1] == "sun")
+            {
+                Log("May your life be full of joy and happiness.");
+                BoringStuff.SUMMONEXODIA();
+            }
+            else
+            {
+                Error("HERESY WILL NOT BE TOLERATED");
+            }
+
+            return true;
+        }
+    }
 }

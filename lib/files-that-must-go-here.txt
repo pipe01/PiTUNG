@@ -1,6 +1,8 @@
 Assembly-CSharp.dll
 UnityEngine.CoreModule.dll
+UnityEngine.ImageConversionModule.dll
 UnityEngine.IMGUIModule.dll
+UnityEngine.TerrainModule.dll
 UnityEngine.TextRenderingModule.dll
 UnityEngine.UnityWebRequestWWWModule.dll
 
