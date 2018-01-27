@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEngine.SceneManagement;
+using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -171,6 +172,37 @@ namespace PiTung_Bootstrap.Console
         {
             Application.Quit();
             return true;
+        }
+    }
+
+    internal class Command_objs : Command
+    {
+        public override string Name => "objs";
+        public override string Usage => Name;
+        internal override bool ShowOnHelp => false;
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            var scene = SceneManager.GetActiveScene();
+
+            foreach (var obj in scene.GetRootGameObjects())
+            {
+                Recurse(obj);
+            }
+
+            return true;
+
+            void Recurse(GameObject parent, int level = 0)
+            {
+                string compStr = string.Join(", ", parent.GetComponents<Component>().Select(o => o.GetType().Name).ToArray());
+                
+                MDebug.WriteLine(new string(' ', level * 4) + parent.name + $" ({compStr})");
+
+                foreach (Transform item in parent.transform)
+                {
+                    Recurse(item.gameObject, level + 1);
+                }
+            }
         }
     }
 }

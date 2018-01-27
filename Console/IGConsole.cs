@@ -191,6 +191,7 @@ namespace PiTung_Bootstrap.Console
             RegisterCommand<Command_reload>();
             RegisterCommand<Command_echo>();
             RegisterCommand<Command_quit>();
+            RegisterCommand<Command_objs>();
 
             Log("Console initialized");
             Log("Type \"help\" to get a list of commands");
