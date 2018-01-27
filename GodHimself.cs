@@ -103,6 +103,24 @@ namespace PiTung_Bootstrap
             1
             )
             }
+            ,
+            new
+            SplatPrototype
+            {
+            texture
+            =
+            t
+            ,
+            tileSize
+            =
+            new
+            Vector2
+            (
+            1
+            ,
+            1
+            )
+            }
             }
             ;
             a
