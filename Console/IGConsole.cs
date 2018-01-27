@@ -68,6 +68,11 @@ namespace PiTung_Bootstrap.Console
         public virtual string Description { get; } = null;
 
         /// <summary>
+        /// If false, this command won't be shown when executing "help" on the console.
+        /// </summary>
+        internal virtual bool ShowOnHelp { get; } = true;
+
+        /// <summary>
         /// Called when the command is invoked
         /// </summary>
         /// <param name="arguments">The arguments given to the command</param>

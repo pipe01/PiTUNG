@@ -16,7 +16,12 @@ namespace PiTung_Bootstrap.Console
         {
             if (!arguments.Any())
             {
-                foreach (Command command in Registry.Values.OrderBy(o => o.Name))
+                var cmds = from o in Registry.Values
+                           where o.ShowOnHelp
+                           orderby o.Name
+                           select o;
+
+                foreach (Command command in cmds)
                 {
                     string log = $"<b>{command.Name}</b>";
                     if (command.Description != null)
