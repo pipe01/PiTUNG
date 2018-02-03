@@ -47,10 +47,12 @@ namespace PiTung_Bootstrap
 
         /// <summary>
         /// The version of PiTUNG this mod is using. If a version number is not included, it is considered
-        /// as a wild card. E.g, if this property equals "1.0", the mod will work on PiTUNG version "1.0.123", but not
+        /// a wild card. E.g, if this property equals "1.0", the mod will work on PiTUNG version "1.0.123", but not
         /// if this property equals "1.0.0".
         /// <para/>
-        /// Setting this property to <see cref="PiTung.FrameworkVersion"/> is strongly discouraged.
+        /// Setting this property to <see cref="PiTung.FrameworkVersion"/> is strongly discouraged. If you
+        /// need your mod to be able to be loaded in any PiTUNG version, set <see cref="RequireFrameworkVersion"/>
+        /// to true.
         /// </summary>
         public abstract Version FrameworkVersion { get; }
         
