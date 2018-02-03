@@ -19,6 +19,11 @@ namespace PiTung_Bootstrap
         private static HarmonyInstance _Harmony;
 
         /// <summary>
+        /// Must be set before calling <see cref="Patch(bool)"/>.
+        /// </summary>
+        public bool Testing { get; set; } = false;
+
+        /// <summary>
         /// The <see cref="Bootstrapper"/> singleton instance.
         /// </summary>
         public static Bootstrapper Instance { get; } = new Bootstrapper();
@@ -49,14 +54,27 @@ namespace PiTung_Bootstrap
                 LoadedMods.Clear();
 
                 _Harmony = HarmonyInstance.Create("me.pipe01.pitung");
-                _Harmony.PatchAll(Assembly.GetExecutingAssembly());
 
-                IGConsole.Init();
+                if (!Testing)
+                {
+                    try
+                    {
+                        _Harmony.PatchAll(Assembly.GetExecutingAssembly());
+                    }
+                    catch (Exception ex)
+                    {
+                        MDebug.WriteLine("[ERROR] PiTUNG failed to load! Exception: \n" + ex);
+                        return;
+                    }
 
+                    IGConsole.Init();
+                }
+                
                 SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
             }
 
-            AddDummyComponent(SceneManager.GetActiveScene());
+            if (!Testing)
+                AddDummyComponent(SceneManager.GetActiveScene());
 
             foreach (var mod in ModLoader.GetMods())
             {
@@ -70,7 +88,7 @@ namespace PiTung_Bootstrap
                 if (a)
                     IGConsole.Log($"<color=#00ff00>PiTUNG version {v} available!</color> Run Installer.exe to update.");
             };
-            ModUtilities.DummyComponent.StartCoroutine(UpdateChecker.CheckUpdates());
+            ModUtilities.DummyComponent?.StartCoroutine(UpdateChecker.CheckUpdates());
         }
 
         private void LoadMod(Mod mod, bool hotload)
