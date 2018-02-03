@@ -15,7 +15,6 @@ namespace PiTung_Bootstrap
     public class Bootstrapper
     {
         private static bool Patched = false;
-        private static List<string> LoadedMods = new List<string>();
         private static HarmonyInstance _Harmony;
 
         /// <summary>
@@ -28,15 +27,21 @@ namespace PiTung_Bootstrap
         /// </summary>
         public static Bootstrapper Instance { get; } = new Bootstrapper();
 
+        private static List<Mod> _Mods = new List<Mod>();
+        /// <summary>
+        /// All successfully loaded mods.
+        /// </summary>
+        public static List<Mod> Mods => new List<Mod>(_Mods);
+
+        /// <summary>
+        /// How many mods are currently loaded.
+        /// </summary>
+        public static int ModCount => _Mods.Count;
+
         private Bootstrapper()
         {
         }
         
-        /// <summary>
-        /// How many mods are currently loaded.
-        /// </summary>
-        public static int ModCount => LoadedMods.Count;
-
         /// <summary>
         /// Main bootstrap method. Loads and patches all mods.
         /// </summary>
@@ -51,7 +56,7 @@ namespace PiTung_Bootstrap
 
             if (!hotload)
             {
-                LoadedMods.Clear();
+                _Mods.Clear();
 
                 _Harmony = HarmonyInstance.Create("me.pipe01.pitung");
 
@@ -93,7 +98,7 @@ namespace PiTung_Bootstrap
 
         private void LoadMod(Mod mod, bool hotload)
         {
-            if (LoadedMods.Contains(mod.FullPath))
+            if (_Mods.Any(o => o.FullPath.Equals(mod.FullPath)))
             {
                 MDebug.WriteLine($"Skipping already loaded mod {mod.Name}.");
                 return;
@@ -201,7 +206,7 @@ namespace PiTung_Bootstrap
                 ConfigMenu.Instance.Entries.Add(entry);
             }
 
-            LoadedMods.Add(mod.FullPath);
+            _Mods.Add(mod);
             MDebug.WriteLine($"{mod.Name} loaded successfully.");
         }
 

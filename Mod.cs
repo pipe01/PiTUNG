@@ -8,21 +8,14 @@ namespace PiTung_Bootstrap
 {
     public abstract class Mod
     {
-        internal static List<Mod> AliveMods = new List<Mod>();
+        internal static List<Mod> AliveMods => Bootstrapper.Mods;
 
         protected Mod()
         {
-            AliveMods.Add(this);
-
             if (ModKeys != null)
                 SubscribeToKeys(ModKeys);
         }
-
-        ~Mod()
-        {
-            AliveMods.Remove(this);
-        }
-
+        
         internal Assembly ModAssembly { get; set; }
 
         /// <summary>
