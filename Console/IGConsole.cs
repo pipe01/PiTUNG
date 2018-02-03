@@ -185,7 +185,7 @@ namespace PiTung_Bootstrap.Console
             };
 
             RegisterCommand<Command_help>();
-            RegisterCommand<Command_lsmod>();
+            RegisterCommand<Command_mods>();
             RegisterCommand<Command_set>();
             RegisterCommand<Command_get>();
             RegisterCommand<Command_reload>();

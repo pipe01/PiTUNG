@@ -53,16 +53,16 @@ namespace PiTung_Bootstrap.Console
         }
     }
 
-    internal class Command_lsmod : Command
+    internal class Command_mods : Command
     {
-        public override string Name => "lsmod";
+        public override string Name => "mods";
         public override string Usage => Name;
         public override string Description => "Lists loaded mods";
 
         public override bool Execute(IEnumerable<string> arguments)
         {
-            Log("<b>Loaded mods:</b> " + String.Join(", ", Mod.AliveMods.Select(o => $"'{o.Name}'").ToArray()));
-
+            Log($"<b>Loaded mods ({Bootstrapper.ModCount}):</b> " + String.Join(", ", Mod.AliveMods.Select(o => $"'{o.FullName}'").ToArray()));
+            
             return true;
         }
     }
