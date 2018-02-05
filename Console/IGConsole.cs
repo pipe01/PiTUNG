@@ -87,6 +87,11 @@ namespace PiTung_Bootstrap.Console
         internal virtual bool ShowOnHelp { get; } = true;
 
         /// <summary>
+        /// The mod that registered this command.
+        /// </summary>
+        internal Mod Mod { get; set; }
+
+        /// <summary>
         /// Called when the command is invoked
         /// </summary>
         /// <param name="arguments">The arguments given to the command</param>
@@ -392,7 +397,7 @@ namespace PiTung_Bootstrap.Console
         /// Register a command.
         /// </summary>
         /// <param name="command">The command class.</param>
-        public static bool RegisterCommand(Command command)
+        internal static bool RegisterCommand(Command command)
         {
             if (Registry.ContainsKey(command.Name))
                 return false;
@@ -404,10 +409,30 @@ namespace PiTung_Bootstrap.Console
         /// Register a command.
         /// </summary>
         /// <typeparam name="T">The type of the command.</typeparam>
-        /// <returns></returns>
-        public static bool RegisterCommand<T>() where T : Command
+        internal static bool RegisterCommand<T>() where T : Command
         {
             return RegisterCommand(Activator.CreateInstance<T>());
+        }
+
+        /// <summary>
+        /// Register a command.
+        /// </summary>
+        /// <param name="command">The command class.</param>
+        /// <param name="mod">The mod that is registering this command.</param>
+        public static bool RegisterCommand(Command command, Mod mod)
+        {
+            command.Mod = mod;
+            return RegisterCommand(command);
+        }
+
+        /// <summary>
+        /// Register a command.
+        /// </summary>
+        /// <typeparam name="T">The type of the command.</typeparam>
+        /// <param name="mod">The mod that is registering this command.</param>
+        public static bool RegisterCommand<T>(Mod mod) where T : Command
+        {
+            return RegisterCommand(Activator.CreateInstance<T>(), mod);
         }
 
         /// <summary>
@@ -415,9 +440,9 @@ namespace PiTung_Bootstrap.Console
         /// </summary>
         /// <param name="name">Name of the command to remove</param>
         /// <returns>True if a command was removed, false otherwise</returns>
-        public static bool UnregisterCommand(string name)
+        internal static bool UnregisterCommand(string name)
         {
-            if(Registry.ContainsKey(name))
+            if (Registry.ContainsKey(name))
             {
                 Registry.Remove(name);
                 return true;
