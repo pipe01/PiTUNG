@@ -29,7 +29,7 @@ namespace PiTung_Bootstrap
                 {
                     mod = GetMod(item);
                 }
-                catch (ReflectionTypeLoadException ex)
+                catch (Exception ex)
                 {
                     MDebug.WriteLine($"[ERROR] Mod {Path.GetFileName(item)} failed to load.");
                     MDebug.WriteLine("More details: " + ex.Message, 2);
@@ -47,17 +47,14 @@ namespace PiTung_Bootstrap
         /// <returns>A mod.</returns>
         private static Mod GetMod(string modPath)
         {
-            Assembly ass;
+            if (File.Exists(modPath + ".update"))
+            {
+                File.Delete(modPath);
+                File.Move(modPath + ".update", modPath);
+            }
 
-            try
-            {
-                ass = Assembly.LoadFrom(modPath);
-            }
-            catch (ReflectionTypeLoadException)
-            {
-                throw;
-            }
-            
+            Assembly ass = Assembly.LoadFrom(modPath);
+
             Mod mod = null;
 
             foreach (var item in ass.GetExportedTypes())

@@ -1,4 +1,5 @@
-﻿using PiTung_Bootstrap.Config_menu;
+﻿using System.Linq;
+using PiTung_Bootstrap.Config_menu;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -60,6 +61,16 @@ namespace PiTung_Bootstrap
         public virtual bool Hotloadable { get; } = false;
 
         /// <summary>
+        /// The update manifest's URL. Defaults to null (disabled).
+        /// </summary>
+        public virtual string UpdateUrl { get; } = null;
+
+        /// <summary>
+        /// If true, there is an update available for this mod.
+        /// </summary>
+        internal bool HasAvailableUpdate { get; set; } = false;
+        
+        /// <summary>
         /// The keys the mod will be notified about. You can alternatively use the <see cref="Mod.SubscribeToKey(KeyCode)"/> and <see cref="Mod.SubscribeToKeys(KeyCode[])"/> methods.
         /// </summary>
         protected virtual KeyCode[] ModKeys { get; } = null;
@@ -73,10 +84,7 @@ namespace PiTung_Bootstrap
         /// <summary>
         /// Get the mod's menu entries.
         /// </summary>
-        public virtual IEnumerable<MenuEntry> GetMenuEntries()
-        {
-            yield break;
-        }
+        public virtual IEnumerable<MenuEntry> GetMenuEntries() => Enumerable.Empty<MenuEntry>();
 
         /// <summary>
         /// Executed before the mod's patches are applied. Use this to initialize any variables you need.

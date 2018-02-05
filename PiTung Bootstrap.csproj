@@ -43,6 +43,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
@@ -87,10 +89,12 @@
     <Compile Include="InputUtilities.cs" />
     <Compile Include="Console\InternalCommands.cs" />
     <Compile Include="InternalPatches.cs" />
+    <Compile Include="ManifestParser.cs" />
     <Compile Include="MDebug.cs" />
     <Compile Include="MethodPatch.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
+    <Compile Include="ModUpdater.cs" />
     <Compile Include="ModUtilities.cs" />
     <Compile Include="ObservableList.cs" />
     <Compile Include="ObjImporter.cs" />

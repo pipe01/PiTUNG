@@ -23,6 +23,11 @@ namespace PiTung_Bootstrap
         public bool Testing { get; set; } = false;
 
         /// <summary>
+        /// True if any loaded mod has available updates.
+        /// </summary>
+        public bool ModUpdatesAvailable { get; internal set; } = false;
+
+        /// <summary>
         /// The <see cref="Bootstrapper"/> singleton instance.
         /// </summary>
         public static Bootstrapper Instance { get; } = new Bootstrapper();
@@ -94,6 +99,11 @@ namespace PiTung_Bootstrap
                     IGConsole.Log($"<color=#00ff00>PiTUNG version {v} available!</color> Run Installer.exe to update.");
             };
             ModUtilities.DummyComponent?.StartCoroutine(UpdateChecker.CheckUpdates());
+
+            foreach (var item in Mods)
+            {
+                ModUtilities.DummyComponent?.StartCoroutine(ModUpdater.CheckUpdatesForMod(item, true));
+            }
         }
 
         private void LoadMod(Mod mod, bool hotload)
