@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
@@ -23,13 +24,26 @@ namespace PiTung_Bootstrap.Console
     /// </summary>
     internal class LogEntry
     {
+        private static Dictionary<string, float> WordWidthCache = new Dictionary<string, float>();
+
         public LogType Type { get; }
         public string Message { get; }
-
+        
         public LogEntry(LogType type, string message)
         {
             this.Type = type;
             this.Message = message;
+        }
+
+        public IEnumerable<float> GetWordWidths(GUIStyle style)
+        {
+            foreach (var item in Message.Split(' '))
+            {
+                if (!WordWidthCache.ContainsKey(item))
+                    WordWidthCache[item] = style.CalcSize(new GUIContent(item)).x;
+
+                yield return WordWidthCache[item];
+            }
         }
 
         public Color GetColor()
@@ -166,8 +180,7 @@ namespace PiTung_Bootstrap.Console
         /// Show-hide animation duration.
         /// </summary>
         internal static float ShowAnimationTime = .3f;
-
-
+        
 
         /// <summary>
         /// Call this function before doing anything with the console
@@ -183,7 +196,7 @@ namespace PiTung_Bootstrap.Console
                 font = Font.CreateDynamicFontFromOSFont("Consolas", 16),
                 richText = true
             };
-
+            
             RegisterCommand<Command_help>();
             RegisterCommand<Command_mods>();
             RegisterCommand<Command_set>();
@@ -324,10 +337,13 @@ namespace PiTung_Bootstrap.Console
         /// <param name="msg">Message to log</param>
         public static void Log(LogType type, string msg)
         {
-            string[] lines = msg.Split('\n');
-            foreach(string line in lines)
+            msg = WordWrap(msg, (int)(Screen.width / Style.CalcSize(new GUIContent("A")).x));
+
+            foreach(string line in msg.Split('\n'))
             {
-                CmdLog.Push(new LogEntry(type, line));
+                var logEntry = new LogEntry(type, line);
+                
+                CmdLog.Push(logEntry);
             }
         }
 
@@ -614,6 +630,79 @@ namespace PiTung_Bootstrap.Console
             Rect rect = new Rect(pos, size);
 
             GUI.Label(rect, text, newStyle);
+        }
+
+        static char[] splitChars = new char[] { ' ', '-', '\t' };
+        private static string WordWrap(string str, int width)
+        {
+            string[] words = Explode(str, splitChars);
+
+            int curLineLength = 0;
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < words.Length; i++)
+            {
+                string word = words[i];
+                // If adding the new word to the current line would be too long,
+                // then put it on a new line (and split it up if it's too long).
+                if (curLineLength + word.Length > width)
+                {
+                    // Only move down to a new line if we have text on the current line.
+                    // Avoids situation where wrapped whitespace causes empty lines in text.
+                    if (curLineLength > 0)
+                    {
+                        strBuilder.Append('\n');
+                        curLineLength = 0;
+                    }
+
+                    // If the current word is too long to fit on a line even on it's own then
+                    // split the word up.
+                    while (word.Length > width)
+                    {
+                        strBuilder.Append(word.Substring(0, width - 1) + "-");
+                        word = word.Substring(width - 1);
+
+                        strBuilder.Append('\n');
+                    }
+
+                    // Remove leading whitespace from the word so the new line starts flush to the left.
+                    word = word.TrimStart();
+                }
+                strBuilder.Append(word);
+                curLineLength += word.Length;
+            }
+
+            return strBuilder.ToString();
+        }
+
+        private static string[] Explode(string str, char[] splitChars)
+        {
+            List<string> parts = new List<string>();
+            int startIndex = 0;
+            while (true)
+            {
+                int index = str.IndexOfAny(splitChars, startIndex);
+
+                if (index == -1)
+                {
+                    parts.Add(str.Substring(startIndex));
+                    return parts.ToArray();
+                }
+
+                string word = str.Substring(startIndex, index - startIndex);
+                char nextChar = str.Substring(index, 1)[0];
+                // Dashes and the likes should stick to the word occurring before it. Whitespace doesn't have to.
+                if (char.IsWhiteSpace(nextChar))
+                {
+                    parts.Add(word);
+                    parts.Add(nextChar.ToString());
+                }
+                else
+                {
+                    parts.Add(word + nextChar);
+                }
+
+                startIndex = index + 1;
+            }
         }
     }
 }
