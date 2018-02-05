@@ -116,7 +116,7 @@ namespace PiTung_Bootstrap
 
             if (!mod.Hotloadable && hotload)
             {
-                MDebug.WriteLine($"[WARNING] {mod.Name} can't be hotloaded.");
+                MDebug.WriteLine($"[WARNING] Skipping {mod.Name}: can't be hotloaded.");
                 return;
             }
 
@@ -150,9 +150,7 @@ namespace PiTung_Bootstrap
 
                 return;
             }
-
-            MDebug.WriteLine($"Loading {mod.FullName}...");
-
+            
             try
             {
                 _Harmony.PatchAll(mod.ModAssembly);
