@@ -22,12 +22,22 @@ namespace PiTung_Bootstrap.Console
                            orderby o.Name
                            select o;
 
-                foreach (Command command in cmds)
+                Log("<color=orange>PiTUNG</color>:");
+                foreach (var cmd in cmds.Where(o => o.Mod == null))
                 {
-                    string log = $"<b>{command.Name}</b>";
-                    if (command.Description != null)
-                        log += ": " + command.Description;
-                    Log(log);
+                    Log(GetCommandLine(cmd));
+                }
+
+                Mod prevMod = null;
+                foreach (var cmd in cmds.Where(o => o.Mod != null).OrderBy(o => o.Mod.Name))
+                {
+                    if (prevMod != cmd.Mod)
+                    {
+                        prevMod = cmd.Mod;
+                        Log($"\n<color=orange>{cmd.Mod.Name}</color>:");
+                    }
+
+                    Log(GetCommandLine(cmd));
                 }
             }
             else if (arguments.Count() == 1)
@@ -50,6 +60,14 @@ namespace PiTung_Bootstrap.Console
             }
 
             return true;
+
+            string GetCommandLine(Command command)
+            {
+                string log = $"<b>{command.Name}</b>";
+                if (command.Description != null)
+                    log += ": " + command.Description;
+                return log;
+            }
         }
     }
 
