@@ -93,6 +93,9 @@ namespace PiTung_Bootstrap
 
             MDebug.WriteLine("----------Done patching!----------");
 
+            if (hotload)
+                return;
+
             UpdateChecker.UpdateStatus += (a, v) =>
             {
                 if (a)
