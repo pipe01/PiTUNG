@@ -18,10 +18,8 @@ namespace PiTung_Bootstrap
         static void Prefix()
         {
             IGConsole.Update();
-            foreach (var item in Mod.AliveMods)
-            {
-                item.Update();
-            }
+
+            Mod.CallOnAllMods(o => o.Update());
         }
     }
     
@@ -30,10 +28,7 @@ namespace PiTung_Bootstrap
     {
         static void Postfix()
         {
-            foreach (var item in Mod.AliveMods)
-            {
-                item.WorldLoaded(SaveManager.SaveName);
-            }
+            Mod.CallOnAllMods(o => o.WorldLoaded(SaveManager.SaveName));
         }
     }
 
@@ -116,11 +111,8 @@ namespace PiTung_Bootstrap
                 item.Draw();
             }
             ElementsToBeDrawn.Clear();
-            
-            foreach (var item in Mod.AliveMods)
-            {
-                item.OnGUI();
-            }
+
+            Mod.CallOnAllMods(o => o.OnGUI());
 
             ConfigMenu.Instance.Render();
             IGConsole.Draw(); // Drawn last so that it stays on top
@@ -136,6 +128,18 @@ namespace PiTung_Bootstrap
             {
                 Object.Destroy(__instance);
             }
+        }
+    }
+
+    [HarmonyPatch(typeof(BoardPlacer), "PlaceBoard")]
+    internal class BoardPlacerPatch
+    {
+        static void Prefix()
+        {
+            var obj = ModUtilities.GetStaticFieldValue<BoardPlacer, GameObject>("BoardBeingPlaced");
+            var component = obj.GetComponent<CircuitBoard>();
+            
+            Mod.CallOnAllMods(o => o.OnBoardPlaced(component.x, component.z));
         }
     }
 }

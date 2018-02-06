@@ -79,6 +79,7 @@ namespace PiTung_Bootstrap
         /// </summary>
         public string FullName => $"{Author}'s {Name} (v{ModVersion})";
 
+        #region Mod events
         /// <summary>
         /// Get the mod's menu entries.
         /// </summary>
@@ -115,6 +116,9 @@ namespace PiTung_Bootstrap
         /// </summary>
         /// <param name="key">The <see cref="KeyCode"/> of the key that has been pressed.</param>
         public virtual void OnKeyDown(KeyCode key) { }
+
+        public virtual void OnBoardPlaced(int boardWidth, int boardHeight) { }
+        #endregion
 
         /// <summary>
         /// Subscribes to a key. Subscribed keys will raise the <see cref="OnKeyDown(KeyCode)"/> method.
