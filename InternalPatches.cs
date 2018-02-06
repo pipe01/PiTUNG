@@ -1,5 +1,5 @@
-﻿using PiTung_Bootstrap.Config_menu;
-using System.Windows.Input;
+﻿using PiTung_Bootstrap.Building;
+using PiTung_Bootstrap.Config_menu;
 using Harmony;
 using PiTung_Bootstrap.Console;
 using System.Collections.Generic;
@@ -138,8 +138,21 @@ namespace PiTung_Bootstrap
         {
             var obj = ModUtilities.GetStaticFieldValue<BoardPlacer, GameObject>("BoardBeingPlaced");
             var component = obj.GetComponent<CircuitBoard>();
-            
-            Mod.CallOnAllMods(o => o.OnBoardPlaced(component.x, component.z));
+
+            BoardManager.Instance.BoardAdded(component.x, component.z, obj);
+            //Mod.CallOnAllMods(o => o.OnBoardPlaced(component.x, component.z));
+        }
+    }
+
+    [HarmonyPatch(typeof(BuildMenu), "Awake")]
+    internal class BuildMenuPatch
+    {
+        static void Postfix(BuildMenu __instance)
+        {
+            foreach (var item in __instance.PlaceableObjects)
+            {
+                MDebug.WriteLine(item.name);
+            }
         }
     }
 }
