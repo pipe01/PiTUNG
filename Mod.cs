@@ -7,10 +7,8 @@ using UnityEngine;
 
 namespace PiTung_Bootstrap
 {
-    public abstract class Mod
+    public abstract partial class Mod
     {
-        internal static List<Mod> AliveMods => Bootstrapper.Mods;
-
         protected Mod()
         {
             if (ModKeys != null)
@@ -136,6 +134,19 @@ namespace PiTung_Bootstrap
             foreach (var item in keys)
             {
                 SubscribeToKey(item);
+            }
+        }
+    }
+
+    public partial class Mod
+    {
+        internal static List<Mod> AliveMods => Bootstrapper.Mods;
+
+        internal static void CallOnAllMods(Action<Mod> action)
+        {
+            foreach (var item in AliveMods)
+            {
+                action(item);
             }
         }
     }
