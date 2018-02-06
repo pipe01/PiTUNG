@@ -48,7 +48,7 @@ namespace PiTung_Bootstrap
 
             if (!FieldCache.ContainsKey(key))
             {
-                var field = type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+                var field = type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
 
                 FieldCache[key] = field ??
                     throw new ArgumentException($"Field {fieldName} not found in object of type {type.Name}.");
@@ -82,7 +82,7 @@ namespace PiTung_Bootstrap
         /// <summary>
         /// Gets <paramref name="fieldName"/>'s value in <paramref name="obj"/>.
         /// </summary>
-        /// <typeparam name="T">The field's <typeparamref name="T"/>.</typeparam>
+        /// <typeparam name="T">The field's type.</typeparam>
         /// <param name="obj">The object that contains the field.</param>
         /// <param name="fieldName">The field's name.</param>
         /// <param name="isPrivate">True if the field's private.</param>
@@ -92,6 +92,19 @@ namespace PiTung_Bootstrap
             FieldInfo field = GetField(obj.GetType(), fieldName);
 
             return (T)field.GetValue(obj);
+        }
+
+        /// <summary>
+        /// Gets the static field <paramref name="fieldName"/>'s value in <typeparamref name="TParent"/>.
+        /// </summary>
+        /// <typeparam name="TParent">The type that contains the field.</typeparam>
+        /// <typeparam name="TField">The field's type.</typeparam>
+        /// <param name="fieldName">The name of the field.</param>
+        public static TField GetStaticFieldValue<TParent, TField>(string fieldName)
+        {
+            FieldInfo field = GetField(typeof(TParent), fieldName);
+
+            return (TField)field.GetValue(null);
         }
 
         /// <summary>
