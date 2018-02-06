@@ -99,7 +99,7 @@ namespace PiTung_Bootstrap
         /// Called when a world has been loaded.
         /// </summary>
         /// <param name="worldName">The loaded world's name.</param>
-        public virtual void WorldLoaded(string worldName) { }
+        public virtual void OnWorldLoaded(string worldName) { }
 
         /// <summary>
         /// Equivalent to <see cref="MonoBehaviour.Update"/>
@@ -116,8 +116,6 @@ namespace PiTung_Bootstrap
         /// </summary>
         /// <param name="key">The <see cref="KeyCode"/> of the key that has been pressed.</param>
         public virtual void OnKeyDown(KeyCode key) { }
-
-        public virtual void OnBoardPlaced(int boardWidth, int boardHeight) { }
         #endregion
 
         /// <summary>

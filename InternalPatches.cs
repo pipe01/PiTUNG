@@ -28,7 +28,7 @@ namespace PiTung_Bootstrap
     {
         static void Postfix()
         {
-            Mod.CallOnAllMods(o => o.WorldLoaded(SaveManager.SaveName));
+            Mod.CallOnAllMods(o => o.OnWorldLoaded(SaveManager.SaveName));
         }
     }
 
@@ -140,7 +140,6 @@ namespace PiTung_Bootstrap
             var component = obj.GetComponent<CircuitBoard>();
 
             BoardManager.Instance.BoardAdded(component.x, component.z, obj);
-            //Mod.CallOnAllMods(o => o.OnBoardPlaced(component.x, component.z));
         }
     }
 
