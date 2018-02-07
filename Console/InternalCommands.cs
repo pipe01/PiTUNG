@@ -1,4 +1,5 @@
-﻿using UnityEngine.SceneManagement;
+﻿using PiTung_Bootstrap.Building;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
 using System.Collections.Generic;
@@ -242,6 +243,32 @@ namespace PiTung_Bootstrap.Console
             else
             {
                 Error("HERESY WILL NOT BE TOLERATED");
+            }
+
+            return true;
+        }
+    }
+
+    internal class Command_test : Command
+    {
+        public override string Name => "test";
+        public override string Usage => Name;
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            int x = int.Parse(arguments.ElementAt(0));
+            int y = int.Parse(arguments.ElementAt(1));
+            int id = int.Parse(arguments.ElementAt(2));
+
+            try
+            {
+                Builder.Instance.AddComponentToBoard(Components.GetComponent("Inverter"), x, y, id, 180);
+                Builder.Instance.ConnectInputOutput(BoardManager.Instance.GetBoard(id), x, y, 2, 2);
+            }
+            catch (Exception ex)
+            {
+                Error(ex.Message);
+                MDebug.WriteLine(ex);
             }
 
             return true;

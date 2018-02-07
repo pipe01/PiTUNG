@@ -4,7 +4,7 @@ namespace PiTung_Bootstrap.Building
 {
     public class Board
     {
-        private static int IdCounter = 100;
+        internal static int IdCounter = 100;
 
         public int Width { get; }
         public int Height { get; }
@@ -31,6 +31,27 @@ namespace PiTung_Bootstrap.Building
             {
                 this.Id = IdCounter++;
             }
+        }
+
+        public GameObject GetComponentAt(int x, int y)
+        {
+            foreach (var item in Object.GetComponentsInChildren<Transform>())
+            {
+                if (item.parent != Object.transform)
+                    continue;
+
+                var obj = item.gameObject;
+
+                var ax = Mathf.RoundToInt((obj.transform.localPosition.x - 0.5f) / 0.3f) + 1;
+                var ay = Mathf.RoundToInt((obj.transform.localPosition.z - 0.5f) / 0.3f) + 1;
+
+                if (ax == x && ay == y)
+                {
+                    return obj;
+                }
+            }
+
+            return null;
         }
     }
 }

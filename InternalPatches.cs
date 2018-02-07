@@ -1,4 +1,6 @@
-﻿using PiTung_Bootstrap.Building;
+﻿using System.Linq;
+using UnityEngine.SceneManagement;
+using PiTung_Bootstrap.Building;
 using PiTung_Bootstrap.Config_menu;
 using Harmony;
 using PiTung_Bootstrap.Console;
@@ -28,6 +30,32 @@ namespace PiTung_Bootstrap
     {
         static void Postfix()
         {
+            MDebug.WriteLine("load");
+
+            BoardManager.Instance.Reset();
+
+            var scene = SceneManager.GetActiveScene();
+
+            foreach (var obj in scene.GetRootGameObjects())
+            {
+                Recurse(obj);
+            }
+
+            void Recurse(GameObject parent, int level = 0)
+            {
+                var comp = parent.GetComponent<CircuitBoard>();
+
+                if (comp != null)
+                {
+                    MDebug.WriteLine($"{comp.x},{comp.z}");
+                }
+
+                foreach (Transform item in parent.transform)
+                {
+                    Recurse(item.gameObject, level + 1);
+                }
+            }
+            
             Mod.CallOnAllMods(o => o.OnWorldLoaded(SaveManager.SaveName));
         }
     }
@@ -148,10 +176,7 @@ namespace PiTung_Bootstrap
     {
         static void Postfix(BuildMenu __instance)
         {
-            foreach (var item in __instance.PlaceableObjects)
-            {
-                MDebug.WriteLine(item.name);
-            }
+            Components.AddComponents(__instance.PlaceableObjects);
         }
     }
 }
