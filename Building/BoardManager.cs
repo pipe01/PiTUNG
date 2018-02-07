@@ -36,13 +36,11 @@ namespace PiTung_Bootstrap.Building
             BoardPlaced?.Invoke(b);
 
             InstanceIds[obj.GetInstanceID()] = b.Id;
-
-            IGConsole.Log(b.Id.ToString());
         }
 
         internal void Reset()
         {
-            Board.IdCounter = 100;
+            Board.IdCounter = 1;
             InstanceIds.Clear();
             Boards.Clear();
         }

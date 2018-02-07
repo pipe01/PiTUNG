@@ -4,7 +4,7 @@ namespace PiTung_Bootstrap.Building
 {
     public class Board
     {
-        internal static int IdCounter = 100;
+        internal static int IdCounter = 1;
 
         public int Width { get; }
         public int Height { get; }
