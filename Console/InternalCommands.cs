@@ -248,37 +248,4 @@ namespace PiTung_Bootstrap.Console
             return true;
         }
     }
-
-    internal class Command_test : Command
-    {
-        public override string Name => "test";
-        public override string Usage => Name;
-
-        public override bool Execute(IEnumerable<string> arguments)
-        {
-            int x = int.Parse(arguments.ElementAt(0));
-            int y = int.Parse(arguments.ElementAt(1));
-            int id = int.Parse(arguments.ElementAt(2));
-
-            if (BoardManager.Instance.TryGetBoard(id, out var b))
-            {
-                try
-                {
-                    b.AddBoardComponent(Components.GetComponent("Inverter"), x, y, 180);
-                    b.ConnectInputOutput(x, y, 2, 2);
-                }
-                catch (Exception ex)
-                {
-                    Error(ex.Message);
-                    MDebug.WriteLine(ex);
-                }
-            }
-            else
-            {
-                Error($"Board with ID {id} not found.");
-            }
-
-            return true;
-        }
-    }
 }
