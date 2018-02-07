@@ -341,11 +341,11 @@ namespace PiTung_Bootstrap.Console
         /// </summary>
         /// <param name="type">Type of log <see cref="LogType"/></param>
         /// <param name="msg">Message to log</param>
-        public static void Log(LogType type, string msg)
+        public static void Log(LogType type, object msg)
         {
-            msg = WordWrap(msg, (int)(Screen.width / Style.CalcSize(new GUIContent("A")).x));
+            string m = WordWrap(msg.ToString(), (int)(Screen.width / Style.CalcSize(new GUIContent("A")).x));
 
-            foreach(string line in msg.Split('\n'))
+            foreach(string line in m.Split('\n'))
             {
                 var logEntry = new LogEntry(type, line);
                 
@@ -357,9 +357,9 @@ namespace PiTung_Bootstrap.Console
         /// Logs a message as simple info
         /// </summary>
         /// <param name="msg">Message to log</param>
-        public static void Log(string msg)
+        public static void Log(object msg)
         {
-            Log(LogType.INFO, msg);
+            Log(LogType.INFO, msg.ToString());
         }
 
         /// <summary>
@@ -389,7 +389,7 @@ namespace PiTung_Bootstrap.Console
         /// Logs an error message
         /// </summary>
         /// <param name="msg">Message to log</param>
-        public static void Error(string msg)
+        public static void Error(object msg)
         {
             Log(LogType.ERROR, msg);
         }
