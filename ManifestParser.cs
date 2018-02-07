@@ -61,7 +61,7 @@ namespace PiTung_Bootstrap
                         throw new ArgumentException($"Error at line {i}: missing ending bracket.");
 
                     ret = new ModInfo();
-                    ret.Name = line.Substring(1, line.Length - 2);
+                    ret.Package = line.Substring(1, line.Length - 2);
                 }
                 else
                 {

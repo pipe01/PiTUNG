@@ -94,8 +94,9 @@
     <Compile Include="MethodPatch.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
+    <Compile Include="Updates\GithubUpdateProvider.cs" />
     <Compile Include="Updates\ManifestUpdateProvider.cs" />
-    <Compile Include="Updates\IUpdateProvider.cs" />
+    <Compile Include="Updates\UpdateProvider.cs" />
     <Compile Include="Updates\ModUpdater.cs" />
     <Compile Include="ModUtilities.cs" />
     <Compile Include="ObservableList.cs" />

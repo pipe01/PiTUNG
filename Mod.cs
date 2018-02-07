@@ -67,7 +67,7 @@ namespace PiTung_Bootstrap
         /// <summary>
         /// The update provider, or null if none.
         /// </summary>
-        public virtual IUpdateProvider UpdateProvider { get; }
+        public virtual UpdateProvider UpdateProvider { get; }
 
         /// <summary>
         /// If true, there is an update available for this mod.
