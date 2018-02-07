@@ -44,10 +44,10 @@ namespace PiTung_Bootstrap.Building
 
         public void ConnectInputInput(Board board, int aX, int aY, int bX, int bY)
         {
-            var input = GetComponentComponent<CircuitInput>(board, aX, aY);
-            var output = GetComponentComponent<Output>(board, bX, bY);
+            var a = GetComponentComponent<CircuitInput>(board, aX, aY);
+            var b = GetComponentComponent<CircuitInput>(board, bX, bY);
 
-            StuffConnecter.CreateIOConnection(input, output);
+            StuffConnecter.CreateIIConnection(a, b);
         }
 
         private TComponent GetComponentComponent<TComponent>(Board board, int x, int y)
