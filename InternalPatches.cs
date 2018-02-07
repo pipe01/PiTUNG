@@ -30,31 +30,7 @@ namespace PiTung_Bootstrap
     {
         static void Postfix()
         {
-            MDebug.WriteLine("load");
-
             BoardManager.Instance.Reset();
-
-            var scene = SceneManager.GetActiveScene();
-
-            foreach (var obj in scene.GetRootGameObjects())
-            {
-                Recurse(obj);
-            }
-
-            void Recurse(GameObject parent, int level = 0)
-            {
-                var comp = parent.GetComponent<CircuitBoard>();
-
-                if (comp != null)
-                {
-                    MDebug.WriteLine($"{comp.x},{comp.z}");
-                }
-
-                foreach (Transform item in parent.transform)
-                {
-                    Recurse(item.gameObject, level + 1);
-                }
-            }
             
             Mod.CallOnAllMods(o => o.OnWorldLoaded(SaveManager.SaveName));
         }
@@ -168,6 +144,20 @@ namespace PiTung_Bootstrap
             var component = obj.GetComponent<CircuitBoard>();
 
             BoardManager.Instance.BoardAdded(component.x, component.z, obj);
+        }
+    }
+
+    [HarmonyPatch(typeof(CustomData), "LoadData")]
+    internal class CustomDataPatch
+    {
+        static void Prefix(SaveThisObject save)
+        {
+            var board = save.gameObject.GetComponent<CircuitBoard>();
+
+            if (board != null)
+            {
+                BoardManager.Instance.BoardAdded(board.x, board.z, board.gameObject);
+            }
         }
     }
 
