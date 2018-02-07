@@ -94,7 +94,7 @@
     <Compile Include="MethodPatch.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
-    <Compile Include="Updates\HttpUpdateProvider.cs" />
+    <Compile Include="Updates\ManifestUpdateProvider.cs" />
     <Compile Include="Updates\IUpdateProvider.cs" />
     <Compile Include="Updates\ModUpdater.cs" />
     <Compile Include="ModUtilities.cs" />

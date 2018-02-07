@@ -12,32 +12,14 @@ namespace PiTung_Bootstrap.Updates
 {
     internal static class ModUpdater
     {
-        public class Manifest
-        {
-            public class ModInfo
-            {
-                public string Name;
-                public string FileName;
-                public Version Version;
-            }
-            
-            public ModInfo[] Mods { get; set; }
-        }
-        
-        private static Dictionary<Mod, Manifest.ModInfo> ModInfos = new Dictionary<Mod, Manifest.ModInfo>();
         private static WebClient Client = new WebClient();
 
         public static void CheckUpdatesForMod(Mod mod, bool update)
         {
-            if (string.IsNullOrEmpty(mod.UpdateUrl?.Trim()))
+            if (mod.UpdateProvider == null)
                 return;
-
-            var modInfo = GetModInfo(mod);
-
-            bool updateAvail = modInfo.Version > mod.ModVersion;
-            mod.HasAvailableUpdate = updateAvail;
             
-            if (updateAvail)
+            if (mod.HasAvailableUpdate = mod.UpdateProvider.IsUpdateAvailable())
             {
                 Bootstrapper.Instance.ModUpdatesAvailable = true;
 
@@ -50,48 +32,19 @@ namespace PiTung_Bootstrap.Updates
 
         public static void UpdateMod(Mod mod)
         {
-            GetModInfo(mod);
-            
-            if (ModInfos.TryGetValue(mod, out var val))
-            {
-                string rootUrl = (mod.UpdateUrl + "|").Replace($"/{Path.GetFileName(mod.UpdateUrl)}|", "/");
-                string url = rootUrl + (val.FileName ?? Path.GetFileName(mod.FullPath));
+            if (!mod.HasAvailableUpdate)
+                return;
 
-                Client.DownloadFile(url, Path.Combine(Path.GetDirectoryName(mod.FullPath), Path.GetFileName(mod.FullPath)) + ".update");
-                
-                mod.HasAvailableUpdate = false;
-            }
-        }
+            var provider = mod.UpdateProvider;
 
-        private static Manifest.ModInfo GetModInfo(Mod mod)
-        {
-            if (!ModInfos.ContainsKey(mod))
-            {
-                Manifest man = null;
+            if (provider == null)
+                return;
 
-                try
-                {
-                    string manText = Client.DownloadString(mod.UpdateUrl);
-                    man = ManifestParser.ParseManifest(manText.Split('\n'));
-                }
-                catch (Exception ex)
-                {
-                    MDebug.WriteLine("Exception occurred while getting update manifest for " + mod.FullName);
-                    MDebug.WriteLine("Details: " + ex);
+            string updatePath = "mods/" + Path.GetFileName(mod.FullPath) + ".update";
 
-                    IGConsole.Log("Error occurred while updating " + mod.FullName);
-                }
+            Client.DownloadFile(provider.GetUpdate().DownloadUrl, updatePath);
 
-                if (man == null || man.Mods == null || man.Mods.Length == 0)
-                    return null;
-
-                var modInfo = man.Mods.SingleOrDefault(o => o.Name.Equals(mod.Name));
-
-                if (modInfo != null)
-                    ModInfos[mod] = modInfo;
-            }
-
-            return ModInfos[mod];
+            mod.HasAvailableUpdate = false;
         }
     }
 }

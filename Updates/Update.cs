@@ -5,15 +5,15 @@ using System.Text;
 
 namespace PiTung_Bootstrap.Updates
 {
-    internal struct Update
+    public struct Update
     {
-        public Mod Mod { get; }
+        public string ModName { get; }
         public Version NewVersion { get; }
         public string DownloadUrl { get; }
 
-        public Update(Mod mod, Version newVer, string downloadUrl)
+        public Update(string modName, Version newVer, string downloadUrl)
         {
-            this.Mod = mod;
+            this.ModName = modName;
             this.NewVersion = newVer;
             this.DownloadUrl = downloadUrl;
         }

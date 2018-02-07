@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PiTung_Bootstrap.Updates
 {
-    internal interface IUpdateProvider
+    public interface IUpdateProvider
     {
-        bool IsUpdateAvailable(Mod mod);
-        Update GetUpdate(Mod mod);
+        bool IsUpdateAvailable();
+        Update GetUpdate();
     }
 }

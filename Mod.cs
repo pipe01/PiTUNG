@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using PiTung_Bootstrap.Updates;
+using System.Linq;
 using PiTung_Bootstrap.Config_menu;
 using System;
 using System.Collections.Generic;
@@ -59,9 +60,9 @@ namespace PiTung_Bootstrap
         public virtual bool Hotloadable { get; } = false;
 
         /// <summary>
-        /// The update manifest's URL. Defaults to null (disabled).
+        /// The update provider, or null if none.
         /// </summary>
-        public virtual string UpdateUrl { get; } = null;
+        public virtual IUpdateProvider UpdateProvider { get; }
 
         /// <summary>
         /// If true, there is an update available for this mod.

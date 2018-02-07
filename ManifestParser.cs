@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using static PiTung_Bootstrap.Updates.ModUpdater;
-using static PiTung_Bootstrap.Updates.ModUpdater.Manifest;
+using static PiTung_Bootstrap.Updates.ManifestUpdateProvider;
+using static PiTung_Bootstrap.Updates.ManifestUpdateProvider.Manifest;
 
 namespace PiTung_Bootstrap
 {
