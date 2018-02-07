@@ -28,6 +28,11 @@ namespace PiTung_Bootstrap
         public abstract string Name { get; }
 
         /// <summary>
+        /// The mod's package name, e.g. 'me.pipe01.MyMod'.
+        /// </summary>
+        public abstract string PackageName { get; }
+
+        /// <summary>
         /// Your name.
         /// </summary>
         public abstract string Author { get; }
