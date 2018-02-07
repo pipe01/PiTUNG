@@ -54,7 +54,8 @@ namespace PiTung_Bootstrap.Updates
             
             if (ModInfos.TryGetValue(mod, out var val))
             {
-                string url = Path.Combine(mod.UpdateUrl, val.FileName ?? Path.GetFileName(mod.FullPath));
+                string rootUrl = (mod.UpdateUrl + "|").Replace($"/{Path.GetFileName(mod.UpdateUrl)}|", "/");
+                string url = rootUrl + (val.FileName ?? Path.GetFileName(mod.FullPath));
 
                 Client.DownloadFile(url, Path.Combine(Path.GetDirectoryName(mod.FullPath), Path.GetFileName(mod.FullPath)) + ".update");
                 

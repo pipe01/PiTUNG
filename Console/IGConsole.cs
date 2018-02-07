@@ -399,7 +399,7 @@ namespace PiTung_Bootstrap.Console
         /// <param name="command">The command class.</param>
         internal static bool RegisterCommand(Command command)
         {
-            if (Registry.ContainsKey(command.Name))
+            if (Registry?.ContainsKey(command.Name) ?? true)
                 return false;
             Registry.Add(command.Name, command);
             return true;

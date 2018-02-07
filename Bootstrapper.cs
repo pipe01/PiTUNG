@@ -81,7 +81,7 @@ namespace PiTung_Bootstrap
 
                     IGConsole.Init();
                 }
-                
+
                 SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
             }
 
