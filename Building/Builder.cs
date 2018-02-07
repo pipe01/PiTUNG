@@ -36,23 +36,36 @@ namespace PiTung_Bootstrap.Building
 
         public void ConnectInputOutput(Board board, int inputX, int inputY, int outputX, int outputY)
         {
-            var aObj = board.GetComponentAt(inputX, inputY);
-            var bObj = board.GetComponentAt(outputX, outputY);
-
-            if (aObj == null || bObj == null)
-            {
-                return;
-            }
-
-            var input = aObj.GetComponentInChildren<CircuitInput>();
-            var output = bObj.GetComponentInChildren<Output>();
-
-            if (output == null || input == null)
-            {
-                return;
-            }
+            var input = GetComponentComponent<CircuitInput>(board, inputX, inputY);
+            var output = GetComponentComponent<Output>(board, outputX, outputY);
 
             StuffConnecter.CreateIOConnection(input, output);
+        }
+
+        public void ConnectInputInput(Board board, int aX, int aY, int bX, int bY)
+        {
+            var input = GetComponentComponent<CircuitInput>(board, aX, aY);
+            var output = GetComponentComponent<Output>(board, bX, bY);
+
+            StuffConnecter.CreateIOConnection(input, output);
+        }
+
+        private TComponent GetComponentComponent<TComponent>(Board board, int x, int y)
+            where TComponent : MonoBehaviour
+        {
+            var aObj = board.GetComponentAt(x, y);
+            
+            if (aObj != null)
+            {
+                var input = aObj.GetComponentInChildren<TComponent>();
+
+                if (input != null)
+                {
+                    return input;
+                }
+            }
+
+            return null;
         }
     }
 }
