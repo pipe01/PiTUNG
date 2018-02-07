@@ -109,7 +109,6 @@ namespace PiTung_Bootstrap
             {
                 foreach (var item in Mods)
                 {
-                    IGConsole.Log(item.Name);
                     ModUpdater.CheckUpdatesForMod(item, true);
                 }
             }).Start();

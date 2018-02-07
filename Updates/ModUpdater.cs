@@ -18,9 +18,7 @@ namespace PiTung_Bootstrap.Updates
         {
             if (mod.UpdateProvider == null)
                 return;
-
-            IGConsole.Log(mod.Name);
-
+            
             if (mod.HasAvailableUpdate = mod.UpdateProvider.IsUpdateAvailable())
             {
                 Bootstrapper.Instance.ModUpdatesAvailable = true;
