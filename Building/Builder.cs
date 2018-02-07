@@ -4,8 +4,11 @@ namespace PiTung_Bootstrap.Building
 {
     public static class Builder
     {
-        public static void AddBoardComponent(this Board board, CircuitComponent component, int x, int y, float rotation = 0)
+        public static bool AddBoardComponent(this Board board, CircuitComponent component, int x, int y, float rotation = 0)
         {
+            if (board.GetComponentAt(x, y) != null)
+                return false;
+
             CircuitBoard circuit = board.Object.GetComponent<CircuitBoard>();
 
             GameObject gameObject = Object.Instantiate(component.Prefab, new Vector3(10000f, 10000f, 10000f), Quaternion.identity, circuit.transform);
@@ -19,6 +22,21 @@ namespace PiTung_Bootstrap.Building
 
             StuffPlacer.DestroyIntersectingConnections(gameObject);
             MegaMesh.AddMeshesFrom(gameObject);
+
+            return true;
+        }
+
+        public static bool DeleteBoardComponent(this Board board, int x, int y)
+        {
+            var comp = board.GetComponentAt(x, y);
+
+            if (comp != null)
+            {
+                StuffDeleter.DeleteThing(comp);
+                return true;
+            }
+
+            return false;
         }
 
         public static void ConnectInputOutput(this Board board, int inputX, int inputY, int outputX, int outputY)
