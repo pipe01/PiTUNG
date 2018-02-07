@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Threading;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using PiTung_Bootstrap.Config_menu;
@@ -104,10 +105,13 @@ namespace PiTung_Bootstrap
             };
             ModUtilities.DummyComponent?.StartCoroutine(UpdateChecker.CheckUpdates());
 
-            foreach (var item in Mods)
+            new Thread(() =>
             {
-                ModUtilities.DummyComponent?.StartCoroutine(ModUpdater.CheckUpdatesForMod(item, true));
-            }
+                foreach (var item in Mods)
+                {
+                    ModUtilities.DummyComponent?.StartCoroutine(ModUpdater.CheckUpdatesForMod(item, true));
+                }
+            }).Start();
         }
 
         private void LoadMod(Mod mod, bool hotload)
