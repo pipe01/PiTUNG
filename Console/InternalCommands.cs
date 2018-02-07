@@ -260,15 +260,22 @@ namespace PiTung_Bootstrap.Console
             int y = int.Parse(arguments.ElementAt(1));
             int id = int.Parse(arguments.ElementAt(2));
 
-            try
+            if (BoardManager.Instance.TryGetBoard(id, out var b))
             {
-                Builder.Instance.AddComponentToBoard(Components.GetComponent("Inverter"), x, y, id, 180);
-                Builder.Instance.ConnectInputOutput(BoardManager.Instance.GetBoard(id), x, y, 2, 2);
+                try
+                {
+                    b.AddBoardComponent(Components.GetComponent("Inverter"), x, y, 180);
+                    b.ConnectInputOutput(x, y, 2, 2);
+                }
+                catch (Exception ex)
+                {
+                    Error(ex.Message);
+                    MDebug.WriteLine(ex);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Error(ex.Message);
-                MDebug.WriteLine(ex);
+                Error($"Board with ID {id} not found.");
             }
 
             return true;
