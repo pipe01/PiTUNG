@@ -6,7 +6,7 @@ namespace PiTung_Bootstrap.Updates
 {
     public class GithubUpdateProvider : UpdateProvider
     {
-        private const string VersionRegex = @"releases\/tag\/v?(?<ver>[^""]*?)"">.*?<\/a>";
+        private const string VersionRegex = @"releases\/tag\/(?<ver>[^""]*?)"">.*?<\/a>";
         private const string BinaryRegex = @"<strong class=""pl-1"">(.*?\.dll)<\/strong>";
 
         private static WebClient Client = new WebClient();
@@ -21,28 +21,50 @@ namespace PiTung_Bootstrap.Updates
 
         internal override Update GetUpdate()
         {
-            string url = GithubRepoUrl + (GithubRepoUrl.EndsWith("/") ? "" : "/") + "releases/latest";
-            string page = Client.DownloadString(url);
+            string url = GithubRepoUrl + (GithubRepoUrl.EndsWith("/") ? "" : "/");
+            string releasesUrl = url + "releases/latest";
 
-            var verMatch = Regex.Match(page, VersionRegex);
+            string html = Client.DownloadString(url);
 
-            if (verMatch.Groups.Count != 1)
+            var verMatch = Regex.Match(html, VersionRegex);
+
+            if (verMatch.Groups.Count != 2)
             {
                 throw new Exception("An error occurred while getting the latest version name from GitHub");
             }
 
-            var version = new Version(verMatch.Groups["ver"].Value);
+            string versionStr = verMatch.Groups["ver"].Value;
+            var version = new Version(Versionize(versionStr));
 
-            var binMatch = Regex.Match(page, BinaryRegex);
+            var binMatch = Regex.Match(html, BinaryRegex);
 
             if (binMatch.Groups.Count == 0)
             {
                 throw new Exception("An error occurred while getting the latest binary name from GitHub");
             }
 
-            string binName = binMatch.Groups[0].Value;
+            string binName = binMatch.Groups[1].Value;
+
+            string binUrl = url + $"/releases/download/{versionStr}/BetterSaves.dll";
 
             return new Update(ModPackage, version, binName);
+        }
+
+        private static string Versionize(string str)
+        {
+            string ret = "";
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                char c = str[i];
+
+                if (char.IsNumber(c) || c == '.')
+                {
+                    ret += c;
+                }
+            }
+
+            return ret;
         }
     }
 }
