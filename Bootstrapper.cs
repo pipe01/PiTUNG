@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using PiTung_Bootstrap.Console;
 using Object = UnityEngine.Object;
+using PiTung_Bootstrap.Updates;
 
 namespace PiTung_Bootstrap
 {
