@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Net;
+using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,71 +25,72 @@ namespace PiTung_Bootstrap.Updates
         }
         
         private static Dictionary<Mod, Manifest.ModInfo> ModInfos = new Dictionary<Mod, Manifest.ModInfo>();
+        private static WebClient Client = new WebClient();
 
-        public static IEnumerator CheckUpdatesForMod(Mod mod, bool update)
+        public static void CheckUpdatesForMod(Mod mod, bool update)
         {
-            if (mod.UpdateUrl == null)
-                yield break;
+            if (string.IsNullOrEmpty(mod.UpdateUrl?.Trim()))
+                return;
 
-            yield return GetModInfo(mod);
+            var modInfo = GetModInfo(mod);
 
-            if (ModInfos.TryGetValue(mod, out var modInfo))
-                mod.HasAvailableUpdate = modInfo.Version > mod.ModVersion;
-
-            if (mod.HasAvailableUpdate)
+            bool updateAvail = modInfo.Version > mod.ModVersion;
+            mod.HasAvailableUpdate = updateAvail;
+            
+            if (updateAvail)
             {
                 Bootstrapper.Instance.ModUpdatesAvailable = true;
 
                 if (update)
-                    yield return UpdateMod(mod);
+                    UpdateMod(mod);
 
                 IGConsole.Log($"<color=lime>Downloaded update for {mod.FullName}!</color> Restart TUNG to install.");
             }
         }
 
-        public static IEnumerator UpdateMod(Mod mod)
+        public static void UpdateMod(Mod mod)
         {
-            yield return GetModInfo(mod);
+            GetModInfo(mod);
             
             if (ModInfos.TryGetValue(mod, out var val))
             {
                 string url = Path.Combine(mod.UpdateUrl, val.FileName ?? Path.GetFileName(mod.FullPath));
 
-                var down = new WWW(url);
-                yield return down;
-
-                File.WriteAllBytes(Path.Combine(Path.GetDirectoryName(mod.FullPath), Path.GetFileName(mod.FullPath)) + ".update", down.bytes);
-
+                Client.DownloadFile(url, Path.Combine(Path.GetDirectoryName(mod.FullPath), Path.GetFileName(mod.FullPath)) + ".update");
+                
                 mod.HasAvailableUpdate = false;
             }
         }
 
-        private static IEnumerator GetModInfo(Mod mod)
+        private static Manifest.ModInfo GetModInfo(Mod mod)
         {
-            Manifest man = null;
-
-            var down = new WWW(mod.UpdateUrl);
-            yield return down;
-            
-            try
+            if (!ModInfos.ContainsKey(mod))
             {
-                man = ManifestParser.ParseManifest(down.text.Split('\n'));
+                Manifest man = null;
+
+                try
+                {
+                    string manText = Client.DownloadString(mod.UpdateUrl);
+                    man = ManifestParser.ParseManifest(manText.Split('\n'));
+                }
+                catch (Exception ex)
+                {
+                    MDebug.WriteLine("Exception occurred while getting update manifest for " + mod.FullName);
+                    MDebug.WriteLine("Details: " + ex);
+
+                    IGConsole.Log("Error occurred while updating " + mod.FullName);
+                }
+
+                if (man == null || man.Mods == null || man.Mods.Length == 0)
+                    return null;
+
+                var modInfo = man.Mods.SingleOrDefault(o => o.Name.Equals(mod.Name));
+
+                if (modInfo != null)
+                    ModInfos[mod] = modInfo;
             }
-            catch (Exception ex)
-            {
-                MDebug.WriteLine("Exception occurred while parsing update manifest for " + mod.FullName);
-                MDebug.WriteLine("Details: " + ex);
 
-                IGConsole.Log("Error occurred while updating " + mod.FullName);
-            }
-            
-            if (man == null || man.Mods == null || man.Mods.Length == 0)
-                yield break;
-
-            var modInfo = man.Mods.SingleOrDefault(o => o.Name.Equals(mod.Name));
-
-            if (modInfo != null)
-                ModInfos[mod] = modInfo;
+            return ModInfos[mod];
         }
     }
 }

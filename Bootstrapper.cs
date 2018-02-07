@@ -109,7 +109,7 @@ namespace PiTung_Bootstrap
             {
                 foreach (var item in Mods)
                 {
-                    ModUtilities.DummyComponent?.StartCoroutine(ModUpdater.CheckUpdatesForMod(item, true));
+                    ModUpdater.CheckUpdatesForMod(item, true);
                 }
             }).Start();
         }
