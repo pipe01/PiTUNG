@@ -9,7 +9,7 @@ using static PiTung_Bootstrap.Updates.ModUpdater.Manifest;
 
 namespace PiTung_Bootstrap
 {
-    public static class ManifestParser
+    internal static class ManifestParser
     {
         public static Manifest ParseManifest(IEnumerable<string> lines)
         {

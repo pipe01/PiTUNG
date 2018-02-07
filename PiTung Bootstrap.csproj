@@ -94,6 +94,7 @@
     <Compile Include="MethodPatch.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
+    <Compile Include="Updates\IUpdateProvider.cs" />
     <Compile Include="Updates\ModUpdater.cs" />
     <Compile Include="ModUtilities.cs" />
     <Compile Include="ObservableList.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="TargetAttribute.cs" />
     <Compile Include="UiElements.cs" />
     <Compile Include="UpdateChecker.cs" />
+    <Compile Include="Updates\Update.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AssemblyVersion.tt">

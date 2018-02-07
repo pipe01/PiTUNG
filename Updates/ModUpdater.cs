@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace PiTung_Bootstrap.Updates
 {
-    public static class ModUpdater
+    internal static class ModUpdater
     {
         public class Manifest
         {
