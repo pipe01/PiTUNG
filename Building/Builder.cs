@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace PiTung_Bootstrap.Building
 {
     public static class Builder
     {
+        internal static List<KeyValuePair<CircuitInput, CircuitInput>> PendingIIConnections = new List<KeyValuePair<CircuitInput, CircuitInput>>();
+        internal static List<KeyValuePair<CircuitInput, Output>> PendingIOConnections = new List<KeyValuePair<CircuitInput, Output>>();
+
         public static bool AddBoardComponent(this Board board, CircuitComponent component, int x, int y, float rotation = 0)
         {
             if (board.GetComponentAt(x, y) != null)
@@ -45,20 +50,48 @@ namespace PiTung_Bootstrap.Building
             board.AddBoardComponent(component, x, y, rotation);
         }
 
-        public static void ConnectInputOutput(this Board board, int inputX, int inputY, int outputX, int outputY)
+        public static bool ConnectInputOutput(this Board board, int inputX, int inputY, int outputX, int outputY)
         {
             var input = GetComponentComponent<CircuitInput>(board, inputX, inputY);
             var output = GetComponentComponent<Output>(board, outputX, outputY);
 
+            var kvp = new KeyValuePair<CircuitInput, Output>(input, output);
+
+            PendingIOConnections.Add(kvp);
+
             StuffConnecter.CreateIOConnection(input, output);
+
+            if (!PendingIOConnections.Contains(kvp))
+            {
+                return false;
+            }
+            else
+            {
+                PendingIOConnections.Remove(kvp);
+                return true;
+            }
         }
 
-        public static void ConnectInputInput(this Board board, int aX, int aY, int bX, int bY)
+        public static bool ConnectInputInput(this Board board, int aX, int aY, int bX, int bY)
         {
             var a = GetComponentComponent<CircuitInput>(board, aX, aY);
             var b = GetComponentComponent<CircuitInput>(board, bX, bY);
 
+            var kvp = new KeyValuePair<CircuitInput, CircuitInput>(a, b);
+
+            PendingIIConnections.Add(kvp);
+
             StuffConnecter.CreateIIConnection(a, b);
+            
+            if (!PendingIIConnections.Contains(kvp))
+            {
+                return false;
+            }
+            else
+            {
+                PendingIIConnections.Remove(kvp);
+                return true;
+            }
         }
 
         private static TComponent GetComponentComponent<TComponent>(this Board board, int x, int y)

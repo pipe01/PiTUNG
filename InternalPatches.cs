@@ -169,4 +169,28 @@ namespace PiTung_Bootstrap
             Components.AddComponents(__instance.PlaceableObjects);
         }
     }
+
+    [HarmonyPatch(typeof(StuffDeleter), "DestroyIIConnection")]
+    internal class StuffDeleterIIPatch
+    {
+        static void Prefix(InputInputConnection connection)
+        {
+            var kvp = new KeyValuePair<CircuitInput, CircuitInput>(connection.Point1, connection.Point2);
+
+            if (Builder.PendingIIConnections.Contains(kvp))
+                Builder.PendingIIConnections.Remove(kvp);
+        }
+    }
+
+    [HarmonyPatch(typeof(StuffDeleter), "DestroyIOConnection")]
+    internal class StuffDeleterIOPatch
+    {
+        static void Prefix(InputOutputConnection connection)
+        {
+            var kvp = new KeyValuePair<CircuitInput, Output>(connection.Point1, connection.Point2);
+
+            if (Builder.PendingIOConnections.Contains(kvp))
+                Builder.PendingIOConnections.Remove(kvp);
+        }
+    }
 }
