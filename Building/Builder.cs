@@ -39,6 +39,12 @@ namespace PiTung_Bootstrap.Building
             return false;
         }
 
+        public static void SetBoardComponent(this Board board, int x, int y, CircuitComponent component, float rotation = 0)
+        {
+            board.DeleteBoardComponent(x, y);
+            board.AddBoardComponent(component, x, y, rotation);
+        }
+
         public static void ConnectInputOutput(this Board board, int inputX, int inputY, int outputX, int outputY)
         {
             var input = GetComponentComponent<CircuitInput>(board, inputX, inputY);
