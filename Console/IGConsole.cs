@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Runtime.InteropServices;
+using System.Reflection;
+using System.IO;
 using System.Text;
 using JetBrains.Annotations;
 using System;
@@ -201,19 +203,22 @@ namespace PiTung_Bootstrap.Console
                 font = Font.CreateDynamicFontFromOSFont("Consolas", 16),
                 richText = true
             };
-            
-            RegisterCommand<Command_help>();
-            RegisterCommand<Command_mods>();
-            RegisterCommand<Command_set>();
-            RegisterCommand<Command_get>();
-            RegisterCommand<Command_reload>();
-            RegisterCommand<Command_echo>();
-            RegisterCommand<Command_quit>();
-            RegisterCommand<Command_objs>();
-            RegisterCommand<Command_praise>();
+
+            LoadCommands();
 
             Log("Console initialized");
             Log("Type \"help\" to get a list of commands");
+        }
+
+        private static void LoadCommands()
+        {
+            foreach (var item in Assembly.GetExecutingAssembly().GetTypes())
+            {
+                if (item.Name.StartsWith("Command_", StringComparison.InvariantCulture) && item.BaseType == typeof(Command))
+                {
+                    RegisterCommand((Command)Activator.CreateInstance(item));
+                }
+            }
         }
 
         /// <summary>
