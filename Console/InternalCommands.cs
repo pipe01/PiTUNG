@@ -248,4 +248,82 @@ namespace PiTung_Bootstrap.Console
             return true;
         }
     }
+
+    internal class Command_add : Command
+    {
+        public override string Name => "add";
+        public override string Usage => Name;
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            int x = int.Parse(arguments.ElementAt(0));
+            int y = int.Parse(arguments.ElementAt(1));
+            int id = int.Parse(arguments.ElementAt(2));
+
+            if (BoardManager.Instance.TryGetBoard(id, out var b))
+            {
+                try
+                {
+                    Log(b.AddBoardComponent(Components.GetComponent("Inverter"), x, y, 180));
+                }
+                catch (Exception ex)
+                {
+                    Error(ex.Message);
+                    MDebug.WriteLine(ex);
+                }
+            }
+            else
+            {
+                Error($"Board with ID {id} not found.");
+            }
+
+            return true;
+        }
+    }
+
+    internal class Command_connect : Command
+    {
+        public override string Name => "connect";
+        public override string Usage => Name;
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            string io = arguments.ElementAt(0);
+            int x1 = int.Parse(arguments.ElementAt(1));
+            int y1 = int.Parse(arguments.ElementAt(2));
+            int x2 = int.Parse(arguments.ElementAt(3));
+            int y2 = int.Parse(arguments.ElementAt(4));
+            int id = int.Parse(arguments.ElementAt(5));
+
+            if (BoardManager.Instance.TryGetBoard(id, out var b))
+            {
+                bool result = false;
+
+                try
+                {
+                    if (io.Equals("io"))
+                    {
+                        result = b.ConnectInputOutput(x1, y1, x2, y2);
+                    }
+                    else if (io.Equals("ii"))
+                    {
+                        result = b.ConnectInputInput(x1, y1, x2, y2);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Error(ex.Message);
+                    MDebug.WriteLine(ex);
+                }
+
+                Log(result);
+            }
+            else
+            {
+                Error($"Board with ID {id} not found.");
+            }
+
+            return true;
+        }
+    }
 }
