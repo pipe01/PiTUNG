@@ -1,9 +1,11 @@
-# PiTung
+# PiTUNG
 [![Build status](https://ci.appveyor.com/api/projects/status/9v5a2adge9t2ysxa?svg=true)](https://ci.appveyor.com/project/pipe01/pitung)
-![PiTUNG installs](http://pipe0481.heliohost.org/pitung/getimg.php?img=installs)
-![Latest version](http://pipe0481.heliohost.org/pitung/getimg.php?img=version)
+[![PiTUNG installs](http://pipe0481.heliohost.org/pitung/getimg.php?img=installs)](http://www.pipe0481.heliohost.org/pitung/Installer.exe)
+[![Latest version](http://pipe0481.heliohost.org/pitung/getimg.php?img=version)](https://github.com/pipe01/PiTUNG/releases/latest)
 
 Mod framework for The Ultimate Nerd Game
+
+You can get the latest version of PiTUNG right out of the oven [here](https://ci.appveyor.com/api/projects/pipe01/pitung/artifacts/bin%2FDebug%2FPiTung%20Bootstrap.dll). **DISCLAIMER**: this version is built from the latest commit, which means that it most likely won't work as expected. You probably don't want to download this version, but rather [this one](https://github.com/pipe01/PiTUNG/releases/latest).
 
 ## For users: How to install the framework
 
