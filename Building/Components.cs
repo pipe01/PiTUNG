@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace PiTung_Bootstrap.Building
 {
-    internal static class Components
+    public static class Components
     {
         private static Dictionary<string, GameObject> Prefabs = new Dictionary<string, GameObject>();
 
@@ -18,7 +18,7 @@ namespace PiTung_Bootstrap.Building
             }
         }
 
-        public static IEnumerable<string> GetComponentNames() => Prefabs.Keys;
+        internal static IEnumerable<string> GetComponentNames() => Prefabs.Keys;
 
         public static CircuitComponent GetComponent(string name)
         {
