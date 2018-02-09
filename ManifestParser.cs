@@ -1,9 +1,6 @@
-﻿using System.Data;
-using System.CodeDom;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using static PiTung_Bootstrap.ModUpdater;
 using static PiTung_Bootstrap.ModUpdater.Manifest;
 

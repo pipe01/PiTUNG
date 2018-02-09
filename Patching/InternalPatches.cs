@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using UnityEngine.SceneManagement;
-using PiTung_Bootstrap.Building;
+﻿using PiTung_Bootstrap.Building;
 using PiTung_Bootstrap.Config_menu;
 using Harmony;
 using PiTung_Bootstrap.Console;
