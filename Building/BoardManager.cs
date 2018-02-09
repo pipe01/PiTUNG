@@ -11,6 +11,7 @@ namespace PiTung_Bootstrap.Building
     {
         public static BoardManager Instance { get; } = new BoardManager();
 
+
         private List<Board> Boards = new List<Board>();
         private Dictionary<int, int> InstanceIds = new Dictionary<int, int>();
 
@@ -66,6 +67,20 @@ namespace PiTung_Bootstrap.Building
                 board = null;
                 return false;
             }
+        }
+
+        public bool TryGetExistingBoardFromGameObject(GameObject gameObject, out Board board)
+        {
+            if (InstanceIds.TryGetValue(gameObject.GetInstanceID(), out int id))
+            {
+                var boardComp = gameObject.GetComponent<CircuitBoard>();
+
+                board = new Board(boardComp.x, boardComp.z, gameObject, id);
+                return true;
+            }
+
+            board = null;
+            return false;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace PiTung_Bootstrap.Building
         internal static List<KeyValuePair<CircuitInput, CircuitInput>> PendingIIConnections = new List<KeyValuePair<CircuitInput, CircuitInput>>();
         internal static List<KeyValuePair<CircuitInput, Output>> PendingIOConnections = new List<KeyValuePair<CircuitInput, Output>>();
 
-        public static bool AddBoardComponent(this Board board, CircuitComponent component, int x, int y, float rotation = 0)
+        public static bool AddCircuitComponent(this Board board, CircuitComponent component, int x, int y, float rotation = 0)
         {
             if (board.GetComponentAt(x, y) != null)
                 return false;
@@ -31,7 +31,7 @@ namespace PiTung_Bootstrap.Building
             return true;
         }
 
-        public static bool DeleteBoardComponent(this Board board, int x, int y)
+        public static bool DeleteCircuitComponent(this Board board, int x, int y)
         {
             var comp = board.GetComponentAt(x, y);
 
@@ -44,12 +44,12 @@ namespace PiTung_Bootstrap.Building
             return false;
         }
 
-        public static void SetBoardComponent(this Board board, int x, int y, CircuitComponent component, float rotation = 0)
+        public static void SetCircuitComponent(this Board board, int x, int y, CircuitComponent component, float rotation = 0)
         {
-            board.DeleteBoardComponent(x, y);
-            board.AddBoardComponent(component, x, y, rotation);
+            board.DeleteCircuitComponent(x, y);
+            board.AddCircuitComponent(component, x, y, rotation);
         }
-
+        
         public static bool ConnectInputOutput(this Board board, int inputX, int inputY, int outputX, int outputY)
         {
             var input = GetComponentComponent<CircuitInput>(board, inputX, inputY);

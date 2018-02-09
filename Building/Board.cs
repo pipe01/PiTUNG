@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Collections;
+using System.Runtime.InteropServices.ComTypes;
+using UnityEngine;
 
 namespace PiTung_Bootstrap.Building
 {
@@ -35,6 +38,19 @@ namespace PiTung_Bootstrap.Building
 
         public GameObject GetComponentAt(int x, int y)
         {
+            foreach (var item in this.GetComponents())
+            {
+                if (item.Key.x == x && item.Key.y == y)
+                {
+                    return item.Value;
+                }
+            }
+            
+            return null;
+        }
+
+        public IEnumerable<KeyValuePair<Vector2Int, GameObject>> GetComponents()
+        {
             foreach (var item in Object.GetComponentsInChildren<Transform>())
             {
                 if (item.parent != Object.transform)
@@ -45,13 +61,8 @@ namespace PiTung_Bootstrap.Building
                 var ax = Mathf.RoundToInt((obj.transform.localPosition.x - 0.5f) / 0.3f) + 1;
                 var ay = Mathf.RoundToInt((obj.transform.localPosition.z - 0.5f) / 0.3f) + 1;
 
-                if (ax == x && ay == y)
-                {
-                    return obj;
-                }
+                yield return new KeyValuePair<Vector2Int, GameObject>(new Vector2Int(ax, ay), obj);
             }
-
-            return null;
         }
     }
 }
