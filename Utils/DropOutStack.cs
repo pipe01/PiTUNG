@@ -2,7 +2,7 @@
 
 namespace PiTung_Bootstrap
 {
-    class DropOutStack<T>
+    internal class DropOutStack<T>
     {
         private T[] items;
         private int top = 0;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PiTung_Bootstrap
 {
-    public class ObservableList<T> : IList<T>
+    internal class ObservableList<T> : IList<T>
     {
         private List<T> InternalList = new List<T>();
 
