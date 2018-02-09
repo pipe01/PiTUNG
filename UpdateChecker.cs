@@ -21,7 +21,7 @@ namespace PiTung_Bootstrap
             yield return www;
 
             var ver = new Version(www.text);
-            bool avail = ver > PiTung.FrameworkVersion;
+            bool avail = ver > PiTUNG.FrameworkVersion;
 
             IsUpdateAvailable = avail;
             UpdateStatus?.Invoke(avail, ver);

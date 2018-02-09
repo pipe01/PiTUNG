@@ -58,7 +58,7 @@ namespace PiTung_Bootstrap
                 return;
             Patched = true;
 
-            MDebug.WriteLine("PiTUNG Framework version {0}", 0, PiTung.FrameworkVersion);
+            MDebug.WriteLine("PiTUNG Framework version {0}", 0, PiTUNG.FrameworkVersion);
             MDebug.WriteLine("-------------Patching-------------" + (hotload ? " (reloading)" : ""));
 
             if (!hotload)
@@ -131,7 +131,7 @@ namespace PiTung_Bootstrap
                 return;
             }
 
-            if (!mod.FrameworkVersion.EqualsVersion(PiTung.FrameworkVersion))
+            if (!mod.FrameworkVersion.EqualsVersion(PiTUNG.FrameworkVersion))
             {
                 if (mod.RequireFrameworkVersion)
                 {

@@ -97,7 +97,7 @@ namespace PiTung_Bootstrap
         {
             if (ModUtilities.IsOnMainMenu && !IGConsole.Shown)
             {
-                string str = $"<b>PiTUNG v{PiTung.FrameworkVersion} enabled!</b>\nLoaded mods: " + Bootstrapper.ModCount;
+                string str = $"<b>PiTUNG v{PiTUNG.FrameworkVersion} enabled!</b>\nLoaded mods: " + Bootstrapper.ModCount;
 
                 if (UpdateChecker.IsUpdateAvailable)
                 {
