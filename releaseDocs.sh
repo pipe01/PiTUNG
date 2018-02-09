@@ -18,7 +18,7 @@ git clone https://github.com/pipe01/PiTUNG.git --branch gh-pages $TEMP_REPO_DIR
 
 echo "Clear repo directory"
 cd $TEMP_REPO_DIR
-git rm -r *
+git clean -d -x -n
 
 echo "Copy documentation into the repo"
 cp -r $SOURCE_DIR/docfx_project/_site/* .
