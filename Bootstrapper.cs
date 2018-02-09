@@ -11,6 +11,9 @@ using Object = UnityEngine.Object;
 
 namespace PiTung_Bootstrap
 {
+    /// <summary>
+    /// Main patcher, gets called when the game starts and begins the patching process.
+    /// </summary>
     public class Bootstrapper
     {
         private static bool Patched = false;

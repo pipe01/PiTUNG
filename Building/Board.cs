@@ -3,16 +3,45 @@ using UnityEngine;
 
 namespace PiTung_Bootstrap.Building
 {
+    /// <summary>
+    /// Represents a board in the TUNG world.
+    /// </summary>
     public class Board
     {
         internal static int IdCounter = 1;
 
+        /// <summary>
+        /// The board's grid width.
+        /// </summary>
         public int Width { get; }
+
+        /// <summary>
+        /// The board's grid height.
+        /// </summary>
         public int Height { get; }
+
+        /// <summary>
+        /// The board's physical gameobject.
+        /// </summary>
         public GameObject Object { get; }
+
+        /// <summary>
+        /// The board's unique ID. This ID will be unique inside a world.
+        /// </summary>
         public int Id { get; }
 
+        /// <summary>
+        /// Instanciates a new empty <see cref="Board"/> object.
+        /// </summary>
         public Board() { }
+
+        /// <summary>
+        /// Instanciates a new <see cref="Board"/> object.
+        /// </summary>
+        /// <param name="w">The board's grid width.</param>
+        /// <param name="h">The board's grid height.</param>
+        /// <param name="obj">The board's game object.</param>
+        /// <param name="id">The board's ID. If null, a unique ID will be automatically generated.</param>
         public Board(int w, int h, GameObject obj, int? id = null)
         {
             this.Width = w;
@@ -34,6 +63,12 @@ namespace PiTung_Bootstrap.Building
             }
         }
 
+        /// <summary>
+        /// Gets a circuit component at <paramref name="x"/> and <paramref name="y"/>.
+        /// </summary>
+        /// <param name="x">The component's X location.</param>
+        /// <param name="y">The component's Y location.</param>
+        /// <returns>The component's game object.</returns>
         public GameObject GetComponentAt(int x, int y)
         {
             foreach (var item in this.GetComponents())
@@ -47,6 +82,10 @@ namespace PiTung_Bootstrap.Building
             return null;
         }
 
+        /// <summary>
+        /// Gets all the board's components.
+        /// </summary>
+        /// <returns>Key-value pairs containing the component's position and its game object.</returns>
         public IEnumerable<KeyValuePair<Vector2Int, GameObject>> GetComponents()
         {
             foreach (var item in Object.GetComponentsInChildren<Transform>())

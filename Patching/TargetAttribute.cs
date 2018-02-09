@@ -8,10 +8,10 @@ namespace PiTung_Bootstrap
         /// <summary>
         /// Marks this class as a patch class. 
         /// <para />
-        /// Patch classes may contains static methods in order to patch existing
-        /// ones. If no patch type (prefix or postfix) is specified, prefix will selected by default.
+        /// Patch classes may contain static methods in order to patch existing
+        /// ones. If no patch type (prefix or postfix) is specified on any method, prefix will selected by default.
         /// </summary>
-        /// <param name="containerType">The type that contains the method we want to patch.</param>
+        /// <param name="containerType">The type that contains the methods we want to patch.</param>
         public TargetAttribute(Type containerType)
         {
             this.ContainerType = containerType;

@@ -8,6 +8,9 @@ using System.Collections;
 
 namespace PiTung_Bootstrap
 {
+    /// <summary>
+    /// Handles the updating of mods.
+    /// </summary>
     public static class ModUpdater
     {
         public class Manifest
@@ -24,7 +27,7 @@ namespace PiTung_Bootstrap
         
         private static Dictionary<Mod, Manifest.ModInfo> ModInfos = new Dictionary<Mod, Manifest.ModInfo>();
 
-        public static IEnumerator CheckUpdatesForMod(Mod mod, bool update)
+        internal static IEnumerator CheckUpdatesForMod(Mod mod, bool update)
         {
             if (mod.UpdateUrl == null)
                 yield break;
@@ -45,7 +48,7 @@ namespace PiTung_Bootstrap
             }
         }
 
-        public static IEnumerator UpdateMod(Mod mod)
+        internal static IEnumerator UpdateMod(Mod mod)
         {
             yield return GetModInfo(mod);
             

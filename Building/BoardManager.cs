@@ -5,8 +5,14 @@ using System.Collections.Generic;
 
 namespace PiTung_Bootstrap.Building
 {
+    /// <summary>
+    /// Manages the world's boards.
+    /// </summary>
     public class BoardManager
     {
+        /// <summary>
+        /// <see cref="BoardManager"/>'s singleton instance.
+        /// </summary>
         public static BoardManager Instance { get; } = new BoardManager();
 
 
@@ -14,6 +20,9 @@ namespace PiTung_Bootstrap.Building
         private Dictionary<int, int> InstanceIds = new Dictionary<int, int>();
 
         public delegate void BoardPlacedDelegate(Board board);
+        /// <summary>
+        /// Fires when a board is placed in the world. Doesn't fire when a board is moved.
+        /// </summary>
         public event BoardPlacedDelegate BoardPlaced;
 
         internal BoardManager() { }
@@ -44,6 +53,12 @@ namespace PiTung_Bootstrap.Building
             Boards.Clear();
         }
 
+        /// <summary>
+        /// Gets a board with an ID.
+        /// </summary>
+        /// <param name="id">The board's ID</param>
+        /// <returns>A board with ID <paramref name="id"/>.</returns>
+        /// <exception cref="ArgumentException">Throws when the board with ID <paramref name="id"/> doesn't exist.</exception>
         public Board GetBoard(int id)
         {
             if (TryGetBoard(id, out var b))
@@ -52,6 +67,12 @@ namespace PiTung_Bootstrap.Building
             throw new ArgumentException($"Board with ID {id} not found.", nameof(id));
         }
 
+        /// <summary>
+        /// Tries to get a board with ID <paramref name="id"/>
+        /// </summary>
+        /// <param name="id">The board's ID.</param>
+        /// <param name="board">The found board.</param>
+        /// <returns>True if a board is found.</returns>
         public bool TryGetBoard(int id, out Board board)
         {
             try
@@ -67,6 +88,12 @@ namespace PiTung_Bootstrap.Building
             }
         }
 
+        /// <summary>
+        /// Tries to get a <see cref="Board"/> object that represents an already loaded phyisical board.
+        /// </summary>
+        /// <param name="gameObject">The board's game object.</param>
+        /// <param name="board">The resulted board.</param>
+        /// <returns>True if the board is found.</returns>
         public bool TryGetExistingBoardFromGameObject(GameObject gameObject, out Board board)
         {
             if (InstanceIds.TryGetValue(gameObject.GetInstanceID(), out int id))
