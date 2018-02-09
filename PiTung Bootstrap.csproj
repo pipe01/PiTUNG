@@ -103,7 +103,6 @@
     <Compile Include="Mod utilities\ModUtilities.cs" />
     <Compile Include="Utils\ObservableList.cs" />
     <Compile Include="Utils\ObjImporter.cs" />
-    <Compile Include="Patching\Patch.cs" />
     <Compile Include="Patching\PatchMethodAttribute.cs" />
     <Compile Include="Patching\PatchUtilities.cs" />
     <Compile Include="PiTung.cs" />
