@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PiTung_Bootstrap.Config_menu
@@ -13,14 +14,14 @@ namespace PiTung_Bootstrap.Config_menu
         /// </summary>
         public MenuEntry Parent { get; internal set; } = null;
 
-        protected internal ObservableList<MenuEntry> Children { get; set; } = new ObservableList<MenuEntry>();
+        protected internal List<MenuEntry> Children { get; set; } = new List<MenuEntry>();
 
         /// <summary>
-        /// Instanciates a new <see cref="MenuEntry"/> object.
+        /// Instantiates a new <see cref="MenuEntry"/> object.
         /// </summary>
         public MenuEntry()
         {
-            this.Children.ItemAdded += Children_ItemAdded;
+            //this.Children.ItemAdded += Children_ItemAdded;
         }
 
         private void Children_ItemAdded(MenuEntry item)
