@@ -1,0 +1,525 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/projects/pitung/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Bootstrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Bootstrapper.html",
+          "hash": "mUekx0uhA/0OP5edirpVSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Building.Board.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Building.Board.html",
+          "hash": "wt5lfUKmpErmMcNX6aalgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Building.BoardManager.BoardPlacedDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Building.BoardManager.BoardPlacedDelegate.html",
+          "hash": "hBDY+gTubkIqumi4zhetkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Building.BoardManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Building.BoardManager.html",
+          "hash": "vrc7S38OgjQgMdx3cBzbPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Building.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Building.Builder.html",
+          "hash": "DEv/iCBkknDLO2u+KzUVkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Building.CircuitComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Building.CircuitComponent.html",
+          "hash": "peDpCitVenmIzdi7l/rYxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Building.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Building.Components.html",
+          "hash": "O/5vV2pBKLR9UqFFLgd+/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Building.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Building.html",
+          "hash": "ulbkzyuXUZM8RQ1CrSbdcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.html",
+          "hash": "eEBC9arsB+kb3ByiksotQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate.html",
+          "hash": "49m0qeUFWdCeYqMQ+OfJFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html",
+          "hash": "YI+ArMMTF/pVQfijOzF3Iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Config_menu.IValueMenuEntry-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Config_menu.IValueMenuEntry-1.html",
+          "hash": "yoslb4YftaOuT8hQiHwxwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Config_menu.MenuEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Config_menu.MenuEntry.html",
+          "hash": "vIDNhBKNylnneLz61C2Mqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html",
+          "hash": "w/TWMZ3F7v9aRcjtyfxjAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Config_menu.TextMenuEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Config_menu.TextMenuEntry.html",
+          "hash": "t4YhduwT4ngJebIrtdmtJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Config_menu.ValueChangedDelegate-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Config_menu.ValueChangedDelegate-1.html",
+          "hash": "YZeQkO6w0ioUJ1xtBg863A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Config_menu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Config_menu.html",
+          "hash": "mFEWPvVqiPWVpExxIjMBTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Console.Command.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Console.Command.html",
+          "hash": "2hYwolJfQ18cWxDxNIpfZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Console.IGConsole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Console.IGConsole.html",
+          "hash": "dskzlEbzxRr9YI6IR2uwmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Console.LogType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Console.LogType.html",
+          "hash": "s2BnmWgdZZUdcrt/j8QyLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Console.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Console.html",
+          "hash": "XIk11PheLYEb2Zvt7VghkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.GraphicUtilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.GraphicUtilities.html",
+          "hash": "aP/5F5NOUQ4rFxgZOrHHPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.InputUtilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.InputUtilities.html",
+          "hash": "61gZsul/C8oK2xf7ZqKOpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.ManifestParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.ManifestParser.html",
+          "hash": "o7v2JS2cOsn0wpjnAplxtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.Mod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.Mod.html",
+          "hash": "hjTp4DpBQ1kslj7JWgCSEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.html",
+          "hash": "Gxh7l1W8+KvwwfDj1x2qlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.ModUpdater.Manifest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.ModUpdater.Manifest.html",
+          "hash": "G+JHOTwl8ypRiLPcqP3pmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.ModUpdater.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.ModUpdater.html",
+          "hash": "VyDe8T1/pb3EsOV7SxWk1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.ModUtilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.ModUtilities.html",
+          "hash": "C6rq6nFIdbrg+gFUoxS8VQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.PatchMethodAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.PatchMethodAttribute.html",
+          "hash": "iILRqv5rfgYuIKOb3FQj/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.PatchType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.PatchType.html",
+          "hash": "E4C618axi6r03jWobHTZ0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.PiTUNG.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.PiTUNG.html",
+          "hash": "Xlts94SthE3S/buzb7Oipw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.TargetAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.TargetAttribute.html",
+          "hash": "q/KUBsHkh99Q9l0xSlb3pQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung_Bootstrap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung_Bootstrap.html",
+          "hash": "eFJ0yiAx0Y0eT1Eb14kYvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "PDM1ZjgwiL3/p/BL3u0P/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "/ZGMWHCQSdVl6Q5EaWPCqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "Fl2ZvAoSuqjEBR0a4fgW6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "xVlQaX7Tk85omoiWv3O+Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "7/p36+TXoi0v4MVShfnXiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "ob7LqWp4kTNLz+9W4omdTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
