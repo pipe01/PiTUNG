@@ -47,7 +47,7 @@ namespace PiTung_Bootstrap
         /// a wild card. E.g, if this property equals "1.0", the mod will work on PiTUNG version "1.0.123", but not
         /// if this property equals "1.0.0".
         /// <para/>
-        /// Setting this property to <see cref="PiTung.FrameworkVersion"/> is strongly discouraged. If you
+        /// Setting this property to <see cref="PiTUNG.FrameworkVersion"/> is strongly discouraged. If you
         /// need your mod to be able to be loaded in any PiTUNG version, set <see cref="RequireFrameworkVersion"/>
         /// to true.
         /// </summary>
@@ -107,12 +107,12 @@ namespace PiTung_Bootstrap
         public virtual void OnWorldLoaded(string worldName) { }
 
         /// <summary>
-        /// Equivalent to <see cref="MonoBehaviour.Update"/>
+        /// Equivalent to MonoBehaviour.Update.
         /// </summary>
         public virtual void Update() { }
 
         /// <summary>
-        /// Equivalent to <see cref="MonoBehaviour.OnGUI"/>
+        /// Equivalent to MonoBehaviour.OnGUI.
         /// </summary>
         public virtual void OnGUI() { }
 
