@@ -1335,6 +1335,21 @@ references:
   commentId: Overload:PiTung_Bootstrap.ModUtilities.ExecuteMethod
   fullName: PiTung_Bootstrap.ModUtilities.ExecuteMethod
   nameWithType: ModUtilities.ExecuteMethod
+- uid: PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod*
+  name: ExecuteStaticMethod
+  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_ExecuteStaticMethod_
+  commentId: Overload:PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod
+  fullName: PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod
+  nameWithType: ModUtilities.ExecuteStaticMethod
+- uid: PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod``1(System.String,System.Object[])
+  name: ExecuteStaticMethod<T>(String, Object[])
+  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_ExecuteStaticMethod__1_System_String_System_Object___
+  commentId: M:PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod``1(System.String,System.Object[])
+  name.vb: ExecuteStaticMethod(Of T)(String, Object())
+  fullName: PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod<T>(System.String, System.Object[])
+  fullName.vb: PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod(Of T)(System.String, System.Object())
+  nameWithType: ModUtilities.ExecuteStaticMethod<T>(String, Object[])
+  nameWithType.vb: ModUtilities.ExecuteStaticMethod(Of T)(String, Object())
 - uid: PiTung_Bootstrap.ModUtilities.GetFieldValue*
   name: GetFieldValue
   href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_GetFieldValue_
@@ -1422,6 +1437,18 @@ references:
   commentId: Overload:PiTung_Bootstrap.ModUtilities.Log
   fullName: PiTung_Bootstrap.ModUtilities.Log
   nameWithType: ModUtilities.Log
+- uid: PiTung_Bootstrap.ModUtilities.PlayerObject
+  name: PlayerObject
+  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_PlayerObject
+  commentId: P:PiTung_Bootstrap.ModUtilities.PlayerObject
+  fullName: PiTung_Bootstrap.ModUtilities.PlayerObject
+  nameWithType: ModUtilities.PlayerObject
+- uid: PiTung_Bootstrap.ModUtilities.PlayerObject*
+  name: PlayerObject
+  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_PlayerObject_
+  commentId: Overload:PiTung_Bootstrap.ModUtilities.PlayerObject
+  fullName: PiTung_Bootstrap.ModUtilities.PlayerObject
+  nameWithType: ModUtilities.PlayerObject
 - uid: PiTung_Bootstrap.ModUtilities.SetFieldValue*
   name: SetFieldValue
   href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_SetFieldValue_
