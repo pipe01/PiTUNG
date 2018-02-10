@@ -47,4 +47,4 @@ Now that you've got a PiTUNG binary:
 6. Compile it and copy the output DLL file to `{TUNG installation}/mods`.
 7. Congratulations, now you've got a mod that does absolutely nothing!
 
-You can now take a look at [the API documentation](/api/index.html) for more information about the API.
+You can now take a look at [the API documentation](../api/index.html) for more information about the API.
