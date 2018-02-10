@@ -114,18 +114,33 @@ namespace PiTung_Bootstrap
         /// <param name="onObject">The object that contains the method.</param>
         /// <param name="methodName">The method's name.</param>
         /// <param name="parameters">The method's parameters.</param>
+        /// <exception cref="ArgumentException">Throws if the method doesn't exist.</exception>
+        /// <exception cref="ArgumentNullException">Throws if <paramref name="methodName"/> or <paramref name="onObject"/> is null.</exception>
         public static void ExecuteMethod(object onObject, string methodName, params object[] parameters)
         {
             if (onObject == null) throw new ArgumentNullException(nameof(onObject));
             if (methodName == null) throw new ArgumentNullException(nameof(methodName));
 
             Type type = onObject.GetType();
+            
+            type.InvokeMember(methodName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.InvokeMethod, null, onObject, parameters);
+        }
 
-            MethodInfo method = type.GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+        /// <summary>
+        /// Executes the static method <paramref name="methodName"/> in <typeparamref name="T"/> with <paramref name="parameters"/> arguments.
+        /// </summary>
+        /// <typeparam name="T">The type that contains <paramref name="methodName"/>.</typeparam>
+        /// <param name="methodName">The method's name.</param>
+        /// <param name="parameters">The arguments we want to call the method with.</param>
+        /// <exception cref="ArgumentException">Throws if the method doesn't exist.</exception>
+        /// <exception cref="ArgumentNullException">Throws if <paramref name="methodName"/> is null.</exception>
+        public static void ExecuteStaticMethod<T>(string methodName, params object[] parameters)
+        {
+            if (methodName == null) throw new ArgumentNullException(nameof(methodName));
 
-            if (method == null) throw new ArgumentException($"Method '{methodName}' not found in object of type '{type.Name}'.", nameof(methodName));
+            Type type = typeof(T);
 
-            method.Invoke(onObject, parameters);
+            type.InvokeMember(methodName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, null, new object[0]);
         }
 
         /// <summary>
