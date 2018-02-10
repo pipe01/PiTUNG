@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>PiTUNG API Documentation </title>
+    <title>Getting started </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="PiTUNG API Documentation ">
+    <meta name="title" content="Getting started ">
     <meta name="generator" content="docfx 2.31.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,10 +67,43 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="pitung-api-documentation">PiTUNG API Documentation</h1>
+<h1 id="getting-started">Getting started</h1>
 
-<p>This framework is based on the patching of the game&#39;s methods, which you can see by decompiling the game.</p>
-<p>The classes on the sidebar may be used to aid on creating a mod.</p>
+<p>So, you want to develop a mod for TUNG! That&#39;s awesome! Fortunately, with PiTUNG it&#39;s very easy to create a simple mod.</p>
+<h2 id="setting-up-the-environment">Setting up the environment</h2>
+<p>First, you must create a Visual Studio project. Once it&#39;s loaded, go to its properties and set the target framework version to <code>.NET 3.5</code>.</p>
+<p>Then, you will need a PiTUNG binary. There are three ways of getting ahold of one:</p>
+<h3 id="downloading-the-latest-stable-release">Downloading the latest stable release</h3>
+<p>Go to <a href="https://github.com/pipe01/PiTUNG/releases/latest">the latest release in GitHub</a> and download the <code>PiTUNG Bootstrap.dll</code> file.</p>
+<h3 id="downloading-the-latest-unstable-release">Downloading the latest unstable release</h3>
+<p>This is the version compiled from the latest commit to the GitHub repo, so it will probably be unstable and should only be used when you want to test out some new features, but never in production.</p>
+<p>To get it, simply download the <a href="https://ci.appveyor.com/api/projects/pipe01/pitung/artifacts/bin%2FDebug%2FPiTung%20Bootstrap.dll">artifact from AppVeyor</a>.</p>
+<h3 id="compiling-from-source">Compiling from source</h3>
+<p>//TODO</p>
+<hr>
+<p>Now that you&#39;ve got a PiTUNG binary:</p>
+<ol>
+<li>Download a copy of TUNG either <a href="https://iamsodarncool.itch.io/tung">here</a> or <a href="https://gamejolt.com/games/tung/304428">here</a> and extract it to a folder.</li>
+<li>Install PiTUNG as you normally would.</li>
+<li>Go to <code>{install folder}\The Ultimate Nerd Game_Data\Managed</code> and copy the <code>Assembly-CSharp.dll</code> file to wherever you want, take note of its location.</li>
+<li>Add <code>PiTUNG Bootstrap.dll</code> and <code>Assembly-CSharp.dll</code> to your project&#39;s references.</li>
+<li><p>Create a new file called <code>MyMod.cs</code> and replace its content with this code:</p>
+<pre><code>using PiTung_Bootstrap;
+
+public class MyMod : Mod
+{
+    public override string Name =&gt; &quot;Example mod&quot;;
+    public override string PackageName =&gt; &quot;me.myname.ExampleMod&quot;;
+    public override string Author =&gt; &quot;john_doe&quot;;
+    public override Version ModVersion =&gt; new Version(&quot;0.1&quot;);
+    public override Version FrameworkVersion =&gt; new Version(&quot;1.3&quot;);
+}
+</code></pre></li>
+<li><p>Compile it and copy the output DLL file to <code>{TUNG installation}/mods</code>.</p>
+</li>
+<li>Congratulations, now you&#39;ve got a mod that does absolutely nothing!</li>
+</ol>
+<p>You can now take a look at <a href="/api/index.html">the API documentation</a> for more information about the API.</p>
 </article>
           </div>
           
@@ -79,7 +112,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/pipe01/PiTUNG/blob/master/docfx_project/api/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/pipe01/PiTUNG/blob/master/docfx_project/articles/getting_started.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
