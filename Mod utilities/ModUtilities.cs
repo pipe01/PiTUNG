@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using UnityEngine;
+using System.Collections.Generic;
 using System;
 using System.Reflection;
 
@@ -126,5 +127,10 @@ namespace PiTung_Bootstrap
 
             method.Invoke(onObject, parameters);
         }
+
+        /// <summary>
+        /// Gets the object that the player possesses.
+        /// </summary>
+        public static GameObject PlayerObject => GameObject.Find("FPSController").gameObject;
     }
 }
