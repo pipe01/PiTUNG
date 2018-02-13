@@ -127,7 +127,7 @@ namespace PiTung
 
             if (mod.ModAssembly == null)
             {
-                MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: couldn't load assembly.");
+                LoadError($"{mod.Name} failed to load: couldn't load assembly.", mod.Name);
                 return;
             }
 
@@ -135,7 +135,7 @@ namespace PiTung
             {
                 if (mod.RequireFrameworkVersion)
                 {
-                    MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: wrong PiTUNG version. Required version: {mod.FrameworkVersion}.");
+                    LoadError($"{mod.Name} failed to load: wrong PiTUNG version. Required version: {mod.FrameworkVersion}.", mod.Name);
                     return;
                 }
                 else
@@ -150,7 +150,7 @@ namespace PiTung
             }
             catch (Exception ex)
             {
-                MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while executing before-patch method.");
+                LoadError($"{mod.Name} failed to load: error while executing before-patch method.", mod.Name);
                 MDebug.WriteLine("More details: " + ex, 1);
 
                 return;
@@ -180,7 +180,7 @@ namespace PiTung
             }
             catch (Exception ex)
             {
-                MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while patching methods.");
+                LoadError($"{mod.Name} failed to load: error while patching methods.", mod.Name);
                 MDebug.WriteLine("More details: " + ex, 1);
 
                 return;
@@ -192,7 +192,7 @@ namespace PiTung
             }
             catch (Exception ex)
             {
-                MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while executing after-patch method.");
+                LoadError($"{mod.Name} failed to load: error while executing after-patch method.", mod.Name);
                 MDebug.WriteLine("More details: " + ex, 1);
 
                 return;
@@ -206,7 +206,7 @@ namespace PiTung
             }
             catch (Exception)
             {
-                MDebug.WriteLine($"[ERROR] {mod.Name} failed to load: error while creating menu entries.");
+                LoadError($"{mod.Name} failed to load: error while creating menu entries.", mod.Name);
 
                 return;
             }
@@ -221,6 +221,12 @@ namespace PiTung
 
             _Mods.Add(mod);
             MDebug.WriteLine($"{mod.Name} loaded successfully.");
+        }
+
+        private void LoadError(string str, string mod)
+        {
+            IGConsole.Error($"Failed to load mod {mod}.");
+            MDebug.WriteLine("[ERROR] " + str);
         }
 
         /// <summary>

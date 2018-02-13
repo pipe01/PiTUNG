@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiTung.Console;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -31,8 +32,10 @@ namespace PiTung
                 }
                 catch (Exception ex)
                 {
-                    MDebug.WriteLine($"[ERROR] Mod {Path.GetFileName(item)} failed to load.");
+                    string name = Path.GetFileNameWithoutExtension(item);
+                    MDebug.WriteLine($"[ERROR] Mod {name} failed to load.");
                     MDebug.WriteLine("More details: " + ex.Message, 2);
+                    IGConsole.Error($"Failed to load mod {name}.");
                 }
 
                 if (mod != null)
