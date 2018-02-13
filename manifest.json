@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Console.IGConsole.html",
-          "hash": "jg4OzWrWN9Syndu4MgsOOQ=="
+          "hash": "Q2HNlxM1qOWmeWNfwLXnKA=="
         }
       },
       "is_incremental": false,
@@ -298,6 +298,18 @@
         ".html": {
           "relative_path": "api/PiTung.Mod.html",
           "hash": "MRTkSx2LcFHDSqjwl4wtxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PiTung.ModInput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung.ModInput.html",
+          "hash": "LrZ3fhZmqyIZntO58/QbHg=="
         }
       },
       "is_incremental": false,
@@ -405,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.html",
-          "hash": "jOvP2/tTxmnryVaGZ3oaaA=="
+          "hash": "a1yL6snNm7EsFO6Jp9z63g=="
         }
       },
       "is_incremental": false,
@@ -429,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "9nmQBdA9x2uZFFKKhlRkbw=="
+          "hash": "JahurwsoVg5kN913N34wew=="
         }
       },
       "is_incremental": false,
@@ -510,17 +522,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

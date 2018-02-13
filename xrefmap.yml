@@ -1281,6 +1281,72 @@ references:
   commentId: Overload:PiTung.Mod.UpdateUrl
   fullName: PiTung.Mod.UpdateUrl
   nameWithType: Mod.UpdateUrl
+- uid: PiTung.ModInput
+  name: ModInput
+  href: api/PiTung.ModInput.html
+  commentId: T:PiTung.ModInput
+  fullName: PiTung.ModInput
+  nameWithType: ModInput
+- uid: PiTung.ModInput.GetBindingKey(System.String)
+  name: GetBindingKey(String)
+  href: api/PiTung.ModInput.html#PiTung_ModInput_GetBindingKey_System_String_
+  commentId: M:PiTung.ModInput.GetBindingKey(System.String)
+  fullName: PiTung.ModInput.GetBindingKey(System.String)
+  nameWithType: ModInput.GetBindingKey(String)
+- uid: PiTung.ModInput.GetBindingKey*
+  name: GetBindingKey
+  href: api/PiTung.ModInput.html#PiTung_ModInput_GetBindingKey_
+  commentId: Overload:PiTung.ModInput.GetBindingKey
+  fullName: PiTung.ModInput.GetBindingKey
+  nameWithType: ModInput.GetBindingKey
+- uid: PiTung.ModInput.GetKey(System.String)
+  name: GetKey(String)
+  href: api/PiTung.ModInput.html#PiTung_ModInput_GetKey_System_String_
+  commentId: M:PiTung.ModInput.GetKey(System.String)
+  fullName: PiTung.ModInput.GetKey(System.String)
+  nameWithType: ModInput.GetKey(String)
+- uid: PiTung.ModInput.GetKey*
+  name: GetKey
+  href: api/PiTung.ModInput.html#PiTung_ModInput_GetKey_
+  commentId: Overload:PiTung.ModInput.GetKey
+  fullName: PiTung.ModInput.GetKey
+  nameWithType: ModInput.GetKey
+- uid: PiTung.ModInput.GetKeyDown(System.String)
+  name: GetKeyDown(String)
+  href: api/PiTung.ModInput.html#PiTung_ModInput_GetKeyDown_System_String_
+  commentId: M:PiTung.ModInput.GetKeyDown(System.String)
+  fullName: PiTung.ModInput.GetKeyDown(System.String)
+  nameWithType: ModInput.GetKeyDown(String)
+- uid: PiTung.ModInput.GetKeyDown*
+  name: GetKeyDown
+  href: api/PiTung.ModInput.html#PiTung_ModInput_GetKeyDown_
+  commentId: Overload:PiTung.ModInput.GetKeyDown
+  fullName: PiTung.ModInput.GetKeyDown
+  nameWithType: ModInput.GetKeyDown
+- uid: PiTung.ModInput.GetKeyUp(System.String)
+  name: GetKeyUp(String)
+  href: api/PiTung.ModInput.html#PiTung_ModInput_GetKeyUp_System_String_
+  commentId: M:PiTung.ModInput.GetKeyUp(System.String)
+  fullName: PiTung.ModInput.GetKeyUp(System.String)
+  nameWithType: ModInput.GetKeyUp(String)
+- uid: PiTung.ModInput.GetKeyUp*
+  name: GetKeyUp
+  href: api/PiTung.ModInput.html#PiTung_ModInput_GetKeyUp_
+  commentId: Overload:PiTung.ModInput.GetKeyUp
+  fullName: PiTung.ModInput.GetKeyUp
+  nameWithType: ModInput.GetKeyUp
+- uid: PiTung.ModInput.RegisterBinding(PiTung.Mod,System.String,UnityEngine.KeyCode)
+  name: RegisterBinding(Mod, String, KeyCode)
+  href: api/PiTung.ModInput.html#PiTung_ModInput_RegisterBinding_PiTung_Mod_System_String_UnityEngine_KeyCode_
+  commentId: M:PiTung.ModInput.RegisterBinding(PiTung.Mod,System.String,UnityEngine.KeyCode)
+  fullName: PiTung.ModInput.RegisterBinding(PiTung.Mod, System.String, UnityEngine.KeyCode)
+  nameWithType: ModInput.RegisterBinding(Mod, String, KeyCode)
+- uid: PiTung.ModInput.RegisterBinding*
+  name: RegisterBinding
+  href: api/PiTung.ModInput.html#PiTung_ModInput_RegisterBinding_
+  commentId: Overload:PiTung.ModInput.RegisterBinding
+  fullName: PiTung.ModInput.RegisterBinding
+  nameWithType: ModInput.RegisterBinding
 - uid: PiTung.ModUpdater
   name: ModUpdater
   href: api/PiTung.ModUpdater.html
