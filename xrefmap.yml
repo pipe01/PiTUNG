@@ -1,1589 +1,1589 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: PiTung_Bootstrap
-  name: PiTung_Bootstrap
-  href: api/PiTung_Bootstrap.html
-  commentId: N:PiTung_Bootstrap
-  fullName: PiTung_Bootstrap
-  nameWithType: PiTung_Bootstrap
-- uid: PiTung_Bootstrap.Bootstrapper
+- uid: PiTung
+  name: PiTung
+  href: api/PiTung.html
+  commentId: N:PiTung
+  fullName: PiTung
+  nameWithType: PiTung
+- uid: PiTung.Bootstrapper
   name: Bootstrapper
-  href: api/PiTung_Bootstrap.Bootstrapper.html
-  commentId: T:PiTung_Bootstrap.Bootstrapper
-  fullName: PiTung_Bootstrap.Bootstrapper
+  href: api/PiTung.Bootstrapper.html
+  commentId: T:PiTung.Bootstrapper
+  fullName: PiTung.Bootstrapper
   nameWithType: Bootstrapper
-- uid: PiTung_Bootstrap.Bootstrapper.Instance
+- uid: PiTung.Bootstrapper.Instance
   name: Instance
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_Instance
-  commentId: P:PiTung_Bootstrap.Bootstrapper.Instance
-  fullName: PiTung_Bootstrap.Bootstrapper.Instance
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Instance
+  commentId: P:PiTung.Bootstrapper.Instance
+  fullName: PiTung.Bootstrapper.Instance
   nameWithType: Bootstrapper.Instance
-- uid: PiTung_Bootstrap.Bootstrapper.Instance*
+- uid: PiTung.Bootstrapper.Instance*
   name: Instance
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_Instance_
-  commentId: Overload:PiTung_Bootstrap.Bootstrapper.Instance
-  fullName: PiTung_Bootstrap.Bootstrapper.Instance
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Instance_
+  commentId: Overload:PiTung.Bootstrapper.Instance
+  fullName: PiTung.Bootstrapper.Instance
   nameWithType: Bootstrapper.Instance
-- uid: PiTung_Bootstrap.Bootstrapper.ModCount
+- uid: PiTung.Bootstrapper.ModCount
   name: ModCount
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_ModCount
-  commentId: P:PiTung_Bootstrap.Bootstrapper.ModCount
-  fullName: PiTung_Bootstrap.Bootstrapper.ModCount
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_ModCount
+  commentId: P:PiTung.Bootstrapper.ModCount
+  fullName: PiTung.Bootstrapper.ModCount
   nameWithType: Bootstrapper.ModCount
-- uid: PiTung_Bootstrap.Bootstrapper.ModCount*
+- uid: PiTung.Bootstrapper.ModCount*
   name: ModCount
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_ModCount_
-  commentId: Overload:PiTung_Bootstrap.Bootstrapper.ModCount
-  fullName: PiTung_Bootstrap.Bootstrapper.ModCount
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_ModCount_
+  commentId: Overload:PiTung.Bootstrapper.ModCount
+  fullName: PiTung.Bootstrapper.ModCount
   nameWithType: Bootstrapper.ModCount
-- uid: PiTung_Bootstrap.Bootstrapper.Mods
+- uid: PiTung.Bootstrapper.Mods
   name: Mods
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_Mods
-  commentId: P:PiTung_Bootstrap.Bootstrapper.Mods
-  fullName: PiTung_Bootstrap.Bootstrapper.Mods
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Mods
+  commentId: P:PiTung.Bootstrapper.Mods
+  fullName: PiTung.Bootstrapper.Mods
   nameWithType: Bootstrapper.Mods
-- uid: PiTung_Bootstrap.Bootstrapper.Mods*
+- uid: PiTung.Bootstrapper.Mods*
   name: Mods
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_Mods_
-  commentId: Overload:PiTung_Bootstrap.Bootstrapper.Mods
-  fullName: PiTung_Bootstrap.Bootstrapper.Mods
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Mods_
+  commentId: Overload:PiTung.Bootstrapper.Mods
+  fullName: PiTung.Bootstrapper.Mods
   nameWithType: Bootstrapper.Mods
-- uid: PiTung_Bootstrap.Bootstrapper.ModUpdatesAvailable
+- uid: PiTung.Bootstrapper.ModUpdatesAvailable
   name: ModUpdatesAvailable
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_ModUpdatesAvailable
-  commentId: P:PiTung_Bootstrap.Bootstrapper.ModUpdatesAvailable
-  fullName: PiTung_Bootstrap.Bootstrapper.ModUpdatesAvailable
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_ModUpdatesAvailable
+  commentId: P:PiTung.Bootstrapper.ModUpdatesAvailable
+  fullName: PiTung.Bootstrapper.ModUpdatesAvailable
   nameWithType: Bootstrapper.ModUpdatesAvailable
-- uid: PiTung_Bootstrap.Bootstrapper.ModUpdatesAvailable*
+- uid: PiTung.Bootstrapper.ModUpdatesAvailable*
   name: ModUpdatesAvailable
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_ModUpdatesAvailable_
-  commentId: Overload:PiTung_Bootstrap.Bootstrapper.ModUpdatesAvailable
-  fullName: PiTung_Bootstrap.Bootstrapper.ModUpdatesAvailable
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_ModUpdatesAvailable_
+  commentId: Overload:PiTung.Bootstrapper.ModUpdatesAvailable
+  fullName: PiTung.Bootstrapper.ModUpdatesAvailable
   nameWithType: Bootstrapper.ModUpdatesAvailable
-- uid: PiTung_Bootstrap.Bootstrapper.Patch(System.Boolean)
+- uid: PiTung.Bootstrapper.Patch(System.Boolean)
   name: Patch(Boolean)
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_Patch_System_Boolean_
-  commentId: M:PiTung_Bootstrap.Bootstrapper.Patch(System.Boolean)
-  fullName: PiTung_Bootstrap.Bootstrapper.Patch(System.Boolean)
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Patch_System_Boolean_
+  commentId: M:PiTung.Bootstrapper.Patch(System.Boolean)
+  fullName: PiTung.Bootstrapper.Patch(System.Boolean)
   nameWithType: Bootstrapper.Patch(Boolean)
-- uid: PiTung_Bootstrap.Bootstrapper.Patch*
+- uid: PiTung.Bootstrapper.Patch*
   name: Patch
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_Patch_
-  commentId: Overload:PiTung_Bootstrap.Bootstrapper.Patch
-  fullName: PiTung_Bootstrap.Bootstrapper.Patch
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Patch_
+  commentId: Overload:PiTung.Bootstrapper.Patch
+  fullName: PiTung.Bootstrapper.Patch
   nameWithType: Bootstrapper.Patch
-- uid: PiTung_Bootstrap.Bootstrapper.Testing
+- uid: PiTung.Bootstrapper.Testing
   name: Testing
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_Testing
-  commentId: P:PiTung_Bootstrap.Bootstrapper.Testing
-  fullName: PiTung_Bootstrap.Bootstrapper.Testing
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Testing
+  commentId: P:PiTung.Bootstrapper.Testing
+  fullName: PiTung.Bootstrapper.Testing
   nameWithType: Bootstrapper.Testing
-- uid: PiTung_Bootstrap.Bootstrapper.Testing*
+- uid: PiTung.Bootstrapper.Testing*
   name: Testing
-  href: api/PiTung_Bootstrap.Bootstrapper.html#PiTung_Bootstrap_Bootstrapper_Testing_
-  commentId: Overload:PiTung_Bootstrap.Bootstrapper.Testing
-  fullName: PiTung_Bootstrap.Bootstrapper.Testing
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Testing_
+  commentId: Overload:PiTung.Bootstrapper.Testing
+  fullName: PiTung.Bootstrapper.Testing
   nameWithType: Bootstrapper.Testing
-- uid: PiTung_Bootstrap.Building
-  name: PiTung_Bootstrap.Building
-  href: api/PiTung_Bootstrap.Building.html
-  commentId: N:PiTung_Bootstrap.Building
-  fullName: PiTung_Bootstrap.Building
-  nameWithType: PiTung_Bootstrap.Building
-- uid: PiTung_Bootstrap.Building.Board
+- uid: PiTung.Building
+  name: PiTung.Building
+  href: api/PiTung.Building.html
+  commentId: N:PiTung.Building
+  fullName: PiTung.Building
+  nameWithType: PiTung.Building
+- uid: PiTung.Building.Board
   name: Board
-  href: api/PiTung_Bootstrap.Building.Board.html
-  commentId: T:PiTung_Bootstrap.Building.Board
-  fullName: PiTung_Bootstrap.Building.Board
+  href: api/PiTung.Building.Board.html
+  commentId: T:PiTung.Building.Board
+  fullName: PiTung.Building.Board
   nameWithType: Board
-- uid: PiTung_Bootstrap.Building.Board.#ctor
+- uid: PiTung.Building.Board.#ctor
   name: Board()
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board__ctor
-  commentId: M:PiTung_Bootstrap.Building.Board.#ctor
-  fullName: PiTung_Bootstrap.Building.Board.Board()
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board__ctor
+  commentId: M:PiTung.Building.Board.#ctor
+  fullName: PiTung.Building.Board.Board()
   nameWithType: Board.Board()
-- uid: PiTung_Bootstrap.Building.Board.#ctor(System.Int32,System.Int32,UnityEngine.GameObject,System.Nullable{System.Int32})
+- uid: PiTung.Building.Board.#ctor(System.Int32,System.Int32,UnityEngine.GameObject,System.Nullable{System.Int32})
   name: Board(Int32, Int32, GameObject, Nullable<Int32>)
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board__ctor_System_Int32_System_Int32_UnityEngine_GameObject_System_Nullable_System_Int32__
-  commentId: M:PiTung_Bootstrap.Building.Board.#ctor(System.Int32,System.Int32,UnityEngine.GameObject,System.Nullable{System.Int32})
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board__ctor_System_Int32_System_Int32_UnityEngine_GameObject_System_Nullable_System_Int32__
+  commentId: M:PiTung.Building.Board.#ctor(System.Int32,System.Int32,UnityEngine.GameObject,System.Nullable{System.Int32})
   name.vb: Board(Int32, Int32, GameObject, Nullable(Of Int32))
-  fullName: PiTung_Bootstrap.Building.Board.Board(System.Int32, System.Int32, UnityEngine.GameObject, System.Nullable<System.Int32>)
-  fullName.vb: PiTung_Bootstrap.Building.Board.Board(System.Int32, System.Int32, UnityEngine.GameObject, System.Nullable(Of System.Int32))
+  fullName: PiTung.Building.Board.Board(System.Int32, System.Int32, UnityEngine.GameObject, System.Nullable<System.Int32>)
+  fullName.vb: PiTung.Building.Board.Board(System.Int32, System.Int32, UnityEngine.GameObject, System.Nullable(Of System.Int32))
   nameWithType: Board.Board(Int32, Int32, GameObject, Nullable<Int32>)
   nameWithType.vb: Board.Board(Int32, Int32, GameObject, Nullable(Of Int32))
-- uid: PiTung_Bootstrap.Building.Board.#ctor*
+- uid: PiTung.Building.Board.#ctor*
   name: Board
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board__ctor_
-  commentId: Overload:PiTung_Bootstrap.Building.Board.#ctor
-  fullName: PiTung_Bootstrap.Building.Board.Board
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board__ctor_
+  commentId: Overload:PiTung.Building.Board.#ctor
+  fullName: PiTung.Building.Board.Board
   nameWithType: Board.Board
-- uid: PiTung_Bootstrap.Building.Board.GetComponentAt(System.Int32,System.Int32)
+- uid: PiTung.Building.Board.GetComponentAt(System.Int32,System.Int32)
   name: GetComponentAt(Int32, Int32)
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_GetComponentAt_System_Int32_System_Int32_
-  commentId: M:PiTung_Bootstrap.Building.Board.GetComponentAt(System.Int32,System.Int32)
-  fullName: PiTung_Bootstrap.Building.Board.GetComponentAt(System.Int32, System.Int32)
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_GetComponentAt_System_Int32_System_Int32_
+  commentId: M:PiTung.Building.Board.GetComponentAt(System.Int32,System.Int32)
+  fullName: PiTung.Building.Board.GetComponentAt(System.Int32, System.Int32)
   nameWithType: Board.GetComponentAt(Int32, Int32)
-- uid: PiTung_Bootstrap.Building.Board.GetComponentAt*
+- uid: PiTung.Building.Board.GetComponentAt*
   name: GetComponentAt
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_GetComponentAt_
-  commentId: Overload:PiTung_Bootstrap.Building.Board.GetComponentAt
-  fullName: PiTung_Bootstrap.Building.Board.GetComponentAt
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_GetComponentAt_
+  commentId: Overload:PiTung.Building.Board.GetComponentAt
+  fullName: PiTung.Building.Board.GetComponentAt
   nameWithType: Board.GetComponentAt
-- uid: PiTung_Bootstrap.Building.Board.GetComponents
+- uid: PiTung.Building.Board.GetComponents
   name: GetComponents()
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_GetComponents
-  commentId: M:PiTung_Bootstrap.Building.Board.GetComponents
-  fullName: PiTung_Bootstrap.Building.Board.GetComponents()
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_GetComponents
+  commentId: M:PiTung.Building.Board.GetComponents
+  fullName: PiTung.Building.Board.GetComponents()
   nameWithType: Board.GetComponents()
-- uid: PiTung_Bootstrap.Building.Board.GetComponents*
+- uid: PiTung.Building.Board.GetComponents*
   name: GetComponents
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_GetComponents_
-  commentId: Overload:PiTung_Bootstrap.Building.Board.GetComponents
-  fullName: PiTung_Bootstrap.Building.Board.GetComponents
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_GetComponents_
+  commentId: Overload:PiTung.Building.Board.GetComponents
+  fullName: PiTung.Building.Board.GetComponents
   nameWithType: Board.GetComponents
-- uid: PiTung_Bootstrap.Building.Board.Height
+- uid: PiTung.Building.Board.Height
   name: Height
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_Height
-  commentId: P:PiTung_Bootstrap.Building.Board.Height
-  fullName: PiTung_Bootstrap.Building.Board.Height
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_Height
+  commentId: P:PiTung.Building.Board.Height
+  fullName: PiTung.Building.Board.Height
   nameWithType: Board.Height
-- uid: PiTung_Bootstrap.Building.Board.Height*
+- uid: PiTung.Building.Board.Height*
   name: Height
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_Height_
-  commentId: Overload:PiTung_Bootstrap.Building.Board.Height
-  fullName: PiTung_Bootstrap.Building.Board.Height
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_Height_
+  commentId: Overload:PiTung.Building.Board.Height
+  fullName: PiTung.Building.Board.Height
   nameWithType: Board.Height
-- uid: PiTung_Bootstrap.Building.Board.Id
+- uid: PiTung.Building.Board.Id
   name: Id
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_Id
-  commentId: P:PiTung_Bootstrap.Building.Board.Id
-  fullName: PiTung_Bootstrap.Building.Board.Id
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_Id
+  commentId: P:PiTung.Building.Board.Id
+  fullName: PiTung.Building.Board.Id
   nameWithType: Board.Id
-- uid: PiTung_Bootstrap.Building.Board.Id*
+- uid: PiTung.Building.Board.Id*
   name: Id
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_Id_
-  commentId: Overload:PiTung_Bootstrap.Building.Board.Id
-  fullName: PiTung_Bootstrap.Building.Board.Id
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_Id_
+  commentId: Overload:PiTung.Building.Board.Id
+  fullName: PiTung.Building.Board.Id
   nameWithType: Board.Id
-- uid: PiTung_Bootstrap.Building.Board.Object
+- uid: PiTung.Building.Board.Object
   name: Object
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_Object
-  commentId: P:PiTung_Bootstrap.Building.Board.Object
-  fullName: PiTung_Bootstrap.Building.Board.Object
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_Object
+  commentId: P:PiTung.Building.Board.Object
+  fullName: PiTung.Building.Board.Object
   nameWithType: Board.Object
-- uid: PiTung_Bootstrap.Building.Board.Object*
+- uid: PiTung.Building.Board.Object*
   name: Object
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_Object_
-  commentId: Overload:PiTung_Bootstrap.Building.Board.Object
-  fullName: PiTung_Bootstrap.Building.Board.Object
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_Object_
+  commentId: Overload:PiTung.Building.Board.Object
+  fullName: PiTung.Building.Board.Object
   nameWithType: Board.Object
-- uid: PiTung_Bootstrap.Building.Board.Width
+- uid: PiTung.Building.Board.Width
   name: Width
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_Width
-  commentId: P:PiTung_Bootstrap.Building.Board.Width
-  fullName: PiTung_Bootstrap.Building.Board.Width
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_Width
+  commentId: P:PiTung.Building.Board.Width
+  fullName: PiTung.Building.Board.Width
   nameWithType: Board.Width
-- uid: PiTung_Bootstrap.Building.Board.Width*
+- uid: PiTung.Building.Board.Width*
   name: Width
-  href: api/PiTung_Bootstrap.Building.Board.html#PiTung_Bootstrap_Building_Board_Width_
-  commentId: Overload:PiTung_Bootstrap.Building.Board.Width
-  fullName: PiTung_Bootstrap.Building.Board.Width
+  href: api/PiTung.Building.Board.html#PiTung_Building_Board_Width_
+  commentId: Overload:PiTung.Building.Board.Width
+  fullName: PiTung.Building.Board.Width
   nameWithType: Board.Width
-- uid: PiTung_Bootstrap.Building.BoardManager
+- uid: PiTung.Building.BoardManager
   name: BoardManager
-  href: api/PiTung_Bootstrap.Building.BoardManager.html
-  commentId: T:PiTung_Bootstrap.Building.BoardManager
-  fullName: PiTung_Bootstrap.Building.BoardManager
+  href: api/PiTung.Building.BoardManager.html
+  commentId: T:PiTung.Building.BoardManager
+  fullName: PiTung.Building.BoardManager
   nameWithType: BoardManager
-- uid: PiTung_Bootstrap.Building.BoardManager.BoardPlaced
+- uid: PiTung.Building.BoardManager.BoardPlaced
   name: BoardPlaced
-  href: api/PiTung_Bootstrap.Building.BoardManager.html#PiTung_Bootstrap_Building_BoardManager_BoardPlaced
-  commentId: E:PiTung_Bootstrap.Building.BoardManager.BoardPlaced
-  fullName: PiTung_Bootstrap.Building.BoardManager.BoardPlaced
+  href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_BoardPlaced
+  commentId: E:PiTung.Building.BoardManager.BoardPlaced
+  fullName: PiTung.Building.BoardManager.BoardPlaced
   nameWithType: BoardManager.BoardPlaced
-- uid: PiTung_Bootstrap.Building.BoardManager.BoardPlacedDelegate
+- uid: PiTung.Building.BoardManager.BoardPlacedDelegate
   name: BoardManager.BoardPlacedDelegate
-  href: api/PiTung_Bootstrap.Building.BoardManager.BoardPlacedDelegate.html
-  commentId: T:PiTung_Bootstrap.Building.BoardManager.BoardPlacedDelegate
-  fullName: PiTung_Bootstrap.Building.BoardManager.BoardPlacedDelegate
+  href: api/PiTung.Building.BoardManager.BoardPlacedDelegate.html
+  commentId: T:PiTung.Building.BoardManager.BoardPlacedDelegate
+  fullName: PiTung.Building.BoardManager.BoardPlacedDelegate
   nameWithType: BoardManager.BoardPlacedDelegate
-- uid: PiTung_Bootstrap.Building.BoardManager.GetBoard(System.Int32)
+- uid: PiTung.Building.BoardManager.GetBoard(System.Int32)
   name: GetBoard(Int32)
-  href: api/PiTung_Bootstrap.Building.BoardManager.html#PiTung_Bootstrap_Building_BoardManager_GetBoard_System_Int32_
-  commentId: M:PiTung_Bootstrap.Building.BoardManager.GetBoard(System.Int32)
-  fullName: PiTung_Bootstrap.Building.BoardManager.GetBoard(System.Int32)
+  href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_GetBoard_System_Int32_
+  commentId: M:PiTung.Building.BoardManager.GetBoard(System.Int32)
+  fullName: PiTung.Building.BoardManager.GetBoard(System.Int32)
   nameWithType: BoardManager.GetBoard(Int32)
-- uid: PiTung_Bootstrap.Building.BoardManager.GetBoard*
+- uid: PiTung.Building.BoardManager.GetBoard*
   name: GetBoard
-  href: api/PiTung_Bootstrap.Building.BoardManager.html#PiTung_Bootstrap_Building_BoardManager_GetBoard_
-  commentId: Overload:PiTung_Bootstrap.Building.BoardManager.GetBoard
-  fullName: PiTung_Bootstrap.Building.BoardManager.GetBoard
+  href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_GetBoard_
+  commentId: Overload:PiTung.Building.BoardManager.GetBoard
+  fullName: PiTung.Building.BoardManager.GetBoard
   nameWithType: BoardManager.GetBoard
-- uid: PiTung_Bootstrap.Building.BoardManager.Instance
+- uid: PiTung.Building.BoardManager.Instance
   name: Instance
-  href: api/PiTung_Bootstrap.Building.BoardManager.html#PiTung_Bootstrap_Building_BoardManager_Instance
-  commentId: P:PiTung_Bootstrap.Building.BoardManager.Instance
-  fullName: PiTung_Bootstrap.Building.BoardManager.Instance
+  href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_Instance
+  commentId: P:PiTung.Building.BoardManager.Instance
+  fullName: PiTung.Building.BoardManager.Instance
   nameWithType: BoardManager.Instance
-- uid: PiTung_Bootstrap.Building.BoardManager.Instance*
+- uid: PiTung.Building.BoardManager.Instance*
   name: Instance
-  href: api/PiTung_Bootstrap.Building.BoardManager.html#PiTung_Bootstrap_Building_BoardManager_Instance_
-  commentId: Overload:PiTung_Bootstrap.Building.BoardManager.Instance
-  fullName: PiTung_Bootstrap.Building.BoardManager.Instance
+  href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_Instance_
+  commentId: Overload:PiTung.Building.BoardManager.Instance
+  fullName: PiTung.Building.BoardManager.Instance
   nameWithType: BoardManager.Instance
-- uid: PiTung_Bootstrap.Building.BoardManager.TryGetBoard(System.Int32,PiTung_Bootstrap.Building.Board@)
+- uid: PiTung.Building.BoardManager.TryGetBoard(System.Int32,PiTung.Building.Board@)
   name: TryGetBoard(Int32, out Board)
-  href: api/PiTung_Bootstrap.Building.BoardManager.html#PiTung_Bootstrap_Building_BoardManager_TryGetBoard_System_Int32_PiTung_Bootstrap_Building_Board__
-  commentId: M:PiTung_Bootstrap.Building.BoardManager.TryGetBoard(System.Int32,PiTung_Bootstrap.Building.Board@)
+  href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_TryGetBoard_System_Int32_PiTung_Building_Board__
+  commentId: M:PiTung.Building.BoardManager.TryGetBoard(System.Int32,PiTung.Building.Board@)
   name.vb: TryGetBoard(Int32, ByRef Board)
-  fullName: PiTung_Bootstrap.Building.BoardManager.TryGetBoard(System.Int32, out PiTung_Bootstrap.Building.Board)
-  fullName.vb: PiTung_Bootstrap.Building.BoardManager.TryGetBoard(System.Int32, ByRef PiTung_Bootstrap.Building.Board)
+  fullName: PiTung.Building.BoardManager.TryGetBoard(System.Int32, out PiTung.Building.Board)
+  fullName.vb: PiTung.Building.BoardManager.TryGetBoard(System.Int32, ByRef PiTung.Building.Board)
   nameWithType: BoardManager.TryGetBoard(Int32, out Board)
   nameWithType.vb: BoardManager.TryGetBoard(Int32, ByRef Board)
-- uid: PiTung_Bootstrap.Building.BoardManager.TryGetBoard*
+- uid: PiTung.Building.BoardManager.TryGetBoard*
   name: TryGetBoard
-  href: api/PiTung_Bootstrap.Building.BoardManager.html#PiTung_Bootstrap_Building_BoardManager_TryGetBoard_
-  commentId: Overload:PiTung_Bootstrap.Building.BoardManager.TryGetBoard
-  fullName: PiTung_Bootstrap.Building.BoardManager.TryGetBoard
+  href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_TryGetBoard_
+  commentId: Overload:PiTung.Building.BoardManager.TryGetBoard
+  fullName: PiTung.Building.BoardManager.TryGetBoard
   nameWithType: BoardManager.TryGetBoard
-- uid: PiTung_Bootstrap.Building.BoardManager.TryGetExistingBoardFromGameObject(UnityEngine.GameObject,PiTung_Bootstrap.Building.Board@)
+- uid: PiTung.Building.BoardManager.TryGetExistingBoardFromGameObject(UnityEngine.GameObject,PiTung.Building.Board@)
   name: TryGetExistingBoardFromGameObject(GameObject, out Board)
-  href: api/PiTung_Bootstrap.Building.BoardManager.html#PiTung_Bootstrap_Building_BoardManager_TryGetExistingBoardFromGameObject_UnityEngine_GameObject_PiTung_Bootstrap_Building_Board__
-  commentId: M:PiTung_Bootstrap.Building.BoardManager.TryGetExistingBoardFromGameObject(UnityEngine.GameObject,PiTung_Bootstrap.Building.Board@)
+  href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_TryGetExistingBoardFromGameObject_UnityEngine_GameObject_PiTung_Building_Board__
+  commentId: M:PiTung.Building.BoardManager.TryGetExistingBoardFromGameObject(UnityEngine.GameObject,PiTung.Building.Board@)
   name.vb: TryGetExistingBoardFromGameObject(GameObject, ByRef Board)
-  fullName: PiTung_Bootstrap.Building.BoardManager.TryGetExistingBoardFromGameObject(UnityEngine.GameObject, out PiTung_Bootstrap.Building.Board)
-  fullName.vb: PiTung_Bootstrap.Building.BoardManager.TryGetExistingBoardFromGameObject(UnityEngine.GameObject, ByRef PiTung_Bootstrap.Building.Board)
+  fullName: PiTung.Building.BoardManager.TryGetExistingBoardFromGameObject(UnityEngine.GameObject, out PiTung.Building.Board)
+  fullName.vb: PiTung.Building.BoardManager.TryGetExistingBoardFromGameObject(UnityEngine.GameObject, ByRef PiTung.Building.Board)
   nameWithType: BoardManager.TryGetExistingBoardFromGameObject(GameObject, out Board)
   nameWithType.vb: BoardManager.TryGetExistingBoardFromGameObject(GameObject, ByRef Board)
-- uid: PiTung_Bootstrap.Building.BoardManager.TryGetExistingBoardFromGameObject*
+- uid: PiTung.Building.BoardManager.TryGetExistingBoardFromGameObject*
   name: TryGetExistingBoardFromGameObject
-  href: api/PiTung_Bootstrap.Building.BoardManager.html#PiTung_Bootstrap_Building_BoardManager_TryGetExistingBoardFromGameObject_
-  commentId: Overload:PiTung_Bootstrap.Building.BoardManager.TryGetExistingBoardFromGameObject
-  fullName: PiTung_Bootstrap.Building.BoardManager.TryGetExistingBoardFromGameObject
+  href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_TryGetExistingBoardFromGameObject_
+  commentId: Overload:PiTung.Building.BoardManager.TryGetExistingBoardFromGameObject
+  fullName: PiTung.Building.BoardManager.TryGetExistingBoardFromGameObject
   nameWithType: BoardManager.TryGetExistingBoardFromGameObject
-- uid: PiTung_Bootstrap.Building.Builder
+- uid: PiTung.Building.Builder
   name: Builder
-  href: api/PiTung_Bootstrap.Building.Builder.html
-  commentId: T:PiTung_Bootstrap.Building.Builder
-  fullName: PiTung_Bootstrap.Building.Builder
+  href: api/PiTung.Building.Builder.html
+  commentId: T:PiTung.Building.Builder
+  fullName: PiTung.Building.Builder
   nameWithType: Builder
-- uid: PiTung_Bootstrap.Building.Builder.AddCircuitComponent(PiTung_Bootstrap.Building.Board,PiTung_Bootstrap.Building.CircuitComponent,System.Int32,System.Int32,System.Single)
+- uid: PiTung.Building.Builder.AddCircuitComponent(PiTung.Building.Board,PiTung.Building.CircuitComponent,System.Int32,System.Int32,System.Single)
   name: AddCircuitComponent(Board, CircuitComponent, Int32, Int32, Single)
-  href: api/PiTung_Bootstrap.Building.Builder.html#PiTung_Bootstrap_Building_Builder_AddCircuitComponent_PiTung_Bootstrap_Building_Board_PiTung_Bootstrap_Building_CircuitComponent_System_Int32_System_Int32_System_Single_
-  commentId: M:PiTung_Bootstrap.Building.Builder.AddCircuitComponent(PiTung_Bootstrap.Building.Board,PiTung_Bootstrap.Building.CircuitComponent,System.Int32,System.Int32,System.Single)
-  fullName: PiTung_Bootstrap.Building.Builder.AddCircuitComponent(PiTung_Bootstrap.Building.Board, PiTung_Bootstrap.Building.CircuitComponent, System.Int32, System.Int32, System.Single)
+  href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_AddCircuitComponent_PiTung_Building_Board_PiTung_Building_CircuitComponent_System_Int32_System_Int32_System_Single_
+  commentId: M:PiTung.Building.Builder.AddCircuitComponent(PiTung.Building.Board,PiTung.Building.CircuitComponent,System.Int32,System.Int32,System.Single)
+  fullName: PiTung.Building.Builder.AddCircuitComponent(PiTung.Building.Board, PiTung.Building.CircuitComponent, System.Int32, System.Int32, System.Single)
   nameWithType: Builder.AddCircuitComponent(Board, CircuitComponent, Int32, Int32, Single)
-- uid: PiTung_Bootstrap.Building.Builder.AddCircuitComponent*
+- uid: PiTung.Building.Builder.AddCircuitComponent*
   name: AddCircuitComponent
-  href: api/PiTung_Bootstrap.Building.Builder.html#PiTung_Bootstrap_Building_Builder_AddCircuitComponent_
-  commentId: Overload:PiTung_Bootstrap.Building.Builder.AddCircuitComponent
-  fullName: PiTung_Bootstrap.Building.Builder.AddCircuitComponent
+  href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_AddCircuitComponent_
+  commentId: Overload:PiTung.Building.Builder.AddCircuitComponent
+  fullName: PiTung.Building.Builder.AddCircuitComponent
   nameWithType: Builder.AddCircuitComponent
-- uid: PiTung_Bootstrap.Building.Builder.ConnectInputInput(PiTung_Bootstrap.Building.Board,System.Int32,System.Int32,System.Int32,System.Int32)
+- uid: PiTung.Building.Builder.ConnectInputInput(PiTung.Building.Board,System.Int32,System.Int32,System.Int32,System.Int32)
   name: ConnectInputInput(Board, Int32, Int32, Int32, Int32)
-  href: api/PiTung_Bootstrap.Building.Builder.html#PiTung_Bootstrap_Building_Builder_ConnectInputInput_PiTung_Bootstrap_Building_Board_System_Int32_System_Int32_System_Int32_System_Int32_
-  commentId: M:PiTung_Bootstrap.Building.Builder.ConnectInputInput(PiTung_Bootstrap.Building.Board,System.Int32,System.Int32,System.Int32,System.Int32)
-  fullName: PiTung_Bootstrap.Building.Builder.ConnectInputInput(PiTung_Bootstrap.Building.Board, System.Int32, System.Int32, System.Int32, System.Int32)
+  href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_ConnectInputInput_PiTung_Building_Board_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:PiTung.Building.Builder.ConnectInputInput(PiTung.Building.Board,System.Int32,System.Int32,System.Int32,System.Int32)
+  fullName: PiTung.Building.Builder.ConnectInputInput(PiTung.Building.Board, System.Int32, System.Int32, System.Int32, System.Int32)
   nameWithType: Builder.ConnectInputInput(Board, Int32, Int32, Int32, Int32)
-- uid: PiTung_Bootstrap.Building.Builder.ConnectInputInput*
+- uid: PiTung.Building.Builder.ConnectInputInput*
   name: ConnectInputInput
-  href: api/PiTung_Bootstrap.Building.Builder.html#PiTung_Bootstrap_Building_Builder_ConnectInputInput_
-  commentId: Overload:PiTung_Bootstrap.Building.Builder.ConnectInputInput
-  fullName: PiTung_Bootstrap.Building.Builder.ConnectInputInput
+  href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_ConnectInputInput_
+  commentId: Overload:PiTung.Building.Builder.ConnectInputInput
+  fullName: PiTung.Building.Builder.ConnectInputInput
   nameWithType: Builder.ConnectInputInput
-- uid: PiTung_Bootstrap.Building.Builder.ConnectInputOutput(PiTung_Bootstrap.Building.Board,System.Int32,System.Int32,System.Int32,System.Int32)
+- uid: PiTung.Building.Builder.ConnectInputOutput(PiTung.Building.Board,System.Int32,System.Int32,System.Int32,System.Int32)
   name: ConnectInputOutput(Board, Int32, Int32, Int32, Int32)
-  href: api/PiTung_Bootstrap.Building.Builder.html#PiTung_Bootstrap_Building_Builder_ConnectInputOutput_PiTung_Bootstrap_Building_Board_System_Int32_System_Int32_System_Int32_System_Int32_
-  commentId: M:PiTung_Bootstrap.Building.Builder.ConnectInputOutput(PiTung_Bootstrap.Building.Board,System.Int32,System.Int32,System.Int32,System.Int32)
-  fullName: PiTung_Bootstrap.Building.Builder.ConnectInputOutput(PiTung_Bootstrap.Building.Board, System.Int32, System.Int32, System.Int32, System.Int32)
+  href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_ConnectInputOutput_PiTung_Building_Board_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:PiTung.Building.Builder.ConnectInputOutput(PiTung.Building.Board,System.Int32,System.Int32,System.Int32,System.Int32)
+  fullName: PiTung.Building.Builder.ConnectInputOutput(PiTung.Building.Board, System.Int32, System.Int32, System.Int32, System.Int32)
   nameWithType: Builder.ConnectInputOutput(Board, Int32, Int32, Int32, Int32)
-- uid: PiTung_Bootstrap.Building.Builder.ConnectInputOutput*
+- uid: PiTung.Building.Builder.ConnectInputOutput*
   name: ConnectInputOutput
-  href: api/PiTung_Bootstrap.Building.Builder.html#PiTung_Bootstrap_Building_Builder_ConnectInputOutput_
-  commentId: Overload:PiTung_Bootstrap.Building.Builder.ConnectInputOutput
-  fullName: PiTung_Bootstrap.Building.Builder.ConnectInputOutput
+  href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_ConnectInputOutput_
+  commentId: Overload:PiTung.Building.Builder.ConnectInputOutput
+  fullName: PiTung.Building.Builder.ConnectInputOutput
   nameWithType: Builder.ConnectInputOutput
-- uid: PiTung_Bootstrap.Building.Builder.DeleteCircuitComponent(PiTung_Bootstrap.Building.Board,System.Int32,System.Int32)
+- uid: PiTung.Building.Builder.DeleteCircuitComponent(PiTung.Building.Board,System.Int32,System.Int32)
   name: DeleteCircuitComponent(Board, Int32, Int32)
-  href: api/PiTung_Bootstrap.Building.Builder.html#PiTung_Bootstrap_Building_Builder_DeleteCircuitComponent_PiTung_Bootstrap_Building_Board_System_Int32_System_Int32_
-  commentId: M:PiTung_Bootstrap.Building.Builder.DeleteCircuitComponent(PiTung_Bootstrap.Building.Board,System.Int32,System.Int32)
-  fullName: PiTung_Bootstrap.Building.Builder.DeleteCircuitComponent(PiTung_Bootstrap.Building.Board, System.Int32, System.Int32)
+  href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_DeleteCircuitComponent_PiTung_Building_Board_System_Int32_System_Int32_
+  commentId: M:PiTung.Building.Builder.DeleteCircuitComponent(PiTung.Building.Board,System.Int32,System.Int32)
+  fullName: PiTung.Building.Builder.DeleteCircuitComponent(PiTung.Building.Board, System.Int32, System.Int32)
   nameWithType: Builder.DeleteCircuitComponent(Board, Int32, Int32)
-- uid: PiTung_Bootstrap.Building.Builder.DeleteCircuitComponent*
+- uid: PiTung.Building.Builder.DeleteCircuitComponent*
   name: DeleteCircuitComponent
-  href: api/PiTung_Bootstrap.Building.Builder.html#PiTung_Bootstrap_Building_Builder_DeleteCircuitComponent_
-  commentId: Overload:PiTung_Bootstrap.Building.Builder.DeleteCircuitComponent
-  fullName: PiTung_Bootstrap.Building.Builder.DeleteCircuitComponent
+  href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_DeleteCircuitComponent_
+  commentId: Overload:PiTung.Building.Builder.DeleteCircuitComponent
+  fullName: PiTung.Building.Builder.DeleteCircuitComponent
   nameWithType: Builder.DeleteCircuitComponent
-- uid: PiTung_Bootstrap.Building.Builder.SetCircuitComponent(PiTung_Bootstrap.Building.Board,System.Int32,System.Int32,PiTung_Bootstrap.Building.CircuitComponent,System.Single)
+- uid: PiTung.Building.Builder.SetCircuitComponent(PiTung.Building.Board,System.Int32,System.Int32,PiTung.Building.CircuitComponent,System.Single)
   name: SetCircuitComponent(Board, Int32, Int32, CircuitComponent, Single)
-  href: api/PiTung_Bootstrap.Building.Builder.html#PiTung_Bootstrap_Building_Builder_SetCircuitComponent_PiTung_Bootstrap_Building_Board_System_Int32_System_Int32_PiTung_Bootstrap_Building_CircuitComponent_System_Single_
-  commentId: M:PiTung_Bootstrap.Building.Builder.SetCircuitComponent(PiTung_Bootstrap.Building.Board,System.Int32,System.Int32,PiTung_Bootstrap.Building.CircuitComponent,System.Single)
-  fullName: PiTung_Bootstrap.Building.Builder.SetCircuitComponent(PiTung_Bootstrap.Building.Board, System.Int32, System.Int32, PiTung_Bootstrap.Building.CircuitComponent, System.Single)
+  href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_SetCircuitComponent_PiTung_Building_Board_System_Int32_System_Int32_PiTung_Building_CircuitComponent_System_Single_
+  commentId: M:PiTung.Building.Builder.SetCircuitComponent(PiTung.Building.Board,System.Int32,System.Int32,PiTung.Building.CircuitComponent,System.Single)
+  fullName: PiTung.Building.Builder.SetCircuitComponent(PiTung.Building.Board, System.Int32, System.Int32, PiTung.Building.CircuitComponent, System.Single)
   nameWithType: Builder.SetCircuitComponent(Board, Int32, Int32, CircuitComponent, Single)
-- uid: PiTung_Bootstrap.Building.Builder.SetCircuitComponent*
+- uid: PiTung.Building.Builder.SetCircuitComponent*
   name: SetCircuitComponent
-  href: api/PiTung_Bootstrap.Building.Builder.html#PiTung_Bootstrap_Building_Builder_SetCircuitComponent_
-  commentId: Overload:PiTung_Bootstrap.Building.Builder.SetCircuitComponent
-  fullName: PiTung_Bootstrap.Building.Builder.SetCircuitComponent
+  href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_SetCircuitComponent_
+  commentId: Overload:PiTung.Building.Builder.SetCircuitComponent
+  fullName: PiTung.Building.Builder.SetCircuitComponent
   nameWithType: Builder.SetCircuitComponent
-- uid: PiTung_Bootstrap.Building.CircuitComponent
+- uid: PiTung.Building.CircuitComponent
   name: CircuitComponent
-  href: api/PiTung_Bootstrap.Building.CircuitComponent.html
-  commentId: T:PiTung_Bootstrap.Building.CircuitComponent
-  fullName: PiTung_Bootstrap.Building.CircuitComponent
+  href: api/PiTung.Building.CircuitComponent.html
+  commentId: T:PiTung.Building.CircuitComponent
+  fullName: PiTung.Building.CircuitComponent
   nameWithType: CircuitComponent
-- uid: PiTung_Bootstrap.Building.CircuitComponent.Name
+- uid: PiTung.Building.CircuitComponent.Name
   name: Name
-  href: api/PiTung_Bootstrap.Building.CircuitComponent.html#PiTung_Bootstrap_Building_CircuitComponent_Name
-  commentId: P:PiTung_Bootstrap.Building.CircuitComponent.Name
-  fullName: PiTung_Bootstrap.Building.CircuitComponent.Name
+  href: api/PiTung.Building.CircuitComponent.html#PiTung_Building_CircuitComponent_Name
+  commentId: P:PiTung.Building.CircuitComponent.Name
+  fullName: PiTung.Building.CircuitComponent.Name
   nameWithType: CircuitComponent.Name
-- uid: PiTung_Bootstrap.Building.CircuitComponent.Name*
+- uid: PiTung.Building.CircuitComponent.Name*
   name: Name
-  href: api/PiTung_Bootstrap.Building.CircuitComponent.html#PiTung_Bootstrap_Building_CircuitComponent_Name_
-  commentId: Overload:PiTung_Bootstrap.Building.CircuitComponent.Name
-  fullName: PiTung_Bootstrap.Building.CircuitComponent.Name
+  href: api/PiTung.Building.CircuitComponent.html#PiTung_Building_CircuitComponent_Name_
+  commentId: Overload:PiTung.Building.CircuitComponent.Name
+  fullName: PiTung.Building.CircuitComponent.Name
   nameWithType: CircuitComponent.Name
-- uid: PiTung_Bootstrap.Building.Components
+- uid: PiTung.Building.Components
   name: Components
-  href: api/PiTung_Bootstrap.Building.Components.html
-  commentId: T:PiTung_Bootstrap.Building.Components
-  fullName: PiTung_Bootstrap.Building.Components
+  href: api/PiTung.Building.Components.html
+  commentId: T:PiTung.Building.Components
+  fullName: PiTung.Building.Components
   nameWithType: Components
-- uid: PiTung_Bootstrap.Building.Components.GetComponent(System.String)
+- uid: PiTung.Building.Components.GetComponent(System.String)
   name: GetComponent(String)
-  href: api/PiTung_Bootstrap.Building.Components.html#PiTung_Bootstrap_Building_Components_GetComponent_System_String_
-  commentId: M:PiTung_Bootstrap.Building.Components.GetComponent(System.String)
-  fullName: PiTung_Bootstrap.Building.Components.GetComponent(System.String)
+  href: api/PiTung.Building.Components.html#PiTung_Building_Components_GetComponent_System_String_
+  commentId: M:PiTung.Building.Components.GetComponent(System.String)
+  fullName: PiTung.Building.Components.GetComponent(System.String)
   nameWithType: Components.GetComponent(String)
-- uid: PiTung_Bootstrap.Building.Components.GetComponent*
+- uid: PiTung.Building.Components.GetComponent*
   name: GetComponent
-  href: api/PiTung_Bootstrap.Building.Components.html#PiTung_Bootstrap_Building_Components_GetComponent_
-  commentId: Overload:PiTung_Bootstrap.Building.Components.GetComponent
-  fullName: PiTung_Bootstrap.Building.Components.GetComponent
+  href: api/PiTung.Building.Components.html#PiTung_Building_Components_GetComponent_
+  commentId: Overload:PiTung.Building.Components.GetComponent
+  fullName: PiTung.Building.Components.GetComponent
   nameWithType: Components.GetComponent
-- uid: PiTung_Bootstrap.Building.Components.GetComponents
+- uid: PiTung.Building.Components.GetComponents
   name: GetComponents()
-  href: api/PiTung_Bootstrap.Building.Components.html#PiTung_Bootstrap_Building_Components_GetComponents
-  commentId: M:PiTung_Bootstrap.Building.Components.GetComponents
-  fullName: PiTung_Bootstrap.Building.Components.GetComponents()
+  href: api/PiTung.Building.Components.html#PiTung_Building_Components_GetComponents
+  commentId: M:PiTung.Building.Components.GetComponents
+  fullName: PiTung.Building.Components.GetComponents()
   nameWithType: Components.GetComponents()
-- uid: PiTung_Bootstrap.Building.Components.GetComponents*
+- uid: PiTung.Building.Components.GetComponents*
   name: GetComponents
-  href: api/PiTung_Bootstrap.Building.Components.html#PiTung_Bootstrap_Building_Components_GetComponents_
-  commentId: Overload:PiTung_Bootstrap.Building.Components.GetComponents
-  fullName: PiTung_Bootstrap.Building.Components.GetComponents
+  href: api/PiTung.Building.Components.html#PiTung_Building_Components_GetComponents_
+  commentId: Overload:PiTung.Building.Components.GetComponents
+  fullName: PiTung.Building.Components.GetComponents
   nameWithType: Components.GetComponents
-- uid: PiTung_Bootstrap.Config_menu
-  name: PiTung_Bootstrap.Config_menu
-  href: api/PiTung_Bootstrap.Config_menu.html
-  commentId: N:PiTung_Bootstrap.Config_menu
-  fullName: PiTung_Bootstrap.Config_menu
-  nameWithType: PiTung_Bootstrap.Config_menu
-- uid: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry
+- uid: PiTung.Config_menu
+  name: PiTung.Config_menu
+  href: api/PiTung.Config_menu.html
+  commentId: N:PiTung.Config_menu
+  fullName: PiTung.Config_menu
+  nameWithType: PiTung.Config_menu
+- uid: PiTung.Config_menu.CheckboxMenuEntry
   name: CheckboxMenuEntry
-  href: api/PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.html
-  commentId: T:PiTung_Bootstrap.Config_menu.CheckboxMenuEntry
-  fullName: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry
+  href: api/PiTung.Config_menu.CheckboxMenuEntry.html
+  commentId: T:PiTung.Config_menu.CheckboxMenuEntry
+  fullName: PiTung.Config_menu.CheckboxMenuEntry
   nameWithType: CheckboxMenuEntry
-- uid: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Toggle
+- uid: PiTung.Config_menu.CheckboxMenuEntry.Toggle
   name: Toggle()
-  href: api/PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.html#PiTung_Bootstrap_Config_menu_CheckboxMenuEntry_Toggle
-  commentId: M:PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Toggle
-  fullName: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Toggle()
+  href: api/PiTung.Config_menu.CheckboxMenuEntry.html#PiTung_Config_menu_CheckboxMenuEntry_Toggle
+  commentId: M:PiTung.Config_menu.CheckboxMenuEntry.Toggle
+  fullName: PiTung.Config_menu.CheckboxMenuEntry.Toggle()
   nameWithType: CheckboxMenuEntry.Toggle()
-- uid: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Toggle*
+- uid: PiTung.Config_menu.CheckboxMenuEntry.Toggle*
   name: Toggle
-  href: api/PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.html#PiTung_Bootstrap_Config_menu_CheckboxMenuEntry_Toggle_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Toggle
-  fullName: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Toggle
+  href: api/PiTung.Config_menu.CheckboxMenuEntry.html#PiTung_Config_menu_CheckboxMenuEntry_Toggle_
+  commentId: Overload:PiTung.Config_menu.CheckboxMenuEntry.Toggle
+  fullName: PiTung.Config_menu.CheckboxMenuEntry.Toggle
   nameWithType: CheckboxMenuEntry.Toggle
-- uid: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Value
+- uid: PiTung.Config_menu.CheckboxMenuEntry.Value
   name: Value
-  href: api/PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.html#PiTung_Bootstrap_Config_menu_CheckboxMenuEntry_Value
-  commentId: P:PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Value
-  fullName: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Value
+  href: api/PiTung.Config_menu.CheckboxMenuEntry.html#PiTung_Config_menu_CheckboxMenuEntry_Value
+  commentId: P:PiTung.Config_menu.CheckboxMenuEntry.Value
+  fullName: PiTung.Config_menu.CheckboxMenuEntry.Value
   nameWithType: CheckboxMenuEntry.Value
-- uid: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Value*
+- uid: PiTung.Config_menu.CheckboxMenuEntry.Value*
   name: Value
-  href: api/PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.html#PiTung_Bootstrap_Config_menu_CheckboxMenuEntry_Value_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Value
-  fullName: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.Value
+  href: api/PiTung.Config_menu.CheckboxMenuEntry.html#PiTung_Config_menu_CheckboxMenuEntry_Value_
+  commentId: Overload:PiTung.Config_menu.CheckboxMenuEntry.Value
+  fullName: PiTung.Config_menu.CheckboxMenuEntry.Value
   nameWithType: CheckboxMenuEntry.Value
-- uid: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.ValueChanged
+- uid: PiTung.Config_menu.CheckboxMenuEntry.ValueChanged
   name: ValueChanged
-  href: api/PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.html#PiTung_Bootstrap_Config_menu_CheckboxMenuEntry_ValueChanged
-  commentId: E:PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.ValueChanged
-  fullName: PiTung_Bootstrap.Config_menu.CheckboxMenuEntry.ValueChanged
+  href: api/PiTung.Config_menu.CheckboxMenuEntry.html#PiTung_Config_menu_CheckboxMenuEntry_ValueChanged
+  commentId: E:PiTung.Config_menu.CheckboxMenuEntry.ValueChanged
+  fullName: PiTung.Config_menu.CheckboxMenuEntry.ValueChanged
   nameWithType: CheckboxMenuEntry.ValueChanged
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry
+- uid: PiTung.Config_menu.CustomNumericEntry
   name: CustomNumericEntry
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html
-  commentId: T:PiTung_Bootstrap.Config_menu.CustomNumericEntry
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry
+  href: api/PiTung.Config_menu.CustomNumericEntry.html
+  commentId: T:PiTung.Config_menu.CustomNumericEntry
+  fullName: PiTung.Config_menu.CustomNumericEntry
   nameWithType: CustomNumericEntry
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry.#ctor(PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate,PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate)
+- uid: PiTung.Config_menu.CustomNumericEntry.#ctor(PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate,PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate)
   name: CustomNumericEntry(CustomNumericEntry.ChangeOneStepDelegate, CustomNumericEntry.ChangeOneStepDelegate)
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html#PiTung_Bootstrap_Config_menu_CustomNumericEntry__ctor_PiTung_Bootstrap_Config_menu_CustomNumericEntry_ChangeOneStepDelegate_PiTung_Bootstrap_Config_menu_CustomNumericEntry_ChangeOneStepDelegate_
-  commentId: M:PiTung_Bootstrap.Config_menu.CustomNumericEntry.#ctor(PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate,PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate)
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry.CustomNumericEntry(PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate, PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate)
+  href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry__ctor_PiTung_Config_menu_CustomNumericEntry_ChangeOneStepDelegate_PiTung_Config_menu_CustomNumericEntry_ChangeOneStepDelegate_
+  commentId: M:PiTung.Config_menu.CustomNumericEntry.#ctor(PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate,PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate)
+  fullName: PiTung.Config_menu.CustomNumericEntry.CustomNumericEntry(PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate, PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate)
   nameWithType: CustomNumericEntry.CustomNumericEntry(CustomNumericEntry.ChangeOneStepDelegate, CustomNumericEntry.ChangeOneStepDelegate)
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry.#ctor(System.Single,System.Single,System.Single)
+- uid: PiTung.Config_menu.CustomNumericEntry.#ctor(System.Single,System.Single,System.Single)
   name: CustomNumericEntry(Single, Single, Single)
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html#PiTung_Bootstrap_Config_menu_CustomNumericEntry__ctor_System_Single_System_Single_System_Single_
-  commentId: M:PiTung_Bootstrap.Config_menu.CustomNumericEntry.#ctor(System.Single,System.Single,System.Single)
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry.CustomNumericEntry(System.Single, System.Single, System.Single)
+  href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry__ctor_System_Single_System_Single_System_Single_
+  commentId: M:PiTung.Config_menu.CustomNumericEntry.#ctor(System.Single,System.Single,System.Single)
+  fullName: PiTung.Config_menu.CustomNumericEntry.CustomNumericEntry(System.Single, System.Single, System.Single)
   nameWithType: CustomNumericEntry.CustomNumericEntry(Single, Single, Single)
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry.#ctor*
+- uid: PiTung.Config_menu.CustomNumericEntry.#ctor*
   name: CustomNumericEntry
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html#PiTung_Bootstrap_Config_menu_CustomNumericEntry__ctor_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.CustomNumericEntry.#ctor
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry.CustomNumericEntry
+  href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry__ctor_
+  commentId: Overload:PiTung.Config_menu.CustomNumericEntry.#ctor
+  fullName: PiTung.Config_menu.CustomNumericEntry.CustomNumericEntry
   nameWithType: CustomNumericEntry.CustomNumericEntry
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate
+- uid: PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate
   name: CustomNumericEntry.ChangeOneStepDelegate
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate.html
-  commentId: T:PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry.ChangeOneStepDelegate
+  href: api/PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate.html
+  commentId: T:PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate
+  fullName: PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate
   nameWithType: CustomNumericEntry.ChangeOneStepDelegate
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Decrement
+- uid: PiTung.Config_menu.CustomNumericEntry.Decrement
   name: Decrement()
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html#PiTung_Bootstrap_Config_menu_CustomNumericEntry_Decrement
-  commentId: M:PiTung_Bootstrap.Config_menu.CustomNumericEntry.Decrement
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Decrement()
+  href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry_Decrement
+  commentId: M:PiTung.Config_menu.CustomNumericEntry.Decrement
+  fullName: PiTung.Config_menu.CustomNumericEntry.Decrement()
   nameWithType: CustomNumericEntry.Decrement()
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Decrement*
+- uid: PiTung.Config_menu.CustomNumericEntry.Decrement*
   name: Decrement
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html#PiTung_Bootstrap_Config_menu_CustomNumericEntry_Decrement_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.CustomNumericEntry.Decrement
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Decrement
+  href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry_Decrement_
+  commentId: Overload:PiTung.Config_menu.CustomNumericEntry.Decrement
+  fullName: PiTung.Config_menu.CustomNumericEntry.Decrement
   nameWithType: CustomNumericEntry.Decrement
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Increment
+- uid: PiTung.Config_menu.CustomNumericEntry.Increment
   name: Increment()
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html#PiTung_Bootstrap_Config_menu_CustomNumericEntry_Increment
-  commentId: M:PiTung_Bootstrap.Config_menu.CustomNumericEntry.Increment
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Increment()
+  href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry_Increment
+  commentId: M:PiTung.Config_menu.CustomNumericEntry.Increment
+  fullName: PiTung.Config_menu.CustomNumericEntry.Increment()
   nameWithType: CustomNumericEntry.Increment()
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Increment*
+- uid: PiTung.Config_menu.CustomNumericEntry.Increment*
   name: Increment
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html#PiTung_Bootstrap_Config_menu_CustomNumericEntry_Increment_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.CustomNumericEntry.Increment
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Increment
+  href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry_Increment_
+  commentId: Overload:PiTung.Config_menu.CustomNumericEntry.Increment
+  fullName: PiTung.Config_menu.CustomNumericEntry.Increment
   nameWithType: CustomNumericEntry.Increment
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Value
+- uid: PiTung.Config_menu.CustomNumericEntry.Value
   name: Value
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html#PiTung_Bootstrap_Config_menu_CustomNumericEntry_Value
-  commentId: P:PiTung_Bootstrap.Config_menu.CustomNumericEntry.Value
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Value
+  href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry_Value
+  commentId: P:PiTung.Config_menu.CustomNumericEntry.Value
+  fullName: PiTung.Config_menu.CustomNumericEntry.Value
   nameWithType: CustomNumericEntry.Value
-- uid: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Value*
+- uid: PiTung.Config_menu.CustomNumericEntry.Value*
   name: Value
-  href: api/PiTung_Bootstrap.Config_menu.CustomNumericEntry.html#PiTung_Bootstrap_Config_menu_CustomNumericEntry_Value_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.CustomNumericEntry.Value
-  fullName: PiTung_Bootstrap.Config_menu.CustomNumericEntry.Value
+  href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry_Value_
+  commentId: Overload:PiTung.Config_menu.CustomNumericEntry.Value
+  fullName: PiTung.Config_menu.CustomNumericEntry.Value
   nameWithType: CustomNumericEntry.Value
-- uid: PiTung_Bootstrap.Config_menu.IValueMenuEntry`1
+- uid: PiTung.Config_menu.IValueMenuEntry`1
   name: IValueMenuEntry<TValue>
-  href: api/PiTung_Bootstrap.Config_menu.IValueMenuEntry-1.html
-  commentId: T:PiTung_Bootstrap.Config_menu.IValueMenuEntry`1
+  href: api/PiTung.Config_menu.IValueMenuEntry-1.html
+  commentId: T:PiTung.Config_menu.IValueMenuEntry`1
   name.vb: IValueMenuEntry(Of TValue)
-  fullName: PiTung_Bootstrap.Config_menu.IValueMenuEntry<TValue>
-  fullName.vb: PiTung_Bootstrap.Config_menu.IValueMenuEntry(Of TValue)
+  fullName: PiTung.Config_menu.IValueMenuEntry<TValue>
+  fullName.vb: PiTung.Config_menu.IValueMenuEntry(Of TValue)
   nameWithType: IValueMenuEntry<TValue>
   nameWithType.vb: IValueMenuEntry(Of TValue)
-- uid: PiTung_Bootstrap.Config_menu.IValueMenuEntry`1.ValueChanged
+- uid: PiTung.Config_menu.IValueMenuEntry`1.ValueChanged
   name: ValueChanged
-  href: api/PiTung_Bootstrap.Config_menu.IValueMenuEntry-1.html#PiTung_Bootstrap_Config_menu_IValueMenuEntry_1_ValueChanged
-  commentId: E:PiTung_Bootstrap.Config_menu.IValueMenuEntry`1.ValueChanged
-  fullName: PiTung_Bootstrap.Config_menu.IValueMenuEntry<TValue>.ValueChanged
-  fullName.vb: PiTung_Bootstrap.Config_menu.IValueMenuEntry(Of TValue).ValueChanged
+  href: api/PiTung.Config_menu.IValueMenuEntry-1.html#PiTung_Config_menu_IValueMenuEntry_1_ValueChanged
+  commentId: E:PiTung.Config_menu.IValueMenuEntry`1.ValueChanged
+  fullName: PiTung.Config_menu.IValueMenuEntry<TValue>.ValueChanged
+  fullName.vb: PiTung.Config_menu.IValueMenuEntry(Of TValue).ValueChanged
   nameWithType: IValueMenuEntry<TValue>.ValueChanged
   nameWithType.vb: IValueMenuEntry(Of TValue).ValueChanged
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry
+- uid: PiTung.Config_menu.MenuEntry
   name: MenuEntry
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html
-  commentId: T:PiTung_Bootstrap.Config_menu.MenuEntry
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry
+  href: api/PiTung.Config_menu.MenuEntry.html
+  commentId: T:PiTung.Config_menu.MenuEntry
+  fullName: PiTung.Config_menu.MenuEntry
   nameWithType: MenuEntry
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.#ctor
+- uid: PiTung.Config_menu.MenuEntry.#ctor
   name: MenuEntry()
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry__ctor
-  commentId: M:PiTung_Bootstrap.Config_menu.MenuEntry.#ctor
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.MenuEntry()
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry__ctor
+  commentId: M:PiTung.Config_menu.MenuEntry.#ctor
+  fullName: PiTung.Config_menu.MenuEntry.MenuEntry()
   nameWithType: MenuEntry.MenuEntry()
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.#ctor*
+- uid: PiTung.Config_menu.MenuEntry.#ctor*
   name: MenuEntry
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry__ctor_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.MenuEntry.#ctor
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.MenuEntry
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry__ctor_
+  commentId: Overload:PiTung.Config_menu.MenuEntry.#ctor
+  fullName: PiTung.Config_menu.MenuEntry.MenuEntry
   nameWithType: MenuEntry.MenuEntry
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.AddChild(PiTung_Bootstrap.Config_menu.MenuEntry)
+- uid: PiTung.Config_menu.MenuEntry.AddChild(PiTung.Config_menu.MenuEntry)
   name: AddChild(MenuEntry)
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry_AddChild_PiTung_Bootstrap_Config_menu_MenuEntry_
-  commentId: M:PiTung_Bootstrap.Config_menu.MenuEntry.AddChild(PiTung_Bootstrap.Config_menu.MenuEntry)
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.AddChild(PiTung_Bootstrap.Config_menu.MenuEntry)
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_AddChild_PiTung_Config_menu_MenuEntry_
+  commentId: M:PiTung.Config_menu.MenuEntry.AddChild(PiTung.Config_menu.MenuEntry)
+  fullName: PiTung.Config_menu.MenuEntry.AddChild(PiTung.Config_menu.MenuEntry)
   nameWithType: MenuEntry.AddChild(MenuEntry)
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.AddChild*
+- uid: PiTung.Config_menu.MenuEntry.AddChild*
   name: AddChild
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry_AddChild_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.MenuEntry.AddChild
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.AddChild
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_AddChild_
+  commentId: Overload:PiTung.Config_menu.MenuEntry.AddChild
+  fullName: PiTung.Config_menu.MenuEntry.AddChild
   nameWithType: MenuEntry.AddChild
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.AddChild``1
+- uid: PiTung.Config_menu.MenuEntry.AddChild``1
   name: AddChild<T>()
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry_AddChild__1
-  commentId: M:PiTung_Bootstrap.Config_menu.MenuEntry.AddChild``1
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_AddChild__1
+  commentId: M:PiTung.Config_menu.MenuEntry.AddChild``1
   name.vb: AddChild(Of T)()
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.AddChild<T>()
-  fullName.vb: PiTung_Bootstrap.Config_menu.MenuEntry.AddChild(Of T)()
+  fullName: PiTung.Config_menu.MenuEntry.AddChild<T>()
+  fullName.vb: PiTung.Config_menu.MenuEntry.AddChild(Of T)()
   nameWithType: MenuEntry.AddChild<T>()
   nameWithType.vb: MenuEntry.AddChild(Of T)()
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.AddChildren(PiTung_Bootstrap.Config_menu.MenuEntry[])
+- uid: PiTung.Config_menu.MenuEntry.AddChildren(PiTung.Config_menu.MenuEntry[])
   name: AddChildren(MenuEntry[])
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry_AddChildren_PiTung_Bootstrap_Config_menu_MenuEntry___
-  commentId: M:PiTung_Bootstrap.Config_menu.MenuEntry.AddChildren(PiTung_Bootstrap.Config_menu.MenuEntry[])
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_AddChildren_PiTung_Config_menu_MenuEntry___
+  commentId: M:PiTung.Config_menu.MenuEntry.AddChildren(PiTung.Config_menu.MenuEntry[])
   name.vb: AddChildren(MenuEntry())
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.AddChildren(PiTung_Bootstrap.Config_menu.MenuEntry[])
-  fullName.vb: PiTung_Bootstrap.Config_menu.MenuEntry.AddChildren(PiTung_Bootstrap.Config_menu.MenuEntry())
+  fullName: PiTung.Config_menu.MenuEntry.AddChildren(PiTung.Config_menu.MenuEntry[])
+  fullName.vb: PiTung.Config_menu.MenuEntry.AddChildren(PiTung.Config_menu.MenuEntry())
   nameWithType: MenuEntry.AddChildren(MenuEntry[])
   nameWithType.vb: MenuEntry.AddChildren(MenuEntry())
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.AddChildren*
+- uid: PiTung.Config_menu.MenuEntry.AddChildren*
   name: AddChildren
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry_AddChildren_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.MenuEntry.AddChildren
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.AddChildren
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_AddChildren_
+  commentId: Overload:PiTung.Config_menu.MenuEntry.AddChildren
+  fullName: PiTung.Config_menu.MenuEntry.AddChildren
   nameWithType: MenuEntry.AddChildren
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.Children
+- uid: PiTung.Config_menu.MenuEntry.Children
   name: Children
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry_Children
-  commentId: P:PiTung_Bootstrap.Config_menu.MenuEntry.Children
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.Children
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_Children
+  commentId: P:PiTung.Config_menu.MenuEntry.Children
+  fullName: PiTung.Config_menu.MenuEntry.Children
   nameWithType: MenuEntry.Children
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.Children*
+- uid: PiTung.Config_menu.MenuEntry.Children*
   name: Children
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry_Children_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.MenuEntry.Children
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.Children
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_Children_
+  commentId: Overload:PiTung.Config_menu.MenuEntry.Children
+  fullName: PiTung.Config_menu.MenuEntry.Children
   nameWithType: MenuEntry.Children
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.Parent
+- uid: PiTung.Config_menu.MenuEntry.Parent
   name: Parent
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry_Parent
-  commentId: P:PiTung_Bootstrap.Config_menu.MenuEntry.Parent
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.Parent
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_Parent
+  commentId: P:PiTung.Config_menu.MenuEntry.Parent
+  fullName: PiTung.Config_menu.MenuEntry.Parent
   nameWithType: MenuEntry.Parent
-- uid: PiTung_Bootstrap.Config_menu.MenuEntry.Parent*
+- uid: PiTung.Config_menu.MenuEntry.Parent*
   name: Parent
-  href: api/PiTung_Bootstrap.Config_menu.MenuEntry.html#PiTung_Bootstrap_Config_menu_MenuEntry_Parent_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.MenuEntry.Parent
-  fullName: PiTung_Bootstrap.Config_menu.MenuEntry.Parent
+  href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_Parent_
+  commentId: Overload:PiTung.Config_menu.MenuEntry.Parent
+  fullName: PiTung.Config_menu.MenuEntry.Parent
   nameWithType: MenuEntry.Parent
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry
+- uid: PiTung.Config_menu.SimpleNumberEntry
   name: SimpleNumberEntry
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html
-  commentId: T:PiTung_Bootstrap.Config_menu.SimpleNumberEntry
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html
+  commentId: T:PiTung.Config_menu.SimpleNumberEntry
+  fullName: PiTung.Config_menu.SimpleNumberEntry
   nameWithType: SimpleNumberEntry
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.#ctor(System.Single,System.Single,System.Single,System.Single)
+- uid: PiTung.Config_menu.SimpleNumberEntry.#ctor(System.Single,System.Single,System.Single,System.Single)
   name: SimpleNumberEntry(Single, Single, Single, Single)
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry__ctor_System_Single_System_Single_System_Single_System_Single_
-  commentId: M:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.#ctor(System.Single,System.Single,System.Single,System.Single)
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SimpleNumberEntry(System.Single, System.Single, System.Single, System.Single)
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry__ctor_System_Single_System_Single_System_Single_System_Single_
+  commentId: M:PiTung.Config_menu.SimpleNumberEntry.#ctor(System.Single,System.Single,System.Single,System.Single)
+  fullName: PiTung.Config_menu.SimpleNumberEntry.SimpleNumberEntry(System.Single, System.Single, System.Single, System.Single)
   nameWithType: SimpleNumberEntry.SimpleNumberEntry(Single, Single, Single, Single)
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
+- uid: PiTung.Config_menu.SimpleNumberEntry.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
   name: SimpleNumberEntry(Single, Single, Single, Single, Single, Single)
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry__ctor_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_
-  commentId: M:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SimpleNumberEntry(System.Single, System.Single, System.Single, System.Single, System.Single, System.Single)
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry__ctor_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_
+  commentId: M:PiTung.Config_menu.SimpleNumberEntry.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
+  fullName: PiTung.Config_menu.SimpleNumberEntry.SimpleNumberEntry(System.Single, System.Single, System.Single, System.Single, System.Single, System.Single)
   nameWithType: SimpleNumberEntry.SimpleNumberEntry(Single, Single, Single, Single, Single, Single)
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.#ctor*
+- uid: PiTung.Config_menu.SimpleNumberEntry.#ctor*
   name: SimpleNumberEntry
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry__ctor_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.#ctor
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SimpleNumberEntry
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry__ctor_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.#ctor
+  fullName: PiTung.Config_menu.SimpleNumberEntry.SimpleNumberEntry
   nameWithType: SimpleNumberEntry.SimpleNumberEntry
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStep
+- uid: PiTung.Config_menu.SimpleNumberEntry.BigStep
   name: BigStep
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_BigStep
-  commentId: P:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStep
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStep
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_BigStep
+  commentId: P:PiTung.Config_menu.SimpleNumberEntry.BigStep
+  fullName: PiTung.Config_menu.SimpleNumberEntry.BigStep
   nameWithType: SimpleNumberEntry.BigStep
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStep*
+- uid: PiTung.Config_menu.SimpleNumberEntry.BigStep*
   name: BigStep
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_BigStep_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStep
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStep
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_BigStep_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.BigStep
+  fullName: PiTung.Config_menu.SimpleNumberEntry.BigStep
   nameWithType: SimpleNumberEntry.BigStep
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStepKey
+- uid: PiTung.Config_menu.SimpleNumberEntry.BigStepKey
   name: BigStepKey
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_BigStepKey
-  commentId: P:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStepKey
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStepKey
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_BigStepKey
+  commentId: P:PiTung.Config_menu.SimpleNumberEntry.BigStepKey
+  fullName: PiTung.Config_menu.SimpleNumberEntry.BigStepKey
   nameWithType: SimpleNumberEntry.BigStepKey
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStepKey*
+- uid: PiTung.Config_menu.SimpleNumberEntry.BigStepKey*
   name: BigStepKey
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_BigStepKey_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStepKey
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.BigStepKey
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_BigStepKey_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.BigStepKey
+  fullName: PiTung.Config_menu.SimpleNumberEntry.BigStepKey
   nameWithType: SimpleNumberEntry.BigStepKey
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Decrement
+- uid: PiTung.Config_menu.SimpleNumberEntry.Decrement
   name: Decrement()
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Decrement
-  commentId: M:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Decrement
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Decrement()
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Decrement
+  commentId: M:PiTung.Config_menu.SimpleNumberEntry.Decrement
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Decrement()
   nameWithType: SimpleNumberEntry.Decrement()
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Decrement*
+- uid: PiTung.Config_menu.SimpleNumberEntry.Decrement*
   name: Decrement
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Decrement_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Decrement
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Decrement
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Decrement_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Decrement
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Decrement
   nameWithType: SimpleNumberEntry.Decrement
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Increment
+- uid: PiTung.Config_menu.SimpleNumberEntry.Increment
   name: Increment()
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Increment
-  commentId: M:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Increment
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Increment()
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Increment
+  commentId: M:PiTung.Config_menu.SimpleNumberEntry.Increment
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Increment()
   nameWithType: SimpleNumberEntry.Increment()
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Increment*
+- uid: PiTung.Config_menu.SimpleNumberEntry.Increment*
   name: Increment
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Increment_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Increment
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Increment
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Increment_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Increment
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Increment
   nameWithType: SimpleNumberEntry.Increment
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Maximum
+- uid: PiTung.Config_menu.SimpleNumberEntry.Maximum
   name: Maximum
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Maximum
-  commentId: P:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Maximum
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Maximum
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Maximum
+  commentId: P:PiTung.Config_menu.SimpleNumberEntry.Maximum
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Maximum
   nameWithType: SimpleNumberEntry.Maximum
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Maximum*
+- uid: PiTung.Config_menu.SimpleNumberEntry.Maximum*
   name: Maximum
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Maximum_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Maximum
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Maximum
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Maximum_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Maximum
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Maximum
   nameWithType: SimpleNumberEntry.Maximum
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Minimum
+- uid: PiTung.Config_menu.SimpleNumberEntry.Minimum
   name: Minimum
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Minimum
-  commentId: P:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Minimum
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Minimum
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Minimum
+  commentId: P:PiTung.Config_menu.SimpleNumberEntry.Minimum
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Minimum
   nameWithType: SimpleNumberEntry.Minimum
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Minimum*
+- uid: PiTung.Config_menu.SimpleNumberEntry.Minimum*
   name: Minimum
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Minimum_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Minimum
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Minimum
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Minimum_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Minimum
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Minimum
   nameWithType: SimpleNumberEntry.Minimum
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStep
+- uid: PiTung.Config_menu.SimpleNumberEntry.SmallStep
   name: SmallStep
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_SmallStep
-  commentId: P:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStep
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStep
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_SmallStep
+  commentId: P:PiTung.Config_menu.SimpleNumberEntry.SmallStep
+  fullName: PiTung.Config_menu.SimpleNumberEntry.SmallStep
   nameWithType: SimpleNumberEntry.SmallStep
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStep*
+- uid: PiTung.Config_menu.SimpleNumberEntry.SmallStep*
   name: SmallStep
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_SmallStep_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStep
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStep
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_SmallStep_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.SmallStep
+  fullName: PiTung.Config_menu.SimpleNumberEntry.SmallStep
   nameWithType: SimpleNumberEntry.SmallStep
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStepKey
+- uid: PiTung.Config_menu.SimpleNumberEntry.SmallStepKey
   name: SmallStepKey
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_SmallStepKey
-  commentId: P:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStepKey
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStepKey
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_SmallStepKey
+  commentId: P:PiTung.Config_menu.SimpleNumberEntry.SmallStepKey
+  fullName: PiTung.Config_menu.SimpleNumberEntry.SmallStepKey
   nameWithType: SimpleNumberEntry.SmallStepKey
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStepKey*
+- uid: PiTung.Config_menu.SimpleNumberEntry.SmallStepKey*
   name: SmallStepKey
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_SmallStepKey_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStepKey
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.SmallStepKey
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_SmallStepKey_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.SmallStepKey
+  fullName: PiTung.Config_menu.SimpleNumberEntry.SmallStepKey
   nameWithType: SimpleNumberEntry.SmallStepKey
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Step
+- uid: PiTung.Config_menu.SimpleNumberEntry.Step
   name: Step
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Step
-  commentId: P:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Step
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Step
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Step
+  commentId: P:PiTung.Config_menu.SimpleNumberEntry.Step
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Step
   nameWithType: SimpleNumberEntry.Step
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Step*
+- uid: PiTung.Config_menu.SimpleNumberEntry.Step*
   name: Step
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Step_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Step
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Step
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Step_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Step
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Step
   nameWithType: SimpleNumberEntry.Step
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Value
+- uid: PiTung.Config_menu.SimpleNumberEntry.Value
   name: Value
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Value
-  commentId: P:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Value
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Value
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Value
+  commentId: P:PiTung.Config_menu.SimpleNumberEntry.Value
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Value
   nameWithType: SimpleNumberEntry.Value
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Value*
+- uid: PiTung.Config_menu.SimpleNumberEntry.Value*
   name: Value
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_Value_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Value
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.Value
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Value_
+  commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Value
+  fullName: PiTung.Config_menu.SimpleNumberEntry.Value
   nameWithType: SimpleNumberEntry.Value
-- uid: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.ValueChanged
+- uid: PiTung.Config_menu.SimpleNumberEntry.ValueChanged
   name: ValueChanged
-  href: api/PiTung_Bootstrap.Config_menu.SimpleNumberEntry.html#PiTung_Bootstrap_Config_menu_SimpleNumberEntry_ValueChanged
-  commentId: E:PiTung_Bootstrap.Config_menu.SimpleNumberEntry.ValueChanged
-  fullName: PiTung_Bootstrap.Config_menu.SimpleNumberEntry.ValueChanged
+  href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_ValueChanged
+  commentId: E:PiTung.Config_menu.SimpleNumberEntry.ValueChanged
+  fullName: PiTung.Config_menu.SimpleNumberEntry.ValueChanged
   nameWithType: SimpleNumberEntry.ValueChanged
-- uid: PiTung_Bootstrap.Config_menu.TextMenuEntry
+- uid: PiTung.Config_menu.TextMenuEntry
   name: TextMenuEntry
-  href: api/PiTung_Bootstrap.Config_menu.TextMenuEntry.html
-  commentId: T:PiTung_Bootstrap.Config_menu.TextMenuEntry
-  fullName: PiTung_Bootstrap.Config_menu.TextMenuEntry
+  href: api/PiTung.Config_menu.TextMenuEntry.html
+  commentId: T:PiTung.Config_menu.TextMenuEntry
+  fullName: PiTung.Config_menu.TextMenuEntry
   nameWithType: TextMenuEntry
-- uid: PiTung_Bootstrap.Config_menu.TextMenuEntry.Text
+- uid: PiTung.Config_menu.TextMenuEntry.Text
   name: Text
-  href: api/PiTung_Bootstrap.Config_menu.TextMenuEntry.html#PiTung_Bootstrap_Config_menu_TextMenuEntry_Text
-  commentId: P:PiTung_Bootstrap.Config_menu.TextMenuEntry.Text
-  fullName: PiTung_Bootstrap.Config_menu.TextMenuEntry.Text
+  href: api/PiTung.Config_menu.TextMenuEntry.html#PiTung_Config_menu_TextMenuEntry_Text
+  commentId: P:PiTung.Config_menu.TextMenuEntry.Text
+  fullName: PiTung.Config_menu.TextMenuEntry.Text
   nameWithType: TextMenuEntry.Text
-- uid: PiTung_Bootstrap.Config_menu.TextMenuEntry.Text*
+- uid: PiTung.Config_menu.TextMenuEntry.Text*
   name: Text
-  href: api/PiTung_Bootstrap.Config_menu.TextMenuEntry.html#PiTung_Bootstrap_Config_menu_TextMenuEntry_Text_
-  commentId: Overload:PiTung_Bootstrap.Config_menu.TextMenuEntry.Text
-  fullName: PiTung_Bootstrap.Config_menu.TextMenuEntry.Text
+  href: api/PiTung.Config_menu.TextMenuEntry.html#PiTung_Config_menu_TextMenuEntry_Text_
+  commentId: Overload:PiTung.Config_menu.TextMenuEntry.Text
+  fullName: PiTung.Config_menu.TextMenuEntry.Text
   nameWithType: TextMenuEntry.Text
-- uid: PiTung_Bootstrap.Config_menu.ValueChangedDelegate`1
+- uid: PiTung.Config_menu.ValueChangedDelegate`1
   name: ValueChangedDelegate<T>
-  href: api/PiTung_Bootstrap.Config_menu.ValueChangedDelegate-1.html
-  commentId: T:PiTung_Bootstrap.Config_menu.ValueChangedDelegate`1
+  href: api/PiTung.Config_menu.ValueChangedDelegate-1.html
+  commentId: T:PiTung.Config_menu.ValueChangedDelegate`1
   name.vb: ValueChangedDelegate(Of T)
-  fullName: PiTung_Bootstrap.Config_menu.ValueChangedDelegate<T>
-  fullName.vb: PiTung_Bootstrap.Config_menu.ValueChangedDelegate(Of T)
+  fullName: PiTung.Config_menu.ValueChangedDelegate<T>
+  fullName.vb: PiTung.Config_menu.ValueChangedDelegate(Of T)
   nameWithType: ValueChangedDelegate<T>
   nameWithType.vb: ValueChangedDelegate(Of T)
-- uid: PiTung_Bootstrap.Console
-  name: PiTung_Bootstrap.Console
-  href: api/PiTung_Bootstrap.Console.html
-  commentId: N:PiTung_Bootstrap.Console
-  fullName: PiTung_Bootstrap.Console
-  nameWithType: PiTung_Bootstrap.Console
-- uid: PiTung_Bootstrap.Console.Command
+- uid: PiTung.Console
+  name: PiTung.Console
+  href: api/PiTung.Console.html
+  commentId: N:PiTung.Console
+  fullName: PiTung.Console
+  nameWithType: PiTung.Console
+- uid: PiTung.Console.Command
   name: Command
-  href: api/PiTung_Bootstrap.Console.Command.html
-  commentId: T:PiTung_Bootstrap.Console.Command
-  fullName: PiTung_Bootstrap.Console.Command
+  href: api/PiTung.Console.Command.html
+  commentId: T:PiTung.Console.Command
+  fullName: PiTung.Console.Command
   nameWithType: Command
-- uid: PiTung_Bootstrap.Console.Command.Description
+- uid: PiTung.Console.Command.Description
   name: Description
-  href: api/PiTung_Bootstrap.Console.Command.html#PiTung_Bootstrap_Console_Command_Description
-  commentId: P:PiTung_Bootstrap.Console.Command.Description
-  fullName: PiTung_Bootstrap.Console.Command.Description
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_Description
+  commentId: P:PiTung.Console.Command.Description
+  fullName: PiTung.Console.Command.Description
   nameWithType: Command.Description
-- uid: PiTung_Bootstrap.Console.Command.Description*
+- uid: PiTung.Console.Command.Description*
   name: Description
-  href: api/PiTung_Bootstrap.Console.Command.html#PiTung_Bootstrap_Console_Command_Description_
-  commentId: Overload:PiTung_Bootstrap.Console.Command.Description
-  fullName: PiTung_Bootstrap.Console.Command.Description
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_Description_
+  commentId: Overload:PiTung.Console.Command.Description
+  fullName: PiTung.Console.Command.Description
   nameWithType: Command.Description
-- uid: PiTung_Bootstrap.Console.Command.Execute(System.Collections.Generic.IEnumerable{System.String})
+- uid: PiTung.Console.Command.Execute(System.Collections.Generic.IEnumerable{System.String})
   name: Execute(IEnumerable<String>)
-  href: api/PiTung_Bootstrap.Console.Command.html#PiTung_Bootstrap_Console_Command_Execute_System_Collections_Generic_IEnumerable_System_String__
-  commentId: M:PiTung_Bootstrap.Console.Command.Execute(System.Collections.Generic.IEnumerable{System.String})
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_Execute_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:PiTung.Console.Command.Execute(System.Collections.Generic.IEnumerable{System.String})
   name.vb: Execute(IEnumerable(Of String))
-  fullName: PiTung_Bootstrap.Console.Command.Execute(System.Collections.Generic.IEnumerable<System.String>)
-  fullName.vb: PiTung_Bootstrap.Console.Command.Execute(System.Collections.Generic.IEnumerable(Of System.String))
+  fullName: PiTung.Console.Command.Execute(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: PiTung.Console.Command.Execute(System.Collections.Generic.IEnumerable(Of System.String))
   nameWithType: Command.Execute(IEnumerable<String>)
   nameWithType.vb: Command.Execute(IEnumerable(Of String))
-- uid: PiTung_Bootstrap.Console.Command.Execute*
+- uid: PiTung.Console.Command.Execute*
   name: Execute
-  href: api/PiTung_Bootstrap.Console.Command.html#PiTung_Bootstrap_Console_Command_Execute_
-  commentId: Overload:PiTung_Bootstrap.Console.Command.Execute
-  fullName: PiTung_Bootstrap.Console.Command.Execute
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_Execute_
+  commentId: Overload:PiTung.Console.Command.Execute
+  fullName: PiTung.Console.Command.Execute
   nameWithType: Command.Execute
-- uid: PiTung_Bootstrap.Console.Command.Name
+- uid: PiTung.Console.Command.Name
   name: Name
-  href: api/PiTung_Bootstrap.Console.Command.html#PiTung_Bootstrap_Console_Command_Name
-  commentId: P:PiTung_Bootstrap.Console.Command.Name
-  fullName: PiTung_Bootstrap.Console.Command.Name
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_Name
+  commentId: P:PiTung.Console.Command.Name
+  fullName: PiTung.Console.Command.Name
   nameWithType: Command.Name
-- uid: PiTung_Bootstrap.Console.Command.Name*
+- uid: PiTung.Console.Command.Name*
   name: Name
-  href: api/PiTung_Bootstrap.Console.Command.html#PiTung_Bootstrap_Console_Command_Name_
-  commentId: Overload:PiTung_Bootstrap.Console.Command.Name
-  fullName: PiTung_Bootstrap.Console.Command.Name
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_Name_
+  commentId: Overload:PiTung.Console.Command.Name
+  fullName: PiTung.Console.Command.Name
   nameWithType: Command.Name
-- uid: PiTung_Bootstrap.Console.Command.Usage
+- uid: PiTung.Console.Command.Usage
   name: Usage
-  href: api/PiTung_Bootstrap.Console.Command.html#PiTung_Bootstrap_Console_Command_Usage
-  commentId: P:PiTung_Bootstrap.Console.Command.Usage
-  fullName: PiTung_Bootstrap.Console.Command.Usage
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_Usage
+  commentId: P:PiTung.Console.Command.Usage
+  fullName: PiTung.Console.Command.Usage
   nameWithType: Command.Usage
-- uid: PiTung_Bootstrap.Console.Command.Usage*
+- uid: PiTung.Console.Command.Usage*
   name: Usage
-  href: api/PiTung_Bootstrap.Console.Command.html#PiTung_Bootstrap_Console_Command_Usage_
-  commentId: Overload:PiTung_Bootstrap.Console.Command.Usage
-  fullName: PiTung_Bootstrap.Console.Command.Usage
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_Usage_
+  commentId: Overload:PiTung.Console.Command.Usage
+  fullName: PiTung.Console.Command.Usage
   nameWithType: Command.Usage
-- uid: PiTung_Bootstrap.Console.IGConsole
+- uid: PiTung.Console.IGConsole
   name: IGConsole
-  href: api/PiTung_Bootstrap.Console.IGConsole.html
-  commentId: T:PiTung_Bootstrap.Console.IGConsole
-  fullName: PiTung_Bootstrap.Console.IGConsole
+  href: api/PiTung.Console.IGConsole.html
+  commentId: T:PiTung.Console.IGConsole
+  fullName: PiTung.Console.IGConsole
   nameWithType: IGConsole
-- uid: PiTung_Bootstrap.Console.IGConsole.Error(System.Object)
+- uid: PiTung.Console.IGConsole.Error(System.Object)
   name: Error(Object)
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_Error_System_Object_
-  commentId: M:PiTung_Bootstrap.Console.IGConsole.Error(System.Object)
-  fullName: PiTung_Bootstrap.Console.IGConsole.Error(System.Object)
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_Error_System_Object_
+  commentId: M:PiTung.Console.IGConsole.Error(System.Object)
+  fullName: PiTung.Console.IGConsole.Error(System.Object)
   nameWithType: IGConsole.Error(Object)
-- uid: PiTung_Bootstrap.Console.IGConsole.Error*
+- uid: PiTung.Console.IGConsole.Error*
   name: Error
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_Error_
-  commentId: Overload:PiTung_Bootstrap.Console.IGConsole.Error
-  fullName: PiTung_Bootstrap.Console.IGConsole.Error
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_Error_
+  commentId: Overload:PiTung.Console.IGConsole.Error
+  fullName: PiTung.Console.IGConsole.Error
   nameWithType: IGConsole.Error
-- uid: PiTung_Bootstrap.Console.IGConsole.GetVariable(System.String)
+- uid: PiTung.Console.IGConsole.GetVariable(System.String)
   name: GetVariable(String)
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_GetVariable_System_String_
-  commentId: M:PiTung_Bootstrap.Console.IGConsole.GetVariable(System.String)
-  fullName: PiTung_Bootstrap.Console.IGConsole.GetVariable(System.String)
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetVariable_System_String_
+  commentId: M:PiTung.Console.IGConsole.GetVariable(System.String)
+  fullName: PiTung.Console.IGConsole.GetVariable(System.String)
   nameWithType: IGConsole.GetVariable(String)
-- uid: PiTung_Bootstrap.Console.IGConsole.GetVariable*
+- uid: PiTung.Console.IGConsole.GetVariable*
   name: GetVariable
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_GetVariable_
-  commentId: Overload:PiTung_Bootstrap.Console.IGConsole.GetVariable
-  fullName: PiTung_Bootstrap.Console.IGConsole.GetVariable
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetVariable_
+  commentId: Overload:PiTung.Console.IGConsole.GetVariable
+  fullName: PiTung.Console.IGConsole.GetVariable
   nameWithType: IGConsole.GetVariable
-- uid: PiTung_Bootstrap.Console.IGConsole.Log(PiTung_Bootstrap.Console.LogType,System.Object)
+- uid: PiTung.Console.IGConsole.Log(PiTung.Console.LogType,System.Object)
   name: Log(LogType, Object)
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_Log_PiTung_Bootstrap_Console_LogType_System_Object_
-  commentId: M:PiTung_Bootstrap.Console.IGConsole.Log(PiTung_Bootstrap.Console.LogType,System.Object)
-  fullName: PiTung_Bootstrap.Console.IGConsole.Log(PiTung_Bootstrap.Console.LogType, System.Object)
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_Log_PiTung_Console_LogType_System_Object_
+  commentId: M:PiTung.Console.IGConsole.Log(PiTung.Console.LogType,System.Object)
+  fullName: PiTung.Console.IGConsole.Log(PiTung.Console.LogType, System.Object)
   nameWithType: IGConsole.Log(LogType, Object)
-- uid: PiTung_Bootstrap.Console.IGConsole.Log(System.Object)
+- uid: PiTung.Console.IGConsole.Log(System.Object)
   name: Log(Object)
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_Log_System_Object_
-  commentId: M:PiTung_Bootstrap.Console.IGConsole.Log(System.Object)
-  fullName: PiTung_Bootstrap.Console.IGConsole.Log(System.Object)
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_Log_System_Object_
+  commentId: M:PiTung.Console.IGConsole.Log(System.Object)
+  fullName: PiTung.Console.IGConsole.Log(System.Object)
   nameWithType: IGConsole.Log(Object)
-- uid: PiTung_Bootstrap.Console.IGConsole.Log*
+- uid: PiTung.Console.IGConsole.Log*
   name: Log
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_Log_
-  commentId: Overload:PiTung_Bootstrap.Console.IGConsole.Log
-  fullName: PiTung_Bootstrap.Console.IGConsole.Log
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_Log_
+  commentId: Overload:PiTung.Console.IGConsole.Log
+  fullName: PiTung.Console.IGConsole.Log
   nameWithType: IGConsole.Log
-- uid: PiTung_Bootstrap.Console.IGConsole.RegisterCommand(PiTung_Bootstrap.Console.Command,PiTung_Bootstrap.Mod)
+- uid: PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command,PiTung.Mod)
   name: RegisterCommand(Command, Mod)
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_RegisterCommand_PiTung_Bootstrap_Console_Command_PiTung_Bootstrap_Mod_
-  commentId: M:PiTung_Bootstrap.Console.IGConsole.RegisterCommand(PiTung_Bootstrap.Console.Command,PiTung_Bootstrap.Mod)
-  fullName: PiTung_Bootstrap.Console.IGConsole.RegisterCommand(PiTung_Bootstrap.Console.Command, PiTung_Bootstrap.Mod)
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand_PiTung_Console_Command_PiTung_Mod_
+  commentId: M:PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command,PiTung.Mod)
+  fullName: PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command, PiTung.Mod)
   nameWithType: IGConsole.RegisterCommand(Command, Mod)
-- uid: PiTung_Bootstrap.Console.IGConsole.RegisterCommand*
+- uid: PiTung.Console.IGConsole.RegisterCommand*
   name: RegisterCommand
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_RegisterCommand_
-  commentId: Overload:PiTung_Bootstrap.Console.IGConsole.RegisterCommand
-  fullName: PiTung_Bootstrap.Console.IGConsole.RegisterCommand
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand_
+  commentId: Overload:PiTung.Console.IGConsole.RegisterCommand
+  fullName: PiTung.Console.IGConsole.RegisterCommand
   nameWithType: IGConsole.RegisterCommand
-- uid: PiTung_Bootstrap.Console.IGConsole.RegisterCommand``1(PiTung_Bootstrap.Mod)
+- uid: PiTung.Console.IGConsole.RegisterCommand``1(PiTung.Mod)
   name: RegisterCommand<T>(Mod)
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_RegisterCommand__1_PiTung_Bootstrap_Mod_
-  commentId: M:PiTung_Bootstrap.Console.IGConsole.RegisterCommand``1(PiTung_Bootstrap.Mod)
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand__1_PiTung_Mod_
+  commentId: M:PiTung.Console.IGConsole.RegisterCommand``1(PiTung.Mod)
   name.vb: RegisterCommand(Of T)(Mod)
-  fullName: PiTung_Bootstrap.Console.IGConsole.RegisterCommand<T>(PiTung_Bootstrap.Mod)
-  fullName.vb: PiTung_Bootstrap.Console.IGConsole.RegisterCommand(Of T)(PiTung_Bootstrap.Mod)
+  fullName: PiTung.Console.IGConsole.RegisterCommand<T>(PiTung.Mod)
+  fullName.vb: PiTung.Console.IGConsole.RegisterCommand(Of T)(PiTung.Mod)
   nameWithType: IGConsole.RegisterCommand<T>(Mod)
   nameWithType.vb: IGConsole.RegisterCommand(Of T)(Mod)
-- uid: PiTung_Bootstrap.Console.IGConsole.SetVariable(System.String,System.String)
+- uid: PiTung.Console.IGConsole.SetVariable(System.String,System.String)
   name: SetVariable(String, String)
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_SetVariable_System_String_System_String_
-  commentId: M:PiTung_Bootstrap.Console.IGConsole.SetVariable(System.String,System.String)
-  fullName: PiTung_Bootstrap.Console.IGConsole.SetVariable(System.String, System.String)
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_SetVariable_System_String_System_String_
+  commentId: M:PiTung.Console.IGConsole.SetVariable(System.String,System.String)
+  fullName: PiTung.Console.IGConsole.SetVariable(System.String, System.String)
   nameWithType: IGConsole.SetVariable(String, String)
-- uid: PiTung_Bootstrap.Console.IGConsole.SetVariable*
+- uid: PiTung.Console.IGConsole.SetVariable*
   name: SetVariable
-  href: api/PiTung_Bootstrap.Console.IGConsole.html#PiTung_Bootstrap_Console_IGConsole_SetVariable_
-  commentId: Overload:PiTung_Bootstrap.Console.IGConsole.SetVariable
-  fullName: PiTung_Bootstrap.Console.IGConsole.SetVariable
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_SetVariable_
+  commentId: Overload:PiTung.Console.IGConsole.SetVariable
+  fullName: PiTung.Console.IGConsole.SetVariable
   nameWithType: IGConsole.SetVariable
-- uid: PiTung_Bootstrap.Console.LogType
+- uid: PiTung.Console.LogType
   name: LogType
-  href: api/PiTung_Bootstrap.Console.LogType.html
-  commentId: T:PiTung_Bootstrap.Console.LogType
-  fullName: PiTung_Bootstrap.Console.LogType
+  href: api/PiTung.Console.LogType.html
+  commentId: T:PiTung.Console.LogType
+  fullName: PiTung.Console.LogType
   nameWithType: LogType
-- uid: PiTung_Bootstrap.Console.LogType.ERROR
+- uid: PiTung.Console.LogType.ERROR
   name: ERROR
-  href: api/PiTung_Bootstrap.Console.LogType.html#PiTung_Bootstrap_Console_LogType_ERROR
-  commentId: F:PiTung_Bootstrap.Console.LogType.ERROR
-  fullName: PiTung_Bootstrap.Console.LogType.ERROR
+  href: api/PiTung.Console.LogType.html#PiTung_Console_LogType_ERROR
+  commentId: F:PiTung.Console.LogType.ERROR
+  fullName: PiTung.Console.LogType.ERROR
   nameWithType: LogType.ERROR
-- uid: PiTung_Bootstrap.Console.LogType.INFO
+- uid: PiTung.Console.LogType.INFO
   name: INFO
-  href: api/PiTung_Bootstrap.Console.LogType.html#PiTung_Bootstrap_Console_LogType_INFO
-  commentId: F:PiTung_Bootstrap.Console.LogType.INFO
-  fullName: PiTung_Bootstrap.Console.LogType.INFO
+  href: api/PiTung.Console.LogType.html#PiTung_Console_LogType_INFO
+  commentId: F:PiTung.Console.LogType.INFO
+  fullName: PiTung.Console.LogType.INFO
   nameWithType: LogType.INFO
-- uid: PiTung_Bootstrap.Console.LogType.USERINPUT
+- uid: PiTung.Console.LogType.USERINPUT
   name: USERINPUT
-  href: api/PiTung_Bootstrap.Console.LogType.html#PiTung_Bootstrap_Console_LogType_USERINPUT
-  commentId: F:PiTung_Bootstrap.Console.LogType.USERINPUT
-  fullName: PiTung_Bootstrap.Console.LogType.USERINPUT
+  href: api/PiTung.Console.LogType.html#PiTung_Console_LogType_USERINPUT
+  commentId: F:PiTung.Console.LogType.USERINPUT
+  fullName: PiTung.Console.LogType.USERINPUT
   nameWithType: LogType.USERINPUT
-- uid: PiTung_Bootstrap.GraphicUtilities
+- uid: PiTung.GraphicUtilities
   name: GraphicUtilities
-  href: api/PiTung_Bootstrap.GraphicUtilities.html
-  commentId: T:PiTung_Bootstrap.GraphicUtilities
-  fullName: PiTung_Bootstrap.GraphicUtilities
+  href: api/PiTung.GraphicUtilities.html
+  commentId: T:PiTung.GraphicUtilities
+  fullName: PiTung.GraphicUtilities
   nameWithType: GraphicUtilities
-- uid: PiTung_Bootstrap.GraphicUtilities.CreateSphere(UnityEngine.Vector3,System.Single,System.Nullable{UnityEngine.Color})
+- uid: PiTung.GraphicUtilities.CreateSphere(UnityEngine.Vector3,System.Single,System.Nullable{UnityEngine.Color})
   name: CreateSphere(Vector3, Single, Nullable<Color>)
-  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_CreateSphere_UnityEngine_Vector3_System_Single_System_Nullable_UnityEngine_Color__
-  commentId: M:PiTung_Bootstrap.GraphicUtilities.CreateSphere(UnityEngine.Vector3,System.Single,System.Nullable{UnityEngine.Color})
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_CreateSphere_UnityEngine_Vector3_System_Single_System_Nullable_UnityEngine_Color__
+  commentId: M:PiTung.GraphicUtilities.CreateSphere(UnityEngine.Vector3,System.Single,System.Nullable{UnityEngine.Color})
   name.vb: CreateSphere(Vector3, Single, Nullable(Of Color))
-  fullName: PiTung_Bootstrap.GraphicUtilities.CreateSphere(UnityEngine.Vector3, System.Single, System.Nullable<UnityEngine.Color>)
-  fullName.vb: PiTung_Bootstrap.GraphicUtilities.CreateSphere(UnityEngine.Vector3, System.Single, System.Nullable(Of UnityEngine.Color))
+  fullName: PiTung.GraphicUtilities.CreateSphere(UnityEngine.Vector3, System.Single, System.Nullable<UnityEngine.Color>)
+  fullName.vb: PiTung.GraphicUtilities.CreateSphere(UnityEngine.Vector3, System.Single, System.Nullable(Of UnityEngine.Color))
   nameWithType: GraphicUtilities.CreateSphere(Vector3, Single, Nullable<Color>)
   nameWithType.vb: GraphicUtilities.CreateSphere(Vector3, Single, Nullable(Of Color))
-- uid: PiTung_Bootstrap.GraphicUtilities.CreateSphere*
+- uid: PiTung.GraphicUtilities.CreateSphere*
   name: CreateSphere
-  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_CreateSphere_
-  commentId: Overload:PiTung_Bootstrap.GraphicUtilities.CreateSphere
-  fullName: PiTung_Bootstrap.GraphicUtilities.CreateSphere
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_CreateSphere_
+  commentId: Overload:PiTung.GraphicUtilities.CreateSphere
+  fullName: PiTung.GraphicUtilities.CreateSphere
   nameWithType: GraphicUtilities.CreateSphere
-- uid: PiTung_Bootstrap.GraphicUtilities.DestroySphere(System.Int32)
+- uid: PiTung.GraphicUtilities.DestroySphere(System.Int32)
   name: DestroySphere(Int32)
-  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_DestroySphere_System_Int32_
-  commentId: M:PiTung_Bootstrap.GraphicUtilities.DestroySphere(System.Int32)
-  fullName: PiTung_Bootstrap.GraphicUtilities.DestroySphere(System.Int32)
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_DestroySphere_System_Int32_
+  commentId: M:PiTung.GraphicUtilities.DestroySphere(System.Int32)
+  fullName: PiTung.GraphicUtilities.DestroySphere(System.Int32)
   nameWithType: GraphicUtilities.DestroySphere(Int32)
-- uid: PiTung_Bootstrap.GraphicUtilities.DestroySphere*
+- uid: PiTung.GraphicUtilities.DestroySphere*
   name: DestroySphere
-  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_DestroySphere_
-  commentId: Overload:PiTung_Bootstrap.GraphicUtilities.DestroySphere
-  fullName: PiTung_Bootstrap.GraphicUtilities.DestroySphere
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_DestroySphere_
+  commentId: Overload:PiTung.GraphicUtilities.DestroySphere
+  fullName: PiTung.GraphicUtilities.DestroySphere
   nameWithType: GraphicUtilities.DestroySphere
-- uid: PiTung_Bootstrap.GraphicUtilities.DrawRect(UnityEngine.Rect,UnityEngine.Color)
+- uid: PiTung.GraphicUtilities.DrawRect(UnityEngine.Rect,UnityEngine.Color)
   name: DrawRect(Rect, Color)
-  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_DrawRect_UnityEngine_Rect_UnityEngine_Color_
-  commentId: M:PiTung_Bootstrap.GraphicUtilities.DrawRect(UnityEngine.Rect,UnityEngine.Color)
-  fullName: PiTung_Bootstrap.GraphicUtilities.DrawRect(UnityEngine.Rect, UnityEngine.Color)
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_DrawRect_UnityEngine_Rect_UnityEngine_Color_
+  commentId: M:PiTung.GraphicUtilities.DrawRect(UnityEngine.Rect,UnityEngine.Color)
+  fullName: PiTung.GraphicUtilities.DrawRect(UnityEngine.Rect, UnityEngine.Color)
   nameWithType: GraphicUtilities.DrawRect(Rect, Color)
-- uid: PiTung_Bootstrap.GraphicUtilities.DrawRect*
+- uid: PiTung.GraphicUtilities.DrawRect*
   name: DrawRect
-  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_DrawRect_
-  commentId: Overload:PiTung_Bootstrap.GraphicUtilities.DrawRect
-  fullName: PiTung_Bootstrap.GraphicUtilities.DrawRect
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_DrawRect_
+  commentId: Overload:PiTung.GraphicUtilities.DrawRect
+  fullName: PiTung.GraphicUtilities.DrawRect
   nameWithType: GraphicUtilities.DrawRect
-- uid: PiTung_Bootstrap.GraphicUtilities.DrawText(System.String,UnityEngine.Vector2,UnityEngine.Color,System.Boolean,System.Int32)
+- uid: PiTung.GraphicUtilities.DrawText(System.String,UnityEngine.Vector2,UnityEngine.Color,System.Boolean,System.Int32)
   name: DrawText(String, Vector2, Color, Boolean, Int32)
-  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_DrawText_System_String_UnityEngine_Vector2_UnityEngine_Color_System_Boolean_System_Int32_
-  commentId: M:PiTung_Bootstrap.GraphicUtilities.DrawText(System.String,UnityEngine.Vector2,UnityEngine.Color,System.Boolean,System.Int32)
-  fullName: PiTung_Bootstrap.GraphicUtilities.DrawText(System.String, UnityEngine.Vector2, UnityEngine.Color, System.Boolean, System.Int32)
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_DrawText_System_String_UnityEngine_Vector2_UnityEngine_Color_System_Boolean_System_Int32_
+  commentId: M:PiTung.GraphicUtilities.DrawText(System.String,UnityEngine.Vector2,UnityEngine.Color,System.Boolean,System.Int32)
+  fullName: PiTung.GraphicUtilities.DrawText(System.String, UnityEngine.Vector2, UnityEngine.Color, System.Boolean, System.Int32)
   nameWithType: GraphicUtilities.DrawText(String, Vector2, Color, Boolean, Int32)
-- uid: PiTung_Bootstrap.GraphicUtilities.DrawText*
+- uid: PiTung.GraphicUtilities.DrawText*
   name: DrawText
-  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_DrawText_
-  commentId: Overload:PiTung_Bootstrap.GraphicUtilities.DrawText
-  fullName: PiTung_Bootstrap.GraphicUtilities.DrawText
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_DrawText_
+  commentId: Overload:PiTung.GraphicUtilities.DrawText
+  fullName: PiTung.GraphicUtilities.DrawText
   nameWithType: GraphicUtilities.DrawText
-- uid: PiTung_Bootstrap.GraphicUtilities.ImportMeshFromFile(System.String)
+- uid: PiTung.GraphicUtilities.ImportMeshFromFile(System.String)
   name: ImportMeshFromFile(String)
-  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_ImportMeshFromFile_System_String_
-  commentId: M:PiTung_Bootstrap.GraphicUtilities.ImportMeshFromFile(System.String)
-  fullName: PiTung_Bootstrap.GraphicUtilities.ImportMeshFromFile(System.String)
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_ImportMeshFromFile_System_String_
+  commentId: M:PiTung.GraphicUtilities.ImportMeshFromFile(System.String)
+  fullName: PiTung.GraphicUtilities.ImportMeshFromFile(System.String)
   nameWithType: GraphicUtilities.ImportMeshFromFile(String)
-- uid: PiTung_Bootstrap.GraphicUtilities.ImportMeshFromFile*
+- uid: PiTung.GraphicUtilities.ImportMeshFromFile*
   name: ImportMeshFromFile
-  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_ImportMeshFromFile_
-  commentId: Overload:PiTung_Bootstrap.GraphicUtilities.ImportMeshFromFile
-  fullName: PiTung_Bootstrap.GraphicUtilities.ImportMeshFromFile
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_ImportMeshFromFile_
+  commentId: Overload:PiTung.GraphicUtilities.ImportMeshFromFile
+  fullName: PiTung.GraphicUtilities.ImportMeshFromFile
   nameWithType: GraphicUtilities.ImportMeshFromFile
-- uid: PiTung_Bootstrap.InputUtilities
+- uid: PiTung.InputUtilities
   name: InputUtilities
-  href: api/PiTung_Bootstrap.InputUtilities.html
-  commentId: T:PiTung_Bootstrap.InputUtilities
-  fullName: PiTung_Bootstrap.InputUtilities
+  href: api/PiTung.InputUtilities.html
+  commentId: T:PiTung.InputUtilities
+  fullName: PiTung.InputUtilities
   nameWithType: InputUtilities
-- uid: PiTung_Bootstrap.ManifestParser
+- uid: PiTung.ManifestParser
   name: ManifestParser
-  href: api/PiTung_Bootstrap.ManifestParser.html
-  commentId: T:PiTung_Bootstrap.ManifestParser
-  fullName: PiTung_Bootstrap.ManifestParser
+  href: api/PiTung.ManifestParser.html
+  commentId: T:PiTung.ManifestParser
+  fullName: PiTung.ManifestParser
   nameWithType: ManifestParser
-- uid: PiTung_Bootstrap.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable{System.String})
+- uid: PiTung.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable{System.String})
   name: ParseManifest(IEnumerable<String>)
-  href: api/PiTung_Bootstrap.ManifestParser.html#PiTung_Bootstrap_ManifestParser_ParseManifest_System_Collections_Generic_IEnumerable_System_String__
-  commentId: M:PiTung_Bootstrap.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable{System.String})
+  href: api/PiTung.ManifestParser.html#PiTung_ManifestParser_ParseManifest_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:PiTung.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable{System.String})
   name.vb: ParseManifest(IEnumerable(Of String))
-  fullName: PiTung_Bootstrap.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable<System.String>)
-  fullName.vb: PiTung_Bootstrap.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable(Of System.String))
+  fullName: PiTung.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: PiTung.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable(Of System.String))
   nameWithType: ManifestParser.ParseManifest(IEnumerable<String>)
   nameWithType.vb: ManifestParser.ParseManifest(IEnumerable(Of String))
-- uid: PiTung_Bootstrap.ManifestParser.ParseManifest*
+- uid: PiTung.ManifestParser.ParseManifest*
   name: ParseManifest
-  href: api/PiTung_Bootstrap.ManifestParser.html#PiTung_Bootstrap_ManifestParser_ParseManifest_
-  commentId: Overload:PiTung_Bootstrap.ManifestParser.ParseManifest
-  fullName: PiTung_Bootstrap.ManifestParser.ParseManifest
+  href: api/PiTung.ManifestParser.html#PiTung_ManifestParser_ParseManifest_
+  commentId: Overload:PiTung.ManifestParser.ParseManifest
+  fullName: PiTung.ManifestParser.ParseManifest
   nameWithType: ManifestParser.ParseManifest
-- uid: PiTung_Bootstrap.Mod
+- uid: PiTung.Mod
   name: Mod
-  href: api/PiTung_Bootstrap.Mod.html
-  commentId: T:PiTung_Bootstrap.Mod
-  fullName: PiTung_Bootstrap.Mod
+  href: api/PiTung.Mod.html
+  commentId: T:PiTung.Mod
+  fullName: PiTung.Mod
   nameWithType: Mod
-- uid: PiTung_Bootstrap.Mod.#ctor
+- uid: PiTung.Mod.#ctor
   name: Mod()
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod__ctor
-  commentId: M:PiTung_Bootstrap.Mod.#ctor
-  fullName: PiTung_Bootstrap.Mod.Mod()
+  href: api/PiTung.Mod.html#PiTung_Mod__ctor
+  commentId: M:PiTung.Mod.#ctor
+  fullName: PiTung.Mod.Mod()
   nameWithType: Mod.Mod()
-- uid: PiTung_Bootstrap.Mod.#ctor*
+- uid: PiTung.Mod.#ctor*
   name: Mod
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod__ctor_
-  commentId: Overload:PiTung_Bootstrap.Mod.#ctor
-  fullName: PiTung_Bootstrap.Mod.Mod
+  href: api/PiTung.Mod.html#PiTung_Mod__ctor_
+  commentId: Overload:PiTung.Mod.#ctor
+  fullName: PiTung.Mod.Mod
   nameWithType: Mod.Mod
-- uid: PiTung_Bootstrap.Mod.AfterPatch
+- uid: PiTung.Mod.AfterPatch
   name: AfterPatch()
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_AfterPatch
-  commentId: M:PiTung_Bootstrap.Mod.AfterPatch
-  fullName: PiTung_Bootstrap.Mod.AfterPatch()
+  href: api/PiTung.Mod.html#PiTung_Mod_AfterPatch
+  commentId: M:PiTung.Mod.AfterPatch
+  fullName: PiTung.Mod.AfterPatch()
   nameWithType: Mod.AfterPatch()
-- uid: PiTung_Bootstrap.Mod.AfterPatch*
+- uid: PiTung.Mod.AfterPatch*
   name: AfterPatch
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_AfterPatch_
-  commentId: Overload:PiTung_Bootstrap.Mod.AfterPatch
-  fullName: PiTung_Bootstrap.Mod.AfterPatch
+  href: api/PiTung.Mod.html#PiTung_Mod_AfterPatch_
+  commentId: Overload:PiTung.Mod.AfterPatch
+  fullName: PiTung.Mod.AfterPatch
   nameWithType: Mod.AfterPatch
-- uid: PiTung_Bootstrap.Mod.Author
+- uid: PiTung.Mod.Author
   name: Author
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_Author
-  commentId: P:PiTung_Bootstrap.Mod.Author
-  fullName: PiTung_Bootstrap.Mod.Author
+  href: api/PiTung.Mod.html#PiTung_Mod_Author
+  commentId: P:PiTung.Mod.Author
+  fullName: PiTung.Mod.Author
   nameWithType: Mod.Author
-- uid: PiTung_Bootstrap.Mod.Author*
+- uid: PiTung.Mod.Author*
   name: Author
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_Author_
-  commentId: Overload:PiTung_Bootstrap.Mod.Author
-  fullName: PiTung_Bootstrap.Mod.Author
+  href: api/PiTung.Mod.html#PiTung_Mod_Author_
+  commentId: Overload:PiTung.Mod.Author
+  fullName: PiTung.Mod.Author
   nameWithType: Mod.Author
-- uid: PiTung_Bootstrap.Mod.BeforePatch
+- uid: PiTung.Mod.BeforePatch
   name: BeforePatch()
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_BeforePatch
-  commentId: M:PiTung_Bootstrap.Mod.BeforePatch
-  fullName: PiTung_Bootstrap.Mod.BeforePatch()
+  href: api/PiTung.Mod.html#PiTung_Mod_BeforePatch
+  commentId: M:PiTung.Mod.BeforePatch
+  fullName: PiTung.Mod.BeforePatch()
   nameWithType: Mod.BeforePatch()
-- uid: PiTung_Bootstrap.Mod.BeforePatch*
+- uid: PiTung.Mod.BeforePatch*
   name: BeforePatch
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_BeforePatch_
-  commentId: Overload:PiTung_Bootstrap.Mod.BeforePatch
-  fullName: PiTung_Bootstrap.Mod.BeforePatch
+  href: api/PiTung.Mod.html#PiTung_Mod_BeforePatch_
+  commentId: Overload:PiTung.Mod.BeforePatch
+  fullName: PiTung.Mod.BeforePatch
   nameWithType: Mod.BeforePatch
-- uid: PiTung_Bootstrap.Mod.FrameworkVersion
+- uid: PiTung.Mod.FrameworkVersion
   name: FrameworkVersion
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_FrameworkVersion
-  commentId: P:PiTung_Bootstrap.Mod.FrameworkVersion
-  fullName: PiTung_Bootstrap.Mod.FrameworkVersion
+  href: api/PiTung.Mod.html#PiTung_Mod_FrameworkVersion
+  commentId: P:PiTung.Mod.FrameworkVersion
+  fullName: PiTung.Mod.FrameworkVersion
   nameWithType: Mod.FrameworkVersion
-- uid: PiTung_Bootstrap.Mod.FrameworkVersion*
+- uid: PiTung.Mod.FrameworkVersion*
   name: FrameworkVersion
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_FrameworkVersion_
-  commentId: Overload:PiTung_Bootstrap.Mod.FrameworkVersion
-  fullName: PiTung_Bootstrap.Mod.FrameworkVersion
+  href: api/PiTung.Mod.html#PiTung_Mod_FrameworkVersion_
+  commentId: Overload:PiTung.Mod.FrameworkVersion
+  fullName: PiTung.Mod.FrameworkVersion
   nameWithType: Mod.FrameworkVersion
-- uid: PiTung_Bootstrap.Mod.FullName
+- uid: PiTung.Mod.FullName
   name: FullName
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_FullName
-  commentId: P:PiTung_Bootstrap.Mod.FullName
-  fullName: PiTung_Bootstrap.Mod.FullName
+  href: api/PiTung.Mod.html#PiTung_Mod_FullName
+  commentId: P:PiTung.Mod.FullName
+  fullName: PiTung.Mod.FullName
   nameWithType: Mod.FullName
-- uid: PiTung_Bootstrap.Mod.FullName*
+- uid: PiTung.Mod.FullName*
   name: FullName
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_FullName_
-  commentId: Overload:PiTung_Bootstrap.Mod.FullName
-  fullName: PiTung_Bootstrap.Mod.FullName
+  href: api/PiTung.Mod.html#PiTung_Mod_FullName_
+  commentId: Overload:PiTung.Mod.FullName
+  fullName: PiTung.Mod.FullName
   nameWithType: Mod.FullName
-- uid: PiTung_Bootstrap.Mod.FullPath
+- uid: PiTung.Mod.FullPath
   name: FullPath
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_FullPath
-  commentId: P:PiTung_Bootstrap.Mod.FullPath
-  fullName: PiTung_Bootstrap.Mod.FullPath
+  href: api/PiTung.Mod.html#PiTung_Mod_FullPath
+  commentId: P:PiTung.Mod.FullPath
+  fullName: PiTung.Mod.FullPath
   nameWithType: Mod.FullPath
-- uid: PiTung_Bootstrap.Mod.FullPath*
+- uid: PiTung.Mod.FullPath*
   name: FullPath
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_FullPath_
-  commentId: Overload:PiTung_Bootstrap.Mod.FullPath
-  fullName: PiTung_Bootstrap.Mod.FullPath
+  href: api/PiTung.Mod.html#PiTung_Mod_FullPath_
+  commentId: Overload:PiTung.Mod.FullPath
+  fullName: PiTung.Mod.FullPath
   nameWithType: Mod.FullPath
-- uid: PiTung_Bootstrap.Mod.GetMenuEntries
+- uid: PiTung.Mod.GetMenuEntries
   name: GetMenuEntries()
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_GetMenuEntries
-  commentId: M:PiTung_Bootstrap.Mod.GetMenuEntries
-  fullName: PiTung_Bootstrap.Mod.GetMenuEntries()
+  href: api/PiTung.Mod.html#PiTung_Mod_GetMenuEntries
+  commentId: M:PiTung.Mod.GetMenuEntries
+  fullName: PiTung.Mod.GetMenuEntries()
   nameWithType: Mod.GetMenuEntries()
-- uid: PiTung_Bootstrap.Mod.GetMenuEntries*
+- uid: PiTung.Mod.GetMenuEntries*
   name: GetMenuEntries
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_GetMenuEntries_
-  commentId: Overload:PiTung_Bootstrap.Mod.GetMenuEntries
-  fullName: PiTung_Bootstrap.Mod.GetMenuEntries
+  href: api/PiTung.Mod.html#PiTung_Mod_GetMenuEntries_
+  commentId: Overload:PiTung.Mod.GetMenuEntries
+  fullName: PiTung.Mod.GetMenuEntries
   nameWithType: Mod.GetMenuEntries
-- uid: PiTung_Bootstrap.Mod.Hotloadable
+- uid: PiTung.Mod.Hotloadable
   name: Hotloadable
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_Hotloadable
-  commentId: P:PiTung_Bootstrap.Mod.Hotloadable
-  fullName: PiTung_Bootstrap.Mod.Hotloadable
+  href: api/PiTung.Mod.html#PiTung_Mod_Hotloadable
+  commentId: P:PiTung.Mod.Hotloadable
+  fullName: PiTung.Mod.Hotloadable
   nameWithType: Mod.Hotloadable
-- uid: PiTung_Bootstrap.Mod.Hotloadable*
+- uid: PiTung.Mod.Hotloadable*
   name: Hotloadable
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_Hotloadable_
-  commentId: Overload:PiTung_Bootstrap.Mod.Hotloadable
-  fullName: PiTung_Bootstrap.Mod.Hotloadable
+  href: api/PiTung.Mod.html#PiTung_Mod_Hotloadable_
+  commentId: Overload:PiTung.Mod.Hotloadable
+  fullName: PiTung.Mod.Hotloadable
   nameWithType: Mod.Hotloadable
-- uid: PiTung_Bootstrap.Mod.ModKeys
+- uid: PiTung.Mod.ModKeys
   name: ModKeys
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_ModKeys
-  commentId: P:PiTung_Bootstrap.Mod.ModKeys
-  fullName: PiTung_Bootstrap.Mod.ModKeys
+  href: api/PiTung.Mod.html#PiTung_Mod_ModKeys
+  commentId: P:PiTung.Mod.ModKeys
+  fullName: PiTung.Mod.ModKeys
   nameWithType: Mod.ModKeys
-- uid: PiTung_Bootstrap.Mod.ModKeys*
+- uid: PiTung.Mod.ModKeys*
   name: ModKeys
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_ModKeys_
-  commentId: Overload:PiTung_Bootstrap.Mod.ModKeys
-  fullName: PiTung_Bootstrap.Mod.ModKeys
+  href: api/PiTung.Mod.html#PiTung_Mod_ModKeys_
+  commentId: Overload:PiTung.Mod.ModKeys
+  fullName: PiTung.Mod.ModKeys
   nameWithType: Mod.ModKeys
-- uid: PiTung_Bootstrap.Mod.ModVersion
+- uid: PiTung.Mod.ModVersion
   name: ModVersion
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_ModVersion
-  commentId: P:PiTung_Bootstrap.Mod.ModVersion
-  fullName: PiTung_Bootstrap.Mod.ModVersion
+  href: api/PiTung.Mod.html#PiTung_Mod_ModVersion
+  commentId: P:PiTung.Mod.ModVersion
+  fullName: PiTung.Mod.ModVersion
   nameWithType: Mod.ModVersion
-- uid: PiTung_Bootstrap.Mod.ModVersion*
+- uid: PiTung.Mod.ModVersion*
   name: ModVersion
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_ModVersion_
-  commentId: Overload:PiTung_Bootstrap.Mod.ModVersion
-  fullName: PiTung_Bootstrap.Mod.ModVersion
+  href: api/PiTung.Mod.html#PiTung_Mod_ModVersion_
+  commentId: Overload:PiTung.Mod.ModVersion
+  fullName: PiTung.Mod.ModVersion
   nameWithType: Mod.ModVersion
-- uid: PiTung_Bootstrap.Mod.Name
+- uid: PiTung.Mod.Name
   name: Name
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_Name
-  commentId: P:PiTung_Bootstrap.Mod.Name
-  fullName: PiTung_Bootstrap.Mod.Name
+  href: api/PiTung.Mod.html#PiTung_Mod_Name
+  commentId: P:PiTung.Mod.Name
+  fullName: PiTung.Mod.Name
   nameWithType: Mod.Name
-- uid: PiTung_Bootstrap.Mod.Name*
+- uid: PiTung.Mod.Name*
   name: Name
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_Name_
-  commentId: Overload:PiTung_Bootstrap.Mod.Name
-  fullName: PiTung_Bootstrap.Mod.Name
+  href: api/PiTung.Mod.html#PiTung_Mod_Name_
+  commentId: Overload:PiTung.Mod.Name
+  fullName: PiTung.Mod.Name
   nameWithType: Mod.Name
-- uid: PiTung_Bootstrap.Mod.OnGUI
+- uid: PiTung.Mod.OnGUI
   name: OnGUI()
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_OnGUI
-  commentId: M:PiTung_Bootstrap.Mod.OnGUI
-  fullName: PiTung_Bootstrap.Mod.OnGUI()
+  href: api/PiTung.Mod.html#PiTung_Mod_OnGUI
+  commentId: M:PiTung.Mod.OnGUI
+  fullName: PiTung.Mod.OnGUI()
   nameWithType: Mod.OnGUI()
-- uid: PiTung_Bootstrap.Mod.OnGUI*
+- uid: PiTung.Mod.OnGUI*
   name: OnGUI
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_OnGUI_
-  commentId: Overload:PiTung_Bootstrap.Mod.OnGUI
-  fullName: PiTung_Bootstrap.Mod.OnGUI
+  href: api/PiTung.Mod.html#PiTung_Mod_OnGUI_
+  commentId: Overload:PiTung.Mod.OnGUI
+  fullName: PiTung.Mod.OnGUI
   nameWithType: Mod.OnGUI
-- uid: PiTung_Bootstrap.Mod.OnKeyDown(UnityEngine.KeyCode)
+- uid: PiTung.Mod.OnKeyDown(UnityEngine.KeyCode)
   name: OnKeyDown(KeyCode)
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_OnKeyDown_UnityEngine_KeyCode_
-  commentId: M:PiTung_Bootstrap.Mod.OnKeyDown(UnityEngine.KeyCode)
-  fullName: PiTung_Bootstrap.Mod.OnKeyDown(UnityEngine.KeyCode)
+  href: api/PiTung.Mod.html#PiTung_Mod_OnKeyDown_UnityEngine_KeyCode_
+  commentId: M:PiTung.Mod.OnKeyDown(UnityEngine.KeyCode)
+  fullName: PiTung.Mod.OnKeyDown(UnityEngine.KeyCode)
   nameWithType: Mod.OnKeyDown(KeyCode)
-- uid: PiTung_Bootstrap.Mod.OnKeyDown*
+- uid: PiTung.Mod.OnKeyDown*
   name: OnKeyDown
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_OnKeyDown_
-  commentId: Overload:PiTung_Bootstrap.Mod.OnKeyDown
-  fullName: PiTung_Bootstrap.Mod.OnKeyDown
+  href: api/PiTung.Mod.html#PiTung_Mod_OnKeyDown_
+  commentId: Overload:PiTung.Mod.OnKeyDown
+  fullName: PiTung.Mod.OnKeyDown
   nameWithType: Mod.OnKeyDown
-- uid: PiTung_Bootstrap.Mod.OnWorldLoaded(System.String)
+- uid: PiTung.Mod.OnWorldLoaded(System.String)
   name: OnWorldLoaded(String)
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_OnWorldLoaded_System_String_
-  commentId: M:PiTung_Bootstrap.Mod.OnWorldLoaded(System.String)
-  fullName: PiTung_Bootstrap.Mod.OnWorldLoaded(System.String)
+  href: api/PiTung.Mod.html#PiTung_Mod_OnWorldLoaded_System_String_
+  commentId: M:PiTung.Mod.OnWorldLoaded(System.String)
+  fullName: PiTung.Mod.OnWorldLoaded(System.String)
   nameWithType: Mod.OnWorldLoaded(String)
-- uid: PiTung_Bootstrap.Mod.OnWorldLoaded*
+- uid: PiTung.Mod.OnWorldLoaded*
   name: OnWorldLoaded
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_OnWorldLoaded_
-  commentId: Overload:PiTung_Bootstrap.Mod.OnWorldLoaded
-  fullName: PiTung_Bootstrap.Mod.OnWorldLoaded
+  href: api/PiTung.Mod.html#PiTung_Mod_OnWorldLoaded_
+  commentId: Overload:PiTung.Mod.OnWorldLoaded
+  fullName: PiTung.Mod.OnWorldLoaded
   nameWithType: Mod.OnWorldLoaded
-- uid: PiTung_Bootstrap.Mod.PackageName
+- uid: PiTung.Mod.PackageName
   name: PackageName
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_PackageName
-  commentId: P:PiTung_Bootstrap.Mod.PackageName
-  fullName: PiTung_Bootstrap.Mod.PackageName
+  href: api/PiTung.Mod.html#PiTung_Mod_PackageName
+  commentId: P:PiTung.Mod.PackageName
+  fullName: PiTung.Mod.PackageName
   nameWithType: Mod.PackageName
-- uid: PiTung_Bootstrap.Mod.PackageName*
+- uid: PiTung.Mod.PackageName*
   name: PackageName
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_PackageName_
-  commentId: Overload:PiTung_Bootstrap.Mod.PackageName
-  fullName: PiTung_Bootstrap.Mod.PackageName
+  href: api/PiTung.Mod.html#PiTung_Mod_PackageName_
+  commentId: Overload:PiTung.Mod.PackageName
+  fullName: PiTung.Mod.PackageName
   nameWithType: Mod.PackageName
-- uid: PiTung_Bootstrap.Mod.RequireFrameworkVersion
+- uid: PiTung.Mod.RequireFrameworkVersion
   name: RequireFrameworkVersion
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_RequireFrameworkVersion
-  commentId: P:PiTung_Bootstrap.Mod.RequireFrameworkVersion
-  fullName: PiTung_Bootstrap.Mod.RequireFrameworkVersion
+  href: api/PiTung.Mod.html#PiTung_Mod_RequireFrameworkVersion
+  commentId: P:PiTung.Mod.RequireFrameworkVersion
+  fullName: PiTung.Mod.RequireFrameworkVersion
   nameWithType: Mod.RequireFrameworkVersion
-- uid: PiTung_Bootstrap.Mod.RequireFrameworkVersion*
+- uid: PiTung.Mod.RequireFrameworkVersion*
   name: RequireFrameworkVersion
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_RequireFrameworkVersion_
-  commentId: Overload:PiTung_Bootstrap.Mod.RequireFrameworkVersion
-  fullName: PiTung_Bootstrap.Mod.RequireFrameworkVersion
+  href: api/PiTung.Mod.html#PiTung_Mod_RequireFrameworkVersion_
+  commentId: Overload:PiTung.Mod.RequireFrameworkVersion
+  fullName: PiTung.Mod.RequireFrameworkVersion
   nameWithType: Mod.RequireFrameworkVersion
-- uid: PiTung_Bootstrap.Mod.SubscribeToKey(UnityEngine.KeyCode)
+- uid: PiTung.Mod.SubscribeToKey(UnityEngine.KeyCode)
   name: SubscribeToKey(KeyCode)
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_SubscribeToKey_UnityEngine_KeyCode_
-  commentId: M:PiTung_Bootstrap.Mod.SubscribeToKey(UnityEngine.KeyCode)
-  fullName: PiTung_Bootstrap.Mod.SubscribeToKey(UnityEngine.KeyCode)
+  href: api/PiTung.Mod.html#PiTung_Mod_SubscribeToKey_UnityEngine_KeyCode_
+  commentId: M:PiTung.Mod.SubscribeToKey(UnityEngine.KeyCode)
+  fullName: PiTung.Mod.SubscribeToKey(UnityEngine.KeyCode)
   nameWithType: Mod.SubscribeToKey(KeyCode)
-- uid: PiTung_Bootstrap.Mod.SubscribeToKey*
+- uid: PiTung.Mod.SubscribeToKey*
   name: SubscribeToKey
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_SubscribeToKey_
-  commentId: Overload:PiTung_Bootstrap.Mod.SubscribeToKey
-  fullName: PiTung_Bootstrap.Mod.SubscribeToKey
+  href: api/PiTung.Mod.html#PiTung_Mod_SubscribeToKey_
+  commentId: Overload:PiTung.Mod.SubscribeToKey
+  fullName: PiTung.Mod.SubscribeToKey
   nameWithType: Mod.SubscribeToKey
-- uid: PiTung_Bootstrap.Mod.SubscribeToKeys(UnityEngine.KeyCode[])
+- uid: PiTung.Mod.SubscribeToKeys(UnityEngine.KeyCode[])
   name: SubscribeToKeys(KeyCode[])
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_SubscribeToKeys_UnityEngine_KeyCode___
-  commentId: M:PiTung_Bootstrap.Mod.SubscribeToKeys(UnityEngine.KeyCode[])
+  href: api/PiTung.Mod.html#PiTung_Mod_SubscribeToKeys_UnityEngine_KeyCode___
+  commentId: M:PiTung.Mod.SubscribeToKeys(UnityEngine.KeyCode[])
   name.vb: SubscribeToKeys(KeyCode())
-  fullName: PiTung_Bootstrap.Mod.SubscribeToKeys(UnityEngine.KeyCode[])
-  fullName.vb: PiTung_Bootstrap.Mod.SubscribeToKeys(UnityEngine.KeyCode())
+  fullName: PiTung.Mod.SubscribeToKeys(UnityEngine.KeyCode[])
+  fullName.vb: PiTung.Mod.SubscribeToKeys(UnityEngine.KeyCode())
   nameWithType: Mod.SubscribeToKeys(KeyCode[])
   nameWithType.vb: Mod.SubscribeToKeys(KeyCode())
-- uid: PiTung_Bootstrap.Mod.SubscribeToKeys*
+- uid: PiTung.Mod.SubscribeToKeys*
   name: SubscribeToKeys
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_SubscribeToKeys_
-  commentId: Overload:PiTung_Bootstrap.Mod.SubscribeToKeys
-  fullName: PiTung_Bootstrap.Mod.SubscribeToKeys
+  href: api/PiTung.Mod.html#PiTung_Mod_SubscribeToKeys_
+  commentId: Overload:PiTung.Mod.SubscribeToKeys
+  fullName: PiTung.Mod.SubscribeToKeys
   nameWithType: Mod.SubscribeToKeys
-- uid: PiTung_Bootstrap.Mod.Update
+- uid: PiTung.Mod.Update
   name: Update()
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_Update
-  commentId: M:PiTung_Bootstrap.Mod.Update
-  fullName: PiTung_Bootstrap.Mod.Update()
+  href: api/PiTung.Mod.html#PiTung_Mod_Update
+  commentId: M:PiTung.Mod.Update
+  fullName: PiTung.Mod.Update()
   nameWithType: Mod.Update()
-- uid: PiTung_Bootstrap.Mod.Update*
+- uid: PiTung.Mod.Update*
   name: Update
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_Update_
-  commentId: Overload:PiTung_Bootstrap.Mod.Update
-  fullName: PiTung_Bootstrap.Mod.Update
+  href: api/PiTung.Mod.html#PiTung_Mod_Update_
+  commentId: Overload:PiTung.Mod.Update
+  fullName: PiTung.Mod.Update
   nameWithType: Mod.Update
-- uid: PiTung_Bootstrap.Mod.UpdateUrl
+- uid: PiTung.Mod.UpdateUrl
   name: UpdateUrl
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_UpdateUrl
-  commentId: P:PiTung_Bootstrap.Mod.UpdateUrl
-  fullName: PiTung_Bootstrap.Mod.UpdateUrl
+  href: api/PiTung.Mod.html#PiTung_Mod_UpdateUrl
+  commentId: P:PiTung.Mod.UpdateUrl
+  fullName: PiTung.Mod.UpdateUrl
   nameWithType: Mod.UpdateUrl
-- uid: PiTung_Bootstrap.Mod.UpdateUrl*
+- uid: PiTung.Mod.UpdateUrl*
   name: UpdateUrl
-  href: api/PiTung_Bootstrap.Mod.html#PiTung_Bootstrap_Mod_UpdateUrl_
-  commentId: Overload:PiTung_Bootstrap.Mod.UpdateUrl
-  fullName: PiTung_Bootstrap.Mod.UpdateUrl
+  href: api/PiTung.Mod.html#PiTung_Mod_UpdateUrl_
+  commentId: Overload:PiTung.Mod.UpdateUrl
+  fullName: PiTung.Mod.UpdateUrl
   nameWithType: Mod.UpdateUrl
-- uid: PiTung_Bootstrap.ModUpdater
+- uid: PiTung.ModUpdater
   name: ModUpdater
-  href: api/PiTung_Bootstrap.ModUpdater.html
-  commentId: T:PiTung_Bootstrap.ModUpdater
-  fullName: PiTung_Bootstrap.ModUpdater
+  href: api/PiTung.ModUpdater.html
+  commentId: T:PiTung.ModUpdater
+  fullName: PiTung.ModUpdater
   nameWithType: ModUpdater
-- uid: PiTung_Bootstrap.ModUpdater.Manifest
+- uid: PiTung.ModUpdater.Manifest
   name: ModUpdater.Manifest
-  href: api/PiTung_Bootstrap.ModUpdater.Manifest.html
-  commentId: T:PiTung_Bootstrap.ModUpdater.Manifest
-  fullName: PiTung_Bootstrap.ModUpdater.Manifest
+  href: api/PiTung.ModUpdater.Manifest.html
+  commentId: T:PiTung.ModUpdater.Manifest
+  fullName: PiTung.ModUpdater.Manifest
   nameWithType: ModUpdater.Manifest
-- uid: PiTung_Bootstrap.ModUpdater.Manifest.ModInfo
+- uid: PiTung.ModUpdater.Manifest.ModInfo
   name: ModUpdater.Manifest.ModInfo
-  href: api/PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.html
-  commentId: T:PiTung_Bootstrap.ModUpdater.Manifest.ModInfo
-  fullName: PiTung_Bootstrap.ModUpdater.Manifest.ModInfo
+  href: api/PiTung.ModUpdater.Manifest.ModInfo.html
+  commentId: T:PiTung.ModUpdater.Manifest.ModInfo
+  fullName: PiTung.ModUpdater.Manifest.ModInfo
   nameWithType: ModUpdater.Manifest.ModInfo
-- uid: PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.FileName
+- uid: PiTung.ModUpdater.Manifest.ModInfo.FileName
   name: FileName
-  href: api/PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.html#PiTung_Bootstrap_ModUpdater_Manifest_ModInfo_FileName
-  commentId: F:PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.FileName
-  fullName: PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.FileName
+  href: api/PiTung.ModUpdater.Manifest.ModInfo.html#PiTung_ModUpdater_Manifest_ModInfo_FileName
+  commentId: F:PiTung.ModUpdater.Manifest.ModInfo.FileName
+  fullName: PiTung.ModUpdater.Manifest.ModInfo.FileName
   nameWithType: ModUpdater.Manifest.ModInfo.FileName
-- uid: PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.Name
+- uid: PiTung.ModUpdater.Manifest.ModInfo.Name
   name: Name
-  href: api/PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.html#PiTung_Bootstrap_ModUpdater_Manifest_ModInfo_Name
-  commentId: F:PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.Name
-  fullName: PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.Name
+  href: api/PiTung.ModUpdater.Manifest.ModInfo.html#PiTung_ModUpdater_Manifest_ModInfo_Name
+  commentId: F:PiTung.ModUpdater.Manifest.ModInfo.Name
+  fullName: PiTung.ModUpdater.Manifest.ModInfo.Name
   nameWithType: ModUpdater.Manifest.ModInfo.Name
-- uid: PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.Version
+- uid: PiTung.ModUpdater.Manifest.ModInfo.Version
   name: Version
-  href: api/PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.html#PiTung_Bootstrap_ModUpdater_Manifest_ModInfo_Version
-  commentId: F:PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.Version
-  fullName: PiTung_Bootstrap.ModUpdater.Manifest.ModInfo.Version
+  href: api/PiTung.ModUpdater.Manifest.ModInfo.html#PiTung_ModUpdater_Manifest_ModInfo_Version
+  commentId: F:PiTung.ModUpdater.Manifest.ModInfo.Version
+  fullName: PiTung.ModUpdater.Manifest.ModInfo.Version
   nameWithType: ModUpdater.Manifest.ModInfo.Version
-- uid: PiTung_Bootstrap.ModUpdater.Manifest.Mods
+- uid: PiTung.ModUpdater.Manifest.Mods
   name: Mods
-  href: api/PiTung_Bootstrap.ModUpdater.Manifest.html#PiTung_Bootstrap_ModUpdater_Manifest_Mods
-  commentId: P:PiTung_Bootstrap.ModUpdater.Manifest.Mods
-  fullName: PiTung_Bootstrap.ModUpdater.Manifest.Mods
+  href: api/PiTung.ModUpdater.Manifest.html#PiTung_ModUpdater_Manifest_Mods
+  commentId: P:PiTung.ModUpdater.Manifest.Mods
+  fullName: PiTung.ModUpdater.Manifest.Mods
   nameWithType: ModUpdater.Manifest.Mods
-- uid: PiTung_Bootstrap.ModUpdater.Manifest.Mods*
+- uid: PiTung.ModUpdater.Manifest.Mods*
   name: Mods
-  href: api/PiTung_Bootstrap.ModUpdater.Manifest.html#PiTung_Bootstrap_ModUpdater_Manifest_Mods_
-  commentId: Overload:PiTung_Bootstrap.ModUpdater.Manifest.Mods
-  fullName: PiTung_Bootstrap.ModUpdater.Manifest.Mods
+  href: api/PiTung.ModUpdater.Manifest.html#PiTung_ModUpdater_Manifest_Mods_
+  commentId: Overload:PiTung.ModUpdater.Manifest.Mods
+  fullName: PiTung.ModUpdater.Manifest.Mods
   nameWithType: ModUpdater.Manifest.Mods
-- uid: PiTung_Bootstrap.ModUtilities
+- uid: PiTung.ModUtilities
   name: ModUtilities
-  href: api/PiTung_Bootstrap.ModUtilities.html
-  commentId: T:PiTung_Bootstrap.ModUtilities
-  fullName: PiTung_Bootstrap.ModUtilities
+  href: api/PiTung.ModUtilities.html
+  commentId: T:PiTung.ModUtilities
+  fullName: PiTung.ModUtilities
   nameWithType: ModUtilities
-- uid: PiTung_Bootstrap.ModUtilities.DummyComponent
+- uid: PiTung.ModUtilities.DummyComponent
   name: DummyComponent
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_DummyComponent
-  commentId: P:PiTung_Bootstrap.ModUtilities.DummyComponent
-  fullName: PiTung_Bootstrap.ModUtilities.DummyComponent
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_DummyComponent
+  commentId: P:PiTung.ModUtilities.DummyComponent
+  fullName: PiTung.ModUtilities.DummyComponent
   nameWithType: ModUtilities.DummyComponent
-- uid: PiTung_Bootstrap.ModUtilities.DummyComponent*
+- uid: PiTung.ModUtilities.DummyComponent*
   name: DummyComponent
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_DummyComponent_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.DummyComponent
-  fullName: PiTung_Bootstrap.ModUtilities.DummyComponent
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_DummyComponent_
+  commentId: Overload:PiTung.ModUtilities.DummyComponent
+  fullName: PiTung.ModUtilities.DummyComponent
   nameWithType: ModUtilities.DummyComponent
-- uid: PiTung_Bootstrap.ModUtilities.ExecuteMethod(System.Object,System.String,System.Object[])
+- uid: PiTung.ModUtilities.ExecuteMethod(System.Object,System.String,System.Object[])
   name: ExecuteMethod(Object, String, Object[])
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_ExecuteMethod_System_Object_System_String_System_Object___
-  commentId: M:PiTung_Bootstrap.ModUtilities.ExecuteMethod(System.Object,System.String,System.Object[])
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_ExecuteMethod_System_Object_System_String_System_Object___
+  commentId: M:PiTung.ModUtilities.ExecuteMethod(System.Object,System.String,System.Object[])
   name.vb: ExecuteMethod(Object, String, Object())
-  fullName: PiTung_Bootstrap.ModUtilities.ExecuteMethod(System.Object, System.String, System.Object[])
-  fullName.vb: PiTung_Bootstrap.ModUtilities.ExecuteMethod(System.Object, System.String, System.Object())
+  fullName: PiTung.ModUtilities.ExecuteMethod(System.Object, System.String, System.Object[])
+  fullName.vb: PiTung.ModUtilities.ExecuteMethod(System.Object, System.String, System.Object())
   nameWithType: ModUtilities.ExecuteMethod(Object, String, Object[])
   nameWithType.vb: ModUtilities.ExecuteMethod(Object, String, Object())
-- uid: PiTung_Bootstrap.ModUtilities.ExecuteMethod*
+- uid: PiTung.ModUtilities.ExecuteMethod*
   name: ExecuteMethod
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_ExecuteMethod_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.ExecuteMethod
-  fullName: PiTung_Bootstrap.ModUtilities.ExecuteMethod
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_ExecuteMethod_
+  commentId: Overload:PiTung.ModUtilities.ExecuteMethod
+  fullName: PiTung.ModUtilities.ExecuteMethod
   nameWithType: ModUtilities.ExecuteMethod
-- uid: PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod*
+- uid: PiTung.ModUtilities.ExecuteStaticMethod*
   name: ExecuteStaticMethod
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_ExecuteStaticMethod_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod
-  fullName: PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_ExecuteStaticMethod_
+  commentId: Overload:PiTung.ModUtilities.ExecuteStaticMethod
+  fullName: PiTung.ModUtilities.ExecuteStaticMethod
   nameWithType: ModUtilities.ExecuteStaticMethod
-- uid: PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod``1(System.String,System.Object[])
+- uid: PiTung.ModUtilities.ExecuteStaticMethod``1(System.String,System.Object[])
   name: ExecuteStaticMethod<T>(String, Object[])
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_ExecuteStaticMethod__1_System_String_System_Object___
-  commentId: M:PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod``1(System.String,System.Object[])
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_ExecuteStaticMethod__1_System_String_System_Object___
+  commentId: M:PiTung.ModUtilities.ExecuteStaticMethod``1(System.String,System.Object[])
   name.vb: ExecuteStaticMethod(Of T)(String, Object())
-  fullName: PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod<T>(System.String, System.Object[])
-  fullName.vb: PiTung_Bootstrap.ModUtilities.ExecuteStaticMethod(Of T)(System.String, System.Object())
+  fullName: PiTung.ModUtilities.ExecuteStaticMethod<T>(System.String, System.Object[])
+  fullName.vb: PiTung.ModUtilities.ExecuteStaticMethod(Of T)(System.String, System.Object())
   nameWithType: ModUtilities.ExecuteStaticMethod<T>(String, Object[])
   nameWithType.vb: ModUtilities.ExecuteStaticMethod(Of T)(String, Object())
-- uid: PiTung_Bootstrap.ModUtilities.GetFieldValue*
+- uid: PiTung.ModUtilities.GetFieldValue*
   name: GetFieldValue
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_GetFieldValue_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.GetFieldValue
-  fullName: PiTung_Bootstrap.ModUtilities.GetFieldValue
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_GetFieldValue_
+  commentId: Overload:PiTung.ModUtilities.GetFieldValue
+  fullName: PiTung.ModUtilities.GetFieldValue
   nameWithType: ModUtilities.GetFieldValue
-- uid: PiTung_Bootstrap.ModUtilities.GetFieldValue``1(System.Object,System.String)
+- uid: PiTung.ModUtilities.GetFieldValue``1(System.Object,System.String)
   name: GetFieldValue<T>(Object, String)
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_GetFieldValue__1_System_Object_System_String_
-  commentId: M:PiTung_Bootstrap.ModUtilities.GetFieldValue``1(System.Object,System.String)
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_GetFieldValue__1_System_Object_System_String_
+  commentId: M:PiTung.ModUtilities.GetFieldValue``1(System.Object,System.String)
   name.vb: GetFieldValue(Of T)(Object, String)
-  fullName: PiTung_Bootstrap.ModUtilities.GetFieldValue<T>(System.Object, System.String)
-  fullName.vb: PiTung_Bootstrap.ModUtilities.GetFieldValue(Of T)(System.Object, System.String)
+  fullName: PiTung.ModUtilities.GetFieldValue<T>(System.Object, System.String)
+  fullName.vb: PiTung.ModUtilities.GetFieldValue(Of T)(System.Object, System.String)
   nameWithType: ModUtilities.GetFieldValue<T>(Object, String)
   nameWithType.vb: ModUtilities.GetFieldValue(Of T)(Object, String)
-- uid: PiTung_Bootstrap.ModUtilities.GetStaticFieldValue*
+- uid: PiTung.ModUtilities.GetStaticFieldValue*
   name: GetStaticFieldValue
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_GetStaticFieldValue_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.GetStaticFieldValue
-  fullName: PiTung_Bootstrap.ModUtilities.GetStaticFieldValue
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_GetStaticFieldValue_
+  commentId: Overload:PiTung.ModUtilities.GetStaticFieldValue
+  fullName: PiTung.ModUtilities.GetStaticFieldValue
   nameWithType: ModUtilities.GetStaticFieldValue
-- uid: PiTung_Bootstrap.ModUtilities.GetStaticFieldValue``2(System.String)
+- uid: PiTung.ModUtilities.GetStaticFieldValue``2(System.String)
   name: GetStaticFieldValue<TParent, TField>(String)
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_GetStaticFieldValue__2_System_String_
-  commentId: M:PiTung_Bootstrap.ModUtilities.GetStaticFieldValue``2(System.String)
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_GetStaticFieldValue__2_System_String_
+  commentId: M:PiTung.ModUtilities.GetStaticFieldValue``2(System.String)
   name.vb: GetStaticFieldValue(Of TParent, TField)(String)
-  fullName: PiTung_Bootstrap.ModUtilities.GetStaticFieldValue<TParent, TField>(System.String)
-  fullName.vb: PiTung_Bootstrap.ModUtilities.GetStaticFieldValue(Of TParent, TField)(System.String)
+  fullName: PiTung.ModUtilities.GetStaticFieldValue<TParent, TField>(System.String)
+  fullName.vb: PiTung.ModUtilities.GetStaticFieldValue(Of TParent, TField)(System.String)
   nameWithType: ModUtilities.GetStaticFieldValue<TParent, TField>(String)
   nameWithType.vb: ModUtilities.GetStaticFieldValue(Of TParent, TField)(String)
-- uid: PiTung_Bootstrap.ModUtilities.Graphics
+- uid: PiTung.ModUtilities.Graphics
   name: Graphics
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_Graphics
-  commentId: P:PiTung_Bootstrap.ModUtilities.Graphics
-  fullName: PiTung_Bootstrap.ModUtilities.Graphics
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Graphics
+  commentId: P:PiTung.ModUtilities.Graphics
+  fullName: PiTung.ModUtilities.Graphics
   nameWithType: ModUtilities.Graphics
-- uid: PiTung_Bootstrap.ModUtilities.Graphics*
+- uid: PiTung.ModUtilities.Graphics*
   name: Graphics
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_Graphics_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.Graphics
-  fullName: PiTung_Bootstrap.ModUtilities.Graphics
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Graphics_
+  commentId: Overload:PiTung.ModUtilities.Graphics
+  fullName: PiTung.ModUtilities.Graphics
   nameWithType: ModUtilities.Graphics
-- uid: PiTung_Bootstrap.ModUtilities.Input
+- uid: PiTung.ModUtilities.Input
   name: Input
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_Input
-  commentId: P:PiTung_Bootstrap.ModUtilities.Input
-  fullName: PiTung_Bootstrap.ModUtilities.Input
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Input
+  commentId: P:PiTung.ModUtilities.Input
+  fullName: PiTung.ModUtilities.Input
   nameWithType: ModUtilities.Input
-- uid: PiTung_Bootstrap.ModUtilities.Input*
+- uid: PiTung.ModUtilities.Input*
   name: Input
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_Input_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.Input
-  fullName: PiTung_Bootstrap.ModUtilities.Input
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Input_
+  commentId: Overload:PiTung.ModUtilities.Input
+  fullName: PiTung.ModUtilities.Input
   nameWithType: ModUtilities.Input
-- uid: PiTung_Bootstrap.ModUtilities.IsOnMainMenu
+- uid: PiTung.ModUtilities.IsOnMainMenu
   name: IsOnMainMenu
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_IsOnMainMenu
-  commentId: P:PiTung_Bootstrap.ModUtilities.IsOnMainMenu
-  fullName: PiTung_Bootstrap.ModUtilities.IsOnMainMenu
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_IsOnMainMenu
+  commentId: P:PiTung.ModUtilities.IsOnMainMenu
+  fullName: PiTung.ModUtilities.IsOnMainMenu
   nameWithType: ModUtilities.IsOnMainMenu
-- uid: PiTung_Bootstrap.ModUtilities.IsOnMainMenu*
+- uid: PiTung.ModUtilities.IsOnMainMenu*
   name: IsOnMainMenu
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_IsOnMainMenu_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.IsOnMainMenu
-  fullName: PiTung_Bootstrap.ModUtilities.IsOnMainMenu
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_IsOnMainMenu_
+  commentId: Overload:PiTung.ModUtilities.IsOnMainMenu
+  fullName: PiTung.ModUtilities.IsOnMainMenu
   nameWithType: ModUtilities.IsOnMainMenu
-- uid: PiTung_Bootstrap.ModUtilities.Log(System.String)
+- uid: PiTung.ModUtilities.Log(System.String)
   name: Log(String)
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_Log_System_String_
-  commentId: M:PiTung_Bootstrap.ModUtilities.Log(System.String)
-  fullName: PiTung_Bootstrap.ModUtilities.Log(System.String)
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Log_System_String_
+  commentId: M:PiTung.ModUtilities.Log(System.String)
+  fullName: PiTung.ModUtilities.Log(System.String)
   nameWithType: ModUtilities.Log(String)
-- uid: PiTung_Bootstrap.ModUtilities.Log(System.String,System.Object[])
+- uid: PiTung.ModUtilities.Log(System.String,System.Object[])
   name: Log(String, Object[])
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_Log_System_String_System_Object___
-  commentId: M:PiTung_Bootstrap.ModUtilities.Log(System.String,System.Object[])
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Log_System_String_System_Object___
+  commentId: M:PiTung.ModUtilities.Log(System.String,System.Object[])
   name.vb: Log(String, Object())
-  fullName: PiTung_Bootstrap.ModUtilities.Log(System.String, System.Object[])
-  fullName.vb: PiTung_Bootstrap.ModUtilities.Log(System.String, System.Object())
+  fullName: PiTung.ModUtilities.Log(System.String, System.Object[])
+  fullName.vb: PiTung.ModUtilities.Log(System.String, System.Object())
   nameWithType: ModUtilities.Log(String, Object[])
   nameWithType.vb: ModUtilities.Log(String, Object())
-- uid: PiTung_Bootstrap.ModUtilities.Log*
+- uid: PiTung.ModUtilities.Log*
   name: Log
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_Log_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.Log
-  fullName: PiTung_Bootstrap.ModUtilities.Log
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Log_
+  commentId: Overload:PiTung.ModUtilities.Log
+  fullName: PiTung.ModUtilities.Log
   nameWithType: ModUtilities.Log
-- uid: PiTung_Bootstrap.ModUtilities.PlayerObject
+- uid: PiTung.ModUtilities.PlayerObject
   name: PlayerObject
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_PlayerObject
-  commentId: P:PiTung_Bootstrap.ModUtilities.PlayerObject
-  fullName: PiTung_Bootstrap.ModUtilities.PlayerObject
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_PlayerObject
+  commentId: P:PiTung.ModUtilities.PlayerObject
+  fullName: PiTung.ModUtilities.PlayerObject
   nameWithType: ModUtilities.PlayerObject
-- uid: PiTung_Bootstrap.ModUtilities.PlayerObject*
+- uid: PiTung.ModUtilities.PlayerObject*
   name: PlayerObject
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_PlayerObject_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.PlayerObject
-  fullName: PiTung_Bootstrap.ModUtilities.PlayerObject
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_PlayerObject_
+  commentId: Overload:PiTung.ModUtilities.PlayerObject
+  fullName: PiTung.ModUtilities.PlayerObject
   nameWithType: ModUtilities.PlayerObject
-- uid: PiTung_Bootstrap.ModUtilities.SetFieldValue*
+- uid: PiTung.ModUtilities.SetFieldValue*
   name: SetFieldValue
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_SetFieldValue_
-  commentId: Overload:PiTung_Bootstrap.ModUtilities.SetFieldValue
-  fullName: PiTung_Bootstrap.ModUtilities.SetFieldValue
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_SetFieldValue_
+  commentId: Overload:PiTung.ModUtilities.SetFieldValue
+  fullName: PiTung.ModUtilities.SetFieldValue
   nameWithType: ModUtilities.SetFieldValue
-- uid: PiTung_Bootstrap.ModUtilities.SetFieldValue``1(System.Object,System.String,``0)
+- uid: PiTung.ModUtilities.SetFieldValue``1(System.Object,System.String,``0)
   name: SetFieldValue<T>(Object, String, T)
-  href: api/PiTung_Bootstrap.ModUtilities.html#PiTung_Bootstrap_ModUtilities_SetFieldValue__1_System_Object_System_String___0_
-  commentId: M:PiTung_Bootstrap.ModUtilities.SetFieldValue``1(System.Object,System.String,``0)
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_SetFieldValue__1_System_Object_System_String___0_
+  commentId: M:PiTung.ModUtilities.SetFieldValue``1(System.Object,System.String,``0)
   name.vb: SetFieldValue(Of T)(Object, String, T)
-  fullName: PiTung_Bootstrap.ModUtilities.SetFieldValue<T>(System.Object, System.String, T)
-  fullName.vb: PiTung_Bootstrap.ModUtilities.SetFieldValue(Of T)(System.Object, System.String, T)
+  fullName: PiTung.ModUtilities.SetFieldValue<T>(System.Object, System.String, T)
+  fullName.vb: PiTung.ModUtilities.SetFieldValue(Of T)(System.Object, System.String, T)
   nameWithType: ModUtilities.SetFieldValue<T>(Object, String, T)
   nameWithType.vb: ModUtilities.SetFieldValue(Of T)(Object, String, T)
-- uid: PiTung_Bootstrap.PatchMethodAttribute
+- uid: PiTung.PatchMethodAttribute
   name: PatchMethodAttribute
-  href: api/PiTung_Bootstrap.PatchMethodAttribute.html
-  commentId: T:PiTung_Bootstrap.PatchMethodAttribute
-  fullName: PiTung_Bootstrap.PatchMethodAttribute
+  href: api/PiTung.PatchMethodAttribute.html
+  commentId: T:PiTung.PatchMethodAttribute
+  fullName: PiTung.PatchMethodAttribute
   nameWithType: PatchMethodAttribute
-- uid: PiTung_Bootstrap.PatchMethodAttribute.OriginalMethod
+- uid: PiTung.PatchMethodAttribute.OriginalMethod
   name: OriginalMethod
-  href: api/PiTung_Bootstrap.PatchMethodAttribute.html#PiTung_Bootstrap_PatchMethodAttribute_OriginalMethod
-  commentId: P:PiTung_Bootstrap.PatchMethodAttribute.OriginalMethod
-  fullName: PiTung_Bootstrap.PatchMethodAttribute.OriginalMethod
+  href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute_OriginalMethod
+  commentId: P:PiTung.PatchMethodAttribute.OriginalMethod
+  fullName: PiTung.PatchMethodAttribute.OriginalMethod
   nameWithType: PatchMethodAttribute.OriginalMethod
-- uid: PiTung_Bootstrap.PatchMethodAttribute.OriginalMethod*
+- uid: PiTung.PatchMethodAttribute.OriginalMethod*
   name: OriginalMethod
-  href: api/PiTung_Bootstrap.PatchMethodAttribute.html#PiTung_Bootstrap_PatchMethodAttribute_OriginalMethod_
-  commentId: Overload:PiTung_Bootstrap.PatchMethodAttribute.OriginalMethod
-  fullName: PiTung_Bootstrap.PatchMethodAttribute.OriginalMethod
+  href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute_OriginalMethod_
+  commentId: Overload:PiTung.PatchMethodAttribute.OriginalMethod
+  fullName: PiTung.PatchMethodAttribute.OriginalMethod
   nameWithType: PatchMethodAttribute.OriginalMethod
-- uid: PiTung_Bootstrap.PatchMethodAttribute.PatchType
+- uid: PiTung.PatchMethodAttribute.PatchType
   name: PatchType
-  href: api/PiTung_Bootstrap.PatchMethodAttribute.html#PiTung_Bootstrap_PatchMethodAttribute_PatchType
-  commentId: P:PiTung_Bootstrap.PatchMethodAttribute.PatchType
-  fullName: PiTung_Bootstrap.PatchMethodAttribute.PatchType
+  href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute_PatchType
+  commentId: P:PiTung.PatchMethodAttribute.PatchType
+  fullName: PiTung.PatchMethodAttribute.PatchType
   nameWithType: PatchMethodAttribute.PatchType
-- uid: PiTung_Bootstrap.PatchMethodAttribute.PatchType*
+- uid: PiTung.PatchMethodAttribute.PatchType*
   name: PatchType
-  href: api/PiTung_Bootstrap.PatchMethodAttribute.html#PiTung_Bootstrap_PatchMethodAttribute_PatchType_
-  commentId: Overload:PiTung_Bootstrap.PatchMethodAttribute.PatchType
-  fullName: PiTung_Bootstrap.PatchMethodAttribute.PatchType
+  href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute_PatchType_
+  commentId: Overload:PiTung.PatchMethodAttribute.PatchType
+  fullName: PiTung.PatchMethodAttribute.PatchType
   nameWithType: PatchMethodAttribute.PatchType
-- uid: PiTung_Bootstrap.PatchType
+- uid: PiTung.PatchType
   name: PatchType
-  href: api/PiTung_Bootstrap.PatchType.html
-  commentId: T:PiTung_Bootstrap.PatchType
-  fullName: PiTung_Bootstrap.PatchType
+  href: api/PiTung.PatchType.html
+  commentId: T:PiTung.PatchType
+  fullName: PiTung.PatchType
   nameWithType: PatchType
-- uid: PiTung_Bootstrap.PatchType.Postfix
+- uid: PiTung.PatchType.Postfix
   name: Postfix
-  href: api/PiTung_Bootstrap.PatchType.html#PiTung_Bootstrap_PatchType_Postfix
-  commentId: F:PiTung_Bootstrap.PatchType.Postfix
-  fullName: PiTung_Bootstrap.PatchType.Postfix
+  href: api/PiTung.PatchType.html#PiTung_PatchType_Postfix
+  commentId: F:PiTung.PatchType.Postfix
+  fullName: PiTung.PatchType.Postfix
   nameWithType: PatchType.Postfix
-- uid: PiTung_Bootstrap.PatchType.Prefix
+- uid: PiTung.PatchType.Prefix
   name: Prefix
-  href: api/PiTung_Bootstrap.PatchType.html#PiTung_Bootstrap_PatchType_Prefix
-  commentId: F:PiTung_Bootstrap.PatchType.Prefix
-  fullName: PiTung_Bootstrap.PatchType.Prefix
+  href: api/PiTung.PatchType.html#PiTung_PatchType_Prefix
+  commentId: F:PiTung.PatchType.Prefix
+  fullName: PiTung.PatchType.Prefix
   nameWithType: PatchType.Prefix
-- uid: PiTung_Bootstrap.PiTUNG
+- uid: PiTung.PiTUNG
   name: PiTUNG
-  href: api/PiTung_Bootstrap.PiTUNG.html
-  commentId: T:PiTung_Bootstrap.PiTUNG
-  fullName: PiTung_Bootstrap.PiTUNG
+  href: api/PiTung.PiTUNG.html
+  commentId: T:PiTung.PiTUNG
+  fullName: PiTung.PiTUNG
   nameWithType: PiTUNG
-- uid: PiTung_Bootstrap.PiTUNG.FrameworkVersion
+- uid: PiTung.PiTUNG.FrameworkVersion
   name: FrameworkVersion
-  href: api/PiTung_Bootstrap.PiTUNG.html#PiTung_Bootstrap_PiTUNG_FrameworkVersion
-  commentId: P:PiTung_Bootstrap.PiTUNG.FrameworkVersion
-  fullName: PiTung_Bootstrap.PiTUNG.FrameworkVersion
+  href: api/PiTung.PiTUNG.html#PiTung_PiTUNG_FrameworkVersion
+  commentId: P:PiTung.PiTUNG.FrameworkVersion
+  fullName: PiTung.PiTUNG.FrameworkVersion
   nameWithType: PiTUNG.FrameworkVersion
-- uid: PiTung_Bootstrap.PiTUNG.FrameworkVersion*
+- uid: PiTung.PiTUNG.FrameworkVersion*
   name: FrameworkVersion
-  href: api/PiTung_Bootstrap.PiTUNG.html#PiTung_Bootstrap_PiTUNG_FrameworkVersion_
-  commentId: Overload:PiTung_Bootstrap.PiTUNG.FrameworkVersion
-  fullName: PiTung_Bootstrap.PiTUNG.FrameworkVersion
+  href: api/PiTung.PiTUNG.html#PiTung_PiTUNG_FrameworkVersion_
+  commentId: Overload:PiTung.PiTUNG.FrameworkVersion
+  fullName: PiTung.PiTUNG.FrameworkVersion
   nameWithType: PiTUNG.FrameworkVersion
-- uid: PiTung_Bootstrap.TargetAttribute
+- uid: PiTung.TargetAttribute
   name: TargetAttribute
-  href: api/PiTung_Bootstrap.TargetAttribute.html
-  commentId: T:PiTung_Bootstrap.TargetAttribute
-  fullName: PiTung_Bootstrap.TargetAttribute
+  href: api/PiTung.TargetAttribute.html
+  commentId: T:PiTung.TargetAttribute
+  fullName: PiTung.TargetAttribute
   nameWithType: TargetAttribute
-- uid: PiTung_Bootstrap.TargetAttribute.#ctor(System.Type)
+- uid: PiTung.TargetAttribute.#ctor(System.Type)
   name: TargetAttribute(Type)
-  href: api/PiTung_Bootstrap.TargetAttribute.html#PiTung_Bootstrap_TargetAttribute__ctor_System_Type_
-  commentId: M:PiTung_Bootstrap.TargetAttribute.#ctor(System.Type)
-  fullName: PiTung_Bootstrap.TargetAttribute.TargetAttribute(System.Type)
+  href: api/PiTung.TargetAttribute.html#PiTung_TargetAttribute__ctor_System_Type_
+  commentId: M:PiTung.TargetAttribute.#ctor(System.Type)
+  fullName: PiTung.TargetAttribute.TargetAttribute(System.Type)
   nameWithType: TargetAttribute.TargetAttribute(Type)
-- uid: PiTung_Bootstrap.TargetAttribute.#ctor*
+- uid: PiTung.TargetAttribute.#ctor*
   name: TargetAttribute
-  href: api/PiTung_Bootstrap.TargetAttribute.html#PiTung_Bootstrap_TargetAttribute__ctor_
-  commentId: Overload:PiTung_Bootstrap.TargetAttribute.#ctor
-  fullName: PiTung_Bootstrap.TargetAttribute.TargetAttribute
+  href: api/PiTung.TargetAttribute.html#PiTung_TargetAttribute__ctor_
+  commentId: Overload:PiTung.TargetAttribute.#ctor
+  fullName: PiTung.TargetAttribute.TargetAttribute
   nameWithType: TargetAttribute.TargetAttribute
-- uid: PiTung_Bootstrap.TargetAttribute.ContainerType
+- uid: PiTung.TargetAttribute.ContainerType
   name: ContainerType
-  href: api/PiTung_Bootstrap.TargetAttribute.html#PiTung_Bootstrap_TargetAttribute_ContainerType
-  commentId: P:PiTung_Bootstrap.TargetAttribute.ContainerType
-  fullName: PiTung_Bootstrap.TargetAttribute.ContainerType
+  href: api/PiTung.TargetAttribute.html#PiTung_TargetAttribute_ContainerType
+  commentId: P:PiTung.TargetAttribute.ContainerType
+  fullName: PiTung.TargetAttribute.ContainerType
   nameWithType: TargetAttribute.ContainerType
-- uid: PiTung_Bootstrap.TargetAttribute.ContainerType*
+- uid: PiTung.TargetAttribute.ContainerType*
   name: ContainerType
-  href: api/PiTung_Bootstrap.TargetAttribute.html#PiTung_Bootstrap_TargetAttribute_ContainerType_
-  commentId: Overload:PiTung_Bootstrap.TargetAttribute.ContainerType
-  fullName: PiTung_Bootstrap.TargetAttribute.ContainerType
+  href: api/PiTung.TargetAttribute.html#PiTung_TargetAttribute_ContainerType_
+  commentId: Overload:PiTung.TargetAttribute.ContainerType
+  fullName: PiTung.TargetAttribute.ContainerType
   nameWithType: TargetAttribute.ContainerType
