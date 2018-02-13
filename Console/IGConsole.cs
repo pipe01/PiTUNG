@@ -203,6 +203,8 @@ namespace PiTung.Console
 
             LoadCommands();
 
+            ModInput.RegisterBinding("ToggleConsole", KeyCode.Tab);
+
             Log("Console initialized");
             Log("Type \"help\" to get a list of commands");
         }
@@ -224,7 +226,7 @@ namespace PiTung.Console
         internal static void Update()
         {
             // Toggle console with TAB
-            if (Input.GetKeyDown(KeyCode.Tab))
+            if (ModInput.GetKeyDown("ToggleConsole"))
             {
                 Shown = !Shown;
 

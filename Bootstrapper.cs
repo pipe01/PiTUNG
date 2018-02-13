@@ -79,6 +79,7 @@ namespace PiTung
                         return;
                     }
 
+                    ModInput.LoadBinds();
                     IGConsole.Init();
                 }
                 

@@ -7,20 +7,43 @@ using System.Text;
 
 namespace PiTung
 {
-    public class ModInput
+    public static class ModInput
     {
-        public static ModInput Instance { get; } = new ModInput();
+        private static readonly string BindsPath = Application.persistentDataPath + "/bindings.ini";
 
-        private readonly string BindsPath = Application.persistentDataPath + "/bindings.ini";
-
-        private Dictionary<string, KeyCode> Binds = new Dictionary<string, KeyCode>();
-
-        private ModInput()
+        private static Dictionary<string, KeyCode> Binds = new Dictionary<string, KeyCode>();
+        
+        public static void RegisterBinding(Mod mod, string name, KeyCode defaultKey)
         {
+            if (!Binds.ContainsKey(name))
+            {
+                Binds.Add(name, defaultKey);
+                SaveBinds();
+            }
         }
 
+        public static KeyCode GetBindingKey(string name)
+        {
+            if (Binds.TryGetValue(name, out var k))
+                return k;
+
+            throw new KeyNotFoundException("Binding not registered.");
+        }
+
+        public static bool GetKey(string name) => KeyBool(name, o => Input.GetKey(o));
+        public static bool GetKeyDown(string name) => KeyBool(name, o => Input.GetKeyDown(o));
+        public static bool GetKeyUp(string name) => KeyBool(name, o => Input.GetKeyUp(o));
+
+        private static bool KeyBool(string name, Func<KeyCode, bool> action)
+        {
+            if (Binds.TryGetValue(name, out var k))
+                return action(k);
+
+            throw new KeyNotFoundException("Binding not registered.");
+        }
+        
         #region Serialization
-        private void LoadBinds()
+        internal static void LoadBinds()
         {
             Binds.Clear();
 
@@ -36,16 +59,13 @@ namespace PiTung
             {
                 string line = lines[i];
 
-                if (line.StartsWith(";") || line.Contains('='))
+                if (line.StartsWith(";") || !line.Contains('='))
                     continue;
 
                 int equalsIndex = line.IndexOf('=');
-                string key = line.Substring(0, equalsIndex);
-                string value = line.Substring(equalsIndex + 1);
-
-                if (key.Contains(' '))
-                    continue; //TODO: Log warning
-
+                string key = line.Substring(0, equalsIndex).Trim().Replace(" ", "");
+                string value = line.Substring(equalsIndex + 1).Trim();
+                
                 var keyObj = Enum.Parse(typeof(KeyCode), value, true);
 
                 if (keyObj != null)
@@ -54,13 +74,13 @@ namespace PiTung
                 }
             }
         }
-        private void SaveBinds()
+        internal static void SaveBinds()
         {
             StringBuilder str = new StringBuilder();
 
-            foreach (var item in Binds)
+            foreach (var item in Binds.OrderBy(o => o.Key))
             {
-                str.AppendLine($"{item.Key}={Enum.GetName(typeof(KeyCode), item.Value)}");
+                str.AppendLine($"{item.Key} = {Enum.GetName(typeof(KeyCode), item.Value)}");
             }
 
             File.WriteAllText(BindsPath, str.ToString());

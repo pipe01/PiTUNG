@@ -93,6 +93,7 @@
     <Compile Include="Config menu\MenuEntry.cs" />
     <Compile Include="Console\CmdParser.cs" />
     <Compile Include="Console\IGConsole.cs" />
+    <Compile Include="ModInput.cs" />
     <Compile Include="Utils\DropOutStack.cs" />
     <Compile Include="GodHimself.cs" />
     <Compile Include="Extensions.cs" />
