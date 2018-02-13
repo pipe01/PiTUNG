@@ -89,7 +89,7 @@ namespace PiTung_Bootstrap.Building
         }
 
         /// <summary>
-        /// Tries to get a <see cref="Board"/> object that represents an already loaded phyisical board.
+        /// Tries to get a <see cref="Board"/> object that represents an already loaded physical board.
         /// </summary>
         /// <param name="gameObject">The board's game object.</param>
         /// <param name="board">The resulted board.</param>

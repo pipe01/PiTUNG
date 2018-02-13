@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Data;
+using PiTung_Bootstrap.Console;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PiTung_Bootstrap.Building
@@ -31,12 +33,17 @@ namespace PiTung_Bootstrap.Building
         public int Id { get; }
 
         /// <summary>
-        /// Instanciates a new empty <see cref="Board"/> object.
+        /// The board's rotation, relative to its parent.
+        /// </summary>
+        public Quaternion Rotation { get; }
+
+        /// <summary>
+        /// Instantiate a new empty <see cref="Board"/> object.
         /// </summary>
         public Board() { }
 
         /// <summary>
-        /// Instanciates a new <see cref="Board"/> object.
+        /// Instantiate a new <see cref="Board"/> object.
         /// </summary>
         /// <param name="w">The board's grid width.</param>
         /// <param name="h">The board's grid height.</param>
@@ -47,6 +54,7 @@ namespace PiTung_Bootstrap.Building
             this.Width = w;
             this.Height = h;
             this.Object = obj;
+            this.Rotation = obj.transform.localRotation;
             
             if (id != null)
             {
@@ -69,14 +77,16 @@ namespace PiTung_Bootstrap.Building
         /// <param name="x">The component's X location.</param>
         /// <param name="y">The component's Y location.</param>
         /// <returns>The component's game object.</returns>
-        public GameObject GetComponentAt(int x, int y)
+        public GameObject GetComponentAt(int x, int y, int side = 0)
         {
-            foreach (var item in this.GetComponents())
+            float ay = (side == 0 ? 1 : -1) * .26f;
+            Vector3 point = new Vector3(x + 0.5f, ay, y + 0.5f) * 0.3f;
+            point = Object.transform.TransformPoint(point);
+            
+            foreach (var item in Physics.OverlapSphere(point, 0.1f))
             {
-                if (item.Key.x == x && item.Key.y == y)
-                {
-                    return item.Value;
-                }
+                if (item.transform.parent == Object.transform)
+                    return item.gameObject;
             }
             
             return null;
