@@ -87,7 +87,7 @@ namespace PiTung
             if (man == null || man.Mods == null || man.Mods.Length == 0)
                 yield break;
 
-            var modInfo = man.Mods.SingleOrDefault(o => o.Name.Equals(mod.Name));
+            var modInfo = man.Mods.SingleOrDefault(o => o.Name.Equals(mod.PackageName));
 
             if (modInfo != null)
                 ModInfos[mod] = modInfo;
