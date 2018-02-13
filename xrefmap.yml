@@ -930,6 +930,33 @@ references:
   commentId: T:PiTung_Bootstrap.GraphicUtilities
   fullName: PiTung_Bootstrap.GraphicUtilities
   nameWithType: GraphicUtilities
+- uid: PiTung_Bootstrap.GraphicUtilities.CreateSphere(UnityEngine.Vector3,System.Single,System.Nullable{UnityEngine.Color})
+  name: CreateSphere(Vector3, Single, Nullable<Color>)
+  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_CreateSphere_UnityEngine_Vector3_System_Single_System_Nullable_UnityEngine_Color__
+  commentId: M:PiTung_Bootstrap.GraphicUtilities.CreateSphere(UnityEngine.Vector3,System.Single,System.Nullable{UnityEngine.Color})
+  name.vb: CreateSphere(Vector3, Single, Nullable(Of Color))
+  fullName: PiTung_Bootstrap.GraphicUtilities.CreateSphere(UnityEngine.Vector3, System.Single, System.Nullable<UnityEngine.Color>)
+  fullName.vb: PiTung_Bootstrap.GraphicUtilities.CreateSphere(UnityEngine.Vector3, System.Single, System.Nullable(Of UnityEngine.Color))
+  nameWithType: GraphicUtilities.CreateSphere(Vector3, Single, Nullable<Color>)
+  nameWithType.vb: GraphicUtilities.CreateSphere(Vector3, Single, Nullable(Of Color))
+- uid: PiTung_Bootstrap.GraphicUtilities.CreateSphere*
+  name: CreateSphere
+  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_CreateSphere_
+  commentId: Overload:PiTung_Bootstrap.GraphicUtilities.CreateSphere
+  fullName: PiTung_Bootstrap.GraphicUtilities.CreateSphere
+  nameWithType: GraphicUtilities.CreateSphere
+- uid: PiTung_Bootstrap.GraphicUtilities.DestroySphere(System.Int32)
+  name: DestroySphere(Int32)
+  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_DestroySphere_System_Int32_
+  commentId: M:PiTung_Bootstrap.GraphicUtilities.DestroySphere(System.Int32)
+  fullName: PiTung_Bootstrap.GraphicUtilities.DestroySphere(System.Int32)
+  nameWithType: GraphicUtilities.DestroySphere(Int32)
+- uid: PiTung_Bootstrap.GraphicUtilities.DestroySphere*
+  name: DestroySphere
+  href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_DestroySphere_
+  commentId: Overload:PiTung_Bootstrap.GraphicUtilities.DestroySphere
+  fullName: PiTung_Bootstrap.GraphicUtilities.DestroySphere
+  nameWithType: GraphicUtilities.DestroySphere
 - uid: PiTung_Bootstrap.GraphicUtilities.DrawRect(UnityEngine.Rect,UnityEngine.Color)
   name: DrawRect(Rect, Color)
   href: api/PiTung_Bootstrap.GraphicUtilities.html#PiTung_Bootstrap_GraphicUtilities_DrawRect_UnityEngine_Rect_UnityEngine_Color_
