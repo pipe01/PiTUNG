@@ -1,6 +1,6 @@
 ﻿using h=UnityEngine.SceneManagement.SceneManager;using i=UnityEngine.Terrain;using System;using System.Linq;using UnityEngine;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     internal static class BoringStuff
     {

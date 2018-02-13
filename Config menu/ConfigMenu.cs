@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace PiTung_Bootstrap.Config_menu
+namespace PiTung.Config_menu
 {
     internal class ConfigMenu
     {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PiTung_Bootstrap.Building
+namespace PiTung.Building
 {
     /// <summary>
     /// Manages the game's available circuit components.

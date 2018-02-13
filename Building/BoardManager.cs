@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace PiTung_Bootstrap.Building
+namespace PiTung.Building
 {
     /// <summary>
     /// Manages the world's boards.

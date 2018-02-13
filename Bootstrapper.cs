@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PiTung_Bootstrap.Config_menu;
+using PiTung.Config_menu;
 using Harmony;
 using System;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using PiTung_Bootstrap.Console;
+using PiTung.Console;
 using Object = UnityEngine.Object;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     /// <summary>
     /// Main patcher, gets called when the game starts and begins the patching process.

@@ -4,7 +4,7 @@ using System.IO;
 
 #pragma warning disable
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     //Taken from http://wiki.unity3d.com/index.php?title=ObjImporter
     internal class ObjImporter

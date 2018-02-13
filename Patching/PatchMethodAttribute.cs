@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     /// <summary>
     /// If <see cref="OriginalMethod"/> is not specified, it will be assumed that the original method's name

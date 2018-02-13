@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PiTung_Bootstrap.Console
+namespace PiTung.Console
 {
     internal static class CmdParser
     {

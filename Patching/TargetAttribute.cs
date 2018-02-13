@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public class TargetAttribute : Attribute

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     public class InputUtilities
     {

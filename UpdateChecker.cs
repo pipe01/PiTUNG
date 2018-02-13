@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using System.Collections;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     internal static class UpdateChecker
     {

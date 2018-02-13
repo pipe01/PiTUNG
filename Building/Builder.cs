@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace PiTung_Bootstrap.Building
+namespace PiTung.Building
 {
     /// <summary>
     /// Extensions for <see cref="Board"/>.

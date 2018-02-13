@@ -1,11 +1,11 @@
 ﻿using System.Linq;
-using PiTung_Bootstrap.Config_menu;
+using PiTung.Config_menu;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     public abstract partial class Mod
     {

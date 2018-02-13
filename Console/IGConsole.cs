@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PiTung_Bootstrap.Console
+namespace PiTung.Console
 {
     /// <summary>
     /// Type of a log (should be self-explanatory)

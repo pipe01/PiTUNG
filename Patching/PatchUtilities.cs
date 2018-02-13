@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     internal static class PatchUtilities
     {

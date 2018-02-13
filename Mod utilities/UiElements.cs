@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     internal interface IUiElement
     {

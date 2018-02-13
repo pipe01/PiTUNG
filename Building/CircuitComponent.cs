@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PiTung_Bootstrap.Building
+namespace PiTung.Building
 {
     /// <summary>
     /// Represents a type of component that can be added to boards. See <see cref="Components"/> to get a list of available components.

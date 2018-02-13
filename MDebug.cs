@@ -1,4 +1,4 @@
-﻿namespace PiTung_Bootstrap
+﻿namespace PiTung
 {
     internal static class MDebug
     {

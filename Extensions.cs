@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     internal static class Extensions
     {

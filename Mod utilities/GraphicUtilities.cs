@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     public class GraphicUtilities
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using static PiTung_Bootstrap.ModUpdater;
-using static PiTung_Bootstrap.ModUpdater.Manifest;
+using static PiTung.ModUpdater;
+using static PiTung.ModUpdater.Manifest;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     public static class ManifestParser
     {

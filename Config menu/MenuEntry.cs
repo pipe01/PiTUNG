@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PiTung_Bootstrap.Config_menu
+namespace PiTung.Config_menu
 {
     /// <summary>
     /// Represents a menu entry in a config menu.

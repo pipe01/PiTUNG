@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     internal class ObservableList<T> : IList<T>
     {

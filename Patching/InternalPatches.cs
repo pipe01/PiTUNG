@@ -1,7 +1,7 @@
-﻿using PiTung_Bootstrap.Building;
-using PiTung_Bootstrap.Config_menu;
+﻿using PiTung.Building;
+using PiTung.Config_menu;
 using Harmony;
-using PiTung_Bootstrap.Console;
+using PiTung.Console;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ using UnityEngine;
 #pragma warning disable RCS1018 // Add default access modifier.
 #pragma warning disable RCS1037 // Add default access modifier.
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     [HarmonyPatch(typeof(DummyComponent), "Update")]
     internal class DummyUpdatePatch

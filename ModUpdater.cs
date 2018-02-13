@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
-using PiTung_Bootstrap.Console;
+using PiTung.Console;
 using System.Collections;
 
-namespace PiTung_Bootstrap
+namespace PiTung
 {
     /// <summary>
     /// Handles the updating of mods.

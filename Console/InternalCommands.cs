@@ -3,9 +3,9 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static PiTung_Bootstrap.Console.IGConsole;
+using static PiTung.Console.IGConsole;
 
-namespace PiTung_Bootstrap.Console
+namespace PiTung.Console
 {
     internal class Command_help : Command
     {
