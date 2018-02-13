@@ -203,7 +203,7 @@ namespace PiTung.Console
 
             LoadCommands();
 
-            ModInput.RegisterBinding("ToggleConsole", KeyCode.Tab);
+            ModInput.RegisterBinding(null, "ToggleConsole", KeyCode.Tab);
 
             Log("Console initialized");
             Log("Type \"help\" to get a list of commands");
