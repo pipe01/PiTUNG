@@ -482,7 +482,9 @@ namespace PiTung_Bootstrap.Console
                 }
                 catch (Exception e)
                 {
-                    Log(LogType.ERROR, e.ToString());
+                    Log(LogType.ERROR, "An internal error occurred while executing the command.");
+                    MDebug.WriteLine("Command exception: '" + cmd + "'");
+                    MDebug.WriteLine(e);
                 }
             }
             else if (!TryParseVariables(cmd.Trim()))
