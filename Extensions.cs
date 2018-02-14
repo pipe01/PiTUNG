@@ -1,5 +1,8 @@
-﻿using System.Reflection;
+﻿using System.Linq;
+using System.Collections;
+using System.Reflection;
 using System;
+using System.Collections.Generic;
 
 namespace PiTung
 {
@@ -31,6 +34,32 @@ namespace PiTung
                 ret = false;
 
             return ret;
+        }
+
+        public static void Move<T>(this IList<T> list, int oldIndex, int newIndex)
+        {
+            MDebug.WriteLine($"{oldIndex} ---> {newIndex} ({list.Count} items)");
+            T item = list[oldIndex];
+            list.RemoveAt(oldIndex);
+
+            if (newIndex > oldIndex)
+                newIndex--;
+
+            list.Insert(newIndex, item);
+        }
+
+        public static bool TryGetValue<TItem, TKey>(this IList<TItem> list, TKey key, out TItem value, Func<TItem, TKey> selector)
+        {
+            var item = list.SingleOrDefault(o => Equals(key, selector(o)));
+
+            if (!Equals(item, default(TItem)))
+            {
+                value = item;
+                return true;
+            }
+
+            value = default(TItem);
+            return false;
         }
     }
 }

@@ -9,21 +9,41 @@ namespace PiTung
 {
     public static class ModInput
     {
+        private struct KeyBind
+        {
+            public string ModPackage { get; }
+            public string Name { get; }
+            public KeyCode Key { get; }
+
+            public KeyBind(string modPackage, string name, KeyCode key)
+            {
+                this.ModPackage = modPackage;
+                this.Name = name;
+                this.Key = key;
+            }
+            public KeyBind(Mod mod, string name, KeyCode key)
+            {
+                this.ModPackage = mod?.PackageName;
+                this.Name = name;
+                this.Key = key;
+            }
+        }
+
         private static readonly string BindsPath = Application.persistentDataPath + "/bindings.ini";
 
-        private static Dictionary<string, KeyCode> Binds = new Dictionary<string, KeyCode>();
+        private static IList<KeyBind> Binds = new List<KeyBind>();
         
         /// <summary>
-        /// Registers a key binding for a mod. If the binding isn`t already loaded (it's not set in the file), <paramref name="defaultKey"/> will be the binded key.
+        /// Registers a key binding for a mod. If the binding isn't already loaded (it's not set in the file), <paramref name="defaultKey"/> will be the binded key.
         /// </summary>
         /// <param name="mod">The mod that is registering the key.</param>
         /// <param name="name">The binding's name.</param>
         /// <param name="defaultKey">The default binding key.</param>
         public static void RegisterBinding(Mod mod, string name, KeyCode defaultKey)
         {
-            if (!Binds.ContainsKey(name))
+            if (!Binds.Any(o => o.Name == name))
             {
-                Binds.Add(name, defaultKey);
+                Binds.Add(new KeyBind(mod?.PackageName ?? "PiTUNG", name, defaultKey));
                 SaveBinds();
             }
         }
@@ -36,8 +56,8 @@ namespace PiTung
         /// <exception cref="KeyNotFoundException">Throws when a binding isn't found.</exception>
         public static KeyCode GetBindingKey(string name)
         {
-            if (Binds.TryGetValue(name, out var k))
-                return k;
+            if (Binds.TryGetValue(name, out var k, o => o.Name))
+                return k.Key;
 
             throw new KeyNotFoundException("Binding not registered.");
         }
@@ -48,8 +68,8 @@ namespace PiTung
 
         private static bool KeyBool(string name, Func<KeyCode, bool> action)
         {
-            if (Binds.TryGetValue(name, out var k))
-                return action(k);
+            if (Binds.TryGetValue(name, out var k, o => o.Name))
+                return action(k.Key);
 
             throw new KeyNotFoundException("Binding not registered.");
         }
@@ -66,10 +86,17 @@ namespace PiTung
             }
 
             string[] lines = File.ReadAllLines(BindsPath);
+            string modPack = null;
 
             for (int i = 0; i < lines.Length; i++)
             {
                 string line = lines[i];
+
+                if (line.StartsWith("["))
+                {
+                    modPack = line.Substring(1, line.Length - 2);
+                    continue;
+                }
 
                 if (line.StartsWith(";") || !line.Contains('='))
                     continue;
@@ -82,20 +109,48 @@ namespace PiTung
 
                 if (keyObj != null)
                 {
-                    Binds.Add(key, (KeyCode)keyObj);
+                    Binds.Add(new KeyBind(modPack, key, (KeyCode)keyObj));
                 }
             }
         }
         internal static void SaveBinds()
         {
+            int startingIndex = 0;
             StringBuilder str = new StringBuilder();
+            string lastMod = null;
+            
+            //Move all PiTUNG bindings to the top
+            while (MoveOne()) ;
 
             foreach (var item in Binds.OrderBy(o => o.Key))
             {
-                str.AppendLine($"{item.Key} = {Enum.GetName(typeof(KeyCode), item.Value)}");
+                if (item.ModPackage != lastMod)
+                {
+                    if (!Equals(item, Binds[0]))
+                        str.AppendLine();
+
+                    str.AppendLine("[" + item.ModPackage + "]");
+                    lastMod = item.ModPackage;
+                }
+
+                str.AppendLine($"{item.Name} = {Enum.GetName(typeof(KeyCode), item.Key)}");
             }
 
             File.WriteAllText(BindsPath, str.ToString());
+
+            bool MoveOne()
+            {
+                for (int i = startingIndex; i < Binds.Count; i++)
+                {
+                    if (Binds[i].ModPackage.Equals("PiTUNG"))
+                    {
+                        Binds.Move(i, startingIndex++);
+                        return true;
+                    }
+                }
+
+                return false;
+            }
         }
         #endregion
     }
