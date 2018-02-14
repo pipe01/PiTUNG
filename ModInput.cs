@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using PiTung.Console;
+using System.IO;
 using UnityEngine;
 using System;
 using System.Collections.Generic;
@@ -39,11 +40,19 @@ namespace PiTung
         /// <param name="mod">The mod that is registering the key.</param>
         /// <param name="name">The binding's name.</param>
         /// <param name="defaultKey">The default binding key.</param>
+        /// <exception cref="Exception">Throws if a key binding with name <paramref name="name"/> has already been registered by any other mod.</exception>
         public static void RegisterBinding(Mod mod, string name, KeyCode defaultKey)
         {
-            if (!Binds.Any(o => o.Name == name))
+            string package = mod?.PackageName ?? "PiTUNG";
+
+            if (Binds.TryGetValue(name, out var k, o => o.Name))
             {
-                Binds.Add(new KeyBind(mod?.PackageName ?? "PiTUNG", name, defaultKey));
+                if (k.ModPackage != package)
+                    throw new Exception($"The key binding with name {name} already exists.");
+            }
+            else
+            {
+                Binds.Add(new KeyBind(package, name, defaultKey));
                 SaveBinds();
             }
         }
@@ -110,6 +119,16 @@ namespace PiTung
                 if (keyObj != null)
                 {
                     Binds.Add(new KeyBind(modPack, key, (KeyCode)keyObj));
+                }
+            }
+
+            var warnedKeys = new List<KeyCode>();
+            foreach (var item in Binds)
+            {
+                if (Binds.Any(o => o.Key == item.Key && o.Name != item.Name) && !warnedKeys.Contains(item.Key))
+                {
+                    warnedKeys.Add(item.Key);
+                    IGConsole.Error($"The key <b>{item.Key}</b> has been binded to more than once!");
                 }
             }
         }
