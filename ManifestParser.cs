@@ -6,7 +6,7 @@ using static PiTung.ModUpdater.Manifest;
 
 namespace PiTung
 {
-    public static class ManifestParser
+    internal static class ManifestParser
     {
         public static Manifest ParseManifest(IEnumerable<string> lines)
         {

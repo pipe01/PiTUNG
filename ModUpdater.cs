@@ -11,7 +11,7 @@ namespace PiTung
     /// <summary>
     /// Handles the updating of mods.
     /// </summary>
-    public static class ModUpdater
+    internal static class ModUpdater
     {
         public class Manifest
         {
@@ -27,7 +27,7 @@ namespace PiTung
         
         private static Dictionary<Mod, Manifest.ModInfo> ModInfos = new Dictionary<Mod, Manifest.ModInfo>();
 
-        internal static IEnumerator CheckUpdatesForMod(Mod mod, bool update)
+        public static IEnumerator CheckUpdatesForMod(Mod mod, bool update)
         {
             if (mod.UpdateUrl == null)
                 yield break;
@@ -48,7 +48,7 @@ namespace PiTung
             }
         }
 
-        internal static IEnumerator UpdateMod(Mod mod)
+        public static IEnumerator UpdateMod(Mod mod)
         {
             yield return GetModInfo(mod);
             
