@@ -147,7 +147,7 @@ namespace PiTung
 
     public partial class Mod
     {
-        internal static List<Mod> AliveMods => Bootstrapper.Mods;
+        internal static IList<Mod> AliveMods => Bootstrapper.Mods;
 
         internal static void CallOnAllMods(Action<Mod> action)
         {
