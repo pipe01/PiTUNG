@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Runtime.Serialization;
+using System.Reflection;
 using System.Text;
 using System;
 using System.Collections.Generic;
@@ -184,7 +185,16 @@ namespace PiTung.Console
         /// Show-hide animation duration.
         /// </summary>
         internal static float ShowAnimationTime = .3f;
-        
+
+        /// <summary>
+        /// True if <see cref="Init"/> has been called.
+        /// </summary>
+        private static bool Initialized = false;
+
+        /// <summary>
+        /// The queue of log entries that were added before initializing.
+        /// </summary>
+        private static Queue<KeyValuePair<LogType, object>> EntryQueue = new Queue<KeyValuePair<LogType, object>>();
 
         /// <summary>
         /// Call this function before doing anything with the console
@@ -205,8 +215,16 @@ namespace PiTung.Console
 
             ModInput.RegisterBinding(null, "ToggleConsole", KeyCode.Tab);
 
+            Initialized = true;
+
             Log("Console initialized");
             Log("Type \"help\" to get a list of commands");
+
+            while (EntryQueue.Any())
+            {
+                KeyValuePair<LogType, object> entry = EntryQueue.Dequeue();
+                Log(entry.Key, entry.Value);
+            }
         }
 
         private static void LoadCommands()
@@ -346,12 +364,18 @@ namespace PiTung.Console
         /// <param name="msg">Message to log</param>
         public static void Log(LogType type, object msg)
         {
-            string m = WordWrap(msg.ToString(), (int)(Screen.width / Style.CalcSize(new GUIContent("A")).x));
+            if (!Initialized)
+            {
+                EntryQueue.Enqueue(new KeyValuePair<LogType, object>(type, msg));
+                return;
+            }
 
-            foreach(string line in m.Split('\n'))
+            string m = WordWrap(msg.ToString(), (int)(Screen.width / Style.CalcSize(new GUIContent("A")).x));
+            
+            foreach (string line in m.Split('\n'))
             {
                 var logEntry = new LogEntry(type, line);
-                
+
                 CmdLog.Push(logEntry);
             }
         }
