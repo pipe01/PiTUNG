@@ -281,18 +281,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.ManifestParser.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.ManifestParser.html",
-          "hash": "3ro7NLOjDoDXmW4ywLUWug=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/PiTung.Mod.yml",
       "output": {
         ".html": {
@@ -310,42 +298,6 @@
         ".html": {
           "relative_path": "api/PiTung.ModInput.html",
           "hash": "qB2KGapKI4LLBjSXIEzpTA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.ModUpdater.Manifest.ModInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.ModUpdater.Manifest.ModInfo.html",
-          "hash": "Bd3DJWAflBMHilQy4f9p2A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.ModUpdater.Manifest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.ModUpdater.Manifest.html",
-          "hash": "25hw4cKAAX7e6iwqWy9oLQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.ModUpdater.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.ModUpdater.html",
-          "hash": "4Z2DocKN2V4bwM/lpHMXKw=="
         }
       },
       "is_incremental": false,
@@ -417,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.html",
-          "hash": "a1yL6snNm7EsFO6Jp9z63g=="
+          "hash": "fu1FsfI1B88YDVv9QpZMYA=="
         }
       },
       "is_incremental": false,
@@ -441,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "JahurwsoVg5kN913N34wew=="
+          "hash": "MnMxlaSlXsQPD0VBTuNkGQ=="
         }
       },
       "is_incremental": false,
@@ -522,17 +474,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

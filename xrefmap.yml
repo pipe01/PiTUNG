@@ -999,27 +999,6 @@ references:
   commentId: T:PiTung.InputUtilities
   fullName: PiTung.InputUtilities
   nameWithType: InputUtilities
-- uid: PiTung.ManifestParser
-  name: ManifestParser
-  href: api/PiTung.ManifestParser.html
-  commentId: T:PiTung.ManifestParser
-  fullName: PiTung.ManifestParser
-  nameWithType: ManifestParser
-- uid: PiTung.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable{System.String})
-  name: ParseManifest(IEnumerable<String>)
-  href: api/PiTung.ManifestParser.html#PiTung_ManifestParser_ParseManifest_System_Collections_Generic_IEnumerable_System_String__
-  commentId: M:PiTung.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable{System.String})
-  name.vb: ParseManifest(IEnumerable(Of String))
-  fullName: PiTung.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable<System.String>)
-  fullName.vb: PiTung.ManifestParser.ParseManifest(System.Collections.Generic.IEnumerable(Of System.String))
-  nameWithType: ManifestParser.ParseManifest(IEnumerable<String>)
-  nameWithType.vb: ManifestParser.ParseManifest(IEnumerable(Of String))
-- uid: PiTung.ManifestParser.ParseManifest*
-  name: ParseManifest
-  href: api/PiTung.ManifestParser.html#PiTung_ManifestParser_ParseManifest_
-  commentId: Overload:PiTung.ManifestParser.ParseManifest
-  fullName: PiTung.ManifestParser.ParseManifest
-  nameWithType: ManifestParser.ParseManifest
 - uid: PiTung.Mod
   name: Mod
   href: api/PiTung.Mod.html
@@ -1347,54 +1326,6 @@ references:
   commentId: Overload:PiTung.ModInput.RegisterBinding
   fullName: PiTung.ModInput.RegisterBinding
   nameWithType: ModInput.RegisterBinding
-- uid: PiTung.ModUpdater
-  name: ModUpdater
-  href: api/PiTung.ModUpdater.html
-  commentId: T:PiTung.ModUpdater
-  fullName: PiTung.ModUpdater
-  nameWithType: ModUpdater
-- uid: PiTung.ModUpdater.Manifest
-  name: ModUpdater.Manifest
-  href: api/PiTung.ModUpdater.Manifest.html
-  commentId: T:PiTung.ModUpdater.Manifest
-  fullName: PiTung.ModUpdater.Manifest
-  nameWithType: ModUpdater.Manifest
-- uid: PiTung.ModUpdater.Manifest.ModInfo
-  name: ModUpdater.Manifest.ModInfo
-  href: api/PiTung.ModUpdater.Manifest.ModInfo.html
-  commentId: T:PiTung.ModUpdater.Manifest.ModInfo
-  fullName: PiTung.ModUpdater.Manifest.ModInfo
-  nameWithType: ModUpdater.Manifest.ModInfo
-- uid: PiTung.ModUpdater.Manifest.ModInfo.FileName
-  name: FileName
-  href: api/PiTung.ModUpdater.Manifest.ModInfo.html#PiTung_ModUpdater_Manifest_ModInfo_FileName
-  commentId: F:PiTung.ModUpdater.Manifest.ModInfo.FileName
-  fullName: PiTung.ModUpdater.Manifest.ModInfo.FileName
-  nameWithType: ModUpdater.Manifest.ModInfo.FileName
-- uid: PiTung.ModUpdater.Manifest.ModInfo.Name
-  name: Name
-  href: api/PiTung.ModUpdater.Manifest.ModInfo.html#PiTung_ModUpdater_Manifest_ModInfo_Name
-  commentId: F:PiTung.ModUpdater.Manifest.ModInfo.Name
-  fullName: PiTung.ModUpdater.Manifest.ModInfo.Name
-  nameWithType: ModUpdater.Manifest.ModInfo.Name
-- uid: PiTung.ModUpdater.Manifest.ModInfo.Version
-  name: Version
-  href: api/PiTung.ModUpdater.Manifest.ModInfo.html#PiTung_ModUpdater_Manifest_ModInfo_Version
-  commentId: F:PiTung.ModUpdater.Manifest.ModInfo.Version
-  fullName: PiTung.ModUpdater.Manifest.ModInfo.Version
-  nameWithType: ModUpdater.Manifest.ModInfo.Version
-- uid: PiTung.ModUpdater.Manifest.Mods
-  name: Mods
-  href: api/PiTung.ModUpdater.Manifest.html#PiTung_ModUpdater_Manifest_Mods
-  commentId: P:PiTung.ModUpdater.Manifest.Mods
-  fullName: PiTung.ModUpdater.Manifest.Mods
-  nameWithType: ModUpdater.Manifest.Mods
-- uid: PiTung.ModUpdater.Manifest.Mods*
-  name: Mods
-  href: api/PiTung.ModUpdater.Manifest.html#PiTung_ModUpdater_Manifest_Mods_
-  commentId: Overload:PiTung.ModUpdater.Manifest.Mods
-  fullName: PiTung.ModUpdater.Manifest.Mods
-  nameWithType: ModUpdater.Manifest.Mods
 - uid: PiTung.ModUtilities
   name: ModUtilities
   href: api/PiTung.ModUtilities.html
