@@ -46,6 +46,11 @@ namespace PiTung
         /// </summary>
         public static int ModCount => _Mods.Count;
 
+        /// <summary>
+        /// List of mods that require a different PiTUNG version and haven't been loaded.
+        /// </summary>
+        private List<Mod> CheckUpdatesBeforeLoading = new List<Mod>();
+
         private Bootstrapper()
         {
         }
@@ -107,7 +112,7 @@ namespace PiTung
             };
             ModUtilities.DummyComponent?.StartCoroutine(UpdateChecker.CheckUpdates());
 
-            foreach (var item in Mods)
+            foreach (var item in Mods.Concat(CheckUpdatesBeforeLoading))
             {
                 ModUtilities.DummyComponent?.StartCoroutine(ModUpdater.CheckUpdatesForMod(item, true));
             }
@@ -137,7 +142,9 @@ namespace PiTung
             {
                 if (mod.RequireFrameworkVersion)
                 {
-                    LoadError($"{mod.Name} failed to load: wrong PiTUNG version. Required version: {mod.FrameworkVersion}.", mod.Name);
+                    LoadError($"{mod.Name} failed to load: wrong PiTUNG version. Required version: {mod.FrameworkVersion}, checking for updates.", mod.Name);
+                    CheckUpdatesBeforeLoading.Add(mod);
+
                     return;
                 }
                 else
