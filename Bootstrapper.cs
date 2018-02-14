@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using System.Linq;
 using PiTung.Config_menu;
 using Harmony;
@@ -38,7 +39,7 @@ namespace PiTung
         /// <summary>
         /// All successfully loaded mods.
         /// </summary>
-        public static List<Mod> Mods => new List<Mod>(_Mods);
+        public static IList<Mod> Mods => new ReadOnlyCollection<Mod>(_Mods);
 
         /// <summary>
         /// How many mods are currently loaded.
