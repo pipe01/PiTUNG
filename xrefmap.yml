@@ -1263,6 +1263,48 @@ references:
   commentId: Overload:PiTung.ModInput.GetKeyUp
   fullName: PiTung.ModInput.GetKeyUp
   nameWithType: ModInput.GetKeyUp
+- uid: PiTung.ModInput.RegisterActions
+  name: ModInput.RegisterActions
+  href: api/PiTung.ModInput.RegisterActions.html
+  commentId: T:PiTung.ModInput.RegisterActions
+  fullName: PiTung.ModInput.RegisterActions
+  nameWithType: ModInput.RegisterActions
+- uid: PiTung.ModInput.RegisterActions.ListenKey(System.Action)
+  name: ListenKey(Action)
+  href: api/PiTung.ModInput.RegisterActions.html#PiTung_ModInput_RegisterActions_ListenKey_System_Action_
+  commentId: M:PiTung.ModInput.RegisterActions.ListenKey(System.Action)
+  fullName: PiTung.ModInput.RegisterActions.ListenKey(System.Action)
+  nameWithType: ModInput.RegisterActions.ListenKey(Action)
+- uid: PiTung.ModInput.RegisterActions.ListenKey*
+  name: ListenKey
+  href: api/PiTung.ModInput.RegisterActions.html#PiTung_ModInput_RegisterActions_ListenKey_
+  commentId: Overload:PiTung.ModInput.RegisterActions.ListenKey
+  fullName: PiTung.ModInput.RegisterActions.ListenKey
+  nameWithType: ModInput.RegisterActions.ListenKey
+- uid: PiTung.ModInput.RegisterActions.ListenKeyDown(System.Action)
+  name: ListenKeyDown(Action)
+  href: api/PiTung.ModInput.RegisterActions.html#PiTung_ModInput_RegisterActions_ListenKeyDown_System_Action_
+  commentId: M:PiTung.ModInput.RegisterActions.ListenKeyDown(System.Action)
+  fullName: PiTung.ModInput.RegisterActions.ListenKeyDown(System.Action)
+  nameWithType: ModInput.RegisterActions.ListenKeyDown(Action)
+- uid: PiTung.ModInput.RegisterActions.ListenKeyDown*
+  name: ListenKeyDown
+  href: api/PiTung.ModInput.RegisterActions.html#PiTung_ModInput_RegisterActions_ListenKeyDown_
+  commentId: Overload:PiTung.ModInput.RegisterActions.ListenKeyDown
+  fullName: PiTung.ModInput.RegisterActions.ListenKeyDown
+  nameWithType: ModInput.RegisterActions.ListenKeyDown
+- uid: PiTung.ModInput.RegisterActions.ListenKeyUp(System.Action)
+  name: ListenKeyUp(Action)
+  href: api/PiTung.ModInput.RegisterActions.html#PiTung_ModInput_RegisterActions_ListenKeyUp_System_Action_
+  commentId: M:PiTung.ModInput.RegisterActions.ListenKeyUp(System.Action)
+  fullName: PiTung.ModInput.RegisterActions.ListenKeyUp(System.Action)
+  nameWithType: ModInput.RegisterActions.ListenKeyUp(Action)
+- uid: PiTung.ModInput.RegisterActions.ListenKeyUp*
+  name: ListenKeyUp
+  href: api/PiTung.ModInput.RegisterActions.html#PiTung_ModInput_RegisterActions_ListenKeyUp_
+  commentId: Overload:PiTung.ModInput.RegisterActions.ListenKeyUp
+  fullName: PiTung.ModInput.RegisterActions.ListenKeyUp
+  nameWithType: ModInput.RegisterActions.ListenKeyUp
 - uid: PiTung.ModInput.RegisterBinding(PiTung.Mod,System.String,UnityEngine.KeyCode)
   name: RegisterBinding(Mod, String, KeyCode)
   href: api/PiTung.ModInput.html#PiTung_ModInput_RegisterBinding_PiTung_Mod_System_String_UnityEngine_KeyCode_

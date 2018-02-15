@@ -293,11 +293,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PiTung.ModInput.RegisterActions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung.ModInput.RegisterActions.html",
+          "hash": "0+iA5bQNhwkZ/NedEZtVrw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PiTung.ModInput.yml",
       "output": {
         ".html": {
           "relative_path": "api/PiTung.ModInput.html",
-          "hash": "KaKJBmDDwRcOzc7j1C3kvQ=="
+          "hash": "Nfixrc3zGQaqlga/VJGw0w=="
         }
       },
       "is_incremental": false,
@@ -369,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.html",
-          "hash": "4msfAKf+7a1/6skTQl3E+A=="
+          "hash": "bfXLU5VYI2GZdb43PWFY9A=="
         }
       },
       "is_incremental": false,
@@ -393,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "5wAugGNKvQz/1OdGwjd0Kg=="
+          "hash": "oT6T11J00L0Ge66I7W2Miw=="
         }
       },
       "is_incremental": false,
@@ -474,17 +486,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }
