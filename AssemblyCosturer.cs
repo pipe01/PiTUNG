@@ -10,8 +10,15 @@ namespace PiTung
 {
     public static class AssemblyCosturer
     {
+        private static bool Initialized;
+
         public static void Init()
         {
+            if (Initialized)
+                return;
+
+            Initialized = true;
+
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
             Test();
         }
