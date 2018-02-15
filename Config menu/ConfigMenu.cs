@@ -59,7 +59,7 @@ namespace PiTung.Config_menu
 
             foreach (var item in keys)
             {
-                ModUtilities.Input.SubscribeToKey(item, KeyDown, true, 0.15f);
+                InputUtilities.Instance.SubscribeToKey(item, KeyDown, true, 0.15f);
             }
         }
 

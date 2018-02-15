@@ -95,6 +95,7 @@
     <Compile Include="Config menu\MenuEntry.cs" />
     <Compile Include="Console\CmdParser.cs" />
     <Compile Include="Console\IGConsole.cs" />
+    <Compile Include="Mod utilities\ModUtilities.cs" />
     <Compile Include="ModInput.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -105,7 +106,6 @@
     <Compile Include="GodHimself.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Mod utilities\GraphicUtilities.cs" />
-    <Compile Include="Mod utilities\InputUtilities.cs" />
     <Compile Include="Console\InternalCommands.cs" />
     <Compile Include="Patching\InternalPatches.cs" />
     <Compile Include="ManifestParser.cs" />
@@ -114,7 +114,7 @@
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
     <Compile Include="ModUpdater.cs" />
-    <Compile Include="Mod utilities\ModUtilities.cs" />
+    <Compile Include="Utils\InputUtilities.cs" />
     <Compile Include="Utils\ObservableList.cs" />
     <Compile Include="Utils\ObjImporter.cs" />
     <Compile Include="Patching\PatchMethodAttribute.cs" />

@@ -14,12 +14,7 @@ namespace PiTung
         /// Graphical utilities.
         /// </summary>
         public static GraphicUtilities Graphics { get; } = new GraphicUtilities();
-
-        /// <summary>
-        /// Input-related utilities.
-        /// </summary>
-        public static InputUtilities Input { get; } = new InputUtilities();
-
+        
         private static readonly IDictionary<KeyValuePair<Type, string>, FieldInfo> FieldCache = new Dictionary<KeyValuePair<Type, string>, FieldInfo>();
 
         /// <summary>
