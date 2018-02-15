@@ -1011,30 +1011,12 @@ references:
   commentId: Overload:PiTung.GraphicUtilities.ImportMeshFromFile
   fullName: PiTung.GraphicUtilities.ImportMeshFromFile
   nameWithType: GraphicUtilities.ImportMeshFromFile
-- uid: PiTung.InputUtilities
-  name: InputUtilities
-  href: api/PiTung.InputUtilities.html
-  commentId: T:PiTung.InputUtilities
-  fullName: PiTung.InputUtilities
-  nameWithType: InputUtilities
 - uid: PiTung.Mod
   name: Mod
   href: api/PiTung.Mod.html
   commentId: T:PiTung.Mod
   fullName: PiTung.Mod
   nameWithType: Mod
-- uid: PiTung.Mod.#ctor
-  name: Mod()
-  href: api/PiTung.Mod.html#PiTung_Mod__ctor
-  commentId: M:PiTung.Mod.#ctor
-  fullName: PiTung.Mod.Mod()
-  nameWithType: Mod.Mod()
-- uid: PiTung.Mod.#ctor*
-  name: Mod
-  href: api/PiTung.Mod.html#PiTung_Mod__ctor_
-  commentId: Overload:PiTung.Mod.#ctor
-  fullName: PiTung.Mod.Mod
-  nameWithType: Mod.Mod
 - uid: PiTung.Mod.AfterPatch
   name: AfterPatch()
   href: api/PiTung.Mod.html#PiTung_Mod_AfterPatch
@@ -1131,18 +1113,6 @@ references:
   commentId: Overload:PiTung.Mod.Hotloadable
   fullName: PiTung.Mod.Hotloadable
   nameWithType: Mod.Hotloadable
-- uid: PiTung.Mod.ModKeys
-  name: ModKeys
-  href: api/PiTung.Mod.html#PiTung_Mod_ModKeys
-  commentId: P:PiTung.Mod.ModKeys
-  fullName: PiTung.Mod.ModKeys
-  nameWithType: Mod.ModKeys
-- uid: PiTung.Mod.ModKeys*
-  name: ModKeys
-  href: api/PiTung.Mod.html#PiTung_Mod_ModKeys_
-  commentId: Overload:PiTung.Mod.ModKeys
-  fullName: PiTung.Mod.ModKeys
-  nameWithType: Mod.ModKeys
 - uid: PiTung.Mod.ModVersion
   name: ModVersion
   href: api/PiTung.Mod.html#PiTung_Mod_ModVersion
@@ -1179,18 +1149,6 @@ references:
   commentId: Overload:PiTung.Mod.OnGUI
   fullName: PiTung.Mod.OnGUI
   nameWithType: Mod.OnGUI
-- uid: PiTung.Mod.OnKeyDown(UnityEngine.KeyCode)
-  name: OnKeyDown(KeyCode)
-  href: api/PiTung.Mod.html#PiTung_Mod_OnKeyDown_UnityEngine_KeyCode_
-  commentId: M:PiTung.Mod.OnKeyDown(UnityEngine.KeyCode)
-  fullName: PiTung.Mod.OnKeyDown(UnityEngine.KeyCode)
-  nameWithType: Mod.OnKeyDown(KeyCode)
-- uid: PiTung.Mod.OnKeyDown*
-  name: OnKeyDown
-  href: api/PiTung.Mod.html#PiTung_Mod_OnKeyDown_
-  commentId: Overload:PiTung.Mod.OnKeyDown
-  fullName: PiTung.Mod.OnKeyDown
-  nameWithType: Mod.OnKeyDown
 - uid: PiTung.Mod.OnWorldLoaded(System.String)
   name: OnWorldLoaded(String)
   href: api/PiTung.Mod.html#PiTung_Mod_OnWorldLoaded_System_String_
@@ -1227,33 +1185,6 @@ references:
   commentId: Overload:PiTung.Mod.RequireFrameworkVersion
   fullName: PiTung.Mod.RequireFrameworkVersion
   nameWithType: Mod.RequireFrameworkVersion
-- uid: PiTung.Mod.SubscribeToKey(UnityEngine.KeyCode)
-  name: SubscribeToKey(KeyCode)
-  href: api/PiTung.Mod.html#PiTung_Mod_SubscribeToKey_UnityEngine_KeyCode_
-  commentId: M:PiTung.Mod.SubscribeToKey(UnityEngine.KeyCode)
-  fullName: PiTung.Mod.SubscribeToKey(UnityEngine.KeyCode)
-  nameWithType: Mod.SubscribeToKey(KeyCode)
-- uid: PiTung.Mod.SubscribeToKey*
-  name: SubscribeToKey
-  href: api/PiTung.Mod.html#PiTung_Mod_SubscribeToKey_
-  commentId: Overload:PiTung.Mod.SubscribeToKey
-  fullName: PiTung.Mod.SubscribeToKey
-  nameWithType: Mod.SubscribeToKey
-- uid: PiTung.Mod.SubscribeToKeys(UnityEngine.KeyCode[])
-  name: SubscribeToKeys(KeyCode[])
-  href: api/PiTung.Mod.html#PiTung_Mod_SubscribeToKeys_UnityEngine_KeyCode___
-  commentId: M:PiTung.Mod.SubscribeToKeys(UnityEngine.KeyCode[])
-  name.vb: SubscribeToKeys(KeyCode())
-  fullName: PiTung.Mod.SubscribeToKeys(UnityEngine.KeyCode[])
-  fullName.vb: PiTung.Mod.SubscribeToKeys(UnityEngine.KeyCode())
-  nameWithType: Mod.SubscribeToKeys(KeyCode[])
-  nameWithType.vb: Mod.SubscribeToKeys(KeyCode())
-- uid: PiTung.Mod.SubscribeToKeys*
-  name: SubscribeToKeys
-  href: api/PiTung.Mod.html#PiTung_Mod_SubscribeToKeys_
-  commentId: Overload:PiTung.Mod.SubscribeToKeys
-  fullName: PiTung.Mod.SubscribeToKeys
-  nameWithType: Mod.SubscribeToKeys
 - uid: PiTung.Mod.Update
   name: Update()
   href: api/PiTung.Mod.html#PiTung_Mod_Update
@@ -1434,18 +1365,6 @@ references:
   commentId: Overload:PiTung.ModUtilities.Graphics
   fullName: PiTung.ModUtilities.Graphics
   nameWithType: ModUtilities.Graphics
-- uid: PiTung.ModUtilities.Input
-  name: Input
-  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Input
-  commentId: P:PiTung.ModUtilities.Input
-  fullName: PiTung.ModUtilities.Input
-  nameWithType: ModUtilities.Input
-- uid: PiTung.ModUtilities.Input*
-  name: Input
-  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Input_
-  commentId: Overload:PiTung.ModUtilities.Input
-  fullName: PiTung.ModUtilities.Input
-  nameWithType: ModUtilities.Input
 - uid: PiTung.ModUtilities.IsOnMainMenu
   name: IsOnMainMenu
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_IsOnMainMenu
