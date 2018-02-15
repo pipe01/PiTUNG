@@ -5,6 +5,9 @@ using System.Reflection;
 
 namespace PiTung
 {
+    /// <summary>
+    /// Contains useful methods to make your life easier.
+    /// </summary>
     public static class ModUtilities
     {
         /// <summary>

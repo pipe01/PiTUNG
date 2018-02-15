@@ -7,6 +7,9 @@ using UnityEngine;
 
 namespace PiTung
 {
+    /// <summary>
+    /// Base class for all mods.
+    /// </summary>
     public abstract partial class Mod
     {
         protected Mod()

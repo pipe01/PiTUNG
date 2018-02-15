@@ -102,11 +102,11 @@ namespace PiTung.Console
     //TODO: Add verbosity levels
 
     /// <summary>
-    /// In game console
+    /// In game console.
     /// <para>This static class allows for logging and registering commands
     /// which will be executed by callbacks. Contains a dictionary of
     /// global variables that can be read and written to from the console
-    /// using the "set" command</para>
+    /// using the "set" command.</para>
     /// </summary>
     public static class IGConsole
     {

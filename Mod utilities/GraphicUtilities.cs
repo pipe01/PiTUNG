@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace PiTung
 {
+    /// <summary>
+    /// Contains various graphical utilities.
+    /// </summary>
     public class GraphicUtilities
     {
         internal GraphicUtilities() { }

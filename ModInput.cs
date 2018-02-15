@@ -8,6 +8,9 @@ using System.Text;
 
 namespace PiTung
 {
+    /// <summary>
+    /// Manages all mod key bindings. It is highly recommended to use this class instead of <see cref="Input"/>.
+    /// </summary>
     public static class ModInput
     {
         private struct KeyBind

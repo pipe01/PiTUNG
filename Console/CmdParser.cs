@@ -52,13 +52,7 @@ namespace PiTung.Console
             {
                 args.Add(currentString.Trim());
             }
-
-            //if (inQuotes)
-            //{
-            //    error = "missing closing quote";
-            //    return false;
-            //}
-
+            
             args.RemoveAll(String.IsNullOrEmpty);
 
             arguments = args.ToArray();

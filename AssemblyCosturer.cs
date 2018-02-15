@@ -8,6 +8,10 @@ using System.Text;
 
 namespace PiTung
 {
+    /// <summary>
+    /// This class allows PiTUNG to not require any external DLLs apart from those that belong to the game.
+    /// This shouldn't be used in your code.
+    /// </summary>
     public static class AssemblyCosturer
     {
         private static bool Initialized;
