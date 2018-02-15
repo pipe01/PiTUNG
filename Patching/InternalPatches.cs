@@ -85,6 +85,8 @@ namespace PiTung
                     KeyDown?.Invoke(key.Key);
                 }
             }
+
+            ModInput.UpdateListeners();
         }
     }
     

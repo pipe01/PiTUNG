@@ -13,30 +13,60 @@ namespace PiTung
     /// </summary>
     public static class ModInput
     {
-        private struct KeyBind
+        internal struct KeyBind
         {
             public string ModPackage { get; }
             public string Name { get; }
             public KeyCode Key { get; }
+            public RegisterActions Listener { get; }
 
-            public KeyBind(string modPackage, string name, KeyCode key)
+            public KeyBind(string modPackage, string name, KeyCode key, RegisterActions l)
             {
                 this.ModPackage = modPackage;
                 this.Name = name;
                 this.Key = key;
+                this.Listener = l;
             }
-            public KeyBind(Mod mod, string name, KeyCode key)
+            public KeyBind(Mod mod, string name, KeyCode key, RegisterActions l)
             {
                 this.ModPackage = mod?.PackageName;
                 this.Name = name;
                 this.Key = key;
+                this.Listener = l;
+            }
+        }
+
+        public class RegisterActions
+        {
+            internal Action OnKey, OnKeyDown, OnKeyUp;
+
+            internal RegisterActions()
+            {
+            }
+
+            public RegisterActions ListenKey(Action action)
+            {
+                this.OnKey = action;
+                return this;
+            }
+
+            public RegisterActions ListenKeyDown(Action action)
+            {
+                this.OnKeyDown = action;
+                return this;
+            }
+
+            public RegisterActions ListenKeyUp(Action action)
+            {
+                this.OnKeyUp = action;
+                return this;
             }
         }
 
         private static readonly string BindsPath = Application.persistentDataPath + "/bindings.ini";
 
         private static IList<KeyBind> Binds = new List<KeyBind>();
-        
+
         /// <summary>
         /// Registers a key binding for a mod. If the binding isn't already loaded (it's not set in the file), <paramref name="defaultKey"/> will be the binded key.
         /// </summary>
@@ -44,7 +74,7 @@ namespace PiTung
         /// <param name="name">The binding's name.</param>
         /// <param name="defaultKey">The default binding key.</param>
         /// <exception cref="Exception">Throws if a key binding with name <paramref name="name"/> has already been registered by any other mod.</exception>
-        public static void RegisterBinding(Mod mod, string name, KeyCode defaultKey)
+        public static RegisterActions RegisterBinding(Mod mod, string name, KeyCode defaultKey)
         {
             string package = mod?.PackageName ?? "PiTUNG";
 
@@ -52,11 +82,17 @@ namespace PiTung
             {
                 if (k.ModPackage != package)
                     throw new Exception($"The key binding with name {name} already exists.");
+                else
+                    return k.Listener;
             }
             else
             {
-                Binds.Add(new KeyBind(package, name, defaultKey));
+                var listener = new RegisterActions();
+
+                Binds.Add(new KeyBind(package, name, defaultKey, listener));
                 SaveBinds();
+
+                return listener;
             }
         }
 
@@ -77,6 +113,26 @@ namespace PiTung
         public static bool GetKey(string name) => KeyBool(name, o => Input.GetKey(o));
         public static bool GetKeyDown(string name) => KeyBool(name, o => Input.GetKeyDown(o));
         public static bool GetKeyUp(string name) => KeyBool(name, o => Input.GetKeyUp(o));
+
+        internal static void UpdateListeners()
+        {
+            foreach (var item in Binds)
+            {
+                if (item.Listener != null)
+                {
+                    var l = item.Listener;
+
+                    if (l.OnKey != null && GetKey(item.Name))
+                        l.OnKey();
+
+                    if (l.OnKeyDown != null && GetKeyDown(item.Name))
+                        l.OnKeyDown();
+
+                    if (l.OnKeyUp != null && GetKeyUp(item.Name))
+                        l.OnKeyUp();
+                }
+            }
+        }
 
         private static bool KeyBool(string name, Func<KeyCode, bool> action)
         {
@@ -121,7 +177,7 @@ namespace PiTung
 
                 if (keyObj != null)
                 {
-                    Binds.Add(new KeyBind(modPack, key, (KeyCode)keyObj));
+                    Binds.Add(new KeyBind(modPack, key, (KeyCode)keyObj, new RegisterActions()));
                 }
             }
 
