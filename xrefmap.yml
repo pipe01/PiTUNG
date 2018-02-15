@@ -7,6 +7,24 @@ references:
   commentId: N:PiTung
   fullName: PiTung
   nameWithType: PiTung
+- uid: PiTung.AssemblyCosturer
+  name: AssemblyCosturer
+  href: api/PiTung.AssemblyCosturer.html
+  commentId: T:PiTung.AssemblyCosturer
+  fullName: PiTung.AssemblyCosturer
+  nameWithType: AssemblyCosturer
+- uid: PiTung.AssemblyCosturer.Init
+  name: Init()
+  href: api/PiTung.AssemblyCosturer.html#PiTung_AssemblyCosturer_Init
+  commentId: M:PiTung.AssemblyCosturer.Init
+  fullName: PiTung.AssemblyCosturer.Init()
+  nameWithType: AssemblyCosturer.Init()
+- uid: PiTung.AssemblyCosturer.Init*
+  name: Init
+  href: api/PiTung.AssemblyCosturer.html#PiTung_AssemblyCosturer_Init_
+  commentId: Overload:PiTung.AssemblyCosturer.Init
+  fullName: PiTung.AssemblyCosturer.Init
+  nameWithType: AssemblyCosturer.Init
 - uid: PiTung.Bootstrapper
   name: Bootstrapper
   href: api/PiTung.Bootstrapper.html

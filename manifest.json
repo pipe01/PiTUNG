@@ -5,6 +5,18 @@
   "files": [
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PiTung.AssemblyCosturer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung.AssemblyCosturer.html",
+          "hash": "ha/+G7rYuxs8btz703ElNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PiTung.Bootstrapper.yml",
       "output": {
         ".html": {
@@ -369,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.html",
-          "hash": "fu1FsfI1B88YDVv9QpZMYA=="
+          "hash": "JuZWxM/YVmhZx0XY5CI1gg=="
         }
       },
       "is_incremental": false,
@@ -393,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "MnMxlaSlXsQPD0VBTuNkGQ=="
+          "hash": "T4EDLA/jbv0yPf3WcSSBZw=="
         }
       },
       "is_incremental": false,
