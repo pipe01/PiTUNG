@@ -1,9 +1,11 @@
-﻿using PiTung.Building;
+﻿using System;
+using PiTung.Building;
 using PiTung.Config_menu;
 using Harmony;
 using PiTung.Console;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 #pragma warning disable RCS1102 // Make class static.
 #pragma warning disable RCS1213 // Remove unused member declaration.
@@ -99,7 +101,8 @@ namespace PiTung
         {
             if (ModUtilities.IsOnMainMenu && !IGConsole.Shown)
             {
-                string str = $"<b>PiTUNG v{PiTUNG.FrameworkVersion} enabled!</b>\nLoaded mods: " + Bootstrapper.ModCount;
+                var ver = new Version(PiTUNG.FrameworkVersion.Major, PiTUNG.FrameworkVersion.Minor, PiTUNG.FrameworkVersion.Build);
+                string str = $"<b>PiTUNG v{ver} enabled!</b>\nLoaded mods: " + Bootstrapper.ModCount;
 
                 if (UpdateChecker.IsUpdateAvailable)
                 {
