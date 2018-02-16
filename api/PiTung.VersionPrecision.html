@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace PiTung
+    <title>Enum VersionPrecision
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace PiTung
+    <meta name="title" content="Enum VersionPrecision
    ">
     <meta name="generator" content="docfx 2.31.0.0">
     
@@ -68,53 +68,42 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="PiTung">
+            <article class="content wrap" id="_content" data-uid="PiTung.VersionPrecision">
   
-  <h1 id="PiTung" data-uid="PiTung" class="text-break">Namespace PiTung
+  
+  <h1 id="PiTung_VersionPrecision" data-uid="PiTung.VersionPrecision" class="text-break">Enum VersionPrecision
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Indicates the precision used when comparing PiTUNG versions.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
+  <h6><strong>Namespace</strong>: <a class="xref" href="PiTung.html">PiTung</a></h6>
+  <h6><strong>Assembly</strong>: PiTung.dll</h6>
+  <h5 id="PiTung_VersionPrecision_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum VersionPrecision</code></pre>
+  </div>
+  <h3 id="fields">Fields
   </h3>
-      <h4><a class="xref" href="PiTung.AssemblyCosturer.html">AssemblyCosturer</a></h4>
-      <section><p>This class allows PiTUNG to not require any external DLLs apart from those that belong to the game.
-This shouldn&apos;t be used in your code.</p>
-</section>
-      <h4><a class="xref" href="PiTung.Bootstrapper.html">Bootstrapper</a></h4>
-      <section><p>Main patcher, gets called when the game starts and begins the patching process.</p>
-</section>
-      <h4><a class="xref" href="PiTung.GraphicUtilities.html">GraphicUtilities</a></h4>
-      <section><p>Contains various graphical utilities.</p>
-</section>
-      <h4><a class="xref" href="PiTung.Mod.html">Mod</a></h4>
-      <section><p>Base class for all mods.</p>
-</section>
-      <h4><a class="xref" href="PiTung.ModInput.html">ModInput</a></h4>
-      <section><p>Manages all mod key bindings. It is highly recommended to use this class instead of <span class="xref">UnityEngine.Input</span>.</p>
-</section>
-      <h4><a class="xref" href="PiTung.ModInput.RegisterActions.html">ModInput.RegisterActions</a></h4>
-      <section></section>
-      <h4><a class="xref" href="PiTung.ModUtilities.html">ModUtilities</a></h4>
-      <section><p>Contains useful methods to make your life easier.</p>
-</section>
-      <h4><a class="xref" href="PiTung.PatchMethodAttribute.html">PatchMethodAttribute</a></h4>
-      <section><p>If <a class="xref" href="PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute_OriginalMethod">OriginalMethod</a> is not specified, it will be assumed that the original method&apos;s name
-is the same as this method&apos;s name. If <a class="xref" href="PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute_PatchType">PatchType</a>, it will be assumed that the method
-is a prefix patch.</p>
-</section>
-      <h4><a class="xref" href="PiTung.PiTUNG.html">PiTUNG</a></h4>
-      <section><p>Contains information about the current PiTUNG installation.</p>
-</section>
-      <h4><a class="xref" href="PiTung.TargetAttribute.html">TargetAttribute</a></h4>
-      <section></section>
-    <h3 id="enums">Enums
-  </h3>
-      <h4><a class="xref" href="PiTung.PatchType.html">PatchType</a></h4>
-      <section></section>
-      <h4><a class="xref" href="PiTung.VersionPrecision.html">VersionPrecision</a></h4>
-      <section><p>Indicates the precision used when comparing PiTUNG versions.</p>
-</section>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="PiTung_VersionPrecision_Build">Build</td>
+        <td><p>Matches if the major, minor and build numbers are equal.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="PiTung_VersionPrecision_Minor">Minor</td>
+        <td><p>Matches if the major and minor numbers are equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
 </article>
           </div>
           
@@ -122,6 +111,12 @@ is a prefix patch.</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_VersionPrecision.md&amp;value=---%0Auid%3A%20PiTung.VersionPrecision%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/pipe01/PiTUNG/blob/master/Mod.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

@@ -1053,18 +1053,6 @@ references:
   commentId: Overload:PiTung.Mod.BeforePatch
   fullName: PiTung.Mod.BeforePatch
   nameWithType: Mod.BeforePatch
-- uid: PiTung.Mod.FrameworkVersion
-  name: FrameworkVersion
-  href: api/PiTung.Mod.html#PiTung_Mod_FrameworkVersion
-  commentId: P:PiTung.Mod.FrameworkVersion
-  fullName: PiTung.Mod.FrameworkVersion
-  nameWithType: Mod.FrameworkVersion
-- uid: PiTung.Mod.FrameworkVersion*
-  name: FrameworkVersion
-  href: api/PiTung.Mod.html#PiTung_Mod_FrameworkVersion_
-  commentId: Overload:PiTung.Mod.FrameworkVersion
-  fullName: PiTung.Mod.FrameworkVersion
-  nameWithType: Mod.FrameworkVersion
 - uid: PiTung.Mod.FullName
   name: FullName
   href: api/PiTung.Mod.html#PiTung_Mod_FullName
@@ -1113,6 +1101,18 @@ references:
   commentId: Overload:PiTung.Mod.Hotloadable
   fullName: PiTung.Mod.Hotloadable
   nameWithType: Mod.Hotloadable
+- uid: PiTung.Mod.MatchVersionUpTo
+  name: MatchVersionUpTo
+  href: api/PiTung.Mod.html#PiTung_Mod_MatchVersionUpTo
+  commentId: P:PiTung.Mod.MatchVersionUpTo
+  fullName: PiTung.Mod.MatchVersionUpTo
+  nameWithType: Mod.MatchVersionUpTo
+- uid: PiTung.Mod.MatchVersionUpTo*
+  name: MatchVersionUpTo
+  href: api/PiTung.Mod.html#PiTung_Mod_MatchVersionUpTo_
+  commentId: Overload:PiTung.Mod.MatchVersionUpTo
+  fullName: PiTung.Mod.MatchVersionUpTo
+  nameWithType: Mod.MatchVersionUpTo
 - uid: PiTung.Mod.ModVersion
   name: ModVersion
   href: api/PiTung.Mod.html#PiTung_Mod_ModVersion
@@ -1173,18 +1173,6 @@ references:
   commentId: Overload:PiTung.Mod.PackageName
   fullName: PiTung.Mod.PackageName
   nameWithType: Mod.PackageName
-- uid: PiTung.Mod.RequireFrameworkVersion
-  name: RequireFrameworkVersion
-  href: api/PiTung.Mod.html#PiTung_Mod_RequireFrameworkVersion
-  commentId: P:PiTung.Mod.RequireFrameworkVersion
-  fullName: PiTung.Mod.RequireFrameworkVersion
-  nameWithType: Mod.RequireFrameworkVersion
-- uid: PiTung.Mod.RequireFrameworkVersion*
-  name: RequireFrameworkVersion
-  href: api/PiTung.Mod.html#PiTung_Mod_RequireFrameworkVersion_
-  commentId: Overload:PiTung.Mod.RequireFrameworkVersion
-  fullName: PiTung.Mod.RequireFrameworkVersion
-  nameWithType: Mod.RequireFrameworkVersion
 - uid: PiTung.Mod.Update
   name: Update()
   href: api/PiTung.Mod.html#PiTung_Mod_Update
@@ -1563,3 +1551,21 @@ references:
   commentId: Overload:PiTung.TargetAttribute.ContainerType
   fullName: PiTung.TargetAttribute.ContainerType
   nameWithType: TargetAttribute.ContainerType
+- uid: PiTung.VersionPrecision
+  name: VersionPrecision
+  href: api/PiTung.VersionPrecision.html
+  commentId: T:PiTung.VersionPrecision
+  fullName: PiTung.VersionPrecision
+  nameWithType: VersionPrecision
+- uid: PiTung.VersionPrecision.Build
+  name: Build
+  href: api/PiTung.VersionPrecision.html#PiTung_VersionPrecision_Build
+  commentId: F:PiTung.VersionPrecision.Build
+  fullName: PiTung.VersionPrecision.Build
+  nameWithType: VersionPrecision.Build
+- uid: PiTung.VersionPrecision.Minor
+  name: Minor
+  href: api/PiTung.VersionPrecision.html#PiTung_VersionPrecision_Minor
+  commentId: F:PiTung.VersionPrecision.Minor
+  fullName: PiTung.VersionPrecision.Minor
+  nameWithType: VersionPrecision.Minor
