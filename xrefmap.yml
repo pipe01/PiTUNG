@@ -214,18 +214,24 @@ references:
   commentId: T:PiTung.Building.BoardManager
   fullName: PiTung.Building.BoardManager
   nameWithType: BoardManager
+- uid: PiTung.Building.BoardManager.BoardDelegate
+  name: BoardManager.BoardDelegate
+  href: api/PiTung.Building.BoardManager.BoardDelegate.html
+  commentId: T:PiTung.Building.BoardManager.BoardDelegate
+  fullName: PiTung.Building.BoardManager.BoardDelegate
+  nameWithType: BoardManager.BoardDelegate
+- uid: PiTung.Building.BoardManager.BoardDeleted
+  name: BoardDeleted
+  href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_BoardDeleted
+  commentId: E:PiTung.Building.BoardManager.BoardDeleted
+  fullName: PiTung.Building.BoardManager.BoardDeleted
+  nameWithType: BoardManager.BoardDeleted
 - uid: PiTung.Building.BoardManager.BoardPlaced
   name: BoardPlaced
   href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_BoardPlaced
   commentId: E:PiTung.Building.BoardManager.BoardPlaced
   fullName: PiTung.Building.BoardManager.BoardPlaced
   nameWithType: BoardManager.BoardPlaced
-- uid: PiTung.Building.BoardManager.BoardPlacedDelegate
-  name: BoardManager.BoardPlacedDelegate
-  href: api/PiTung.Building.BoardManager.BoardPlacedDelegate.html
-  commentId: T:PiTung.Building.BoardManager.BoardPlacedDelegate
-  fullName: PiTung.Building.BoardManager.BoardPlacedDelegate
-  nameWithType: BoardManager.BoardPlacedDelegate
 - uid: PiTung.Building.BoardManager.GetBoard(System.Int32)
   name: GetBoard(Int32)
   href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_GetBoard_System_Int32_
