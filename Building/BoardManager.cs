@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiTung.Console;
+using System;
 using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
@@ -19,15 +20,28 @@ namespace PiTung.Building
         private List<Board> Boards = new List<Board>();
         private Dictionary<int, int> InstanceIds = new Dictionary<int, int>();
 
-        public delegate void BoardPlacedDelegate(Board board);
+        public delegate void BoardDelegate(Board board);
         /// <summary>
         /// Fires when a board is placed in the world. Doesn't fire when a board is moved.
         /// </summary>
-        public event BoardPlacedDelegate BoardPlaced;
+        public event BoardDelegate BoardPlaced;
+
+        /// <summary>
+        /// Fires when a board is deleted in the world.
+        /// </summary>
+        public event BoardDelegate BoardDeleted;
+
 
         internal BoardManager() { }
 
-        internal void BoardAdded(int x, int z, GameObject obj)
+        internal void OnBoardAdded(GameObject obj)
+        {
+            var comp = obj.GetComponent<CircuitBoard>();
+            if (comp != null)
+                OnBoardAdded(comp.x, comp.z, obj);
+        }
+
+        internal void OnBoardAdded(int x, int z, GameObject obj)
         {
             int? id = null;
             if (InstanceIds.TryGetValue(obj.GetInstanceID(), out var v))
@@ -44,6 +58,15 @@ namespace PiTung.Building
             BoardPlaced?.Invoke(b);
 
             InstanceIds[obj.GetInstanceID()] = b.Id;
+        }
+
+        internal void OnBoardDeleted(GameObject obj)
+        {
+            if (TryGetExistingBoardFromGameObject(obj, out var b))
+            {
+                IGConsole.Log($"Board removed {b.Width}x{b.Height}");
+                BoardDeleted?.Invoke(b);
+            }
         }
 
         internal void Reset()
@@ -89,7 +112,7 @@ namespace PiTung.Building
         }
 
         /// <summary>
-        /// Tries to get a <see cref="Board"/> object that represents an already loaded phyisical board.
+        /// Tries to get a <see cref="Board"/> object that represents an already loaded physical board.
         /// </summary>
         /// <param name="gameObject">The board's game object.</param>
         /// <param name="board">The resulted board.</param>

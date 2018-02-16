@@ -31,12 +31,12 @@ namespace PiTung.Building
         public int Id { get; }
 
         /// <summary>
-        /// Instanciates a new empty <see cref="Board"/> object.
+        /// Instantiates a new empty <see cref="Board"/> object.
         /// </summary>
         public Board() { }
 
         /// <summary>
-        /// Instanciates a new <see cref="Board"/> object.
+        /// Instantiates a new <see cref="Board"/> object.
         /// </summary>
         /// <param name="w">The board's grid width.</param>
         /// <param name="h">The board's grid height.</param>

@@ -144,9 +144,8 @@ namespace PiTung
         static void Prefix()
         {
             var obj = ModUtilities.GetStaticFieldValue<BoardPlacer, GameObject>("BoardBeingPlaced");
-            var component = obj.GetComponent<CircuitBoard>();
-
-            BoardManager.Instance.BoardAdded(component.x, component.z, obj);
+            
+            BoardManager.Instance.OnBoardAdded(obj);
         }
     }
 
@@ -159,7 +158,7 @@ namespace PiTung
 
             if (board != null)
             {
-                BoardManager.Instance.BoardAdded(board.x, board.z, board.gameObject);
+                BoardManager.Instance.OnBoardAdded(board.x, board.z, board.gameObject);
             }
         }
     }
@@ -194,6 +193,24 @@ namespace PiTung
 
             if (Builder.PendingIOConnections.Contains(kvp))
                 Builder.PendingIOConnections.Remove(kvp);
+        }
+    }
+    
+    [HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DeleteThing))]
+    internal class StuffDeleterBoardPatch
+    {
+        static void Prefix(GameObject DestroyThis)
+        {
+            BoardManager.Instance.OnBoardDeleted(DestroyThis);
+        }
+    }
+
+    [HarmonyPatch(typeof(BoardPlacer), nameof(BoardPlacer.CancelPlacement))]
+    internal class BoardPlacerCancelPatch
+    {
+        static void Prefix()
+        {
+            BoardManager.Instance.OnBoardDeleted(BoardPlacer.BoardBeingPlaced);
         }
     }
 }
