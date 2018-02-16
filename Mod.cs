@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using TMPro.Examples;
+using System.Security.AccessControl;
+using PiTung.Console;
+using System.Linq;
 using PiTung.Config_menu;
 using System;
 using System.Collections.Generic;
@@ -7,6 +10,22 @@ using UnityEngine;
 
 namespace PiTung
 {
+    /// <summary>
+    /// Indicates the precision used when comparing PiTUNG versions.
+    /// </summary>
+    public enum VersionPrecision
+    {
+        /// <summary>
+        /// Matches if the major and minor numbers are equal.
+        /// </summary>
+        Minor,
+
+        /// <summary>
+        /// Matches if the major, minor and build numbers are equal.
+        /// </summary>
+        Build
+    }
+
     /// <summary>
     /// Base class for all mods.
     /// </summary>
@@ -40,20 +59,9 @@ namespace PiTung
         public abstract Version ModVersion { get; }
 
         /// <summary>
-        /// The version of PiTUNG this mod is using. If a version number is not included, it is considered
-        /// a wild card. E.g, if this property equals "1.0", the mod will work on PiTUNG version "1.0.123", but not
-        /// if this property equals "1.0.0".
-        /// <para/>
-        /// Setting this property to <see cref="PiTUNG.FrameworkVersion"/> is strongly discouraged. If you
-        /// need your mod to be able to be loaded in any PiTUNG version, set <see cref="RequireFrameworkVersion"/>
-        /// to true.
+        /// Indicates what numbers to include when comparing PiTUNG versions. Defaults to <see cref="VersionPrecision.Minor"/>.
         /// </summary>
-        public abstract Version FrameworkVersion { get; }
-        
-        /// <summary>
-        /// If false, the mod will be loaded even when being loaded in a different framework version.
-        /// </summary>
-        public virtual bool RequireFrameworkVersion { get; } = true;
+        public virtual VersionPrecision MatchVersionUpTo { get; }
 
         /// <summary>
         /// If true, the mod will be able to be loaded without needing to restart the game.
@@ -69,7 +77,20 @@ namespace PiTung
         /// If true, there is an update available for this mod.
         /// </summary>
         internal bool HasAvailableUpdate { get; set; } = false;
-        
+
+        /// <summary>
+        /// Returns the version of PiTUNG that this mod was compiled with.
+        /// </summary>
+        internal Version CompiledWithVersion
+        {
+            get
+            {
+                var asses = this.GetType().Assembly.GetReferencedAssemblies();
+                
+                return asses.SingleOrDefault(o => o.Name.Contains("PiTung")).Version;
+            }
+        }
+
         /// <summary>
         /// The mod's full name. Format: {Author}'s {Name} (v{ModVersion})
         /// </summary>
@@ -119,6 +140,36 @@ namespace PiTung
             {
                 action(item);
             }
+        }
+
+        internal bool MatchesVersion()
+        {
+            bool ret = true;
+            Version v1 = this.CompiledWithVersion;
+            Version v2 = PiTUNG.FrameworkVersion;
+
+            if (ret && v1.Major != v2.Major)
+                ret = false;
+
+            if (ret && v1.Minor != v2.Minor && (MatchVersionUpTo == VersionPrecision.Minor || MatchVersionUpTo == VersionPrecision.Build))
+                ret = false;
+
+            if (ret && v1.Build != v2.Build && MatchVersionUpTo == VersionPrecision.Build)
+                ret = false;
+
+            return ret;
+        }
+
+        internal Version GetRequiredVersion()
+        {
+            var ver = CompiledWithVersion;
+
+            if (MatchVersionUpTo == VersionPrecision.Minor)
+                return new Version(ver.Major, ver.Minor);
+            else if (MatchVersionUpTo == VersionPrecision.Build)
+                return new Version(ver.Major, ver.Minor, ver.Build);
+
+            throw new Exception("aaaaa");
         }
     }
 }

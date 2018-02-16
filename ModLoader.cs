@@ -34,7 +34,7 @@ namespace PiTung
                 {
                     string name = Path.GetFileNameWithoutExtension(item);
                     MDebug.WriteLine($"[ERROR] Mod {name} failed to load.");
-                    MDebug.WriteLine("More details: " + ex.Message, 2);
+                    MDebug.WriteLine("More details:\n" + ex, 2);
                     IGConsole.Error($"Failed to load mod {name}.");
                 }
 

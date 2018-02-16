@@ -137,20 +137,12 @@ namespace PiTung
                 LoadError($"{mod.Name} failed to load: couldn't load assembly.", mod.Name);
                 return;
             }
-
-            if (!mod.FrameworkVersion.EqualsVersion(PiTUNG.FrameworkVersion))
+            
+            if (!mod.MatchesVersion())
             {
-                if (mod.RequireFrameworkVersion)
-                {
-                    LoadError($"{mod.Name} failed to load: wrong PiTUNG version. Required version: {mod.FrameworkVersion}, checking for updates.", mod.Name);
-                    CheckUpdatesBeforeLoading.Add(mod);
+                LoadError($"{mod.Name} failed to load: wrong PiTUNG version. Required version: " + mod.GetRequiredVersion(), mod.Name);
 
-                    return;
-                }
-                else
-                {
-                    MDebug.WriteLine($"[WARNING] {mod.Name} may not work properly: wrong PiTUNG version. Optimal version: {mod.FrameworkVersion}.");
-                }
+                return;
             }
 
             try
