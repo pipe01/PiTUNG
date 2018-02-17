@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Building.BoardManager.html",
-          "hash": "tIyV4gZNKHCqcV7oq675ow=="
+          "hash": "F4iHL6IqRaQueK1cvpCb6A=="
         }
       },
       "is_incremental": false,
@@ -498,11 +498,11 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
