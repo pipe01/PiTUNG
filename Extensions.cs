@@ -38,7 +38,6 @@ namespace PiTung
 
         public static void Move<T>(this IList<T> list, int oldIndex, int newIndex)
         {
-            MDebug.WriteLine($"{oldIndex} ---> {newIndex} ({list.Count} items)");
             T item = list[oldIndex];
             list.RemoveAt(oldIndex);
 

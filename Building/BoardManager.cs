@@ -64,7 +64,6 @@ namespace PiTung.Building
         {
             if (TryGetExistingBoardFromGameObject(obj, out var b))
             {
-                IGConsole.Log($"Board removed {b.Width}x{b.Height}");
                 BoardDeleted?.Invoke(b);
             }
         }
@@ -119,7 +118,7 @@ namespace PiTung.Building
         /// <returns>True if the board is found.</returns>
         public bool TryGetExistingBoardFromGameObject(GameObject gameObject, out Board board)
         {
-            if (InstanceIds.TryGetValue(gameObject.GetInstanceID(), out int id))
+            if (gameObject != null && InstanceIds.TryGetValue(gameObject.GetInstanceID(), out int id))
             {
                 var boardComp = gameObject.GetComponent<CircuitBoard>();
 
