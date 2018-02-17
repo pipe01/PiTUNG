@@ -137,29 +137,13 @@ namespace PiTung
             }
         }
     }
-
-    [HarmonyPatch(typeof(BoardPlacer), "PlaceBoard")]
-    internal class BoardPlacerPatch
+    
+    [HarmonyPatch(typeof(CircuitBoard), "Awake")]
+    internal class CircuitBoardAwakePatch
     {
-        static void Prefix()
+        static void Postfix(CircuitBoard __instance)
         {
-            var obj = ModUtilities.GetStaticFieldValue<BoardPlacer, GameObject>("BoardBeingPlaced");
-            
-            BoardManager.Instance.OnBoardAdded(obj);
-        }
-    }
-
-    [HarmonyPatch(typeof(CustomData), "LoadData")]
-    internal class CustomDataPatch
-    {
-        static void Prefix(SaveThisObject save)
-        {
-            var board = save.gameObject.GetComponent<CircuitBoard>();
-
-            if (board != null)
-            {
-                BoardManager.Instance.OnBoardAdded(board.x, board.z, board.gameObject);
-            }
+            BoardManager.Instance.OnBoardAdded(__instance.x, __instance.z, __instance.gameObject);
         }
     }
 
