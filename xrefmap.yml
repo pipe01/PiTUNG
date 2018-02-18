@@ -370,6 +370,18 @@ references:
   commentId: Overload:PiTung.Building.CircuitComponent.Name
   fullName: PiTung.Building.CircuitComponent.Name
   nameWithType: CircuitComponent.Name
+- uid: PiTung.Building.CircuitComponent.Prefab
+  name: Prefab
+  href: api/PiTung.Building.CircuitComponent.html#PiTung_Building_CircuitComponent_Prefab
+  commentId: P:PiTung.Building.CircuitComponent.Prefab
+  fullName: PiTung.Building.CircuitComponent.Prefab
+  nameWithType: CircuitComponent.Prefab
+- uid: PiTung.Building.CircuitComponent.Prefab*
+  name: Prefab
+  href: api/PiTung.Building.CircuitComponent.html#PiTung_Building_CircuitComponent_Prefab_
+  commentId: Overload:PiTung.Building.CircuitComponent.Prefab
+  fullName: PiTung.Building.CircuitComponent.Prefab
+  nameWithType: CircuitComponent.Prefab
 - uid: PiTung.Building.Components
   name: Components
   href: api/PiTung.Building.Components.html
