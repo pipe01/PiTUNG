@@ -83,7 +83,7 @@ namespace PiTung.Building
         }
 
         /// <summary>
-        /// Gets all the board's components.
+        /// Gets all the board's components. Also contains wires.
         /// </summary>
         /// <returns>Key-value pairs containing the component's position and its game object.</returns>
         public IEnumerable<KeyValuePair<Vector2Int, GameObject>> GetComponents()

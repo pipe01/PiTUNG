@@ -12,7 +12,7 @@ namespace PiTung.Building
         /// </summary>
         public string Name { get; }
 
-        internal GameObject Prefab { get; }
+        public GameObject Prefab { get; }
 
         internal CircuitComponent(string name, GameObject prefab)
         {
