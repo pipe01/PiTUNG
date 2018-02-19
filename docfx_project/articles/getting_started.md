@@ -40,7 +40,6 @@ Now that you've got a PiTUNG binary:
         public override string PackageName => "me.myname.ExampleMod";
         public override string Author => "john_doe";
         public override Version ModVersion => new Version("0.1");
-        public override Version FrameworkVersion => new Version("1.3");
     }
     ```
 
