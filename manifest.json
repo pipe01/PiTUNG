@@ -432,7 +432,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting_started.html",
-          "hash": "MPFc+R9ATxn5uN3ele9xrg=="
+          "hash": "PgsNuG/HHEyqNjIcFaSmEg=="
         }
       },
       "is_incremental": false,
@@ -498,11 +498,11 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
