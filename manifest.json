@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.AssemblyCosturer.html",
-          "hash": "/TgNbipQhprl4BVT+znr/A=="
+          "hash": "75tPSKbOnrcxNIeC7MEe/Q=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Bootstrapper.html",
-          "hash": "HbkPZsNIdIxui9K7yLcyFw=="
+          "hash": "HahrJrJ5m9fz/r+ZHC2qLw=="
         }
       },
       "is_incremental": false,
@@ -498,11 +498,11 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
