@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using TMPro.Examples;
+using System.Threading;
+using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Linq;
 using PiTung.Config_menu;
@@ -64,7 +66,7 @@ namespace PiTung
                 return;
             Patched = true;
 
-            MDebug.WriteLine("PiTUNG Framework version {0}", 0, PiTUNG.FrameworkVersion);
+            MDebug.WriteLine("PiTUNG Framework version {0}", 0, new Version(PiTUNG.FrameworkVersion.Major, PiTUNG.FrameworkVersion.Minor, PiTUNG.FrameworkVersion.Build));
             MDebug.WriteLine("-------------Patching-------------" + (hotload ? " (reloading)" : ""));
 
             if (!hotload)
@@ -88,13 +90,18 @@ namespace PiTung
                     ModInput.LoadBinds();
                     IGConsole.Init();
                 }
-                
+
                 SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
             }
 
             if (!Testing)
                 AddDummyComponent(SceneManager.GetActiveScene());
 
+            new Thread(() => PatchThread(hotload)).Start();
+        }
+
+        private void PatchThread(bool hotload)
+        {
             foreach (var mod in ModLoader.GetMods())
             {
                 LoadMod(mod, hotload);
