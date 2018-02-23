@@ -1,6 +1,6 @@
-# How to capture inputs in a mod
+# Capture keyboard input in a mod
 
-There is an input system ([`ModInput`](/api/PiTung.ModInput.html)) meant to replace Unity's own `Input` class. If you know how to use Unity's `Input`, getting to know `ModInput` will be very easy. Here's an example on how to use it:
+There is an input system ([`ModInput`](../api/PiTung.ModInput.html)) meant to replace Unity's own `Input` class. If you know how to use Unity's `Input`, getting to know `ModInput` will be very easy. Here's an example on how to use it:
 
 ```
 public class MyMod : Mod
