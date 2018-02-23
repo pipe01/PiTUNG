@@ -2,3 +2,5 @@
   href: intro.md
 - name: Getting started
   href: getting_started.md
+- name: Input management
+  href: mod_input.md
