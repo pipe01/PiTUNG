@@ -4,3 +4,5 @@
   href: getting_started.md
 - name: Input management
   href: mod_input.md
+- name: Console commands
+  href: commands.md
