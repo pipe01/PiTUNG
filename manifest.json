@@ -451,12 +451,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "articles/mod_input.md",
       "output": {
         ".html": {
           "relative_path": "articles/mod_input.html",
-          "hash": "sh/3cW2EZuPc5PAFGp214Q=="
+          "hash": "v7kL3PvyZANw8xZU8cK3bw=="
         }
       },
       "is_incremental": false,
