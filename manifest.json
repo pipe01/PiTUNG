@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Console.Command.html",
-          "hash": "kdKlmSIhE4/qFxSqUaPWwA=="
+          "hash": "f3cnK4eI/0ogxvG1R/9d8w=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Console.IGConsole.html",
-          "hash": "a5smfVewkQTubtKufify7g=="
+          "hash": "7ip24Vd9NbHM8rK3rBDYmw=="
         }
       },
       "is_incremental": false,
@@ -513,11 +513,11 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
