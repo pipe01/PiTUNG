@@ -95,6 +95,7 @@ namespace PiTung.Console
         /// Called when the command is invoked
         /// </summary>
         /// <param name="arguments">The arguments given to the command</param>
+        /// <returns>False if the command was malformed (i.e., the command requires 2 arguments but only 1 was supplied).</returns>
         public abstract bool Execute(IEnumerable<string> arguments);
     }
 
