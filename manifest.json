@@ -428,6 +428,21 @@
         "InvalidFileLink"
       ],
       "type": "Conceptual",
+      "source_relative_path": "articles/commands.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/commands.html",
+          "hash": "ZLrtEBgUZ5zhk3sBRzeqVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
       "source_relative_path": "articles/getting_started.md",
       "output": {
         ".html": {
@@ -471,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "73UPUKy1dd9hzqUx+DajtA=="
+          "hash": "/WOanLezQMf/8OTu7VCZNg=="
         }
       },
       "is_incremental": false,
