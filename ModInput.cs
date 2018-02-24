@@ -1,4 +1,6 @@
-﻿using PiTung.Console;
+﻿using System.Web.UI.WebControls;
+using System.Runtime.Remoting.Channels;
+using PiTung.Console;
 using System.IO;
 using UnityEngine;
 using System;
@@ -19,21 +21,35 @@ namespace PiTung
             public string Name { get; }
             public KeyCode Key { get; }
             public RegisterActions Listener { get; }
+            public KeyModifiers Modifiers { get; }
 
-            public KeyBind(string modPackage, string name, KeyCode key, RegisterActions l)
+            public KeyBind(string modPackage, string name, KeyCode key, RegisterActions l, KeyModifiers mods)
             {
                 this.ModPackage = modPackage;
                 this.Name = name;
                 this.Key = key;
                 this.Listener = l;
+                this.Modifiers = mods;
             }
-            public KeyBind(Mod mod, string name, KeyCode key, RegisterActions l)
-            {
-                this.ModPackage = mod?.PackageName;
-                this.Name = name;
-                this.Key = key;
-                this.Listener = l;
-            }
+        //    public KeyBind(Mod mod, string name, KeyCode key, RegisterActions l)
+        //    {
+        //        this.ModPackage = mod?.PackageName;
+        //        this.Name = name;
+        //        this.Key = key;
+        //        this.Listener = l;
+        //    }
+        }
+
+        /// <summary>
+        /// Contains the modifier keys that may be down when a certain binding key is pressed.
+        /// </summary>
+        [Flags]
+        public enum KeyModifiers
+        {
+            None = 0,
+            Control = 1,
+            Shift = 2,
+            Alt = 4
         }
 
         public class RegisterActions
@@ -66,7 +82,7 @@ namespace PiTung
         private static readonly string BindsPath = Application.persistentDataPath + "/bindings.ini";
 
         private static IList<KeyBind> Binds = new List<KeyBind>();
-
+        
         /// <summary>
         /// Registers a key binding for a mod. If the binding isn't already loaded (it's not set in the file), <paramref name="defaultKey"/> will be the binded key.
         /// </summary>
@@ -74,7 +90,7 @@ namespace PiTung
         /// <param name="name">The binding's name.</param>
         /// <param name="defaultKey">The default binding key.</param>
         /// <exception cref="Exception">Throws if a key binding with name <paramref name="name"/> has already been registered by any other mod.</exception>
-        public static RegisterActions RegisterBinding(Mod mod, string name, KeyCode defaultKey)
+        public static RegisterActions RegisterBinding(Mod mod, string name, KeyCode defaultKey, KeyModifiers modifiers = KeyModifiers.None)
         {
             string package = mod?.PackageName ?? "PiTUNG";
 
@@ -89,7 +105,7 @@ namespace PiTung
             {
                 var listener = new RegisterActions();
 
-                Binds.Add(new KeyBind(package, name, defaultKey, listener));
+                Binds.Add(new KeyBind(package, name, defaultKey, listener, modifiers));
                 SaveBinds();
 
                 return listener;
@@ -118,7 +134,7 @@ namespace PiTung
         {
             foreach (var item in Binds)
             {
-                if (item.Listener != null)
+                if (item.Listener != null && CheckModifiers(item))
                 {
                     var l = item.Listener;
 
@@ -134,10 +150,21 @@ namespace PiTung
             }
         }
 
+        private static bool CheckModifiers(KeyBind bind)
+        {
+            return
+                (!HasMod(bind.Modifiers, KeyModifiers.Control) || Input.GetKey(KeyCode.LeftControl)) &&
+                (!HasMod(bind.Modifiers, KeyModifiers.Shift) || Input.GetKey(KeyCode.LeftShift)) &&
+                (!HasMod(bind.Modifiers, KeyModifiers.Alt) || Input.GetKey(KeyCode.LeftAlt));
+
+            bool HasMod(KeyModifiers mods, KeyModifiers mod)
+                => (mods & mod) == mod;
+        }
+
         private static bool KeyBool(string name, Func<KeyCode, bool> action)
         {
-            if (Binds.TryGetValue(name, out var k, o => o.Name))
-                return action(k.Key);
+            if (Binds.TryGetValue(name, out var bind, o => o.Name))
+                return action(bind.Key) && CheckModifiers(bind);
 
             throw new KeyNotFoundException("Binding not registered.");
         }
@@ -172,12 +199,13 @@ namespace PiTung
                 int equalsIndex = line.IndexOf('=');
                 string key = line.Substring(0, equalsIndex).Trim().Replace(" ", "");
                 string value = line.Substring(equalsIndex + 1).Trim();
-                
-                var keyObj = Enum.Parse(typeof(KeyCode), value, true);
+
+                var mods = ParseModifiers(value, out string litKey);
+                var keyObj = Enum.Parse(typeof(KeyCode), litKey, true);
 
                 if (keyObj != null)
                 {
-                    Binds.Add(new KeyBind(modPack, key, (KeyCode)keyObj, new RegisterActions()));
+                    Binds.Add(new KeyBind(modPack, key, (KeyCode)keyObj, new RegisterActions(), mods));
                 }
             }
 
@@ -196,11 +224,16 @@ namespace PiTung
             int startingIndex = 0;
             var str = new StringBuilder();
             string lastMod = null;
-            
-            //Move all PiTUNG bindings to the top
-            while (MoveOne()) ;
 
-            foreach (var item in Binds.OrderBy(o => o.Key))
+            var bindsCopy = new List<KeyBind>(Binds)
+                .OrderBy(o => o.ModPackage)
+                .ThenBy(o => o.Name)
+                .ToList();
+
+            //Move all PiTUNG bindings to the top
+            while (MoveOne(bindsCopy)) ;
+            
+            foreach (var item in bindsCopy)
             {
                 if (item.ModPackage != lastMod)
                 {
@@ -211,24 +244,76 @@ namespace PiTung
                     lastMod = item.ModPackage;
                 }
 
-                str.AppendLine($"{item.Name} = {Enum.GetName(typeof(KeyCode), item.Key)}");
+                string keyName = Enum.GetName(typeof(KeyCode), item.Key);
+                string value = AddModifiers(keyName, item.Modifiers);
+
+                str.AppendLine($"{item.Name} = {value}");
             }
 
             File.WriteAllText(BindsPath, str.ToString());
 
-            bool MoveOne()
+            bool MoveOne(IList<KeyBind> list)
             {
-                for (int i = startingIndex; i < Binds.Count; i++)
+                for (int i = startingIndex; i < list.Count; i++)
                 {
-                    if (Binds[i].ModPackage.Equals("PiTUNG"))
+                    if (list[i].ModPackage.Equals("PiTUNG"))
                     {
-                        Binds.Move(i, startingIndex++);
+                        list.Move(i, startingIndex++);
                         return true;
                     }
                 }
 
                 return false;
             }
+        }
+
+        internal static string AddModifiers(string key, KeyModifiers mods)
+        {
+            string ret = "";
+
+            if ((mods & KeyModifiers.Control) == KeyModifiers.Control)
+                ret += "+";
+
+            if ((mods & KeyModifiers.Shift) == KeyModifiers.Shift)
+                ret += "-";
+
+            if ((mods & KeyModifiers.Alt) == KeyModifiers.Alt)
+                ret += "!";
+
+            return ret + key;
+        }
+
+        internal static KeyModifiers ParseModifiers(string value, out string literalKey)
+        {
+            var ret = KeyModifiers.None;
+            int i;
+
+            for (i = 0; i < value.Length; i++)
+            {
+                bool exit = false;
+
+                switch (value[i])
+                {
+                    case '+':
+                        ret |= KeyModifiers.Control;
+                        break;
+                    case '-':
+                        ret |= KeyModifiers.Shift;
+                        break;
+                    case '!':
+                        ret |= KeyModifiers.Alt;
+                        break;
+                    default:
+                        exit = true;
+                        break;
+                }
+
+                if (exit)
+                    break;
+            }
+
+            literalKey = value.Substring(i);
+            return ret;
         }
         #endregion
     }
