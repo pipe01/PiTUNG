@@ -194,7 +194,7 @@ namespace PiTung
         internal static void SaveBinds()
         {
             int startingIndex = 0;
-            StringBuilder str = new StringBuilder();
+            var str = new StringBuilder();
             string lastMod = null;
             
             //Move all PiTUNG bindings to the top

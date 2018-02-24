@@ -10,13 +10,13 @@ Then, you will need a PiTUNG binary. There are three ways of getting ahold of on
 
 ### Downloading the latest stable release
 
-Go to [the latest release in GitHub](https://github.com/pipe01/PiTUNG/releases/latest) and download the `PiTUNG Bootstrap.dll` file.
+Go to [the latest release in GitHub](https://github.com/pipe01/PiTUNG/releases/latest) and download the `PiTUNG.dll` file.
 
 ### Downloading the latest unstable release
 
 This is the version compiled from the latest commit to the GitHub repo, so it will probably be unstable and should only be used when you want to test out some new features, but never in production.
 
-To get it, simply download the [artifact from AppVeyor](https://ci.appveyor.com/api/projects/pipe01/pitung/artifacts/bin%2FDebug%2FPiTung%20Bootstrap.dll).
+To get it, simply download the [artifact from AppVeyor](https://ci.appveyor.com/api/projects/pipe01/pitung/artifacts/bin%2FDebug%2FPiTung.dll).
 
 ### Compiling from source
 //TODO
@@ -28,7 +28,7 @@ Now that you've got a PiTUNG binary:
 1. Download a copy of TUNG either [here](https://iamsodarncool.itch.io/tung) or [here](https://gamejolt.com/games/tung/304428) and extract it to a folder.
 2. Install PiTUNG as you normally would.
 3. Go to `{install folder}\The Ultimate Nerd Game_Data\Managed` and copy the `Assembly-CSharp.dll` file to wherever you want, take note of its location.
-4. Add `PiTUNG Bootstrap.dll` and `Assembly-CSharp.dll` to your project's references.
+4. Add `PiTung.dll` and `Assembly-CSharp.dll` to your project's references.
 5. Create a new file called `MyMod.cs` and replace its content with this code:
 
     ```
