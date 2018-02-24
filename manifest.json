@@ -281,6 +281,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PiTung.KeyModifiers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung.KeyModifiers.html",
+          "hash": "29iffS9XIeinl78GYVX37w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PiTung.Mod.yml",
       "output": {
         ".html": {
@@ -297,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.ModInput.RegisterActions.html",
-          "hash": "0+iA5bQNhwkZ/NedEZtVrw=="
+          "hash": "i0rMbPOtI8QtSacsblMmOQ=="
         }
       },
       "is_incremental": false,
@@ -309,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.ModInput.html",
-          "hash": "Nfixrc3zGQaqlga/VJGw0w=="
+          "hash": "3ix9dxePJLCDByCq7jtm8Q=="
         }
       },
       "is_incremental": false,
@@ -393,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.html",
-          "hash": "oiqBZ9NUHz8cONh6ik6Xgg=="
+          "hash": "uInWusqoeqiG7nPhPW1Ohw=="
         }
       },
       "is_incremental": false,
@@ -417,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "ut2Q+GjfjSf5gqHtStuVNA=="
+          "hash": "a19mMrFZr/HXe+OeSW2HiQ=="
         }
       },
       "is_incremental": false,
