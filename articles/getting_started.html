@@ -74,10 +74,10 @@
 <p>First, you must create a Visual Studio project. Once it&#39;s loaded, go to its properties and set the target framework version to <code>.NET 3.5</code>.</p>
 <p>Then, you will need a PiTUNG binary. There are three ways of getting ahold of one:</p>
 <h3 id="downloading-the-latest-stable-release">Downloading the latest stable release</h3>
-<p>Go to <a href="https://github.com/pipe01/PiTUNG/releases/latest">the latest release in GitHub</a> and download the <code>PiTUNG Bootstrap.dll</code> file.</p>
+<p>Go to <a href="https://github.com/pipe01/PiTUNG/releases/latest">the latest release in GitHub</a> and download the <code>PiTUNG.dll</code> file.</p>
 <h3 id="downloading-the-latest-unstable-release">Downloading the latest unstable release</h3>
 <p>This is the version compiled from the latest commit to the GitHub repo, so it will probably be unstable and should only be used when you want to test out some new features, but never in production.</p>
-<p>To get it, simply download the <a href="https://ci.appveyor.com/api/projects/pipe01/pitung/artifacts/bin%2FDebug%2FPiTung%20Bootstrap.dll">artifact from AppVeyor</a>.</p>
+<p>To get it, simply download the <a href="https://ci.appveyor.com/api/projects/pipe01/pitung/artifacts/bin%2FDebug%2FPiTung.dll">artifact from AppVeyor</a>.</p>
 <h3 id="compiling-from-source">Compiling from source</h3>
 <p>//TODO</p>
 <hr>
@@ -86,7 +86,7 @@
 <li>Download a copy of TUNG either <a href="https://iamsodarncool.itch.io/tung">here</a> or <a href="https://gamejolt.com/games/tung/304428">here</a> and extract it to a folder.</li>
 <li>Install PiTUNG as you normally would.</li>
 <li>Go to <code>{install folder}\The Ultimate Nerd Game_Data\Managed</code> and copy the <code>Assembly-CSharp.dll</code> file to wherever you want, take note of its location.</li>
-<li>Add <code>PiTUNG Bootstrap.dll</code> and <code>Assembly-CSharp.dll</code> to your project&#39;s references.</li>
+<li>Add <code>PiTung.dll</code> and <code>Assembly-CSharp.dll</code> to your project&#39;s references.</li>
 <li><p>Create a new file called <code>MyMod.cs</code> and replace its content with this code:</p>
 <pre><code>using PiTung_Bootstrap;
 
