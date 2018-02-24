@@ -1029,36 +1029,6 @@ references:
   commentId: Overload:PiTung.GraphicUtilities.ImportMeshFromFile
   fullName: PiTung.GraphicUtilities.ImportMeshFromFile
   nameWithType: GraphicUtilities.ImportMeshFromFile
-- uid: PiTung.KeyModifiers
-  name: KeyModifiers
-  href: api/PiTung.KeyModifiers.html
-  commentId: T:PiTung.KeyModifiers
-  fullName: PiTung.KeyModifiers
-  nameWithType: KeyModifiers
-- uid: PiTung.KeyModifiers.Alt
-  name: Alt
-  href: api/PiTung.KeyModifiers.html#PiTung_KeyModifiers_Alt
-  commentId: F:PiTung.KeyModifiers.Alt
-  fullName: PiTung.KeyModifiers.Alt
-  nameWithType: KeyModifiers.Alt
-- uid: PiTung.KeyModifiers.Control
-  name: Control
-  href: api/PiTung.KeyModifiers.html#PiTung_KeyModifiers_Control
-  commentId: F:PiTung.KeyModifiers.Control
-  fullName: PiTung.KeyModifiers.Control
-  nameWithType: KeyModifiers.Control
-- uid: PiTung.KeyModifiers.None
-  name: None
-  href: api/PiTung.KeyModifiers.html#PiTung_KeyModifiers_None
-  commentId: F:PiTung.KeyModifiers.None
-  fullName: PiTung.KeyModifiers.None
-  nameWithType: KeyModifiers.None
-- uid: PiTung.KeyModifiers.Shift
-  name: Shift
-  href: api/PiTung.KeyModifiers.html#PiTung_KeyModifiers_Shift
-  commentId: F:PiTung.KeyModifiers.Shift
-  fullName: PiTung.KeyModifiers.Shift
-  nameWithType: KeyModifiers.Shift
 - uid: PiTung.Mod
   name: Mod
   href: api/PiTung.Mod.html
@@ -1341,12 +1311,12 @@ references:
   commentId: Overload:PiTung.ModInput.RegisterActions.ListenKeyUp
   fullName: PiTung.ModInput.RegisterActions.ListenKeyUp
   nameWithType: ModInput.RegisterActions.ListenKeyUp
-- uid: PiTung.ModInput.RegisterBinding(PiTung.Mod,System.String,UnityEngine.KeyCode,PiTung.KeyModifiers)
-  name: RegisterBinding(Mod, String, KeyCode, KeyModifiers)
-  href: api/PiTung.ModInput.html#PiTung_ModInput_RegisterBinding_PiTung_Mod_System_String_UnityEngine_KeyCode_PiTung_KeyModifiers_
-  commentId: M:PiTung.ModInput.RegisterBinding(PiTung.Mod,System.String,UnityEngine.KeyCode,PiTung.KeyModifiers)
-  fullName: PiTung.ModInput.RegisterBinding(PiTung.Mod, System.String, UnityEngine.KeyCode, PiTung.KeyModifiers)
-  nameWithType: ModInput.RegisterBinding(Mod, String, KeyCode, KeyModifiers)
+- uid: PiTung.ModInput.RegisterBinding(PiTung.Mod,System.String,UnityEngine.KeyCode)
+  name: RegisterBinding(Mod, String, KeyCode)
+  href: api/PiTung.ModInput.html#PiTung_ModInput_RegisterBinding_PiTung_Mod_System_String_UnityEngine_KeyCode_
+  commentId: M:PiTung.ModInput.RegisterBinding(PiTung.Mod,System.String,UnityEngine.KeyCode)
+  fullName: PiTung.ModInput.RegisterBinding(PiTung.Mod, System.String, UnityEngine.KeyCode)
+  nameWithType: ModInput.RegisterBinding(Mod, String, KeyCode)
 - uid: PiTung.ModInput.RegisterBinding*
   name: RegisterBinding
   href: api/PiTung.ModInput.html#PiTung_ModInput_RegisterBinding_
