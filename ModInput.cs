@@ -11,6 +11,18 @@ using System.Text;
 namespace PiTung
 {
     /// <summary>
+    /// Contains the modifier keys that may be down when a certain binding key is pressed.
+    /// </summary>
+    [Flags]
+    public enum KeyModifiers
+    {
+        None = 0,
+        Control = 1,
+        Shift = 2,
+        Alt = 4
+    }
+
+    /// <summary>
     /// Manages all mod key bindings. It is highly recommended to use this class instead of <see cref="Input"/>.
     /// </summary>
     public static class ModInput
@@ -31,25 +43,6 @@ namespace PiTung
                 this.Listener = l;
                 this.Modifiers = mods;
             }
-        //    public KeyBind(Mod mod, string name, KeyCode key, RegisterActions l)
-        //    {
-        //        this.ModPackage = mod?.PackageName;
-        //        this.Name = name;
-        //        this.Key = key;
-        //        this.Listener = l;
-        //    }
-        }
-
-        /// <summary>
-        /// Contains the modifier keys that may be down when a certain binding key is pressed.
-        /// </summary>
-        [Flags]
-        public enum KeyModifiers
-        {
-            None = 0,
-            Control = 1,
-            Shift = 2,
-            Alt = 4
         }
 
         public class RegisterActions
