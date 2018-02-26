@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>PiTUNG API Documentation </title>
+    <title>How to modify the game's code </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="PiTUNG API Documentation ">
+    <meta name="title" content="How to modify the game's code ">
     <meta name="generator" content="docfx 2.31.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,11 +67,22 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="pitung-api-documentation">PiTUNG API Documentation</h1>
+<h1 id="how-to-modify-the-games-code">How to modify the game&#39;s code</h1>
 
-<p>This framework is based on the patching of the game&#39;s methods, which you can see by decompiling the game.</p>
-<p>The classes on the sidebar may be used to aid on creating a mod.</p>
-</article>
+<p>This framework is based on the ability to patch the game&#39;s methods, thus modifying the game&#39;s logic. Before you modify any method, you must first know which method to modify! This is why you must decompile the game&#39;s <code>Assembly-CSharp.dll</code> file, which contains the game&#39;s logic. I can&#39;t go into detail on how to do this, but it shouldn&#39;t be too hard to google it.</p>
+<p>After you&#39;ve selected the method you want to patch, you must create a class inside your mod with a <a href="../api/PiTung.TargetAttribute.html"><code>TargetAttribute</code></a> attribute, which indicates the class that contains the method you want to patch. Inside your class, you must define a method (or more) with the same name as the one you want to patch and with a <a href="../api/PiTung.PatchMethodAttribute.html"><code>PatchMethodAttribute</code></a> attribute.</p>
+<p>There are two kinds of method patches: prefix and postfix. As their name indicates, a prefix patch method will get executed before the original method does, and a postfix patch method will get executed after the original method is executed. You can indicate what kind of patch you want via the <code>PatchMethodAttribute.PatchType</code> parameter.</p>
+<p>For example, this will execute some code before the method <code>MyClass.MyMethod</code>:</p>
+<pre><code>[Target(typeof(MyClass))]
+static class MyClassPatch
+{
+    [PatchMethod]
+    static void MyMethod()
+    {
+        IGConsole.Log(&quot;MyMethod will be executed!&quot;);
+    }
+}
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
@@ -79,7 +90,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/pipe01/PiTUNG/blob/master/docfx_project/api/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/pipe01/PiTUNG/blob/master/docfx_project/articles/patching.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
