@@ -6,3 +6,7 @@
   href: mod_input.md
 - name: Console commands
   href: commands.md
+- name: Patching the game
+  href: patching.md
+- name: Advanced method patching
+  href: adv_patching.md
