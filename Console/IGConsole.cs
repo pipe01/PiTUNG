@@ -312,6 +312,7 @@ namespace PiTung.Console
                 return;
             }
 
+            float animPercentage = (ShownAtTime - ShowAnimationTime) / ShowAnimationTime;
             Color background = Color.black;
             background.a = 0.75f;
 
@@ -325,8 +326,14 @@ namespace PiTung.Console
             {
                 int a = Shown ? height : 0;
                 int b = Shown ? 0 : height;
+                float val = (Time.time - ShownAtTime) / ShowAnimationTime;
 
-                yOffset = -EaseOutQuad(a, b, (Time.time - ShownAtTime) / ShowAnimationTime);
+                yOffset = -EaseOutQuad(a, b, val);
+
+                if (!Shown)
+                    val = 1 - val;
+
+                background.a *= val;
             }
 
             // Background rectangle
