@@ -311,8 +311,7 @@ namespace PiTung.Console
             {
                 return;
             }
-
-            float animPercentage = (ShownAtTime - ShowAnimationTime) / ShowAnimationTime;
+            
             Color background = Color.black;
             background.a = 0.75f;
 
