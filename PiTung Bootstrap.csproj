@@ -96,7 +96,7 @@
     <Compile Include="Console\CmdParser.cs" />
     <Compile Include="Console\IGConsole.cs" />
     <Compile Include="Mod utilities\ModUtilities.cs" />
-    <Compile Include="ModInput.cs" />
+    <Compile Include="Mod utilities\ModInput.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
