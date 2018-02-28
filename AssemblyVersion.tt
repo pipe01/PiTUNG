@@ -7,5 +7,5 @@ using System.Reflection;
 [assembly: AssemblyFileVersion("<#= this.version #>")]
 
 <#+
-	string version = "1.6.1";
+	string version = "1.6.2";
 #>
