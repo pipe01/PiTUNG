@@ -1101,18 +1101,6 @@ references:
   commentId: Overload:PiTung.Mod.BeforePatch
   fullName: PiTung.Mod.BeforePatch
   nameWithType: Mod.BeforePatch
-- uid: PiTung.Mod.Dependencies
-  name: Dependencies
-  href: api/PiTung.Mod.html#PiTung_Mod_Dependencies
-  commentId: P:PiTung.Mod.Dependencies
-  fullName: PiTung.Mod.Dependencies
-  nameWithType: Mod.Dependencies
-- uid: PiTung.Mod.Dependencies*
-  name: Dependencies
-  href: api/PiTung.Mod.html#PiTung_Mod_Dependencies_
-  commentId: Overload:PiTung.Mod.Dependencies
-  fullName: PiTung.Mod.Dependencies
-  nameWithType: Mod.Dependencies
 - uid: PiTung.Mod.FullName
   name: FullName
   href: api/PiTung.Mod.html#PiTung_Mod_FullName
