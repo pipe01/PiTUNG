@@ -76,6 +76,8 @@ namespace PiTung
 
         private static IList<KeyBind> Binds = new List<KeyBind>();
         
+        internal static bool CheckingInput { get; private set; }
+
         /// <summary>
         /// Registers a key binding for a mod. If the binding isn't already loaded (it's not set in the file), <paramref name="defaultKey"/> will be the binded key.
         /// </summary>
@@ -104,7 +106,7 @@ namespace PiTung
                 return listener;
             }
         }
-
+        
         /// <summary>
         /// Gets the <see cref="KeyCode"/> for the binding with name <paramref name="name"/>.
         /// </summary>
@@ -145,19 +147,28 @@ namespace PiTung
 
         private static bool CheckModifiers(KeyBind bind)
         {
-            return
-                (!HasMod(bind.Modifiers, KeyModifiers.Control) || Input.GetKey(KeyCode.LeftControl)) &&
-                (!HasMod(bind.Modifiers, KeyModifiers.Shift) || Input.GetKey(KeyCode.LeftShift)) &&
-                (!HasMod(bind.Modifiers, KeyModifiers.Alt) || Input.GetKey(KeyCode.LeftAlt));
+            bool hasCtrl = HasMod(bind.Modifiers, KeyModifiers.Control);
+            bool hasShift = HasMod(bind.Modifiers, KeyModifiers.Shift);
+            bool hasAlt = HasMod(bind.Modifiers, KeyModifiers.Alt);
+
+            int targetFlags = (hasCtrl ? (1 << 0) : 0) | (hasShift ? (1 << 1) : 0) | (hasAlt ? (1 << 2) : 0);
+            int inputFlags =
+                (Input.GetKey(KeyCode.LeftControl) ? (1 << 0) : 0) |
+                (Input.GetKey(KeyCode.LeftShift) ? (1 << 1) : 0) |
+                (Input.GetKey(KeyCode.LeftAlt) ? (1 << 2) : 0);
+            
+            return targetFlags == inputFlags;
 
             bool HasMod(KeyModifiers mods, KeyModifiers mod)
                 => (mods & mod) == mod;
         }
-
+        
         private static bool KeyBool(string name, Func<KeyCode, bool> action)
         {
             if (Binds.TryGetValue(name, out var bind, o => o.Name))
+            {
                 return action(bind.Key) && CheckModifiers(bind);
+            }
 
             throw new KeyNotFoundException("Binding not registered.");
         }
@@ -205,10 +216,10 @@ namespace PiTung
             var warnedKeys = new List<KeyCode>();
             foreach (var item in Binds)
             {
-                if (Binds.Any(o => o.Key == item.Key && o.Name != item.Name) && !warnedKeys.Contains(item.Key))
+                if (Binds.Any(o => o.Key == item.Key && o.Modifiers == item.Modifiers && o.Name != item.Name) && !warnedKeys.Contains(item.Key))
                 {
                     warnedKeys.Add(item.Key);
-                    IGConsole.Error($"The key <b>{item.Key}</b> has been binded to more than once!");
+                    IGConsole.Error($"The key <b>{AddModifiers(item.Key.ToString(), item.Modifiers)}</b> has been binded to more than once!");
                 }
             }
         }
