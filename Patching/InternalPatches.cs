@@ -92,7 +92,7 @@ namespace PiTung
         }
     }
     
-    [HarmonyPatch(typeof(DummyComponent), "OnGUI")]
+    [HarmonyPatch(typeof(DummyComponent), nameof(DummyComponent.OnGUI))]
     internal class GuiPatch
     {
         public static List<IUiElement> ElementsToBeDrawn = new List<IUiElement>();
@@ -126,7 +126,16 @@ namespace PiTung
         }
     }
 
-    [HarmonyPatch(typeof(DummyComponent), "Awake")]
+    [HarmonyPatch(typeof(DummyComponent), nameof(DummyComponent.OnApplicationQuit))]
+    internal class QuitPatch
+    {
+        static void Prefix()
+        {
+            Mod.CallOnAllMods(o => o.OnApplicationQuit());
+        }
+    }
+
+    [HarmonyPatch(typeof(DummyComponent), nameof(DummyComponent.Awake))]
     internal class AwakePatch
     {
         static void Prefix(DummyComponent __instance)
@@ -156,7 +165,7 @@ namespace PiTung
         }
     }
 
-    [HarmonyPatch(typeof(StuffDeleter), "DestroyIIConnection")]
+    [HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DestroyIIConnection))]
     internal class StuffDeleterIIPatch
     {
         static void Prefix(InputInputConnection connection)
@@ -168,7 +177,7 @@ namespace PiTung
         }
     }
 
-    [HarmonyPatch(typeof(StuffDeleter), "DestroyIOConnection")]
+    [HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DestroyIOConnection))]
     internal class StuffDeleterIOPatch
     {
         static void Prefix(InputOutputConnection connection)

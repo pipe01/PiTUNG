@@ -1,12 +1,8 @@
-﻿using TMPro.Examples;
-using System.Security.AccessControl;
-using PiTung.Console;
-using System.Linq;
+﻿using System.Linq;
 using PiTung.Config_menu;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using UnityEngine;
 
 namespace PiTung
 {
@@ -127,6 +123,11 @@ namespace PiTung
         /// Equivalent to MonoBehaviour.OnGUI.
         /// </summary>
         public virtual void OnGUI() { }
+
+        /// <summary>
+        /// Equivalent to MonoBehaviour.OnApplicationQuit.
+        /// </summary>
+        public virtual void OnApplicationQuit() { }
         #endregion
     }
 
