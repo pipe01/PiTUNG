@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PiTung.Console;
+using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,13 +42,42 @@ namespace PiTung.Mod_utilities
         /// <summary>
         /// The hologram's text color.
         /// </summary>
-        public Color TextColor { get; set; } = Color.white;
+        public Color TextColor
+        {
+            get => this.Style.normal.textColor;
+            set => this.Style.normal.textColor = value;
+        }
 
+        /// <summary>
+        /// True if the hologram's text will have a shadow.
+        /// </summary>
+        public bool TextShadow { get; set; } = true;
+
+        /// <summary>
+        /// If true, the text will get bigger the closer you are to it, up to <see cref="ScaleSizeWithDistance"/>.
+        /// </summary>
+        public bool ScaleSizeWithDistance { get; set; } = false;
+
+        /// <summary>
+        /// The maximum text size.
+        /// </summary>
+        public float MaxTextSize { get; set; } = 24f;
+
+        private GUIStyle Style, ShadowStyle;
         private bool IsTrackingGameObject;
 
+        #region ctor
         private Hologram(string text)
         {
             this.Text = text;
+            this.Style = new GUIStyle
+            {
+                richText = true,
+                normal = new GUIStyleState
+                {
+                    textColor = Color.white
+                }
+            };
 
             HologramManager.ActiveHolograms.Add(this);
         }
@@ -72,6 +102,7 @@ namespace PiTung.Mod_utilities
             this.TargetObject = gameObject;
             this.IsTrackingGameObject = true;
         }
+        #endregion
 
         /// <summary>
         /// Destroys this hologram. When destroyed, it won't be rendered on screen ever again.
@@ -84,6 +115,7 @@ namespace PiTung.Mod_utilities
             this.WorldPosition = Vector3.zero;
             this.ScreenPosition = Vector2.zero;
             this.TargetObject = null;
+            this.IsTrackingGameObject = false;
         }
 
         private void UpdateScreenPosition()
@@ -91,6 +123,31 @@ namespace PiTung.Mod_utilities
             var scrPos = FirstPersonInteraction.FirstPersonCamera.WorldToScreenPoint(this.WorldPosition);
 
             this.ScreenPosition = new Vector2(scrPos.x, Screen.height - scrPos.y);
+        }
+
+        private void UpdateShadowStyle()
+        {
+            this.ShadowStyle = new GUIStyle(this.Style);
+            this.ShadowStyle.normal.textColor = Color.black;
+        }
+
+        private void CalcTextSize()
+        {
+            var camera = FirstPersonInteraction.FirstPersonCamera.transform.position;
+
+            float distance = Vector3.Distance(camera, this.WorldPosition);
+            
+            int newSize = (int)(this.MaxTextSize * 1.5f * (1 / distance));
+
+            if (newSize < 1)
+                newSize = 1;
+            else if (newSize < 0)
+                newSize = 0;
+
+            Style.fontSize = newSize;
+
+            if (ShadowStyle != null)
+                ShadowStyle.fontSize = newSize;
         }
 
         internal void Update()
@@ -112,7 +169,25 @@ namespace PiTung.Mod_utilities
         {
             if (this.Visible)
             {
-                ModUtilities.Graphics.DrawText(this.Text, this.ScreenPosition, this.TextColor, true);
+                if (this.ScaleSizeWithDistance)
+                    CalcTextSize();
+                else
+                    Style.fontSize = (int)this.MaxTextSize;
+
+                if (this.ShadowStyle == null)
+                    UpdateShadowStyle();
+
+                var size = this.Style.CalcSize(new GUIContent(this.Text));
+                var pos = this.ScreenPosition;
+
+                if (this.TextShadow)
+                {
+                    var shadowRect = new Rect(pos.x + 1, pos.y + 1, size.x, size.y);
+
+                    GUI.Label(shadowRect, this.Text, this.ShadowStyle);
+                }
+
+                GUI.Label(new Rect(pos, size), this.Text, this.Style);
             }
         }
     }
