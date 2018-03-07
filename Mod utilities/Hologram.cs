@@ -51,13 +51,7 @@ namespace PiTung.Mod_utilities
 
             HologramManager.ActiveHolograms.Add(this);
         }
-
-        ~Hologram()
-        {
-            if (HologramManager.ActiveHolograms.Contains(this))
-                HologramManager.ActiveHolograms.Remove(this);
-        }
-
+        
         /// <summary>
         /// Creates a new hologram that tracks the point <paramref name="worldPosition"/>.
         /// </summary>
@@ -79,6 +73,19 @@ namespace PiTung.Mod_utilities
             this.IsTrackingGameObject = true;
         }
 
+        /// <summary>
+        /// Destroys this hologram. When destroyed, it won't be rendered on screen ever again.
+        /// </summary>
+        public void Destroy()
+        {
+            if (HologramManager.ActiveHolograms.Contains(this))
+                HologramManager.ActiveHolograms.Remove(this);
+
+            this.WorldPosition = Vector3.zero;
+            this.ScreenPosition = Vector2.zero;
+            this.TargetObject = null;
+        }
+
         private void UpdateScreenPosition()
         {
             this.ScreenPosition = FirstPersonInteraction.FirstPersonCamera.WorldToScreenPoint(this.WorldPosition);
@@ -89,13 +96,14 @@ namespace PiTung.Mod_utilities
             if (this.TargetObject != null)
             {
                 this.WorldPosition = this.TargetObject.transform.position;
-                UpdateScreenPosition();
             }
             else if (this.IsTrackingGameObject)
             {
                 //We were tracking a game object but now it's null, which means that the object was destroyed.
                 this.Visible = false;
             }
+
+            UpdateScreenPosition();
         }
 
         internal void Draw()
