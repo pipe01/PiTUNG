@@ -102,7 +102,7 @@ namespace PiTung.Mod_utilities
             else if (this.IsTrackingGameObject)
             {
                 //We were tracking a game object but now it's null, which means that the object was destroyed.
-                this.Visible = false;
+                this.Destroy();
             }
 
             UpdateScreenPosition();
