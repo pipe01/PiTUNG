@@ -1,0 +1,108 @@
+﻿using UnityEngine;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace PiTung.Mod_utilities
+{
+    /// <summary>
+    /// A hologram is a string that will float on screen, tracking a position in the world.
+    /// <para />
+    /// Note that when tracking a game object, if said game object is destroyed, the hologram will set its <see cref="Visible"/> property to false, but you must take care of destroying the hologram.
+    /// </summary>
+    public class Hologram
+    {
+        /// <summary>
+        /// The world position that the hologram is currently tracking.
+        /// </summary>
+        public Vector3 WorldPosition { get; private set; }
+
+        /// <summary>
+        /// The hologram's current position on screen.
+        /// </summary>
+        public Vector2 ScreenPosition { get; private set; }
+
+        /// <summary>
+        /// The game object that the hologram is currently tracking. May be null.
+        /// </summary>
+        public GameObject TargetObject { get; private set; }
+
+        /// <summary>
+        /// The hologram's text.
+        /// </summary>
+        public string Text { get; set; }
+
+        /// <summary>
+        /// Whether or not to draw the hologram.
+        /// </summary>
+        public bool Visible { get; set; }
+        
+        /// <summary>
+        /// The hologram's text color.
+        /// </summary>
+        public Color TextColor { get; set; } = Color.white;
+
+        private bool IsTrackingGameObject;
+
+        private Hologram(string text)
+        {
+            this.Text = text;
+
+            HologramManager.ActiveHolograms.Add(this);
+        }
+
+        ~Hologram()
+        {
+            if (HologramManager.ActiveHolograms.Contains(this))
+                HologramManager.ActiveHolograms.Remove(this);
+        }
+
+        /// <summary>
+        /// Creates a new hologram that tracks the point <paramref name="worldPosition"/>.
+        /// </summary>
+        /// <param name="text">The hologram's text.</param>
+        /// <param name="worldPosition">The tracking point.</param>
+        public Hologram(string text, Vector3 worldPosition) : this(text)
+        {
+            this.WorldPosition = worldPosition;
+        }
+
+        /// <summary>
+        /// Creates a new hologram that tracks the object <paramref name="gameObject"/>
+        /// </summary>
+        /// <param name="text">The hologram's text.</param>
+        /// <param name="gameObject"></param>
+        public Hologram(string text, GameObject gameObject) : this(text)
+        {
+            this.TargetObject = gameObject;
+        }
+
+        private void UpdateScreenPosition()
+        {
+            this.ScreenPosition = FirstPersonInteraction.FirstPersonCamera.WorldToScreenPoint(WorldPosition);
+        }
+
+        internal void Update()
+        {
+            if (TargetObject != null)
+            {
+                this.WorldPosition = TargetObject.transform.position;
+                UpdateScreenPosition();
+            }
+            else if (IsTrackingGameObject)
+            {
+                //We were tracking a game object but now it's null, which means that the object was destroyed.
+                this.Visible = false;
+            }
+        }
+
+        internal void Draw()
+        {
+            if (this.Visible)
+            {
+                ModUtilities.Graphics.DrawText(Text, this.ScreenPosition, TextColor, true);
+            }
+        }
+    }
+}

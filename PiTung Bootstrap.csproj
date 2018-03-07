@@ -79,6 +79,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mod utilities\Hologram.cs" />
+    <Compile Include="Mod utilities\HologramManager.cs" />
     <Compile Include="Patching\AssemblyCosturer.cs" />
     <Compile Include="AssemblyVersion.cs">
       <AutoGen>True</AutoGen>
