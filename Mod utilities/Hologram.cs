@@ -76,21 +76,22 @@ namespace PiTung.Mod_utilities
         public Hologram(string text, GameObject gameObject) : this(text)
         {
             this.TargetObject = gameObject;
+            this.IsTrackingGameObject = true;
         }
 
         private void UpdateScreenPosition()
         {
-            this.ScreenPosition = FirstPersonInteraction.FirstPersonCamera.WorldToScreenPoint(WorldPosition);
+            this.ScreenPosition = FirstPersonInteraction.FirstPersonCamera.WorldToScreenPoint(this.WorldPosition);
         }
 
         internal void Update()
         {
-            if (TargetObject != null)
+            if (this.TargetObject != null)
             {
-                this.WorldPosition = TargetObject.transform.position;
+                this.WorldPosition = this.TargetObject.transform.position;
                 UpdateScreenPosition();
             }
-            else if (IsTrackingGameObject)
+            else if (this.IsTrackingGameObject)
             {
                 //We were tracking a game object but now it's null, which means that the object was destroyed.
                 this.Visible = false;
@@ -101,7 +102,7 @@ namespace PiTung.Mod_utilities
         {
             if (this.Visible)
             {
-                ModUtilities.Graphics.DrawText(Text, this.ScreenPosition, TextColor, true);
+                ModUtilities.Graphics.DrawText(this.Text, this.ScreenPosition, this.TextColor, true);
             }
         }
     }

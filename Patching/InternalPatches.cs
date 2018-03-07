@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiTung.Mod_utilities;
+using System;
 using PiTung.Building;
 using PiTung.Config_menu;
 using Harmony;
@@ -20,6 +21,7 @@ namespace PiTung
         static void Prefix()
         {
             IGConsole.Update();
+            HologramManager.Update();
 
             Mod.CallOnAllMods(o => o.Update());
         }
@@ -112,6 +114,8 @@ namespace PiTung
 
                 ModUtilities.Graphics.DrawText(str, new Vector2(5, 5), Color.white, true);
             }
+
+            HologramManager.Draw();
 
             foreach (var item in ElementsToBeDrawn)
             {
