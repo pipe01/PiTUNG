@@ -36,7 +36,7 @@ namespace PiTung.Mod_utilities
         /// <summary>
         /// Whether or not to draw the hologram.
         /// </summary>
-        public bool Visible { get; set; }
+        public bool Visible { get; set; } = true;
         
         /// <summary>
         /// The hologram's text color.
