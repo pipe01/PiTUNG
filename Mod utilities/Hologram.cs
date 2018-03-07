@@ -37,7 +37,7 @@ namespace PiTung.Mod_utilities
         /// Whether or not to draw the hologram.
         /// </summary>
         public bool Visible { get; set; } = true;
-        
+
         /// <summary>
         /// The hologram's text color.
         /// </summary>
@@ -51,7 +51,7 @@ namespace PiTung.Mod_utilities
 
             HologramManager.ActiveHolograms.Add(this);
         }
-        
+
         /// <summary>
         /// Creates a new hologram that tracks the point <paramref name="worldPosition"/>.
         /// </summary>
@@ -88,7 +88,9 @@ namespace PiTung.Mod_utilities
 
         private void UpdateScreenPosition()
         {
-            this.ScreenPosition = FirstPersonInteraction.FirstPersonCamera.WorldToScreenPoint(this.WorldPosition);
+            var scrPos = FirstPersonInteraction.FirstPersonCamera.WorldToScreenPoint(this.WorldPosition);
+
+            this.ScreenPosition = new Vector2(scrPos.x, Screen.height - scrPos.y);
         }
 
         internal void Update()
