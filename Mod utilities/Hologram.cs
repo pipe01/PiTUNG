@@ -61,7 +61,7 @@ namespace PiTung.Mod_utilities
         /// <summary>
         /// The maximum text size.
         /// </summary>
-        public float MaxTextSize { get; set; } = 24f;
+        public float MaxTextSize { get; set; } = 6f;
 
         private GUIStyle Style, ShadowStyle;
         private bool IsTrackingGameObject;
@@ -137,7 +137,7 @@ namespace PiTung.Mod_utilities
 
             float distance = Vector3.Distance(camera, this.WorldPosition);
             
-            int newSize = (int)(this.MaxTextSize * 1.5f * (1 / distance));
+            int newSize = (int)(this.MaxTextSize * 2 * (1 / distance));
 
             if (newSize < 1)
                 newSize = 1;
