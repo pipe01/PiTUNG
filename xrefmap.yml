@@ -1185,6 +1185,18 @@ references:
   commentId: Overload:PiTung.Mod.Name
   fullName: PiTung.Mod.Name
   nameWithType: Mod.Name
+- uid: PiTung.Mod.OnApplicationQuit
+  name: OnApplicationQuit()
+  href: api/PiTung.Mod.html#PiTung_Mod_OnApplicationQuit
+  commentId: M:PiTung.Mod.OnApplicationQuit
+  fullName: PiTung.Mod.OnApplicationQuit()
+  nameWithType: Mod.OnApplicationQuit()
+- uid: PiTung.Mod.OnApplicationQuit*
+  name: OnApplicationQuit
+  href: api/PiTung.Mod.html#PiTung_Mod_OnApplicationQuit_
+  commentId: Overload:PiTung.Mod.OnApplicationQuit
+  fullName: PiTung.Mod.OnApplicationQuit
+  nameWithType: Mod.OnApplicationQuit
 - uid: PiTung.Mod.OnGUI
   name: OnGUI()
   href: api/PiTung.Mod.html#PiTung_Mod_OnGUI
@@ -1245,6 +1257,156 @@ references:
   commentId: Overload:PiTung.Mod.UpdateUrl
   fullName: PiTung.Mod.UpdateUrl
   nameWithType: Mod.UpdateUrl
+- uid: PiTung.Mod_utilities
+  name: PiTung.Mod_utilities
+  href: api/PiTung.Mod_utilities.html
+  commentId: N:PiTung.Mod_utilities
+  fullName: PiTung.Mod_utilities
+  nameWithType: PiTung.Mod_utilities
+- uid: PiTung.Mod_utilities.Hologram
+  name: Hologram
+  href: api/PiTung.Mod_utilities.Hologram.html
+  commentId: T:PiTung.Mod_utilities.Hologram
+  fullName: PiTung.Mod_utilities.Hologram
+  nameWithType: Hologram
+- uid: PiTung.Mod_utilities.Hologram.#ctor(System.String,UnityEngine.GameObject)
+  name: Hologram(String, GameObject)
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram__ctor_System_String_UnityEngine_GameObject_
+  commentId: M:PiTung.Mod_utilities.Hologram.#ctor(System.String,UnityEngine.GameObject)
+  fullName: PiTung.Mod_utilities.Hologram.Hologram(System.String, UnityEngine.GameObject)
+  nameWithType: Hologram.Hologram(String, GameObject)
+- uid: PiTung.Mod_utilities.Hologram.#ctor(System.String,UnityEngine.Vector3)
+  name: Hologram(String, Vector3)
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram__ctor_System_String_UnityEngine_Vector3_
+  commentId: M:PiTung.Mod_utilities.Hologram.#ctor(System.String,UnityEngine.Vector3)
+  fullName: PiTung.Mod_utilities.Hologram.Hologram(System.String, UnityEngine.Vector3)
+  nameWithType: Hologram.Hologram(String, Vector3)
+- uid: PiTung.Mod_utilities.Hologram.#ctor*
+  name: Hologram
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram__ctor_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.#ctor
+  fullName: PiTung.Mod_utilities.Hologram.Hologram
+  nameWithType: Hologram.Hologram
+- uid: PiTung.Mod_utilities.Hologram.Destroy
+  name: Destroy()
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_Destroy
+  commentId: M:PiTung.Mod_utilities.Hologram.Destroy
+  fullName: PiTung.Mod_utilities.Hologram.Destroy()
+  nameWithType: Hologram.Destroy()
+- uid: PiTung.Mod_utilities.Hologram.Destroy*
+  name: Destroy
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_Destroy_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.Destroy
+  fullName: PiTung.Mod_utilities.Hologram.Destroy
+  nameWithType: Hologram.Destroy
+- uid: PiTung.Mod_utilities.Hologram.MaxTextSize
+  name: MaxTextSize
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_MaxTextSize
+  commentId: P:PiTung.Mod_utilities.Hologram.MaxTextSize
+  fullName: PiTung.Mod_utilities.Hologram.MaxTextSize
+  nameWithType: Hologram.MaxTextSize
+- uid: PiTung.Mod_utilities.Hologram.MaxTextSize*
+  name: MaxTextSize
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_MaxTextSize_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.MaxTextSize
+  fullName: PiTung.Mod_utilities.Hologram.MaxTextSize
+  nameWithType: Hologram.MaxTextSize
+- uid: PiTung.Mod_utilities.Hologram.ScaleSizeWithDistance
+  name: ScaleSizeWithDistance
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_ScaleSizeWithDistance
+  commentId: P:PiTung.Mod_utilities.Hologram.ScaleSizeWithDistance
+  fullName: PiTung.Mod_utilities.Hologram.ScaleSizeWithDistance
+  nameWithType: Hologram.ScaleSizeWithDistance
+- uid: PiTung.Mod_utilities.Hologram.ScaleSizeWithDistance*
+  name: ScaleSizeWithDistance
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_ScaleSizeWithDistance_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.ScaleSizeWithDistance
+  fullName: PiTung.Mod_utilities.Hologram.ScaleSizeWithDistance
+  nameWithType: Hologram.ScaleSizeWithDistance
+- uid: PiTung.Mod_utilities.Hologram.ScreenPosition
+  name: ScreenPosition
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_ScreenPosition
+  commentId: P:PiTung.Mod_utilities.Hologram.ScreenPosition
+  fullName: PiTung.Mod_utilities.Hologram.ScreenPosition
+  nameWithType: Hologram.ScreenPosition
+- uid: PiTung.Mod_utilities.Hologram.ScreenPosition*
+  name: ScreenPosition
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_ScreenPosition_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.ScreenPosition
+  fullName: PiTung.Mod_utilities.Hologram.ScreenPosition
+  nameWithType: Hologram.ScreenPosition
+- uid: PiTung.Mod_utilities.Hologram.TargetObject
+  name: TargetObject
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_TargetObject
+  commentId: P:PiTung.Mod_utilities.Hologram.TargetObject
+  fullName: PiTung.Mod_utilities.Hologram.TargetObject
+  nameWithType: Hologram.TargetObject
+- uid: PiTung.Mod_utilities.Hologram.TargetObject*
+  name: TargetObject
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_TargetObject_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.TargetObject
+  fullName: PiTung.Mod_utilities.Hologram.TargetObject
+  nameWithType: Hologram.TargetObject
+- uid: PiTung.Mod_utilities.Hologram.Text
+  name: Text
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_Text
+  commentId: P:PiTung.Mod_utilities.Hologram.Text
+  fullName: PiTung.Mod_utilities.Hologram.Text
+  nameWithType: Hologram.Text
+- uid: PiTung.Mod_utilities.Hologram.Text*
+  name: Text
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_Text_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.Text
+  fullName: PiTung.Mod_utilities.Hologram.Text
+  nameWithType: Hologram.Text
+- uid: PiTung.Mod_utilities.Hologram.TextColor
+  name: TextColor
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_TextColor
+  commentId: P:PiTung.Mod_utilities.Hologram.TextColor
+  fullName: PiTung.Mod_utilities.Hologram.TextColor
+  nameWithType: Hologram.TextColor
+- uid: PiTung.Mod_utilities.Hologram.TextColor*
+  name: TextColor
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_TextColor_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.TextColor
+  fullName: PiTung.Mod_utilities.Hologram.TextColor
+  nameWithType: Hologram.TextColor
+- uid: PiTung.Mod_utilities.Hologram.TextShadow
+  name: TextShadow
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_TextShadow
+  commentId: P:PiTung.Mod_utilities.Hologram.TextShadow
+  fullName: PiTung.Mod_utilities.Hologram.TextShadow
+  nameWithType: Hologram.TextShadow
+- uid: PiTung.Mod_utilities.Hologram.TextShadow*
+  name: TextShadow
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_TextShadow_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.TextShadow
+  fullName: PiTung.Mod_utilities.Hologram.TextShadow
+  nameWithType: Hologram.TextShadow
+- uid: PiTung.Mod_utilities.Hologram.Visible
+  name: Visible
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_Visible
+  commentId: P:PiTung.Mod_utilities.Hologram.Visible
+  fullName: PiTung.Mod_utilities.Hologram.Visible
+  nameWithType: Hologram.Visible
+- uid: PiTung.Mod_utilities.Hologram.Visible*
+  name: Visible
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_Visible_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.Visible
+  fullName: PiTung.Mod_utilities.Hologram.Visible
+  nameWithType: Hologram.Visible
+- uid: PiTung.Mod_utilities.Hologram.WorldPosition
+  name: WorldPosition
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_WorldPosition
+  commentId: P:PiTung.Mod_utilities.Hologram.WorldPosition
+  fullName: PiTung.Mod_utilities.Hologram.WorldPosition
+  nameWithType: Hologram.WorldPosition
+- uid: PiTung.Mod_utilities.Hologram.WorldPosition*
+  name: WorldPosition
+  href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_WorldPosition_
+  commentId: Overload:PiTung.Mod_utilities.Hologram.WorldPosition
+  fullName: PiTung.Mod_utilities.Hologram.WorldPosition
+  nameWithType: Hologram.WorldPosition
 - uid: PiTung.ModInput
   name: ModInput
   href: api/PiTung.ModInput.html
