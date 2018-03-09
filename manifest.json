@@ -503,6 +503,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/holograms.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/holograms.html",
+          "hash": "dryfuZ4THJLhcOTY6Ds1QQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
@@ -549,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "h4VpdTyl/irE31tSArdx7A=="
+          "hash": "Eg/jHFEPR6xf7/m4JmZ9eQ=="
         }
       },
       "is_incremental": false,
