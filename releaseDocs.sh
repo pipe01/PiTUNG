@@ -24,8 +24,11 @@ echo "Copy documentation into the repo"
 cp -r $SOURCE_DIR/docfx_project/_site/* .
 
 echo "Push the new docs to the remote branch"
+echo "Add"
 git add . -A
+echo "Commit"
 git commit -m "Update generated documentation"
+echo "Push"
 git push origin gh-pages 2> log.txt
 
 cat log.txt
