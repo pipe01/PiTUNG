@@ -29,6 +29,5 @@ git add . -A
 echo "Commit"
 git commit -m "Update generated documentation"
 echo "Push"
-git push origin gh-pages 2> log.txt
-
-cat log.txt
+git push origin gh-pages &> log.txt
+echo "Done"
