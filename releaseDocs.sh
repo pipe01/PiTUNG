@@ -26,4 +26,5 @@ cp -r $SOURCE_DIR/docfx_project/_site/* .
 echo "Push the new docs to the remote branch"
 git add . -A
 git commit -m "Update generated documentation"
-git push origin gh-pages
+git push origin gh-pages &> log.txt
+echo "Done"
