@@ -5,6 +5,9 @@ UnityEngine.IMGUIModule.dll
 UnityEngine.PhysicsModule.dll
 UnityEngine.TerrainModule.dll
 UnityEngine.TextRenderingModule.dll
+UnityEngine.UI.dll
+UnityEngine.UIModule.dll
 UnityEngine.UnityWebRequestWWWModule.dll
+UnityEngine.dll
 
 All of these files can be found under {your TUNG installation}/The Ultimate Nerd Game_Data/Managed

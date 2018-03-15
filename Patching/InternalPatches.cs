@@ -1,4 +1,6 @@
-﻿using PiTung.Mod_utilities;
+﻿using UnityEngine.EventSystems;
+using System.Reflection;
+using PiTung.Mod_utilities;
 using System;
 using PiTung.Building;
 using PiTung.Config_menu;
@@ -208,6 +210,92 @@ namespace PiTung
         static void Prefix()
         {
             BoardManager.Instance.OnBoardDeleted(BoardPlacer.BoardBeingPlaced);
+        }
+    }
+
+    [HarmonyPatch(typeof(RunMainMenu), "Start")]
+    internal class RunMainMenuPatch
+    {
+        static Canvas MainMenuCanvas, PitungCanvas;
+
+        static void Prefix(RunMainMenu __instance)
+        {
+            //Get the main menu canvas
+            MainMenuCanvas = __instance.MainMenuCanvas;
+
+            //Get the "New Game" button
+            var originalButton = MainMenuCanvas.transform.GetChild(1).gameObject;
+
+            //Create a clone of the previous button
+            var button = GameObject.Instantiate(originalButton);
+
+            //Set its parent to the canvas
+            button.transform.SetParent(MainMenuCanvas.transform, false);
+
+            //Move the button to its position
+            var rect = button.GetComponent<RectTransform>();
+            rect.Translate(new Vector2(0, -290));
+
+            //Set the new button's text
+            SetLabelText(button, "PiTUNG");
+
+            //Add a listener to the button's onClick button
+            var btnComponent = button.GetComponent<UnityEngine.UI.Button>();
+            btnComponent.onClick.AddListener(PitungButtonClicked);
+
+            CreatePitungCanvas();
+        }
+
+        private static void CreatePitungCanvas()
+        {
+            //Create a new canvas, clear it and set its name
+            PitungCanvas = GameObject.Instantiate(MainMenuCanvas, null);
+            PitungCanvas.transform.DetachChildren();
+            PitungCanvas.enabled = false;
+            PitungCanvas.name = "PiTUNG Canvas";
+
+            //Get the new game canvas' back button and clone it
+            var original = RunMainMenu.Instance.NewGameCanvas.transform.GetChild(2).gameObject;
+            var backButton = GameObject.Instantiate(original, PitungCanvas.transform);
+            
+            //Make it bigger because for some reason it gets smaller when cloned, as if it went through a Unity washing machine
+            var backRect = backButton.GetComponent<RectTransform>();
+            backRect.localScale *= 1.2f;
+
+            //Set its click listener
+            var backBtnComponent = backButton.GetComponent<UnityEngine.UI.Button>();
+            backBtnComponent.onClick.AddListener(BackButtonClicked);
+
+            //Set its text
+            SetLabelText(backButton, "Back");
+        }
+
+        private static void BackButtonClicked()
+        {
+            PitungCanvas.enabled = false;
+            MainMenuCanvas.enabled = true;
+            RunMainMenu.Instance.NewGameCanvas.enabled = false;
+        }
+
+        static void PitungButtonClicked()
+        {
+            MainMenuCanvas.enabled = false;
+            PitungCanvas.enabled = true;
+            RunMainMenu.Instance.NewGameCanvas.enabled = false;
+        }
+        
+        static void SetLabelText(GameObject obj, string text)
+        {
+            foreach (var item in obj.GetComponentsInChildren<Component>())
+            {
+                var type = item.GetType();
+
+                //Hacky method of setting the text to avoid importing the DLL
+                if (type.Name == "TextMeshProUGUI")
+                {
+                    type.InvokeMember("SetText", BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod, null, item, new object[] { text });
+                }
+            }
         }
     }
 }
