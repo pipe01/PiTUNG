@@ -9,7 +9,7 @@ namespace PiTung.Building
     public static class Builder
     {
         internal static List<KeyValuePair<CircuitInput, CircuitInput>> PendingIIConnections = new List<KeyValuePair<CircuitInput, CircuitInput>>();
-        internal static List<KeyValuePair<CircuitInput, Output>> PendingIOConnections = new List<KeyValuePair<CircuitInput, Output>>();
+        internal static List<KeyValuePair<CircuitInput, CircuitOutput>> PendingIOConnections = new List<KeyValuePair<CircuitInput, CircuitOutput>>();
 
         /// <summary>
         /// Adds a new <paramref name="component"/> to the board at <paramref name="x"/> and <paramref name="y"/> with <paramref name="rotation"/> rotation.
@@ -34,11 +34,13 @@ namespace PiTung.Building
             num += rotation;
 
             gameObject.transform.localEulerAngles = new Vector3(0, num, 0f);
-            gameObject.AddComponent<SaveThisObject>().ObjectType = component.Name;
 
-            StuffPlacer.DestroyIntersectingConnections(gameObject);
-            MegaMesh.AddMeshesFrom(gameObject);
+            //TODO Fix component adding
+            //gameObject.AddComponent<SaveThisObject>().ObjectType = component.Name;
 
+            FloatingPointRounder.RoundIn(gameObject, true);
+            MegaMeshManager.AddComponentsIn(gameObject);
+            
             return true;
         }
 
@@ -88,13 +90,17 @@ namespace PiTung.Building
         public static bool ConnectInputOutput(this Board board, int inputX, int inputY, int outputX, int outputY)
         {
             var input = GetComponentComponent<CircuitInput>(board, inputX, inputY);
-            var output = GetComponentComponent<Output>(board, outputX, outputY);
+            var output = GetComponentComponent<CircuitOutput>(board, outputX, outputY);
 
-            var kvp = new KeyValuePair<CircuitInput, Output>(input, output);
+            var kvp = new KeyValuePair<CircuitInput, CircuitOutput>(input, output);
 
             PendingIOConnections.Add(kvp);
 
-            StuffConnecter.CreateIOConnection(input, output);
+            StuffConnector.LinkInputOutput(new InputOutputConnection
+            {
+                Input = input,
+                Output = output
+            });
 
             if (!PendingIOConnections.Contains(kvp))
             {
@@ -125,8 +131,12 @@ namespace PiTung.Building
 
             PendingIIConnections.Add(kvp);
 
-            StuffConnecter.CreateIIConnection(a, b);
-            
+            StuffConnector.LinkInputs(new InputInputConnection
+            {
+                Input1 = a,
+                Input2 = b
+            });
+
             if (!PendingIIConnections.Contains(kvp))
             {
                 return false;

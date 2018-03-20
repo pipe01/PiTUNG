@@ -9,6 +9,8 @@ using PiTung.Console;
 using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using System.Linq;
+using References;
 
 #pragma warning disable RCS1102 // Make class static.
 #pragma warning disable RCS1213 // Remove unused member declaration.
@@ -28,17 +30,17 @@ namespace PiTung
             Mod.CallOnAllMods(o => o.Update());
         }
     }
-    
-    [HarmonyPatch(typeof(LoadGame), "Load")]
-    internal class LoadGameLoadPatch
-    {
-        static void Postfix()
-        {
-            BoardManager.Instance.Reset();
-            
-            Mod.CallOnAllMods(o => o.OnWorldLoaded(SaveManager.SaveName));
-        }
-    }
+
+    //[HarmonyPatch(typeof(LoadGame), "Load")]
+    //internal class LoadGameLoadPatch
+    //{
+    //    static void Postfix()
+    //    {
+    //        BoardManager.Instance.Reset();
+
+    //        Mod.CallOnAllMods(o => o.OnWorldLoaded(SaveManager.SaveName));
+    //    }
+    //}
 
     [HarmonyPatch(typeof(DummyComponent), "Update")]
     internal class InputPatch
@@ -63,24 +65,25 @@ namespace PiTung
 
         public delegate void KeyDownDelegate(KeyCode keyCode);
         public static event KeyDownDelegate KeyDown;
-        
+
         static void Prefix()
         {
-            if (Input.GetKeyDown(KeyCode.F5))
-            {
-                ConfigMenu.Instance.Show = !ConfigMenu.Instance.Show;
+            //TODO: Maybe bring this back if I ever properly implement the config menu.
+            //if (Input.GetKeyDown(KeyCode.F5))
+            //{
+            //    ConfigMenu.Instance.Show = !ConfigMenu.Instance.Show;
 
-                UIManager.SomeOtherMenuIsOpen = ConfigMenu.Instance.Show;
+            //    UIManager.SomeOtherMenuIsOpen = ConfigMenu.Instance.Show;
 
-                if (ConfigMenu.Instance.Show)
-                {
-                    UIManager.UnlockMouseAndDisableFirstPersonLooking();
-                }
-                else
-                {
-                    UIManager.LockMouseAndEnableFirstPersonLooking();
-                }
-            }
+            //    if (ConfigMenu.Instance.Show)
+            //    {
+            //        UIManager.UnlockMouseAndDisableFirstPersonLooking();
+            //    }
+            //    else
+            //    {
+            //        UIManager.LockMouseAndEnableFirstPersonLooking();
+            //    }
+            //}
 
             foreach (var key in KeyCodesToListenTo)
             {
@@ -95,7 +98,7 @@ namespace PiTung
             ModInput.UpdateListeners();
         }
     }
-    
+
     [HarmonyPatch(typeof(DummyComponent), nameof(DummyComponent.OnGUI))]
     internal class GuiPatch
     {
@@ -162,39 +165,41 @@ namespace PiTung
         }
     }
 
-    [HarmonyPatch(typeof(BuildMenu), "Awake")]
+    [HarmonyPatch(typeof(SelectionMenu), "Awake")]
     internal class BuildMenuPatch
     {
-        static void Postfix(BuildMenu __instance)
+        static void Postfix(SelectionMenu __instance)
         {
-            Components.AddComponents(__instance.PlaceableObjects);
+            var objs = __instance.PlaceableObjectTypes.Select(Prefabs.ComponentTypeToPrefab);
+
+            Components.AddComponents(objs.ToList());
         }
     }
 
-    [HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DestroyIIConnection))]
-    internal class StuffDeleterIIPatch
-    {
-        static void Prefix(InputInputConnection connection)
-        {
-            var kvp = new KeyValuePair<CircuitInput, CircuitInput>(connection.Point1, connection.Point2);
+    //[HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DestroyIIConnection))]
+    //internal class StuffDeleterIIPatch
+    //{
+    //    static void Prefix(InputInputConnection connection)
+    //    {
+    //        var kvp = new KeyValuePair<CircuitInput, CircuitInput>(connection.Point1, connection.Point2);
 
-            if (Builder.PendingIIConnections.Contains(kvp))
-                Builder.PendingIIConnections.Remove(kvp);
-        }
-    }
+    //        if (Builder.PendingIIConnections.Contains(kvp))
+    //            Builder.PendingIIConnections.Remove(kvp);
+    //    }
+    //}
 
-    [HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DestroyIOConnection))]
-    internal class StuffDeleterIOPatch
-    {
-        static void Prefix(InputOutputConnection connection)
-        {
-            var kvp = new KeyValuePair<CircuitInput, Output>(connection.Point1, connection.Point2);
+    //[HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DestroyIOConnection))]
+    //internal class StuffDeleterIOPatch
+    //{
+    //    static void Prefix(InputOutputConnection connection)
+    //    {
+    //        var kvp = new KeyValuePair<CircuitInput, Output>(connection.Point1, connection.Point2);
 
-            if (Builder.PendingIOConnections.Contains(kvp))
-                Builder.PendingIOConnections.Remove(kvp);
-        }
-    }
-    
+    //        if (Builder.PendingIOConnections.Contains(kvp))
+    //            Builder.PendingIOConnections.Remove(kvp);
+    //    }
+    //}
+
     [HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DeleteThing))]
     internal class StuffDeleterBoardPatch
     {

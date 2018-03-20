@@ -22,7 +22,8 @@ namespace PiTung
         {
             InputPatch.KeyDown += o =>
             {
-                if (o == keyCode) keyDownEvent(keyCode);
+                if (o == keyCode)
+                    keyDownEvent(keyCode);
             };
 
             var key = new InputPatch.KeyStruct(keyCode, repeat, repeatInterval);

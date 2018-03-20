@@ -71,20 +71,42 @@ namespace PiTung.User_Interface
             PitungCanvas.enabled = false;
             PitungCanvas.name = "PiTUNG Canvas";
 
-            //Get the new game canvas' back button and clone it
-            var original = RunMainMenu.Instance.NewGameCanvas.transform.GetChild(2).gameObject;
-            var backButton = GameObject.Instantiate(original, PitungCanvas.transform);
+            AddBackButton();
+            AddModsList();
 
-            //Make it bigger because for some reason it gets smaller when cloned, as if it went through a Unity washing machine
-            var backRect = backButton.GetComponent<RectTransform>();
-            backRect.localScale *= 1.2f;
+            void AddBackButton()
+            {
+                //Get the new game canvas' back button and clone it
+                var original = RunMainMenu.Instance.NewGameCanvas.transform.GetChild(2).gameObject;
+                var backButton = GameObject.Instantiate(original, PitungCanvas.transform);
 
-            //Set its click listener
-            var backBtnComponent = backButton.GetComponent<UnityEngine.UI.Button>();
-            backBtnComponent.onClick.AddListener(BackButtonClicked);
+                //Make it bigger because for some reason it gets smaller when cloned, as if it went through a Unity washing machine
+                var backRect = backButton.GetComponent<RectTransform>();
+                backRect.localScale *= 1.2f;
 
-            //Set its text
-            SetLabelText(backButton, "Back");
+                //Set its click listener
+                var backBtnComponent = backButton.GetComponent<UnityEngine.UI.Button>();
+                backBtnComponent.onClick.AddListener(BackButtonClicked);
+
+                //Set its text
+                SetLabelText(backButton, "Back");
+            }
+
+            void AddModsList()
+            {
+                //Get the ScrollView object from the "load game" canvas
+                var original = RunMainMenu.Instance.LoadGameCanvas.transform.GetChild(2).gameObject;
+
+                var myView = GameObject.Instantiate(original, PitungCanvas.transform);
+                myView.transform.GetChild(0).GetChild(0).DetachChildren();
+
+                var scrollObj = myView.transform.GetChild(1).gameObject;
+                var scrollBar = scrollObj.GetComponent<Scrollbar>();
+                var newScroll = scrollObj.AddComponent(scrollBar);
+                scrollBar.enabled = false;
+
+                newScroll.size = 1;
+            }
         }
 
         private static void BackButtonClicked()

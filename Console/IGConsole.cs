@@ -192,6 +192,8 @@ namespace PiTung.Console
         /// </summary>
         private static bool Initialized = false;
 
+        private static UIState PreviousUIState = UIState.None;
+
         /// <summary>
         /// The queue of log entries that were added before initializing.
         /// </summary>
@@ -263,13 +265,13 @@ namespace PiTung.Console
                 {
                     if (Shown)
                     {
-                        UIManager.UnlockMouseAndDisableFirstPersonLooking();
-                        UIManager.SomeOtherMenuIsOpen = true;
+                        PreviousUIState = GameplayUIManager.UIState;
+                        GameplayUIManager.UIState = UIState.PauseMenuOrSubMenu;
                     }
                     else
                     {
-                        UIManager.LockMouseAndEnableFirstPersonLooking();
-                        UIManager.SomeOtherMenuIsOpen = false;
+                        GameplayUIManager.UIState = PreviousUIState;
+                        PreviousUIState = UIState.None;
                     }
                 }
             }
