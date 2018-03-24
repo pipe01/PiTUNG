@@ -50,7 +50,7 @@ namespace PiTung
         /// </summary>
         /// <param name="modPath">The mod's DLL file path.</param>
         /// <returns>A mod.</returns>
-        private static Mod GetMod(string modPath)
+        public static Mod GetMod(string modPath)
         {
             if (File.Exists(modPath + ".update"))
             {
@@ -58,7 +58,7 @@ namespace PiTung
                 File.Move(modPath + ".update", modPath);
             }
 
-            Assembly ass = Assembly.LoadFrom(modPath);
+            Assembly ass = Assembly.Load(File.ReadAllBytes(modPath));
 
             Mod mod = null;
 

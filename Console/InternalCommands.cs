@@ -147,10 +147,64 @@ namespace PiTung.Console
     internal class Command_reload : Command
     {
         public override string Name => "reload";
-        public override string Usage => Name;
-        public override string Description => "Tries to load new mods";
+        public override string Usage => $"{Name} [mod name]";
+        public override string Description => "Loads new mods or reloads an existing one";
 
         public override bool Execute(IEnumerable<string> arguments)
+        {
+            int count = arguments.Count();
+
+            if (count == 1)
+            {
+                return ReloadMod(arguments.First());
+            }
+            else if (count == 0)
+            {
+                return LoadMods();
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool ReloadMod(string name)
+        {
+            var mod = Mod.AliveMods.SingleOrDefault(o => o.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+
+            if (mod == null)
+            {
+                Error($"Can't find any mod with name '{name}'.");
+                return true;
+            }
+
+            name = mod.Name;
+
+            int index = Bootstrapper._Mods.IndexOf(mod);
+            Bootstrapper._Mods.Remove(mod);
+
+            try
+            {
+                mod = ModLoader.GetMod(mod.FullPath);
+            }
+            catch
+            {
+                mod = null;
+            }
+
+            if (mod == null)
+            {
+                Error($"An error occurred while loading mod '{name}'.");
+            }
+            else
+            {
+                Bootstrapper.Instance.LoadMod(mod, false);
+            }
+
+            return true;
+        }
+
+        private bool LoadMods()
         {
             int oldCount = Bootstrapper.ModCount;
 
@@ -168,7 +222,7 @@ namespace PiTung.Console
     {
         public override string Name => "echo";
         public override string Usage => $"{Name} text";
-        public override string Description => "Prints text to the console.";
+        public override string Description => "Prints text to the console";
 
         public override bool Execute(IEnumerable<string> arguments)
         {
@@ -184,7 +238,7 @@ namespace PiTung.Console
     {
         public override string Name => "quit";
         public override string Usage => Name;
-        public override string Description => "Quits the game.";
+        public override string Description => "Quits the game";
 
         public override bool Execute(IEnumerable<string> arguments)
         {

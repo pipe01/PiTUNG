@@ -37,7 +37,7 @@ namespace PiTung
         /// </summary>
         public static Bootstrapper Instance { get; } = new Bootstrapper();
 
-        private static List<Mod> _Mods = new List<Mod>();
+        internal static List<Mod> _Mods = new List<Mod>();
         /// <summary>
         /// All successfully loaded mods.
         /// </summary>
@@ -135,7 +135,7 @@ namespace PiTung
             }
         }
 
-        private void LoadMod(Mod mod, bool hotload)
+        internal void LoadMod(Mod mod, bool hotload)
         {
             if (_Mods.Any(o => o.FullPath.Equals(mod.FullPath)))
             {
