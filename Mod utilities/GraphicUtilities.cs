@@ -1,6 +1,4 @@
-﻿using Cinemachine;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace PiTung
