@@ -23,6 +23,7 @@ references:
   name: Init
   href: api/PiTung.AssemblyCosturer.html#PiTung_AssemblyCosturer_Init_
   commentId: Overload:PiTung.AssemblyCosturer.Init
+  isSpec: "True"
   fullName: PiTung.AssemblyCosturer.Init
   nameWithType: AssemblyCosturer.Init
 - uid: PiTung.Bootstrapper
@@ -41,6 +42,7 @@ references:
   name: Instance
   href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Instance_
   commentId: Overload:PiTung.Bootstrapper.Instance
+  isSpec: "True"
   fullName: PiTung.Bootstrapper.Instance
   nameWithType: Bootstrapper.Instance
 - uid: PiTung.Bootstrapper.ModCount
@@ -53,6 +55,7 @@ references:
   name: ModCount
   href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_ModCount_
   commentId: Overload:PiTung.Bootstrapper.ModCount
+  isSpec: "True"
   fullName: PiTung.Bootstrapper.ModCount
   nameWithType: Bootstrapper.ModCount
 - uid: PiTung.Bootstrapper.Mods
@@ -65,6 +68,7 @@ references:
   name: Mods
   href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Mods_
   commentId: Overload:PiTung.Bootstrapper.Mods
+  isSpec: "True"
   fullName: PiTung.Bootstrapper.Mods
   nameWithType: Bootstrapper.Mods
 - uid: PiTung.Bootstrapper.ModUpdatesAvailable
@@ -77,6 +81,7 @@ references:
   name: ModUpdatesAvailable
   href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_ModUpdatesAvailable_
   commentId: Overload:PiTung.Bootstrapper.ModUpdatesAvailable
+  isSpec: "True"
   fullName: PiTung.Bootstrapper.ModUpdatesAvailable
   nameWithType: Bootstrapper.ModUpdatesAvailable
 - uid: PiTung.Bootstrapper.Patch(System.Boolean)
@@ -89,6 +94,7 @@ references:
   name: Patch
   href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Patch_
   commentId: Overload:PiTung.Bootstrapper.Patch
+  isSpec: "True"
   fullName: PiTung.Bootstrapper.Patch
   nameWithType: Bootstrapper.Patch
 - uid: PiTung.Bootstrapper.Testing
@@ -101,6 +107,7 @@ references:
   name: Testing
   href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_Testing_
   commentId: Overload:PiTung.Bootstrapper.Testing
+  isSpec: "True"
   fullName: PiTung.Bootstrapper.Testing
   nameWithType: Bootstrapper.Testing
 - uid: PiTung.Building
@@ -134,6 +141,7 @@ references:
   name: Board
   href: api/PiTung.Building.Board.html#PiTung_Building_Board__ctor_
   commentId: Overload:PiTung.Building.Board.#ctor
+  isSpec: "True"
   fullName: PiTung.Building.Board.Board
   nameWithType: Board.Board
 - uid: PiTung.Building.Board.GetComponentAt(System.Int32,System.Int32)
@@ -146,6 +154,7 @@ references:
   name: GetComponentAt
   href: api/PiTung.Building.Board.html#PiTung_Building_Board_GetComponentAt_
   commentId: Overload:PiTung.Building.Board.GetComponentAt
+  isSpec: "True"
   fullName: PiTung.Building.Board.GetComponentAt
   nameWithType: Board.GetComponentAt
 - uid: PiTung.Building.Board.GetComponents
@@ -158,6 +167,7 @@ references:
   name: GetComponents
   href: api/PiTung.Building.Board.html#PiTung_Building_Board_GetComponents_
   commentId: Overload:PiTung.Building.Board.GetComponents
+  isSpec: "True"
   fullName: PiTung.Building.Board.GetComponents
   nameWithType: Board.GetComponents
 - uid: PiTung.Building.Board.Height
@@ -170,6 +180,7 @@ references:
   name: Height
   href: api/PiTung.Building.Board.html#PiTung_Building_Board_Height_
   commentId: Overload:PiTung.Building.Board.Height
+  isSpec: "True"
   fullName: PiTung.Building.Board.Height
   nameWithType: Board.Height
 - uid: PiTung.Building.Board.Id
@@ -182,6 +193,7 @@ references:
   name: Id
   href: api/PiTung.Building.Board.html#PiTung_Building_Board_Id_
   commentId: Overload:PiTung.Building.Board.Id
+  isSpec: "True"
   fullName: PiTung.Building.Board.Id
   nameWithType: Board.Id
 - uid: PiTung.Building.Board.Object
@@ -194,6 +206,7 @@ references:
   name: Object
   href: api/PiTung.Building.Board.html#PiTung_Building_Board_Object_
   commentId: Overload:PiTung.Building.Board.Object
+  isSpec: "True"
   fullName: PiTung.Building.Board.Object
   nameWithType: Board.Object
 - uid: PiTung.Building.Board.Width
@@ -206,6 +219,7 @@ references:
   name: Width
   href: api/PiTung.Building.Board.html#PiTung_Building_Board_Width_
   commentId: Overload:PiTung.Building.Board.Width
+  isSpec: "True"
   fullName: PiTung.Building.Board.Width
   nameWithType: Board.Width
 - uid: PiTung.Building.BoardManager
@@ -242,6 +256,7 @@ references:
   name: GetBoard
   href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_GetBoard_
   commentId: Overload:PiTung.Building.BoardManager.GetBoard
+  isSpec: "True"
   fullName: PiTung.Building.BoardManager.GetBoard
   nameWithType: BoardManager.GetBoard
 - uid: PiTung.Building.BoardManager.Instance
@@ -254,6 +269,7 @@ references:
   name: Instance
   href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_Instance_
   commentId: Overload:PiTung.Building.BoardManager.Instance
+  isSpec: "True"
   fullName: PiTung.Building.BoardManager.Instance
   nameWithType: BoardManager.Instance
 - uid: PiTung.Building.BoardManager.TryGetBoard(System.Int32,PiTung.Building.Board@)
@@ -269,6 +285,7 @@ references:
   name: TryGetBoard
   href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_TryGetBoard_
   commentId: Overload:PiTung.Building.BoardManager.TryGetBoard
+  isSpec: "True"
   fullName: PiTung.Building.BoardManager.TryGetBoard
   nameWithType: BoardManager.TryGetBoard
 - uid: PiTung.Building.BoardManager.TryGetExistingBoardFromGameObject(UnityEngine.GameObject,PiTung.Building.Board@)
@@ -284,6 +301,7 @@ references:
   name: TryGetExistingBoardFromGameObject
   href: api/PiTung.Building.BoardManager.html#PiTung_Building_BoardManager_TryGetExistingBoardFromGameObject_
   commentId: Overload:PiTung.Building.BoardManager.TryGetExistingBoardFromGameObject
+  isSpec: "True"
   fullName: PiTung.Building.BoardManager.TryGetExistingBoardFromGameObject
   nameWithType: BoardManager.TryGetExistingBoardFromGameObject
 - uid: PiTung.Building.Builder
@@ -302,6 +320,7 @@ references:
   name: AddCircuitComponent
   href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_AddCircuitComponent_
   commentId: Overload:PiTung.Building.Builder.AddCircuitComponent
+  isSpec: "True"
   fullName: PiTung.Building.Builder.AddCircuitComponent
   nameWithType: Builder.AddCircuitComponent
 - uid: PiTung.Building.Builder.ConnectInputInput(PiTung.Building.Board,System.Int32,System.Int32,System.Int32,System.Int32)
@@ -314,6 +333,7 @@ references:
   name: ConnectInputInput
   href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_ConnectInputInput_
   commentId: Overload:PiTung.Building.Builder.ConnectInputInput
+  isSpec: "True"
   fullName: PiTung.Building.Builder.ConnectInputInput
   nameWithType: Builder.ConnectInputInput
 - uid: PiTung.Building.Builder.ConnectInputOutput(PiTung.Building.Board,System.Int32,System.Int32,System.Int32,System.Int32)
@@ -326,6 +346,7 @@ references:
   name: ConnectInputOutput
   href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_ConnectInputOutput_
   commentId: Overload:PiTung.Building.Builder.ConnectInputOutput
+  isSpec: "True"
   fullName: PiTung.Building.Builder.ConnectInputOutput
   nameWithType: Builder.ConnectInputOutput
 - uid: PiTung.Building.Builder.DeleteCircuitComponent(PiTung.Building.Board,System.Int32,System.Int32)
@@ -338,6 +359,7 @@ references:
   name: DeleteCircuitComponent
   href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_DeleteCircuitComponent_
   commentId: Overload:PiTung.Building.Builder.DeleteCircuitComponent
+  isSpec: "True"
   fullName: PiTung.Building.Builder.DeleteCircuitComponent
   nameWithType: Builder.DeleteCircuitComponent
 - uid: PiTung.Building.Builder.SetCircuitComponent(PiTung.Building.Board,System.Int32,System.Int32,PiTung.Building.CircuitComponent,System.Single)
@@ -350,6 +372,7 @@ references:
   name: SetCircuitComponent
   href: api/PiTung.Building.Builder.html#PiTung_Building_Builder_SetCircuitComponent_
   commentId: Overload:PiTung.Building.Builder.SetCircuitComponent
+  isSpec: "True"
   fullName: PiTung.Building.Builder.SetCircuitComponent
   nameWithType: Builder.SetCircuitComponent
 - uid: PiTung.Building.CircuitComponent
@@ -368,6 +391,7 @@ references:
   name: Name
   href: api/PiTung.Building.CircuitComponent.html#PiTung_Building_CircuitComponent_Name_
   commentId: Overload:PiTung.Building.CircuitComponent.Name
+  isSpec: "True"
   fullName: PiTung.Building.CircuitComponent.Name
   nameWithType: CircuitComponent.Name
 - uid: PiTung.Building.CircuitComponent.Prefab
@@ -380,6 +404,7 @@ references:
   name: Prefab
   href: api/PiTung.Building.CircuitComponent.html#PiTung_Building_CircuitComponent_Prefab_
   commentId: Overload:PiTung.Building.CircuitComponent.Prefab
+  isSpec: "True"
   fullName: PiTung.Building.CircuitComponent.Prefab
   nameWithType: CircuitComponent.Prefab
 - uid: PiTung.Building.Components
@@ -398,6 +423,7 @@ references:
   name: GetComponent
   href: api/PiTung.Building.Components.html#PiTung_Building_Components_GetComponent_
   commentId: Overload:PiTung.Building.Components.GetComponent
+  isSpec: "True"
   fullName: PiTung.Building.Components.GetComponent
   nameWithType: Components.GetComponent
 - uid: PiTung.Building.Components.GetComponents
@@ -410,6 +436,7 @@ references:
   name: GetComponents
   href: api/PiTung.Building.Components.html#PiTung_Building_Components_GetComponents_
   commentId: Overload:PiTung.Building.Components.GetComponents
+  isSpec: "True"
   fullName: PiTung.Building.Components.GetComponents
   nameWithType: Components.GetComponents
 - uid: PiTung.Config_menu
@@ -434,6 +461,7 @@ references:
   name: Toggle
   href: api/PiTung.Config_menu.CheckboxMenuEntry.html#PiTung_Config_menu_CheckboxMenuEntry_Toggle_
   commentId: Overload:PiTung.Config_menu.CheckboxMenuEntry.Toggle
+  isSpec: "True"
   fullName: PiTung.Config_menu.CheckboxMenuEntry.Toggle
   nameWithType: CheckboxMenuEntry.Toggle
 - uid: PiTung.Config_menu.CheckboxMenuEntry.Value
@@ -446,6 +474,7 @@ references:
   name: Value
   href: api/PiTung.Config_menu.CheckboxMenuEntry.html#PiTung_Config_menu_CheckboxMenuEntry_Value_
   commentId: Overload:PiTung.Config_menu.CheckboxMenuEntry.Value
+  isSpec: "True"
   fullName: PiTung.Config_menu.CheckboxMenuEntry.Value
   nameWithType: CheckboxMenuEntry.Value
 - uid: PiTung.Config_menu.CheckboxMenuEntry.ValueChanged
@@ -476,6 +505,7 @@ references:
   name: CustomNumericEntry
   href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry__ctor_
   commentId: Overload:PiTung.Config_menu.CustomNumericEntry.#ctor
+  isSpec: "True"
   fullName: PiTung.Config_menu.CustomNumericEntry.CustomNumericEntry
   nameWithType: CustomNumericEntry.CustomNumericEntry
 - uid: PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate
@@ -494,6 +524,7 @@ references:
   name: Decrement
   href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry_Decrement_
   commentId: Overload:PiTung.Config_menu.CustomNumericEntry.Decrement
+  isSpec: "True"
   fullName: PiTung.Config_menu.CustomNumericEntry.Decrement
   nameWithType: CustomNumericEntry.Decrement
 - uid: PiTung.Config_menu.CustomNumericEntry.Increment
@@ -506,6 +537,7 @@ references:
   name: Increment
   href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry_Increment_
   commentId: Overload:PiTung.Config_menu.CustomNumericEntry.Increment
+  isSpec: "True"
   fullName: PiTung.Config_menu.CustomNumericEntry.Increment
   nameWithType: CustomNumericEntry.Increment
 - uid: PiTung.Config_menu.CustomNumericEntry.Value
@@ -518,6 +550,7 @@ references:
   name: Value
   href: api/PiTung.Config_menu.CustomNumericEntry.html#PiTung_Config_menu_CustomNumericEntry_Value_
   commentId: Overload:PiTung.Config_menu.CustomNumericEntry.Value
+  isSpec: "True"
   fullName: PiTung.Config_menu.CustomNumericEntry.Value
   nameWithType: CustomNumericEntry.Value
 - uid: PiTung.Config_menu.IValueMenuEntry`1
@@ -553,6 +586,7 @@ references:
   name: MenuEntry
   href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry__ctor_
   commentId: Overload:PiTung.Config_menu.MenuEntry.#ctor
+  isSpec: "True"
   fullName: PiTung.Config_menu.MenuEntry.MenuEntry
   nameWithType: MenuEntry.MenuEntry
 - uid: PiTung.Config_menu.MenuEntry.AddChild(PiTung.Config_menu.MenuEntry)
@@ -565,6 +599,7 @@ references:
   name: AddChild
   href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_AddChild_
   commentId: Overload:PiTung.Config_menu.MenuEntry.AddChild
+  isSpec: "True"
   fullName: PiTung.Config_menu.MenuEntry.AddChild
   nameWithType: MenuEntry.AddChild
 - uid: PiTung.Config_menu.MenuEntry.AddChild``1
@@ -589,6 +624,7 @@ references:
   name: AddChildren
   href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_AddChildren_
   commentId: Overload:PiTung.Config_menu.MenuEntry.AddChildren
+  isSpec: "True"
   fullName: PiTung.Config_menu.MenuEntry.AddChildren
   nameWithType: MenuEntry.AddChildren
 - uid: PiTung.Config_menu.MenuEntry.Children
@@ -601,6 +637,7 @@ references:
   name: Children
   href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_Children_
   commentId: Overload:PiTung.Config_menu.MenuEntry.Children
+  isSpec: "True"
   fullName: PiTung.Config_menu.MenuEntry.Children
   nameWithType: MenuEntry.Children
 - uid: PiTung.Config_menu.MenuEntry.Parent
@@ -613,6 +650,7 @@ references:
   name: Parent
   href: api/PiTung.Config_menu.MenuEntry.html#PiTung_Config_menu_MenuEntry_Parent_
   commentId: Overload:PiTung.Config_menu.MenuEntry.Parent
+  isSpec: "True"
   fullName: PiTung.Config_menu.MenuEntry.Parent
   nameWithType: MenuEntry.Parent
 - uid: PiTung.Config_menu.SimpleNumberEntry
@@ -637,6 +675,7 @@ references:
   name: SimpleNumberEntry
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry__ctor_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.#ctor
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.SimpleNumberEntry
   nameWithType: SimpleNumberEntry.SimpleNumberEntry
 - uid: PiTung.Config_menu.SimpleNumberEntry.BigStep
@@ -649,6 +688,7 @@ references:
   name: BigStep
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_BigStep_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.BigStep
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.BigStep
   nameWithType: SimpleNumberEntry.BigStep
 - uid: PiTung.Config_menu.SimpleNumberEntry.BigStepKey
@@ -661,6 +701,7 @@ references:
   name: BigStepKey
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_BigStepKey_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.BigStepKey
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.BigStepKey
   nameWithType: SimpleNumberEntry.BigStepKey
 - uid: PiTung.Config_menu.SimpleNumberEntry.Decrement
@@ -673,6 +714,7 @@ references:
   name: Decrement
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Decrement_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Decrement
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.Decrement
   nameWithType: SimpleNumberEntry.Decrement
 - uid: PiTung.Config_menu.SimpleNumberEntry.Increment
@@ -685,6 +727,7 @@ references:
   name: Increment
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Increment_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Increment
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.Increment
   nameWithType: SimpleNumberEntry.Increment
 - uid: PiTung.Config_menu.SimpleNumberEntry.Maximum
@@ -697,6 +740,7 @@ references:
   name: Maximum
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Maximum_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Maximum
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.Maximum
   nameWithType: SimpleNumberEntry.Maximum
 - uid: PiTung.Config_menu.SimpleNumberEntry.Minimum
@@ -709,6 +753,7 @@ references:
   name: Minimum
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Minimum_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Minimum
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.Minimum
   nameWithType: SimpleNumberEntry.Minimum
 - uid: PiTung.Config_menu.SimpleNumberEntry.SmallStep
@@ -721,6 +766,7 @@ references:
   name: SmallStep
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_SmallStep_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.SmallStep
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.SmallStep
   nameWithType: SimpleNumberEntry.SmallStep
 - uid: PiTung.Config_menu.SimpleNumberEntry.SmallStepKey
@@ -733,6 +779,7 @@ references:
   name: SmallStepKey
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_SmallStepKey_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.SmallStepKey
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.SmallStepKey
   nameWithType: SimpleNumberEntry.SmallStepKey
 - uid: PiTung.Config_menu.SimpleNumberEntry.Step
@@ -745,6 +792,7 @@ references:
   name: Step
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Step_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Step
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.Step
   nameWithType: SimpleNumberEntry.Step
 - uid: PiTung.Config_menu.SimpleNumberEntry.Value
@@ -757,6 +805,7 @@ references:
   name: Value
   href: api/PiTung.Config_menu.SimpleNumberEntry.html#PiTung_Config_menu_SimpleNumberEntry_Value_
   commentId: Overload:PiTung.Config_menu.SimpleNumberEntry.Value
+  isSpec: "True"
   fullName: PiTung.Config_menu.SimpleNumberEntry.Value
   nameWithType: SimpleNumberEntry.Value
 - uid: PiTung.Config_menu.SimpleNumberEntry.ValueChanged
@@ -781,6 +830,7 @@ references:
   name: Text
   href: api/PiTung.Config_menu.TextMenuEntry.html#PiTung_Config_menu_TextMenuEntry_Text_
   commentId: Overload:PiTung.Config_menu.TextMenuEntry.Text
+  isSpec: "True"
   fullName: PiTung.Config_menu.TextMenuEntry.Text
   nameWithType: TextMenuEntry.Text
 - uid: PiTung.Config_menu.ValueChangedDelegate`1
@@ -814,6 +864,7 @@ references:
   name: Description
   href: api/PiTung.Console.Command.html#PiTung_Console_Command_Description_
   commentId: Overload:PiTung.Console.Command.Description
+  isSpec: "True"
   fullName: PiTung.Console.Command.Description
   nameWithType: Command.Description
 - uid: PiTung.Console.Command.Execute(System.Collections.Generic.IEnumerable{System.String})
@@ -829,6 +880,7 @@ references:
   name: Execute
   href: api/PiTung.Console.Command.html#PiTung_Console_Command_Execute_
   commentId: Overload:PiTung.Console.Command.Execute
+  isSpec: "True"
   fullName: PiTung.Console.Command.Execute
   nameWithType: Command.Execute
 - uid: PiTung.Console.Command.Name
@@ -841,6 +893,7 @@ references:
   name: Name
   href: api/PiTung.Console.Command.html#PiTung_Console_Command_Name_
   commentId: Overload:PiTung.Console.Command.Name
+  isSpec: "True"
   fullName: PiTung.Console.Command.Name
   nameWithType: Command.Name
 - uid: PiTung.Console.Command.Usage
@@ -853,6 +906,7 @@ references:
   name: Usage
   href: api/PiTung.Console.Command.html#PiTung_Console_Command_Usage_
   commentId: Overload:PiTung.Console.Command.Usage
+  isSpec: "True"
   fullName: PiTung.Console.Command.Usage
   nameWithType: Command.Usage
 - uid: PiTung.Console.IGConsole
@@ -871,6 +925,7 @@ references:
   name: Error
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_Error_
   commentId: Overload:PiTung.Console.IGConsole.Error
+  isSpec: "True"
   fullName: PiTung.Console.IGConsole.Error
   nameWithType: IGConsole.Error
 - uid: PiTung.Console.IGConsole.GetVariable(System.String)
@@ -883,6 +938,7 @@ references:
   name: GetVariable
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetVariable_
   commentId: Overload:PiTung.Console.IGConsole.GetVariable
+  isSpec: "True"
   fullName: PiTung.Console.IGConsole.GetVariable
   nameWithType: IGConsole.GetVariable
 - uid: PiTung.Console.IGConsole.Log(PiTung.Console.LogType,System.Object)
@@ -901,6 +957,7 @@ references:
   name: Log
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_Log_
   commentId: Overload:PiTung.Console.IGConsole.Log
+  isSpec: "True"
   fullName: PiTung.Console.IGConsole.Log
   nameWithType: IGConsole.Log
 - uid: PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command,PiTung.Mod)
@@ -913,6 +970,7 @@ references:
   name: RegisterCommand
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand_
   commentId: Overload:PiTung.Console.IGConsole.RegisterCommand
+  isSpec: "True"
   fullName: PiTung.Console.IGConsole.RegisterCommand
   nameWithType: IGConsole.RegisterCommand
 - uid: PiTung.Console.IGConsole.RegisterCommand``1(PiTung.Mod)
@@ -934,6 +992,7 @@ references:
   name: SetVariable
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_SetVariable_
   commentId: Overload:PiTung.Console.IGConsole.SetVariable
+  isSpec: "True"
   fullName: PiTung.Console.IGConsole.SetVariable
   nameWithType: IGConsole.SetVariable
 - uid: PiTung.Console.LogType
@@ -979,6 +1038,7 @@ references:
   name: CreateSphere
   href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_CreateSphere_
   commentId: Overload:PiTung.GraphicUtilities.CreateSphere
+  isSpec: "True"
   fullName: PiTung.GraphicUtilities.CreateSphere
   nameWithType: GraphicUtilities.CreateSphere
 - uid: PiTung.GraphicUtilities.DestroySphere(System.Int32)
@@ -991,6 +1051,7 @@ references:
   name: DestroySphere
   href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_DestroySphere_
   commentId: Overload:PiTung.GraphicUtilities.DestroySphere
+  isSpec: "True"
   fullName: PiTung.GraphicUtilities.DestroySphere
   nameWithType: GraphicUtilities.DestroySphere
 - uid: PiTung.GraphicUtilities.DrawRect(UnityEngine.Rect,UnityEngine.Color)
@@ -1003,6 +1064,7 @@ references:
   name: DrawRect
   href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_DrawRect_
   commentId: Overload:PiTung.GraphicUtilities.DrawRect
+  isSpec: "True"
   fullName: PiTung.GraphicUtilities.DrawRect
   nameWithType: GraphicUtilities.DrawRect
 - uid: PiTung.GraphicUtilities.DrawText(System.String,UnityEngine.Vector2,UnityEngine.Color,System.Boolean,System.Int32)
@@ -1015,6 +1077,7 @@ references:
   name: DrawText
   href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_DrawText_
   commentId: Overload:PiTung.GraphicUtilities.DrawText
+  isSpec: "True"
   fullName: PiTung.GraphicUtilities.DrawText
   nameWithType: GraphicUtilities.DrawText
 - uid: PiTung.GraphicUtilities.ImportMeshFromFile(System.String)
@@ -1027,6 +1090,7 @@ references:
   name: ImportMeshFromFile
   href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_ImportMeshFromFile_
   commentId: Overload:PiTung.GraphicUtilities.ImportMeshFromFile
+  isSpec: "True"
   fullName: PiTung.GraphicUtilities.ImportMeshFromFile
   nameWithType: GraphicUtilities.ImportMeshFromFile
 - uid: PiTung.KeyModifiers
@@ -1075,6 +1139,7 @@ references:
   name: AfterPatch
   href: api/PiTung.Mod.html#PiTung_Mod_AfterPatch_
   commentId: Overload:PiTung.Mod.AfterPatch
+  isSpec: "True"
   fullName: PiTung.Mod.AfterPatch
   nameWithType: Mod.AfterPatch
 - uid: PiTung.Mod.Author
@@ -1087,6 +1152,7 @@ references:
   name: Author
   href: api/PiTung.Mod.html#PiTung_Mod_Author_
   commentId: Overload:PiTung.Mod.Author
+  isSpec: "True"
   fullName: PiTung.Mod.Author
   nameWithType: Mod.Author
 - uid: PiTung.Mod.BeforePatch
@@ -1099,6 +1165,7 @@ references:
   name: BeforePatch
   href: api/PiTung.Mod.html#PiTung_Mod_BeforePatch_
   commentId: Overload:PiTung.Mod.BeforePatch
+  isSpec: "True"
   fullName: PiTung.Mod.BeforePatch
   nameWithType: Mod.BeforePatch
 - uid: PiTung.Mod.FullName
@@ -1111,6 +1178,7 @@ references:
   name: FullName
   href: api/PiTung.Mod.html#PiTung_Mod_FullName_
   commentId: Overload:PiTung.Mod.FullName
+  isSpec: "True"
   fullName: PiTung.Mod.FullName
   nameWithType: Mod.FullName
 - uid: PiTung.Mod.FullPath
@@ -1123,6 +1191,7 @@ references:
   name: FullPath
   href: api/PiTung.Mod.html#PiTung_Mod_FullPath_
   commentId: Overload:PiTung.Mod.FullPath
+  isSpec: "True"
   fullName: PiTung.Mod.FullPath
   nameWithType: Mod.FullPath
 - uid: PiTung.Mod.GetMenuEntries
@@ -1135,6 +1204,7 @@ references:
   name: GetMenuEntries
   href: api/PiTung.Mod.html#PiTung_Mod_GetMenuEntries_
   commentId: Overload:PiTung.Mod.GetMenuEntries
+  isSpec: "True"
   fullName: PiTung.Mod.GetMenuEntries
   nameWithType: Mod.GetMenuEntries
 - uid: PiTung.Mod.Hotloadable
@@ -1147,6 +1217,7 @@ references:
   name: Hotloadable
   href: api/PiTung.Mod.html#PiTung_Mod_Hotloadable_
   commentId: Overload:PiTung.Mod.Hotloadable
+  isSpec: "True"
   fullName: PiTung.Mod.Hotloadable
   nameWithType: Mod.Hotloadable
 - uid: PiTung.Mod.MatchVersionUpTo
@@ -1159,6 +1230,7 @@ references:
   name: MatchVersionUpTo
   href: api/PiTung.Mod.html#PiTung_Mod_MatchVersionUpTo_
   commentId: Overload:PiTung.Mod.MatchVersionUpTo
+  isSpec: "True"
   fullName: PiTung.Mod.MatchVersionUpTo
   nameWithType: Mod.MatchVersionUpTo
 - uid: PiTung.Mod.ModVersion
@@ -1171,6 +1243,7 @@ references:
   name: ModVersion
   href: api/PiTung.Mod.html#PiTung_Mod_ModVersion_
   commentId: Overload:PiTung.Mod.ModVersion
+  isSpec: "True"
   fullName: PiTung.Mod.ModVersion
   nameWithType: Mod.ModVersion
 - uid: PiTung.Mod.Name
@@ -1183,6 +1256,7 @@ references:
   name: Name
   href: api/PiTung.Mod.html#PiTung_Mod_Name_
   commentId: Overload:PiTung.Mod.Name
+  isSpec: "True"
   fullName: PiTung.Mod.Name
   nameWithType: Mod.Name
 - uid: PiTung.Mod.OnApplicationQuit
@@ -1195,6 +1269,7 @@ references:
   name: OnApplicationQuit
   href: api/PiTung.Mod.html#PiTung_Mod_OnApplicationQuit_
   commentId: Overload:PiTung.Mod.OnApplicationQuit
+  isSpec: "True"
   fullName: PiTung.Mod.OnApplicationQuit
   nameWithType: Mod.OnApplicationQuit
 - uid: PiTung.Mod.OnGUI
@@ -1207,6 +1282,7 @@ references:
   name: OnGUI
   href: api/PiTung.Mod.html#PiTung_Mod_OnGUI_
   commentId: Overload:PiTung.Mod.OnGUI
+  isSpec: "True"
   fullName: PiTung.Mod.OnGUI
   nameWithType: Mod.OnGUI
 - uid: PiTung.Mod.OnWorldLoaded(System.String)
@@ -1219,6 +1295,7 @@ references:
   name: OnWorldLoaded
   href: api/PiTung.Mod.html#PiTung_Mod_OnWorldLoaded_
   commentId: Overload:PiTung.Mod.OnWorldLoaded
+  isSpec: "True"
   fullName: PiTung.Mod.OnWorldLoaded
   nameWithType: Mod.OnWorldLoaded
 - uid: PiTung.Mod.PackageName
@@ -1231,6 +1308,7 @@ references:
   name: PackageName
   href: api/PiTung.Mod.html#PiTung_Mod_PackageName_
   commentId: Overload:PiTung.Mod.PackageName
+  isSpec: "True"
   fullName: PiTung.Mod.PackageName
   nameWithType: Mod.PackageName
 - uid: PiTung.Mod.Update
@@ -1243,6 +1321,7 @@ references:
   name: Update
   href: api/PiTung.Mod.html#PiTung_Mod_Update_
   commentId: Overload:PiTung.Mod.Update
+  isSpec: "True"
   fullName: PiTung.Mod.Update
   nameWithType: Mod.Update
 - uid: PiTung.Mod.UpdateUrl
@@ -1255,6 +1334,7 @@ references:
   name: UpdateUrl
   href: api/PiTung.Mod.html#PiTung_Mod_UpdateUrl_
   commentId: Overload:PiTung.Mod.UpdateUrl
+  isSpec: "True"
   fullName: PiTung.Mod.UpdateUrl
   nameWithType: Mod.UpdateUrl
 - uid: PiTung.Mod_utilities
@@ -1285,6 +1365,7 @@ references:
   name: Hologram
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram__ctor_
   commentId: Overload:PiTung.Mod_utilities.Hologram.#ctor
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.Hologram
   nameWithType: Hologram.Hologram
 - uid: PiTung.Mod_utilities.Hologram.Destroy
@@ -1297,6 +1378,7 @@ references:
   name: Destroy
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_Destroy_
   commentId: Overload:PiTung.Mod_utilities.Hologram.Destroy
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.Destroy
   nameWithType: Hologram.Destroy
 - uid: PiTung.Mod_utilities.Hologram.MaxTextSize
@@ -1309,6 +1391,7 @@ references:
   name: MaxTextSize
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_MaxTextSize_
   commentId: Overload:PiTung.Mod_utilities.Hologram.MaxTextSize
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.MaxTextSize
   nameWithType: Hologram.MaxTextSize
 - uid: PiTung.Mod_utilities.Hologram.ScaleSizeWithDistance
@@ -1321,6 +1404,7 @@ references:
   name: ScaleSizeWithDistance
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_ScaleSizeWithDistance_
   commentId: Overload:PiTung.Mod_utilities.Hologram.ScaleSizeWithDistance
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.ScaleSizeWithDistance
   nameWithType: Hologram.ScaleSizeWithDistance
 - uid: PiTung.Mod_utilities.Hologram.ScreenPosition
@@ -1333,6 +1417,7 @@ references:
   name: ScreenPosition
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_ScreenPosition_
   commentId: Overload:PiTung.Mod_utilities.Hologram.ScreenPosition
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.ScreenPosition
   nameWithType: Hologram.ScreenPosition
 - uid: PiTung.Mod_utilities.Hologram.TargetObject
@@ -1345,6 +1430,7 @@ references:
   name: TargetObject
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_TargetObject_
   commentId: Overload:PiTung.Mod_utilities.Hologram.TargetObject
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.TargetObject
   nameWithType: Hologram.TargetObject
 - uid: PiTung.Mod_utilities.Hologram.Text
@@ -1357,6 +1443,7 @@ references:
   name: Text
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_Text_
   commentId: Overload:PiTung.Mod_utilities.Hologram.Text
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.Text
   nameWithType: Hologram.Text
 - uid: PiTung.Mod_utilities.Hologram.TextColor
@@ -1369,6 +1456,7 @@ references:
   name: TextColor
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_TextColor_
   commentId: Overload:PiTung.Mod_utilities.Hologram.TextColor
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.TextColor
   nameWithType: Hologram.TextColor
 - uid: PiTung.Mod_utilities.Hologram.TextShadow
@@ -1381,6 +1469,7 @@ references:
   name: TextShadow
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_TextShadow_
   commentId: Overload:PiTung.Mod_utilities.Hologram.TextShadow
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.TextShadow
   nameWithType: Hologram.TextShadow
 - uid: PiTung.Mod_utilities.Hologram.Visible
@@ -1393,6 +1482,7 @@ references:
   name: Visible
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_Visible_
   commentId: Overload:PiTung.Mod_utilities.Hologram.Visible
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.Visible
   nameWithType: Hologram.Visible
 - uid: PiTung.Mod_utilities.Hologram.WorldPosition
@@ -1405,6 +1495,7 @@ references:
   name: WorldPosition
   href: api/PiTung.Mod_utilities.Hologram.html#PiTung_Mod_utilities_Hologram_WorldPosition_
   commentId: Overload:PiTung.Mod_utilities.Hologram.WorldPosition
+  isSpec: "True"
   fullName: PiTung.Mod_utilities.Hologram.WorldPosition
   nameWithType: Hologram.WorldPosition
 - uid: PiTung.ModInput
@@ -1423,6 +1514,7 @@ references:
   name: GetBindingKey
   href: api/PiTung.ModInput.html#PiTung_ModInput_GetBindingKey_
   commentId: Overload:PiTung.ModInput.GetBindingKey
+  isSpec: "True"
   fullName: PiTung.ModInput.GetBindingKey
   nameWithType: ModInput.GetBindingKey
 - uid: PiTung.ModInput.GetKey(System.String)
@@ -1435,6 +1527,7 @@ references:
   name: GetKey
   href: api/PiTung.ModInput.html#PiTung_ModInput_GetKey_
   commentId: Overload:PiTung.ModInput.GetKey
+  isSpec: "True"
   fullName: PiTung.ModInput.GetKey
   nameWithType: ModInput.GetKey
 - uid: PiTung.ModInput.GetKeyDown(System.String)
@@ -1447,6 +1540,7 @@ references:
   name: GetKeyDown
   href: api/PiTung.ModInput.html#PiTung_ModInput_GetKeyDown_
   commentId: Overload:PiTung.ModInput.GetKeyDown
+  isSpec: "True"
   fullName: PiTung.ModInput.GetKeyDown
   nameWithType: ModInput.GetKeyDown
 - uid: PiTung.ModInput.GetKeyUp(System.String)
@@ -1459,6 +1553,7 @@ references:
   name: GetKeyUp
   href: api/PiTung.ModInput.html#PiTung_ModInput_GetKeyUp_
   commentId: Overload:PiTung.ModInput.GetKeyUp
+  isSpec: "True"
   fullName: PiTung.ModInput.GetKeyUp
   nameWithType: ModInput.GetKeyUp
 - uid: PiTung.ModInput.RegisterActions
@@ -1477,6 +1572,7 @@ references:
   name: ListenKey
   href: api/PiTung.ModInput.RegisterActions.html#PiTung_ModInput_RegisterActions_ListenKey_
   commentId: Overload:PiTung.ModInput.RegisterActions.ListenKey
+  isSpec: "True"
   fullName: PiTung.ModInput.RegisterActions.ListenKey
   nameWithType: ModInput.RegisterActions.ListenKey
 - uid: PiTung.ModInput.RegisterActions.ListenKeyDown(System.Action)
@@ -1489,6 +1585,7 @@ references:
   name: ListenKeyDown
   href: api/PiTung.ModInput.RegisterActions.html#PiTung_ModInput_RegisterActions_ListenKeyDown_
   commentId: Overload:PiTung.ModInput.RegisterActions.ListenKeyDown
+  isSpec: "True"
   fullName: PiTung.ModInput.RegisterActions.ListenKeyDown
   nameWithType: ModInput.RegisterActions.ListenKeyDown
 - uid: PiTung.ModInput.RegisterActions.ListenKeyUp(System.Action)
@@ -1501,6 +1598,7 @@ references:
   name: ListenKeyUp
   href: api/PiTung.ModInput.RegisterActions.html#PiTung_ModInput_RegisterActions_ListenKeyUp_
   commentId: Overload:PiTung.ModInput.RegisterActions.ListenKeyUp
+  isSpec: "True"
   fullName: PiTung.ModInput.RegisterActions.ListenKeyUp
   nameWithType: ModInput.RegisterActions.ListenKeyUp
 - uid: PiTung.ModInput.RegisterBinding(PiTung.Mod,System.String,UnityEngine.KeyCode,PiTung.KeyModifiers)
@@ -1513,6 +1611,7 @@ references:
   name: RegisterBinding
   href: api/PiTung.ModInput.html#PiTung_ModInput_RegisterBinding_
   commentId: Overload:PiTung.ModInput.RegisterBinding
+  isSpec: "True"
   fullName: PiTung.ModInput.RegisterBinding
   nameWithType: ModInput.RegisterBinding
 - uid: PiTung.ModUtilities
@@ -1531,6 +1630,7 @@ references:
   name: DummyComponent
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_DummyComponent_
   commentId: Overload:PiTung.ModUtilities.DummyComponent
+  isSpec: "True"
   fullName: PiTung.ModUtilities.DummyComponent
   nameWithType: ModUtilities.DummyComponent
 - uid: PiTung.ModUtilities.ExecuteMethod(System.Object,System.String,System.Object[])
@@ -1546,12 +1646,14 @@ references:
   name: ExecuteMethod
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_ExecuteMethod_
   commentId: Overload:PiTung.ModUtilities.ExecuteMethod
+  isSpec: "True"
   fullName: PiTung.ModUtilities.ExecuteMethod
   nameWithType: ModUtilities.ExecuteMethod
 - uid: PiTung.ModUtilities.ExecuteStaticMethod*
   name: ExecuteStaticMethod
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_ExecuteStaticMethod_
   commentId: Overload:PiTung.ModUtilities.ExecuteStaticMethod
+  isSpec: "True"
   fullName: PiTung.ModUtilities.ExecuteStaticMethod
   nameWithType: ModUtilities.ExecuteStaticMethod
 - uid: PiTung.ModUtilities.ExecuteStaticMethod``1(System.String,System.Object[])
@@ -1567,6 +1669,7 @@ references:
   name: GetFieldValue
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_GetFieldValue_
   commentId: Overload:PiTung.ModUtilities.GetFieldValue
+  isSpec: "True"
   fullName: PiTung.ModUtilities.GetFieldValue
   nameWithType: ModUtilities.GetFieldValue
 - uid: PiTung.ModUtilities.GetFieldValue``1(System.Object,System.String)
@@ -1582,6 +1685,7 @@ references:
   name: GetStaticFieldValue
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_GetStaticFieldValue_
   commentId: Overload:PiTung.ModUtilities.GetStaticFieldValue
+  isSpec: "True"
   fullName: PiTung.ModUtilities.GetStaticFieldValue
   nameWithType: ModUtilities.GetStaticFieldValue
 - uid: PiTung.ModUtilities.GetStaticFieldValue``2(System.String)
@@ -1603,6 +1707,7 @@ references:
   name: Graphics
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Graphics_
   commentId: Overload:PiTung.ModUtilities.Graphics
+  isSpec: "True"
   fullName: PiTung.ModUtilities.Graphics
   nameWithType: ModUtilities.Graphics
 - uid: PiTung.ModUtilities.IsOnMainMenu
@@ -1615,6 +1720,7 @@ references:
   name: IsOnMainMenu
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_IsOnMainMenu_
   commentId: Overload:PiTung.ModUtilities.IsOnMainMenu
+  isSpec: "True"
   fullName: PiTung.ModUtilities.IsOnMainMenu
   nameWithType: ModUtilities.IsOnMainMenu
 - uid: PiTung.ModUtilities.Log(System.String)
@@ -1636,6 +1742,7 @@ references:
   name: Log
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_Log_
   commentId: Overload:PiTung.ModUtilities.Log
+  isSpec: "True"
   fullName: PiTung.ModUtilities.Log
   nameWithType: ModUtilities.Log
 - uid: PiTung.ModUtilities.PlayerObject
@@ -1648,12 +1755,14 @@ references:
   name: PlayerObject
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_PlayerObject_
   commentId: Overload:PiTung.ModUtilities.PlayerObject
+  isSpec: "True"
   fullName: PiTung.ModUtilities.PlayerObject
   nameWithType: ModUtilities.PlayerObject
 - uid: PiTung.ModUtilities.SetFieldValue*
   name: SetFieldValue
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_SetFieldValue_
   commentId: Overload:PiTung.ModUtilities.SetFieldValue
+  isSpec: "True"
   fullName: PiTung.ModUtilities.SetFieldValue
   nameWithType: ModUtilities.SetFieldValue
 - uid: PiTung.ModUtilities.SetFieldValue``1(System.Object,System.String,``0)
@@ -1681,6 +1790,7 @@ references:
   name: OriginalMethod
   href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute_OriginalMethod_
   commentId: Overload:PiTung.PatchMethodAttribute.OriginalMethod
+  isSpec: "True"
   fullName: PiTung.PatchMethodAttribute.OriginalMethod
   nameWithType: PatchMethodAttribute.OriginalMethod
 - uid: PiTung.PatchMethodAttribute.PatchType
@@ -1693,6 +1803,7 @@ references:
   name: PatchType
   href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute_PatchType_
   commentId: Overload:PiTung.PatchMethodAttribute.PatchType
+  isSpec: "True"
   fullName: PiTung.PatchMethodAttribute.PatchType
   nameWithType: PatchMethodAttribute.PatchType
 - uid: PiTung.PatchType
@@ -1729,6 +1840,7 @@ references:
   name: FrameworkVersion
   href: api/PiTung.PiTUNG.html#PiTung_PiTUNG_FrameworkVersion_
   commentId: Overload:PiTung.PiTUNG.FrameworkVersion
+  isSpec: "True"
   fullName: PiTung.PiTUNG.FrameworkVersion
   nameWithType: PiTUNG.FrameworkVersion
 - uid: PiTung.TargetAttribute
@@ -1747,6 +1859,7 @@ references:
   name: TargetAttribute
   href: api/PiTung.TargetAttribute.html#PiTung_TargetAttribute__ctor_
   commentId: Overload:PiTung.TargetAttribute.#ctor
+  isSpec: "True"
   fullName: PiTung.TargetAttribute.TargetAttribute
   nameWithType: TargetAttribute.TargetAttribute
 - uid: PiTung.TargetAttribute.ContainerType
@@ -1759,6 +1872,7 @@ references:
   name: ContainerType
   href: api/PiTung.TargetAttribute.html#PiTung_TargetAttribute_ContainerType_
   commentId: Overload:PiTung.TargetAttribute.ContainerType
+  isSpec: "True"
   fullName: PiTung.TargetAttribute.ContainerType
   nameWithType: TargetAttribute.ContainerType
 - uid: PiTung.VersionPrecision
