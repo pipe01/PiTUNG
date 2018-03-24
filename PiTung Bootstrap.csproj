@@ -117,7 +117,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="User Interface\MainMenuPatch.cs" />
     <Compile Include="Utils\DropOutStack.cs" />
     <Compile Include="GodHimself.cs" />
     <Compile Include="Extensions.cs" />
@@ -157,7 +156,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="User Interface\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
