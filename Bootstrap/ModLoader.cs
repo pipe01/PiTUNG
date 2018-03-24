@@ -1,7 +1,9 @@
-﻿using PiTung.Console;
+﻿using Harmony;
+using PiTung.Console;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace PiTung
@@ -69,6 +71,13 @@ namespace PiTung
                     mod.ModAssembly = ass;
                     mod.FullPath = Path.GetFullPath(modPath);
                 }
+            }
+
+            foreach (var item in ass.GetTypes())
+            {
+                mod.Reloadable = 
+                    item.GetCustomAttributes(typeof(HarmonyPatch), false).Length == 0 &&
+                    item.GetCustomAttributes(typeof(TargetAttribute), false).Length == 0;
             }
 
             return mod;

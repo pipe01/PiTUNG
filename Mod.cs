@@ -75,6 +75,11 @@ namespace PiTung
         internal bool HasAvailableUpdate { get; set; } = false;
 
         /// <summary>
+        /// True if the mod can be reloaded (it doesn't contain any patches).
+        /// </summary>
+        internal bool Reloadable { get; set; } = true;
+
+        /// <summary>
         /// Returns the version of PiTUNG that this mod was compiled with.
         /// </summary>
         internal Version CompiledWithVersion
