@@ -10,6 +10,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using PiTung.Console;
 using Object = UnityEngine.Object;
+using System.Text.RegularExpressions;
+using System.Reflection.Emit;
 
 namespace PiTung
 {
@@ -65,7 +67,9 @@ namespace PiTung
                 return;
             Patched = true;
 
-            MDebug.WriteLine("PiTUNG Framework version {0}", 0, new Version(PiTUNG.FrameworkVersion.Major, PiTUNG.FrameworkVersion.Minor, PiTUNG.FrameworkVersion.Build));
+            string tungVersion = GetTungVersion();
+
+            MDebug.WriteLine("PiTUNG Framework version {0} on TUNG v{1}", 0, new Version(PiTUNG.FrameworkVersion.Major, PiTUNG.FrameworkVersion.Minor, PiTUNG.FrameworkVersion.Build), tungVersion);
             MDebug.WriteLine("-------------Patching-------------" + (hotload ? " (reloading)" : ""));
 
             if (!hotload)
@@ -97,6 +101,14 @@ namespace PiTung
                 AddDummyComponent(SceneManager.GetActiveScene());
 
             new Thread(() => PatchThread(hotload)).Start();
+        }
+
+        private string GetTungVersion()
+        {
+            var obj = GameObject.Find("Version Number");
+            var str = obj.GetTextMeshProUGUIText();
+
+            return Regex.Match(str, @"v(.\..\..)").Groups[1].Value;
         }
 
         private void PatchThread(bool hotload)

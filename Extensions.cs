@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Collections;
 using System.Reflection;
 using System;
 using System.Collections.Generic;
@@ -94,6 +93,24 @@ namespace PiTung
         public static T AddComponent<T>(this GameObject go, T toAdd) where T : Component
         {
             return go.AddComponent<T>().GetCopyOf(toAdd);
+        }
+
+        public static string GetTextMeshProUGUIText(this GameObject obj)
+        {
+            foreach (var item in obj.GetComponentsInChildren<Component>())
+            {
+                var type = item.GetType();
+
+                //Hacky way of setting the text to avoid importing the DLL
+                if (type.Name == "TextMeshProUGUI")
+                {
+                    var str = (string)type.GetField("m_text", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(item);
+
+                    return str;
+                }
+            }
+
+            return null;
         }
     }
 }
