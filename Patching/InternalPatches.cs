@@ -1,14 +1,11 @@
 ﻿using PiTung.Mod_utilities;
 using System;
-using PiTung.Building;
 using PiTung.Config_menu;
 using Harmony;
 using PiTung.Console;
 using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
-using System.Linq;
-using References;
 
 #pragma warning disable RCS1102 // Make class static.
 #pragma warning disable RCS1213 // Remove unused member declaration.
@@ -151,68 +148,6 @@ namespace PiTung
             {
                 Object.Destroy(__instance);
             }
-        }
-    }
-    
-    [HarmonyPatch(typeof(CircuitBoard), "Awake")]
-    internal class CircuitBoardAwakePatch
-    {
-        static void Postfix(CircuitBoard __instance)
-        {
-            BoardManager.Instance.OnBoardAdded(__instance.x, __instance.z, __instance.gameObject);
-        }
-    }
-
-    [HarmonyPatch(typeof(SelectionMenu), "Awake")]
-    internal class BuildMenuPatch
-    {
-        static void Postfix(SelectionMenu __instance)
-        {
-            var objs = __instance.PlaceableObjectTypes.Select(Prefabs.ComponentTypeToPrefab);
-
-            Components.AddComponents(objs.ToList());
-        }
-    }
-
-    //[HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DestroyIIConnection))]
-    //internal class StuffDeleterIIPatch
-    //{
-    //    static void Prefix(InputInputConnection connection)
-    //    {
-    //        var kvp = new KeyValuePair<CircuitInput, CircuitInput>(connection.Point1, connection.Point2);
-
-    //        if (Builder.PendingIIConnections.Contains(kvp))
-    //            Builder.PendingIIConnections.Remove(kvp);
-    //    }
-    //}
-
-    //[HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DestroyIOConnection))]
-    //internal class StuffDeleterIOPatch
-    //{
-    //    static void Prefix(InputOutputConnection connection)
-    //    {
-    //        var kvp = new KeyValuePair<CircuitInput, Output>(connection.Point1, connection.Point2);
-
-    //        if (Builder.PendingIOConnections.Contains(kvp))
-    //            Builder.PendingIOConnections.Remove(kvp);
-    //    }
-    //}
-
-    [HarmonyPatch(typeof(StuffDeleter), nameof(StuffDeleter.DeleteThing))]
-    internal class StuffDeleterBoardPatch
-    {
-        static void Prefix(GameObject DestroyThis)
-        {
-            BoardManager.Instance.OnBoardDeleted(DestroyThis);
-        }
-    }
-
-    [HarmonyPatch(typeof(BoardPlacer), nameof(BoardPlacer.CancelPlacement))]
-    internal class BoardPlacerCancelPatch
-    {
-        static void Prefix()
-        {
-            BoardManager.Instance.OnBoardDeleted(BoardPlacer.BoardBeingPlaced);
         }
     }
 }
