@@ -29,90 +29,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Building.Board.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Building.Board.html",
-          "hash": "GZhTxUt7BSRdbLotRXPH/w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Building.BoardManager.BoardDelegate.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Building.BoardManager.BoardDelegate.html",
-          "hash": "pgFSfA3billlyQc8uQvsPA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Building.BoardManager.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Building.BoardManager.html",
-          "hash": "EFmlB/XyDwraKNZNKGvvHQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Building.Builder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Building.Builder.html",
-          "hash": "fvTgsp4u73/sZyF2+gvwjQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Building.CircuitComponent.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Building.CircuitComponent.html",
-          "hash": "675a2DrZzus52bvH1U6XTQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Building.Components.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Building.Components.html",
-          "hash": "2q4uBHhKKqRXUcQWnRcgQQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Building.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Building.html",
-          "hash": "ahLZjrZkw38PP7Zumw77cQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/PiTung.Config_menu.CheckboxMenuEntry.yml",
       "output": {
         ".html": {
@@ -453,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "H1bTDIVxynm77GbrV+p/8g=="
+          "hash": "lvd3/wv12eY0wJ1w1JjrCg=="
         }
       },
       "is_incremental": false,
