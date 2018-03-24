@@ -101,11 +101,6 @@
       <DependentUpon>AssemblyVersion.tt</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap\Bootstrapper.cs" />
-    <Compile Include="Building\Board.cs" />
-    <Compile Include="Building\BoardManager.cs" />
-    <Compile Include="Building\Builder.cs" />
-    <Compile Include="Building\CircuitComponent.cs" />
-    <Compile Include="Building\Components.cs" />
     <Compile Include="Config menu\ConfigMenu.cs" />
     <Compile Include="Config menu\MenuEntry.cs" />
     <Compile Include="Console\CmdParser.cs" />

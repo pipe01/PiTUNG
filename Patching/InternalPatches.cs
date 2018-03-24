@@ -26,16 +26,14 @@ namespace PiTung
         }
     }
 
-    //[HarmonyPatch(typeof(LoadGame), "Load")]
-    //internal class LoadGameLoadPatch
-    //{
-    //    static void Postfix()
-    //    {
-    //        BoardManager.Instance.Reset();
-
-    //        Mod.CallOnAllMods(o => o.OnWorldLoaded(SaveManager.SaveName));
-    //    }
-    //}
+    [HarmonyPatch(typeof(SaveManager), nameof(SaveManager.LoadAll))]
+    internal class LoadGameLoadPatch
+    {
+        static void Postfix()
+        {
+            Mod.CallOnAllMods(o => o.OnWorldLoaded(SaveManager.SaveName));
+        }
+    }
 
     [HarmonyPatch(typeof(DummyComponent), "Update")]
     internal class InputPatch
