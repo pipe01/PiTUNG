@@ -180,6 +180,12 @@ namespace PiTung.Console
 
             name = mod.Name;
 
+            if (!mod.Reloadable)
+            {
+                Error($"Mod '{name}' isn't reloadable.");
+                return true;
+            }
+
             int index = Bootstrapper._Mods.IndexOf(mod);
             Bootstrapper._Mods.Remove(mod);
 
