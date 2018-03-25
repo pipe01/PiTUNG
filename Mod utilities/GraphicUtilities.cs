@@ -15,6 +15,38 @@ namespace PiTung
         private int SphereCounter = 0;
         private Dictionary<int, GameObject> Spheres = new Dictionary<int, GameObject>();
         private Stack<GameObject> SphereCache = new Stack<GameObject>();
+        private Dictionary<KeyValuePair<Vector2, Color>, Texture2D> TextureCache = new Dictionary<KeyValuePair<Vector2, Color>, Texture2D>();
+
+        /// <summary>
+        /// Creates a new solid texture and fills it with a color.
+        /// </summary>
+        /// <param name="w">Width.</param>
+        /// <param name="h">Height.</param>
+        /// <param name="fill">The color to fill with.</param>
+        /// <returns>A texture.</returns>
+        public Texture2D CreateSolidTexture(int w, int h, Color fill)
+        {
+            var kvp = new KeyValuePair<Vector2, Color>(new Vector2(w, h), fill);
+
+            if (!TextureCache.ContainsKey(kvp))
+            {
+                Texture2D tex = new Texture2D(w, h, TextureFormat.ARGB32, false);
+
+                Color[] pixels = tex.GetPixels();
+
+                for (int i = 0; i < w * h; i++)
+                {
+                    pixels[i] = fill;
+                }
+
+                tex.SetPixels(pixels);
+                tex.Apply();
+
+                TextureCache[kvp] = tex;
+            }
+            
+            return TextureCache[kvp];
+        }
 
         /// <summary>
         /// Draws <paramref name="str"/> on screen at <paramref name="position"/> with color <paramref name="color"/>
