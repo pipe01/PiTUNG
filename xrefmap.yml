@@ -696,6 +696,19 @@ references:
   commentId: T:PiTung.GraphicUtilities
   fullName: PiTung.GraphicUtilities
   nameWithType: GraphicUtilities
+- uid: PiTung.GraphicUtilities.CreateSolidTexture(System.Int32,System.Int32,UnityEngine.Color)
+  name: CreateSolidTexture(Int32, Int32, Color)
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_CreateSolidTexture_System_Int32_System_Int32_UnityEngine_Color_
+  commentId: M:PiTung.GraphicUtilities.CreateSolidTexture(System.Int32,System.Int32,UnityEngine.Color)
+  fullName: PiTung.GraphicUtilities.CreateSolidTexture(System.Int32, System.Int32, UnityEngine.Color)
+  nameWithType: GraphicUtilities.CreateSolidTexture(Int32, Int32, Color)
+- uid: PiTung.GraphicUtilities.CreateSolidTexture*
+  name: CreateSolidTexture
+  href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_CreateSolidTexture_
+  commentId: Overload:PiTung.GraphicUtilities.CreateSolidTexture
+  isSpec: "True"
+  fullName: PiTung.GraphicUtilities.CreateSolidTexture
+  nameWithType: GraphicUtilities.CreateSolidTexture
 - uid: PiTung.GraphicUtilities.CreateSphere(UnityEngine.Vector3,System.Single,System.Nullable{UnityEngine.Color})
   name: CreateSphere(Vector3, Single, Nullable<Color>)
   href: api/PiTung.GraphicUtilities.html#PiTung_GraphicUtilities_CreateSphere_UnityEngine_Vector3_System_Single_System_Nullable_UnityEngine_Color__
