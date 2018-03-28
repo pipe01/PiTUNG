@@ -64,7 +64,7 @@ namespace PiTung
         /// <param name="fieldName">The name of the field.</param>
         /// <param name="value">The new value for the field.</param>
         /// <param name="isPrivate">True if the field is private.</param>
-        public static void SetFieldValue<T>(object obj, string fieldName, T value)
+        public static void SetFieldValue(object obj, string fieldName, object value)
         {
             var field = GetField(obj.GetType(), fieldName);
 
@@ -76,6 +76,30 @@ namespace PiTung
             {
                 throw new ArgumentException($"Field '{fieldName}' not found in {obj.GetType().Name}.", nameof(fieldName));
             }
+        }
+        
+        /// <summary>
+        /// Sets the static field <paramref name="fieldName"/>'s value to <paramref name="value"/>.
+        /// </summary>
+        /// <typeparam name="TParent">The type that contains <paramref name="fieldName"/>.</typeparam>
+        /// <param name="fieldName">The field's name.</param>
+        /// <param name="value">The field's new value.</param>
+        public static void SetStaticFieldValue<TParent>(string fieldName, object value)
+        {
+            SetStaticFieldValue(typeof(TParent), fieldName, value);
+        }
+
+        /// <summary>
+        /// Sets the type <paramref name="parentType"/>'s static field <paramref name="fieldName"/>'s value to <paramref name="value"/>.
+        /// </summary>
+        /// <param name="parentType">The type that contains <paramref name="fieldName"/>.</param>
+        /// <param name="fieldName">The field's name.</param>
+        /// <param name="value">The field's new value.</param>
+        public static void SetStaticFieldValue(Type parentType, string fieldName, object value)
+        {
+            var field = GetField(parentType, fieldName);
+
+            field.SetValue(null, value);
         }
 
         /// <summary>
@@ -101,7 +125,18 @@ namespace PiTung
         /// <param name="fieldName">The name of the field.</param>
         public static TField GetStaticFieldValue<TParent, TField>(string fieldName)
         {
-            FieldInfo field = GetField(typeof(TParent), fieldName);
+            return GetStaticFieldValue<TField>(typeof(TParent), fieldName);
+        }
+
+        /// <summary>
+        /// Gets the static field <paramref name="fieldName"/>'s value in <typeparamref name="parentType"/>.
+        /// </summary>
+        /// <typeparam name="TField">The field's type.</typeparam>
+        /// <param name="parentType">The type that contains the field.</param>
+        /// <param name="fieldName">The name of the field.</param>
+        public static TField GetStaticFieldValue<TField>(Type parentType, string fieldName)
+        {
+            FieldInfo field = GetField(parentType, fieldName);
 
             return (TField)field.GetValue(null);
         }
@@ -132,13 +167,27 @@ namespace PiTung
         /// <param name="parameters">The arguments we want to call the method with.</param>
         /// <exception cref="ArgumentException">Throws if the method doesn't exist.</exception>
         /// <exception cref="ArgumentNullException">Throws if <paramref name="methodName"/> is null.</exception>
-        public static void ExecuteStaticMethod<T>(string methodName, params object[] parameters)
+        /// <returns>The method's returned value, or null if it doesn't have any.</returns>
+        public static object ExecuteStaticMethod<T>(string methodName, params object[] parameters)
         {
-            if (methodName == null) throw new ArgumentNullException(nameof(methodName));
+            return ExecuteStaticMethod(typeof(T), methodName, parameters);
+        }
 
-            Type type = typeof(T);
-
-            type.InvokeMember(methodName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, null, new object[0]);
+        /// <summary>
+        /// Executes the static method <paramref name="methodName"/> in <paramref name="parentType"/> with <paramref name="parameters"/> arguments.
+        /// </summary>
+        /// <param name="parentType">The type that contains <paramref name="methodName"/>.</param>
+        /// <param name="methodName">The method's name.</param>
+        /// <param name="parameters">The arguments we want to call the method with.</param>
+        /// <exception cref="ArgumentException">Throws if the method doesn't exist.</exception>
+        /// <exception cref="ArgumentNullException">Throws if <paramref name="methodName"/> is null.</exception>
+        /// <returns>The method's returned value, or null if it doesn't have any.</returns>
+        public static object ExecuteStaticMethod(Type parentType, string methodName, params object[] parameters)
+        {
+            if (methodName == null)
+                throw new ArgumentNullException(nameof(methodName));
+            
+            return parentType.InvokeMember(methodName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, null, parameters);
         }
 
         /// <summary>
