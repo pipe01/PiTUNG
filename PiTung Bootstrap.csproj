@@ -92,6 +92,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\CubicComponent.cs" />
     <Compile Include="Components\CustomComponent.cs" />
     <Compile Include="Components\IOMap.cs" />
     <Compile Include="Mod utilities\Hologram.cs" />
