@@ -22,6 +22,8 @@ namespace PiTung.Components
         public abstract GameObject BuildPrefab();
         public abstract void LogicUpdate();
 
+        public abstract string UniqueName { get; }
+
         protected virtual bool ShouldUpdate() => false;
 
         
@@ -37,6 +39,9 @@ namespace PiTung.Components
 
             var updater = this.PrefabCache.AddComponent<UpdateScript>();
             updater.Component = this;
+
+            var info = this.PrefabCache.AddComponent<ObjectInfo>();
+            info.ComponentType = ComponentType.CustomObject;
 
             this.Inputs = this.PrefabCache.GetComponentsInChildren<CircuitInput>();
             this.Outputs = this.PrefabCache.GetComponentsInChildren<CircuitOutput>();
