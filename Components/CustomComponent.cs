@@ -14,49 +14,39 @@ namespace PiTung.Components
         internal static readonly Vector3 WhiteCubeScale = new Vector3(0.3f, 0.3f, 0.3f);
 
         private GameObject PrefabCache;
-        public GameObject Prefab => PrefabCache ?? (PrefabCache = UpdatePrefab());
 
-        protected CircuitInput[] Inputs { get; private set; } = new CircuitInput[0];
-        protected CircuitOutput[] Outputs { get; private set; } = new CircuitOutput[0];
-
-        public abstract GameObject BuildPrefab();
-        public abstract void LogicUpdate();
-
-        public abstract string UniqueName { get; }
-
-        protected virtual bool ShouldUpdate() => false;
-
-        
-        protected GameObject UpdatePrefab()
+        public GameObject CreateInstance()
         {
-            if (this.PrefabCache != null)
-            {
-                GameObject.Destroy(this.PrefabCache.GetComponent<UpdateScript>());
-                GameObject.Destroy(this.PrefabCache);
-            }
+            var prefab = PrefabCache ?? (PrefabCache = UpdatePrefab());
 
-            this.PrefabCache = BuildPrefab();
-
-            var updater = this.PrefabCache.AddComponent<UpdateScript>();
-            updater.Component = this;
-
-            var info = this.PrefabCache.AddComponent<ObjectInfo>();
+            var info = prefab.AddComponent<ObjectInfo>();
             info.ComponentType = ComponentType.CustomObject;
 
-            this.Inputs = this.PrefabCache.GetComponentsInChildren<CircuitInput>();
-            this.Outputs = this.PrefabCache.GetComponentsInChildren<CircuitOutput>();
+            foreach (var item in prefab.GetComponents<UpdateScript>())
+            {
+                item.enabled = true;
+            }
 
-            return this.PrefabCache;
+            return prefab;
         }
         
-        private void Update()
+        protected abstract GameObject BuildComponentPrefab();
+        
+        public GameObject BuildPrefab()
         {
-            if (PrefabCache == null)
-                UpdatePrefab();
+            var prefab = BuildComponentPrefab();
 
-            this.LogicUpdate();
+            foreach (var item in prefab.GetComponents<UpdateScript>())
+            {
+                item.Component = this;
+                item.UpdateIOs();
+            }
+
+            return prefab;
         }
 
+        public abstract string UniqueName { get; }
+        
         protected GameObject AddInputPeg(GameObject parent, Vector3? localPosition = null)
         {
             var Peg = GameObject.Instantiate(Prefabs.Peg);
@@ -86,27 +76,36 @@ namespace PiTung.Components
 
             return Peg;
         }
+    }
 
-        public static GameObject CreateCustomComponent<TComponent>() where TComponent : CustomComponent
+    public abstract class UpdateScript : CircuitLogicComponent
+    {
+        internal CustomComponent Component;
+
+        protected CircuitInput[] Inputs { get; private set; }
+        protected CircuitOutput[] Outputs { get; private set; }
+
+        protected abstract bool ShouldUpdate();
+
+        protected override void OnAwake()
         {
-            return Activator.CreateInstance<TComponent>().Prefab;
+            this.enabled = false;
         }
 
-        private class UpdateScript : CircuitLogicComponent
+        internal void UpdateIOs()
         {
-            public CustomComponent Component;
+            this.Inputs = GetComponents<CircuitInput>();
+            this.Outputs = GetComponents<CircuitOutput>();
 
-            void Update()
-            {
-                if (Component?.ShouldUpdate() ?? false)
-                {
-                    BehaviorManager.UpdatingCircuitLogicComponents.Add(this);
-                }
-            }
+            MDebug.WriteLine("INPUTS: " + Inputs.Length);
+            MDebug.WriteLine("OUTPUTS: " + Outputs.Length);
+        }
 
-            protected override void CircuitLogicUpdate()
+        void Update()
+        {
+            if (this.ShouldUpdate())
             {
-                this.Component?.Update();
+                BehaviorManager.UpdatingCircuitLogicComponents.Add(this);
             }
         }
     }

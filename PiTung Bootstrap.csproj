@@ -92,6 +92,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\ComponentPatches.cs" />
+    <Compile Include="Components\ComponentRegistry.cs" />
     <Compile Include="Components\CubicComponent.cs" />
     <Compile Include="Components\CustomComponent.cs" />
     <Compile Include="Components\IOMap.cs" />

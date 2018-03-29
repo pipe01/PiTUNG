@@ -7,8 +7,6 @@ namespace PiTung.Components
 {
     public abstract class CubicComponent : CustomComponent
     {
-        protected GameObject gameObject => Prefab;
-
         protected IOMap IOMap { get; }
 
         public CubicComponent()
@@ -17,11 +15,16 @@ namespace PiTung.Components
             this.IOMap.Changed += (a, b) => UpdatePrefab();
         }
 
-        public override GameObject BuildPrefab()
+        protected override GameObject BuildComponentPrefab()
         {
-            return CreatePrefabFromCode(this.IOMap);
+            var prefab = CreatePrefabFromCode(this.IOMap);
+            AddScriptToGameObject(prefab);
+
+            return prefab;
         }
-        
+
+        protected abstract void AddScriptToGameObject(GameObject @object);
+
         private static GameObject CreatePrefabFromCode(IOMap map)
         {
             GameObject PrefabRoot = GameObject.Instantiate(Prefabs.WhiteCube, new Vector3(-1000, -1000, -1000), Quaternion.identity);
