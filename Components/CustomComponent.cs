@@ -33,7 +33,11 @@ namespace PiTung.Components
         public override GameObject Instantiate()
         {
             var obj = base.Instantiate();
-            obj.AddComponent<THandler>().Component = this;
+
+            var handler = obj.AddComponent<THandler>();
+            handler.Component = this;
+            handler.ComponentName = this.UniqueName;
+
             obj.AddComponent<ObjectInfo>().ComponentType = ComponentType.CustomObject;
 
             return obj;
@@ -43,6 +47,9 @@ namespace PiTung.Components
     public abstract class UpdateHandler : CircuitLogicComponent
     {
         public CustomComponent Component { get; internal set; }
+
+        [SerializeField]
+        public string ComponentName;
 
         private CircuitInput[] _inputs;
         public CircuitInput[] Inputs

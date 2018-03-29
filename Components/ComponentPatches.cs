@@ -27,13 +27,27 @@ namespace PiTung.Components
             List<object> saveData = new List<object>();
 
             var customComponent = CreateFromThis.GetComponent<UpdateHandler>();
-           
             CircuitOutput[] outputs = CreateFromThis.GetComponentsInChildren<CircuitOutput>();
 
-            MDebug.WriteLine(customComponent.Component == null);
+            if (customComponent.Component == null)
+            {
+                MDebug.WriteLine("!!customComponent.Component IS NULL!! NAME: " + customComponent.ComponentName);
+
+                if (customComponent.ComponentName != null)
+                {
+                    customComponent.Component = ComponentRegistry.Registry[customComponent.ComponentName];
+                }
+                else
+                {
+                    MDebug.WriteLine("!!customComponent.ComponentName IS ALSO NULL!! ALLOW ME TO JUMP OFF A CLIFF");
+
+                    return;
+                }
+            }
+            
             saveData.Add(customComponent.Component.UniqueName);
             saveData.Add(outputs.Select(o => o.On).ToArray());
-            
+
             save.CustomData = saveData.ToArray();
         }
     }
@@ -70,6 +84,8 @@ namespace PiTung.Components
 
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instr)
         {
+            //Just replaces the method with "return null;", so that it doesn't get executed.
+
             yield return new CodeInstruction(OpCodes.Ldnull);
             yield return new CodeInstruction(OpCodes.Ret);
         }
@@ -77,6 +93,8 @@ namespace PiTung.Components
         static void Postfix(ref GameObject __result,  SavedCustomObject save)
         {
             MDebug.WriteLine("LOAD CUSTOM COMPONENT 1");
+
+            MDebug.WriteLine(save.CustomData == null);
 
             if (save.CustomData.Length == 0)
             {
