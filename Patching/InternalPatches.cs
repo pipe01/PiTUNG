@@ -32,6 +32,8 @@ namespace PiTung
         static void Postfix()
         {
             Mod.CallOnAllMods(o => o.OnWorldLoaded(SaveManager.SaveName));
+
+            SelectionMenu.Instance.PlaceableObjectTypes.Add(ComponentType.CustomObject);
         }
     }
 

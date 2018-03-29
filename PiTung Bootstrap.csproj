@@ -98,6 +98,7 @@
     <Compile Include="Components\ComponentPatches.cs" />
     <Compile Include="Components\ComponentRegistry.cs" />
     <Compile Include="Components\CustomComponent.cs" />
+    <Compile Include="Components\CustomMenu.cs" />
     <Compile Include="Components\IOMap.cs" />
     <Compile Include="Mod utilities\Hologram.cs" />
     <Compile Include="Mod utilities\HologramManager.cs" />

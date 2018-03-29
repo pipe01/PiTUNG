@@ -29,7 +29,7 @@ namespace PiTung.Components
         internal CustomComponent(string name, BuildState build) : base(name, build)
         {
         }
-        
+
         public override GameObject Instantiate()
         {
             var obj = base.Instantiate();
@@ -42,20 +42,34 @@ namespace PiTung.Components
 
     public abstract class UpdateHandler : CircuitLogicComponent
     {
-        private CustomComponent _component;
-        public CustomComponent Component
-        {
-            get => _component;
-            internal set
-            {
-                _component = value;
+        public CustomComponent Component { get; internal set; }
 
-                this.Inputs = this.GetComponentsInChildren<CircuitInput>();
-                this.Outputs = this.GetComponentsInChildren<CircuitOutput>();
+        private CircuitInput[] _inputs;
+        public CircuitInput[] Inputs
+        {
+            get
+            {
+                if (_inputs == null)
+                {
+                    _inputs = this.GetComponentsInChildren<CircuitInput>();
+                }
+                return _inputs;
             }
+            private set => _inputs = value;
         }
 
-        public CircuitInput[] Inputs { get; private set; } = new CircuitInput[0];
-        public CircuitOutput[] Outputs { get; private set; } = new CircuitOutput[0];
+        private CircuitOutput[] _outputs;
+        public CircuitOutput[] Outputs
+        {
+            get
+            {
+                if (_outputs == null)
+                {
+                    _outputs = this.GetComponentsInChildren<CircuitOutput>();
+                }
+                return _outputs;
+            }
+            private set => _outputs = value;
+        }
     }
 }

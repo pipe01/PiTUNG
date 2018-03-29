@@ -108,7 +108,7 @@ namespace PiTung
         {
             var obj = GameObject.Find("Version Number");
             var str = obj.GetTextMeshProUGUIText();
-
+            
             return Regex.Match(str, @"v(.\..\..)").Groups[1].Value;
         }
 

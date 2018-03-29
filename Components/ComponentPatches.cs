@@ -1,8 +1,11 @@
 ﻿using Harmony;
+using PiTung.Console;
+using References;
 using SavedObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using UnityEngine;
 
@@ -16,27 +19,25 @@ namespace PiTung.Components
             MDebug.WriteLine("SAVE CUSTOM OBJECT");
 
             /*
-            CustomData structure:
-            - CustomComponent.UniqueName
-            - Output[0].On
-            - Output[1].On
-            - ...
-            - Output[n].On
+            *    CustomData structure:
+            *    - CustomComponent.UniqueName
+            *    - Outputs.On[]
             */
 
             List<object> saveData = new List<object>();
 
             var customComponent = CreateFromThis.GetComponent<UpdateHandler>();
+           
             CircuitOutput[] outputs = CreateFromThis.GetComponentsInChildren<CircuitOutput>();
 
+            MDebug.WriteLine(customComponent.Component == null);
             saveData.Add(customComponent.Component.UniqueName);
-            saveData.AddRange(outputs.Select(o => o.On).Cast<object>());
-
+            saveData.Add(outputs.Select(o => o.On).ToArray());
+            
             save.CustomData = saveData.ToArray();
         }
     }
-
-
+    
     [HarmonyPatch(typeof(SavedObjectUtilities), "CreateSavedObjectFrom", new Type[] { typeof(ObjectInfo) })]
     internal static class CreateSavedObjectFromPatch
     {
@@ -61,11 +62,18 @@ namespace PiTung.Components
             return true;
         }
     }
-
-
+    
     [HarmonyPatch(typeof(SavedObjectUtilities), "GetCustomPrefab")]
     internal static class GetCustomPrefabPatch
     {
+        public static Transform NextParent = null;
+
+        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instr)
+        {
+            yield return new CodeInstruction(OpCodes.Ldnull);
+            yield return new CodeInstruction(OpCodes.Ret);
+        }
+
         static void Postfix(ref GameObject __result,  SavedCustomObject save)
         {
             MDebug.WriteLine("LOAD CUSTOM COMPONENT 1");
@@ -81,11 +89,21 @@ namespace PiTung.Components
             if (ComponentRegistry.Registry.TryGetValue(name, out var item))
             {
                 __result = item.Instantiate();
+                __result.transform.parent = NextParent;
             }
             else
             {
                 MDebug.WriteLine("ERROR: CUSTOM COMPONENT NOT FOUND!");
             }
+        }
+    }
+
+    [HarmonyPatch(typeof(SavedObjectUtilities), "LoadSavedObject")]
+    internal static class LoadSavedObjectPatch
+    {
+        static void Prefix(SavedObjectV2 save, Transform parent)
+        {
+            GetCustomPrefabPatch.NextParent = parent;
         }
     }
 
@@ -98,11 +116,7 @@ namespace PiTung.Components
 
             CircuitOutput[] outputs = LoadedObject.GetComponentsInChildren<CircuitOutput>();
 
-            bool[] savedOutputs = save.CustomData
-                .Skip(1)
-                .TakeWhile(o => o is bool)
-                .Cast<bool>()
-                .ToArray();
+            bool[] savedOutputs = (bool[])save.CustomData[1];
 
             if (outputs.Length != savedOutputs.Length)
             {
@@ -115,6 +129,56 @@ namespace PiTung.Components
             {
                 outputs[i++].On = item;
             }
+        }
+    }
+
+
+    [HarmonyPatch(typeof(ObjectInfo), "Start")]
+    internal static class ObjectInfoStartPatch
+    {
+        static IList<GameObject> ObjectsWithObjectInfo = new List<GameObject>();
+
+        static bool Prefix(ObjectInfo __instance)
+        {
+            if (ObjectsWithObjectInfo.Contains(__instance.gameObject))
+            {
+                GameObject.Destroy(__instance);
+                return false;
+            }
+
+            ObjectsWithObjectInfo.Add(__instance.gameObject);
+
+            return true;
+        }
+    }
+
+
+    [HarmonyPatch(typeof(ComponentPlacer), "DoFancyModdedComponentThings")]
+    internal static class MyModdedThingsPatch
+    {
+        static bool Prefix()
+        {
+            if (StuffPlacer.GetThingBeingPlaced == null && ComponentRegistry.Registry.Count > 0)
+            {
+                StuffPlacer.NewThingBeingPlaced(ComponentRegistry.Registry.Values.First().Instantiate());
+            }
+
+            return false;
+        }
+    }
+    
+    [HarmonyPatch(typeof(ComponentPlacer), "MakeSureThingBeingPlacedIsCorrect")]
+    internal static class asdasd
+    {
+        static bool Prefix()
+        {
+            if (SelectionMenu.Instance.SelectedThing == SelectionMenu.Instance.PlaceableObjectTypes.Count)
+            {
+                ModUtilities.ExecuteStaticMethod(typeof(ComponentPlacer), "DoFancyModdedComponentThings");
+                return false;
+            }
+            
+            return true;
         }
     }
 }
