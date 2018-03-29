@@ -1,42 +1,24 @@
-﻿using PiTung.Console;
-using References;
-using System;
+﻿using References;
 using UnityEngine;
 
 namespace PiTung.Components
 {
-    public abstract class CubicComponent : CustomComponent
+    internal static class BuilderUtils
     {
-        protected IOMap IOMap { get; }
+        internal static readonly Vector3 PegScale = new Vector3(0.3f, 0.8f, 0.3f);
+        internal static readonly Vector3 OutputScale = new Vector3(0.5f, 0.4f, 0.5f);
+        internal static readonly Vector3 WhiteCubeScale = new Vector3(0.3f, 0.3f, 0.3f);
 
-        public CubicComponent()
+        public static void ApplyIOMap(GameObject prefabRoot, IOMap map)
         {
-            this.IOMap = new IOMap();
-            this.IOMap.Changed += (a, b) => UpdatePrefab();
-        }
+            //GameObject PrefabRoot = GameObject.Instantiate(Prefabs.WhiteCube, new Vector3(-1000, -1000, -1000), Quaternion.identity);
+            //PrefabRoot.transform.localScale = WhiteCubeScale;
 
-        protected override GameObject BuildComponentPrefab()
-        {
-            var prefab = CreatePrefabFromCode(this.IOMap);
-            AddScriptToGameObject(prefab);
-
-            return prefab;
-        }
-
-        protected abstract void AddScriptToGameObject(GameObject @object);
-
-        private static GameObject CreatePrefabFromCode(IOMap map)
-        {
-            GameObject PrefabRoot = GameObject.Instantiate(Prefabs.WhiteCube, new Vector3(-1000, -1000, -1000), Quaternion.identity);
-            PrefabRoot.transform.localScale = WhiteCubeScale;
-            
             foreach (var item in map.Sides)
             {
                 AddIO(item.Key, item.Value);
             }
             
-            return PrefabRoot;
-
             void AddIO(CubeSide side, SideType type)
             {
                 if (type == SideType.None)
@@ -69,7 +51,7 @@ namespace PiTung.Components
                 }
 
                 var prefab = type == SideType.Input ? Prefabs.Peg : Prefabs.Output;
-                GameObject Peg = GameObject.Instantiate(prefab, PrefabRoot.transform);
+                GameObject Peg = GameObject.Instantiate(prefab, prefabRoot.transform);
                 Peg.transform.localPosition = new Vector3(x, y, z);
                 Peg.transform.localScale = type == SideType.Input ? PegScale : OutputScale;
                 Peg.transform.localEulerAngles = new Vector3(rotX, rotY, rotZ);
@@ -81,6 +63,36 @@ namespace PiTung.Components
                     comp.RecalculateCombinedMesh();
                 }
             }
+        }
+
+        public static GameObject AddInputPeg(GameObject parent, Vector3? localPosition = null)
+        {
+            var Peg = GameObject.Instantiate(Prefabs.Peg);
+
+            Peg.transform.localScale = new Vector3(PegScale.x * 0.3f, PegScale.y * 0.3f, PegScale.z * 0.3f);
+            Peg.transform.parent = parent.transform;
+
+            if (localPosition != null)
+                Peg.transform.localPosition = localPosition.Value;
+
+            return Peg;
+        }
+
+        public static GameObject AddOutputPeg(GameObject parent, Vector3? localPosition = null)
+        {
+            var Peg = GameObject.Instantiate(Prefabs.Output);
+
+            Peg.transform.localScale = new Vector3(OutputScale.x * 0.3f, OutputScale.y * 0.3f, OutputScale.z * 0.3f);
+            Peg.transform.parent = parent.transform;
+
+            if (localPosition != null)
+                Peg.transform.localPosition = localPosition.Value;
+
+            var comp = Peg.GetComponent<CircuitOutput>();
+            comp.On = false;
+            comp.RecalculateCombinedMesh();
+
+            return Peg;
         }
     }
 }

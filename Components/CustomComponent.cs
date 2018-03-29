@@ -9,104 +9,54 @@ namespace PiTung.Components
 {
     public abstract class CustomComponent
     {
-        internal static readonly Vector3 PegScale = new Vector3(0.3f, 0.8f, 0.3f);
-        internal static readonly Vector3 OutputScale = new Vector3(0.5f, 0.4f, 0.5f);
-        internal static readonly Vector3 WhiteCubeScale = new Vector3(0.3f, 0.3f, 0.3f);
+        public string UniqueName { get; }
+        protected internal BuildState Build { get; }
 
-        private GameObject PrefabCache;
-
-        public GameObject CreateInstance()
+        internal CustomComponent(string name, BuildState build)
         {
-            var prefab = PrefabCache ?? (PrefabCache = UpdatePrefab());
-
-            var info = prefab.AddComponent<ObjectInfo>();
-            info.ComponentType = ComponentType.CustomObject;
-
-            foreach (var item in prefab.GetComponents<UpdateScript>())
-            {
-                item.enabled = true;
-            }
-
-            return prefab;
-        }
-        
-        protected abstract GameObject BuildComponentPrefab();
-        
-        public GameObject BuildPrefab()
-        {
-            var prefab = BuildComponentPrefab();
-
-            foreach (var item in prefab.GetComponents<UpdateScript>())
-            {
-                item.Component = this;
-                item.UpdateIOs();
-            }
-
-            return prefab;
+            this.UniqueName = name;
+            this.Build = build;
         }
 
-        public abstract string UniqueName { get; }
-        
-        protected GameObject AddInputPeg(GameObject parent, Vector3? localPosition = null)
+        public virtual GameObject Instantiate()
         {
-            var Peg = GameObject.Instantiate(Prefabs.Peg);
+            var obj = this.Build.BuildResult();
 
-            Peg.transform.localScale = new Vector3(PegScale.x * 0.3f, PegScale.y * 0.3f, PegScale.z * 0.3f);
-            Peg.transform.parent = parent.transform;
-
-            if (localPosition != null)
-                Peg.transform.localPosition = localPosition.Value;
-
-            return Peg;
+            return GameObject.Instantiate(obj, new Vector3(-1000, -1000, -1000), Quaternion.identity);
         }
-
-        protected GameObject AddOutputPeg(GameObject parent, Vector3? localPosition = null)
+    }
+    public sealed class CustomComponent<THandler> : CustomComponent where THandler : UpdateHandler
+    {
+        internal CustomComponent(string name, BuildState build) : base(name, build)
         {
-            var Peg = GameObject.Instantiate(Prefabs.Output);
+        }
+        
+        public override GameObject Instantiate()
+        {
+            var obj = base.Instantiate();
+            obj.AddComponent<THandler>().Component = this;
+            obj.AddComponent<ObjectInfo>().ComponentType = ComponentType.CustomObject;
 
-            Peg.transform.localScale = new Vector3(OutputScale.x * 0.3f, OutputScale.y * 0.3f, OutputScale.z * 0.3f);
-            Peg.transform.parent = parent.transform;
-
-            if (localPosition != null)
-                Peg.transform.localPosition = localPosition.Value;
-            
-            var comp = Peg.GetComponent<CircuitOutput>();
-            comp.On = false;
-            comp.RecalculateCombinedMesh();
-
-            return Peg;
+            return obj;
         }
     }
 
-    public abstract class UpdateScript : CircuitLogicComponent
+    public abstract class UpdateHandler : CircuitLogicComponent
     {
-        internal CustomComponent Component;
-
-        protected CircuitInput[] Inputs { get; private set; }
-        protected CircuitOutput[] Outputs { get; private set; }
-
-        protected abstract bool ShouldUpdate();
-
-        protected override void OnAwake()
+        private CustomComponent _component;
+        public CustomComponent Component
         {
-            this.enabled = false;
-        }
-
-        internal void UpdateIOs()
-        {
-            this.Inputs = GetComponents<CircuitInput>();
-            this.Outputs = GetComponents<CircuitOutput>();
-
-            MDebug.WriteLine("INPUTS: " + Inputs.Length);
-            MDebug.WriteLine("OUTPUTS: " + Outputs.Length);
-        }
-
-        void Update()
-        {
-            if (this.ShouldUpdate())
+            get => _component;
+            internal set
             {
-                BehaviorManager.UpdatingCircuitLogicComponents.Add(this);
+                _component = value;
+
+                this.Inputs = this.GetComponentsInChildren<CircuitInput>();
+                this.Outputs = this.GetComponentsInChildren<CircuitOutput>();
             }
         }
+
+        public CircuitInput[] Inputs { get; private set; } = new CircuitInput[0];
+        public CircuitOutput[] Outputs { get; private set; } = new CircuitOutput[0];
     }
 }

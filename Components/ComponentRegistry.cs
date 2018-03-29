@@ -9,65 +9,17 @@ namespace PiTung.Components
 {
     public static class ComponentRegistry
     {
-        private struct ComponentStruct
+        internal static IDictionary<string, CustomComponent> Registry = new Dictionary<string, CustomComponent>();
+
+        public static CustomComponent CreateNew<THandler>(string name, Builder builder) where THandler : UpdateHandler
         {
-            public string Name;
-            public Type ComponentType;
-            public GameObject Prefab;
+            if (Registry.TryGetValue(name, out var i) && i == null)
+                Registry.Remove(name);
 
-            public ComponentStruct(string name, Type componentType, GameObject prefab)
-            {
-                this.Name = name;
-                this.ComponentType = componentType;
-                this.Prefab = prefab;
-            }
-        }
+            var comp = new CustomComponent<THandler>(name, builder.State);
+            Registry.Add(name, comp);
 
-        private static IDictionary<string, ComponentStruct> Registry = new Dictionary<string, ComponentStruct>();
-
-        public static void RegisterComponent<T>() where T : CustomComponent
-        {
-            var component = Activator.CreateInstance<T>();
-
-            var prefab = component.BuildPrefab();
-            MDebug.WriteLine("Register " + prefab);
-
-            RegisterComponent(component.UniqueName, typeof(T), prefab);
-        }
-        
-        internal static void RegisterComponent(string name, Type type, GameObject prefab)
-        {
-            Registry[name] = new ComponentStruct(name, type, prefab);
-        }
-
-        internal static void UpdatePrefab(string name, GameObject prefab)
-        {
-            if (Registry.TryGetValue(name, out var item))
-            {
-                Registry[name] = new ComponentStruct(name, item.ComponentType, prefab);
-            }
-        }
-
-        internal static Type GetTypeFromName(string name)
-        {
-            if (Registry.TryGetValue(name, out var item))
-            {
-                return item.ComponentType;
-            }
-
-            return null;
-        }
-
-        internal static GameObject GetPrefabFromName(string name)
-        {
-            if (Registry.TryGetValue(name, out var item))
-            {
-                var comp = (CustomComponent)Activator.CreateInstance(item.ComponentType);
-
-                return comp.BuildPrefab();
-            }
-            
-            return null;
+            return comp;
         }
     }
 }

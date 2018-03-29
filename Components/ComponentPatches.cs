@@ -26,21 +26,13 @@ namespace PiTung.Components
 
             List<object> saveData = new List<object>();
 
-            var customComponent = CreateFromThis.GetComponent<UpdateScript>().Component;
-
-            saveData.Add(customComponent.UniqueName);
-            
+            var customComponent = CreateFromThis.GetComponent<UpdateHandler>();
             CircuitOutput[] outputs = CreateFromThis.GetComponentsInChildren<CircuitOutput>();
-            
+
+            saveData.Add(customComponent.Component.UniqueName);
             saveData.AddRange(outputs.Select(o => o.On).Cast<object>());
 
             save.CustomData = saveData.ToArray();
-
-            MDebug.WriteLine("CUSTOMDATA:");
-            foreach (var item in save.CustomData)
-            {
-                MDebug.WriteLine(item.ToString());
-            }
         }
     }
 
@@ -86,15 +78,14 @@ namespace PiTung.Components
 
             string name = save.CustomData[0] as string;
 
-            var prefab = ComponentRegistry.GetTypeFromName(name);
-
-            if (prefab == null)
+            if (ComponentRegistry.Registry.TryGetValue(name, out var item))
+            {
+                __result = item.Instantiate();
+            }
+            else
             {
                 MDebug.WriteLine("ERROR: CUSTOM COMPONENT NOT FOUND!");
-                return;
             }
-
-            __result = ComponentRegistry.GetPrefabFromName(name);
         }
     }
 
@@ -113,11 +104,6 @@ namespace PiTung.Components
                 var output = outputs[i++];
 
                 output.On = (bool)item;
-            }
-
-            foreach (var item in LoadedObject.GetComponents<UpdateScript>())
-            {
-                item.enabled = true;
             }
         }
     }

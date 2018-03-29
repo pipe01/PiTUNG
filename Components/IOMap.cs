@@ -36,10 +36,12 @@ namespace PiTung.Components
             }
         }
 
-        public void SetSide(CubeSide side, SideType what)
+        public IOMap SetSide(CubeSide side, SideType what)
         {
             Sides[side] = what;
             Changed?.Invoke(this, EventArgs.Empty);
+
+            return this;
         }
     }
 }

@@ -92,9 +92,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\BuilderUtils.cs" />
+    <Compile Include="Components\BuildState.cs" />
+    <Compile Include="Components\ComponentBuilder.cs" />
     <Compile Include="Components\ComponentPatches.cs" />
     <Compile Include="Components\ComponentRegistry.cs" />
-    <Compile Include="Components\CubicComponent.cs" />
     <Compile Include="Components\CustomComponent.cs" />
     <Compile Include="Components\IOMap.cs" />
     <Compile Include="Mod utilities\Hologram.cs" />
