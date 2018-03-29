@@ -163,22 +163,8 @@ namespace PiTung.Components
             return true;
         }
     }
-
-
-    [HarmonyPatch(typeof(ComponentPlacer), "DoFancyModdedComponentThings")]
-    internal static class MyModdedThingsPatch
-    {
-        static bool Prefix()
-        {
-            if (StuffPlacer.GetThingBeingPlaced == null && ComponentRegistry.Registry.Count > 0)
-            {
-                StuffPlacer.NewThingBeingPlaced(ComponentRegistry.Registry.Values.First().Instantiate());
-            }
-
-            return false;
-        }
-    }
     
+
     [HarmonyPatch(typeof(ComponentPlacer), "MakeSureThingBeingPlacedIsCorrect")]
     internal static class asdasd
     {
@@ -186,7 +172,11 @@ namespace PiTung.Components
         {
             if (SelectionMenu.Instance.SelectedThing == SelectionMenu.Instance.PlaceableObjectTypes.Count)
             {
-                ModUtilities.ExecuteStaticMethod(typeof(ComponentPlacer), "DoFancyModdedComponentThings");
+                if ((SelectionMenu.Instance.SelectedThingJustChanged || StuffPlacer.GetThingBeingPlaced == null) && ComponentRegistry.Registry.Count > 0)
+                {
+                    StuffPlacer.NewThingBeingPlaced(ComponentRegistry.Registry.Values.First().Instantiate());
+                }
+
                 return false;
             }
             
