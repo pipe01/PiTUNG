@@ -9,7 +9,7 @@ using UnityEngine;
 namespace PiTung.Components
 {
     [HarmonyPatch(typeof(SavedObjectUtilities), "CreateCustomSavedObject")]
-    internal class CreateCustomSavedObjectPatch
+    internal static class CreateCustomSavedObjectPatch
     {
         public static void Prefix(SavedCustomObject save, ObjectInfo CreateFromThis)
         {
@@ -38,7 +38,7 @@ namespace PiTung.Components
 
 
     [HarmonyPatch(typeof(SavedObjectUtilities), "CreateSavedObjectFrom", new Type[] { typeof(ObjectInfo) })]
-    internal class CreateSavedObjectFromPatch
+    internal static class CreateSavedObjectFromPatch
     {
         static bool Prefix(ref SavedObjectV2 __result, ObjectInfo worldsave)
         {
@@ -64,7 +64,7 @@ namespace PiTung.Components
 
 
     [HarmonyPatch(typeof(SavedObjectUtilities), "GetCustomPrefab")]
-    internal class GetCustomPrefabPatch
+    internal static class GetCustomPrefabPatch
     {
         static void Postfix(ref GameObject __result,  SavedCustomObject save)
         {
@@ -90,7 +90,7 @@ namespace PiTung.Components
     }
 
     [HarmonyPatch(typeof(SavedObjectUtilities), "LoadCustomObject")]
-    internal class LoadCustomObjectPatch
+    internal static class LoadCustomObjectPatch
     {
         static void Prefix(GameObject LoadedObject, SavedCustomObject save)
         {
