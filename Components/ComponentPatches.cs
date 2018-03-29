@@ -16,8 +16,6 @@ namespace PiTung.Components
     {
         public static void Prefix(SavedCustomObject save, ObjectInfo CreateFromThis)
         {
-            MDebug.WriteLine("SAVE CUSTOM OBJECT");
-
             /*
             *    CustomData structure:
             *    - CustomComponent.UniqueName
@@ -92,8 +90,6 @@ namespace PiTung.Components
 
         static void Postfix(ref GameObject __result,  SavedCustomObject save)
         {
-            MDebug.WriteLine("LOAD CUSTOM COMPONENT 1");
-
             MDebug.WriteLine(save.CustomData == null);
 
             if (save.CustomData.Length == 0)
@@ -130,8 +126,6 @@ namespace PiTung.Components
     {
         static void Prefix(GameObject LoadedObject, SavedCustomObject save)
         {
-            MDebug.WriteLine("LOAD CUSTOM COMPONENT 2");
-
             CircuitOutput[] outputs = LoadedObject.GetComponentsInChildren<CircuitOutput>();
 
             bool[] savedOutputs = (bool[])save.CustomData[1];
