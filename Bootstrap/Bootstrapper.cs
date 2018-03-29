@@ -99,6 +99,8 @@ namespace PiTung
             if (!Testing)
                 AddDummyComponent(SceneManager.GetActiveScene());
 
+            SelectionMenu.AllowModdedComponents = true;
+
             new Thread(() => PatchThread(hotload)).Start();
         }
 

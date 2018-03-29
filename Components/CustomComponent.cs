@@ -20,9 +20,8 @@ namespace PiTung.Components
 
         public virtual GameObject Instantiate()
         {
-            var obj = this.Build.BuildResult();
-
-            return GameObject.Instantiate(obj, new Vector3(-1000, -1000, -1000), Quaternion.identity);
+            return this.Build.BuildResult();
+            //return GameObject.Instantiate(obj, new Vector3(-1000, -1000, -1000), Quaternion.identity);
         }
     }
     public sealed class CustomComponent<THandler> : CustomComponent where THandler : UpdateHandler
