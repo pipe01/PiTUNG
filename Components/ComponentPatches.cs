@@ -98,12 +98,22 @@ namespace PiTung.Components
 
             CircuitOutput[] outputs = LoadedObject.GetComponentsInChildren<CircuitOutput>();
 
-            int i = 0;
-            foreach (var item in save.CustomData.Skip(1))
-            {
-                var output = outputs[i++];
+            bool[] savedOutputs = save.CustomData
+                .Skip(1)
+                .TakeWhile(o => o is bool)
+                .Cast<bool>()
+                .ToArray();
 
-                output.On = (bool)item;
+            if (outputs.Length != savedOutputs.Length)
+            {
+                MDebug.WriteLine("ERROR: INVALID CUSTOM COMPONENT DATA");
+                return;
+            }
+
+            int i = 0;
+            foreach (var item in savedOutputs)
+            {
+                outputs[i++].On = item;
             }
         }
     }

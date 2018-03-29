@@ -54,16 +54,16 @@ namespace PiTung.Components
     }
     internal sealed class CustomStructureAtom : IStructureAtom
     {
-        public GameObject Root { get; }
+        public Func<GameObject> Root { get; }
 
-        public CustomStructureAtom(GameObject root)
+        public CustomStructureAtom(Func<GameObject> root)
         {
             this.Root = root;
         }
 
         public GameObject GetRootObject()
         {
-            return this.Root;
+            return this.Root();
         }
     }
 

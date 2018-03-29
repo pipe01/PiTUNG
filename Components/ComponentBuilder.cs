@@ -8,7 +8,7 @@ namespace PiTung.Components
     {
         public static CubeBuilder Cube => new CubeBuilder();
 
-        public static CustomBuilder Custom(GameObject root) => new CustomBuilder(root);
+        public static CustomBuilder Custom(Func<GameObject> root) => new CustomBuilder(root);
     }
 
 
@@ -19,7 +19,7 @@ namespace PiTung.Components
 
     public class CustomBuilder : Builder
     {
-        internal CustomBuilder(GameObject root)
+        internal CustomBuilder(Func<GameObject> root)
         {
             State.Structure = new CustomStructureAtom(root);
         }
