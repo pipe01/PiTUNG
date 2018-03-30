@@ -92,6 +92,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Atoms.cs" />
     <Compile Include="Components\BuilderUtils.cs" />
     <Compile Include="Components\BuildState.cs" />
     <Compile Include="Components\PrefabBuilder.cs" />
