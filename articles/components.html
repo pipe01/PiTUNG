@@ -97,8 +97,10 @@
         ComponentRegistry.CreateNew&lt;MyInverterHandler&gt;(&quot;mycapsule&quot;, custom);
     }
 ...
-</code></pre><h1 id="update-handlers">Update handlers</h1>
+</code></pre><p>Note that in order to create objects this way, you&#39;ll need an assembly reference to <code>UnityEngine.CoreModule.dll</code> (found in <code>The Ultimate Nerd Game_Data\Managed</code>)</p>
+<h1 id="update-handlers">Update handlers</h1>
 <p>Once you have designed how your component should look, you must decide how it should act. That&#39;s where the <code>MyInverterHandler</code> class comes into play. A component&#39;s behaviour is defined by a <a href="../api/PiTung.Components.UpdateHandler.html"><code>UpdateHandler</code></a> class. That class derives from <code>MonoBehaviour</code>, which means that you will be able to use Unity to its full potential.</p>
+<p>Note that in order to use <code>Monobehaviour</code>, you will have to add a project reference to UnityEngine.CoreModule. This dll is found in <code>The Ultimate Nerd Game_Data\Managed</code>.</p>
 <p>When the game fires an update tick, the <code>UpdateHandler.CircuitLogicUpdate</code> method will be called. Keep in mind that this method won&#39;t always be called, but only when you have called <code>QueueCircuitLogicUpdate</code> on it (which will add the component to the aforementioned queue), or when any of its inputs gets changed.</p>
 <p>You can access the component&#39;s inputs and outputs via the <a href="../api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Inputs"><code>Inputs</code></a> and <a href="../api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Outputs"><code>Outputs</code></a> properties, repectively. For example:</p>
 <pre><code class="lang-C#">public class MyInverterHandler : UpdateHandler
