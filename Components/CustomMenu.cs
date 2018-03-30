@@ -47,7 +47,7 @@ namespace PiTung.Components
                 }
             };
 
-            Items = ComponentRegistry.Registry.Values.Select(o => PrettyName(o.UniqueName)).ToArray();
+            Items = ComponentRegistry.Registry.Values.Select(o => o.DisplayName).ToArray();
         }
 
         public void Draw()
@@ -97,27 +97,6 @@ namespace PiTung.Components
                     SelectionChanged = true;
                 }
             }
-        }
-        
-        private static string PrettyName(string ugly)
-        {
-            string ret = char.ToUpper(ugly[0]).ToString();
-
-            for (int i = 1; i < ugly.Length; i++)
-            {
-                char c = ugly[i];
-
-                if (char.IsUpper(c))
-                {
-                    ret += " " + char.ToLower(c);
-                }
-                else
-                {
-                    ret += c;
-                }
-            }
-
-            return ret;
         }
     }
 }

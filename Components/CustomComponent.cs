@@ -17,6 +17,11 @@ namespace PiTung.Components
         /// </summary>
         public string UniqueName { get; }
 
+        /// <summary>
+        /// The name that will be shown in the component selector.
+        /// </summary>
+        public string DisplayName { get; }
+
         internal BuildState Build { get; }
 
         internal CustomComponent(string name, BuildState build)
