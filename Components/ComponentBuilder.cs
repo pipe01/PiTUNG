@@ -15,6 +15,13 @@ namespace PiTung.Components
     public abstract class Builder
     {
         internal BuildState State = new BuildState();
+
+        public Builder AddComponent<T>()
+        {
+            State.Components.Add(typeof(T));
+
+            return this;
+        }
     }
 
     public class CustomBuilder : Builder
