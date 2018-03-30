@@ -33,6 +33,7 @@ Now that you've got a PiTUNG binary:
 
     ```
     using PiTung;
+    using System;
 
     public class MyMod : Mod
     {
