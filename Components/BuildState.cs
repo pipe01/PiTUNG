@@ -67,7 +67,7 @@ namespace PiTung.Components
         }
     }
 
-    public class BuildState
+    internal class BuildState
     {
         internal IList<IAtom> Atoms = new List<IAtom>();
         internal IList<Type> Components = new List<Type>();

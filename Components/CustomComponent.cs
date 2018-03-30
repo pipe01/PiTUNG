@@ -12,6 +12,8 @@ namespace PiTung.Components
         public string UniqueName { get; }
         protected internal BuildState Build { get; }
 
+        internal BuildState Build { get; }
+
         internal CustomComponent(string name, BuildState build)
         {
             this.UniqueName = name;
