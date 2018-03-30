@@ -20,7 +20,7 @@ namespace PiTung.Components
         Output
     }
 
-    public class IOMap
+    internal class IOMap
     {
         internal IDictionary<CubeSide, SideType> Sides = new Dictionary<CubeSide, SideType>();
         internal event EventHandler Changed;
