@@ -227,6 +227,12 @@ references:
   commentId: T:PiTung.Components.CustomBuilder
   fullName: PiTung.Components.CustomBuilder
   nameWithType: CustomBuilder
+- uid: PiTung.Components.CustomBuilder.AddInput(System.Single,System.Single,System.Single)
+  name: AddInput(Single, Single, Single)
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddInput_System_Single_System_Single_System_Single_
+  commentId: M:PiTung.Components.CustomBuilder.AddInput(System.Single,System.Single,System.Single)
+  fullName: PiTung.Components.CustomBuilder.AddInput(System.Single, System.Single, System.Single)
+  nameWithType: CustomBuilder.AddInput(Single, Single, Single)
 - uid: PiTung.Components.CustomBuilder.AddInput(UnityEngine.Vector3)
   name: AddInput(Vector3)
   href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddInput_UnityEngine_Vector3_
@@ -240,6 +246,12 @@ references:
   isSpec: "True"
   fullName: PiTung.Components.CustomBuilder.AddInput
   nameWithType: CustomBuilder.AddInput
+- uid: PiTung.Components.CustomBuilder.AddOutput(System.Single,System.Single,System.Single)
+  name: AddOutput(Single, Single, Single)
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddOutput_System_Single_System_Single_System_Single_
+  commentId: M:PiTung.Components.CustomBuilder.AddOutput(System.Single,System.Single,System.Single)
+  fullName: PiTung.Components.CustomBuilder.AddOutput(System.Single, System.Single, System.Single)
+  nameWithType: CustomBuilder.AddOutput(Single, Single, Single)
 - uid: PiTung.Components.CustomBuilder.AddOutput(UnityEngine.Vector3)
   name: AddOutput(Vector3)
   href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddOutput_UnityEngine_Vector3_
