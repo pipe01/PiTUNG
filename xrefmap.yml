@@ -144,6 +144,12 @@ references:
   commentId: T:PiTung.Components.ComponentRegistry
   fullName: PiTung.Components.ComponentRegistry
   nameWithType: ComponentRegistry
+- uid: PiTung.Components.ComponentRegistry.CreateNew(System.String,System.String,PiTung.Components.Builder)
+  name: CreateNew(String, String, Builder)
+  href: api/PiTung.Components.ComponentRegistry.html#PiTung_Components_ComponentRegistry_CreateNew_System_String_System_String_PiTung_Components_Builder_
+  commentId: M:PiTung.Components.ComponentRegistry.CreateNew(System.String,System.String,PiTung.Components.Builder)
+  fullName: PiTung.Components.ComponentRegistry.CreateNew(System.String, System.String, PiTung.Components.Builder)
+  nameWithType: ComponentRegistry.CreateNew(String, String, Builder)
 - uid: PiTung.Components.ComponentRegistry.CreateNew*
   name: CreateNew
   href: api/PiTung.Components.ComponentRegistry.html#PiTung_Components_ComponentRegistry_CreateNew_
