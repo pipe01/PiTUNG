@@ -44,6 +44,8 @@ If you want more flexibility, you can use your own `GameObject` prefab as your c
 
 Once you have designed how your component should look, you must decide how it should act. That's where the `MyInverterHandler` class comes into play. A component's behaviour is defined by a [`UpdateHandler`][6] class. That class derives from `MonoBehaviour`, which means that you will be able to use Unity to its full potential.
 
+Note that in order to use `Monobehaiour`, you will have to add a project reference to UnityEngine.CoreModule. This dll is found in `The Ultimate Nerd Game_Data\Managed`.
+
 When the game fires an update tick, the `UpdateHandler.CircuitLogicUpdate` method will be called. Keep in mind that this method won't always be called, but only when you have called `QueueCircuitLogicUpdate` on it (which will add the component to the aforementioned queue), or when any of its inputs gets changed.
 
 You can access the component's inputs and outputs via the [`Inputs`][7] and [`Outputs`][8] properties, repectively. For example:
