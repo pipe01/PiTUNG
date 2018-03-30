@@ -56,12 +56,19 @@ namespace PiTung.Components
         {
             var type = handler.GetType();
 
-            foreach (var item in type.GetFields())
+            foreach (var item in type.GetMembers(BindingFlags.GetField | BindingFlags.GetProperty))
             {
                 if (item.GetAttribute<SaveThisAttribute>() != null)
                 {
+                    object value = null;
+
+                    if (item is FieldInfo field)
+                        value = field.GetValue(handler);
+                    else if (item is PropertyInfo prop)
+                        value = prop.GetValue(handler, null);
+
                     yield return "::" + item.Name;
-                    yield return item.GetValue(handler);
+                    yield return value;
                 }
             }
         }
@@ -149,21 +156,37 @@ namespace PiTung.Components
             var handler = LoadedObject.GetComponent<UpdateHandler>();
             var handlerType = handler.GetType();
 
-            FieldInfo currentField = null;
+            Action<object> setValue = null;
+
             foreach (var item in save.CustomData.Skip(2))
             {
                 if (item is string str && str.StartsWith("::"))
                 {
-                    currentField = handlerType.GetField(str.Substring(2));
+                    string name = str.Substring(2);
 
-                    if (currentField == null)
+                    var field = handlerType.GetField(name);
+                    if (field == null)
                     {
-                        MDebug.WriteLine("ERROR: INVALID DATA FIELD!");
+                        var prop = handlerType.GetProperty(name);
+
+                        if (prop == null)
+                        {
+                            MDebug.WriteLine("ERROR: INVALID DATA FIELD!");
+                        }
+                        else
+                        {
+                            setValue = o => prop.SetValue(handler, Convert.ChangeType(o, prop.PropertyType), null);
+                        }
+                    }
+                    else
+                    {
+                        setValue = o => field.SetValue(handler, o);
                     }
                 }
-                else if (currentField != null)
+
+                if (setValue != null)
                 {
-                    currentField.SetValue(handler, item);
+                    setValue(item);
                 }
             }
 
