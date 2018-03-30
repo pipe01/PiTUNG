@@ -8,7 +8,6 @@ This is the easiest shape and it's also the shape of the usual TUNG components (
 
 ```C#
 ...
-
 	public override void BeforePatch()
 	{
 		var cube = PrefabBuilder

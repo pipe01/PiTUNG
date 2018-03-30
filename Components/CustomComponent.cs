@@ -7,10 +7,15 @@ using UnityEngine;
 
 namespace PiTung.Components
 {
+    /// <summary>
+    /// Represents a custom component without an update handler.
+    /// </summary>
     public abstract class CustomComponent
     {
+        /// <summary>
+        /// The component's unique name. It should be unique enough so that it doesn't collide with any other mods.
+        /// </summary>
         public string UniqueName { get; }
-        protected internal BuildState Build { get; }
 
         internal BuildState Build { get; }
 
@@ -20,18 +25,27 @@ namespace PiTung.Components
             this.Build = build;
         }
 
-        public virtual GameObject Instantiate()
-        {
-            return this.Build.BuildResult();
-            //return GameObject.Instantiate(obj, new Vector3(-1000, -1000, -1000), Quaternion.identity);
-        }
+        /// <summary>
+        /// Spawns a new instance of the custom component.
+        /// </summary>
+        /// <returns>A new instance of the custom component.</returns>
+        public virtual GameObject Instantiate() => this.Build.BuildResult();
     }
+
+    /// <summary>
+    /// Represents a custom component with an update handler of type <typeparamref name="THandler"/>.
+    /// </summary>
+    /// <typeparam name="THandler">The update handler class for this component.</typeparam>
     public sealed class CustomComponent<THandler> : CustomComponent where THandler : UpdateHandler
     {
         internal CustomComponent(string name, BuildState build) : base(name, build)
         {
         }
 
+        /// <summary>
+        /// Spawns a new instance of the custom component.
+        /// </summary>
+        /// <returns>A new instance of the custom component.</returns>
         public override GameObject Instantiate()
         {
             var obj = base.Instantiate();
@@ -50,13 +64,22 @@ namespace PiTung.Components
         }
     }
 
+    /// <summary>
+    /// This class will allow you to handle a component's logic update cycle.
+    /// </summary>
     public abstract class UpdateHandler : CircuitLogicComponent
     {
+        /// <summary>
+        /// The <see cref="CustomComponent"/> class that this handler belongs to.
+        /// </summary>
         public CustomComponent Component { get; internal set; }
 
         internal string ComponentName;
         
         private CircuitInput[] _inputs;
+        /// <summary>
+        /// The component's inputs. Won't be null if there aren't any.
+        /// </summary>
         public CircuitInput[] Inputs
         {
             get
@@ -73,6 +96,9 @@ namespace PiTung.Components
         }
 
         private CircuitOutput[] _outputs;
+        /// <summary>
+        /// The component's outputs. Won't be null if there aren't any.
+        /// </summary>
         public CircuitOutput[] Outputs
         {
             get

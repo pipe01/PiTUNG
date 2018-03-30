@@ -4,14 +4,23 @@ using UnityEngine;
 
 namespace PiTung.Components
 {
+    /// <summary>
+    /// Represents the first step on building a custom component prefab.
+    /// </summary>
     public static class PrefabBuilder
     {
+        /// <summary>
+        /// Returns a cube builder.
+        /// </summary>
         public static CubeBuilder Cube => new CubeBuilder();
 
+        /// <summary>
+        /// Returns a custom GameObject builder.
+        /// </summary>
+        /// <param name="root">The function that returns the game object.</param>
         public static CustomBuilder Custom(Func<GameObject> root) => new CustomBuilder(root);
     }
-
-
+    
     public abstract class Builder
     {
         internal BuildState State = new BuildState();

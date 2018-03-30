@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace PiTung.Components
 {
+    /// <summary>
+    /// Represents a cube's sides
+    /// </summary>
     public enum CubeSide
     {
         Top,
@@ -13,6 +16,9 @@ namespace PiTung.Components
         Right
     }
 
+    /// <summary>
+    /// Represents what a cube's side might be.
+    /// </summary>
     public enum SideType
     {
         None,
