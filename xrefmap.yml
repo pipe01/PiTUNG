@@ -478,12 +478,6 @@ references:
   isSpec: "True"
   fullName: PiTung.Components.UpdateHandler.Component
   nameWithType: UpdateHandler.Component
-- uid: PiTung.Components.UpdateHandler.ComponentName
-  name: ComponentName
-  href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_ComponentName
-  commentId: F:PiTung.Components.UpdateHandler.ComponentName
-  fullName: PiTung.Components.UpdateHandler.ComponentName
-  nameWithType: UpdateHandler.ComponentName
 - uid: PiTung.Components.UpdateHandler.Inputs
   name: Inputs
   href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Inputs
