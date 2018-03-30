@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiTung.Console;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,7 @@ namespace PiTung.Components
         private const int FontSize = 15;
 
         private GUIStyle NormalStyle, SelectedStyle;
-        private string[] Items;
-
+        
         public bool Visible { get; set; }
         public int Selected { get; private set; }
         public bool SelectionChanged { get; private set; }
@@ -46,8 +46,6 @@ namespace PiTung.Components
                     textColor = Color.cyan
                 }
             };
-
-            Items = ComponentRegistry.Registry.Values.Select(o => o.DisplayName).ToArray();
         }
 
         public void Draw()
@@ -58,9 +56,9 @@ namespace PiTung.Components
             BeginArea(new Rect(40, 40, 100, 400));
             {
                 int i = 0;
-                foreach (var item in Items)
+                foreach (var item in ComponentRegistry.Registry.Values)
                 {
-                    Label(item, i++ == Selected ? SelectedStyle : NormalStyle);
+                    Label(item.DisplayName, i++ == Selected ? SelectedStyle : NormalStyle);
                 }
             }
             EndArea();
@@ -76,20 +74,23 @@ namespace PiTung.Components
 
                 if (GameplayUIManager.ScrollUp(false))
                 {
-                    Selected++;
+                    Selected--;
                 }
                 else if (GameplayUIManager.ScrollDown(false))
                 {
-                    Selected--;
+                    Selected++;
                 }
 
-                if (Selected == Items.Length)
+                IGConsole.Log(Selected);
+
+                if (Selected == ComponentRegistry.Registry.Count)
                 {
                     Selected = 0;
                 }
-                else if (Selected < 0)
+
+                if (Selected < 0)
                 {
-                    Selected = Items.Length - 1;
+                    Selected = ComponentRegistry.Registry.Count - 1;
                 }
 
                 if (Selected != previous)

@@ -10,7 +10,7 @@ namespace PiTung.Components
     /// <summary>
     /// Represents a custom component without an update handler.
     /// </summary>
-    public abstract class CustomComponent
+    public class CustomComponent
     {
         /// <summary>
         /// The component's unique name. It should be unique enough so that it doesn't collide with any other mods.

@@ -11,7 +11,7 @@ namespace PiTung.Components
     {
         internal static IDictionary<string, CustomComponent> Registry = new Dictionary<string, CustomComponent>();
 
-        public static CustomComponent CreateNew<THandler>(string name, string displayName, Builder builder) where THandler : UpdateHandler
+        public static CustomComponent<THandler> CreateNew<THandler>(string name, string displayName, Builder builder) where THandler : UpdateHandler
         {
             if (Registry.TryGetValue(name, out var i) && i == null)
                 Registry.Remove(name);
@@ -20,6 +20,24 @@ namespace PiTung.Components
             Registry.Add(name, comp);
 
             return comp;
+        }
+
+        public static CustomComponent CreateNew(string name, string displayName, Builder builder)
+        {
+            if (Registry.TryGetValue(name, out var i) && i == null)
+                Registry.Remove(name);
+
+            var comp = new CustomComponent<EmptyHandler>(name, displayName, builder.State);
+            Registry.Add(name, comp);
+
+            return comp;
+        }
+
+        internal class EmptyHandler : UpdateHandler
+        {
+            protected override void CircuitLogicUpdate()
+            {
+            }
         }
     }
 }

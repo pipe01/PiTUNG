@@ -11,23 +11,26 @@ namespace PiTung.Components
     {
         void AddToGameObject(GameObject obj);
     }
-    
-    internal sealed class InputPegAtom : IAtom
+
+    internal abstract class IOAtom : IAtom
     {
         public Vector3 Position;
+        public Quaternion Rotation;
 
-        public void AddToGameObject(GameObject obj)
+        public abstract void AddToGameObject(GameObject obj);
+    }
+    internal sealed class InputPegAtom : IOAtom
+    {
+        public override void AddToGameObject(GameObject obj)
         {
-            BuilderUtils.AddInputPeg(obj, Position);
+            BuilderUtils.AddInputPeg(obj, this.Position).transform.localRotation = this.Rotation;
         }
     }
-    internal sealed class OutputAtom : IAtom
+    internal sealed class OutputAtom : IOAtom
     {
-        public Vector3 Position;
-
-        public void AddToGameObject(GameObject obj)
+        public override void AddToGameObject(GameObject obj)
         {
-            BuilderUtils.AddOutputPeg(obj, Position);
+            BuilderUtils.AddOutputPeg(obj, this.Position).transform.localRotation = this.Rotation;
         }
     }
     internal sealed class IOMapAtom : IAtom
