@@ -138,12 +138,6 @@ references:
   fullName.vb: PiTung.Components.Builder.AddComponent(Of T)()
   nameWithType: Builder.AddComponent<T>()
   nameWithType.vb: Builder.AddComponent(Of T)()
-- uid: PiTung.Components.BuildState
-  name: BuildState
-  href: api/PiTung.Components.BuildState.html
-  commentId: T:PiTung.Components.BuildState
-  fullName: PiTung.Components.BuildState
-  nameWithType: BuildState
 - uid: PiTung.Components.ComponentRegistry
   name: ComponentRegistry
   href: api/PiTung.Components.ComponentRegistry.html
@@ -271,19 +265,6 @@ references:
   commentId: T:PiTung.Components.CustomComponent
   fullName: PiTung.Components.CustomComponent
   nameWithType: CustomComponent
-- uid: PiTung.Components.CustomComponent.Build
-  name: Build
-  href: api/PiTung.Components.CustomComponent.html#PiTung_Components_CustomComponent_Build
-  commentId: P:PiTung.Components.CustomComponent.Build
-  fullName: PiTung.Components.CustomComponent.Build
-  nameWithType: CustomComponent.Build
-- uid: PiTung.Components.CustomComponent.Build*
-  name: Build
-  href: api/PiTung.Components.CustomComponent.html#PiTung_Components_CustomComponent_Build_
-  commentId: Overload:PiTung.Components.CustomComponent.Build
-  isSpec: "True"
-  fullName: PiTung.Components.CustomComponent.Build
-  nameWithType: CustomComponent.Build
 - uid: PiTung.Components.CustomComponent.Instantiate
   name: Instantiate()
   href: api/PiTung.Components.CustomComponent.html#PiTung_Components_CustomComponent_Instantiate
@@ -336,64 +317,6 @@ references:
   fullName.vb: PiTung.Components.CustomComponent(Of THandler).Instantiate
   nameWithType: CustomComponent<THandler>.Instantiate
   nameWithType.vb: CustomComponent(Of THandler).Instantiate
-- uid: PiTung.Components.IOMap
-  name: IOMap
-  href: api/PiTung.Components.IOMap.html
-  commentId: T:PiTung.Components.IOMap
-  fullName: PiTung.Components.IOMap
-  nameWithType: IOMap
-- uid: PiTung.Components.IOMap.#ctor
-  name: IOMap()
-  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap__ctor
-  commentId: M:PiTung.Components.IOMap.#ctor
-  fullName: PiTung.Components.IOMap.IOMap()
-  nameWithType: IOMap.IOMap()
-- uid: PiTung.Components.IOMap.#ctor*
-  name: IOMap
-  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap__ctor_
-  commentId: Overload:PiTung.Components.IOMap.#ctor
-  isSpec: "True"
-  fullName: PiTung.Components.IOMap.IOMap
-  nameWithType: IOMap.IOMap
-- uid: PiTung.Components.IOMap.InputCount
-  name: InputCount
-  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_InputCount
-  commentId: P:PiTung.Components.IOMap.InputCount
-  fullName: PiTung.Components.IOMap.InputCount
-  nameWithType: IOMap.InputCount
-- uid: PiTung.Components.IOMap.InputCount*
-  name: InputCount
-  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_InputCount_
-  commentId: Overload:PiTung.Components.IOMap.InputCount
-  isSpec: "True"
-  fullName: PiTung.Components.IOMap.InputCount
-  nameWithType: IOMap.InputCount
-- uid: PiTung.Components.IOMap.OutputCount
-  name: OutputCount
-  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_OutputCount
-  commentId: P:PiTung.Components.IOMap.OutputCount
-  fullName: PiTung.Components.IOMap.OutputCount
-  nameWithType: IOMap.OutputCount
-- uid: PiTung.Components.IOMap.OutputCount*
-  name: OutputCount
-  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_OutputCount_
-  commentId: Overload:PiTung.Components.IOMap.OutputCount
-  isSpec: "True"
-  fullName: PiTung.Components.IOMap.OutputCount
-  nameWithType: IOMap.OutputCount
-- uid: PiTung.Components.IOMap.SetSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
-  name: SetSide(CubeSide, SideType)
-  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_SetSide_PiTung_Components_CubeSide_PiTung_Components_SideType_
-  commentId: M:PiTung.Components.IOMap.SetSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
-  fullName: PiTung.Components.IOMap.SetSide(PiTung.Components.CubeSide, PiTung.Components.SideType)
-  nameWithType: IOMap.SetSide(CubeSide, SideType)
-- uid: PiTung.Components.IOMap.SetSide*
-  name: SetSide
-  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_SetSide_
-  commentId: Overload:PiTung.Components.IOMap.SetSide
-  isSpec: "True"
-  fullName: PiTung.Components.IOMap.SetSide
-  nameWithType: IOMap.SetSide
 - uid: PiTung.Components.PrefabBuilder
   name: PrefabBuilder
   href: api/PiTung.Components.PrefabBuilder.html
