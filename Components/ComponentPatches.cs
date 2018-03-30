@@ -105,8 +105,6 @@ namespace PiTung.Components
 
         static void Postfix(ref GameObject __result,  SavedCustomObject save)
         {
-            MDebug.WriteLine(save.CustomData == null);
-
             if (save.CustomData.Length == 0)
             {
                 MDebug.WriteLine("ERROR: INVALID CUSTOM COMPONENT LOADED!");
