@@ -12,3 +12,5 @@
   href: adv_patching.md
 - name: Holograms
   href: holograms.md
+- name: Custom components
+  href: components.md
