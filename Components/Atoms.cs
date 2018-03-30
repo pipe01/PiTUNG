@@ -40,6 +40,17 @@ namespace PiTung.Components
         }
     }
 
+    internal sealed class CubeColorAtom : IAtom
+    {
+        public Color Color { get; set; }
+
+        public void AddToGameObject(GameObject obj)
+        {
+            obj.GetComponent<MegaMeshComponent>().MaterialType = MaterialType.CircuitBoard;
+            obj.GetComponent<Renderer>().material.color = this.Color;
+        }
+    }
+
     internal interface IStructureAtom
     {
         GameObject GetRootObject();
