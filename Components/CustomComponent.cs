@@ -38,6 +38,9 @@ namespace PiTung.Components
             handler.Component = this;
             handler.ComponentName = this.UniqueName;
 
+            handler.Inputs = obj.GetComponentsInChildren<CircuitInput>();
+            handler.Outputs = obj.GetComponentsInChildren<CircuitOutput>();
+
             obj.AddComponent<ObjectInfo>().ComponentType = ComponentType.CustomObject;
 
             return obj;
@@ -47,22 +50,17 @@ namespace PiTung.Components
     public abstract class UpdateHandler : CircuitLogicComponent
     {
         public CustomComponent Component { get; internal set; }
-
-        [SerializeField]
+        
         public string ComponentName;
-
+        
         private CircuitInput[] _inputs;
         public CircuitInput[] Inputs
         {
             get
             {
-                if (_inputs == null)
-                {
-                    _inputs = this.GetComponentsInChildren<CircuitInput>();
-                }
-                return _inputs;
+                return _inputs ?? (_inputs = this.GetComponentsInChildren<CircuitInput>());
             }
-            private set => _inputs = value;
+            internal set => _inputs = value;
         }
 
         private CircuitOutput[] _outputs;
@@ -70,13 +68,9 @@ namespace PiTung.Components
         {
             get
             {
-                if (_outputs == null)
-                {
-                    _outputs = this.GetComponentsInChildren<CircuitOutput>();
-                }
-                return _outputs;
+                return _outputs ?? (_outputs = this.GetComponentsInChildren<CircuitOutput>());
             }
-            private set => _outputs = value;
+            internal set => _outputs = value;
         }
     }
 }

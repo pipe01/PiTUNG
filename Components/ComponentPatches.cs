@@ -169,6 +169,7 @@ namespace PiTung.Components
                 }
             }
 
+
             CircuitOutput[] outputs = LoadedObject.GetComponentsInChildren<CircuitOutput>();
 
             bool[] savedOutputs = (bool[])save.CustomData[1];
@@ -213,17 +214,33 @@ namespace PiTung.Components
     {
         static bool Prefix()
         {
+            CustomMenu.Instance.Update();
+
             if (SelectionMenu.Instance.SelectedThing == SelectionMenu.Instance.PlaceableObjectTypes.Count)
             {
-                if ((SelectionMenu.Instance.SelectedThingJustChanged || StuffPlacer.GetThingBeingPlaced == null) && ComponentRegistry.Registry.Count > 0)
+                CustomMenu.Instance.Visible = true;
+
+                if ((SelectionMenu.Instance.SelectedThingJustChanged || StuffPlacer.GetThingBeingPlaced == null || CustomMenu.Instance.SelectionChanged) && ComponentRegistry.Registry.Count > 0)
                 {
-                    StuffPlacer.NewThingBeingPlaced(ComponentRegistry.Registry.Values.First().Instantiate());
+                    var item = ComponentRegistry.Registry.Values.ElementAt(CustomMenu.Instance.Selected);
+
+                    StuffPlacer.NewThingBeingPlaced(item.Instantiate());
                 }
 
                 return false;
             }
-            
+
+            CustomMenu.Instance.Visible = false;
             return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(HorizontalScrollMenuWithSelection), "ScrollThroughMenu")]
+    internal static class RunBuildMenuPatch
+    {
+        static bool Prefix()
+        {
+            return !CustomMenu.Instance.Visible || !Input.GetKey(KeyCode.LeftControl);
         }
     }
 }

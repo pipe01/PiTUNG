@@ -124,7 +124,8 @@ namespace PiTung
             ElementsToBeDrawn.Clear();
 
             Mod.CallOnAllMods(o => o.OnGUI());
-
+            
+            Components.CustomMenu.Instance.Draw();
             ConfigMenu.Instance.Render();
             IGConsole.Draw(); // Drawn last so that it stays on top
         }
