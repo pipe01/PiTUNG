@@ -58,6 +58,10 @@ public class MyInverterHandler : UpdateHandler
 }
 ```
 
+## Component data
+
+Your component can have fields marked with [`[SaveThis]`][9]. Those fields will be saved and loaded along with the world save, which means that you'll be able to save your own data.
+
 [1]: ../api/PiTung.Components.PrefabBuilder.html
 [2]: ../api/PiTung.Components.UpdateHandler.html
 [3]: ../api/PiTung.Components.PrefabBuilder.html#PiTung_Components_PrefabBuilder_Cube
@@ -66,3 +70,4 @@ public class MyInverterHandler : UpdateHandler
 [6]: ../api/PiTung.Components.UpdateHandler.html
 [7]: ../api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Inputs
 [8]: ../api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Outputs
+[9]: ../api/PiTung.Components.SaveThisAttribute.html
