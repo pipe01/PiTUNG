@@ -24,9 +24,10 @@ namespace PiTung.Components
 
         internal BuildState Build { get; }
 
-        internal CustomComponent(string name, BuildState build)
+        internal CustomComponent(string name, string displayName, BuildState build)
         {
             this.UniqueName = name;
+            this.DisplayName = displayName;
             this.Build = build;
         }
 
@@ -43,7 +44,7 @@ namespace PiTung.Components
     /// <typeparam name="THandler">The update handler class for this component.</typeparam>
     public sealed class CustomComponent<THandler> : CustomComponent where THandler : UpdateHandler
     {
-        internal CustomComponent(string name, BuildState build) : base(name, build)
+        internal CustomComponent(string name, string displayName, BuildState build) : base(name, displayName, build)
         {
         }
 
