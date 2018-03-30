@@ -51,8 +51,8 @@ namespace PiTung.Components
     public abstract class UpdateHandler : CircuitLogicComponent
     {
         public CustomComponent Component { get; internal set; }
-        
-        public string ComponentName;
+
+        internal string ComponentName;
         
         private CircuitInput[] _inputs;
         public CircuitInput[] Inputs
