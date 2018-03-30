@@ -100,6 +100,7 @@
     <Compile Include="Components\CustomComponent.cs" />
     <Compile Include="Components\CustomMenu.cs" />
     <Compile Include="Components\IOMap.cs" />
+    <Compile Include="Components\SaveThisAttribute.cs" />
     <Compile Include="Mod utilities\Hologram.cs" />
     <Compile Include="Mod utilities\HologramManager.cs" />
     <Compile Include="Patching\AssemblyCosturer.cs" />

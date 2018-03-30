@@ -5,6 +5,7 @@ using SavedObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace PiTung.Components
             *    CustomData structure:
             *    - CustomComponent.UniqueName
             *    - Outputs.On[]
+            *    - Fields
             */
 
             List<object> saveData = new List<object>();
@@ -45,8 +47,23 @@ namespace PiTung.Components
             
             saveData.Add(customComponent.Component.UniqueName);
             saveData.Add(outputs.Select(o => o.On).ToArray());
+            saveData.AddRange(GetSaveThisFields(customComponent));
 
             save.CustomData = saveData.ToArray();
+        }
+
+        static IEnumerable<object> GetSaveThisFields(UpdateHandler handler)
+        {
+            var type = handler.GetType();
+
+            foreach (var item in type.GetFields())
+            {
+                if (item.GetAttribute<SaveThisAttribute>() != null)
+                {
+                    yield return "::" + item.Name;
+                    yield return item.GetValue(handler);
+                }
+            }
         }
     }
     
@@ -82,8 +99,6 @@ namespace PiTung.Components
 
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instr)
         {
-            //Just replaces the method with "return null;", so that it doesn't get executed.
-
             yield return new CodeInstruction(OpCodes.Ldnull);
             yield return new CodeInstruction(OpCodes.Ret);
         }
@@ -126,8 +141,34 @@ namespace PiTung.Components
     [HarmonyPatch(typeof(SavedObjectUtilities), "LoadCustomObject")]
     internal static class LoadCustomObjectPatch
     {
+        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instr)
+        {
+            yield return new CodeInstruction(OpCodes.Ret);
+        }
+
         static void Prefix(GameObject LoadedObject, SavedCustomObject save)
         {
+            var handler = LoadedObject.GetComponent<UpdateHandler>();
+            var handlerType = handler.GetType();
+
+            FieldInfo currentField = null;
+            foreach (var item in save.CustomData.Skip(2))
+            {
+                if (item is string str && str.StartsWith("::"))
+                {
+                    currentField = handlerType.GetField(str.Substring(2));
+
+                    if (currentField == null)
+                    {
+                        MDebug.WriteLine("ERROR: INVALID DATA FIELD!");
+                    }
+                }
+                else if (currentField != null)
+                {
+                    currentField.SetValue(handler, item);
+                }
+            }
+
             CircuitOutput[] outputs = LoadedObject.GetComponentsInChildren<CircuitOutput>();
 
             bool[] savedOutputs = (bool[])save.CustomData[1];
@@ -185,6 +226,4 @@ namespace PiTung.Components
             return true;
         }
     }
-
-    //[HarmonyPatch]
 }
