@@ -31,6 +31,10 @@ namespace PiTung.Components
             State.Structure = new CustomStructureAtom(root);
         }
 
+        public CustomBuilder AddInput(float x, float y, float z)
+        {
+            return AddInput(new Vector3(x, y, z));
+        }
         public CustomBuilder AddInput(Vector3 position)
         {
             State.Atoms.Add(new InputPegAtom { Position = position });
@@ -38,6 +42,10 @@ namespace PiTung.Components
             return this;
         }
 
+        public CustomBuilder AddOutput(float x, float y, float z)
+        {
+            return AddOutput(new Vector3(x, y, z));
+        }
         public CustomBuilder AddOutput(Vector3 position)
         {
             State.Atoms.Add(new OutputAtom { Position = position });
