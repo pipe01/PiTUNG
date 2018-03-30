@@ -95,6 +95,8 @@ namespace PiTung.Components
             if (save.CustomData.Length == 0)
             {
                 MDebug.WriteLine("ERROR: INVALID CUSTOM COMPONENT LOADED!");
+                __result = GameObject.Instantiate(Prefabs.WhiteCube);
+                __result.transform.parent = NextParent;
                 return;
             }
 
