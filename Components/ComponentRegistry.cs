@@ -11,12 +11,12 @@ namespace PiTung.Components
     {
         internal static IDictionary<string, CustomComponent> Registry = new Dictionary<string, CustomComponent>();
 
-        public static CustomComponent CreateNew<THandler>(string name, Builder builder) where THandler : UpdateHandler
+        public static CustomComponent CreateNew<THandler>(string name, string displayName, Builder builder) where THandler : UpdateHandler
         {
             if (Registry.TryGetValue(name, out var i) && i == null)
                 Registry.Remove(name);
 
-            var comp = new CustomComponent<THandler>(name, builder.State);
+            var comp = new CustomComponent<THandler>(name, displayName, builder.State);
             Registry.Add(name, comp);
 
             return comp;
