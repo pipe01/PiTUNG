@@ -40,6 +40,7 @@ namespace PiTung.Components
 
             handler.Inputs = obj.GetComponentsInChildren<CircuitInput>();
             handler.Outputs = obj.GetComponentsInChildren<CircuitOutput>();
+            handler.UpdateInputParents();
 
             obj.AddComponent<ObjectInfo>().ComponentType = ComponentType.CustomObject;
 
@@ -58,7 +59,13 @@ namespace PiTung.Components
         {
             get
             {
-                return _inputs ?? (_inputs = this.GetComponentsInChildren<CircuitInput>());
+                if (_inputs == null)
+                {
+                    _inputs = this.GetComponentsInChildren<CircuitInput>();
+                    UpdateInputParents();
+                }
+
+                return _inputs;
             }
             internal set => _inputs = value;
         }
@@ -71,6 +78,14 @@ namespace PiTung.Components
                 return _outputs ?? (_outputs = this.GetComponentsInChildren<CircuitOutput>());
             }
             internal set => _outputs = value;
+        }
+
+        internal void UpdateInputParents()
+        {
+            foreach (var item in Inputs)
+            {
+                item.CircuitLogicComponent = this;
+            }
         }
     }
 }
