@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Custom components </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Custom components ">
+    <meta name="generator" content="docfx 2.33.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="custom-components">Custom components</h1>
+
+<p>There are two parts for each custom component: the &quot;structure&quot; (<a href="../api/PiTung.Components.PrefabBuilder.html"><code>PrefabBuilder</code></a>), and the logic (<a href="../api/PiTung.Components.UpdateHandler.html"><code>UpdateHandler</code></a>). For the structure, you&#39;ve got two choices: <a href="../api/PiTung.Components.PrefabBuilder.html#PiTung_Components_PrefabBuilder_Cube"><code>PrefabBuilder.Cube</code></a>, and <a href="../api/PiTung.Components.PrefabBuilder.html#PiTung_Components_PrefabBuilder_Custom_System_Func_UnityEngine_GameObject__"><code>PrefabBuilder.Custom()</code></a>.</p>
+<h2 id="cube">Cube</h2>
+<p>This is the easiest shape and it&#39;s also the shape of the usual TUNG components (inverter, blotter, etc). You can set <a href="../api/PiTung.Components.CubeSide.html">5 sides</a> of a cube (the bottom side can&#39;t be set for obvious reasons) to be either an input, an output, or neither. For example, say that we wanted to create a component similar to an inverter:</p>
+<pre><code class="lang-C#">...
+
+    public override void BeforePatch()
+    {
+        var cube = PrefabBuilder
+            .Cube
+            .SetSide(CubeSide.Top, SideType.Input)
+            .SetSide(CubeSide.Front, SideType.Output);
+
+        ComponentRegistry.CreateNew&lt;MyInverterHandler&gt;(&quot;inverter&quot;, cube);
+    }
+...
+</code></pre><p>The <code>MyInverterHandler</code> class will be shown later.</p>
+<h2 id="custom-shape">Custom shape</h2>
+<p>If you want more flexibility, you can use your own <code>GameObject</code> prefab as your component root. For example:</p>
+<pre><code class="lang-C#">...
+    public override void BeforePatch()
+    {
+        var custom = PrefabBuilder
+            .Custom(() =&gt; GameObject.CreatePrimitive(PrimitiveType.Capsule))
+            .AddInput(x, y, z)
+            .AddOutput(x, y, z);
+
+        ComponentRegistry.CreateNew&lt;MyInverterHandler&gt;(&quot;mycapsule&quot;, custom);
+    }
+...
+</code></pre><h1 id="update-handlers">Update handlers</h1>
+<p>Once you have designed how your component should look, you must decide how it should act. That&#39;s where the <code>MyInverterHandler</code> class comes into play. A component&#39;s behaviour is defined by a <a href="../api/PiTung.Components.UpdateHandler.html"><code>UpdateHandler</code></a> class. That class derives from <code>MonoBehaviour</code>, which means that you will be able to use Unity to its full potential.</p>
+<p>When the game fires an update tick, the <code>UpdateHandler.CircuitLogicUpdate</code> method will be called. Keep in mind that this method won&#39;t always be called, but only when you have called <code>QueueCircuitLogicUpdate</code> on it (which will add the component to the aforementioned queue), or when any of its inputs gets changed.</p>
+<p>You can access the component&#39;s inputs and outputs via the <a href="../api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Inputs"><code>Inputs</code></a> and <a href="../api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Outputs"><code>Outputs</code></a> properties, repectively. For example:</p>
+<pre><code class="lang-C#">public class MyInverterHandler : UpdateHandler
+{
+    protected override void CircuitLogicUpdate()
+    {
+        this.Outputs[0].On = !this.Inputs[0].On;
+    }
+}
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/pipe01/PiTUNG/blob/master/docfx_project/articles/components.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
