@@ -110,6 +110,394 @@ references:
   isSpec: "True"
   fullName: PiTung.Bootstrapper.Testing
   nameWithType: Bootstrapper.Testing
+- uid: PiTung.Components
+  name: PiTung.Components
+  href: api/PiTung.Components.html
+  commentId: N:PiTung.Components
+  fullName: PiTung.Components
+  nameWithType: PiTung.Components
+- uid: PiTung.Components.Builder
+  name: Builder
+  href: api/PiTung.Components.Builder.html
+  commentId: T:PiTung.Components.Builder
+  fullName: PiTung.Components.Builder
+  nameWithType: Builder
+- uid: PiTung.Components.Builder.AddComponent*
+  name: AddComponent
+  href: api/PiTung.Components.Builder.html#PiTung_Components_Builder_AddComponent_
+  commentId: Overload:PiTung.Components.Builder.AddComponent
+  isSpec: "True"
+  fullName: PiTung.Components.Builder.AddComponent
+  nameWithType: Builder.AddComponent
+- uid: PiTung.Components.Builder.AddComponent``1
+  name: AddComponent<T>()
+  href: api/PiTung.Components.Builder.html#PiTung_Components_Builder_AddComponent__1
+  commentId: M:PiTung.Components.Builder.AddComponent``1
+  name.vb: AddComponent(Of T)()
+  fullName: PiTung.Components.Builder.AddComponent<T>()
+  fullName.vb: PiTung.Components.Builder.AddComponent(Of T)()
+  nameWithType: Builder.AddComponent<T>()
+  nameWithType.vb: Builder.AddComponent(Of T)()
+- uid: PiTung.Components.BuildState
+  name: BuildState
+  href: api/PiTung.Components.BuildState.html
+  commentId: T:PiTung.Components.BuildState
+  fullName: PiTung.Components.BuildState
+  nameWithType: BuildState
+- uid: PiTung.Components.ComponentRegistry
+  name: ComponentRegistry
+  href: api/PiTung.Components.ComponentRegistry.html
+  commentId: T:PiTung.Components.ComponentRegistry
+  fullName: PiTung.Components.ComponentRegistry
+  nameWithType: ComponentRegistry
+- uid: PiTung.Components.ComponentRegistry.CreateNew*
+  name: CreateNew
+  href: api/PiTung.Components.ComponentRegistry.html#PiTung_Components_ComponentRegistry_CreateNew_
+  commentId: Overload:PiTung.Components.ComponentRegistry.CreateNew
+  isSpec: "True"
+  fullName: PiTung.Components.ComponentRegistry.CreateNew
+  nameWithType: ComponentRegistry.CreateNew
+- uid: PiTung.Components.ComponentRegistry.CreateNew``1(System.String,PiTung.Components.Builder)
+  name: CreateNew<THandler>(String, Builder)
+  href: api/PiTung.Components.ComponentRegistry.html#PiTung_Components_ComponentRegistry_CreateNew__1_System_String_PiTung_Components_Builder_
+  commentId: M:PiTung.Components.ComponentRegistry.CreateNew``1(System.String,PiTung.Components.Builder)
+  name.vb: CreateNew(Of THandler)(String, Builder)
+  fullName: PiTung.Components.ComponentRegistry.CreateNew<THandler>(System.String, PiTung.Components.Builder)
+  fullName.vb: PiTung.Components.ComponentRegistry.CreateNew(Of THandler)(System.String, PiTung.Components.Builder)
+  nameWithType: ComponentRegistry.CreateNew<THandler>(String, Builder)
+  nameWithType.vb: ComponentRegistry.CreateNew(Of THandler)(String, Builder)
+- uid: PiTung.Components.CubeBuilder
+  name: CubeBuilder
+  href: api/PiTung.Components.CubeBuilder.html
+  commentId: T:PiTung.Components.CubeBuilder
+  fullName: PiTung.Components.CubeBuilder
+  nameWithType: CubeBuilder
+- uid: PiTung.Components.CubeBuilder.SetSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
+  name: SetSide(CubeSide, SideType)
+  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_SetSide_PiTung_Components_CubeSide_PiTung_Components_SideType_
+  commentId: M:PiTung.Components.CubeBuilder.SetSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
+  fullName: PiTung.Components.CubeBuilder.SetSide(PiTung.Components.CubeSide, PiTung.Components.SideType)
+  nameWithType: CubeBuilder.SetSide(CubeSide, SideType)
+- uid: PiTung.Components.CubeBuilder.SetSide*
+  name: SetSide
+  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_SetSide_
+  commentId: Overload:PiTung.Components.CubeBuilder.SetSide
+  isSpec: "True"
+  fullName: PiTung.Components.CubeBuilder.SetSide
+  nameWithType: CubeBuilder.SetSide
+- uid: PiTung.Components.CubeSide
+  name: CubeSide
+  href: api/PiTung.Components.CubeSide.html
+  commentId: T:PiTung.Components.CubeSide
+  fullName: PiTung.Components.CubeSide
+  nameWithType: CubeSide
+- uid: PiTung.Components.CubeSide.Back
+  name: Back
+  href: api/PiTung.Components.CubeSide.html#PiTung_Components_CubeSide_Back
+  commentId: F:PiTung.Components.CubeSide.Back
+  fullName: PiTung.Components.CubeSide.Back
+  nameWithType: CubeSide.Back
+- uid: PiTung.Components.CubeSide.Front
+  name: Front
+  href: api/PiTung.Components.CubeSide.html#PiTung_Components_CubeSide_Front
+  commentId: F:PiTung.Components.CubeSide.Front
+  fullName: PiTung.Components.CubeSide.Front
+  nameWithType: CubeSide.Front
+- uid: PiTung.Components.CubeSide.Left
+  name: Left
+  href: api/PiTung.Components.CubeSide.html#PiTung_Components_CubeSide_Left
+  commentId: F:PiTung.Components.CubeSide.Left
+  fullName: PiTung.Components.CubeSide.Left
+  nameWithType: CubeSide.Left
+- uid: PiTung.Components.CubeSide.Right
+  name: Right
+  href: api/PiTung.Components.CubeSide.html#PiTung_Components_CubeSide_Right
+  commentId: F:PiTung.Components.CubeSide.Right
+  fullName: PiTung.Components.CubeSide.Right
+  nameWithType: CubeSide.Right
+- uid: PiTung.Components.CubeSide.Top
+  name: Top
+  href: api/PiTung.Components.CubeSide.html#PiTung_Components_CubeSide_Top
+  commentId: F:PiTung.Components.CubeSide.Top
+  fullName: PiTung.Components.CubeSide.Top
+  nameWithType: CubeSide.Top
+- uid: PiTung.Components.CustomBuilder
+  name: CustomBuilder
+  href: api/PiTung.Components.CustomBuilder.html
+  commentId: T:PiTung.Components.CustomBuilder
+  fullName: PiTung.Components.CustomBuilder
+  nameWithType: CustomBuilder
+- uid: PiTung.Components.CustomBuilder.AddInput(UnityEngine.Vector3)
+  name: AddInput(Vector3)
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddInput_UnityEngine_Vector3_
+  commentId: M:PiTung.Components.CustomBuilder.AddInput(UnityEngine.Vector3)
+  fullName: PiTung.Components.CustomBuilder.AddInput(UnityEngine.Vector3)
+  nameWithType: CustomBuilder.AddInput(Vector3)
+- uid: PiTung.Components.CustomBuilder.AddInput*
+  name: AddInput
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddInput_
+  commentId: Overload:PiTung.Components.CustomBuilder.AddInput
+  isSpec: "True"
+  fullName: PiTung.Components.CustomBuilder.AddInput
+  nameWithType: CustomBuilder.AddInput
+- uid: PiTung.Components.CustomBuilder.AddOutput(UnityEngine.Vector3)
+  name: AddOutput(Vector3)
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddOutput_UnityEngine_Vector3_
+  commentId: M:PiTung.Components.CustomBuilder.AddOutput(UnityEngine.Vector3)
+  fullName: PiTung.Components.CustomBuilder.AddOutput(UnityEngine.Vector3)
+  nameWithType: CustomBuilder.AddOutput(Vector3)
+- uid: PiTung.Components.CustomBuilder.AddOutput*
+  name: AddOutput
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddOutput_
+  commentId: Overload:PiTung.Components.CustomBuilder.AddOutput
+  isSpec: "True"
+  fullName: PiTung.Components.CustomBuilder.AddOutput
+  nameWithType: CustomBuilder.AddOutput
+- uid: PiTung.Components.CustomComponent
+  name: CustomComponent
+  href: api/PiTung.Components.CustomComponent.html
+  commentId: T:PiTung.Components.CustomComponent
+  fullName: PiTung.Components.CustomComponent
+  nameWithType: CustomComponent
+- uid: PiTung.Components.CustomComponent.Build
+  name: Build
+  href: api/PiTung.Components.CustomComponent.html#PiTung_Components_CustomComponent_Build
+  commentId: P:PiTung.Components.CustomComponent.Build
+  fullName: PiTung.Components.CustomComponent.Build
+  nameWithType: CustomComponent.Build
+- uid: PiTung.Components.CustomComponent.Build*
+  name: Build
+  href: api/PiTung.Components.CustomComponent.html#PiTung_Components_CustomComponent_Build_
+  commentId: Overload:PiTung.Components.CustomComponent.Build
+  isSpec: "True"
+  fullName: PiTung.Components.CustomComponent.Build
+  nameWithType: CustomComponent.Build
+- uid: PiTung.Components.CustomComponent.Instantiate
+  name: Instantiate()
+  href: api/PiTung.Components.CustomComponent.html#PiTung_Components_CustomComponent_Instantiate
+  commentId: M:PiTung.Components.CustomComponent.Instantiate
+  fullName: PiTung.Components.CustomComponent.Instantiate()
+  nameWithType: CustomComponent.Instantiate()
+- uid: PiTung.Components.CustomComponent.Instantiate*
+  name: Instantiate
+  href: api/PiTung.Components.CustomComponent.html#PiTung_Components_CustomComponent_Instantiate_
+  commentId: Overload:PiTung.Components.CustomComponent.Instantiate
+  isSpec: "True"
+  fullName: PiTung.Components.CustomComponent.Instantiate
+  nameWithType: CustomComponent.Instantiate
+- uid: PiTung.Components.CustomComponent.UniqueName
+  name: UniqueName
+  href: api/PiTung.Components.CustomComponent.html#PiTung_Components_CustomComponent_UniqueName
+  commentId: P:PiTung.Components.CustomComponent.UniqueName
+  fullName: PiTung.Components.CustomComponent.UniqueName
+  nameWithType: CustomComponent.UniqueName
+- uid: PiTung.Components.CustomComponent.UniqueName*
+  name: UniqueName
+  href: api/PiTung.Components.CustomComponent.html#PiTung_Components_CustomComponent_UniqueName_
+  commentId: Overload:PiTung.Components.CustomComponent.UniqueName
+  isSpec: "True"
+  fullName: PiTung.Components.CustomComponent.UniqueName
+  nameWithType: CustomComponent.UniqueName
+- uid: PiTung.Components.CustomComponent`1
+  name: CustomComponent<THandler>
+  href: api/PiTung.Components.CustomComponent-1.html
+  commentId: T:PiTung.Components.CustomComponent`1
+  name.vb: CustomComponent(Of THandler)
+  fullName: PiTung.Components.CustomComponent<THandler>
+  fullName.vb: PiTung.Components.CustomComponent(Of THandler)
+  nameWithType: CustomComponent<THandler>
+  nameWithType.vb: CustomComponent(Of THandler)
+- uid: PiTung.Components.CustomComponent`1.Instantiate
+  name: Instantiate()
+  href: api/PiTung.Components.CustomComponent-1.html#PiTung_Components_CustomComponent_1_Instantiate
+  commentId: M:PiTung.Components.CustomComponent`1.Instantiate
+  fullName: PiTung.Components.CustomComponent<THandler>.Instantiate()
+  fullName.vb: PiTung.Components.CustomComponent(Of THandler).Instantiate()
+  nameWithType: CustomComponent<THandler>.Instantiate()
+  nameWithType.vb: CustomComponent(Of THandler).Instantiate()
+- uid: PiTung.Components.CustomComponent`1.Instantiate*
+  name: Instantiate
+  href: api/PiTung.Components.CustomComponent-1.html#PiTung_Components_CustomComponent_1_Instantiate_
+  commentId: Overload:PiTung.Components.CustomComponent`1.Instantiate
+  isSpec: "True"
+  fullName: PiTung.Components.CustomComponent<THandler>.Instantiate
+  fullName.vb: PiTung.Components.CustomComponent(Of THandler).Instantiate
+  nameWithType: CustomComponent<THandler>.Instantiate
+  nameWithType.vb: CustomComponent(Of THandler).Instantiate
+- uid: PiTung.Components.IOMap
+  name: IOMap
+  href: api/PiTung.Components.IOMap.html
+  commentId: T:PiTung.Components.IOMap
+  fullName: PiTung.Components.IOMap
+  nameWithType: IOMap
+- uid: PiTung.Components.IOMap.#ctor
+  name: IOMap()
+  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap__ctor
+  commentId: M:PiTung.Components.IOMap.#ctor
+  fullName: PiTung.Components.IOMap.IOMap()
+  nameWithType: IOMap.IOMap()
+- uid: PiTung.Components.IOMap.#ctor*
+  name: IOMap
+  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap__ctor_
+  commentId: Overload:PiTung.Components.IOMap.#ctor
+  isSpec: "True"
+  fullName: PiTung.Components.IOMap.IOMap
+  nameWithType: IOMap.IOMap
+- uid: PiTung.Components.IOMap.InputCount
+  name: InputCount
+  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_InputCount
+  commentId: P:PiTung.Components.IOMap.InputCount
+  fullName: PiTung.Components.IOMap.InputCount
+  nameWithType: IOMap.InputCount
+- uid: PiTung.Components.IOMap.InputCount*
+  name: InputCount
+  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_InputCount_
+  commentId: Overload:PiTung.Components.IOMap.InputCount
+  isSpec: "True"
+  fullName: PiTung.Components.IOMap.InputCount
+  nameWithType: IOMap.InputCount
+- uid: PiTung.Components.IOMap.OutputCount
+  name: OutputCount
+  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_OutputCount
+  commentId: P:PiTung.Components.IOMap.OutputCount
+  fullName: PiTung.Components.IOMap.OutputCount
+  nameWithType: IOMap.OutputCount
+- uid: PiTung.Components.IOMap.OutputCount*
+  name: OutputCount
+  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_OutputCount_
+  commentId: Overload:PiTung.Components.IOMap.OutputCount
+  isSpec: "True"
+  fullName: PiTung.Components.IOMap.OutputCount
+  nameWithType: IOMap.OutputCount
+- uid: PiTung.Components.IOMap.SetSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
+  name: SetSide(CubeSide, SideType)
+  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_SetSide_PiTung_Components_CubeSide_PiTung_Components_SideType_
+  commentId: M:PiTung.Components.IOMap.SetSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
+  fullName: PiTung.Components.IOMap.SetSide(PiTung.Components.CubeSide, PiTung.Components.SideType)
+  nameWithType: IOMap.SetSide(CubeSide, SideType)
+- uid: PiTung.Components.IOMap.SetSide*
+  name: SetSide
+  href: api/PiTung.Components.IOMap.html#PiTung_Components_IOMap_SetSide_
+  commentId: Overload:PiTung.Components.IOMap.SetSide
+  isSpec: "True"
+  fullName: PiTung.Components.IOMap.SetSide
+  nameWithType: IOMap.SetSide
+- uid: PiTung.Components.PrefabBuilder
+  name: PrefabBuilder
+  href: api/PiTung.Components.PrefabBuilder.html
+  commentId: T:PiTung.Components.PrefabBuilder
+  fullName: PiTung.Components.PrefabBuilder
+  nameWithType: PrefabBuilder
+- uid: PiTung.Components.PrefabBuilder.Cube
+  name: Cube
+  href: api/PiTung.Components.PrefabBuilder.html#PiTung_Components_PrefabBuilder_Cube
+  commentId: P:PiTung.Components.PrefabBuilder.Cube
+  fullName: PiTung.Components.PrefabBuilder.Cube
+  nameWithType: PrefabBuilder.Cube
+- uid: PiTung.Components.PrefabBuilder.Cube*
+  name: Cube
+  href: api/PiTung.Components.PrefabBuilder.html#PiTung_Components_PrefabBuilder_Cube_
+  commentId: Overload:PiTung.Components.PrefabBuilder.Cube
+  isSpec: "True"
+  fullName: PiTung.Components.PrefabBuilder.Cube
+  nameWithType: PrefabBuilder.Cube
+- uid: PiTung.Components.PrefabBuilder.Custom(System.Func{UnityEngine.GameObject})
+  name: Custom(Func<GameObject>)
+  href: api/PiTung.Components.PrefabBuilder.html#PiTung_Components_PrefabBuilder_Custom_System_Func_UnityEngine_GameObject__
+  commentId: M:PiTung.Components.PrefabBuilder.Custom(System.Func{UnityEngine.GameObject})
+  name.vb: Custom(Func(Of GameObject))
+  fullName: PiTung.Components.PrefabBuilder.Custom(System.Func<UnityEngine.GameObject>)
+  fullName.vb: PiTung.Components.PrefabBuilder.Custom(System.Func(Of UnityEngine.GameObject))
+  nameWithType: PrefabBuilder.Custom(Func<GameObject>)
+  nameWithType.vb: PrefabBuilder.Custom(Func(Of GameObject))
+- uid: PiTung.Components.PrefabBuilder.Custom*
+  name: Custom
+  href: api/PiTung.Components.PrefabBuilder.html#PiTung_Components_PrefabBuilder_Custom_
+  commentId: Overload:PiTung.Components.PrefabBuilder.Custom
+  isSpec: "True"
+  fullName: PiTung.Components.PrefabBuilder.Custom
+  nameWithType: PrefabBuilder.Custom
+- uid: PiTung.Components.SaveThisAttribute
+  name: SaveThisAttribute
+  href: api/PiTung.Components.SaveThisAttribute.html
+  commentId: T:PiTung.Components.SaveThisAttribute
+  fullName: PiTung.Components.SaveThisAttribute
+  nameWithType: SaveThisAttribute
+- uid: PiTung.Components.SideType
+  name: SideType
+  href: api/PiTung.Components.SideType.html
+  commentId: T:PiTung.Components.SideType
+  fullName: PiTung.Components.SideType
+  nameWithType: SideType
+- uid: PiTung.Components.SideType.Input
+  name: Input
+  href: api/PiTung.Components.SideType.html#PiTung_Components_SideType_Input
+  commentId: F:PiTung.Components.SideType.Input
+  fullName: PiTung.Components.SideType.Input
+  nameWithType: SideType.Input
+- uid: PiTung.Components.SideType.None
+  name: None
+  href: api/PiTung.Components.SideType.html#PiTung_Components_SideType_None
+  commentId: F:PiTung.Components.SideType.None
+  fullName: PiTung.Components.SideType.None
+  nameWithType: SideType.None
+- uid: PiTung.Components.SideType.Output
+  name: Output
+  href: api/PiTung.Components.SideType.html#PiTung_Components_SideType_Output
+  commentId: F:PiTung.Components.SideType.Output
+  fullName: PiTung.Components.SideType.Output
+  nameWithType: SideType.Output
+- uid: PiTung.Components.UpdateHandler
+  name: UpdateHandler
+  href: api/PiTung.Components.UpdateHandler.html
+  commentId: T:PiTung.Components.UpdateHandler
+  fullName: PiTung.Components.UpdateHandler
+  nameWithType: UpdateHandler
+- uid: PiTung.Components.UpdateHandler.Component
+  name: Component
+  href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Component
+  commentId: P:PiTung.Components.UpdateHandler.Component
+  fullName: PiTung.Components.UpdateHandler.Component
+  nameWithType: UpdateHandler.Component
+- uid: PiTung.Components.UpdateHandler.Component*
+  name: Component
+  href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Component_
+  commentId: Overload:PiTung.Components.UpdateHandler.Component
+  isSpec: "True"
+  fullName: PiTung.Components.UpdateHandler.Component
+  nameWithType: UpdateHandler.Component
+- uid: PiTung.Components.UpdateHandler.ComponentName
+  name: ComponentName
+  href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_ComponentName
+  commentId: F:PiTung.Components.UpdateHandler.ComponentName
+  fullName: PiTung.Components.UpdateHandler.ComponentName
+  nameWithType: UpdateHandler.ComponentName
+- uid: PiTung.Components.UpdateHandler.Inputs
+  name: Inputs
+  href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Inputs
+  commentId: P:PiTung.Components.UpdateHandler.Inputs
+  fullName: PiTung.Components.UpdateHandler.Inputs
+  nameWithType: UpdateHandler.Inputs
+- uid: PiTung.Components.UpdateHandler.Inputs*
+  name: Inputs
+  href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Inputs_
+  commentId: Overload:PiTung.Components.UpdateHandler.Inputs
+  isSpec: "True"
+  fullName: PiTung.Components.UpdateHandler.Inputs
+  nameWithType: UpdateHandler.Inputs
+- uid: PiTung.Components.UpdateHandler.Outputs
+  name: Outputs
+  href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Outputs
+  commentId: P:PiTung.Components.UpdateHandler.Outputs
+  fullName: PiTung.Components.UpdateHandler.Outputs
+  nameWithType: UpdateHandler.Outputs
+- uid: PiTung.Components.UpdateHandler.Outputs*
+  name: Outputs
+  href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_Outputs_
+  commentId: Overload:PiTung.Components.UpdateHandler.Outputs
+  isSpec: "True"
+  fullName: PiTung.Components.UpdateHandler.Outputs
+  nameWithType: UpdateHandler.Outputs
 - uid: PiTung.Config_menu
   name: PiTung.Config_menu
   href: api/PiTung.Config_menu.html
@@ -1333,6 +1721,15 @@ references:
   isSpec: "True"
   fullName: PiTung.ModUtilities.ExecuteMethod
   nameWithType: ModUtilities.ExecuteMethod
+- uid: PiTung.ModUtilities.ExecuteStaticMethod(System.Type,System.String,System.Object[])
+  name: ExecuteStaticMethod(Type, String, Object[])
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_ExecuteStaticMethod_System_Type_System_String_System_Object___
+  commentId: M:PiTung.ModUtilities.ExecuteStaticMethod(System.Type,System.String,System.Object[])
+  name.vb: ExecuteStaticMethod(Type, String, Object())
+  fullName: PiTung.ModUtilities.ExecuteStaticMethod(System.Type, System.String, System.Object[])
+  fullName.vb: PiTung.ModUtilities.ExecuteStaticMethod(System.Type, System.String, System.Object())
+  nameWithType: ModUtilities.ExecuteStaticMethod(Type, String, Object[])
+  nameWithType.vb: ModUtilities.ExecuteStaticMethod(Type, String, Object())
 - uid: PiTung.ModUtilities.ExecuteStaticMethod*
   name: ExecuteStaticMethod
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_ExecuteStaticMethod_
@@ -1372,6 +1769,15 @@ references:
   isSpec: "True"
   fullName: PiTung.ModUtilities.GetStaticFieldValue
   nameWithType: ModUtilities.GetStaticFieldValue
+- uid: PiTung.ModUtilities.GetStaticFieldValue``1(System.Type,System.String)
+  name: GetStaticFieldValue<TField>(Type, String)
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_GetStaticFieldValue__1_System_Type_System_String_
+  commentId: M:PiTung.ModUtilities.GetStaticFieldValue``1(System.Type,System.String)
+  name.vb: GetStaticFieldValue(Of TField)(Type, String)
+  fullName: PiTung.ModUtilities.GetStaticFieldValue<TField>(System.Type, System.String)
+  fullName.vb: PiTung.ModUtilities.GetStaticFieldValue(Of TField)(System.Type, System.String)
+  nameWithType: ModUtilities.GetStaticFieldValue<TField>(Type, String)
+  nameWithType.vb: ModUtilities.GetStaticFieldValue(Of TField)(Type, String)
 - uid: PiTung.ModUtilities.GetStaticFieldValue``2(System.String)
   name: GetStaticFieldValue<TParent, TField>(String)
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_GetStaticFieldValue__2_System_String_
@@ -1442,6 +1848,12 @@ references:
   isSpec: "True"
   fullName: PiTung.ModUtilities.PlayerObject
   nameWithType: ModUtilities.PlayerObject
+- uid: PiTung.ModUtilities.SetFieldValue(System.Object,System.String,System.Object)
+  name: SetFieldValue(Object, String, Object)
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_SetFieldValue_System_Object_System_String_System_Object_
+  commentId: M:PiTung.ModUtilities.SetFieldValue(System.Object,System.String,System.Object)
+  fullName: PiTung.ModUtilities.SetFieldValue(System.Object, System.String, System.Object)
+  nameWithType: ModUtilities.SetFieldValue(Object, String, Object)
 - uid: PiTung.ModUtilities.SetFieldValue*
   name: SetFieldValue
   href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_SetFieldValue_
@@ -1449,15 +1861,28 @@ references:
   isSpec: "True"
   fullName: PiTung.ModUtilities.SetFieldValue
   nameWithType: ModUtilities.SetFieldValue
-- uid: PiTung.ModUtilities.SetFieldValue``1(System.Object,System.String,``0)
-  name: SetFieldValue<T>(Object, String, T)
-  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_SetFieldValue__1_System_Object_System_String___0_
-  commentId: M:PiTung.ModUtilities.SetFieldValue``1(System.Object,System.String,``0)
-  name.vb: SetFieldValue(Of T)(Object, String, T)
-  fullName: PiTung.ModUtilities.SetFieldValue<T>(System.Object, System.String, T)
-  fullName.vb: PiTung.ModUtilities.SetFieldValue(Of T)(System.Object, System.String, T)
-  nameWithType: ModUtilities.SetFieldValue<T>(Object, String, T)
-  nameWithType.vb: ModUtilities.SetFieldValue(Of T)(Object, String, T)
+- uid: PiTung.ModUtilities.SetStaticFieldValue(System.Type,System.String,System.Object)
+  name: SetStaticFieldValue(Type, String, Object)
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_SetStaticFieldValue_System_Type_System_String_System_Object_
+  commentId: M:PiTung.ModUtilities.SetStaticFieldValue(System.Type,System.String,System.Object)
+  fullName: PiTung.ModUtilities.SetStaticFieldValue(System.Type, System.String, System.Object)
+  nameWithType: ModUtilities.SetStaticFieldValue(Type, String, Object)
+- uid: PiTung.ModUtilities.SetStaticFieldValue*
+  name: SetStaticFieldValue
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_SetStaticFieldValue_
+  commentId: Overload:PiTung.ModUtilities.SetStaticFieldValue
+  isSpec: "True"
+  fullName: PiTung.ModUtilities.SetStaticFieldValue
+  nameWithType: ModUtilities.SetStaticFieldValue
+- uid: PiTung.ModUtilities.SetStaticFieldValue``1(System.String,System.Object)
+  name: SetStaticFieldValue<TParent>(String, Object)
+  href: api/PiTung.ModUtilities.html#PiTung_ModUtilities_SetStaticFieldValue__1_System_String_System_Object_
+  commentId: M:PiTung.ModUtilities.SetStaticFieldValue``1(System.String,System.Object)
+  name.vb: SetStaticFieldValue(Of TParent)(String, Object)
+  fullName: PiTung.ModUtilities.SetStaticFieldValue<TParent>(System.String, System.Object)
+  fullName.vb: PiTung.ModUtilities.SetStaticFieldValue(Of TParent)(System.String, System.Object)
+  nameWithType: ModUtilities.SetStaticFieldValue<TParent>(String, Object)
+  nameWithType.vb: ModUtilities.SetStaticFieldValue(Of TParent)(String, Object)
 - uid: PiTung.PatchMethodAttribute
   name: PatchMethodAttribute
   href: api/PiTung.PatchMethodAttribute.html
