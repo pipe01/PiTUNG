@@ -32,7 +32,7 @@ Now that you've got a PiTUNG binary:
 5. Create a new file called `MyMod.cs` and replace its content with this code:
 
     ```
-    using PiTung_Bootstrap;
+    using PiTung;
 
     public class MyMod : Mod
     {
