@@ -34,17 +34,17 @@ namespace PiTung.Components
                     background = ModUtilities.Graphics.CreateSolidTexture(1, 1, new Color(0, 0, 0, 0.2f)),
                     textColor = Color.white
                 },
-                fontSize = FontSize
+                fontSize = FontSize,
+                //wordWrap = true
             };
 
-            SelectedStyle = new GUIStyle
+            SelectedStyle = new GUIStyle(NormalStyle)
             {
                 normal = new GUIStyleState
                 {
                     background = ModUtilities.Graphics.CreateSolidTexture(1, 1, new Color(0, 0.3f, 0, 0.3f)),
                     textColor = Color.cyan
-                },
-                fontSize = FontSize
+                }
             };
 
             Items = ComponentRegistry.Registry.Values.Select(o => PrettyName(o.UniqueName)).ToArray();
@@ -74,11 +74,11 @@ namespace PiTung.Components
             {
                 int previous = Selected;
 
-                if (GameplayUIManager.ScrollUp(true))
+                if (GameplayUIManager.ScrollUp(false))
                 {
                     Selected++;
                 }
-                else if (GameplayUIManager.ScrollDown(true))
+                else if (GameplayUIManager.ScrollDown(false))
                 {
                     Selected--;
                 }
