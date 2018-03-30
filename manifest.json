@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.Builder.html",
-          "hash": "sj5YCj5zmjMeAh3cHkIqmA=="
+          "hash": "R2YFewhcPSuT8r9udYGW4w=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.CubeBuilder.html",
-          "hash": "6UDp5Y4l9v/8fXIVw0fXSw=="
+          "hash": "h+jg6d+h4Ebg0lIdYcqaqg=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.CustomBuilder.html",
-          "hash": "JLGqCSSPMZKjnPNTBTfLyw=="
+          "hash": "Uwf80CsBV1OXLHBMbb9K/A=="
         }
       },
       "is_incremental": false,

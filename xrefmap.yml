@@ -122,22 +122,22 @@ references:
   commentId: T:PiTung.Components.Builder
   fullName: PiTung.Components.Builder
   nameWithType: Builder
-- uid: PiTung.Components.Builder.AddComponent*
-  name: AddComponent
-  href: api/PiTung.Components.Builder.html#PiTung_Components_Builder_AddComponent_
-  commentId: Overload:PiTung.Components.Builder.AddComponent
+- uid: PiTung.Components.Builder.WithComponent*
+  name: WithComponent
+  href: api/PiTung.Components.Builder.html#PiTung_Components_Builder_WithComponent_
+  commentId: Overload:PiTung.Components.Builder.WithComponent
   isSpec: "True"
-  fullName: PiTung.Components.Builder.AddComponent
-  nameWithType: Builder.AddComponent
-- uid: PiTung.Components.Builder.AddComponent``1
-  name: AddComponent<T>()
-  href: api/PiTung.Components.Builder.html#PiTung_Components_Builder_AddComponent__1
-  commentId: M:PiTung.Components.Builder.AddComponent``1
-  name.vb: AddComponent(Of T)()
-  fullName: PiTung.Components.Builder.AddComponent<T>()
-  fullName.vb: PiTung.Components.Builder.AddComponent(Of T)()
-  nameWithType: Builder.AddComponent<T>()
-  nameWithType.vb: Builder.AddComponent(Of T)()
+  fullName: PiTung.Components.Builder.WithComponent
+  nameWithType: Builder.WithComponent
+- uid: PiTung.Components.Builder.WithComponent``1
+  name: WithComponent<T>()
+  href: api/PiTung.Components.Builder.html#PiTung_Components_Builder_WithComponent__1
+  commentId: M:PiTung.Components.Builder.WithComponent``1
+  name.vb: WithComponent(Of T)()
+  fullName: PiTung.Components.Builder.WithComponent<T>()
+  fullName.vb: PiTung.Components.Builder.WithComponent(Of T)()
+  nameWithType: Builder.WithComponent<T>()
+  nameWithType.vb: Builder.WithComponent(Of T)()
 - uid: PiTung.Components.ComponentRegistry
   name: ComponentRegistry
   href: api/PiTung.Components.ComponentRegistry.html
@@ -172,19 +172,32 @@ references:
   commentId: T:PiTung.Components.CubeBuilder
   fullName: PiTung.Components.CubeBuilder
   nameWithType: CubeBuilder
-- uid: PiTung.Components.CubeBuilder.SetSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
-  name: SetSide(CubeSide, SideType)
-  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_SetSide_PiTung_Components_CubeSide_PiTung_Components_SideType_
-  commentId: M:PiTung.Components.CubeBuilder.SetSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
-  fullName: PiTung.Components.CubeBuilder.SetSide(PiTung.Components.CubeSide, PiTung.Components.SideType)
-  nameWithType: CubeBuilder.SetSide(CubeSide, SideType)
-- uid: PiTung.Components.CubeBuilder.SetSide*
-  name: SetSide
-  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_SetSide_
-  commentId: Overload:PiTung.Components.CubeBuilder.SetSide
+- uid: PiTung.Components.CubeBuilder.WithColor(UnityEngine.Color)
+  name: WithColor(Color)
+  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_WithColor_UnityEngine_Color_
+  commentId: M:PiTung.Components.CubeBuilder.WithColor(UnityEngine.Color)
+  fullName: PiTung.Components.CubeBuilder.WithColor(UnityEngine.Color)
+  nameWithType: CubeBuilder.WithColor(Color)
+- uid: PiTung.Components.CubeBuilder.WithColor*
+  name: WithColor
+  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_WithColor_
+  commentId: Overload:PiTung.Components.CubeBuilder.WithColor
   isSpec: "True"
-  fullName: PiTung.Components.CubeBuilder.SetSide
-  nameWithType: CubeBuilder.SetSide
+  fullName: PiTung.Components.CubeBuilder.WithColor
+  nameWithType: CubeBuilder.WithColor
+- uid: PiTung.Components.CubeBuilder.WithSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
+  name: WithSide(CubeSide, SideType)
+  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_WithSide_PiTung_Components_CubeSide_PiTung_Components_SideType_
+  commentId: M:PiTung.Components.CubeBuilder.WithSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
+  fullName: PiTung.Components.CubeBuilder.WithSide(PiTung.Components.CubeSide, PiTung.Components.SideType)
+  nameWithType: CubeBuilder.WithSide(CubeSide, SideType)
+- uid: PiTung.Components.CubeBuilder.WithSide*
+  name: WithSide
+  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_WithSide_
+  commentId: Overload:PiTung.Components.CubeBuilder.WithSide
+  isSpec: "True"
+  fullName: PiTung.Components.CubeBuilder.WithSide
+  nameWithType: CubeBuilder.WithSide
 - uid: PiTung.Components.CubeSide
   name: CubeSide
   href: api/PiTung.Components.CubeSide.html
@@ -227,44 +240,44 @@ references:
   commentId: T:PiTung.Components.CustomBuilder
   fullName: PiTung.Components.CustomBuilder
   nameWithType: CustomBuilder
-- uid: PiTung.Components.CustomBuilder.AddInput(System.Single,System.Single,System.Single)
-  name: AddInput(Single, Single, Single)
-  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddInput_System_Single_System_Single_System_Single_
-  commentId: M:PiTung.Components.CustomBuilder.AddInput(System.Single,System.Single,System.Single)
-  fullName: PiTung.Components.CustomBuilder.AddInput(System.Single, System.Single, System.Single)
-  nameWithType: CustomBuilder.AddInput(Single, Single, Single)
-- uid: PiTung.Components.CustomBuilder.AddInput(UnityEngine.Vector3)
-  name: AddInput(Vector3)
-  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddInput_UnityEngine_Vector3_
-  commentId: M:PiTung.Components.CustomBuilder.AddInput(UnityEngine.Vector3)
-  fullName: PiTung.Components.CustomBuilder.AddInput(UnityEngine.Vector3)
-  nameWithType: CustomBuilder.AddInput(Vector3)
-- uid: PiTung.Components.CustomBuilder.AddInput*
-  name: AddInput
-  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddInput_
-  commentId: Overload:PiTung.Components.CustomBuilder.AddInput
+- uid: PiTung.Components.CustomBuilder.WithInput(System.Single,System.Single,System.Single)
+  name: WithInput(Single, Single, Single)
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_WithInput_System_Single_System_Single_System_Single_
+  commentId: M:PiTung.Components.CustomBuilder.WithInput(System.Single,System.Single,System.Single)
+  fullName: PiTung.Components.CustomBuilder.WithInput(System.Single, System.Single, System.Single)
+  nameWithType: CustomBuilder.WithInput(Single, Single, Single)
+- uid: PiTung.Components.CustomBuilder.WithInput(UnityEngine.Vector3)
+  name: WithInput(Vector3)
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_WithInput_UnityEngine_Vector3_
+  commentId: M:PiTung.Components.CustomBuilder.WithInput(UnityEngine.Vector3)
+  fullName: PiTung.Components.CustomBuilder.WithInput(UnityEngine.Vector3)
+  nameWithType: CustomBuilder.WithInput(Vector3)
+- uid: PiTung.Components.CustomBuilder.WithInput*
+  name: WithInput
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_WithInput_
+  commentId: Overload:PiTung.Components.CustomBuilder.WithInput
   isSpec: "True"
-  fullName: PiTung.Components.CustomBuilder.AddInput
-  nameWithType: CustomBuilder.AddInput
-- uid: PiTung.Components.CustomBuilder.AddOutput(System.Single,System.Single,System.Single)
-  name: AddOutput(Single, Single, Single)
-  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddOutput_System_Single_System_Single_System_Single_
-  commentId: M:PiTung.Components.CustomBuilder.AddOutput(System.Single,System.Single,System.Single)
-  fullName: PiTung.Components.CustomBuilder.AddOutput(System.Single, System.Single, System.Single)
-  nameWithType: CustomBuilder.AddOutput(Single, Single, Single)
-- uid: PiTung.Components.CustomBuilder.AddOutput(UnityEngine.Vector3)
-  name: AddOutput(Vector3)
-  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddOutput_UnityEngine_Vector3_
-  commentId: M:PiTung.Components.CustomBuilder.AddOutput(UnityEngine.Vector3)
-  fullName: PiTung.Components.CustomBuilder.AddOutput(UnityEngine.Vector3)
-  nameWithType: CustomBuilder.AddOutput(Vector3)
-- uid: PiTung.Components.CustomBuilder.AddOutput*
-  name: AddOutput
-  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_AddOutput_
-  commentId: Overload:PiTung.Components.CustomBuilder.AddOutput
+  fullName: PiTung.Components.CustomBuilder.WithInput
+  nameWithType: CustomBuilder.WithInput
+- uid: PiTung.Components.CustomBuilder.WithOutput(System.Single,System.Single,System.Single)
+  name: WithOutput(Single, Single, Single)
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_WithOutput_System_Single_System_Single_System_Single_
+  commentId: M:PiTung.Components.CustomBuilder.WithOutput(System.Single,System.Single,System.Single)
+  fullName: PiTung.Components.CustomBuilder.WithOutput(System.Single, System.Single, System.Single)
+  nameWithType: CustomBuilder.WithOutput(Single, Single, Single)
+- uid: PiTung.Components.CustomBuilder.WithOutput(UnityEngine.Vector3)
+  name: WithOutput(Vector3)
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_WithOutput_UnityEngine_Vector3_
+  commentId: M:PiTung.Components.CustomBuilder.WithOutput(UnityEngine.Vector3)
+  fullName: PiTung.Components.CustomBuilder.WithOutput(UnityEngine.Vector3)
+  nameWithType: CustomBuilder.WithOutput(Vector3)
+- uid: PiTung.Components.CustomBuilder.WithOutput*
+  name: WithOutput
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_WithOutput_
+  commentId: Overload:PiTung.Components.CustomBuilder.WithOutput
   isSpec: "True"
-  fullName: PiTung.Components.CustomBuilder.AddOutput
-  nameWithType: CustomBuilder.AddOutput
+  fullName: PiTung.Components.CustomBuilder.WithOutput
+  nameWithType: CustomBuilder.WithOutput
 - uid: PiTung.Components.CustomComponent
   name: CustomComponent
   href: api/PiTung.Components.CustomComponent.html
