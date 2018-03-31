@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.AssemblyCosturer.html",
-          "hash": "xbmWVj3bistJc4OdXmcZ2A=="
+          "hash": "JDUY0ds3JefzQ5pSM1dfVg=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Bootstrapper.html",
-          "hash": "oXSgZwUQc9YrlVXLAbzC5A=="
+          "hash": "9B+KY9AutKwlDPveSiTyyw=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.Builder.html",
-          "hash": "8R3kn4u22OT7t5xcIrAkVA=="
+          "hash": "R2YFewhcPSuT8r9udYGW4w=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.ComponentRegistry.html",
-          "hash": "W13YK3yO0DToqN6nCh1USg=="
+          "hash": "/wfe5gz/vBaxLFBC5Fc1Jg=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.CubeBuilder.html",
-          "hash": "EHA3yF5629I2Zw7edYsEyw=="
+          "hash": "h+jg6d+h4Ebg0lIdYcqaqg=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.CubeSide.html",
-          "hash": "m3OTXKErCLT547of1l9Scw=="
+          "hash": "Sjtwjd61Qcc21CL1lU2uIQ=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.CustomBuilder.html",
-          "hash": "hQfijXuqTc/OCKLPgffwTA=="
+          "hash": "Uwf80CsBV1OXLHBMbb9K/A=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.CustomComponent-1.html",
-          "hash": "K0vFF5uBahcHphQGcSmF0g=="
+          "hash": "ZxMJHufWQk1ej6lvpUblBA=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.CustomComponent.html",
-          "hash": "oi6TLSLfsppFGRZaassTyg=="
+          "hash": "QxugXBNRyXeTqPtK10tBGQ=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.PrefabBuilder.html",
-          "hash": "wLPjQjQb9tWfEq144/MQGg=="
+          "hash": "z03cvMbla8H42kkwQi4a+w=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.SaveThisAttribute.html",
-          "hash": "r4joCH1p7PX7dT+Qk961aA=="
+          "hash": "1V63GEK7guKCIKLqv2ykoQ=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.SideType.html",
-          "hash": "oD6ScVM3mQfzGTNB14nL3w=="
+          "hash": "MVVfP95V/D5Ayeb7hpxVrw=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.UpdateHandler.html",
-          "hash": "WW1Mw0PsVG+suHMkCfeXHQ=="
+          "hash": "qkUVe738BLePVTYvePDd2Q=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Config_menu.CheckboxMenuEntry.html",
-          "hash": "Ko5xBBr0ykEzpVkyC+nU7A=="
+          "hash": "9TEp1vZq3U3bJ+AA/TdziQ=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate.html",
-          "hash": "IXk/RoKDAZmEI9GjhPm5RA=="
+          "hash": "ahQZutkZnHdAIWFYtH+hDw=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Config_menu.CustomNumericEntry.html",
-          "hash": "tV3PWqm290w4UcSjQBkcKg=="
+          "hash": "7UccMoAz4EzJtzM1S51ctA=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Config_menu.IValueMenuEntry-1.html",
-          "hash": "1dZj0hhvdZQPpU7tkIcFLQ=="
+          "hash": "jTIh+TVfDi3jH1nNu0/Tuw=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Config_menu.MenuEntry.html",
-          "hash": "YFJKZXSHwgTVpEcwriZLdA=="
+          "hash": "Nn2geIfYxZt4rVORPurvRw=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Config_menu.SimpleNumberEntry.html",
-          "hash": "gmo+dBOc8LOxvrn8vkRcbQ=="
+          "hash": "x8BT3aPUiS4bxFNQhKZw0w=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Config_menu.TextMenuEntry.html",
-          "hash": "c3LbPOUlQLHRE0jJeZjm+w=="
+          "hash": "mHYv6Sv4CNQ6tHxTau5qNA=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Config_menu.ValueChangedDelegate-1.html",
-          "hash": "zOTxnk6mqLGMH9Mk9i6atA=="
+          "hash": "QDelzbehVQG0BTnu9W7cdw=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Console.Command.html",
-          "hash": "SoodM5kDgY+LbQgPuFVxaw=="
+          "hash": "HYIxLNcg6XT8/VLz6Z3qFA=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Console.IGConsole.html",
-          "hash": "1nWAPeiK85syt0vdrlAH1Q=="
+          "hash": "oYQl9ET68BcS2xcQCA59mw=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Console.LogType.html",
-          "hash": "n0DrpR3WsR+2EO2mhovdjw=="
+          "hash": "ipa+6PvbuafdnzMHAGvn0g=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.GraphicUtilities.html",
-          "hash": "h9hvI4VYLngws/29gJ8CBw=="
+          "hash": "oW37hX29IW78nWGh7lyImg=="
         }
       },
       "is_incremental": false,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.KeyModifiers.html",
-          "hash": "6a3TwNHauv6vAhMfJHtjtA=="
+          "hash": "BcdUc5z2qrJe1OoYLMDBiw=="
         }
       },
       "is_incremental": false,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Mod.html",
-          "hash": "iwR2jpQaY4XWtRPYAfGQiw=="
+          "hash": "xZfOFVbvuNXZt+e3XCY90g=="
         }
       },
       "is_incremental": false,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.ModInput.RegisterActions.html",
-          "hash": "T7VKcy8bWNrlY28aiBtPeg=="
+          "hash": "9KdxIGdj+1zMg1lHy1wjQg=="
         }
       },
       "is_incremental": false,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.ModInput.html",
-          "hash": "RmhrP2VfAwbn8/vpoZSp0A=="
+          "hash": "zyjWwi/YvVeSKf7qyyUymg=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.ModUtilities.html",
-          "hash": "H4vaGV+x1KdYdrhjGNLHNA=="
+          "hash": "7FufJX9wTChOJvQkcHgptw=="
         }
       },
       "is_incremental": false,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Mod_utilities.Hologram.html",
-          "hash": "+bApNt9D2Wso1qIKCMBPUA=="
+          "hash": "iDjHckycuORXyPq9kwdwmw=="
         }
       },
       "is_incremental": false,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.PatchMethodAttribute.html",
-          "hash": "PBSMjz7b9ugTYl4xTszxzw=="
+          "hash": "IBJwWueSPDhDyuxhU0I6Gw=="
         }
       },
       "is_incremental": false,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.PatchType.html",
-          "hash": "NzIktJEZ0hiw45MDEtJGag=="
+          "hash": "6GPLeaYA9oGJuhKvPq2NRg=="
         }
       },
       "is_incremental": false,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.PiTUNG.html",
-          "hash": "3pyxCQ0G+QY9Bbl2spszzg=="
+          "hash": "V3HkJj2GReXmEp88P1oRgQ=="
         }
       },
       "is_incremental": false,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.TargetAttribute.html",
-          "hash": "MX9BeqBneFJ3MBP/VbeQeQ=="
+          "hash": "QeC/kCfs9Uhm8TMkLRXtHw=="
         }
       },
       "is_incremental": false,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.VersionPrecision.html",
-          "hash": "bAZmVYBoTT8Dc84SvnUv1Q=="
+          "hash": "C+z+cqj0BKsxQ/mcLuXkBA=="
         }
       },
       "is_incremental": false,
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "zFW1gysTaqeFL1slCNttOQ=="
+          "hash": "/+6GYiIfvw2LF7jl+u06gg=="
         }
       },
       "is_incremental": false,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/adv_patching.html",
-          "hash": "9VkVQNLFcwwJt0gsVL0WEg=="
+          "hash": "m8XN0k/BJmlitm+HSuZ8Ag=="
         }
       },
       "is_incremental": false,
@@ -540,7 +540,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/commands.html",
-          "hash": "eUgGA4SocwDT6zq06fDFaA=="
+          "hash": "ySAfemFwp5+XHNJPUj3bGA=="
         }
       },
       "is_incremental": false,
@@ -555,7 +555,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/components.html",
-          "hash": "XKS4+eUnEU5h3BUzuTa7/A=="
+          "hash": "gmTdjy0zvlVkDcxRMLNwYg=="
         }
       },
       "is_incremental": false,
@@ -570,7 +570,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting_started.html",
-          "hash": "5x6cbV6nzkOX4P66/rGLsA=="
+          "hash": "997UPWpt5pHsx57LZs/t7g=="
         }
       },
       "is_incremental": false,
@@ -585,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/holograms.html",
-          "hash": "rqKI0Tl+TYuEGL5szGPyOA=="
+          "hash": "Ovl8DUEaujDzDqf2irg+MQ=="
         }
       },
       "is_incremental": false,
@@ -597,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "1C1qvbGM53Ue6IWCl8BYog=="
+          "hash": "UsxOoVvgbgXXwaUa2J2O9Q=="
         }
       },
       "is_incremental": false,
@@ -612,7 +612,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/mod_input.html",
-          "hash": "V6jllNIQREHLUSV0fI3wlQ=="
+          "hash": "1zj9mhRrAXPKpbRWn159gA=="
         }
       },
       "is_incremental": false,
@@ -627,7 +627,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/patching.html",
-          "hash": "fJTsyK3EnmMXBYHtEo5eIw=="
+          "hash": "pggkHeu3nVjBoDrlz4nJjA=="
         }
       },
       "is_incremental": false,
@@ -654,7 +654,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "NKCDtmEbQwfc/i0J18uChg=="
+          "hash": "qpkB24rfiqRlcV5lfa6QiQ=="
         }
       },
       "is_incremental": false,
