@@ -156,6 +156,8 @@ namespace PiTung.Components
                 if (type.Name == "TextMeshPro")
                 {
                     type.InvokeMember("SetText", BindingFlags.InvokeMethod | BindingFlags.Public | BindingFlags.Instance, null, item, new object[] { componentName });
+
+                    type.GetProperty("color").SetValue(item, Color.gray, null);
                 }
             }
 
