@@ -1,17 +1,18 @@
+- name: Introduction
+  href: intro.md
+- name: Getting started
+  href: getting_started.md
+  
 - name: Advanced method patching
   href: adv_patching.md
 - name: Console commands
   href: commands.md
 - name: Custom components
   href: components.md
-- name: Getting started
-  href: getting_started.md
 - name: Holograms
   href: holograms.md
 - name: Input management
   href: mod_input.md
-- name: Introduction
-  href: intro.md
 - name: Mod auto-updating
   href: mod_update.md
 - name: Patching the game
