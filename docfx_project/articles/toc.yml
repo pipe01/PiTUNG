@@ -12,5 +12,7 @@
   href: mod_input.md
 - name: Introduction
   href: intro.md
+- name: Mod auto-updating
+  href: mod_update.md
 - name: Patching the game
   href: patching.md
