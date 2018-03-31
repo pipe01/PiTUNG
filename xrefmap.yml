@@ -110,6 +110,19 @@ references:
   isSpec: "True"
   fullName: PiTung.Bootstrapper.Testing
   nameWithType: Bootstrapper.Testing
+- uid: PiTung.Bootstrapper.UnloadMod(PiTung.Mod)
+  name: UnloadMod(Mod)
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_UnloadMod_PiTung_Mod_
+  commentId: M:PiTung.Bootstrapper.UnloadMod(PiTung.Mod)
+  fullName: PiTung.Bootstrapper.UnloadMod(PiTung.Mod)
+  nameWithType: Bootstrapper.UnloadMod(Mod)
+- uid: PiTung.Bootstrapper.UnloadMod*
+  name: UnloadMod
+  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_UnloadMod_
+  commentId: Overload:PiTung.Bootstrapper.UnloadMod
+  isSpec: "True"
+  fullName: PiTung.Bootstrapper.UnloadMod
+  nameWithType: Bootstrapper.UnloadMod
 - uid: PiTung.Components
   name: PiTung.Components
   href: api/PiTung.Components.html
