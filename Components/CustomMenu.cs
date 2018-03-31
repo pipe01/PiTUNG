@@ -35,7 +35,7 @@ namespace PiTung.Components
                     textColor = Color.white
                 },
                 fontSize = FontSize,
-                //wordWrap = true
+                padding = new RectOffset(1, 1, 1, 1)
             };
 
             SelectedStyle = new GUIStyle(NormalStyle)
@@ -53,15 +53,23 @@ namespace PiTung.Components
             if (ModUtilities.IsOnMainMenu || !Visible)
                 return;
 
-            BeginArea(new Rect(40, 40, 100, 400));
+            int i = 0;
+            float currentY = 40;
+            foreach (var item in ComponentRegistry.Registry.Values)
             {
-                int i = 0;
-                foreach (var item in ComponentRegistry.Registry.Values)
-                {
-                    Label(item.DisplayName, i++ == Selected ? SelectedStyle : NormalStyle);
-                }
+                var style = i++ == Selected ? SelectedStyle : NormalStyle;
+
+                var size = style.CalcSize(new GUIContent(item.DisplayName));
+
+                if (size.x < 100)
+                    size.x = 100;
+                else
+                    size.x += 3;
+
+                GUI.Label(new Rect(40, currentY, size.x, size.y), item.DisplayName, style);
+
+                currentY += size.y;
             }
-            EndArea();
         }
 
         public void Update()
