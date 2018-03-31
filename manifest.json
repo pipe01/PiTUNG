@@ -634,12 +634,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "articles/toc.yml",
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "13Er/+5bKr/FV/ioQN+4Hg=="
+          "hash": "kfJbIPoDjYs3tNEs0BQMSA=="
         }
       },
       "is_incremental": false,
@@ -666,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "ob7LqWp4kTNLz+9W4omdTw=="
+          "hash": "ie7VSEoB8WxY+hsEK82VHw=="
         }
       },
       "is_incremental": false,
