@@ -73,7 +73,8 @@
   
   <h1 id="PiTung_Components_ComponentRegistry" data-uid="PiTung.Components.ComponentRegistry" class="text-break">Class ComponentRegistry
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Keeps track of all the custom components.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -117,11 +118,12 @@
     <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Components_ComponentRegistry_CreateNew_PiTung_Mod_System_String_System_String_PiTung_Components_Builder_.md&amp;value=---%0Auid%3A%20PiTung.Components.ComponentRegistry.CreateNew(PiTung.Mod%2CSystem.String%2CSystem.String%2CPiTung.Components.Builder)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/pipe01/PiTUNG/blob/master/Components/ComponentRegistry.cs/#L25">View Source</a>
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/Components/ComponentRegistry.cs/#L45">View Source</a>
   </span>
   <a id="PiTung_Components_ComponentRegistry_CreateNew_" data-uid="PiTung.Components.ComponentRegistry.CreateNew*"></a>
   <h4 id="PiTung_Components_ComponentRegistry_CreateNew_PiTung_Mod_System_String_System_String_PiTung_Components_Builder_" data-uid="PiTung.Components.ComponentRegistry.CreateNew(PiTung.Mod,System.String,System.String,PiTung.Components.Builder)">CreateNew(Mod, String, String, Builder)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Registers a new custom component with no update handler.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -140,22 +142,26 @@
       <tr>
         <td><a class="xref" href="PiTung.Mod.html">Mod</a></td>
         <td><span class="parametername">mod</span></td>
-        <td></td>
+        <td><p>The mod that is registering this component.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>The component&apos;s &quot;ugly&quot; name. This name will be used to uniquely identify the component, so make sure that no other mods will use it.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">displayName</span></td>
-        <td></td>
+        <td><p>The name that will be shown in the components menu.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="PiTung.Components.Builder.html">Builder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The builder that you use to create the structure of the component. See <a class="xref" href="PiTung.Components.PrefabBuilder.html">PrefabBuilder</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -170,7 +176,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="PiTung.Components.CustomComponent.html">CustomComponent</a></td>
-        <td></td>
+        <td><p>A <a class="xref" href="PiTung.Components.CustomComponent.html">CustomComponent</a> instance. You don&apos;t need to store this.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -179,11 +186,12 @@
     <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Components_ComponentRegistry_CreateNew__1_PiTung_Mod_System_String_System_String_PiTung_Components_Builder_.md&amp;value=---%0Auid%3A%20PiTung.Components.ComponentRegistry.CreateNew%60%601(PiTung.Mod%2CSystem.String%2CSystem.String%2CPiTung.Components.Builder)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/pipe01/PiTUNG/blob/master/Components/ComponentRegistry.cs/#L14">View Source</a>
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/Components/ComponentRegistry.cs/#L26">View Source</a>
   </span>
   <a id="PiTung_Components_ComponentRegistry_CreateNew_" data-uid="PiTung.Components.ComponentRegistry.CreateNew*"></a>
   <h4 id="PiTung_Components_ComponentRegistry_CreateNew__1_PiTung_Mod_System_String_System_String_PiTung_Components_Builder_" data-uid="PiTung.Components.ComponentRegistry.CreateNew``1(PiTung.Mod,System.String,System.String,PiTung.Components.Builder)">CreateNew&lt;THandler&gt;(Mod, String, String, Builder)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Registers a new custom component with an update handler of type <code data-dev-comment-type="typeparamref" class="typeparamref">THandler</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -202,22 +210,26 @@
       <tr>
         <td><a class="xref" href="PiTung.Mod.html">Mod</a></td>
         <td><span class="parametername">mod</span></td>
-        <td></td>
+        <td><p>The mod that is registering this component.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>The component&apos;s &quot;ugly&quot; name. This name will be used to uniquely identify the component, so make sure that no other mods will use it.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">displayName</span></td>
-        <td></td>
+        <td><p>The name that will be shown in the components menu.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="PiTung.Components.Builder.html">Builder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The builder that you use to create the structure of the component. See <a class="xref" href="PiTung.Components.PrefabBuilder.html">PrefabBuilder</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -232,7 +244,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="PiTung.Components.CustomComponent-1.html">CustomComponent</a>&lt;THandler&gt;</td>
-        <td></td>
+        <td><p>A <a class="xref" href="PiTung.Components.CustomComponent-1.html">CustomComponent&lt;THandler&gt;</a> instance. You don&apos;t need to store this.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -247,7 +260,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">THandler</span></td>
-        <td></td>
+        <td><p>The update handler type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -262,7 +276,7 @@
                     <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Components_ComponentRegistry.md&amp;value=---%0Auid%3A%20PiTung.Components.ComponentRegistry%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/pipe01/PiTUNG/blob/master/Components/ComponentRegistry.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/pipe01/PiTUNG/blob/master/Components/ComponentRegistry.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
