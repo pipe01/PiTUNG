@@ -56,20 +56,27 @@ namespace PiTung.Components
         {
             var type = handler.GetType();
 
-            foreach (var item in type.GetMembers(BindingFlags.GetField | BindingFlags.GetProperty))
+            foreach (var item in GetFieldsAndProperties(handler))
+            {
+                yield return "::" + item.Key;
+                yield return item.Value;
+            }
+        }
+
+        static IEnumerable<KeyValuePair<string, object>> GetFieldsAndProperties(object obj)
+        {
+            Type t = obj.GetType();
+
+            foreach (var item in t.GetFields())
             {
                 if (item.GetAttribute<SaveThisAttribute>() != null)
-                {
-                    object value = null;
+                    yield return new KeyValuePair<string, object>(item.Name, item.GetValue(obj));
+            }
 
-                    if (item is FieldInfo field)
-                        value = field.GetValue(handler);
-                    else if (item is PropertyInfo prop)
-                        value = prop.GetValue(handler, null);
-
-                    yield return "::" + item.Name;
-                    yield return value;
-                }
+            foreach (var item in t.GetProperties())
+            {
+                if (item.GetAttribute<SaveThisAttribute>() != null)
+                    yield return new KeyValuePair<string, object>(item.Name, item.GetValue(obj, null));
             }
         }
     }
@@ -183,10 +190,9 @@ namespace PiTung.Components
                         setValue = o => field.SetValue(handler, o);
                     }
                 }
-
-                if (setValue != null)
+                else
                 {
-                    setValue(item);
+                    setValue?.Invoke(item);
                 }
             }
 
