@@ -36,7 +36,14 @@ namespace PiTung.Components
 
                 if (customComponent.ComponentName != null)
                 {
-                    customComponent.Component = ComponentRegistry.Registry[customComponent.ComponentName];
+                    if (ComponentRegistry.Registry.TryGetValue(customComponent.ComponentName, out var comp))
+                    {
+                        customComponent.Component = comp;
+                    }
+                    else
+                    {
+                        MDebug.WriteLine("!!MISING COMPONENT: " + customComponent.ComponentName);
+                    }
                 }
                 else
                 {
@@ -46,7 +53,7 @@ namespace PiTung.Components
                 }
             }
             
-            saveData.Add(customComponent.Component.UniqueName);
+            saveData.Add(customComponent.ComponentName);
             saveData.Add(outputs.Select(o => o.On).ToArray());
             saveData.AddRange(GetSaveThisFields(customComponent));
 
