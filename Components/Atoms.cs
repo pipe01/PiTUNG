@@ -9,6 +9,7 @@ namespace PiTung.Components
         void AddToGameObject(GameObject obj);
     }
 
+
     internal abstract class IOAtom : IAtom
     {
         public Vector3 Position;
@@ -16,6 +17,7 @@ namespace PiTung.Components
 
         public abstract void AddToGameObject(GameObject obj);
     }
+
     internal sealed class InputPegAtom : IOAtom
     {
         public override void AddToGameObject(GameObject obj)
@@ -23,6 +25,7 @@ namespace PiTung.Components
             BuilderUtils.AddInputPeg(obj, this.Position).transform.localRotation = this.Rotation;
         }
     }
+
     internal sealed class OutputAtom : IOAtom
     {
         public override void AddToGameObject(GameObject obj)
@@ -30,6 +33,8 @@ namespace PiTung.Components
             BuilderUtils.AddOutputPeg(obj, this.Position).transform.localRotation = this.Rotation;
         }
     }
+
+
     internal sealed class IOMapAtom : IAtom
     {
         public IOMap Map { get; set; }

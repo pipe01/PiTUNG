@@ -50,6 +50,12 @@ namespace PiTung.Components
 
             return this;
         }
+        public CustomBuilder WithInput(Vector3 position, Quaternion rotation)
+        {
+            State.Atoms.Add(new InputPegAtom { Position = position, Rotation = rotation });
+
+            return this;
+        }
 
         public CustomBuilder WithOutput(float x, float y, float z)
         {
@@ -58,6 +64,12 @@ namespace PiTung.Components
         public CustomBuilder WithOutput(Vector3 position)
         {
             State.Atoms.Add(new OutputAtom { Position = position });
+
+            return this;
+        }
+        public CustomBuilder WithOutput(Vector3 position, Quaternion rotation)
+        {
+            State.Atoms.Add(new OutputAtom { Position = position, Rotation = rotation });
 
             return this;
         }
