@@ -11,23 +11,23 @@ namespace PiTung.Components
     {
         internal static IDictionary<string, CustomComponent> Registry = new Dictionary<string, CustomComponent>();
 
-        public static CustomComponent<THandler> CreateNew<THandler>(string name, string displayName, Builder builder) where THandler : UpdateHandler
+        public static CustomComponent<THandler> CreateNew<THandler>(Mod mod, string name, string displayName, Builder builder) where THandler : UpdateHandler
         {
             if (Registry.TryGetValue(name, out var i) && i == null)
                 Registry.Remove(name);
 
-            var comp = new CustomComponent<THandler>(name, displayName, builder.State);
+            var comp = new CustomComponent<THandler>(mod, name, displayName, builder.State);
             Registry.Add(name, comp);
 
             return comp;
         }
 
-        public static CustomComponent CreateNew(string name, string displayName, Builder builder)
+        public static CustomComponent CreateNew(Mod mod, string name, string displayName, Builder builder)
         {
             if (Registry.TryGetValue(name, out var i) && i == null)
                 Registry.Remove(name);
 
-            var comp = new CustomComponent<EmptyHandler>(name, displayName, builder.State);
+            var comp = new CustomComponent<EmptyHandler>(mod, name, displayName, builder.State);
             Registry.Add(name, comp);
 
             return comp;

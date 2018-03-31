@@ -22,10 +22,16 @@ namespace PiTung.Components
         /// </summary>
         public string DisplayName { get; }
 
+        /// <summary>
+        /// The mod that registered this component.
+        /// </summary>
+        internal Mod Mod { get; }
+
         internal BuildState Build { get; }
 
-        internal CustomComponent(string name, string displayName, BuildState build)
+        internal CustomComponent(Mod mod, string name, string displayName, BuildState build)
         {
+            this.Mod = mod;
             this.UniqueName = name;
             this.DisplayName = displayName;
             this.Build = build;
@@ -44,7 +50,7 @@ namespace PiTung.Components
     /// <typeparam name="THandler">The update handler class for this component.</typeparam>
     public sealed class CustomComponent<THandler> : CustomComponent where THandler : UpdateHandler
     {
-        internal CustomComponent(string name, string displayName, BuildState build) : base(name, displayName, build)
+        internal CustomComponent(Mod mod, string name, string displayName, BuildState build) : base(mod, name, displayName, build)
         {
         }
 
