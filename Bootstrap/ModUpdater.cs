@@ -59,7 +59,7 @@ namespace PiTung
                 var down = new WWW(url);
                 yield return down;
 
-                File.WriteAllBytes(Path.Combine(Path.GetDirectoryName(mod.FullPath), Path.GetFileName(mod.FullPath)) + ".update", down.bytes);
+                File.WriteAllBytes(mod.FullPath, down.bytes);
 
                 mod.HasAvailableUpdate = false;
             }
