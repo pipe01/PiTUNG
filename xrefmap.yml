@@ -110,19 +110,6 @@ references:
   isSpec: "True"
   fullName: PiTung.Bootstrapper.Testing
   nameWithType: Bootstrapper.Testing
-- uid: PiTung.Bootstrapper.UnloadMod(PiTung.Mod)
-  name: UnloadMod(Mod)
-  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_UnloadMod_PiTung_Mod_
-  commentId: M:PiTung.Bootstrapper.UnloadMod(PiTung.Mod)
-  fullName: PiTung.Bootstrapper.UnloadMod(PiTung.Mod)
-  nameWithType: Bootstrapper.UnloadMod(Mod)
-- uid: PiTung.Bootstrapper.UnloadMod*
-  name: UnloadMod
-  href: api/PiTung.Bootstrapper.html#PiTung_Bootstrapper_UnloadMod_
-  commentId: Overload:PiTung.Bootstrapper.UnloadMod
-  isSpec: "True"
-  fullName: PiTung.Bootstrapper.UnloadMod
-  nameWithType: Bootstrapper.UnloadMod
 - uid: PiTung.Components
   name: PiTung.Components
   href: api/PiTung.Components.html
@@ -157,12 +144,12 @@ references:
   commentId: T:PiTung.Components.ComponentRegistry
   fullName: PiTung.Components.ComponentRegistry
   nameWithType: ComponentRegistry
-- uid: PiTung.Components.ComponentRegistry.CreateNew(System.String,System.String,PiTung.Components.Builder)
-  name: CreateNew(String, String, Builder)
-  href: api/PiTung.Components.ComponentRegistry.html#PiTung_Components_ComponentRegistry_CreateNew_System_String_System_String_PiTung_Components_Builder_
-  commentId: M:PiTung.Components.ComponentRegistry.CreateNew(System.String,System.String,PiTung.Components.Builder)
-  fullName: PiTung.Components.ComponentRegistry.CreateNew(System.String, System.String, PiTung.Components.Builder)
-  nameWithType: ComponentRegistry.CreateNew(String, String, Builder)
+- uid: PiTung.Components.ComponentRegistry.CreateNew(PiTung.Mod,System.String,System.String,PiTung.Components.Builder)
+  name: CreateNew(Mod, String, String, Builder)
+  href: api/PiTung.Components.ComponentRegistry.html#PiTung_Components_ComponentRegistry_CreateNew_PiTung_Mod_System_String_System_String_PiTung_Components_Builder_
+  commentId: M:PiTung.Components.ComponentRegistry.CreateNew(PiTung.Mod,System.String,System.String,PiTung.Components.Builder)
+  fullName: PiTung.Components.ComponentRegistry.CreateNew(PiTung.Mod, System.String, System.String, PiTung.Components.Builder)
+  nameWithType: ComponentRegistry.CreateNew(Mod, String, String, Builder)
 - uid: PiTung.Components.ComponentRegistry.CreateNew*
   name: CreateNew
   href: api/PiTung.Components.ComponentRegistry.html#PiTung_Components_ComponentRegistry_CreateNew_
@@ -170,15 +157,15 @@ references:
   isSpec: "True"
   fullName: PiTung.Components.ComponentRegistry.CreateNew
   nameWithType: ComponentRegistry.CreateNew
-- uid: PiTung.Components.ComponentRegistry.CreateNew``1(System.String,System.String,PiTung.Components.Builder)
-  name: CreateNew<THandler>(String, String, Builder)
-  href: api/PiTung.Components.ComponentRegistry.html#PiTung_Components_ComponentRegistry_CreateNew__1_System_String_System_String_PiTung_Components_Builder_
-  commentId: M:PiTung.Components.ComponentRegistry.CreateNew``1(System.String,System.String,PiTung.Components.Builder)
-  name.vb: CreateNew(Of THandler)(String, String, Builder)
-  fullName: PiTung.Components.ComponentRegistry.CreateNew<THandler>(System.String, System.String, PiTung.Components.Builder)
-  fullName.vb: PiTung.Components.ComponentRegistry.CreateNew(Of THandler)(System.String, System.String, PiTung.Components.Builder)
-  nameWithType: ComponentRegistry.CreateNew<THandler>(String, String, Builder)
-  nameWithType.vb: ComponentRegistry.CreateNew(Of THandler)(String, String, Builder)
+- uid: PiTung.Components.ComponentRegistry.CreateNew``1(PiTung.Mod,System.String,System.String,PiTung.Components.Builder)
+  name: CreateNew<THandler>(Mod, String, String, Builder)
+  href: api/PiTung.Components.ComponentRegistry.html#PiTung_Components_ComponentRegistry_CreateNew__1_PiTung_Mod_System_String_System_String_PiTung_Components_Builder_
+  commentId: M:PiTung.Components.ComponentRegistry.CreateNew``1(PiTung.Mod,System.String,System.String,PiTung.Components.Builder)
+  name.vb: CreateNew(Of THandler)(Mod, String, String, Builder)
+  fullName: PiTung.Components.ComponentRegistry.CreateNew<THandler>(PiTung.Mod, System.String, System.String, PiTung.Components.Builder)
+  fullName.vb: PiTung.Components.ComponentRegistry.CreateNew(Of THandler)(PiTung.Mod, System.String, System.String, PiTung.Components.Builder)
+  nameWithType: ComponentRegistry.CreateNew<THandler>(Mod, String, String, Builder)
+  nameWithType.vb: ComponentRegistry.CreateNew(Of THandler)(Mod, String, String, Builder)
 - uid: PiTung.Components.CubeBuilder
   name: CubeBuilder
   href: api/PiTung.Components.CubeBuilder.html
