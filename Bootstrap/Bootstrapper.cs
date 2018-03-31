@@ -65,10 +65,10 @@ namespace PiTung
             if (Patched && !hotload)
                 return;
             Patched = true;
-
+            
             string tungVersion = GetTungVersion();
 
-            MDebug.WriteLine("PiTUNG Framework version {0} on TUNG v{1}", 0, new Version(PiTUNG.FrameworkVersion.Major, PiTUNG.FrameworkVersion.Minor, PiTUNG.FrameworkVersion.Build), tungVersion);
+            MDebug.WriteLine("PiTUNG Framework version {0} on TUNG {1}", 0, new Version(PiTUNG.FrameworkVersion.Major, PiTUNG.FrameworkVersion.Minor, PiTUNG.FrameworkVersion.Build), tungVersion);
             MDebug.WriteLine("-------------Patching-------------" + (hotload ? " (reloading)" : ""));
 
             if (!hotload)
@@ -195,6 +195,7 @@ namespace PiTung
                             patch.BaseMethod,
                             patch.Prefix ? method : null,
                             patch.Postfix ? method : null);
+                        
                     }
                 }
             }
