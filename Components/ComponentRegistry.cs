@@ -32,12 +32,12 @@ namespace PiTung.Components
 
             return comp;
         }
+    }
 
-        internal class EmptyHandler : UpdateHandler
+    internal class EmptyHandler : UpdateHandler
+    {
+        protected override void CircuitLogicUpdate()
         {
-            protected override void CircuitLogicUpdate()
-            {
-            }
         }
     }
 }

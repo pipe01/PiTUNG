@@ -1,5 +1,6 @@
 ﻿using Harmony;
 using PiTung.Console;
+using PiTung.Mod_utilities;
 using References;
 using SavedObjects;
 using System;
@@ -122,8 +123,7 @@ namespace PiTung.Components
             if (save.CustomData.Length == 0)
             {
                 MDebug.WriteLine("ERROR: INVALID CUSTOM COMPONENT LOADED!");
-                __result = GameObject.Instantiate(Prefabs.WhiteCube);
-                __result.transform.parent = NextParent;
+                __result = GetDefaultObject("");
                 return;
             }
 
@@ -137,7 +137,29 @@ namespace PiTung.Components
             else
             {
                 MDebug.WriteLine("ERROR: CUSTOM COMPONENT NOT FOUND!");
+                __result = GetDefaultObject(name);
             }
+        }
+
+        static GameObject GetDefaultObject(string componentName)
+        {
+            var obj = GameObject.Instantiate(Prefabs.Label);
+            obj.transform.parent = NextParent;
+            obj.AddComponent<EmptyHandler>().ComponentName = componentName;
+            obj.GetComponent<MegaMeshComponent>().MaterialType = MaterialType.CircuitBoard;
+            obj.GetComponent<Renderer>().material.color = Color.red;
+
+            foreach (var item in obj.GetComponentsInChildren<MonoBehaviour>())
+            {
+                var type = item.GetType();
+
+                if (type.Name == "TextMeshPro")
+                {
+                    type.InvokeMember("SetText", BindingFlags.InvokeMethod | BindingFlags.Public | BindingFlags.Instance, null, item, new object[] { componentName });
+                }
+            }
+
+            return obj;
         }
     }
 
