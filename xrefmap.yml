@@ -252,6 +252,12 @@ references:
   commentId: M:PiTung.Components.CustomBuilder.WithInput(UnityEngine.Vector3)
   fullName: PiTung.Components.CustomBuilder.WithInput(UnityEngine.Vector3)
   nameWithType: CustomBuilder.WithInput(Vector3)
+- uid: PiTung.Components.CustomBuilder.WithInput(UnityEngine.Vector3,UnityEngine.Quaternion)
+  name: WithInput(Vector3, Quaternion)
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_WithInput_UnityEngine_Vector3_UnityEngine_Quaternion_
+  commentId: M:PiTung.Components.CustomBuilder.WithInput(UnityEngine.Vector3,UnityEngine.Quaternion)
+  fullName: PiTung.Components.CustomBuilder.WithInput(UnityEngine.Vector3, UnityEngine.Quaternion)
+  nameWithType: CustomBuilder.WithInput(Vector3, Quaternion)
 - uid: PiTung.Components.CustomBuilder.WithInput*
   name: WithInput
   href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_WithInput_
@@ -271,6 +277,12 @@ references:
   commentId: M:PiTung.Components.CustomBuilder.WithOutput(UnityEngine.Vector3)
   fullName: PiTung.Components.CustomBuilder.WithOutput(UnityEngine.Vector3)
   nameWithType: CustomBuilder.WithOutput(Vector3)
+- uid: PiTung.Components.CustomBuilder.WithOutput(UnityEngine.Vector3,UnityEngine.Quaternion)
+  name: WithOutput(Vector3, Quaternion)
+  href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_WithOutput_UnityEngine_Vector3_UnityEngine_Quaternion_
+  commentId: M:PiTung.Components.CustomBuilder.WithOutput(UnityEngine.Vector3,UnityEngine.Quaternion)
+  fullName: PiTung.Components.CustomBuilder.WithOutput(UnityEngine.Vector3, UnityEngine.Quaternion)
+  nameWithType: CustomBuilder.WithOutput(Vector3, Quaternion)
 - uid: PiTung.Components.CustomBuilder.WithOutput*
   name: WithOutput
   href: api/PiTung.Components.CustomBuilder.html#PiTung_Components_CustomBuilder_WithOutput_
