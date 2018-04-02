@@ -66,12 +66,12 @@ using System.Globalization;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
-using ShareMod.Reflection;
+using PiTung.Reflection;
 
 // ReSharper disable LoopCanBeConvertedToQuery
 // ReSharper disable RedundantExplicitArrayCreation
 // ReSharper disable SuggestUseVarKeywordEvident
-namespace ShareMod
+namespace PiTung
 {
     /// <summary>
     /// Represents the json array.
@@ -484,7 +484,7 @@ namespace ShareMod
     }
 }
 
-namespace ShareMod
+namespace PiTung
 {
     /// <summary>
     /// This class encodes and decodes JSON strings.
