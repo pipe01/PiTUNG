@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Bootstrapper.html",
-          "hash": "cxA/0fHE+SuyP80+C+fmHg=="
+          "hash": "3sZTyMNRxGMcUOAA+tRLSQ=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.ComponentRegistry.html",
-          "hash": "n4U3U2ECWmuXvVw8oXgDkg=="
+          "hash": "Qv1TZhnQqOSOWyLkFkVuDQ=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.ConfigurationFile.html",
-          "hash": "ZdIsNgV9d+Og+WtvgR6bQw=="
+          "hash": "2JY5sWXUwCPgwGp2KVkHvw=="
         }
       },
       "is_incremental": false,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Mod_utilities.Configuration.html",
-          "hash": "rDVaNFuTyG9KxAVYXcuggg=="
+          "hash": "WIkVJcIkqWGGOVojKQkMlA=="
         }
       },
       "is_incremental": false,
@@ -720,17 +720,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "incrementalPhase": "build"
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }
