@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ namespace PiTung
     {
         private IDictionary<string, object> InnerDicc;
         private Mod Mod;
+
+        public bool AutoSave { get; set; } = true;
 
         private string FilePath => Path.Combine(Application.persistentDataPath, Path.Combine("config", Mod.PackageName + ".json"));
 
@@ -46,7 +49,9 @@ namespace PiTung
         public void Set(string key, object value)
         {
             InnerDicc[key] = value;
-            Save();
+
+            if (AutoSave)
+                Save();
         }
 
         internal void Save()

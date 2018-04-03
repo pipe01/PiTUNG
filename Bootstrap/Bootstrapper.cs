@@ -48,6 +48,8 @@ namespace PiTung
         /// </summary>
         public static int ModCount => _Mods.Count;
 
+        internal static Mod CurrentlyLoading { get; private set; }
+
         /// <summary>
         /// List of mods that require a different PiTUNG version and haven't been loaded.
         /// </summary>
@@ -116,8 +118,10 @@ namespace PiTung
         {
             foreach (var mod in ModLoader.GetMods())
             {
+                CurrentlyLoading = mod;
                 LoadMod(mod, hotload);
             }
+            CurrentlyLoading = null;
 
             MDebug.WriteLine("----------Done patching!----------");
 

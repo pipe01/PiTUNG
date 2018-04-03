@@ -102,6 +102,8 @@
     <Compile Include="Components\CustomMenu.cs" />
     <Compile Include="Components\IOMap.cs" />
     <Compile Include="Components\SaveThisAttribute.cs" />
+    <Compile Include="ConfigurationFile.cs" />
+    <Compile Include="Mod utilities\Configuration.cs" />
     <Compile Include="Mod utilities\Hologram.cs" />
     <Compile Include="Mod utilities\HologramManager.cs" />
     <Compile Include="Patching\AssemblyCosturer.cs" />
@@ -122,6 +124,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SimpleJSON.cs" />
     <Compile Include="Utils\DropOutStack.cs" />
     <Compile Include="GodHimself.cs" />
     <Compile Include="Extensions.cs" />
