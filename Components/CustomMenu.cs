@@ -14,11 +14,13 @@ namespace PiTung.Components
 
         private const int FontSize = 15;
 
-        private GUIStyle NormalStyle, SelectedStyle;
-        
+        private GUIStyle NormalStyle, SelectedStyle, ModHeaderStyle;
+        private readonly KeyCode[] NumberKeys = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9, KeyCode.Alpha0 };
+
         public bool Visible { get; set; }
         public int Selected { get; private set; }
         public bool SelectionChanged { get; private set; }
+        public bool ModCategories { get; set; }
 
         private CustomMenu()
         {
@@ -46,6 +48,14 @@ namespace PiTung.Components
                     textColor = Color.cyan
                 }
             };
+
+            ModHeaderStyle = new GUIStyle(NormalStyle)
+            {
+                normal = new GUIStyleState
+                {
+                    background = ModUtilities.Graphics.CreateSolidTexture(1, 1, new Color(1, 0.8f, 0, 0.4f))
+                }
+            };
         }
 
         public void Draw()
@@ -55,20 +65,35 @@ namespace PiTung.Components
 
             int i = 0;
             float currentY = 40;
+            Mod lastMod = null;
+
             foreach (var item in ComponentRegistry.Registry.Values)
             {
-                var style = i++ == Selected ? SelectedStyle : NormalStyle;
+                if (ModCategories && item.Mod != lastMod)
+                {
+                    lastMod = item.Mod;
+                    
+                    currentY += NormalStyle.CalcSize(new GUIContent("A")).y;
+                    currentY += DrawEntry(item.Mod.Name, ModHeaderStyle, currentY);
+                }
 
-                var size = style.CalcSize(new GUIContent(item.DisplayName));
+                GUIStyle style = i++ == Selected ? SelectedStyle : NormalStyle;
+
+                currentY += DrawEntry(item.DisplayName, style, currentY);
+            }
+
+            float DrawEntry(string text, GUIStyle style, float y)
+            {
+                var size = style.CalcSize(new GUIContent(text));
 
                 if (size.x < 100)
                     size.x = 100;
                 else
                     size.x += 3;
 
-                GUI.Label(new Rect(40, currentY, size.x, size.y), item.DisplayName, style);
+                GUI.Label(new Rect(40, y, size.x, size.y), text, style);
 
-                currentY += size.y;
+                return size.y;
             }
         }
 

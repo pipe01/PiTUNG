@@ -85,7 +85,7 @@ namespace PiTung.Mod_utilities
         {
             PitungConfig = new ConfigurationFile();
 
-            CustomMenu.Instance.ModCategories = PitungConfig.Get("ModCategories", true);
+            CustomMenu.Instance.ModCategories = PitungConfig.Get("SortComponentsByMod", true);
         }
     }
 }
