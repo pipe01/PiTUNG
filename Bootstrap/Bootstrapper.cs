@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 using PiTung.Console;
 using Object = UnityEngine.Object;
 using System.Text.RegularExpressions;
+using PiTung.Mod_utilities;
 
 namespace PiTung
 {
@@ -75,6 +76,8 @@ namespace PiTung
 
             if (!hotload)
             {
+                Configuration.LoadPitungConfig();
+
                 _Mods.Clear();
 
                 _Harmony = HarmonyInstance.Create("me.pipe01.pitung");

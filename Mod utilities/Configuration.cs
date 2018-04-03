@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiTung.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -12,6 +13,7 @@ namespace PiTung.Mod_utilities
     public static class Configuration
     {
         private static IDictionary<Assembly, ConfigurationFile> Files = new Dictionary<Assembly, ConfigurationFile>();
+        internal static ConfigurationFile PitungConfig { get; private set; }
 
         /// <summary>
         /// If <see langword="true"/>, the configuration file will be saved to disk every time you call <see cref="Set(string, object)"/>.
@@ -78,5 +80,12 @@ namespace PiTung.Mod_utilities
         }
 
         public static ConfigurationFile GetConfigFile() => GetConfig(Assembly.GetCallingAssembly());
+
+        internal static void LoadPitungConfig()
+        {
+            PitungConfig = new ConfigurationFile();
+
+            CustomMenu.Instance.ModCategories = PitungConfig.Get("ModCategories", true);
+        }
     }
 }

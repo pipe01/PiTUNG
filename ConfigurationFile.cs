@@ -11,15 +11,19 @@ namespace PiTung
     public class ConfigurationFile
     {
         private IDictionary<string, object> InnerDicc;
-        private Mod Mod;
+        private string FileName = "pitung";
 
         public bool AutoSave { get; set; } = true;
 
-        private string FilePath => Path.Combine(Application.persistentDataPath, Path.Combine("config", Mod.PackageName + ".json"));
+        private string FilePath => Path.Combine(Application.persistentDataPath, Path.Combine("config", FileName + ".json"));
 
+        internal ConfigurationFile()
+        {
+            Load();
+        }
         internal ConfigurationFile(Mod mod)
         {
-            this.Mod = mod;
+            this.FileName = mod.PackageName;
             Load();
         }
 
@@ -83,7 +87,7 @@ namespace PiTung
                 }
                 catch (Exception ex)
                 {
-                    MDebug.WriteLine($"ERROR: COULDN'T LOAD CONFIGURATION FILE FOR MOD '{Mod.Name}'. DETAILS:");
+                    MDebug.WriteLine($"ERROR: COULDN'T LOAD CONFIGURATION FILE AT '{FilePath}'. DETAILS:");
                     MDebug.WriteLine(ex);
 
                     InnerDicc = new Dictionary<string, object>();
