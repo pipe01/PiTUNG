@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace PiTung.Components
 {
@@ -25,7 +26,7 @@ namespace PiTung.Components
                 Registry.Remove(name);
 
             var comp = new CustomComponent<THandler>(mod, name, displayName, builder.State);
-            Registry.Add(name, comp);
+            Add(name, comp);
 
             return comp;
         }
@@ -40,7 +41,7 @@ namespace PiTung.Components
                 Registry.Remove(name);
 
             var comp = new CustomComponent<EmptyHandler>(mod, name, displayName, builder.State);
-            Registry.Add(name, comp);
+            Add(name, comp);
 
             return comp;
         }
@@ -65,8 +66,8 @@ namespace PiTung.Components
                 Registry.Remove(name);
 
             var comp = new CustomComponent<THandler>(mod, name, displayName, builder.State);
-            Registry.Add(name, comp);
-
+            Add(name, comp);
+            
             return comp;
         }
 
@@ -89,9 +90,19 @@ namespace PiTung.Components
                 Registry.Remove(name);
 
             var comp = new CustomComponent<EmptyHandler>(mod, name, displayName, builder.State);
-            Registry.Add(name, comp);
+            Add(name, comp);
 
             return comp;
+        }
+
+        private static void Add(string name, CustomComponent comp)
+        {
+            Registry.Add(name, comp);
+
+            Registry = Registry
+                .OrderBy(o => o.Value.Mod.Name)
+                .ThenBy(o => o.Value.DisplayName)
+                .ToDictionary(o => o.Key, o => o.Value);
         }
     }
 
