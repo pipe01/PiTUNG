@@ -26,10 +26,7 @@ namespace PiTung.Mod_utilities
         {
             if (!Files.TryGetValue(ass, out var cfg))
             {
-                var mod = Bootstrapper._Mods.SingleOrDefault(o => o.ModAssembly.FullName.Equals(ass.FullName));
-
-                if (mod == null)
-                    mod = Bootstrapper.CurrentlyLoading;
+                var mod = Bootstrapper.Instance.GetModByAssembly(ass);
 
                 if (mod == null)
                     return null;

@@ -290,5 +290,18 @@ namespace PiTung
                 }
             }
         }
+
+        internal Mod GetModByAssembly(Assembly ass)
+        {
+            var mod = Bootstrapper._Mods.SingleOrDefault(o => o.ModAssembly.FullName.Equals(ass.FullName));
+
+            if (mod == null)
+                mod = Bootstrapper.CurrentlyLoading;
+
+            if (mod == null || !mod.ModAssembly.FullName.Equals(ass.FullName))
+                return null;
+
+            return mod;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using UnityEngine;
 
@@ -15,16 +16,51 @@ namespace PiTung.Components
         internal static IDictionary<string, CustomComponent> Registry = new Dictionary<string, CustomComponent>();
 
         /// <summary>
+        /// Deprecated, use <see cref="CreateNew{THandler}(string, string, Builder)"/>.
+        /// </summary>
+        [Obsolete("The parameter 'mod' is no longer required.")]
+        public static CustomComponent<THandler> CreateNew<THandler>(Mod mod, string name, string displayName, Builder builder) where THandler : UpdateHandler
+        {
+            if (Registry.TryGetValue(name, out var i) && i == null)
+                Registry.Remove(name);
+
+            var comp = new CustomComponent<THandler>(mod, name, displayName, builder.State);
+            Registry.Add(name, comp);
+
+            return comp;
+        }
+
+        /// <summary>
+        /// Deprecated, use <see cref="CreateNew(string, string, Builder)"/>.
+        /// </summary>
+        [Obsolete("The parameter 'mod' is no longer required.")]
+        public static CustomComponent CreateNew(Mod mod, string name, string displayName, Builder builder)
+        {
+            if (Registry.TryGetValue(name, out var i) && i == null)
+                Registry.Remove(name);
+
+            var comp = new CustomComponent<EmptyHandler>(mod, name, displayName, builder.State);
+            Registry.Add(name, comp);
+
+            return comp;
+        }
+
+
+        /// <summary>
         /// Registers a new custom component with an update handler of type <typeparamref name="THandler"/>.
         /// </summary>
         /// <typeparam name="THandler">The update handler type.</typeparam>
-        /// <param name="mod">The mod that is registering this component.</param>
         /// <param name="name">The component's "ugly" name. This name will be used to uniquely identify the component, so make sure that no other mods will use it.</param>
         /// <param name="displayName">The name that will be shown in the components menu.</param>
         /// <param name="builder">The builder that you use to create the structure of the component. See <see cref="PrefabBuilder"/>.</param>
         /// <returns>A <see cref="CustomComponent{THandler}"/> instance. You don't need to store this.</returns>
-        public static CustomComponent<THandler> CreateNew<THandler>(Mod mod, string name, string displayName, Builder builder) where THandler : UpdateHandler
+        public static CustomComponent CreateNew<THandler>(string name, string displayName, Builder builder) where THandler : UpdateHandler
         {
+            var mod = Bootstrapper.Instance.GetModByAssembly(Assembly.GetCallingAssembly());
+
+            if (mod == null)
+                throw new Exception("Couldn't retrieve mod instance.");
+
             if (Registry.TryGetValue(name, out var i) && i == null)
                 Registry.Remove(name);
 
@@ -42,8 +78,13 @@ namespace PiTung.Components
         /// <param name="displayName">The name that will be shown in the components menu.</param>
         /// <param name="builder">The builder that you use to create the structure of the component. See <see cref="PrefabBuilder"/>.</param>
         /// <returns>A <see cref="CustomComponent"/> instance. You don't need to store this.</returns>
-        public static CustomComponent CreateNew(Mod mod, string name, string displayName, Builder builder)
+        public static CustomComponent CreateNew(string name, string displayName, Builder builder)
         {
+            var mod = Bootstrapper.Instance.GetModByAssembly(Assembly.GetCallingAssembly());
+
+            if (mod == null)
+                throw new Exception("Couldn't retrieve mod instance.");
+
             if (Registry.TryGetValue(name, out var i) && i == null)
                 Registry.Remove(name);
 
