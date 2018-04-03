@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Bootstrapper.html",
-          "hash": "9B+KY9AutKwlDPveSiTyyw=="
+          "hash": "cxA/0fHE+SuyP80+C+fmHg=="
         }
       },
       "is_incremental": false,
@@ -281,6 +281,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PiTung.ConfigurationFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung.ConfigurationFile.html",
+          "hash": "ZdIsNgV9d+Og+WtvgR6bQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PiTung.Console.Command.yml",
       "output": {
         ".html": {
@@ -401,6 +413,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PiTung.Mod_utilities.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PiTung.Mod_utilities.Configuration.html",
+          "hash": "7e6PDx+dI800gs5BajuVlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PiTung.Mod_utilities.Hologram.yml",
       "output": {
         ".html": {
@@ -417,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Mod_utilities.html",
-          "hash": "G9PldfYNjlXHdh89FIneGg=="
+          "hash": "nvSgNzVTKYg48elq2QAptQ=="
         }
       },
       "is_incremental": false,
@@ -489,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.html",
-          "hash": "DURwW8aDo2rCAHSAJB+emg=="
+          "hash": "6qvyHsrN3dajfa32w+RhJg=="
         }
       },
       "is_incremental": false,
@@ -513,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "RWCWe0DyhOHaG816B1H4kw=="
+          "hash": "dfV0Fr2LCaEkiUXAWT6G7Q=="
         }
       },
       "is_incremental": false,
@@ -696,11 +720,11 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
