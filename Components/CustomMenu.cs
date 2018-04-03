@@ -89,9 +89,16 @@ namespace PiTung.Components
                     Selected++;
                 }
 
-                IGConsole.Log(Selected);
-
-                if (Selected == ComponentRegistry.Registry.Count)
+                for (int i = 0; i < NumberKeys.Length; i++)
+                {
+                    if (Input.GetKeyDown(NumberKeys[i]))
+                    {
+                        Selected = i;
+                        break;
+                    }
+                }
+                
+                if (Selected >= ComponentRegistry.Registry.Count)
                 {
                     Selected = 0;
                 }
