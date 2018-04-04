@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 
 namespace PiTung
 {
@@ -25,11 +26,11 @@ namespace PiTung
     /// </summary>
     public static class ModInput
     {
-        internal struct KeyBind
+        internal class KeyBind
         {
             public string ModPackage { get; }
             public string Name { get; }
-            public KeyCode Key { get; }
+            public KeyCode Key { get; internal set; }
             public RegisterActions Listener { get; }
             public KeyModifiers Modifiers { get; }
 
@@ -72,14 +73,14 @@ namespace PiTung
 
         private static readonly string BindsPath = Application.persistentDataPath + "/bindings.ini";
 
-        private static IList<KeyBind> Binds = new List<KeyBind>();
+        internal static IList<KeyBind> Binds = new List<KeyBind>();
         
         internal static bool CheckingInput { get; private set; }
 
         /// <summary>
         /// Registers a key binding for a mod. If the binding isn't already loaded (it's not set in the file), <paramref name="defaultKey"/> will be the binded key.
         /// </summary>
-        /// <param name="mod">The mod that is registering the key.</param>
+        /// <param name="mod">The mod that is registering the key. This parameter can be omitted (see <see cref="RegisterBinding(string, KeyCode, KeyModifiers)"/>).</param>
         /// <param name="name">The binding's name.</param>
         /// <param name="defaultKey">The default binding key.</param>
         /// <exception cref="Exception">Throws if a key binding with name <paramref name="name"/> has already been registered by any other mod.</exception>

@@ -307,4 +307,86 @@ namespace PiTung.Console
             return true;
         }
     }
+
+    internal class Command_bind : Command
+    {
+        public override string Name => "bind";
+        public override string Usage => $"{Name} <bind name> [key]";
+        public override string Description => "Gets or sets a key binding";
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            int count = arguments.Count();
+
+            if (count == 1)
+            {
+                return PrintBinding(arguments.First());
+            }
+            else if (count == 2)
+            {
+                return SetBinding(arguments.First(), arguments.ElementAt(1));
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private ModInput.KeyBind GetBinding(string bindName)
+        {
+            var bind = ModInput.Binds.SingleOrDefault(o => o.Name.Equals(bindName, StringComparison.InvariantCultureIgnoreCase));
+
+            if (EqualityComparer<ModInput.KeyBind>.Default.Equals(bind, default(ModInput.KeyBind)))
+            {
+                Error($"Binding '{bindName}' not found.");
+                return null;
+            }
+
+            return bind;
+        }
+
+        private bool PrintBinding(string name)
+        {
+            var bind = GetBinding(name);
+
+            if (bind == null)
+                return true;
+
+            Log($"<color=lime>Binding <b>{bind.Name}</b></color> <color=orange>=</color> {bind.Key}");
+
+            return true;
+        }
+
+        private bool SetBinding(string name, string keyStr)
+        {
+            KeyCode key = KeyCode.None;
+
+            foreach (var item in Enum.GetNames(typeof(KeyCode)))
+            {
+                if (item.Equals(keyStr, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    key = (KeyCode)Enum.Parse(typeof(KeyCode), keyStr, true);
+                    break;
+                }
+            }
+
+            if (key == KeyCode.None)
+            {
+                Error($"Invalid key '{keyStr}'.");
+                return true;
+            }
+
+            var b = GetBinding(name);
+
+            if (b == null)
+                return true;
+
+            b.Key = key;
+            ModInput.SaveBinds();
+
+            PrintBinding(name);
+
+            return true;
+        }
+    }
 }
