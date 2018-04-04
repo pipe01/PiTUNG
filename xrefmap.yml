@@ -1794,6 +1794,12 @@ references:
   commentId: M:PiTung.ModInput.RegisterBinding(PiTung.Mod,System.String,UnityEngine.KeyCode,PiTung.KeyModifiers)
   fullName: PiTung.ModInput.RegisterBinding(PiTung.Mod, System.String, UnityEngine.KeyCode, PiTung.KeyModifiers)
   nameWithType: ModInput.RegisterBinding(Mod, String, KeyCode, KeyModifiers)
+- uid: PiTung.ModInput.RegisterBinding(System.String,UnityEngine.KeyCode,PiTung.KeyModifiers)
+  name: RegisterBinding(String, KeyCode, KeyModifiers)
+  href: api/PiTung.ModInput.html#PiTung_ModInput_RegisterBinding_System_String_UnityEngine_KeyCode_PiTung_KeyModifiers_
+  commentId: M:PiTung.ModInput.RegisterBinding(System.String,UnityEngine.KeyCode,PiTung.KeyModifiers)
+  fullName: PiTung.ModInput.RegisterBinding(System.String, UnityEngine.KeyCode, PiTung.KeyModifiers)
+  nameWithType: ModInput.RegisterBinding(String, KeyCode, KeyModifiers)
 - uid: PiTung.ModInput.RegisterBinding*
   name: RegisterBinding
   href: api/PiTung.ModInput.html#PiTung_ModInput_RegisterBinding_
