@@ -1363,6 +1363,19 @@ references:
   isSpec: "True"
   fullName: PiTung.Mod.ModVersion
   nameWithType: Mod.ModVersion
+- uid: PiTung.Mod.MultiThreadedLoad
+  name: MultiThreadedLoad
+  href: api/PiTung.Mod.html#PiTung_Mod_MultiThreadedLoad
+  commentId: P:PiTung.Mod.MultiThreadedLoad
+  fullName: PiTung.Mod.MultiThreadedLoad
+  nameWithType: Mod.MultiThreadedLoad
+- uid: PiTung.Mod.MultiThreadedLoad*
+  name: MultiThreadedLoad
+  href: api/PiTung.Mod.html#PiTung_Mod_MultiThreadedLoad_
+  commentId: Overload:PiTung.Mod.MultiThreadedLoad
+  isSpec: "True"
+  fullName: PiTung.Mod.MultiThreadedLoad
+  nameWithType: Mod.MultiThreadedLoad
 - uid: PiTung.Mod.Name
   name: Name
   href: api/PiTung.Mod.html#PiTung_Mod_Name
