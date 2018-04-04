@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using static PiTung.Console.IGConsole;
+using System.Diagnostics;
+using System.IO;
 
 namespace PiTung.Console
 {
@@ -385,6 +387,38 @@ namespace PiTung.Console
             ModInput.SaveBinds();
 
             PrintBinding(name);
+
+            return true;
+        }
+    }
+
+    internal class Command_update : Command
+    {
+        public override string Name => "update";
+        public override string Usage => Name;
+        internal override bool ShowOnHelp => UpdateChecker.IsUpdateAvailable;
+
+        public override bool Execute(IEnumerable<string> arguments)
+        {
+            if (!UpdateChecker.IsUpdateAvailable)
+            {
+                Error("No updates for PiTUNG are available!");
+            }
+            else
+            {
+                if (File.Exists("Installer.exe"))
+                {
+                    var pid = Process.GetCurrentProcess().Id;
+
+                    MDebug.WriteLine(pid);
+                    Process.Start("Installer.exe", "-wait " + pid);
+                    Application.Quit();
+                }
+                else
+                {
+                    Error("Couldn't find 'Installer.exe'.");
+                }
+            }
 
             return true;
         }
