@@ -142,7 +142,7 @@ namespace PiTung
             UpdateChecker.UpdateStatus += (a, v) =>
             {
                 if (a)
-                    IGConsole.Log($"<color=#00ff00>PiTUNG version {v} available!</color> Run Installer.exe to update.");
+                    IGConsole.Log($"<color=#00ff00>PiTUNG version {v} available!</color> Run Installer.exe or type 'update' into the console to update.");
             };
             ModUtilities.DummyComponent?.StartCoroutine(UpdateChecker.CheckUpdates());
 
