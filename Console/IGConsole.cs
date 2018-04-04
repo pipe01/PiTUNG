@@ -621,8 +621,7 @@ namespace PiTung.Console
                     CurrentCmd = "";
                     EditLocation = 0;
                 }
-                else if ((KeyCode)c == ModInput.GetBindingKey("ToggleConsole")) ; // if we hit the toggle key, don't print anything
-                else
+                else if ((KeyCode)c != ModInput.GetBindingKey("ToggleConsole"))
                 {
                     CurrentCmd = CurrentCmd.Insert(EditLocation, c.ToString());
                     EditLocation++;
