@@ -215,7 +215,8 @@ namespace PiTung.Console
 
             LoadCommands();
 
-            ModInput.RegisterBinding(null, "ToggleConsole", KeyCode.Tab);
+            ModInput.RegisterBinding(null, "ToggleConsole", KeyCode.BackQuote);
+            ModInput.RegisterBinding(null, "ConsoleAutocompletion", KeyCode.Tab);
 
             Initialized = true;
 
@@ -277,6 +278,9 @@ namespace PiTung.Console
 
             if (Shown)
             {
+                if (ModInput.GetKeyDown("ConsoleAutocompletion"))
+                    TriggerAutocompletion();
+
                 // Handling history
                 if (Input.GetKeyDown(KeyCode.UpArrow) && HistorySelector < History.Count - 1)
                 {
@@ -594,7 +598,7 @@ namespace PiTung.Console
                     if (CurrentCmd.Length != 0)
                     {
                         int index = EditLocation;
-                        while(index > 0 && Char.IsLetterOrDigit(CurrentCmd.ElementAt(index - 1)))
+                        while (index > 0 && Char.IsLetterOrDigit(CurrentCmd.ElementAt(index - 1)))
                             index--;
                         if (index == EditLocation && EditLocation > 0) // Delete at least 1 character
                             index--;
@@ -617,6 +621,7 @@ namespace PiTung.Console
                     CurrentCmd = "";
                     EditLocation = 0;
                 }
+                else if ((KeyCode)c == ModInput.GetBindingKey("ToggleConsole")) ; // if we hit the toggle key, don't print anything
                 else
                 {
                     CurrentCmd = CurrentCmd.Insert(EditLocation, c.ToString());
@@ -677,6 +682,52 @@ namespace PiTung.Console
 
                 return str;
             }
+        }
+
+        /// <summary>
+        /// Saves the contents of the command when TriggetAutocompletion() was last called
+        /// If it is the same, the next call to TriggerAutocompletion will log the 
+        /// autocompletion candidates if there are multiple
+        /// </summary>
+        private static String PreviousCmd = "";
+
+        /// <summary>
+        /// Attempts to autocomplete the current word
+        /// </summary>
+        private static void TriggerAutocompletion()
+        {
+            if (CurrentCmd == "") // Nothing to work with
+                return;
+            if (CurrentCmd.IndexOf(" ") >= 0) // Not autocompleting the verb
+                return;
+            List<String> candidates =
+                new List<String>(Autocompletion.Candidates(CurrentCmd, Registry.Keys));
+
+            if (candidates.Count() == 0) // No candidate
+                return;
+
+            if (candidates.Count() == 1) // 1 candidate, autocomplete
+            {
+                CurrentCmd = candidates[0] + " ";
+                EditLocation = CurrentCmd.Length;
+                return;
+            }
+
+            // More than 1 candidates, complete as much as possible and
+            // display a list of candidates if necessary
+
+            String common_prefix = Autocompletion.CommonPrefix(candidates);
+            CurrentCmd = common_prefix;
+            EditLocation = CurrentCmd.Length;
+
+            if (PreviousCmd == CurrentCmd)
+            {
+                String list = "";
+                foreach (String candidate in candidates)
+                    list += candidate + "    ";
+                Log(list);
+            }
+            PreviousCmd = CurrentCmd;
         }
 
         private static float EaseOutQuad(float start, float end, float value)

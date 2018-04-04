@@ -103,6 +103,7 @@
     <Compile Include="Components\IOMap.cs" />
     <Compile Include="Components\SaveThisAttribute.cs" />
     <Compile Include="ConfigurationFile.cs" />
+    <Compile Include="Console\Autocompletion.cs" />
     <Compile Include="Mod utilities\Configuration.cs" />
     <Compile Include="Mod utilities\Hologram.cs" />
     <Compile Include="Mod utilities\HologramManager.cs" />
