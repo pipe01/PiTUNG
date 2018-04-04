@@ -70,6 +70,11 @@ namespace PiTung
         public virtual string UpdateUrl { get; } = null;
 
         /// <summary>
+        /// If true, the mod will be loaded in a thread separate to Unity's main thread. Use this if your intialization will take long.
+        /// </summary>
+        public virtual bool MultiThreadedLoad { get; } = false;
+
+        /// <summary>
         /// If true, there is an update available for this mod.
         /// </summary>
         internal bool HasAvailableUpdate { get; set; } = false;

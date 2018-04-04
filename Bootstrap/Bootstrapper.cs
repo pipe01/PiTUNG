@@ -106,7 +106,16 @@ namespace PiTung
 
             SelectionMenu.AllowModdedComponents = true;
 
-            new Thread(() => PatchThread(hotload)).Start();
+            var mods = ModLoader.GetMods();
+
+            foreach (var item in mods.Where(o => !o.MultiThreadedLoad))
+            {
+                LoadMod(item, hotload);
+            }
+
+            CurrentlyLoading = null;
+
+            new Thread(() => PatchThread(mods, hotload)).Start();
         }
 
         private string GetTungVersion()
@@ -117,11 +126,10 @@ namespace PiTung
             return Regex.Match(str, @"v(.\..\..)").Groups[1].Value;
         }
 
-        private void PatchThread(bool hotload)
+        private void PatchThread(IEnumerable<Mod> mods, bool hotload)
         {
-            foreach (var mod in ModLoader.GetMods())
+            foreach (var mod in mods.Where(o => o.MultiThreadedLoad))
             {
-                CurrentlyLoading = mod;
                 LoadMod(mod, hotload);
             }
             CurrentlyLoading = null;
@@ -146,6 +154,8 @@ namespace PiTung
 
         internal void LoadMod(Mod mod, bool hotload)
         {
+            CurrentlyLoading = mod;
+
             if (_Mods.Any(o => o.FullPath.Equals(mod.FullPath)))
             {
                 MDebug.WriteLine($"Skipping already loaded mod {mod.Name}.");
