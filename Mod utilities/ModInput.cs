@@ -127,6 +127,9 @@ namespace PiTung
         {
             foreach (var item in Binds)
             {
+                if (item.ModPackage != "PiTUNG" && IGConsole.Shown)
+                    continue;
+
                 if (item.Listener != null && CheckModifiers(item))
                 {
                     var l = item.Listener;
