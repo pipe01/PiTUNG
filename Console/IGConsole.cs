@@ -702,22 +702,30 @@ namespace PiTung.Console
                 return;
             List<String> candidates =
                 new List<String>(Autocompletion.Candidates(CurrentCmd, Registry.Keys));
-            if (candidates.Count() == 0)
+
+            if (candidates.Count() == 0) // No candidate
                 return;
 
-            if (candidates.Count() == 1)
+            if (candidates.Count() == 1) // 1 candidate, autocomplete
             {
                 CurrentCmd = candidates[0] + " ";
                 EditLocation = CurrentCmd.Length;
                 return;
             }
 
+            // More than 1 candidates, complete as much as possible and
+            // display a list of candidates if necessary
+
+            String common_prefix = Autocompletion.CommonPrefix(candidates);
+            CurrentCmd = common_prefix;
+            EditLocation = CurrentCmd.Length;
+
             if (PreviousCmd == CurrentCmd)
             {
                 String list = "";
                 foreach (String candidate in candidates)
-                    list += candidate + " ";
-                Log(candidates);
+                    list += candidate + "    ";
+                Log(list);
             }
             PreviousCmd = CurrentCmd;
         }
