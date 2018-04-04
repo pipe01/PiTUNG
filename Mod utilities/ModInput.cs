@@ -104,6 +104,20 @@ namespace PiTung
                 return listener;
             }
         }
+
+        /// <summary>
+        /// Registers a key binding for a mod. If the binding isn't already loaded (it's not set in the file), <paramref name="defaultKey"/> will be the binded key.
+        /// </summary>
+        /// <param name="name">The binding's name.</param>
+        /// <param name="defaultKey">The default binding key.</param>
+        /// <exception cref="Exception">Throws if a key binding with name <paramref name="name"/> has already been registered by any other mod.</exception>
+        public static RegisterActions RegisterBinding(string name, KeyCode defaultKey, KeyModifiers modifiers = KeyModifiers.None)
+        {
+            var ass = Assembly.GetCallingAssembly();
+            var mod = Bootstrapper.Instance.GetModByAssembly(ass);
+
+            return RegisterBinding(mod, name, defaultKey, modifiers);
+        }
         
         /// <summary>
         /// Gets the <see cref="KeyCode"/> for the binding with name <paramref name="name"/>.
