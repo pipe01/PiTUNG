@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static PiTung.Console.CmdParser;
 
 namespace PiTung.Console
 {
@@ -96,6 +97,8 @@ namespace PiTung.Console
         /// <param name="arguments">The arguments given to the command</param>
         /// <returns>False if the command was malformed (i.e., the command requires 2 arguments but only 1 was supplied).</returns>
         public abstract bool Execute(IEnumerable<string> arguments);
+
+        public virtual IEnumerable<String> AutocompletionCandidates(IEnumerable<String> arguments) { return new List<String>(); }
     }
 
     //FIXME: Changing scene to gameplay locks mouse
@@ -425,6 +428,15 @@ namespace PiTung.Console
         }
 
         /// <summary>
+        /// Returns the names of the variables in the registry
+        /// </summary>
+        /// <returns>An enumerable containing the names of the variables</returns>
+        public static IEnumerable<String> GetVariables()
+        {
+            return VarRegistry.Keys;
+        }
+
+        /// <summary>
         /// Logs an error message
         /// </summary>
         /// <param name="msg">Message to log</param>
@@ -690,43 +702,90 @@ namespace PiTung.Console
         /// </summary>
         private static String PreviousCmd = "";
 
+        private static IEnumerable<String> GetAutocompletionCandidates(IEnumerable<String> command)
+        {
+            if (command.Count() == 0)
+                return new List<String>();
+
+            String verb = command.ElementAt(0);
+            if (command.Count() == 1)
+                return Autocompletion.Candidates(verb, Registry.Keys);
+
+            Command _command;
+            if (Registry.TryGetValue(verb, out _command))
+                return _command.AutocompletionCandidates(command.Skip(1));
+
+            return new List<String>();
+        }
+
         /// <summary>
         /// Attempts to autocomplete the current word
         /// </summary>
         private static void TriggerAutocompletion()
         {
-            if (CurrentCmd == "") // Nothing to work with
+            //TODO: manage autocompletion inside quotation marks
+            List<Token> tokens = new List<Token>(LexString(CurrentCmd));
+            if (tokens.Last().Type != TokenType.TEXT)
                 return;
-            if (CurrentCmd.IndexOf(" ") >= 0) // Not autocompleting the verb
-                return;
-            List<String> candidates =
-                new List<String>(Autocompletion.Candidates(CurrentCmd, Registry.Keys));
+            List<String> candidates = new List<string>(GetAutocompletionCandidates(ConstructArguments(tokens)));
 
             if (candidates.Count() == 0) // No candidate
                 return;
 
             if (candidates.Count() == 1) // 1 candidate, autocomplete
             {
-                CurrentCmd = candidates[0] + " ";
-                EditLocation = CurrentCmd.Length;
-                return;
+                if (tokens.Last().Type == TokenType.TEXT)
+                {
+                    tokens[tokens.Count() - 1] = new Token(TokenType.TEXT, candidates[0]);
+                    tokens.Add(new Token(TokenType.WHITESPACE, " "));
+                }
             }
-
-            // More than 1 candidates, complete as much as possible and
-            // display a list of candidates if necessary
-
-            String common_prefix = Autocompletion.CommonPrefix(candidates);
-            CurrentCmd = common_prefix;
-            EditLocation = CurrentCmd.Length;
-
-            if (PreviousCmd == CurrentCmd)
+            else
             {
-                String list = "";
-                foreach (String candidate in candidates)
-                    list += candidate + "    ";
-                Log(list);
+                // More than 1 candidates, complete as much as possible and
+                // display a list of candidates if necessary
+
+                String common_prefix = Autocompletion.CommonPrefix(candidates);
+                if (tokens.Last().Type == TokenType.TEXT)
+                    tokens[tokens.Count() - 1] = new Token(TokenType.TEXT, common_prefix);
+
+                if (PreviousCmd == CurrentCmd)
+                {
+                    String list = "";
+                    foreach (String candidate in candidates)
+                        list += candidate + "    ";
+                    Log(list);
+                }
+                PreviousCmd = CurrentCmd;
             }
-            PreviousCmd = CurrentCmd;
+            CurrentCmd = Reconstruct(tokens);
+            EditLocation = CurrentCmd.Length;
+#if false
+            String verb, error;
+            String[] arguments;
+            CmdParser.TryParseCmdLine(CurrentCmd, out verb, out arguments, out error);
+
+            if (arguments.Length == 0)
+            {
+            }
+            else
+            {
+                Command command;
+                if (Registry.TryGetValue(verb, out command))
+                {
+                    command.AutocompletionCandidates(args);
+                }
+            }
+#if false
+                if (CurrentCmd == "") // Nothing to work with
+                    return;
+                if (CurrentCmd.IndexOf(" ") >= 0) // Not autocompleting the verb
+                    return;
+                List<String> candidates =
+                    new List<String>(Autocompletion.Candidates(CurrentCmd, Registry.Keys));
+
+#endif
+#endif
         }
 
         private static float EaseOutQuad(float start, float end, float value)

@@ -115,6 +115,12 @@ namespace PiTung.Console
             SetVariable(variable, value);
             return true;
         }
+
+        public override IEnumerable<String> AutocompletionCandidates(IEnumerable<String> arguments) {
+            if(arguments.Count() != 1)
+                return new List<String>();
+            return Autocompletion.Candidates(arguments.ElementAt(0), IGConsole.GetVariables());
+        }
     }
 
     internal class Command_get : Command
@@ -143,6 +149,12 @@ namespace PiTung.Console
             }
 
             return false;
+        }
+
+        public override IEnumerable<String> AutocompletionCandidates(IEnumerable<String> arguments) {
+            if(arguments.Count() != 1)
+                return new List<String>();
+            return Autocompletion.Candidates(arguments.ElementAt(0), IGConsole.GetVariables());
         }
     }
 
