@@ -98,7 +98,15 @@ namespace PiTung.Console
         /// <returns>False if the command was malformed (i.e., the command requires 2 arguments but only 1 was supplied).</returns>
         public abstract bool Execute(IEnumerable<string> arguments);
 
-        public virtual IEnumerable<String> AutocompletionCandidates(IEnumerable<String> arguments) { return new List<String>(); }
+        /// <summary>
+        /// Called when the autocompletion is triggered
+        /// </summary>
+        /// <param name="arguments">The arguments to the command, the last one needing autocompletion</param>
+        /// <returns>The autocompletion candidates for the last argument</returns>
+        public virtual IEnumerable<String> AutocompletionCandidates(IEnumerable<String> arguments)
+        {
+            return new List<String>();
+        }
     }
 
     //FIXME: Changing scene to gameplay locks mouse
@@ -437,6 +445,15 @@ namespace PiTung.Console
         }
 
         /// <summary>
+        /// Returns the names of the available commands
+        /// </summary>
+        /// <returns>An enumerable containing the names of the variables</returns>
+        public static IEnumerable<String> GetCommandNames()
+        {
+            return Registry.Keys;
+        }
+
+        /// <summary>
         /// Logs an error message
         /// </summary>
         /// <param name="msg">Message to log</param>
@@ -696,12 +713,12 @@ namespace PiTung.Console
         }
 
         /// <summary>
-        /// Saves the contents of the command when TriggetAutocompletion() was last called
-        /// If it is the same, the next call to TriggerAutocompletion will log the 
-        /// autocompletion candidates if there are multiple
+        /// Returns the autocompletion candidates for a given command.
+        /// Depending on what is entered, it will either return command verbs
+        /// or command-provided autocompletion candidates
         /// </summary>
-        private static String PreviousCmd = "";
-
+        /// <param name="command">The current comand [verb, arg1, arg2,...]</param>
+        /// <returns>The autocompletion candidates for the last argument</returns>
         private static IEnumerable<String> GetAutocompletionCandidates(IEnumerable<String> command)
         {
             if (command.Count() == 0)
@@ -719,24 +736,37 @@ namespace PiTung.Console
         }
 
         /// <summary>
+        /// Saves the contents of the command when TriggetAutocompletion() was last called
+        /// If it is the same, the next call to TriggerAutocompletion will log the 
+        /// autocompletion candidates if there are multiple
+        /// </summary>
+        private static String PreviousCmd = "";
+
+        /// <summary>
         /// Attempts to autocomplete the current word
         /// </summary>
         private static void TriggerAutocompletion()
         {
-            //TODO: manage autocompletion inside quotation marks
             List<Token> tokens = new List<Token>(LexString(CurrentCmd));
-            if (tokens.Last().Type != TokenType.TEXT)
-                return;
-            List<String> candidates = new List<string>(GetAutocompletionCandidates(ConstructArguments(tokens)));
+            if (tokens.Last().Type == TokenType.WHITESPACE) // If ends in whitespace, consider the next argument present but empty
+                tokens.Add(new Token(TokenType.TEXT, ""));
+            List<String> candidates = new List<String>(
+                GetAutocompletionCandidates(
+                    ConstructArguments(tokens)));
+
+            bool finish_string = true;
 
             if (candidates.Count() == 0) // No candidate
                 return;
 
             if (candidates.Count() == 1) // 1 candidate, autocomplete
             {
-                if (tokens.Last().Type == TokenType.TEXT)
+                if (tokens.Last().Type != TokenType.WHITESPACE)
                 {
-                    tokens[tokens.Count() - 1] = new Token(TokenType.TEXT, candidates[0]);
+                    Token token = tokens.Last();
+                    tokens[tokens.Count() - 1] = new Token(
+                        ContainsSpaces(candidates[0]) ?  TokenType.QUOTE : token.Type,
+                        candidates[0]);
                     tokens.Add(new Token(TokenType.WHITESPACE, " "));
                 }
             }
@@ -746,8 +776,15 @@ namespace PiTung.Console
                 // display a list of candidates if necessary
 
                 String common_prefix = Autocompletion.CommonPrefix(candidates);
-                if (tokens.Last().Type == TokenType.TEXT)
-                    tokens[tokens.Count() - 1] = new Token(TokenType.TEXT, common_prefix);
+                if (tokens.Last().Type != TokenType.WHITESPACE)
+                {
+                    Token token = tokens.Last();
+                    tokens[tokens.Count() - 1] = new Token(
+                        ContainsSpaces(common_prefix) ?  TokenType.QUOTE : token.Type,
+                        common_prefix);
+                    if (tokens.Last().Type == TokenType.QUOTE)
+                        finish_string = CurrentCmd.Last() == '\"';
+                }
 
                 if (PreviousCmd == CurrentCmd)
                 {
@@ -758,34 +795,13 @@ namespace PiTung.Console
                 }
                 PreviousCmd = CurrentCmd;
             }
-            CurrentCmd = Reconstruct(tokens);
-            EditLocation = CurrentCmd.Length;
-#if false
-            String verb, error;
-            String[] arguments;
-            CmdParser.TryParseCmdLine(CurrentCmd, out verb, out arguments, out error);
 
-            if (arguments.Length == 0)
-            {
-            }
+            String reconstruction = Reconstruct(tokens);
+            if (!finish_string)
+                CurrentCmd = reconstruction.Remove(reconstruction.Length - 1);
             else
-            {
-                Command command;
-                if (Registry.TryGetValue(verb, out command))
-                {
-                    command.AutocompletionCandidates(args);
-                }
-            }
-#if false
-                if (CurrentCmd == "") // Nothing to work with
-                    return;
-                if (CurrentCmd.IndexOf(" ") >= 0) // Not autocompleting the verb
-                    return;
-                List<String> candidates =
-                    new List<String>(Autocompletion.Candidates(CurrentCmd, Registry.Keys));
-
-#endif
-#endif
+                CurrentCmd = reconstruction;
+            EditLocation = CurrentCmd.Length;
         }
 
         private static float EaseOutQuad(float start, float end, float value)

@@ -66,15 +66,15 @@ namespace PiTung.Console
         internal enum TokenType
         {
             WHITESPACE, // For any length of whitespace
-            QUOTE, // For the " char
+            QUOTE, // For string literals
             TEXT, // For any strings not containing whitespaces
             ERROR // Error token, when input could not be lexed
         }
 
         internal struct Token
         {
-            public readonly TokenType Type;
-            public readonly String Value;
+            public TokenType Type;
+            public String Value;
 
             public Token(TokenType Type, String Value) {
                 this.Type = Type;
@@ -83,15 +83,22 @@ namespace PiTung.Console
         }
 
         internal static Regex WhiteSpace = new Regex("^\\s+");
-        internal static Regex TextMatcher = new Regex("^(?:[^\" ]|\\\\\")+"); //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ all this to match \"
-        internal static Regex StringMatcher = new Regex("^\"(?:[^\"]|\\\\\")+\"?");
+        internal static Regex TextMatcher = new Regex("^(?:[^\\\\\" ]|\\\\\")+"); //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ all this to match \"
+        internal static Regex StringMatcher = new Regex("^\"((?:[^\\\\\"]|\\\\\")+)\"?");
 
+        /// <summary>
+        /// Reads the next token in input
+        /// </summary>
+        /// <param name="input">The string to lex, will be eaten away</param>
+        /// <returns>The next token in input</returns>
         internal static Token LexToken(ref String input)
         {
-            if(input[0] == '"')
+            Match str_match = StringMatcher.Match(input);
+            if(str_match.Success)
             {
-                input = input.Remove(0, 1);
-                return new Token(TokenType.QUOTE, "\"");
+                String matched = str_match.Groups[1].Captures[0].Value;
+                input = input.Remove(0, str_match.Value.Length);
+                return new Token(TokenType.QUOTE, matched);
             }
             Match ws_match = WhiteSpace.Match(input);
             if(ws_match.Success)
@@ -110,6 +117,11 @@ namespace PiTung.Console
             return new Token(TokenType.ERROR, "");
         }
 
+        /// <summary>
+        /// Turns a string into a collection of tokens representing it
+        /// </summary>
+        /// <param name="command">The string to lex</param>
+        /// <returns>A collection of tokens representing the string</returns>
         public static IEnumerable<Token> LexString(String command)
         {
             String input = command;
@@ -124,49 +136,39 @@ namespace PiTung.Console
             return tokens;
         }
 
-        public static bool EndsInsideQuotes(IEnumerable<Token> tokens)
-        {
-            return tokens
-                .Where(token => token.Type == TokenType.QUOTE)
-                .Count() % 2 == 1;
-        }
-
+        /// <summary>
+        /// Turns a collection of tokens back into the string it represented
+        /// </summary>
+        /// <param name="tokens">The tokens to re-assemble</param>
+        /// <returns>The assembled string</returns>
         public static String Reconstruct(IEnumerable<Token> tokens)
         {
             String result = "";
             foreach (Token token in tokens)
-                result += token.Value;
+            {
+                if (token.Type == TokenType.QUOTE)
+                    result += "\"" + token.Value + "\"";
+                else
+                    result += token.Value;
+            }
             return result;
         }
 
+        /// <summary>
+        /// Turns a collection of tokens into a collection of command arguments in the form [verb, arg1, arg2,...]
+        /// </summary>
+        /// <param name="tokens">The token to parse</param>
+        /// <returns>The collection of arguments</returns>
         public static IEnumerable<String> ConstructArguments(IEnumerable<Token> tokens)
         {
-            bool in_quotes = false;
-            List<String> arguments = new List<String>();
-            String current = "";
-            foreach (Token token in tokens)
-            {
-                if(token.Type == TokenType.QUOTE)
-                {
-                    if(in_quotes)
-                    {
-                        arguments.Add(current);
-                        current = "";
-                    }
-
-                    in_quotes = !in_quotes;
-                }
-                else if(in_quotes)
-                    current += token.Value;
-                else if(token.Type == TokenType.TEXT)
-                    arguments.Add(token.Value);
-            }
-            return arguments;
+            return tokens
+                .Where(token => token.Type != TokenType.WHITESPACE)
+                .Select(token => token.Value);
         }
 
-        public static IEnumerable<String> PartialParse(String command)
+        public static bool ContainsSpaces(String str)
         {
-            return ConstructArguments(LexString(command));
+            return str.IndexOf(' ') >= 0;
         }
     }
 }
