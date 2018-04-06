@@ -54,7 +54,11 @@ namespace PiTung
             
             if (ModInfos.TryGetValue(mod, out var val))
             {
-                string url = Path.Combine(mod.UpdateUrl, val.FileName ?? Path.GetFileName(mod.FullPath));
+                // Using Path functions on urls introduced '\'s in place of '/'
+                // This should be good enough :)
+                string manifest_path = mod.UpdateUrl.Remove(mod.UpdateUrl.LastIndexOf('/') + 1);
+                string filename = val.FileName ?? Path.GetFileName(mod.FullPath);
+                string url = manifest_path + filename;
 
                 var down = new WWW(url);
                 yield return down;
