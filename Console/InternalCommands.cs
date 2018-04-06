@@ -409,8 +409,7 @@ namespace PiTung.Console
                 if (File.Exists("Installer.exe"))
                 {
                     var pid = Process.GetCurrentProcess().Id;
-
-                    MDebug.WriteLine(pid);
+                    
                     Process.Start("Installer.exe", "-wait " + pid);
                     Application.Quit();
                 }
