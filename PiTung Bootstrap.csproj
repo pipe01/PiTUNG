@@ -126,6 +126,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SimpleJSON.cs" />
+    <Compile Include="User Interface\ModsScreen.cs" />
     <Compile Include="Utils\DropOutStack.cs" />
     <Compile Include="GodHimself.cs" />
     <Compile Include="Extensions.cs" />
@@ -165,9 +166,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="User Interface\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

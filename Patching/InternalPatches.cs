@@ -6,6 +6,7 @@ using PiTung.Console;
 using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using PiTung.User_Interface;
 
 #pragma warning disable RCS1102 // Make class static.
 #pragma warning disable RCS1213 // Remove unused member declaration.
@@ -113,6 +114,8 @@ namespace PiTung
                 }
 
                 ModUtilities.Graphics.DrawText(str, new Vector2(5, 5), Color.white, true);
+
+                ModsScreen.Instance.Draw();
             }
 
             HologramManager.Draw();
