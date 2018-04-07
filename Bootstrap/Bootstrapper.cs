@@ -12,6 +12,8 @@ using PiTung.Console;
 using Object = UnityEngine.Object;
 using System.Text.RegularExpressions;
 using PiTung.Mod_utilities;
+using PiTung.Components;
+using PiTung.Patching;
 
 namespace PiTung
 {
@@ -315,6 +317,23 @@ namespace PiTung
                 return null;
 
             return mod;
+        }
+
+        internal void UnloadMod(Mod mod)
+        {
+            if (!ModUtilities.IsOnMainMenu)
+            {
+                throw new Exception("Must be un main menu to reload a mod!");
+            }
+
+            PatchRegistry.UndoPatchesForMod(mod);
+
+            foreach (var item in ComponentRegistry.Registry.Where(o => o.Value.Mod == mod))
+            {
+                ComponentRegistry.Registry.Remove(item);
+            }
+
+            _Mods.Remove(mod);
         }
     }
 }

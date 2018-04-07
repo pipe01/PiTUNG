@@ -120,6 +120,7 @@
     <Compile Include="Console\IGConsole.cs" />
     <Compile Include="Mod utilities\ModUtilities.cs" />
     <Compile Include="Mod utilities\ModInput.cs" />
+    <Compile Include="Patching\PatchRegistry.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
