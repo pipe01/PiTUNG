@@ -323,16 +323,21 @@ namespace PiTung
         {
             if (!ModUtilities.IsOnMainMenu)
             {
-                throw new Exception("Must be un main menu to reload a mod!");
+                throw new InvalidOperationException("Must be in main menu to unload a mod!");
             }
 
             PatchRegistry.UndoPatchesForMod(mod);
 
-            foreach (var item in ComponentRegistry.Registry.Where(o => o.Value.Mod == mod))
+            foreach (var key in new List<string>(ComponentRegistry.Registry.Keys))
             {
-                ComponentRegistry.Registry.Remove(item);
+                var value = ComponentRegistry.Registry[key];
+                
+                if (value.Mod == mod)
+                {
+                    ComponentRegistry.Registry.Remove(key);
+                }
             }
-
+            
             _Mods.Remove(mod);
         }
     }

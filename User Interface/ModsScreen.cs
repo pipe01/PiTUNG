@@ -13,6 +13,7 @@ namespace PiTung.User_Interface
 
         private static bool HiddenCanvases = true;
         private static IList<Canvas> WereVisible = new List<Canvas>();
+        private static IList<Mod> UnloadedMods = new List<Mod>();
 
         private bool _visible;
         public bool Visible
@@ -28,7 +29,7 @@ namespace PiTung.User_Interface
 
         private Vector2 Scroll = Vector2.zero;
         private Rect BoxRect;
-        private GUIStyle BackStyle, DetailsStyle;
+        private GUIStyle BackStyle, UnloadedBackStyle, DetailsStyle;
 
         private ModsScreen()
         {
@@ -39,6 +40,14 @@ namespace PiTung.User_Interface
                     background = ModUtilities.Graphics.CreateSolidTexture(1, 1, new Color(0, 0, 0, 0.4f))
                 },
                 margin = new RectOffset(3, 0, 0, 0)
+            };
+
+            UnloadedBackStyle = new GUIStyle(BackStyle)
+            {
+                normal = new GUIStyleState
+                {
+                    background = ModUtilities.Graphics.CreateSolidTexture(1, 1, new Color(0.3f, 0, 0, 0.4f))
+                }
             };
 
             DetailsStyle = new GUIStyle(GUI.skin.label)
@@ -83,10 +92,15 @@ namespace PiTung.User_Interface
 
                 Scroll = BeginScrollView(Scroll, false, true);
                 {
-                    foreach (var item in Bootstrapper._Mods.OrderBy(o => o.Name))
+                    foreach (var item in Bootstrapper._Mods
+                            .Concat(UnloadedMods)
+                            .OrderBy(o => UnloadedMods.Contains(o))
+                            .ThenBy(o => o.Name))
                     {
                         DrawMod(item);
                     }
+
+                    FlexibleSpace();
                 }
                 EndScrollView();
             }
@@ -95,7 +109,9 @@ namespace PiTung.User_Interface
 
         private void DrawMod(Mod mod)
         {
-            BeginHorizontal(BackStyle);
+            bool unloaded = UnloadedMods.Contains(mod);
+
+            BeginHorizontal(unloaded ? UnloadedBackStyle : BackStyle, Height(63));
             {
                 BeginVertical();
                 {
@@ -123,14 +139,31 @@ namespace PiTung.User_Interface
                     {
                         FlexibleSpace();
 
-                        Button("Unload", Width(50), Height(30));
+                        if (Button(unloaded ? "Reload" : "Unload", Width(60), Height(30)))
+                        {
+                            if (unloaded)
+                            {
+                                var newMod = ModLoader.GetMod(mod.FullPath);
+
+                                Bootstrapper.Instance.LoadMod(newMod, false);
+
+                                UnloadedMods.Remove(mod);
+                            }
+                            else
+                            {
+                                Bootstrapper.Instance.UnloadMod(mod);
+                                mod.ModAssembly = null;
+
+                                UnloadedMods.Add(mod);
+                            }
+                        }
                     }
                     EndHorizontal();
                 }
                 EndVertical();
             }
             EndHorizontal();
-
+            
             Space(3);
         }
 
