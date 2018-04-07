@@ -63,7 +63,7 @@ namespace PiTung.User_Interface
         {
             if (!Visible)
             {
-                if (GUI.Button(new Rect(155, 5, 45, 30), "Mods"))
+                if (GUI.Button(new Rect(155, 5, 55, 30), "Mods") && RunMainMenu.Instance.MainMenuCanvas.enabled)
                 {
                     Visible = true;
                 }
@@ -117,7 +117,7 @@ namespace PiTung.User_Interface
                 {
                     Label($"<size=20>{mod.Name}</size>");
 
-                    Label(mod.Author, DetailsStyle);
+                    Label("by " + mod.Author, DetailsStyle);
                 }
                 EndVertical();
 
@@ -139,7 +139,7 @@ namespace PiTung.User_Interface
                     {
                         FlexibleSpace();
 
-                        if (Button(unloaded ? "Reload" : "Unload", Width(60), Height(30)))
+                        if ((!unloaded || mod.Hotloadable) && Button(unloaded ? "Reload" : "Unload", Width(60), Height(30)))
                         {
                             if (unloaded)
                             {

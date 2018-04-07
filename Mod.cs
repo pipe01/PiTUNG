@@ -62,7 +62,7 @@ namespace PiTung
         /// <summary>
         /// If true, the mod will be able to be loaded without needing to restart the game.
         /// </summary>
-        public virtual bool Hotloadable { get; } = false;
+        public virtual bool Hotloadable { get; } = true;
 
         /// <summary>
         /// The update manifest's URL. Defaults to null (disabled).
@@ -70,7 +70,7 @@ namespace PiTung
         public virtual string UpdateUrl { get; } = null;
 
         /// <summary>
-        /// If true, the mod will be loaded in a thread separate to Unity's main thread. Use this if your intialization will take long.
+        /// If true, the mod will be loaded in a thread separate to Unity's main thread. Use this if your initialization will take long.
         /// </summary>
         public virtual bool MultiThreadedLoad { get; } = false;
 
