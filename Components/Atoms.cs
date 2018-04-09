@@ -51,7 +51,7 @@ namespace PiTung.Components
 
         public void AddToGameObject(GameObject obj)
         {
-            obj.GetComponent<MegaMeshComponent>().MaterialType = MaterialType.CircuitBoard;
+            obj.GetComponent<MegaMeshComponent>().MaterialType = MaterialType.SolidColor;
             obj.GetComponent<Renderer>().material.color = this.Color;
         }
     }
