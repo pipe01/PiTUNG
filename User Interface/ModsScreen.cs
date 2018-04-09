@@ -63,7 +63,7 @@ namespace PiTung.User_Interface
         {
             if (!Visible)
             {
-                if (GUI.Button(new Rect(155, 5, 55, 30), "Mods") && RunMainMenu.Instance.MainMenuCanvas.enabled)
+                if (GUI.Button(new Rect(160, 5, 55, 30), "Mods") && RunMainMenu.Instance.MainMenuCanvas.enabled)
                 {
                     Visible = true;
                 }
