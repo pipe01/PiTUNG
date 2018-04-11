@@ -4,540 +4,12 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.AssemblyCosturer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.AssemblyCosturer.html",
-          "hash": "Eoqw9Mn9eTkbr2jbUlAGIQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Bootstrapper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Bootstrapper.html",
-          "hash": "oyyNN9Ak3Jmboond+ZALwQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.Builder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.Builder.html",
-          "hash": "40sXN0aaka1OSjutdamFnQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.ComponentRegistry.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.ComponentRegistry.html",
-          "hash": "WK5UGVtOqUQ3on8vDMOfdA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.CubeBuilder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.CubeBuilder.html",
-          "hash": "nk3moZPOn3GzaBOwh47OBA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.CubeSide.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.CubeSide.html",
-          "hash": "m+FBYiRoXl2x5qvUKTR02Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.CustomBuilder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.CustomBuilder.html",
-          "hash": "k1SJq98DnJ6rub9jdrUMig=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.CustomComponent-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.CustomComponent-1.html",
-          "hash": "XCSIDdESkb16ZdSuL7gGGQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.CustomComponent.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.CustomComponent.html",
-          "hash": "dtldN2pfw03QS1uzxOF46A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.PrefabBuilder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.PrefabBuilder.html",
-          "hash": "cEOAAtnEjIaocrLVESjWdA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.SaveThisAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.SaveThisAttribute.html",
-          "hash": "CpeQF77ZuUqoAMFk4BjvVA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.SideType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.SideType.html",
-          "hash": "1BB4OmUUo5euyJQig9HiIw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.UpdateHandler.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.UpdateHandler.html",
-          "hash": "/+m7XTr+5J1iC9sIZZxw6w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Components.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Components.html",
-          "hash": "yn49OqkPBszTQVa5Q06Ezw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Config_menu.CheckboxMenuEntry.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Config_menu.CheckboxMenuEntry.html",
-          "hash": "PfzSeNS/PXAK4QVBZX+H3Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Config_menu.CustomNumericEntry.ChangeOneStepDelegate.html",
-          "hash": "fvykp+rO1tV5/YGlI28wuw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Config_menu.CustomNumericEntry.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Config_menu.CustomNumericEntry.html",
-          "hash": "tHaJog5eFsqrh8BMf/c2tg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Config_menu.IValueMenuEntry-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Config_menu.IValueMenuEntry-1.html",
-          "hash": "tebGCME0M9otdWJGhwxvHg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Config_menu.MenuEntry.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Config_menu.MenuEntry.html",
-          "hash": "uRTF9ro1V/45UqxymuDi5A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Config_menu.SimpleNumberEntry.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Config_menu.SimpleNumberEntry.html",
-          "hash": "BbhBSOoMaKGItue3KZi/OA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Config_menu.TextMenuEntry.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Config_menu.TextMenuEntry.html",
-          "hash": "fYwCb/ig+HY6tebfzCt0nA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Config_menu.ValueChangedDelegate-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Config_menu.ValueChangedDelegate-1.html",
-          "hash": "W1WH7DQTFmPLGTe7kwFL4Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Config_menu.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Config_menu.html",
-          "hash": "LflYkncz1ImWMooXGi8itA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.ConfigurationFile.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.ConfigurationFile.html",
-          "hash": "7Cf4oASREBlWt4DKeU77tw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Console.Command.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Console.Command.html",
-          "hash": "H+eozOFnmdFKmhTPzkOIlQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Console.IGConsole.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Console.IGConsole.html",
-          "hash": "PtVCZ+0CAPerpAcCwDe/Vg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Console.LogType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Console.LogType.html",
-          "hash": "wGDxtmpaX3EKo5pE6Ae6Og=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Console.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Console.html",
-          "hash": "6NIAPLvTyhKm5LP0mhKyGw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.GraphicUtilities.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.GraphicUtilities.html",
-          "hash": "VWiTugRAy/9W5JHAjWgKoQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.KeyModifiers.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.KeyModifiers.html",
-          "hash": "S2w2zjMaw+pf+DD6nymMBA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Mod.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Mod.html",
-          "hash": "rxyjCRUCxtXfc7EVPXdA1w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.ModInput.RegisterActions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.ModInput.RegisterActions.html",
-          "hash": "ctrkTGSS5VzQ5Y5kw3j6sQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.ModInput.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.ModInput.html",
-          "hash": "qCElRWY8yBMSERt5okIKVw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.ModUtilities.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.ModUtilities.html",
-          "hash": "UO5e+mAUUzV5O6hYpxqLjw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Mod_utilities.Configuration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Mod_utilities.Configuration.html",
-          "hash": "AvYdol1/im3m3Kp5aS97xQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Mod_utilities.Hologram.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Mod_utilities.Hologram.html",
-          "hash": "6aa+r+bD1MxuXRBUH0Q5HA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.Mod_utilities.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.Mod_utilities.html",
-          "hash": "vOzkGgoEH992fkZ29V9yvQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.PatchMethodAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.PatchMethodAttribute.html",
-          "hash": "G+8iEKNQj4TbSvntY+0HVQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.PatchType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.PatchType.html",
-          "hash": "KmcWWi5aa+Bcy8Yl/FABjQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.PiTUNG.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.PiTUNG.html",
-          "hash": "kOenMcqR8KA1hV/KSYE/VA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.TargetAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.TargetAttribute.html",
-          "hash": "H9jY0QvMtDZTntiPQXI0ZA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.VersionPrecision.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.VersionPrecision.html",
-          "hash": "EvSyOZADGpK/9jq964MhBQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/PiTung.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/PiTung.html",
-          "hash": "wwM8gg2COoWnsZHGb46auA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "NR0SRZmmz9yvqHsshIRaEA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "api/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "dfV0Fr2LCaEkiUXAWT6G7Q=="
+          "hash": "oprcMk9X5BEa2X1rS8LKWQ=="
         }
       },
       "is_incremental": false,
@@ -549,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/adv_patching.html",
-          "hash": "OFhAKXNRG86k9Y+0QOnP8A=="
+          "hash": "LutVGxLcARMRGeQ7VUsPnA=="
         }
       },
       "is_incremental": false,
@@ -564,7 +36,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/commands.html",
-          "hash": "1KhUQKo4slKTGSJCiKljjA=="
+          "hash": "TGRGXFyAcdI8AD+KztodNw=="
         }
       },
       "is_incremental": false,
@@ -579,7 +51,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/components.html",
-          "hash": "FTzW2mzjogPVMT4B1X3M2Q=="
+          "hash": "q97D9i5RjzLDGP/19aybbg=="
         }
       },
       "is_incremental": false,
@@ -594,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting_started.html",
-          "hash": "fWPdca5K7g2LIwMUbac+hw=="
+          "hash": "2eLs5P7H64MIwsyqZApmew=="
         }
       },
       "is_incremental": false,
@@ -609,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/holograms.html",
-          "hash": "jSuHmreGYRG08xDDpXKq1w=="
+          "hash": "2tG1EQ9hFrlN2mhfGF4Ufw=="
         }
       },
       "is_incremental": false,
@@ -621,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "FCCzatVWIab6KWyQ3PZh+Q=="
+          "hash": "ImQtx+ZqlEn5ZsOJNc1ClQ=="
         }
       },
       "is_incremental": false,
@@ -636,7 +108,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/mod_input.html",
-          "hash": "95Ji4ahHCY2pDoozE0fKWA=="
+          "hash": "1HtG5tKxTNuv8lPjIc6fGQ=="
         }
       },
       "is_incremental": false,
@@ -651,7 +123,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/mod_update.html",
-          "hash": "EpQKR/nQNcCz9PPmsI3xuA=="
+          "hash": "MOCzKAw+wl+dtjA8D94kxg=="
         }
       },
       "is_incremental": false,
@@ -666,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/patching.html",
-          "hash": "Wy0I/yawM6eIZnpvEXxPtw=="
+          "hash": "K5pDG9yPis/ADN4TXrSuHA=="
         }
       },
       "is_incremental": false,
@@ -693,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "ZXK4ix8qVPXcuVNUVHUBjw=="
+          "hash": "3VLklWGepQLfsZZBDHQRkw=="
         }
       },
       "is_incremental": false,
@@ -705,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "ob7LqWp4kTNLz+9W4omdTw=="
+          "hash": "Wi8ImNfvetfJYJx8d4FNLw=="
         }
       },
       "is_incremental": false,
@@ -726,10 +198,6 @@
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         }
