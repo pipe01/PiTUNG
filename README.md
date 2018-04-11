@@ -1,4 +1,8 @@
-# PiTUNG
+<p align="center">
+    <img src="https://github.com/pipe01/PiTUNG/raw/master/Graphics/PiTUNG%20logo.png" alt="PiTUNG">
+</p>
+
+# PiTUNG - The mod framework for The Ultimate Nerd Game
 [![Build status](https://ci.appveyor.com/api/projects/status/9v5a2adge9t2ysxa?svg=true)](https://ci.appveyor.com/project/pipe01/pitung)
 [![PiTUNG installs](http://pipe0481.heliohost.org/pitung/getimg.php?img=installs)](http://www.pipe0481.heliohost.org/pitung/Installer.exe)
 [![Latest version](http://pipe0481.heliohost.org/pitung/getimg.php?img=version)](https://github.com/pipe01/PiTUNG/releases/latest)
