@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiTung Bootstrap", "PiTung Bootstrap.csproj", "{2E504692-2F9E-4E21-A687-548B058C8285}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiTung Bootstrap Tests", "PiTung Bootstrap Tests\PiTung Bootstrap Tests.csproj", "{E3768403-A90E-4C4E-870C-FA114E162A3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiTung Bootstrap", "src/PiTung Bootstrap.csproj", "{2E504692-2F9E-4E21-A687-548B058C8285}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
