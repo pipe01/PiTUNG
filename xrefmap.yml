@@ -958,6 +958,22 @@ references:
   commentId: T:PiTung.Console.Command
   fullName: PiTung.Console.Command
   nameWithType: Command
+- uid: PiTung.Console.Command.AutocompletionCandidates(System.Collections.Generic.IEnumerable{System.String})
+  name: AutocompletionCandidates(IEnumerable<String>)
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_AutocompletionCandidates_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:PiTung.Console.Command.AutocompletionCandidates(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: AutocompletionCandidates(IEnumerable(Of String))
+  fullName: PiTung.Console.Command.AutocompletionCandidates(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: PiTung.Console.Command.AutocompletionCandidates(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: Command.AutocompletionCandidates(IEnumerable<String>)
+  nameWithType.vb: Command.AutocompletionCandidates(IEnumerable(Of String))
+- uid: PiTung.Console.Command.AutocompletionCandidates*
+  name: AutocompletionCandidates
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_AutocompletionCandidates_
+  commentId: Overload:PiTung.Console.Command.AutocompletionCandidates
+  isSpec: "True"
+  fullName: PiTung.Console.Command.AutocompletionCandidates
+  nameWithType: Command.AutocompletionCandidates
 - uid: PiTung.Console.Command.Description
   name: Description
   href: api/PiTung.Console.Command.html#PiTung_Console_Command_Description
@@ -1032,6 +1048,19 @@ references:
   isSpec: "True"
   fullName: PiTung.Console.IGConsole.Error
   nameWithType: IGConsole.Error
+- uid: PiTung.Console.IGConsole.GetCommandNames
+  name: GetCommandNames()
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetCommandNames
+  commentId: M:PiTung.Console.IGConsole.GetCommandNames
+  fullName: PiTung.Console.IGConsole.GetCommandNames()
+  nameWithType: IGConsole.GetCommandNames()
+- uid: PiTung.Console.IGConsole.GetCommandNames*
+  name: GetCommandNames
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetCommandNames_
+  commentId: Overload:PiTung.Console.IGConsole.GetCommandNames
+  isSpec: "True"
+  fullName: PiTung.Console.IGConsole.GetCommandNames
+  nameWithType: IGConsole.GetCommandNames
 - uid: PiTung.Console.IGConsole.GetVariable(System.String)
   name: GetVariable(String)
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetVariable_System_String_
@@ -1045,6 +1074,19 @@ references:
   isSpec: "True"
   fullName: PiTung.Console.IGConsole.GetVariable
   nameWithType: IGConsole.GetVariable
+- uid: PiTung.Console.IGConsole.GetVariables
+  name: GetVariables()
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetVariables
+  commentId: M:PiTung.Console.IGConsole.GetVariables
+  fullName: PiTung.Console.IGConsole.GetVariables()
+  nameWithType: IGConsole.GetVariables()
+- uid: PiTung.Console.IGConsole.GetVariables*
+  name: GetVariables
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetVariables_
+  commentId: Overload:PiTung.Console.IGConsole.GetVariables
+  isSpec: "True"
+  fullName: PiTung.Console.IGConsole.GetVariables
+  nameWithType: IGConsole.GetVariables
 - uid: PiTung.Console.IGConsole.Log(PiTung.Console.LogType,System.Object)
   name: Log(LogType, Object)
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_Log_PiTung_Console_LogType_System_Object_
