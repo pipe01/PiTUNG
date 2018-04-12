@@ -311,9 +311,11 @@ namespace PiTung.Components
             alignment = TextAnchor.MiddleCenter
         };
 
+        private static bool ShouldShow = Configuration.PitungConfig.Get("ShowComponentNameOnHover", true);
+
         static void Postfix()
         {
-            if (ModUtilities.IsOnMainMenu)
+            if (ModUtilities.IsOnMainMenu || !ShouldShow)
                 return;
 
             if (Physics.Raycast(FirstPersonInteraction.Ray(), out var hit, 20))
