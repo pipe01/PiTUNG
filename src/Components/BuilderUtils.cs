@@ -11,9 +11,6 @@ namespace PiTung.Components
 
         public static void ApplyIOMap(GameObject prefabRoot, IOMap map)
         {
-            //GameObject PrefabRoot = GameObject.Instantiate(Prefabs.WhiteCube, new Vector3(-1000, -1000, -1000), Quaternion.identity);
-            //PrefabRoot.transform.localScale = WhiteCubeScale;
-
             foreach (var item in map.Sides)
             {
                 AddIO(item.Key, item.Value);
@@ -62,6 +59,8 @@ namespace PiTung.Components
                     comp.On = false;
                     comp.RecalculateCombinedMesh();
                 }
+
+                Peg.AddComponent<IODummyComponent>().Side = side;
             }
         }
 

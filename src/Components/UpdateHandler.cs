@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace PiTung.Components
 {
@@ -54,6 +55,35 @@ namespace PiTung.Components
             foreach (var item in Inputs)
             {
                 item.CircuitLogicComponent = this;
+            }
+        }
+    }
+
+    public abstract class CubeUpdateHandler : UpdateHandler
+    {
+        public new IDictionary<CubeSide, CircuitInput> Inputs { get; internal set; }
+        public new IDictionary<CubeSide, CircuitOutput> Outputs { get; internal set; }
+
+        internal new void UpdateInputParents()
+        {
+            foreach (var item in base.Inputs)
+            {
+                item.CircuitLogicComponent = this;
+
+                var dummy = item.GetComponent<IODummyComponent>();
+
+                this.Inputs[dummy.Side] = item;
+
+                GameObject.Destroy(dummy);
+            }
+
+            foreach (var item in base.Outputs)
+            {
+                var dummy = item.GetComponent<IODummyComponent>();
+
+                this.Outputs[dummy.Side] = item;
+
+                GameObject.Destroy(dummy);
             }
         }
     }
