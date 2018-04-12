@@ -99,10 +99,10 @@ namespace PiTung.Console
         public abstract bool Execute(IEnumerable<string> arguments);
 
         /// <summary>
-        /// Called when the autocompletion is triggered
+        /// Called when the auto-completion is triggered
         /// </summary>
-        /// <param name="arguments">The arguments to the command, the last one needing autocompletion</param>
-        /// <returns>The autocompletion candidates for the last argument</returns>
+        /// <param name="arguments">The arguments to the command, the last one needing auto-completion</param>
+        /// <returns>The auto-completion candidates for the last argument</returns>
         public virtual IEnumerable<String> AutocompletionCandidates(IEnumerable<String> arguments)
         {
             return new List<String>();
@@ -713,15 +713,15 @@ namespace PiTung.Console
         }
 
         /// <summary>
-        /// Returns the autocompletion candidates for a given command.
+        /// Returns the auto-completion candidates for a given command.
         /// Depending on what is entered, it will either return command verbs
-        /// or command-provided autocompletion candidates
+        /// or command-provided auto-completion candidates
         /// </summary>
-        /// <param name="command">The current comand [verb, arg1, arg2,...]</param>
-        /// <returns>The autocompletion candidates for the last argument</returns>
+        /// <param name="command">The current command [verb, arg1, arg2,...]</param>
+        /// <returns>The auto-completion candidates for the last argument</returns>
         private static IEnumerable<String> GetAutocompletionCandidates(IEnumerable<String> command)
         {
-            if (command.Count() == 0)
+            if (!command.Any())
                 return new List<String>();
 
             String verb = command.ElementAt(0);
@@ -738,12 +738,12 @@ namespace PiTung.Console
         /// <summary>
         /// Saves the contents of the command when TriggetAutocompletion() was last called
         /// If it is the same, the next call to TriggerAutocompletion will log the 
-        /// autocompletion candidates if there are multiple
+        /// auto-completion candidates if there are multiple
         /// </summary>
         private static String PreviousCmd = "";
 
         /// <summary>
-        /// Attempts to autocomplete the current word
+        /// Attempts to auto-complete the current word
         /// </summary>
         private static void TriggerAutocompletion()
         {
@@ -756,15 +756,15 @@ namespace PiTung.Console
 
             bool finish_string = true;
 
-            if (candidates.Count() == 0) // No candidate
+            if (candidates.Count == 0) // No candidate
                 return;
 
-            if (candidates.Count() == 1) // 1 candidate, autocomplete
+            if (candidates.Count == 1) // 1 candidate, auto-complete
             {
                 if (tokens.Last().Type != TokenType.WHITESPACE)
                 {
                     Token token = tokens.Last();
-                    tokens[tokens.Count() - 1] = new Token(
+                    tokens[tokens.Count - 1] = new Token(
                         ContainsSpaces(candidates[0]) ?  TokenType.QUOTE : token.Type,
                         candidates[0]);
                     tokens.Add(new Token(TokenType.WHITESPACE, " "));
@@ -779,7 +779,7 @@ namespace PiTung.Console
                 if (tokens.Last().Type != TokenType.WHITESPACE)
                 {
                     Token token = tokens.Last();
-                    tokens[tokens.Count() - 1] = new Token(
+                    tokens[tokens.Count - 1] = new Token(
                         ContainsSpaces(common_prefix) ?  TokenType.QUOTE : token.Type,
                         common_prefix);
                     if (tokens.Last().Type == TokenType.QUOTE)
