@@ -102,6 +102,7 @@
     <Compile Include="Components\CustomMenu.cs" />
     <Compile Include="Components\IOMap.cs" />
     <Compile Include="Components\SaveThisAttribute.cs" />
+    <Compile Include="Components\UpdateHandler.cs" />
     <Compile Include="ConfigurationFile.cs" />
     <Compile Include="Console\Autocompletion.cs" />
     <Compile Include="Mod utilities\Configuration.cs" />
