@@ -22,7 +22,7 @@ namespace PiTung.Components
             *    CustomData structure:
             *    - CustomComponent.UniqueName
             *    - Outputs.On[]
-            *    - Fields
+            *    - Fields[]
             */
 
             List<object> saveData = new List<object>();
@@ -299,6 +299,47 @@ namespace PiTung.Components
         static bool Prefix()
         {
             return !CustomMenu.Instance.Visible || !Input.GetKey(KeyCode.LeftControl);
+        }
+    }
+
+
+    [HarmonyPatch(typeof(DummyComponent), "OnGUI")]
+    internal static class ComponentGUIPatch
+    {
+        private static GUIStyle Style = new GUIStyle(GUI.skin.box)
+        {
+            alignment = TextAnchor.MiddleCenter
+        };
+
+        static void Postfix()
+        {
+            if (ModUtilities.IsOnMainMenu)
+                return;
+
+            if (Physics.Raycast(FirstPersonInteraction.Ray(), out var hit, 20))
+            {
+                var info = hit.transform.GetComponent<ObjectInfo>() ??
+                           hit.transform.parent?.GetComponent<ObjectInfo>();
+
+                if (info != null && info.ComponentType == ComponentType.CustomObject)
+                {
+                    var handler = hit.transform.GetComponent<UpdateHandler>() ??
+                                  hit.transform.GetComponentInChildren<UpdateHandler>();
+
+                    if (handler != null)
+                    {
+                        string str = handler.Component?.DisplayName ?? handler.ComponentName;
+
+                        var size = GUI.skin.box.CalcSize(new GUIContent(str));
+                        size.x += 10;
+                        size.y += 10;
+
+                        var rect = new Rect(Screen.width / 2 - size.x / 2, 10, size.x, size.y);
+
+                        GUI.Box(rect, str, Style);
+                    }
+                }
+            }
         }
     }
 }
