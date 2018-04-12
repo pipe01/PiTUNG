@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/pipe01/PiTUNG/raw/master/Graphics/PiTUNG%20logo.png" alt="PiTUNG">
+    <img src="https://github.com/pipe01/PiTUNG/raw/master/img/PiTUNG%20logo.png" alt="PiTUNG">
 </p>
 
 # PiTUNG - The mod framework for The Ultimate Nerd Game
