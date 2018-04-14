@@ -4,7 +4,7 @@ So, you want to develop a mod for TUNG! That's awesome! Fortunately, with PiTUNG
 
 ## Setting up the environment
 
-First, you must create a Visual Studio project. Once it's loaded, go to its properties and set the target framework version to `.NET 3.5`.
+First, you must create a Visual Studio project. Once it's loaded, go to its properties and set the target framework version to `.NET 3.5`. Alternatively, you can download the [mod template](https://github.com/pipe01/PiTUNG/raw/master/Mod%20Template.zip) and place it in `%HOMEPATH%\Documents\Visual Studio 2017\Templates\ProjectTemplates`. There will now be an entry in the "Create Project" dialog that will automatically set up a PiTUNG mod project for you!
 
 Then, you will need a PiTUNG binary. There are three ways of getting ahold of one:
 
