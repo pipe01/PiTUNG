@@ -12,8 +12,8 @@ This is the easiest shape and it's also the shape of the usual TUNG components (
 	{
 		var cube = PrefabBuilder
 			.Cube
-			.SetSide(CubeSide.Top, SideType.Input)
-			.SetSide(CubeSide.Front, SideType.Output);
+			.WithSide(CubeSide.Top, SideType.Input)
+			.WithSide(CubeSide.Front, SideType.Output);
 
 		ComponentRegistry.CreateNew<MyInverterHandler>("inverter", cube);
 	}
@@ -32,8 +32,8 @@ If you want more flexibility, you can use your own `GameObject` prefab as your c
 	{
 		var custom = PrefabBuilder
 			.Custom(() => GameObject.CreatePrimitive(PrimitiveType.Capsule))
-			.AddInput(x, y, z)
-			.AddOutput(x, y, z);
+			.WithInput(x, y, z)
+			.WithOutput(x, y, z);
 
 		ComponentRegistry.CreateNew<MyInverterHandler>("mycapsule", custom);
 	}
