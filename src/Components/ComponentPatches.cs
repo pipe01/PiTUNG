@@ -276,7 +276,8 @@ namespace PiTung.Components
 
             if (SelectionMenu.Instance.SelectedThing == SelectionMenu.Instance.PlaceableObjectTypes.Count)
             {
-                CustomMenu.Instance.Visible = true;
+                if (!CustomMenu.Instance.Visible && SelectionMenu.Instance.SelectedThingJustChanged)
+                    CustomMenu.Instance.Visible = true;
 
                 if ((SelectionMenu.Instance.SelectedThingJustChanged || StuffPlacer.GetThingBeingPlaced == null || CustomMenu.Instance.SelectionChanged) && ComponentRegistry.Registry.Count > 0)
                 {
@@ -287,8 +288,11 @@ namespace PiTung.Components
 
                 return false;
             }
+            else
+            {
+                CustomMenu.Instance.Visible = false;
+            }
 
-            CustomMenu.Instance.Visible = false;
             return true;
         }
     }

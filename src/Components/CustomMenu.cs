@@ -1,10 +1,6 @@
 ﻿using PiTung.Console;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Diagnostics;
 using UnityEngine;
-using static UnityEngine.GUILayout;
 
 namespace PiTung.Components
 {
@@ -16,11 +12,29 @@ namespace PiTung.Components
 
         private GUIStyle NormalStyle, SelectedStyle, ModHeaderStyle;
         private readonly KeyCode[] NumberKeys = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9, KeyCode.Alpha0 };
+        private float LastActionTime = 0;
+        private bool AutoHidden = false;
 
-        public bool Visible { get; set; }
+        private bool _visible;
+        public bool Visible
+        {
+            get => _visible;
+            set
+            {
+                AutoHidden = false;
+                _visible = value;
+
+                if (value)
+                    LastActionTime = Time.time;
+            }
+        }
+
         public int Selected { get; private set; }
         public bool SelectionChanged { get; private set; }
         public bool ModCategories { get; set; }
+        public float VisibleTime { get; set; } = Settings.Get("SelectionMenuOpenTime", 0.8f);
+
+        private bool ShouldHide => Time.time - LastActionTime >= VisibleTime;
 
         private CustomMenu()
         {
@@ -60,8 +74,14 @@ namespace PiTung.Components
 
         public void Draw()
         {
-            if (ModUtilities.IsOnMainMenu || !Visible)
+            if (ModUtilities.IsOnMainMenu || !Visible || AutoHidden)
                 return;
+
+            if (ShouldHide)
+            {
+                AutoHidden = true;
+                return;
+            }
 
             int i = 0;
             float currentY = 40;
@@ -136,6 +156,8 @@ namespace PiTung.Components
                 if (Selected != previous)
                 {
                     SelectionChanged = true;
+                    LastActionTime = Time.time;
+                    AutoHidden = false;
                 }
             }
         }

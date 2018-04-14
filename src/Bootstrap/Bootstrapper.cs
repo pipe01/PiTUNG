@@ -214,7 +214,6 @@ namespace PiTung
                             patch.BaseMethod,
                             patch.Prefix ? method : null,
                             patch.Postfix ? method : null);
-                        
                     }
                 }
             }
