@@ -9,7 +9,7 @@
 
 Mod framework for [The Ultimate Nerd Game](https://iamsodarncool.itch.io/tung). You can download all the mods I've made [here](https://github.com/pipe01/pitung-mods).
 
-You can get the latest version of PiTUNG right out of the oven [here](https://ci.appveyor.com/api/projects/pipe01/pitung/artifacts/bin%2FDebug%2FPiTung.dll). **DISCLAIMER**: this version is built from the latest commit, which means that it most likely won't work reliably. You probably don't want to download this version, but rather [this one](https://github.com/pipe01/PiTUNG/releases/latest).
+You can get the latest version of PiTUNG right out of the oven [here](https://ci.appveyor.com/api/projects/pipe01/pitung/artifacts/bin%2FDebug%2FPiTung.dll?job=Configuration%3A+Debug). **DISCLAIMER**: this version is built from the latest commit, which means that it most likely won't work reliably. You probably don't want to download this version, but rather [this one](https://github.com/pipe01/PiTUNG/releases/latest).
 
 ## For users: How to install the framework
 
