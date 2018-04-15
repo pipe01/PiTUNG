@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static PiTung.Console.CmdParser;
+using System.Diagnostics;
 
 namespace PiTung.Console
 {
@@ -401,6 +402,16 @@ namespace PiTung.Console
 
                 CmdLog.Push(logEntry);
             }
+
+#if DEBUG
+            var stack = new StackTrace();
+            var calling = stack.GetFrame(1).GetMethod();
+
+            if (calling.DeclaringType == typeof(IGConsole))
+                calling = stack.GetFrame(2).GetMethod();
+
+            MDebug.WriteLine($"[IGCONSOLE] {calling}: {msg}");
+#endif
         }
 
         /// <summary>
