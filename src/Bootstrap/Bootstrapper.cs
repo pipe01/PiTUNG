@@ -164,7 +164,7 @@ namespace PiTung
                 return;
             }
 
-            if (!mod.Hotloadable && hotload)
+            if (!mod.Reloadable && hotload)
             {
                 MDebug.WriteLine($"[WARNING] Skipping {mod.Name}: can't be hotloaded.");
                 return;

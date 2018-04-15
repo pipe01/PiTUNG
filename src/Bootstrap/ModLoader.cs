@@ -75,9 +75,8 @@ namespace PiTung
 
             foreach (var item in ass.GetTypes())
             {
-                mod.Reloadable = 
-                    item.GetCustomAttributes(typeof(HarmonyPatch), false).Length == 0 &&
-                    item.GetCustomAttributes(typeof(TargetAttribute), false).Length == 0;
+                //Reloadable if there are no raw Harmony patches
+                mod.Reloadable = item.GetCustomAttributes(typeof(HarmonyPatch), false).Length == 0;
             }
 
             return mod;

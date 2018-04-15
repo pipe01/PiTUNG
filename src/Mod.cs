@@ -60,11 +60,6 @@ namespace PiTung
         public virtual VersionPrecision MatchVersionUpTo { get; }
 
         /// <summary>
-        /// If true, the mod will be able to be loaded without needing to restart the game.
-        /// </summary>
-        public virtual bool Hotloadable { get; } = true;
-
-        /// <summary>
         /// The update manifest's URL. Defaults to null (disabled).
         /// </summary>
         public virtual string UpdateUrl { get; } = null;

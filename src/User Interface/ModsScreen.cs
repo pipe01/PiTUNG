@@ -139,7 +139,7 @@ namespace PiTung.User_Interface
                     {
                         FlexibleSpace();
 
-                        if ((!unloaded || mod.Hotloadable) && Button(unloaded ? "Reload" : "Unload", Width(60), Height(30)))
+                        if ((!unloaded || mod.Reloadable) && Button(unloaded ? "Reload" : "Unload", Width(60), Height(30)))
                         {
                             if (unloaded)
                             {
