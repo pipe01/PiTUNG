@@ -305,7 +305,7 @@ namespace PiTung
             }
         }
 
-        internal Mod GetModByAssembly(Assembly ass)
+        internal Mod GetModByAssembly(Assembly ass, bool throwIfNotFound = true)
         {
             var mod = Bootstrapper._Mods.SingleOrDefault(o => o.ModAssembly.FullName.Equals(ass.FullName));
 
@@ -313,7 +313,12 @@ namespace PiTung
                 mod = Bootstrapper.CurrentlyLoading;
 
             if (mod == null || !mod.ModAssembly.FullName.Equals(ass.FullName))
+            {
+                if (throwIfNotFound)
+                    throw new Exception("Couldn't retrieve mod instance.");
+
                 return null;
+            }
 
             return mod;
         }

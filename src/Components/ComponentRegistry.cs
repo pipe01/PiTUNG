@@ -58,10 +58,7 @@ namespace PiTung.Components
         public static CustomComponent CreateNew<THandler>(string name, string displayName, Builder builder) where THandler : UpdateHandler
         {
             var mod = Bootstrapper.Instance.GetModByAssembly(Assembly.GetCallingAssembly());
-
-            if (mod == null)
-                throw new Exception("Couldn't retrieve mod instance.");
-
+            
             if (Registry.TryGetValue(name, out var i) && i == null)
                 Registry.Remove(name);
 
@@ -82,10 +79,7 @@ namespace PiTung.Components
         public static CustomComponent CreateNew(string name, string displayName, Builder builder)
         {
             var mod = Bootstrapper.Instance.GetModByAssembly(Assembly.GetCallingAssembly());
-
-            if (mod == null)
-                throw new Exception("Couldn't retrieve mod instance.");
-
+            
             if (Registry.TryGetValue(name, out var i) && i == null)
                 Registry.Remove(name);
 

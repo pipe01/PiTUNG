@@ -473,12 +473,10 @@ namespace PiTung.Console
             Log(LogType.ERROR, msg);
         }
 
-        /// <summary>
-        /// Register a command.
-        /// </summary>
-        /// <param name="command">The command class.</param>
-        internal static bool RegisterCommand(Command command)
+        internal static bool RegisterCommandInner(Command command, Mod mod)
         {
+            command.Mod = mod;
+
             if (Registry.ContainsKey(command.Name))
                 return false;
             Registry.Add(command.Name, command);
@@ -488,8 +486,17 @@ namespace PiTung.Console
         /// <summary>
         /// Register a command.
         /// </summary>
+        /// <param name="command">The command class.</param>
+        public static bool RegisterCommand(Command command)
+        {
+            return RegisterCommandInner(command, Bootstrapper.Instance.GetModByAssembly(Assembly.GetCallingAssembly(), false));
+        }
+
+        /// <summary>
+        /// Register a command.
+        /// </summary>
         /// <typeparam name="T">The type of the command.</typeparam>
-        internal static bool RegisterCommand<T>() where T : Command
+        public static bool RegisterCommand<T>() where T : Command
         {
             return RegisterCommand(Activator.CreateInstance<T>());
         }
@@ -499,6 +506,7 @@ namespace PiTung.Console
         /// </summary>
         /// <param name="command">The command class.</param>
         /// <param name="mod">The mod that is registering this command.</param>
+        [Obsolete("The mod paremeter is no loger required")]
         public static bool RegisterCommand(Command command, Mod mod)
         {
             command.Mod = mod;
@@ -510,9 +518,10 @@ namespace PiTung.Console
         /// </summary>
         /// <typeparam name="T">The type of the command.</typeparam>
         /// <param name="mod">The mod that is registering this command.</param>
+        [Obsolete("The mod parameter is no loger required")]
         public static bool RegisterCommand<T>(Mod mod) where T : Command
         {
-            return RegisterCommand(Activator.CreateInstance<T>(), mod);
+            return RegisterCommandInner(Activator.CreateInstance<T>(), mod);
         }
 
         /// <summary>
