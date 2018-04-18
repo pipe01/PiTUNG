@@ -1106,6 +1106,12 @@ references:
   isSpec: "True"
   fullName: PiTung.Console.IGConsole.Log
   nameWithType: IGConsole.Log
+- uid: PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command)
+  name: RegisterCommand(Command)
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand_PiTung_Console_Command_
+  commentId: M:PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command)
+  fullName: PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command)
+  nameWithType: IGConsole.RegisterCommand(Command)
 - uid: PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command,PiTung.Mod)
   name: RegisterCommand(Command, Mod)
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand_PiTung_Console_Command_PiTung_Mod_
@@ -1119,6 +1125,15 @@ references:
   isSpec: "True"
   fullName: PiTung.Console.IGConsole.RegisterCommand
   nameWithType: IGConsole.RegisterCommand
+- uid: PiTung.Console.IGConsole.RegisterCommand``1
+  name: RegisterCommand<T>()
+  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand__1
+  commentId: M:PiTung.Console.IGConsole.RegisterCommand``1
+  name.vb: RegisterCommand(Of T)()
+  fullName: PiTung.Console.IGConsole.RegisterCommand<T>()
+  fullName.vb: PiTung.Console.IGConsole.RegisterCommand(Of T)()
+  nameWithType: IGConsole.RegisterCommand<T>()
+  nameWithType.vb: IGConsole.RegisterCommand(Of T)()
 - uid: PiTung.Console.IGConsole.RegisterCommand``1(PiTung.Mod)
   name: RegisterCommand<T>(Mod)
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand__1_PiTung_Mod_

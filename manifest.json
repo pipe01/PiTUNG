@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.ComponentRegistry.html",
-          "hash": "crKxZiAGDXsJonUb+6mf+g=="
+          "hash": "5JtSlAyxPG4cXre7xNt0tw=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Console.IGConsole.html",
-          "hash": "swyluAFiAZJbrAZ/mJ0rhQ=="
+          "hash": "oe5GnuHp3E1b9mPBcBndXA=="
         }
       },
       "is_incremental": false,

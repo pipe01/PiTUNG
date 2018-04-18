@@ -341,10 +341,59 @@ using the &quot;set&quot; command.</p></p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_IGConsole_RegisterCommand_PiTung_Console_Command_.md&amp;value=---%0Auid%3A%20PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L490">View Source</a>
+  </span>
+  <a id="PiTung_Console_IGConsole_RegisterCommand_" data-uid="PiTung.Console.IGConsole.RegisterCommand*"></a>
+  <h4 id="PiTung_Console_IGConsole_RegisterCommand_PiTung_Console_Command_" data-uid="PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command)">RegisterCommand(Command)</h4>
+  <div class="markdown level1 summary"><p>Register a command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool RegisterCommand(Command command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PiTung.Console.Command.html">Command</a></td>
+        <td><span class="parametername">command</span></td>
+        <td><p>The command class.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_IGConsole_RegisterCommand_PiTung_Console_Command_PiTung_Mod_.md&amp;value=---%0Auid%3A%20PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command%2CPiTung.Mod)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L502">View Source</a>
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L509">View Source</a>
   </span>
   <a id="PiTung_Console_IGConsole_RegisterCommand_" data-uid="PiTung.Console.IGConsole.RegisterCommand*"></a>
   <h4 id="PiTung_Console_IGConsole_RegisterCommand_PiTung_Console_Command_PiTung_Mod_" data-uid="PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command,PiTung.Mod)">RegisterCommand(Command, Mod)</h4>
@@ -353,7 +402,8 @@ using the &quot;set&quot; command.</p></p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool RegisterCommand(Command command, Mod mod)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;The mod paremeter is no loger required&quot;)]
+public static bool RegisterCommand(Command command, Mod mod)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -396,10 +446,58 @@ using the &quot;set&quot; command.</p></p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_IGConsole_RegisterCommand__1.md&amp;value=---%0Auid%3A%20PiTung.Console.IGConsole.RegisterCommand%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L499">View Source</a>
+  </span>
+  <a id="PiTung_Console_IGConsole_RegisterCommand_" data-uid="PiTung.Console.IGConsole.RegisterCommand*"></a>
+  <h4 id="PiTung_Console_IGConsole_RegisterCommand__1" data-uid="PiTung.Console.IGConsole.RegisterCommand``1">RegisterCommand&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Register a command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool RegisterCommand&lt;T&gt;()
+    where T : Command</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the command.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_IGConsole_RegisterCommand__1_PiTung_Mod_.md&amp;value=---%0Auid%3A%20PiTung.Console.IGConsole.RegisterCommand%60%601(PiTung.Mod)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L513">View Source</a>
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L521">View Source</a>
   </span>
   <a id="PiTung_Console_IGConsole_RegisterCommand_" data-uid="PiTung.Console.IGConsole.RegisterCommand*"></a>
   <h4 id="PiTung_Console_IGConsole_RegisterCommand__1_PiTung_Mod_" data-uid="PiTung.Console.IGConsole.RegisterCommand``1(PiTung.Mod)">RegisterCommand&lt;T&gt;(Mod)</h4>
@@ -408,7 +506,8 @@ using the &quot;set&quot; command.</p></p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool RegisterCommand&lt;T&gt;(Mod mod)
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;The mod parameter is no loger required&quot;)]
+public static bool RegisterCommand&lt;T&gt;(Mod mod)
     where T : Command</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
