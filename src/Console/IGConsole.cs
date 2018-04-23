@@ -506,7 +506,7 @@ namespace PiTung.Console
         /// </summary>
         /// <param name="command">The command class.</param>
         /// <param name="mod">The mod that is registering this command.</param>
-        [Obsolete("The mod paremeter is no loger required")]
+        [Obsolete("The mod paremeter is no longer required")]
         public static bool RegisterCommand(Command command, Mod mod)
         {
             command.Mod = mod;
@@ -518,7 +518,7 @@ namespace PiTung.Console
         /// </summary>
         /// <typeparam name="T">The type of the command.</typeparam>
         /// <param name="mod">The mod that is registering this command.</param>
-        [Obsolete("The mod parameter is no loger required")]
+        [Obsolete("The mod parameter is no longer required")]
         public static bool RegisterCommand<T>(Mod mod) where T : Command
         {
             return RegisterCommandInner(Activator.CreateInstance<T>(), mod);
