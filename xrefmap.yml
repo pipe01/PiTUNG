@@ -2067,6 +2067,25 @@ references:
   commentId: T:PiTung.PatchMethodAttribute
   fullName: PiTung.PatchMethodAttribute
   nameWithType: PatchMethodAttribute
+- uid: PiTung.PatchMethodAttribute.#ctor
+  name: PatchMethodAttribute()
+  href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute__ctor
+  commentId: M:PiTung.PatchMethodAttribute.#ctor
+  fullName: PiTung.PatchMethodAttribute.PatchMethodAttribute()
+  nameWithType: PatchMethodAttribute.PatchMethodAttribute()
+- uid: PiTung.PatchMethodAttribute.#ctor(System.String,PiTung.PatchType)
+  name: PatchMethodAttribute(String, PatchType)
+  href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute__ctor_System_String_PiTung_PatchType_
+  commentId: M:PiTung.PatchMethodAttribute.#ctor(System.String,PiTung.PatchType)
+  fullName: PiTung.PatchMethodAttribute.PatchMethodAttribute(System.String, PiTung.PatchType)
+  nameWithType: PatchMethodAttribute.PatchMethodAttribute(String, PatchType)
+- uid: PiTung.PatchMethodAttribute.#ctor*
+  name: PatchMethodAttribute
+  href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute__ctor_
+  commentId: Overload:PiTung.PatchMethodAttribute.#ctor
+  isSpec: "True"
+  fullName: PiTung.PatchMethodAttribute.PatchMethodAttribute
+  nameWithType: PatchMethodAttribute.PatchMethodAttribute
 - uid: PiTung.PatchMethodAttribute.OriginalMethod
   name: OriginalMethod
   href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute_OriginalMethod
