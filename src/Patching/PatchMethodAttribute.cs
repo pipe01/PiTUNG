@@ -22,5 +22,10 @@ namespace PiTung
             this.OriginalMethod = originalMethod;
             this.PatchType = patchType;
         }
+
+        public PatchMethodAttribute(PatchType patchType)
+        {
+            this.PatchType = patchType;
+        }
     }
 }
