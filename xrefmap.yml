@@ -2073,6 +2073,12 @@ references:
   commentId: M:PiTung.PatchMethodAttribute.#ctor
   fullName: PiTung.PatchMethodAttribute.PatchMethodAttribute()
   nameWithType: PatchMethodAttribute.PatchMethodAttribute()
+- uid: PiTung.PatchMethodAttribute.#ctor(PiTung.PatchType)
+  name: PatchMethodAttribute(PatchType)
+  href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute__ctor_PiTung_PatchType_
+  commentId: M:PiTung.PatchMethodAttribute.#ctor(PiTung.PatchType)
+  fullName: PiTung.PatchMethodAttribute.PatchMethodAttribute(PiTung.PatchType)
+  nameWithType: PatchMethodAttribute.PatchMethodAttribute(PatchType)
 - uid: PiTung.PatchMethodAttribute.#ctor(System.String,PiTung.PatchType)
   name: PatchMethodAttribute(String, PatchType)
   href: api/PiTung.PatchMethodAttribute.html#PiTung_PatchMethodAttribute__ctor_System_String_PiTung_PatchType_
