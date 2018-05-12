@@ -10,7 +10,17 @@ namespace PiTung
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public sealed class PatchMethodAttribute : Attribute
     {
-        public string OriginalMethod { get; set; } = null;
-        public PatchType PatchType { get; set; } = PatchType.Prefix;
+        public string OriginalMethod { get; }
+        public PatchType PatchType { get; }
+
+        public PatchMethodAttribute()
+        {
+        }
+        
+        public PatchMethodAttribute(string originalMethod, PatchType patchType)
+        {
+            this.OriginalMethod = originalMethod;
+            this.PatchType = patchType;
+        }
     }
 }
