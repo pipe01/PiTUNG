@@ -388,6 +388,9 @@ namespace PiTung.Console
         /// <param name="msg">Message to log</param>
         public static void Log(LogType type, object msg)
         {
+            if (msg == null)
+                return;
+
             if (!Initialized)
             {
                 EntryQueue.Enqueue(new KeyValuePair<LogType, object>(type, msg));
@@ -420,6 +423,9 @@ namespace PiTung.Console
         /// <param name="msg">Message to log</param>
         public static void Log(object msg)
         {
+            if (msg == null)
+                return;
+
             Log(LogType.INFO, msg.ToString());
         }
 
