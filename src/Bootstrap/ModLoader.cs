@@ -60,6 +60,12 @@ namespace PiTung
 
             Assembly ass = Assembly.Load(File.ReadAllBytes(modPath));
 
+            var preloader = ass.GetType("Preloader");
+            var preload = preloader?.GetMethod("Preload", BindingFlags.Public | BindingFlags.Static);
+
+            if (preload != null)
+                preload.Invoke(null, null);
+
             Mod mod = null;
 
             foreach (var item in ass.GetExportedTypes())
