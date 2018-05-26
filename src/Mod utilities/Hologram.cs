@@ -49,7 +49,7 @@ namespace PiTung.Mod_utilities
         public bool TextShadow { get; set; } = true;
 
         /// <summary>
-        /// If true, the text will get bigger the closer you are to it, up to <see cref="ScaleSizeWithDistance"/>.
+        /// If true, the text will get bigger the closer you are to it, up to <see cref="MaxTextSize"/>.
         /// </summary>
         public bool ScaleSizeWithDistance { get; set; } = false;
 
