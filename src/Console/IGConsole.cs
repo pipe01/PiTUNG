@@ -481,10 +481,12 @@ namespace PiTung.Console
 
         internal static bool RegisterCommandInner(Command command, Mod mod)
         {
-            command.Mod = mod;
+            if (command.Mod == null)
+                command.Mod = mod;
 
             if (Registry.ContainsKey(command.Name))
                 return false;
+
             Registry.Add(command.Name, command);
             return true;
         }
@@ -504,7 +506,7 @@ namespace PiTung.Console
         /// <typeparam name="T">The type of the command.</typeparam>
         public static bool RegisterCommand<T>() where T : Command
         {
-            return RegisterCommand(Activator.CreateInstance<T>());
+            return RegisterCommandInner(Activator.CreateInstance<T>(), Bootstrapper.Instance.GetModByAssembly(Assembly.GetCallingAssembly(), false));
         }
 
         /// <summary>
@@ -515,8 +517,7 @@ namespace PiTung.Console
         [Obsolete("The mod paremeter is no longer required")]
         public static bool RegisterCommand(Command command, Mod mod)
         {
-            command.Mod = mod;
-            return RegisterCommand(command);
+            return RegisterCommandInner(command, mod);
         }
 
         /// <summary>
