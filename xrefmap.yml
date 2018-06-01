@@ -1048,45 +1048,6 @@ references:
   isSpec: "True"
   fullName: PiTung.Console.IGConsole.Error
   nameWithType: IGConsole.Error
-- uid: PiTung.Console.IGConsole.GetCommandNames
-  name: GetCommandNames()
-  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetCommandNames
-  commentId: M:PiTung.Console.IGConsole.GetCommandNames
-  fullName: PiTung.Console.IGConsole.GetCommandNames()
-  nameWithType: IGConsole.GetCommandNames()
-- uid: PiTung.Console.IGConsole.GetCommandNames*
-  name: GetCommandNames
-  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetCommandNames_
-  commentId: Overload:PiTung.Console.IGConsole.GetCommandNames
-  isSpec: "True"
-  fullName: PiTung.Console.IGConsole.GetCommandNames
-  nameWithType: IGConsole.GetCommandNames
-- uid: PiTung.Console.IGConsole.GetVariable(System.String)
-  name: GetVariable(String)
-  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetVariable_System_String_
-  commentId: M:PiTung.Console.IGConsole.GetVariable(System.String)
-  fullName: PiTung.Console.IGConsole.GetVariable(System.String)
-  nameWithType: IGConsole.GetVariable(String)
-- uid: PiTung.Console.IGConsole.GetVariable*
-  name: GetVariable
-  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetVariable_
-  commentId: Overload:PiTung.Console.IGConsole.GetVariable
-  isSpec: "True"
-  fullName: PiTung.Console.IGConsole.GetVariable
-  nameWithType: IGConsole.GetVariable
-- uid: PiTung.Console.IGConsole.GetVariables
-  name: GetVariables()
-  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetVariables
-  commentId: M:PiTung.Console.IGConsole.GetVariables
-  fullName: PiTung.Console.IGConsole.GetVariables()
-  nameWithType: IGConsole.GetVariables()
-- uid: PiTung.Console.IGConsole.GetVariables*
-  name: GetVariables
-  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_GetVariables_
-  commentId: Overload:PiTung.Console.IGConsole.GetVariables
-  isSpec: "True"
-  fullName: PiTung.Console.IGConsole.GetVariables
-  nameWithType: IGConsole.GetVariables
 - uid: PiTung.Console.IGConsole.Log(PiTung.Console.LogType,System.Object)
   name: Log(LogType, Object)
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_Log_PiTung_Console_LogType_System_Object_
@@ -1112,12 +1073,6 @@ references:
   commentId: M:PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command)
   fullName: PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command)
   nameWithType: IGConsole.RegisterCommand(Command)
-- uid: PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command,PiTung.Mod)
-  name: RegisterCommand(Command, Mod)
-  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand_PiTung_Console_Command_PiTung_Mod_
-  commentId: M:PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command,PiTung.Mod)
-  fullName: PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command, PiTung.Mod)
-  nameWithType: IGConsole.RegisterCommand(Command, Mod)
 - uid: PiTung.Console.IGConsole.RegisterCommand*
   name: RegisterCommand
   href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand_
@@ -1134,28 +1089,6 @@ references:
   fullName.vb: PiTung.Console.IGConsole.RegisterCommand(Of T)()
   nameWithType: IGConsole.RegisterCommand<T>()
   nameWithType.vb: IGConsole.RegisterCommand(Of T)()
-- uid: PiTung.Console.IGConsole.RegisterCommand``1(PiTung.Mod)
-  name: RegisterCommand<T>(Mod)
-  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_RegisterCommand__1_PiTung_Mod_
-  commentId: M:PiTung.Console.IGConsole.RegisterCommand``1(PiTung.Mod)
-  name.vb: RegisterCommand(Of T)(Mod)
-  fullName: PiTung.Console.IGConsole.RegisterCommand<T>(PiTung.Mod)
-  fullName.vb: PiTung.Console.IGConsole.RegisterCommand(Of T)(PiTung.Mod)
-  nameWithType: IGConsole.RegisterCommand<T>(Mod)
-  nameWithType.vb: IGConsole.RegisterCommand(Of T)(Mod)
-- uid: PiTung.Console.IGConsole.SetVariable(System.String,System.String)
-  name: SetVariable(String, String)
-  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_SetVariable_System_String_System_String_
-  commentId: M:PiTung.Console.IGConsole.SetVariable(System.String,System.String)
-  fullName: PiTung.Console.IGConsole.SetVariable(System.String, System.String)
-  nameWithType: IGConsole.SetVariable(String, String)
-- uid: PiTung.Console.IGConsole.SetVariable*
-  name: SetVariable
-  href: api/PiTung.Console.IGConsole.html#PiTung_Console_IGConsole_SetVariable_
-  commentId: Overload:PiTung.Console.IGConsole.SetVariable
-  isSpec: "True"
-  fullName: PiTung.Console.IGConsole.SetVariable
-  nameWithType: IGConsole.SetVariable
 - uid: PiTung.Console.LogType
   name: LogType
   href: api/PiTung.Console.LogType.html
@@ -1180,6 +1113,86 @@ references:
   commentId: F:PiTung.Console.LogType.USERINPUT
   fullName: PiTung.Console.LogType.USERINPUT
   nameWithType: LogType.USERINPUT
+- uid: PiTung.Console.Shell
+  name: Shell
+  href: api/PiTung.Console.Shell.html
+  commentId: T:PiTung.Console.Shell
+  fullName: PiTung.Console.Shell
+  nameWithType: Shell
+- uid: PiTung.Console.Shell.GetCommandNames
+  name: GetCommandNames()
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_GetCommandNames
+  commentId: M:PiTung.Console.Shell.GetCommandNames
+  fullName: PiTung.Console.Shell.GetCommandNames()
+  nameWithType: Shell.GetCommandNames()
+- uid: PiTung.Console.Shell.GetCommandNames*
+  name: GetCommandNames
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_GetCommandNames_
+  commentId: Overload:PiTung.Console.Shell.GetCommandNames
+  isSpec: "True"
+  fullName: PiTung.Console.Shell.GetCommandNames
+  nameWithType: Shell.GetCommandNames
+- uid: PiTung.Console.Shell.GetVariable(System.String)
+  name: GetVariable(String)
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_GetVariable_System_String_
+  commentId: M:PiTung.Console.Shell.GetVariable(System.String)
+  fullName: PiTung.Console.Shell.GetVariable(System.String)
+  nameWithType: Shell.GetVariable(String)
+- uid: PiTung.Console.Shell.GetVariable*
+  name: GetVariable
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_GetVariable_
+  commentId: Overload:PiTung.Console.Shell.GetVariable
+  isSpec: "True"
+  fullName: PiTung.Console.Shell.GetVariable
+  nameWithType: Shell.GetVariable
+- uid: PiTung.Console.Shell.GetVariables
+  name: GetVariables()
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_GetVariables
+  commentId: M:PiTung.Console.Shell.GetVariables
+  fullName: PiTung.Console.Shell.GetVariables()
+  nameWithType: Shell.GetVariables()
+- uid: PiTung.Console.Shell.GetVariables*
+  name: GetVariables
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_GetVariables_
+  commentId: Overload:PiTung.Console.Shell.GetVariables
+  isSpec: "True"
+  fullName: PiTung.Console.Shell.GetVariables
+  nameWithType: Shell.GetVariables
+- uid: PiTung.Console.Shell.RegisterCommand(PiTung.Console.Command)
+  name: RegisterCommand(Command)
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_RegisterCommand_PiTung_Console_Command_
+  commentId: M:PiTung.Console.Shell.RegisterCommand(PiTung.Console.Command)
+  fullName: PiTung.Console.Shell.RegisterCommand(PiTung.Console.Command)
+  nameWithType: Shell.RegisterCommand(Command)
+- uid: PiTung.Console.Shell.RegisterCommand*
+  name: RegisterCommand
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_RegisterCommand_
+  commentId: Overload:PiTung.Console.Shell.RegisterCommand
+  isSpec: "True"
+  fullName: PiTung.Console.Shell.RegisterCommand
+  nameWithType: Shell.RegisterCommand
+- uid: PiTung.Console.Shell.RegisterCommand``1
+  name: RegisterCommand<T>()
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_RegisterCommand__1
+  commentId: M:PiTung.Console.Shell.RegisterCommand``1
+  name.vb: RegisterCommand(Of T)()
+  fullName: PiTung.Console.Shell.RegisterCommand<T>()
+  fullName.vb: PiTung.Console.Shell.RegisterCommand(Of T)()
+  nameWithType: Shell.RegisterCommand<T>()
+  nameWithType.vb: Shell.RegisterCommand(Of T)()
+- uid: PiTung.Console.Shell.SetVariable(System.String,System.String)
+  name: SetVariable(String, String)
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_SetVariable_System_String_System_String_
+  commentId: M:PiTung.Console.Shell.SetVariable(System.String,System.String)
+  fullName: PiTung.Console.Shell.SetVariable(System.String, System.String)
+  nameWithType: Shell.SetVariable(String, String)
+- uid: PiTung.Console.Shell.SetVariable*
+  name: SetVariable
+  href: api/PiTung.Console.Shell.html#PiTung_Console_Shell_SetVariable_
+  commentId: Overload:PiTung.Console.Shell.SetVariable
+  isSpec: "True"
+  fullName: PiTung.Console.Shell.SetVariable
+  nameWithType: Shell.SetVariable
 - uid: PiTung.GraphicUtilities
   name: GraphicUtilities
   href: api/PiTung.GraphicUtilities.html

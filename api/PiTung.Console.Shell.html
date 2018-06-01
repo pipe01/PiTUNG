@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class IGConsole
+    <title>Class Shell
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class IGConsole
+    <meta name="title" content="Class Shell
    ">
     <meta name="generator" content="docfx 2.36.1.0">
     
@@ -68,22 +68,17 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="PiTung.Console.IGConsole">
+            <article class="content wrap" id="_content" data-uid="PiTung.Console.Shell">
   
   
-  <h1 id="PiTung_Console_IGConsole" data-uid="PiTung.Console.IGConsole" class="text-break">Class IGConsole
+  <h1 id="PiTung_Console_Shell" data-uid="PiTung.Console.Shell" class="text-break">Class Shell
   </h1>
-  <div class="markdown level0 summary"><p>In game console.
-<p>This static class allows for logging and registering commands
-which will be executed by callbacks. Contains a dictionary of
-global variables that can be read and written to from the console
-using the &quot;set&quot; command.</p></p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">IGConsole</span></div>
+    <div class="level1"><span class="xref">Shell</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -111,27 +106,59 @@ using the &quot;set&quot; command.</p></p>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="PiTung.Console.html">PiTung.Console</a></h6>
   <h6><strong>Assembly</strong>: PiTung.dll</h6>
-  <h5 id="PiTung_Console_IGConsole_syntax">Syntax</h5>
+  <h5 id="PiTung_Console_Shell_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class IGConsole</code></pre>
+    <pre><code class="lang-csharp hljs">public static class Shell</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_IGConsole_Error_System_Object_.md&amp;value=---%0Auid%3A%20PiTung.Console.IGConsole.Error(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_Shell_GetCommandNames.md&amp;value=---%0Auid%3A%20PiTung.Console.Shell.GetCommandNames%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L365">View Source</a>
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/Shell.cs/#L75">View Source</a>
   </span>
-  <a id="PiTung_Console_IGConsole_Error_" data-uid="PiTung.Console.IGConsole.Error*"></a>
-  <h4 id="PiTung_Console_IGConsole_Error_System_Object_" data-uid="PiTung.Console.IGConsole.Error(System.Object)">Error(Object)</h4>
-  <div class="markdown level1 summary"><p>Logs an error message</p>
+  <a id="PiTung_Console_Shell_GetCommandNames_" data-uid="PiTung.Console.Shell.GetCommandNames*"></a>
+  <h4 id="PiTung_Console_Shell_GetCommandNames" data-uid="PiTung.Console.Shell.GetCommandNames">GetCommandNames()</h4>
+  <div class="markdown level1 summary"><p>Returns the names of the available commands</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Error(object msg)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;string&gt; GetCommandNames()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>An enumerable containing the names of the variables</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_Shell_GetVariable_System_String_.md&amp;value=---%0Auid%3A%20PiTung.Console.Shell.GetVariable(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/Shell.cs/#L54">View Source</a>
+  </span>
+  <a id="PiTung_Console_Shell_GetVariable_" data-uid="PiTung.Console.Shell.GetVariable*"></a>
+  <h4 id="PiTung_Console_Shell_GetVariable_System_String_" data-uid="PiTung.Console.Shell.GetVariable(System.String)">GetVariable(String)</h4>
+  <div class="markdown level1 summary"><p>Obtains the value of a global variable</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetVariable(string variable)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,102 +171,76 @@ using the &quot;set&quot; command.</p></p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">msg</span></td>
-        <td><p>Message to log</p>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">variable</span></td>
+        <td><p>The variable to get</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_IGConsole_Log_PiTung_Console_LogType_System_Object_.md&amp;value=---%0Auid%3A%20PiTung.Console.IGConsole.Log(PiTung.Console.LogType%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L318">View Source</a>
-  </span>
-  <a id="PiTung_Console_IGConsole_Log_" data-uid="PiTung.Console.IGConsole.Log*"></a>
-  <h4 id="PiTung_Console_IGConsole_Log_PiTung_Console_LogType_System_Object_" data-uid="PiTung.Console.IGConsole.Log(PiTung.Console.LogType,System.Object)">Log(LogType, Object)</h4>
-  <div class="markdown level1 summary"><p>Log a message to the console (can be multi-line)</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Log(LogType type, object msg)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="PiTung.Console.LogType.html">LogType</a></td>
-        <td><span class="parametername">type</span></td>
-        <td><p>Type of log <a class="xref" href="PiTung.Console.LogType.html">LogType</a></p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">msg</span></td>
-        <td><p>Message to log</p>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The value, or null if variable is not set</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_IGConsole_Log_System_Object_.md&amp;value=---%0Auid%3A%20PiTung.Console.IGConsole.Log(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_Shell_GetVariables.md&amp;value=---%0Auid%3A%20PiTung.Console.Shell.GetVariables%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L353">View Source</a>
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/Shell.cs/#L66">View Source</a>
   </span>
-  <a id="PiTung_Console_IGConsole_Log_" data-uid="PiTung.Console.IGConsole.Log*"></a>
-  <h4 id="PiTung_Console_IGConsole_Log_System_Object_" data-uid="PiTung.Console.IGConsole.Log(System.Object)">Log(Object)</h4>
-  <div class="markdown level1 summary"><p>Logs a message as simple info</p>
+  <a id="PiTung_Console_Shell_GetVariables_" data-uid="PiTung.Console.Shell.GetVariables*"></a>
+  <h4 id="PiTung_Console_Shell_GetVariables" data-uid="PiTung.Console.Shell.GetVariables">GetVariables()</h4>
+  <div class="markdown level1 summary"><p>Returns the names of the variables in the registry</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Log(object msg)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;string&gt; GetVariables()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">msg</span></td>
-        <td><p>Message to log</p>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>An enumerable containing the names of the variables</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_IGConsole_RegisterCommand_PiTung_Console_Command_.md&amp;value=---%0Auid%3A%20PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_Shell_RegisterCommand_PiTung_Console_Command_.md&amp;value=---%0Auid%3A%20PiTung.Console.Shell.RegisterCommand(PiTung.Console.Command)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L420">View Source</a>
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/Shell.cs/#L97">View Source</a>
   </span>
-  <a id="PiTung_Console_IGConsole_RegisterCommand_" data-uid="PiTung.Console.IGConsole.RegisterCommand*"></a>
-  <h4 id="PiTung_Console_IGConsole_RegisterCommand_PiTung_Console_Command_" data-uid="PiTung.Console.IGConsole.RegisterCommand(PiTung.Console.Command)">RegisterCommand(Command)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="PiTung_Console_Shell_RegisterCommand_" data-uid="PiTung.Console.Shell.RegisterCommand*"></a>
+  <h4 id="PiTung_Console_Shell_RegisterCommand_PiTung_Console_Command_" data-uid="PiTung.Console.Shell.RegisterCommand(PiTung.Console.Command)">RegisterCommand(Command)</h4>
+  <div class="markdown level1 summary"><p>Register a command.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use the Shell class instead.&quot;)]
-public static bool RegisterCommand(Command command)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool RegisterCommand(Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -254,7 +255,8 @@ public static bool RegisterCommand(Command command)</code></pre>
       <tr>
         <td><a class="xref" href="PiTung.Console.Command.html">Command</a></td>
         <td><span class="parametername">command</span></td>
-        <td></td>
+        <td><p>The command class.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -275,19 +277,19 @@ public static bool RegisterCommand(Command command)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_IGConsole_RegisterCommand__1.md&amp;value=---%0Auid%3A%20PiTung.Console.IGConsole.RegisterCommand%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_Shell_RegisterCommand__1.md&amp;value=---%0Auid%3A%20PiTung.Console.Shell.RegisterCommand%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L426">View Source</a>
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/Shell.cs/#L106">View Source</a>
   </span>
-  <a id="PiTung_Console_IGConsole_RegisterCommand_" data-uid="PiTung.Console.IGConsole.RegisterCommand*"></a>
-  <h4 id="PiTung_Console_IGConsole_RegisterCommand__1" data-uid="PiTung.Console.IGConsole.RegisterCommand``1">RegisterCommand&lt;T&gt;()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="PiTung_Console_Shell_RegisterCommand_" data-uid="PiTung.Console.Shell.RegisterCommand*"></a>
+  <h4 id="PiTung_Console_Shell_RegisterCommand__1" data-uid="PiTung.Console.Shell.RegisterCommand``1">RegisterCommand&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Register a command.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use the Shell class instead.&quot;)]
-public static bool RegisterCommand&lt;T&gt;()
+    <pre><code class="lang-csharp hljs">public static bool RegisterCommand&lt;T&gt;()
     where T : Command</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -316,7 +318,48 @@ public static bool RegisterCommand&lt;T&gt;()
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the command.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_Shell_SetVariable_System_String_System_String_.md&amp;value=---%0Auid%3A%20PiTung.Console.Shell.SetVariable(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/Shell.cs/#L44">View Source</a>
+  </span>
+  <a id="PiTung_Console_Shell_SetVariable_" data-uid="PiTung.Console.Shell.SetVariable*"></a>
+  <h4 id="PiTung_Console_Shell_SetVariable_System_String_System_String_" data-uid="PiTung.Console.Shell.SetVariable(System.String,System.String)">SetVariable(String, String)</h4>
+  <div class="markdown level1 summary"><p>Saves the value of a global variable</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetVariable(string variable, string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">variable</span></td>
+        <td><p>The variable to set</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to give</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -328,10 +371,10 @@ public static bool RegisterCommand&lt;T&gt;()
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_IGConsole.md&amp;value=---%0Auid%3A%20PiTung.Console.IGConsole%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/pipe01/PiTUNG/new/master/apiSpec/new?filename=PiTung_Console_Shell.md&amp;value=---%0Auid%3A%20PiTung.Console.Shell%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/IGConsole.cs/#L75" class="contribution-link">View Source</a>
+                    <a href="https://github.com/pipe01/PiTUNG/blob/master/src/Console/Shell.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
