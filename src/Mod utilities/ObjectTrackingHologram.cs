@@ -11,8 +11,12 @@ namespace PiTung.Mod_utilities
     /// </summary>
     public class ObjectTrackingHologram : Hologram
     {
+        /// <summary>
+        /// The hologram's position relative to the object's position.
+        /// </summary>
+        public Vector3 Offset { get; set; }
+
         private Transform Target;
-        private Vector3 Offset;
 
         private ObjectTrackingHologram(string text, Vector3 worldPosition) : base(text, worldPosition)
         {
