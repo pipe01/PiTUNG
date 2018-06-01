@@ -50,6 +50,11 @@ namespace PiTung.Components
             internal set => _outputs = OrderByIOIndex(value);
         }
 
+        /// <summary>
+        /// This method must be called every time any of your component's data (i.e. any field or property with <see cref="SaveThisAttribute"/>) gets modified
+        /// </summary>
+        public void UpdateData() { }
+
         internal void UpdateInputParents()
         {
             foreach (var item in Inputs)
