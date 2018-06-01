@@ -11,58 +11,67 @@ namespace PiTung.Components
 
         public static void ApplyIOMap(GameObject prefabRoot, IOMap map)
         {
-            //GameObject PrefabRoot = GameObject.Instantiate(Prefabs.WhiteCube, new Vector3(-1000, -1000, -1000), Quaternion.identity);
-            //PrefabRoot.transform.localScale = WhiteCubeScale;
-
             foreach (var item in map.Sides)
             {
-                AddIO(item.Key, item.Value);
+                AddIO(prefabRoot, item.Type, item.Side, item.XOffset, item.YOffset);
             }
-            
-            void AddIO(CubeSide side, SideType type)
+        }
+
+        public static GameObject AddIO(GameObject parent, SideType type, CubeSide side, float ox, float oy)
+        {
+            if (type == SideType.None)
+                return null;
+
+            float x = 0, y = 0.5f, z = 0, rotX = 0, rotY = 0, rotZ = 0;
+
+            switch (side)
             {
-                if (type == SideType.None)
-                    return;
-
-                float x = 0, y = 0.5f, z = 0, rotX = 0, rotY = 0, rotZ = 0;
-
-                switch (side)
-                {
-                    case CubeSide.Top:
-                        y = 1f;
-                        rotY = 90;
-                        break;
-                    case CubeSide.Front:
-                        z = -0.5f;
-                        rotX = 270;
-                        break;
-                    case CubeSide.Left:
-                        x = -0.5f;
-                        rotZ = 90;
-                        break;
-                    case CubeSide.Back:
-                        z = 0.5f;
-                        rotX = 90;
-                        break;
-                    case CubeSide.Right:
-                        x = 0.5f;
-                        rotZ = 270;
-                        break;
-                }
-
-                var prefab = type == SideType.Input ? Prefabs.Peg : Prefabs.Output;
-                GameObject Peg = GameObject.Instantiate(prefab, prefabRoot.transform);
-                Peg.transform.localPosition = new Vector3(x, y, z);
-                Peg.transform.localScale = type == SideType.Input ? PegScale : OutputScale;
-                Peg.transform.localEulerAngles = new Vector3(rotX, rotY, rotZ);
-
-                if (type == SideType.Output)
-                {
-                    var comp = Peg.GetComponent<CircuitOutput>();
-                    comp.On = false;
-                    comp.RecalculateCombinedMesh();
-                }
+                case CubeSide.Top:
+                    y = 1f;
+                    x += ox;
+                    z += oy;
+                    rotY = 90;
+                    break;
+                case CubeSide.Front:
+                    z = -0.5f;
+                    x += ox;
+                    y += oy;
+                    rotX = 270;
+                    break;
+                case CubeSide.Left:
+                    x = -0.5f;
+                    z += ox;
+                    y += oy;
+                    rotZ = 90;
+                    break;
+                case CubeSide.Back:
+                    z = 0.5f;
+                    x += ox;
+                    y += oy;
+                    rotX = 90;
+                    break;
+                case CubeSide.Right:
+                    x = 0.5f;
+                    z += ox;
+                    y += oy;
+                    rotZ = 270;
+                    break;
             }
+
+            var prefab = type == SideType.Input ? Prefabs.Peg : Prefabs.Output;
+            GameObject Peg = GameObject.Instantiate(prefab, parent.transform);
+            Peg.transform.localPosition = new Vector3(x, y, z);
+            Peg.transform.localScale = type == SideType.Input ? PegScale : OutputScale;
+            Peg.transform.localEulerAngles = new Vector3(rotX, rotY, rotZ);
+
+            if (type == SideType.Output)
+            {
+                var comp = Peg.GetComponent<CircuitOutput>();
+                comp.On = false;
+                comp.RecalculateCombinedMesh();
+            }
+
+            return Peg;
         }
 
         public static GameObject AddInputPeg(GameObject parent, Vector3? localPosition = null)
