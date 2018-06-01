@@ -3,9 +3,7 @@
 namespace PiTung.Mod_utilities
 {
     /// <summary>
-    /// A hologram is a string that will float on screen, tracking a position in the world.
-    /// <para />
-    /// Note that when tracking a game object, if said game object is destroyed, the hologram will set its <see cref="Visible"/> property to false, but you must take care of destroying the hologram.
+    /// A hologram is a string that will float on screen, tracking a position in the world. See <see cref="ObjectTrackingHologram"/>.
     /// </summary>
     public class Hologram
     {

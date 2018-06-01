@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace PiTung.Mod_utilities
 {
+    /// <summary>
+    /// A hologram that tracks an object in the world.
+    /// </summary>
     public class ObjectTrackingHologram : Hologram
     {
         private Transform Target;
@@ -15,11 +18,22 @@ namespace PiTung.Mod_utilities
         {
         }
 
+        /// <summary>
+        /// Instantiates a new <see cref="ObjectTrackingHologram"/>.
+        /// </summary>
+        /// <param name="text">The hologram text.</param>
+        /// <param name="trackTarget">The object to track's transform.</param>
         public ObjectTrackingHologram(string text, Transform trackTarget) : base(text, trackTarget.position)
         {
             this.Target = trackTarget;
         }
 
+        /// <summary>
+        /// Instantiates a new <see cref="ObjectTrackingHologram"/>.
+        /// </summary>
+        /// <param name="text">The hologram text.</param>
+        /// <param name="trackTarget">The object to track's transform.</param>
+        /// <param name="offset">The hologram's position relative to the object's position.</param>
         public ObjectTrackingHologram(string text, Transform trackTarget, Vector3 offset) : base(text, trackTarget.position)
         {
             this.Target = trackTarget;
