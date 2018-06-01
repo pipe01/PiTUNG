@@ -1793,6 +1793,19 @@ references:
   isSpec: "True"
   fullName: PiTung.Mod_utilities.ObjectTrackingHologram.ObjectTrackingHologram
   nameWithType: ObjectTrackingHologram.ObjectTrackingHologram
+- uid: PiTung.Mod_utilities.ObjectTrackingHologram.Offset
+  name: Offset
+  href: api/PiTung.Mod_utilities.ObjectTrackingHologram.html#PiTung_Mod_utilities_ObjectTrackingHologram_Offset
+  commentId: P:PiTung.Mod_utilities.ObjectTrackingHologram.Offset
+  fullName: PiTung.Mod_utilities.ObjectTrackingHologram.Offset
+  nameWithType: ObjectTrackingHologram.Offset
+- uid: PiTung.Mod_utilities.ObjectTrackingHologram.Offset*
+  name: Offset
+  href: api/PiTung.Mod_utilities.ObjectTrackingHologram.html#PiTung_Mod_utilities_ObjectTrackingHologram_Offset_
+  commentId: Overload:PiTung.Mod_utilities.ObjectTrackingHologram.Offset
+  isSpec: "True"
+  fullName: PiTung.Mod_utilities.ObjectTrackingHologram.Offset
+  nameWithType: ObjectTrackingHologram.Offset
 - uid: PiTung.ModInput
   name: ModInput
   href: api/PiTung.ModInput.html
