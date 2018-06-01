@@ -83,7 +83,11 @@ namespace PiTung.Console
             if (command.Mod == null)
                 command.Mod = mod;
 
-            if (Registry.ContainsKey(command.Name))
+            bool duplicateAlias = command.Aliases != null &&
+                Registry.Where(o => o.Value.Aliases != null)
+                        .Any(o => o.Value.Aliases.Any(a => command.Aliases.Contains(a)));
+
+            if (Registry.ContainsKey(command.Name) || duplicateAlias)
                 return false;
 
             Registry.Add(command.Name, command);
@@ -143,9 +147,9 @@ namespace PiTung.Console
 
             args = ReplaceVariables(args).ToArray();
 
-            Command command;
+            Command command = Registry.Values.SingleOrDefault(o => o.Aliases != null && o.Aliases.Contains(verb));
 
-            if (Registry.TryGetValue(verb, out command))
+            if (command != null || Registry.TryGetValue(verb, out command))
             {
                 try
                 {

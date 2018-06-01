@@ -16,6 +16,11 @@ namespace PiTung.Console
         public abstract string Name { get; }
 
         /// <summary>
+        /// Alternative names for the command.
+        /// </summary>
+        public virtual string[] Aliases { get; } = null;
+
+        /// <summary>
         /// How to use the command (e.g. $"{Name} argument [optional_argument]")
         /// </summary>
         public abstract string Usage { get; }
