@@ -27,6 +27,15 @@ namespace PiTung
         }
     }
 
+    [HarmonyPatch(typeof(DummyComponent), "LateUpdate")]
+    internal class DummyLateUpdatePatch
+    {
+        static void Prefix()
+        {
+            HologramManager.Update();
+        }
+    }
+
     [HarmonyPatch(typeof(SaveManager), nameof(SaveManager.LoadAll))]
     internal class LoadGameLoadPatch
     {
