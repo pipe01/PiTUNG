@@ -85,14 +85,17 @@ namespace PiTung.Components
             State.Atoms.Add(Atom);
         }
 
-        public CubeBuilder WithSide(CubeSide side, SideType what)
+        [Obsolete("Use WithIO instead.")]
+        public CubeBuilder WithSide(CubeSide side, SideType what) => WithIO(side, what);
+
+        public CubeBuilder WithIO(CubeSide side, SideType what)
         {
             Atom.Map.SetSide(side, what, 0, 0);
 
             return this;
         }
 
-        public CubeBuilder WithSide(CubeSide side, SideType what, float offsetX, float offsetY)
+        public CubeBuilder WithIO(CubeSide side, SideType what, float offsetX, float offsetY)
         {
             Atom.Map.SetSide(side, what, offsetX, offsetY);
 
