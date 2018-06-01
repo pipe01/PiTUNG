@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Console.Command.html",
-          "hash": "EQB9xk0ZJGnDmjDuMQ/jeg=="
+          "hash": "iYubWrNm9oOuXa3jLGtmtQ=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Console.Shell.html",
-          "hash": "nM0w1ldLjPnCiC9U4SAf0g=="
+          "hash": "1BsGpbndFiDkR+R+dAeXZA=="
         }
       },
       "is_incremental": false,
@@ -732,17 +732,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

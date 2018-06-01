@@ -958,6 +958,19 @@ references:
   commentId: T:PiTung.Console.Command
   fullName: PiTung.Console.Command
   nameWithType: Command
+- uid: PiTung.Console.Command.Aliases
+  name: Aliases
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_Aliases
+  commentId: P:PiTung.Console.Command.Aliases
+  fullName: PiTung.Console.Command.Aliases
+  nameWithType: Command.Aliases
+- uid: PiTung.Console.Command.Aliases*
+  name: Aliases
+  href: api/PiTung.Console.Command.html#PiTung_Console_Command_Aliases_
+  commentId: Overload:PiTung.Console.Command.Aliases
+  isSpec: "True"
+  fullName: PiTung.Console.Command.Aliases
+  nameWithType: Command.Aliases
 - uid: PiTung.Console.Command.AutocompletionCandidates(System.Collections.Generic.IEnumerable{System.String})
   name: AutocompletionCandidates(IEnumerable<String>)
   href: api/PiTung.Console.Command.html#PiTung_Console_Command_AutocompletionCandidates_System_Collections_Generic_IEnumerable_System_String__
