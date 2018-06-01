@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace PiTung.Components
 {
@@ -27,13 +28,13 @@ namespace PiTung.Components
             {
                 if (_inputs == null)
                 {
-                    _inputs = this.GetComponentsInChildren<CircuitInput>();
+                    _inputs = OrderByIOIndex(this.GetComponentsInChildren<CircuitInput>());
                     UpdateInputParents();
                 }
 
                 return _inputs;
             }
-            internal set => _inputs = value;
+            internal set => _inputs = OrderByIOIndex(value);
         }
 
         private CircuitOutput[] _outputs;
@@ -44,9 +45,9 @@ namespace PiTung.Components
         {
             get
             {
-                return _outputs ?? (_outputs = this.GetComponentsInChildren<CircuitOutput>());
+                return _outputs ?? (_outputs = OrderByIOIndex(this.GetComponentsInChildren<CircuitOutput>()));
             }
-            internal set => _outputs = value;
+            internal set => _outputs = OrderByIOIndex(value);
         }
 
         internal void UpdateInputParents()
@@ -55,6 +56,11 @@ namespace PiTung.Components
             {
                 item.CircuitLogicComponent = this;
             }
+        }
+
+        private static T[] OrderByIOIndex<T>(T[] e) where T : MonoBehaviour
+        {
+            return e.OrderBy(o => o.GetComponent<IOInfo>()?.Index ?? -1).ToArray();
         }
     }
 }

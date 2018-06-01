@@ -113,6 +113,7 @@
     <Compile Include="Components\Atoms.cs" />
     <Compile Include="Components\BuilderUtils.cs" />
     <Compile Include="Components\BuildState.cs" />
+    <Compile Include="Components\IOInfo.cs" />
     <Compile Include="Components\PrefabBuilder.cs" />
     <Compile Include="Components\ComponentPatches.cs" />
     <Compile Include="Components\ComponentRegistry.cs" />

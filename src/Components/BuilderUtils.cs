@@ -11,9 +11,11 @@ namespace PiTung.Components
 
         public static void ApplyIOMap(GameObject prefabRoot, IOMap map)
         {
+            int i = 0, j = 0;
             foreach (var item in map.Sides)
             {
-                AddIO(prefabRoot, item.Type, item.Side, item.XOffset, item.YOffset);
+                var io = AddIO(prefabRoot, item.Type, item.Side, item.XOffset, item.YOffset);
+                io.AddComponent<IOInfo>().Index = item.Type == SideType.Input ? i++ : j++;
             }
         }
 
@@ -22,7 +24,12 @@ namespace PiTung.Components
             if (type == SideType.None)
                 return null;
 
-            float x = 0, y = 0.5f, z = 0, rotX = 0, rotY = 0, rotZ = 0;
+            float x = 0,
+                  y = oy + 0.5f,
+                  z = 0,
+                  rotX = 0,
+                  rotY = 0,
+                  rotZ = 0;
 
             switch (side)
             {
@@ -35,25 +42,21 @@ namespace PiTung.Components
                 case CubeSide.Front:
                     z = -0.5f;
                     x += ox;
-                    y += oy;
                     rotX = 270;
                     break;
                 case CubeSide.Left:
                     x = -0.5f;
                     z += ox;
-                    y += oy;
                     rotZ = 90;
                     break;
                 case CubeSide.Back:
                     z = 0.5f;
                     x += ox;
-                    y += oy;
                     rotX = 90;
                     break;
                 case CubeSide.Right:
                     x = 0.5f;
                     z += ox;
-                    y += oy;
                     rotZ = 270;
                     break;
             }
