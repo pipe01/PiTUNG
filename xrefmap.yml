@@ -505,6 +505,19 @@ references:
   isSpec: "True"
   fullName: PiTung.Components.UpdateHandler.Outputs
   nameWithType: UpdateHandler.Outputs
+- uid: PiTung.Components.UpdateHandler.UpdateData
+  name: UpdateData()
+  href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_UpdateData
+  commentId: M:PiTung.Components.UpdateHandler.UpdateData
+  fullName: PiTung.Components.UpdateHandler.UpdateData()
+  nameWithType: UpdateHandler.UpdateData()
+- uid: PiTung.Components.UpdateHandler.UpdateData*
+  name: UpdateData
+  href: api/PiTung.Components.UpdateHandler.html#PiTung_Components_UpdateHandler_UpdateData_
+  commentId: Overload:PiTung.Components.UpdateHandler.UpdateData
+  isSpec: "True"
+  fullName: PiTung.Components.UpdateHandler.UpdateData
+  nameWithType: UpdateHandler.UpdateData
 - uid: PiTung.Config_menu
   name: PiTung.Config_menu
   href: api/PiTung.Config_menu.html
