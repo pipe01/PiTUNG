@@ -200,6 +200,25 @@ references:
   isSpec: "True"
   fullName: PiTung.Components.CubeBuilder.WithColor
   nameWithType: CubeBuilder.WithColor
+- uid: PiTung.Components.CubeBuilder.WithIO(PiTung.Components.CubeSide,PiTung.Components.SideType)
+  name: WithIO(CubeSide, SideType)
+  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_WithIO_PiTung_Components_CubeSide_PiTung_Components_SideType_
+  commentId: M:PiTung.Components.CubeBuilder.WithIO(PiTung.Components.CubeSide,PiTung.Components.SideType)
+  fullName: PiTung.Components.CubeBuilder.WithIO(PiTung.Components.CubeSide, PiTung.Components.SideType)
+  nameWithType: CubeBuilder.WithIO(CubeSide, SideType)
+- uid: PiTung.Components.CubeBuilder.WithIO(PiTung.Components.CubeSide,PiTung.Components.SideType,System.Single,System.Single)
+  name: WithIO(CubeSide, SideType, Single, Single)
+  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_WithIO_PiTung_Components_CubeSide_PiTung_Components_SideType_System_Single_System_Single_
+  commentId: M:PiTung.Components.CubeBuilder.WithIO(PiTung.Components.CubeSide,PiTung.Components.SideType,System.Single,System.Single)
+  fullName: PiTung.Components.CubeBuilder.WithIO(PiTung.Components.CubeSide, PiTung.Components.SideType, System.Single, System.Single)
+  nameWithType: CubeBuilder.WithIO(CubeSide, SideType, Single, Single)
+- uid: PiTung.Components.CubeBuilder.WithIO*
+  name: WithIO
+  href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_WithIO_
+  commentId: Overload:PiTung.Components.CubeBuilder.WithIO
+  isSpec: "True"
+  fullName: PiTung.Components.CubeBuilder.WithIO
+  nameWithType: CubeBuilder.WithIO
 - uid: PiTung.Components.CubeBuilder.WithSide(PiTung.Components.CubeSide,PiTung.Components.SideType)
   name: WithSide(CubeSide, SideType)
   href: api/PiTung.Components.CubeBuilder.html#PiTung_Components_CubeBuilder_WithSide_PiTung_Components_CubeSide_PiTung_Components_SideType_

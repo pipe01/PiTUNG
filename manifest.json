@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PiTung.Components.CubeBuilder.html",
-          "hash": "mjz3c6we/xBtZx2JE+U2+g=="
+          "hash": "YxC4dWXQ7hRGAwkFwco4MA=="
         }
       },
       "is_incremental": false,
@@ -744,17 +744,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "incrementalPhase": "build"
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }
