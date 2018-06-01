@@ -19,7 +19,7 @@ namespace PiTung.Console
         {
             if (!arguments.Any())
             {
-                var cmds = from o in Registry.Values
+                var cmds = from o in Shell.Registry.Values
                            where o.ShowOnHelp
                            orderby o.Name
                            select o;
@@ -46,7 +46,7 @@ namespace PiTung.Console
             {
                 string name = arguments.ElementAt(0);
                 Command command;
-                if (Registry.TryGetValue(name, out command))
+                if (Shell.Registry.TryGetValue(name, out command))
                 {
                     if(command.Description != null)
                         Log(command.Description);
@@ -76,7 +76,7 @@ namespace PiTung.Console
         public override IEnumerable<String> AutocompletionCandidates(IEnumerable<String> arguments) {
             if(arguments.Count() != 1)
                 return new List<String>();
-            return Autocompletion.Candidates(arguments.ElementAt(0), IGConsole.GetCommandNames());
+            return Autocompletion.Candidates(arguments.ElementAt(0), Shell.GetCommandNames());
         }
     }
 
@@ -119,14 +119,14 @@ namespace PiTung.Console
                 return false;
             }
 
-            SetVariable(variable, value);
+            Shell.SetVariable(variable, value);
             return true;
         }
 
         public override IEnumerable<String> AutocompletionCandidates(IEnumerable<String> arguments) {
             if(arguments.Count() != 1)
                 return new List<String>();
-            return Autocompletion.Candidates(arguments.ElementAt(0), IGConsole.GetVariables());
+            return Autocompletion.Candidates(arguments.ElementAt(0), Shell.GetVariables());
         }
     }
 
@@ -141,7 +141,7 @@ namespace PiTung.Console
             if (arguments.Count() == 1)
             {
                 string variable = arguments.First();
-                string value = GetVariable(variable);
+                string value = Shell.GetVariable(variable);
 
                 if (value != null)
                 {
@@ -161,7 +161,7 @@ namespace PiTung.Console
         public override IEnumerable<String> AutocompletionCandidates(IEnumerable<String> arguments) {
             if(arguments.Count() != 1)
                 return new List<String>();
-            return Autocompletion.Candidates(arguments.ElementAt(0), IGConsole.GetVariables());
+            return Autocompletion.Candidates(arguments.ElementAt(0), Shell.GetVariables());
         }
     }
 

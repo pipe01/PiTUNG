@@ -123,6 +123,8 @@
     <Compile Include="Components\UpdateHandler.cs" />
     <Compile Include="ConfigurationFile.cs" />
     <Compile Include="Console\Autocompletion.cs" />
+    <Compile Include="Console\Command.cs" />
+    <Compile Include="Console\Shell.cs" />
     <Compile Include="Mod utilities\Configuration.cs" />
     <Compile Include="Mod utilities\Hologram.cs" />
     <Compile Include="Mod utilities\HologramManager.cs" />
