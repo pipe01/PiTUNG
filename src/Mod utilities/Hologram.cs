@@ -44,7 +44,7 @@ namespace PiTung.Mod_utilities
         /// <summary>
         /// If true, the text will get bigger the closer you are to it, up to <see cref="MaxTextSize"/>.
         /// </summary>
-        public bool ScaleSizeWithDistance { get; set; } = false;
+        public bool ScaleSizeWithDistance { get; set; } = true;
 
         /// <summary>
         /// The maximum text size.
