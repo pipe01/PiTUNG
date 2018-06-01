@@ -128,6 +128,7 @@
     <Compile Include="Mod utilities\Configuration.cs" />
     <Compile Include="Mod utilities\Hologram.cs" />
     <Compile Include="Mod utilities\HologramManager.cs" />
+    <Compile Include="Mod utilities\ObjectTrackingHologram.cs" />
     <Compile Include="Patching\AssemblyCosturer.cs" />
     <Compile Include="AssemblyVersion.cs">
       <AutoGen>True</AutoGen>

@@ -12,18 +12,13 @@ namespace PiTung.Mod_utilities
         /// <summary>
         /// The world position that the hologram is currently tracking.
         /// </summary>
-        public Vector3 WorldPosition { get; private set; }
+        public Vector3 WorldPosition { get; set; }
 
         /// <summary>
         /// The hologram's current position on screen.
         /// </summary>
         public Vector2 ScreenPosition { get; private set; }
-
-        /// <summary>
-        /// The game object that the hologram is currently tracking. May be null.
-        /// </summary>
-        public GameObject TargetObject { get; private set; }
-
+        
         /// <summary>
         /// The hologram's text.
         /// </summary>
@@ -59,7 +54,6 @@ namespace PiTung.Mod_utilities
         public float MaxTextSize { get; set; } = 6f;
 
         private GUIStyle Style, ShadowStyle;
-        private bool IsTrackingGameObject;
 
         #region ctor
         private Hologram(string text)
@@ -86,17 +80,6 @@ namespace PiTung.Mod_utilities
         {
             this.WorldPosition = worldPosition;
         }
-
-        /// <summary>
-        /// Creates a new hologram that tracks the object <paramref name="gameObject"/>
-        /// </summary>
-        /// <param name="text">The hologram's text.</param>
-        /// <param name="gameObject"></param>
-        public Hologram(string text, GameObject gameObject) : this(text)
-        {
-            this.TargetObject = gameObject;
-            this.IsTrackingGameObject = true;
-        }
         #endregion
 
         /// <summary>
@@ -109,8 +92,6 @@ namespace PiTung.Mod_utilities
 
             this.WorldPosition = Vector3.zero;
             this.ScreenPosition = Vector2.zero;
-            this.TargetObject = null;
-            this.IsTrackingGameObject = false;
         }
 
         private void UpdateScreenPosition()
@@ -145,21 +126,11 @@ namespace PiTung.Mod_utilities
                 ShadowStyle.fontSize = newSize;
         }
 
-        internal void Update()
+        internal virtual void Update()
         {
-            if (this.TargetObject != null)
-            {
-                this.WorldPosition = this.TargetObject.transform.position;
-            }
-            else if (this.IsTrackingGameObject)
-            {
-                //We were tracking a game object but now it's null, which means that the object was destroyed.
-                this.Destroy();
-            }
-
             UpdateScreenPosition();
         }
-
+        
         internal void Draw()
         {
             if (this.Visible)
