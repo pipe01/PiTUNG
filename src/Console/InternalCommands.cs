@@ -301,7 +301,7 @@ namespace PiTung.Console
             {
                 string compStr = string.Join(", ", parent.GetComponents<Component>().Select(o => o.GetType().Name).ToArray());
                 
-                MDebug.WriteLine(new string(' ', level * 4) + parent.name + $" ({compStr})");
+                MDebug.WriteLine(new string(' ', level * 4) + $"{parent.name} [{parent.tag}] ({compStr})");
 
                 foreach (Transform item in parent.transform)
                 {
