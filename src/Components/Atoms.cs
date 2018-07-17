@@ -14,6 +14,7 @@ namespace PiTung.Components
     {
         public Vector3 Position;
         public Quaternion Rotation;
+        public string Description;
 
         public abstract void AddToGameObject(GameObject obj);
     }
@@ -22,7 +23,7 @@ namespace PiTung.Components
     {
         public override void AddToGameObject(GameObject obj)
         {
-            BuilderUtils.AddInputPeg(obj, this.Position).transform.localRotation = this.Rotation;
+            BuilderUtils.AddInputPeg(obj, this.Position, Description).transform.localRotation = this.Rotation;
         }
     }
 
@@ -30,7 +31,7 @@ namespace PiTung.Components
     {
         public override void AddToGameObject(GameObject obj)
         {
-            BuilderUtils.AddOutputPeg(obj, this.Position).transform.localRotation = this.Rotation;
+            BuilderUtils.AddOutputPeg(obj, this.Position, Description).transform.localRotation = this.Rotation;
         }
     }
 

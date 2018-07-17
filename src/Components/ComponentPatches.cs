@@ -52,7 +52,7 @@ namespace PiTung.Components
                     return;
                 }
             }
-            
+
             saveData.Add(customComponent.ComponentName);
             saveData.Add(outputs.Select(o => o.On).ToArray());
             saveData.AddRange(GetSaveThisFields(customComponent));
@@ -88,7 +88,7 @@ namespace PiTung.Components
             }
         }
     }
-    
+
     [HarmonyPatch(typeof(SavedObjectUtilities), "CreateSavedObjectFrom", new Type[] { typeof(ObjectInfo) })]
     internal static class CreateSavedObjectFromPatch
     {
@@ -113,7 +113,7 @@ namespace PiTung.Components
             return true;
         }
     }
-    
+
     [HarmonyPatch(typeof(SavedObjectUtilities), "GetCustomPrefab")]
     internal static class GetCustomPrefabPatch
     {
@@ -125,7 +125,7 @@ namespace PiTung.Components
             yield return new CodeInstruction(OpCodes.Ret);
         }
 
-        static void Postfix(ref GameObject __result,  SavedCustomObject save)
+        static void Postfix(ref GameObject __result, SavedCustomObject save)
         {
             if (save.CustomData.Length == 0)
             {
@@ -265,7 +265,7 @@ namespace PiTung.Components
             return true;
         }
     }
-    
+
 
     [HarmonyPatch(typeof(ComponentPlacer), "MakeSureThingBeingPlacedIsCorrect")]
     internal static class asdasd
@@ -322,29 +322,49 @@ namespace PiTung.Components
             if (ModUtilities.IsOnMainMenu || !ShouldShow)
                 return;
 
+            string str = null;
+
             if (Physics.Raycast(FirstPersonInteraction.Ray(), out var hit, 20))
             {
-                var info = hit.transform.GetComponent<ObjectInfo>() ??
-                           hit.transform.parent?.GetComponent<ObjectInfo>();
+                bool input = hit.transform.tag == "Input";
+                bool output = hit.transform.tag == "Output";
 
-                if (info != null && info.ComponentType == ComponentType.CustomObject)
+                if (input || output)
                 {
-                    var handler = hit.transform.GetComponent<UpdateHandler>() ??
-                                  hit.transform.GetComponentInChildren<UpdateHandler>();
+                    var ioInfo = hit.transform.GetComponent<IOInfo>();
 
-                    if (handler != null)
+                    if (ioInfo?.Description != null)
                     {
-                        string str = handler.Component?.DisplayName ?? handler.ComponentName;
-
-                        var size = GUI.skin.box.CalcSize(new GUIContent(str));
-                        size.x += 10;
-                        size.y += 10;
-
-                        var rect = new Rect(Screen.width / 2 - size.x / 2, 10, size.x, size.y);
-
-                        GUI.Box(rect, str, Style);
+                        str = $"<b>{(input ? "Input" : "Output")}</b>: {ioInfo.Description}";
                     }
                 }
+                else
+                {
+                    var info = hit.transform.GetComponent<ObjectInfo>() ??
+                               hit.transform.parent?.GetComponent<ObjectInfo>();
+
+                    if (info?.ComponentType == ComponentType.CustomObject)
+                    {
+                        var handler = hit.transform.GetComponent<UpdateHandler>() ??
+                                  hit.transform.GetComponentInChildren<UpdateHandler>();
+
+                        if (handler != null)
+                        {
+                            str = handler.Component?.DisplayName ?? handler.ComponentName;
+                        }
+                    }
+                }
+            }
+
+            if (str != null)
+            {
+                var size = GUI.skin.box.CalcSize(new GUIContent(str));
+                size.x += 10;
+                size.y += 10;
+
+                var rect = new Rect(Screen.width / 2 - size.x / 2, 10, size.x, size.y);
+
+                GUI.Box(rect, str, Style);
             }
         }
     }

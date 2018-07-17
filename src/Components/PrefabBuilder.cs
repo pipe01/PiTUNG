@@ -40,36 +40,46 @@ namespace PiTung.Components
             State.Structure = new CustomStructureAtom(root);
         }
 
-        public CustomBuilder WithInput(float x, float y, float z)
+        public CustomBuilder WithInput(float x, float y, float z) => WithInput(x, y, z, null);
+        public CustomBuilder WithInput(float x, float y, float z, string description)
         {
-            return WithInput(new Vector3(x, y, z));
+            return WithInput(new Vector3(x, y, z), description);
         }
-        public CustomBuilder WithInput(Vector3 position)
+
+        public CustomBuilder WithInput(Vector3 position) => WithInput(position, null);
+        public CustomBuilder WithInput(Vector3 position, string description)
         {
-            State.Atoms.Add(new InputPegAtom { Position = position });
+            State.Atoms.Add(new InputPegAtom { Position = position, Description = description });
 
             return this;
         }
-        public CustomBuilder WithInput(Vector3 position, Quaternion rotation)
+
+        public CustomBuilder WithInput(Vector3 position, Quaternion rotation) => WithInput(position, rotation, null);
+        public CustomBuilder WithInput(Vector3 position, Quaternion rotation, string description)
         {
-            State.Atoms.Add(new InputPegAtom { Position = position, Rotation = rotation });
+            State.Atoms.Add(new InputPegAtom { Position = position, Rotation = rotation, Description = description });
 
             return this;
         }
 
-        public CustomBuilder WithOutput(float x, float y, float z)
+        public CustomBuilder WithOutput(float x, float y, float z) => WithOutput(x, y, z, null);
+        public CustomBuilder WithOutput(float x, float y, float z, string description)
         {
-            return WithOutput(new Vector3(x, y, z));
+            return WithOutput(new Vector3(x, y, z), description);
         }
-        public CustomBuilder WithOutput(Vector3 position)
+
+        public CustomBuilder WithOutput(Vector3 position) => WithOutput(position, null);
+        public CustomBuilder WithOutput(Vector3 position, string description)
         {
-            State.Atoms.Add(new OutputAtom { Position = position });
+            State.Atoms.Add(new OutputAtom { Position = position, Description = description });
 
             return this;
         }
-        public CustomBuilder WithOutput(Vector3 position, Quaternion rotation)
+
+        public CustomBuilder WithOutput(Vector3 position, Quaternion rotation) => WithOutput(position, rotation, null);
+        public CustomBuilder WithOutput(Vector3 position, Quaternion rotation, string description)
         {
-            State.Atoms.Add(new OutputAtom { Position = position, Rotation = rotation });
+            State.Atoms.Add(new OutputAtom { Position = position, Rotation = rotation, Description = description });
 
             return this;
         }
@@ -89,15 +99,21 @@ namespace PiTung.Components
         public CubeBuilder WithSide(CubeSide side, SideType what) => WithIO(side, what);
 
         public CubeBuilder WithIO(CubeSide side, SideType what)
+            => WithIO(side, what, null);
+
+        public CubeBuilder WithIO(CubeSide side, SideType what, string description)
         {
-            Atom.Map.SetSide(side, what, 0, 0);
+            Atom.Map.SetSide(side, what, 0, 0, description);
 
             return this;
         }
 
         public CubeBuilder WithIO(CubeSide side, SideType what, float offsetX, float offsetY)
+            => WithIO(side, what, offsetX, offsetY, null);
+
+        public CubeBuilder WithIO(CubeSide side, SideType what, float offsetX, float offsetY, string description)
         {
-            Atom.Map.SetSide(side, what, offsetX, offsetY);
+            Atom.Map.SetSide(side, what, offsetX, offsetY, description);
 
             return this;
         }

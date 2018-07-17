@@ -14,12 +14,12 @@ namespace PiTung.Components
             int i = 0, j = 0;
             foreach (var item in map.Sides)
             {
-                var io = AddIO(prefabRoot, item.Type, item.Side, item.XOffset, item.YOffset);
-                io.AddComponent<IOInfo>().Index = item.Type == SideType.Input ? i++ : j++;
+                var io = AddIO(prefabRoot, item.Type, item.Side, item.XOffset, item.YOffset, item.Description);
+                io.GetComponent<IOInfo>().Index = item.Type == SideType.Input ? i++ : j++;
             }
         }
 
-        public static GameObject AddIO(GameObject parent, SideType type, CubeSide side, float ox, float oy)
+        public static GameObject AddIO(GameObject parent, SideType type, CubeSide side, float ox, float oy, string description)
         {
             if (type == SideType.None)
                 return null;
@@ -63,6 +63,7 @@ namespace PiTung.Components
 
             var prefab = type == SideType.Input ? Prefabs.Peg : Prefabs.Output;
             GameObject Peg = GameObject.Instantiate(prefab, parent.transform);
+            Peg.AddComponent<IOInfo>().Description = description;
             Peg.transform.localPosition = new Vector3(x, y, z);
             Peg.transform.localScale = type == SideType.Input ? PegScale : OutputScale;
             Peg.transform.localEulerAngles = new Vector3(rotX, rotY, rotZ);
@@ -77,10 +78,11 @@ namespace PiTung.Components
             return Peg;
         }
 
-        public static GameObject AddInputPeg(GameObject parent, Vector3? localPosition = null)
+        public static GameObject AddInputPeg(GameObject parent, Vector3? localPosition = null, string description = null)
         {
             var Peg = GameObject.Instantiate(Prefabs.Peg);
 
+            Peg.AddComponent<IOInfo>().Description = description;
             Peg.transform.localScale = new Vector3(PegScale.x * 0.3f, PegScale.y * 0.3f, PegScale.z * 0.3f);
             Peg.transform.parent = parent.transform;
 
@@ -90,10 +92,11 @@ namespace PiTung.Components
             return Peg;
         }
 
-        public static GameObject AddOutputPeg(GameObject parent, Vector3? localPosition = null)
+        public static GameObject AddOutputPeg(GameObject parent, Vector3? localPosition = null, string description = null)
         {
             var Peg = GameObject.Instantiate(Prefabs.Output);
 
+            Peg.AddComponent<IOInfo>().Description = description;
             Peg.transform.localScale = new Vector3(OutputScale.x * 0.3f, OutputScale.y * 0.3f, OutputScale.z * 0.3f);
             Peg.transform.parent = parent.transform;
 

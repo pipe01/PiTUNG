@@ -34,13 +34,15 @@ namespace PiTung.Components
             public SideType Type;
             public float XOffset;
             public float YOffset;
+            public string Description;
 
-            public IO(CubeSide side, SideType type, float xOffset, float yOffset)
+            public IO(CubeSide side, SideType type, float xOffset, float yOffset, string description)
             {
                 this.Side = side;
                 this.Type = type;
                 this.XOffset = xOffset;
                 this.YOffset = yOffset;
+                this.Description = description;
             }
         }
 
@@ -50,9 +52,9 @@ namespace PiTung.Components
         public int InputCount => Sides.Count(o => o.Type == SideType.Input);
         public int OutputCount => Sides.Count(o => o.Type == SideType.Output);
         
-        public IOMap SetSide(CubeSide side, SideType what, float ox, float oy)
+        public IOMap SetSide(CubeSide side, SideType what, float ox, float oy, string description)
         {
-            Sides.Add(new IO(side, what, ox, oy));
+            Sides.Add(new IO(side, what, ox, oy, description));
             Changed?.Invoke(this, EventArgs.Empty);
 
             return this;
