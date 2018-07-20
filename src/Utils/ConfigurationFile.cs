@@ -13,7 +13,7 @@ namespace PiTung.Utils
 {
     internal class ConfigurationFile
     {
-        public int Version { get; set; } = 1;
+        public int Version { get; set; } = 2;
 
         public Dictionary<string, object> Entries { get; set; } = new Dictionary<string, object>();
 
@@ -22,7 +22,7 @@ namespace PiTung.Utils
 
         private string FilePath { get; set; }
 
-        private JSONParameters Parameters = new JSONParameters
+        private static readonly JSONParameters Parameters = new JSONParameters
         {
             IgnoreAttributes = new List<Type> { typeof(DontSerializeAttribute) }
         };
@@ -61,7 +61,7 @@ namespace PiTung.Utils
         public void Save()
         {
             MDebug.WriteLine("SAVE CONFIG TO " + FilePath);
-            File.WriteAllText(FilePath, new JsonFormatter(JSON.ToNiceJSON(this, Parameters)).Format());
+            File.WriteAllText(FilePath, JSON.ToNiceJSON(this, Parameters));
         }
 
         public static ConfigurationFile Load(Mod mod)
@@ -88,7 +88,7 @@ namespace PiTung.Utils
 
                 try
                 {
-                    configFile = JSON.ToObject<ConfigurationFile>(file);
+                    configFile = JSON.ToObject<ConfigurationFile>(file, Parameters);
                 }
                 catch (Exception ex)
                 {
