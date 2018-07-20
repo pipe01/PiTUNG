@@ -15,7 +15,7 @@ namespace PiTung.Utils
     {
         public int Version { get; set; } = 1;
 
-        public Dictionary<string, ConfigEntry> Entries { get; set; } = new Dictionary<string, ConfigEntry>();
+        public Dictionary<string, object> Entries { get; set; } = new Dictionary<string, object>();
 
         [DontSerialize]
         public bool AutoSave { get; set; } = true;
@@ -31,7 +31,7 @@ namespace PiTung.Utils
         {
             if (Entries.TryGetValue(key, out var val))
             {
-                return (T)val.ConvertedValue;
+                return (T)val;
             }
 
             throw new KeyNotFoundException();
@@ -41,10 +41,10 @@ namespace PiTung.Utils
         {
             if (Entries.TryGetValue(key, out var val))
             {
-                return (T)val.ConvertedValue;
+                return (T)val;
             }
 
-            Entries[key] = new ConfigEntry(defaultValue);
+            Entries[key] = defaultValue;
             Save();
 
             return defaultValue;
@@ -52,7 +52,7 @@ namespace PiTung.Utils
 
         public void Set(string key, object value)
         {
-            Entries[key] = new ConfigEntry(value);
+            Entries[key] = value;
 
             if (AutoSave)
                 Save();
@@ -101,22 +101,6 @@ namespace PiTung.Utils
 
             configFile.FilePath = filePath;
             return configFile;
-        }
-
-        public class ConfigEntry
-        {
-            public Type Type { get; set; }
-            public object Value { get; set; }
-
-            public object ConvertedValue => (Value == null || Type == null) ? null : Convert.ChangeType(Value, Type);
-
-            public ConfigEntry(object value)
-            {
-                this.Value = value;
-
-                if (value != null)
-                    this.Type = value.GetType();
-            }
         }
     }
 }
