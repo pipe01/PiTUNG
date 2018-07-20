@@ -161,7 +161,6 @@
     <Compile Include="Console\InternalCommands.cs" />
     <Compile Include="Patching\InternalPatches.cs" />
     <Compile Include="Bootstrap\ManifestParser.cs" />
-    <Compile Include="Utils\JsonFormatter.cs" />
     <Compile Include="Utils\MDebug.cs" />
     <Compile Include="Patching\MethodPatch.cs" />
     <Compile Include="Mod.cs" />
