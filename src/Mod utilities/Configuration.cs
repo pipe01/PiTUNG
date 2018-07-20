@@ -1,4 +1,5 @@
 ﻿using PiTung.Components;
+using PiTung.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace PiTung.Mod_utilities
                 if (mod == null)
                     return null;
 
-                Files[ass] = new ConfigurationFile(mod);
+                Files[ass] = ConfigurationFile.Load(mod);
             }
 
             return Files[ass];
@@ -79,11 +80,11 @@ namespace PiTung.Mod_utilities
             cfg.Set(key, value);
         }
 
-        public static ConfigurationFile GetConfigFile() => GetConfig(Assembly.GetCallingAssembly());
+        internal static ConfigurationFile GetConfigFile() => GetConfig(Assembly.GetCallingAssembly());
 
         internal static void LoadPitungConfig()
         {
-            PitungConfig = new ConfigurationFile();
+            PitungConfig = ConfigurationFile.Load(null);
 
             CustomMenu.Instance.ModCategories = PitungConfig.Get("SortComponentsByMod", true);
         }

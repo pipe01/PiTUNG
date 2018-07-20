@@ -21,8 +21,6 @@ namespace PiTung
         static void Prefix()
         {
             IGConsole.Update();
-            HologramManager.Update();
-
             Mod.CallOnAllMods(o => o.Update());
         }
     }

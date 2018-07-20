@@ -1,4 +1,5 @@
 ﻿using Harmony;
+using PiTung.Properties;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -47,14 +48,31 @@ namespace PiTung
         {
             var asses = new Dictionary<string, byte[]>
             {
-                { "0Harmony", Properties.Resources._0Harmony }
+                ["0Harmony"] = Resources._0Harmony,
+                ["fastJSON"] = Resources.fastJSON,
+                ["System.Data"] = Resources.System_Data,
+                ["System.Xml"] = Resources.System_XML,
             };
 
-            if (asses.TryGetValue(new AssemblyName(args.Name).Name, out var b))
+            string name = new AssemblyName(args.Name).Name;
+
+            if (asses.TryGetValue(name, out var b))
             {
-                return Assembly.Load(b);
+                Assembly ass = null;
+
+                try
+                {
+                    ass = Assembly.Load(b);
+                    MDebug.WriteLine($"Successfully loaded {name} from resources");
+                }
+                catch (Exception ex)
+                {
+                    MDebug.WriteLine($"Failed to load assembly {name} from resources: {ex}");
+                }
+
+                return ass;
             }
-            
+
             return null;
         }
     }

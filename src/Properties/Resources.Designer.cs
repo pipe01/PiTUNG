@@ -69,5 +69,35 @@ namespace PiTung.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] fastJSON {
+            get {
+                object obj = ResourceManager.GetObject("fastJSON", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] System_Data {
+            get {
+                object obj = ResourceManager.GetObject("System_Data", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] System_XML {
+            get {
+                object obj = ResourceManager.GetObject("System_XML", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

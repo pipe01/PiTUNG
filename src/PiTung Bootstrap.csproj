@@ -63,6 +63,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="fastJSON">
+      <HintPath>..\lib\fastJSON.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
@@ -122,7 +125,7 @@
     <Compile Include="Components\IOMap.cs" />
     <Compile Include="Components\SaveThisAttribute.cs" />
     <Compile Include="Components\UpdateHandler.cs" />
-    <Compile Include="ConfigurationFile.cs" />
+    <Compile Include="Utils\ConfigurationFile.cs" />
     <Compile Include="Console\Autocompletion.cs" />
     <Compile Include="Console\Command.cs" />
     <Compile Include="Console\Shell.cs" />
@@ -149,15 +152,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SimpleJSON.cs" />
     <Compile Include="User Interface\ModsScreen.cs" />
+    <Compile Include="Utils\DontSerializeAttribute.cs" />
     <Compile Include="Utils\DropOutStack.cs" />
     <Compile Include="GodHimself.cs" />
-    <Compile Include="Extensions.cs" />
+    <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Mod utilities\GraphicUtilities.cs" />
     <Compile Include="Console\InternalCommands.cs" />
     <Compile Include="Patching\InternalPatches.cs" />
     <Compile Include="Bootstrap\ManifestParser.cs" />
+    <Compile Include="Utils\JsonFormatter.cs" />
     <Compile Include="Utils\MDebug.cs" />
     <Compile Include="Patching\MethodPatch.cs" />
     <Compile Include="Mod.cs" />
@@ -179,13 +183,18 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyVersion.cs</LastGenOutput>
     </Content>
+    <None Include="..\lib\System.Data.dll" />
+    <None Include="..\lib\fastJSON.dll" />
     <None Include="..\lib\0Harmony.dll" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
