@@ -1,4 +1,4 @@
-Assembly-CSharp.dll
+Assembly-CSharp.dll (the modded one)
 UnityEngine.CoreModule.dll
 UnityEngine.ImageConversionModule.dll
 UnityEngine.IMGUIModule.dll
