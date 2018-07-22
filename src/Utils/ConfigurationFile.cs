@@ -79,7 +79,7 @@ namespace PiTung.Utils
 
             if (!File.Exists(filePath))
             {
-                configFile = new ConfigurationFile();
+                configFile = new ConfigurationFile { FilePath = filePath };
                 configFile.Save();
             }
             else
