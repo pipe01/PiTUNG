@@ -1,4 +1,4 @@
-Assembly-CSharp.dll (the modded one)
+Assembly-CSharp.dll
 UnityEngine.CoreModule.dll
 UnityEngine.ImageConversionModule.dll
 UnityEngine.IMGUIModule.dll
@@ -10,4 +10,4 @@ UnityEngine.UIModule.dll
 UnityEngine.UnityWebRequestWWWModule.dll
 UnityEngine.dll
 
-All of these files can be found under {your TUNG installation}/The Ultimate Nerd Game_Data/Managed
+All of these files can be found under {your modded TUNG installation}/The Ultimate Nerd Game_Data/Managed
