@@ -40,7 +40,7 @@ namespace PiTung
         private static void LogCallback(string condition, string stackTrace, LogType type)
         {
             if (type == LogType.Exception)
-                LogWriter.WriteLine("[EXCEPTION] {1}", stackTrace);
+                LogWriter.WriteLine("[EXCEPTION] {0}", stackTrace);
         }
 
         public static void WriteLine(object line)
