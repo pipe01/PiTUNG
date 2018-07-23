@@ -969,63 +969,6 @@ references:
   fullName.vb: PiTung.Config_menu.ValueChangedDelegate(Of T)
   nameWithType: ValueChangedDelegate<T>
   nameWithType.vb: ValueChangedDelegate(Of T)
-- uid: PiTung.ConfigurationFile
-  name: ConfigurationFile
-  href: api/PiTung.ConfigurationFile.html
-  commentId: T:PiTung.ConfigurationFile
-  fullName: PiTung.ConfigurationFile
-  nameWithType: ConfigurationFile
-- uid: PiTung.ConfigurationFile.AutoSave
-  name: AutoSave
-  href: api/PiTung.ConfigurationFile.html#PiTung_ConfigurationFile_AutoSave
-  commentId: P:PiTung.ConfigurationFile.AutoSave
-  fullName: PiTung.ConfigurationFile.AutoSave
-  nameWithType: ConfigurationFile.AutoSave
-- uid: PiTung.ConfigurationFile.AutoSave*
-  name: AutoSave
-  href: api/PiTung.ConfigurationFile.html#PiTung_ConfigurationFile_AutoSave_
-  commentId: Overload:PiTung.ConfigurationFile.AutoSave
-  isSpec: "True"
-  fullName: PiTung.ConfigurationFile.AutoSave
-  nameWithType: ConfigurationFile.AutoSave
-- uid: PiTung.ConfigurationFile.Get*
-  name: Get
-  href: api/PiTung.ConfigurationFile.html#PiTung_ConfigurationFile_Get_
-  commentId: Overload:PiTung.ConfigurationFile.Get
-  isSpec: "True"
-  fullName: PiTung.ConfigurationFile.Get
-  nameWithType: ConfigurationFile.Get
-- uid: PiTung.ConfigurationFile.Get``1(System.String)
-  name: Get<T>(String)
-  href: api/PiTung.ConfigurationFile.html#PiTung_ConfigurationFile_Get__1_System_String_
-  commentId: M:PiTung.ConfigurationFile.Get``1(System.String)
-  name.vb: Get(Of T)(String)
-  fullName: PiTung.ConfigurationFile.Get<T>(System.String)
-  fullName.vb: PiTung.ConfigurationFile.Get(Of T)(System.String)
-  nameWithType: ConfigurationFile.Get<T>(String)
-  nameWithType.vb: ConfigurationFile.Get(Of T)(String)
-- uid: PiTung.ConfigurationFile.Get``1(System.String,``0)
-  name: Get<T>(String, T)
-  href: api/PiTung.ConfigurationFile.html#PiTung_ConfigurationFile_Get__1_System_String___0_
-  commentId: M:PiTung.ConfigurationFile.Get``1(System.String,``0)
-  name.vb: Get(Of T)(String, T)
-  fullName: PiTung.ConfigurationFile.Get<T>(System.String, T)
-  fullName.vb: PiTung.ConfigurationFile.Get(Of T)(System.String, T)
-  nameWithType: ConfigurationFile.Get<T>(String, T)
-  nameWithType.vb: ConfigurationFile.Get(Of T)(String, T)
-- uid: PiTung.ConfigurationFile.Set(System.String,System.Object)
-  name: Set(String, Object)
-  href: api/PiTung.ConfigurationFile.html#PiTung_ConfigurationFile_Set_System_String_System_Object_
-  commentId: M:PiTung.ConfigurationFile.Set(System.String,System.Object)
-  fullName: PiTung.ConfigurationFile.Set(System.String, System.Object)
-  nameWithType: ConfigurationFile.Set(String, Object)
-- uid: PiTung.ConfigurationFile.Set*
-  name: Set
-  href: api/PiTung.ConfigurationFile.html#PiTung_ConfigurationFile_Set_
-  commentId: Overload:PiTung.ConfigurationFile.Set
-  isSpec: "True"
-  fullName: PiTung.ConfigurationFile.Set
-  nameWithType: ConfigurationFile.Set
 - uid: PiTung.Console
   name: PiTung.Console
   href: api/PiTung.Console.html
@@ -1667,19 +1610,6 @@ references:
   fullName.vb: PiTung.Mod_utilities.Configuration.Get(Of T)(System.String, T)
   nameWithType: Configuration.Get<T>(String, T)
   nameWithType.vb: Configuration.Get(Of T)(String, T)
-- uid: PiTung.Mod_utilities.Configuration.GetConfigFile
-  name: GetConfigFile()
-  href: api/PiTung.Mod_utilities.Configuration.html#PiTung_Mod_utilities_Configuration_GetConfigFile
-  commentId: M:PiTung.Mod_utilities.Configuration.GetConfigFile
-  fullName: PiTung.Mod_utilities.Configuration.GetConfigFile()
-  nameWithType: Configuration.GetConfigFile()
-- uid: PiTung.Mod_utilities.Configuration.GetConfigFile*
-  name: GetConfigFile
-  href: api/PiTung.Mod_utilities.Configuration.html#PiTung_Mod_utilities_Configuration_GetConfigFile_
-  commentId: Overload:PiTung.Mod_utilities.Configuration.GetConfigFile
-  isSpec: "True"
-  fullName: PiTung.Mod_utilities.Configuration.GetConfigFile
-  nameWithType: Configuration.GetConfigFile
 - uid: PiTung.Mod_utilities.Configuration.Set(System.String,System.Object)
   name: Set(String, Object)
   href: api/PiTung.Mod_utilities.Configuration.html#PiTung_Mod_utilities_Configuration_Set_System_String_System_Object_
@@ -2280,6 +2210,25 @@ references:
   isSpec: "True"
   fullName: PiTung.PiTUNG.FrameworkVersion
   nameWithType: PiTUNG.FrameworkVersion
+- uid: PiTung.RequireModAttribute
+  name: RequireModAttribute
+  href: api/PiTung.RequireModAttribute.html
+  commentId: T:PiTung.RequireModAttribute
+  fullName: PiTung.RequireModAttribute
+  nameWithType: RequireModAttribute
+- uid: PiTung.RequireModAttribute.#ctor(System.String)
+  name: RequireModAttribute(String)
+  href: api/PiTung.RequireModAttribute.html#PiTung_RequireModAttribute__ctor_System_String_
+  commentId: M:PiTung.RequireModAttribute.#ctor(System.String)
+  fullName: PiTung.RequireModAttribute.RequireModAttribute(System.String)
+  nameWithType: RequireModAttribute.RequireModAttribute(String)
+- uid: PiTung.RequireModAttribute.#ctor*
+  name: RequireModAttribute
+  href: api/PiTung.RequireModAttribute.html#PiTung_RequireModAttribute__ctor_
+  commentId: Overload:PiTung.RequireModAttribute.#ctor
+  isSpec: "True"
+  fullName: PiTung.RequireModAttribute.RequireModAttribute
+  nameWithType: RequireModAttribute.RequireModAttribute
 - uid: PiTung.TargetAttribute
   name: TargetAttribute
   href: api/PiTung.TargetAttribute.html
