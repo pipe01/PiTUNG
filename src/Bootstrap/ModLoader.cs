@@ -50,22 +50,38 @@ namespace PiTung
             }
         }
 
-        public static void SearchForCircularReferences(IEnumerable<Mod> mods)
+        public static IEnumerable<Mod> SearchForCircularReferences(IEnumerable<Mod> mods)
         {
             Dictionary<string, Mod> modsByPackage = mods.ToDictionary(o => o.PackageName);
-
+            List<KeyValuePair<Mod, Mod>> warned = new List<KeyValuePair<Mod, Mod>>();
+            
             foreach (var item in mods)
             {
                 var match = item.RequiredModPackages.SingleOrDefault(o => modsByPackage.TryGetValue(o, out var m) && m.RequiredModPackages.Contains(item.PackageName));
 
                 if (match != null)
-                    throw new Exception($"Circular reference found between {item.Name} and {modsByPackage[match]}");
+                {
+                    var second = modsByPackage[match];
+
+                    if (!warned.Any(o =>
+                        (o.Key.PackageName == item.PackageName && o.Value.PackageName == second.PackageName) || 
+                        (o.Key.PackageName == second.PackageName && o.Value.PackageName == item.PackageName)))
+                    {
+                        warned.Add(new KeyValuePair<Mod, Mod>(item, second));
+
+                        IGConsole.Error($"Circular reference found between <b>{item.Name}</b> and <b>{second.Name}</b>, neither were loaded.");
+                    }
+                }
+                else
+                {
+                    yield return item;
+                }
             }
         }
         
         public static IEnumerable<Mod> Order(IEnumerable<Mod> mods)
         {
-            SearchForCircularReferences(mods);
+            mods = SearchForCircularReferences(mods).ToList();
 
             Dictionary<string, Mod> modsByPackage = mods.ToDictionary(o => o.PackageName);
             List<Mod> ret = new List<Mod>();
@@ -87,7 +103,7 @@ namespace PiTung
                 {
                     if (!modsByPackage.TryGetValue(item, out var req))
                     {
-                        IGConsole.Log($"<color=red>Mod {mod.Name} requires mod {item}</color>");
+                        IGConsole.Error($"Mod {mod.Name} requires mod {item}");
                         exit = true;
                     }
 
