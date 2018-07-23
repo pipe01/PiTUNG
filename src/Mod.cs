@@ -92,7 +92,10 @@ namespace PiTung
             }
         }
 
-        internal string[] RequiredModPackages; //TODO Pretty
+        /// <summary>
+        /// The list of required mods as specified with <see cref="RequireModAttribute"/>s.
+        /// </summary>
+        internal string[] RequiredModPackages { get; set; }
 
         /// <summary>
         /// The mod's full name. Format: {Author}'s {Name} (v{ModVersion})
