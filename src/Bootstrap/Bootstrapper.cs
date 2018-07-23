@@ -61,7 +61,7 @@ namespace PiTung
         private Bootstrapper()
         {
         }
-        
+
         /// <summary>
         /// Main bootstrap method. Loads and patches all mods.
         /// </summary>
@@ -70,7 +70,7 @@ namespace PiTung
             if (Patched && !hotload)
                 return;
             Patched = true;
-            
+
             string tungVersion = GetTungVersion();
 
             MDebug.WriteLine("PiTUNG Framework version {0} on TUNG {1}", 0, new Version(PiTUNG.FrameworkVersion.Major, PiTUNG.FrameworkVersion.Minor, PiTUNG.FrameworkVersion.Build), tungVersion);
@@ -108,7 +108,7 @@ namespace PiTung
 
             SelectionMenu.AllowModdedComponents = true;
 
-            var mods = ModLoader.GetMods();
+            var mods = ModLoader.Order(ModLoader.GetMods());
 
             foreach (var item in mods.Where(o => !o.MultiThreadedLoad))
             {
@@ -124,7 +124,7 @@ namespace PiTung
         {
             var obj = GameObject.Find("Version Number");
             var str = obj.GetTextMeshProUGUIText();
-            
+
             return Regex.Match(str, @"v(.\..\..)").Groups[1].Value;
         }
 
@@ -175,7 +175,7 @@ namespace PiTung
                 LoadError($"{mod.Name} failed to load: couldn't load assembly.", mod.Name);
                 return;
             }
-            
+
             if (!mod.MatchesVersion())
             {
                 LoadError($"{mod.Name} failed to load: wrong PiTUNG version. Required version: " + mod.GetRequiredVersion(), mod.Name);
@@ -194,7 +194,7 @@ namespace PiTung
 
                 return;
             }
-            
+
             try
             {
                 _Harmony.PatchAll(mod.ModAssembly);
@@ -276,7 +276,7 @@ namespace PiTung
         private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
         {
             AddDummyComponent(arg1);
-            
+
             //If the scene's name is "main menu", we may might possibly probably be in the main menu.
             ModUtilities.IsOnMainMenu = arg1.name == "main menu";
         }
@@ -335,13 +335,13 @@ namespace PiTung
             foreach (var key in new List<string>(ComponentRegistry.Registry.Keys))
             {
                 var value = ComponentRegistry.Registry[key];
-                
+
                 if (value.Mod == mod)
                 {
                     ComponentRegistry.Registry.Remove(key);
                 }
             }
-            
+
             _Mods.Remove(mod);
         }
     }

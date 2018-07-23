@@ -40,8 +40,62 @@ namespace PiTung
                     IGConsole.Error($"Failed to load mod {name}.");
                 }
 
+                mod.RequiredModPackages = mod.GetType().GetCustomAttributes(false)
+                    .OfType<RequireModAttribute>()
+                    .Select(o => o.ModPackage)
+                    .ToArray();
+                
                 if (mod != null)
                     yield return mod;
+            }
+        }
+
+        public static void SearchForCircularReferences(IEnumerable<Mod> mods)
+        {
+            Dictionary<string, Mod> modsByPackage = mods.ToDictionary(o => o.PackageName);
+
+            foreach (var item in mods)
+            {
+                var match = item.RequiredModPackages.SingleOrDefault(o => modsByPackage.TryGetValue(o, out var m) && m.RequiredModPackages.Contains(item.PackageName));
+
+                if (match != null)
+                    throw new Exception($"Circular reference found between {item.Name} and {modsByPackage[match]}");
+            }
+        }
+        
+        public static IEnumerable<Mod> Order(IEnumerable<Mod> mods)
+        {
+            SearchForCircularReferences(mods);
+
+            Dictionary<string, Mod> modsByPackage = mods.ToDictionary(o => o.PackageName);
+            List<Mod> ret = new List<Mod>();
+
+            foreach (var item in mods)
+            {
+                Push(item);
+            }
+
+            ret.AddRange(mods.Where(o => !ret.Contains(o)));
+
+            return ret;
+
+            void Push(Mod mod)
+            {
+                bool exit = true;
+
+                foreach (var item in mod.RequiredModPackages)
+                {
+                    if (!modsByPackage.TryGetValue(item, out var req))
+                    {
+                        IGConsole.Log($"<color=red>Mod {mod.Name} requires mod {item}</color>");
+                        exit = true;
+                    }
+
+                    if (req != null && !exit && !ret.Contains(req))
+                    {
+                        ret.Add(req);
+                    }
+                }
             }
         }
 

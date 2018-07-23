@@ -92,6 +92,8 @@ namespace PiTung
             }
         }
 
+        internal string[] RequiredModPackages; //TODO Pretty
+
         /// <summary>
         /// The mod's full name. Format: {Author}'s {Name} (v{ModVersion})
         /// </summary>

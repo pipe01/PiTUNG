@@ -125,6 +125,7 @@
     <Compile Include="Components\IOMap.cs" />
     <Compile Include="Components\SaveThisAttribute.cs" />
     <Compile Include="Components\UpdateHandler.cs" />
+    <Compile Include="RequireModAttribute.cs" />
     <Compile Include="Utils\ConfigurationFile.cs" />
     <Compile Include="Console\Autocompletion.cs" />
     <Compile Include="Console\Command.cs" />
