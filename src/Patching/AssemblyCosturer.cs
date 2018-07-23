@@ -1,4 +1,5 @@
 ﻿using Harmony;
+using PiTung.Mod_utilities;
 using PiTung.Properties;
 using System;
 using System.Collections.Generic;
@@ -63,7 +64,7 @@ namespace PiTung
                 try
                 {
                     ass = Assembly.Load(b);
-                    MDebug.WriteLine($"Successfully loaded {name} from resources");
+                    MDebug.WriteLine($"Successfully loaded {name} from resources", 1);
                 }
                 catch (Exception ex)
                 {
