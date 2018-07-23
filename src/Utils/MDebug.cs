@@ -2,9 +2,12 @@
 {
     internal static class MDebug
     {
-        public static int DebugLevel { get; set; } = 10;
+        public static int DebugLevel { get; set; }
+#if DEBUG
+            = 10;
+#endif
 
-        public static void WriteLine(string line)
+        public static void WriteLine(object line)
         {
             System.Console.WriteLine("[PiTUNG] " + line);
         }
