@@ -72,6 +72,7 @@ namespace PiTung.Components
             };
         }
 
+        private float widestX = 100;
         public void Draw()
         {
             if (ModUtilities.IsOnMainMenu || !Visible || AutoHidden)
@@ -84,6 +85,7 @@ namespace PiTung.Components
             }
 
             int i = 0;
+            float currentX = 40;
             float currentY = 40;
             Mod lastMod = null;
 
@@ -94,24 +96,30 @@ namespace PiTung.Components
                     lastMod = item.Mod;
                     
                     currentY += NormalStyle.CalcSize(new GUIContent("A")).y;
-                    currentY += DrawEntry(item.Mod.Name, ModHeaderStyle, currentY);
+                    currentY += DrawEntry(item.Mod.Name, ModHeaderStyle, currentX, currentY);
                 }
 
                 GUIStyle style = i++ == Selected ? SelectedStyle : NormalStyle;
 
-                currentY += DrawEntry(item.DisplayName, style, currentY);
+                currentY += DrawEntry(item.DisplayName, style, currentX, currentY);
+                if (currentY > Screen.height - 40)
+                {
+                    currentY = 40;
+                    currentX += widestX + 40;
+                    widestX = 100;
+                }
             }
 
-            float DrawEntry(string text, GUIStyle style, float y)
+            float DrawEntry(string text, GUIStyle style, float x, float y)
             {
                 var size = style.CalcSize(new GUIContent(text));
-
+                widestX = size.x > widestX ? size.x : widestX;
                 if (size.x < 100)
                     size.x = 100;
                 else
                     size.x += 3;
 
-                GUI.Label(new Rect(40, y, size.x, size.y), text, style);
+                GUI.Label(new Rect(x, y, size.x, size.y), text, style);
 
                 return size.y;
             }
