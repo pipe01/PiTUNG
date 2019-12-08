@@ -15,7 +15,7 @@ You can get the latest version of PiTUNG right out of the oven [here](https://ci
 
 ## For users: How to install the framework
 
-Installing the framework is extremely easy, just download [the installer](http://www.pipe0481.heliohost.org/pitung/Installer.exe) to the same folder as "The Ultimate Nerd Game.exe", and double-click it!
+Installing the framework is extremely easy, just download [the installer](https://github.com/pipe01/PiTUNG/blob/master/installer/Installer.exe?raw=true) to the same folder as "The Ultimate Nerd Game.exe", and double-click it!
 
 ## For developers: How to create a mod
 
